@@ -1,0 +1,126 @@
+
+ Meters for 23,LOAD PROFILE FTLB:Plant Load Profile Heat Transfer Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Plant [J]
+  OnMeter=Heating:EnergyTransfer [J]
+
+ Meters for 54,LOAD PROFILE FTLB:Plant Load Profile Hot Water Consumption [J]
+  OnMeter=PlantLoopHeatingDemand:Facility [J]
+  OnMeter=PlantLoopHeatingDemand:Plant [J]
+  OnMeter=Heating:PlantLoopHeatingDemand [J]
+
+ Meters for 85,LOAD PROFILE FTLB:Plant Load Profile Chilled Water Consumption [J]
+  OnMeter=PlantLoopCoolingDemand:Facility [J]
+  OnMeter=PlantLoopCoolingDemand:Plant [J]
+  OnMeter=Cooling:PlantLoopCoolingDemand [J]
+
+ Meters for 117,FTLB TRANSFER TO FTLB LOAD HX:Fluid Heat Exchanger Heat Transfer Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Plant [J]
+  OnMeter=LoopToLoop:EnergyTransfer [J]
+
+ Meters for 137,FTLB TO TRANSFER HX:Fluid Heat Exchanger Heat Transfer Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Plant [J]
+  OnMeter=LoopToLoop:EnergyTransfer [J]
+
+ Meters for 146,FTLB PURCHASED HEATING:District Hot Water Energy [J]
+  OnMeter=DistrictHeating:Facility [J]
+  OnMeter=DistrictHeating:Plant [J]
+  OnMeter=Heating:DistrictHeating [J]
+
+ Meters for 178,FTLB LOAD PUMP:Pump Electric Consumption [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Plant [J]
+  OnMeter=Pumps:Electricity [J]
+
+ Meters for 209,TRANSFER PUMP:Pump Electric Consumption [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Plant [J]
+  OnMeter=Pumps:Electricity [J]
+
+ Meters for 210,FTLB PUMP:Pump Electric Consumption [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Plant [J]
+  OnMeter=Pumps:Electricity [J]
+
+ Meters for 211,Site:Carbon Equivalent Pollution From N2O [kg]
+  OnMeter=Carbon Equivalent:Facility [kg]
+  OnMeter=CarbonEquivalentEmissions:Carbon Equivalent [kg]
+
+ Meters for 232,Site:Carbon Equivalent Pollution From CH4 [kg]
+  OnMeter=Carbon Equivalent:Facility [kg]
+  OnMeter=CarbonEquivalentEmissions:Carbon Equivalent [kg]
+
+ Meters for 233,Site:Carbon Equivalent Pollution From CO2 [kg]
+  OnMeter=Carbon Equivalent:Facility [kg]
+  OnMeter=CarbonEquivalentEmissions:Carbon Equivalent [kg]
+
+ For Meter=EnergyTransfer:Facility [J], ResourceType=EnergyTransfer, contents are:
+  LOAD PROFILE FTLB:Plant Load Profile Heat Transfer Energy
+  FTLB TRANSFER TO FTLB LOAD HX:Fluid Heat Exchanger Heat Transfer Energy
+  FTLB TO TRANSFER HX:Fluid Heat Exchanger Heat Transfer Energy
+
+ For Meter=EnergyTransfer:Plant [J], ResourceType=EnergyTransfer, Group=Plant, contents are:
+  LOAD PROFILE FTLB:Plant Load Profile Heat Transfer Energy
+  FTLB TRANSFER TO FTLB LOAD HX:Fluid Heat Exchanger Heat Transfer Energy
+  FTLB TO TRANSFER HX:Fluid Heat Exchanger Heat Transfer Energy
+
+ For Meter=Heating:EnergyTransfer [J], ResourceType=EnergyTransfer, EndUse=Heating, contents are:
+  LOAD PROFILE FTLB:Plant Load Profile Heat Transfer Energy
+
+ For Meter=PlantLoopHeatingDemand:Facility [J], ResourceType=PlantLoopHeatingDemand, contents are:
+  LOAD PROFILE FTLB:Plant Load Profile Hot Water Consumption
+
+ For Meter=PlantLoopHeatingDemand:Plant [J], ResourceType=PlantLoopHeatingDemand, Group=Plant, contents are:
+  LOAD PROFILE FTLB:Plant Load Profile Hot Water Consumption
+
+ For Meter=Heating:PlantLoopHeatingDemand [J], ResourceType=PlantLoopHeatingDemand, EndUse=Heating, contents are:
+  LOAD PROFILE FTLB:Plant Load Profile Hot Water Consumption
+
+ For Meter=PlantLoopCoolingDemand:Facility [J], ResourceType=PlantLoopCoolingDemand, contents are:
+  LOAD PROFILE FTLB:Plant Load Profile Chilled Water Consumption
+
+ For Meter=PlantLoopCoolingDemand:Plant [J], ResourceType=PlantLoopCoolingDemand, Group=Plant, contents are:
+  LOAD PROFILE FTLB:Plant Load Profile Chilled Water Consumption
+
+ For Meter=Cooling:PlantLoopCoolingDemand [J], ResourceType=PlantLoopCoolingDemand, EndUse=Cooling, contents are:
+  LOAD PROFILE FTLB:Plant Load Profile Chilled Water Consumption
+
+ For Meter=LoopToLoop:EnergyTransfer [J], ResourceType=EnergyTransfer, EndUse=LoopToLoop, contents are:
+  FTLB TRANSFER TO FTLB LOAD HX:Fluid Heat Exchanger Heat Transfer Energy
+  FTLB TO TRANSFER HX:Fluid Heat Exchanger Heat Transfer Energy
+
+ For Meter=DistrictHeating:Facility [J], ResourceType=DistrictHeating, contents are:
+  FTLB PURCHASED HEATING:District Hot Water Energy
+
+ For Meter=DistrictHeating:Plant [J], ResourceType=DistrictHeating, Group=Plant, contents are:
+  FTLB PURCHASED HEATING:District Hot Water Energy
+
+ For Meter=Heating:DistrictHeating [J], ResourceType=DistrictHeating, EndUse=Heating, contents are:
+  FTLB PURCHASED HEATING:District Hot Water Energy
+
+ For Meter=Electricity:Facility [J], ResourceType=Electricity, contents are:
+  FTLB LOAD PUMP:Pump Electric Consumption
+  TRANSFER PUMP:Pump Electric Consumption
+  FTLB PUMP:Pump Electric Consumption
+
+ For Meter=Electricity:Plant [J], ResourceType=Electricity, Group=Plant, contents are:
+  FTLB LOAD PUMP:Pump Electric Consumption
+  TRANSFER PUMP:Pump Electric Consumption
+  FTLB PUMP:Pump Electric Consumption
+
+ For Meter=Pumps:Electricity [J], ResourceType=Electricity, EndUse=Pumps, contents are:
+  FTLB LOAD PUMP:Pump Electric Consumption
+  TRANSFER PUMP:Pump Electric Consumption
+  FTLB PUMP:Pump Electric Consumption
+
+ For Meter=Carbon Equivalent:Facility [kg], ResourceType=Carbon Equivalent, contents are:
+  Site:Carbon Equivalent Pollution From N2O
+  Site:Carbon Equivalent Pollution From CH4
+  Site:Carbon Equivalent Pollution From CO2
+
+ For Meter=CarbonEquivalentEmissions:Carbon Equivalent [kg], ResourceType=Carbon Equivalent, EndUse=CarbonEquivalentEmissions, contents are:
+  Site:Carbon Equivalent Pollution From N2O
+  Site:Carbon Equivalent Pollution From CH4
+  Site:Carbon Equivalent Pollution From CO2

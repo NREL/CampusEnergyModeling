@@ -1,12 +1,12 @@
 Model {
   Name			  "simpowersystems_simple_phasor"
-  Version		  7.7
+  Version		  7.8
   MdlSubVersion		  0
   GraphicalInterface {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.2"
+    ComputedModelVersion    "1.10"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -19,16 +19,22 @@ Model {
   DataTypeOverrideAppliesTo "AllNumericTypes"
   MinMaxOverflowLogging	  "UseLocalSettings"
   MinMaxOverflowArchiveMode "Overwrite"
+  FPTRunName		  "Run 1"
   MaxMDLFileLineLength	  120
+  InitFcn		  "Ts = 1e-5;\n"
+  UserBdParams		  "PhysicalModelingChecksum;PhysicalModelingParameterChecksum;PhysicalModelingProducts"
+  PhysicalModelingChecksum "1217160643"
+  PhysicalModelingParameterChecksum "3245848786"
+  PhysicalModelingProducts "Power_System_Blocks"
   Created		  "Wed Jun 05 13:15:02 2013"
   Creator		  "sfrank1"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Jun 05 14:01:40 2013"
-  RTWModifiedTimeStamp	  0
-  ModelVersionFormat	  "1.%<AutoIncrement:2>"
+  LastModifiedDate	  "Thu Jun 06 14:43:54 2013"
+  RTWModifiedTimeStamp	  292426885
+  ModelVersionFormat	  "1.%<AutoIncrement:10>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -36,6 +42,7 @@ Model {
   WideLines		  off
   ShowLineDimensions	  off
   ShowPortDataTypes	  off
+  ShowDesignRanges	  off
   ShowLoopsOnError	  on
   IgnoreBidirectionalLines off
   ShowStorageClass	  off
@@ -65,8 +72,7 @@ Model {
     $ObjectID		    1
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "simpowersystems_simple_phasor"
-    signals_		    []
-    overrideMode_	    [0U]
+    overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
       Dimension		      1
@@ -123,17 +129,17 @@ Model {
     Dimension		    1
     Simulink.ConfigSet {
       $ObjectID		      2
-      Version		      "1.11.0"
+      Version		      "1.11.1"
       Array {
 	Type			"Handle"
-	Dimension		8
+	Dimension		9
 	Simulink.SolverCC {
 	  $ObjectID		  3
-	  Version		  "1.11.0"
+	  Version		  "1.11.1"
 	  StartTime		  "0.0"
-	  StopTime		  "5"
+	  StopTime		  "1"
 	  AbsTol		  "auto"
-	  FixedStep		  "auto"
+	  FixedStep		  "Ts"
 	  InitialStep		  "auto"
 	  MaxNumMinSteps	  "-1"
 	  MaxOrder		  5
@@ -163,7 +169,7 @@ Model {
 	}
 	Simulink.DataIOCC {
 	  $ObjectID		  4
-	  Version		  "1.11.0"
+	  Version		  "1.11.1"
 	  Decimation		  "1"
 	  ExternalInput		  "[t, u]"
 	  FinalStateName	  "xFinal"
@@ -195,7 +201,7 @@ Model {
 	}
 	Simulink.OptimizationCC {
 	  $ObjectID		  5
-	  Version		  "1.11.0"
+	  Version		  "1.11.1"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    8
@@ -214,6 +220,7 @@ Model {
 	  ConditionallyExecuteInputs on
 	  InlineParams		  off
 	  UseIntDivNetSlope	  off
+	  UseFloatMulNetSlope	  off
 	  UseSpecifiedMinMax	  off
 	  InlineInvariantSignals  off
 	  OptimizeBlockIOStorage  on
@@ -250,7 +257,7 @@ Model {
 	}
 	Simulink.DebuggingCC {
 	  $ObjectID		  6
-	  Version		  "1.11.0"
+	  Version		  "1.11.1"
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
 	  ArrayBoundsChecking	  "none"
@@ -305,6 +312,7 @@ Model {
 	  UnconnectedOutputMsg	  "warning"
 	  UnconnectedLineMsg	  "warning"
 	  SFcnCompatibilityMsg	  "none"
+	  FrameProcessingCompatibilityMsg "warning"
 	  UniqueDataStoreMsg	  "none"
 	  BusObjectLabelMismatch  "warning"
 	  RootOutportRequireBusObject "warning"
@@ -333,10 +341,11 @@ Model {
 	  SFInvalidInputDataAccessInChartInitDiag "warning"
 	  SFNoUnconditionalDefaultTransitionDiag "warning"
 	  SFTransitionOutsideNaturalParentDiag "warning"
+	  SFUnconditionalTransitionShadowingDiag "warning"
 	}
 	Simulink.HardwareCC {
 	  $ObjectID		  7
-	  Version		  "1.11.0"
+	  Version		  "1.11.1"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
 	  ProdBitPerInt		  32
@@ -373,7 +382,7 @@ Model {
 	}
 	Simulink.ModelReferenceCC {
 	  $ObjectID		  8
-	  Version		  "1.11.0"
+	  Version		  "1.11.1"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
 	  CheckModelReferenceTargetMessage "error"
 	  EnableParallelModelReferenceBuilds off
@@ -388,7 +397,7 @@ Model {
 	}
 	Simulink.SFSimCC {
 	  $ObjectID		  9
-	  Version		  "1.11.0"
+	  Version		  "1.11.1"
 	  SFSimEnableDebug	  on
 	  SFSimOverflowDetection  on
 	  SFSimEcho		  on
@@ -403,7 +412,7 @@ Model {
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
 	  $ObjectID		  10
-	  Version		  "1.11.0"
+	  Version		  "1.11.1"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    8
@@ -456,7 +465,7 @@ Model {
 	    Dimension		    2
 	    Simulink.CodeAppCC {
 	      $ObjectID		      11
-	      Version		      "1.11.0"
+	      Version		      "1.11.1"
 	      Array {
 		Type			"Cell"
 		Dimension		21
@@ -521,7 +530,7 @@ Model {
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
 	      $ObjectID		      12
-	      Version		      "1.11.0"
+	      Version		      "1.11.1"
 	      Array {
 		Type			"Cell"
 		Dimension		16
@@ -549,9 +558,7 @@ Model {
 	      TargetFunctionLibrary   "ANSI_C"
 	      UtilityFuncGeneration   "Auto"
 	      ERTMultiwordTypeDef     "System defined"
-	      FunctionExecutionProfile off
 	      CodeExecutionProfiling  off
-	      ERTCodeCoverageTool     "None"
 	      ERTMultiwordLength      256
 	      MultiwordLength	      2048
 	      GenerateFullHeader      on
@@ -561,6 +568,7 @@ Model {
 	      ModelReferenceCompliant on
 	      ParMdlRefBuildCompliant on
 	      CompOptLevelCompliant   on
+	      ConcurrentExecutionCompliant on
 	      IncludeMdlTerminateFcn  on
 	      GeneratePreprocessorConditionals "Disable all"
 	      CombineOutputUpdateFcns off
@@ -602,11 +610,31 @@ Model {
 	    PropName		    "Components"
 	  }
 	}
+	SSC.SimscapeCC {
+	  $ObjectID		  13
+	  Version		  "1.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    "Name"
+	    PropName		    "DisabledProps"
+	  }
+	  Name			  "Simscape"
+	  EditingMode		  "Full"
+	  ExplicitSolverDiagnosticOptions "warning"
+	  InputDerivativeDiagnosticOptions "warning"
+	  GlobalZcOffDiagnosticOptions "warning"
+	  SimscapeLogType	  "none"
+	  SimscapeLogName	  "simlog"
+	  SimscapeLogDecimation	  1
+	  SimscapeLogLimitData	  on
+	  SimscapeLogDataHistory  5000
+	}
 	PropName		"Components"
       }
       Name		      "Configuration"
       CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition     [ 520, 225, 1400, 855 ] 
+      ConfigPrmDlgPosition     [ 504, 70, 1417, 904 ] 
     }
     PropName		    "ConfigurationSets"
   }
@@ -724,15 +752,11 @@ Model {
       BlockRotation	      270
       BlockMirror	      on
       AttributesFormatString  "\\n"
-      LibraryVersion	      "1.1955"
+      LibraryVersion	      "1.2088"
       FontName		      "Verdana"
       FontSize		      11
       SourceBlock	      "powerlib/Elements/Three-Phase\nParallel RLC Load"
       SourceType	      "Three-Phase Parallel RLC Load"
-      PhysicalDomain	      "powersysdomain"
-      SubClassName	      "unknown"
-      LeftPortType	      "p1"
-      RightPortType	      "p1"
       LConnTagsString	      "A|B|C"
       Configuration	      "Y (grounded)"
       NominalVoltage	      "480"
@@ -766,20 +790,11 @@ Model {
       SID		      "4"
       Ports		      [0, 0, 0, 0, 0, 0, 3]
       Position		      [120, 333, 205, 407]
-      LibraryVersion	      "1.1955"
+      LibraryVersion	      "1.2088"
       FontName		      "Verdana"
       FontSize		      11
       SourceBlock	      "powerlib/Electrical\nSources/Three-Phase Source"
       SourceType	      "Three-Phase Source"
-      ShowPortLabels	      "FromPortIcon"
-      SystemSampleTime	      "-1"
-      FunctionWithSeparateData off
-      RTWMemSecFuncInitTerm   "Inherit from model"
-      RTWMemSecFuncExecute    "Inherit from model"
-      RTWMemSecDataConstants  "Inherit from model"
-      RTWMemSecDataInternal   "Inherit from model"
-      RTWMemSecDataParameters "Inherit from model"
-      GeneratePreprocessorConditionals off
       Voltage		      "480"
       PhaseAngle	      "0"
       Frequency		      "60"
@@ -801,7 +816,7 @@ Model {
       Name		      "Load Power"
       SID		      "9"
       Ports		      [2]
-      Position		      [740, 211, 770, 244]
+      Position		      [740, 206, 770, 239]
       BackgroundColor	      "orange"
       Floating		      off
       Location		      [29, 70, 651, 517]
@@ -814,6 +829,16 @@ Model {
 	axes1			"%<SignalLabel>"
 	axes2			"%<SignalLabel>"
       }
+      List {
+	ListType		ScopeGraphics
+	FigureColor		"[0.5 0.5 0.5]"
+	AxesColor		"[0 0 0]"
+	AxesTickColor		"[1 1 1]"
+	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	LineStyles		"-|-|-|-|-|-"
+	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
+	MarkerStyles		"none|none|none|none|none|none"
+      }
       YMin		      "-5~-5"
       YMax		      "5~5"
       DataFormat	      "StructureWithTime"
@@ -825,7 +850,7 @@ Model {
       Name		      "Mux"
       SID		      "7"
       Ports		      [2, 1]
-      Position		      [370, 164, 375, 271]
+      Position		      [370, 146, 375, 279]
       ShowName		      off
       Inputs		      "2"
       DisplayOption	      "bar"
@@ -848,9 +873,9 @@ Model {
       BlockType		      Step
       Name		      "Real Power Demand"
       SID		      "14"
-      Position		      [260, 175, 290, 205]
+      Position		      [265, 165, 295, 195]
       BackgroundColor	      "lightBlue"
-      Time		      "2"
+      Time		      "0.5"
       Before		      "5e3"
       After		      "10e3"
       SampleTime	      "0"
@@ -879,8 +904,18 @@ Model {
 	axes1			"%<SignalLabel>"
 	axes2			"%<SignalLabel>"
       }
-      YMin		      "-5~-5"
-      YMax		      "5~5"
+      List {
+	ListType		ScopeGraphics
+	FigureColor		"[0.5 0.5 0.5]"
+	AxesColor		"[0 0 0]"
+	AxesTickColor		"[1 1 1]"
+	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	LineStyles		"-|-|-|-|-|-"
+	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
+	MarkerStyles		"none|none|none|none|none|none"
+      }
+      YMin		      "260~0"
+      YMax		      "400~175"
       SaveName		      "ScopeData1"
       DataFormat	      "StructureWithTime"
       LimitDataPoints	      off
@@ -892,20 +927,11 @@ Model {
       SID		      "2"
       Ports		      [1, 1, 0, 0, 0, 3]
       Position		      [490, 310, 565, 405]
-      LibraryVersion	      "1.1955"
+      LibraryVersion	      "1.2088"
       FontName		      "Verdana"
       FontSize		      11
       SourceBlock	      "powerlib/Elements/Three-Phase\nDynamic Load"
       SourceType	      "Three-Phase Dynamic Load"
-      ShowPortLabels	      "FromPortIcon"
-      SystemSampleTime	      "-1"
-      FunctionWithSeparateData off
-      RTWMemSecFuncInitTerm   "Inherit from model"
-      RTWMemSecFuncExecute    "Inherit from model"
-      RTWMemSecDataConstants  "Inherit from model"
-      RTWMemSecDataInternal   "Inherit from model"
-      RTWMemSecDataParameters "Inherit from model"
-      GeneratePreprocessorConditionals off
       NominalVoltage	      "[480 60]"
       ActiveReactivePowers    "[100e3 0e3]"
       PositiveSequence	      " [1 0]"
@@ -921,20 +947,11 @@ Model {
       SID		      "18"
       Ports		      [0, 2, 0, 0, 0, 3, 3]
       Position		      [250, 332, 300, 408]
-      LibraryVersion	      "1.1955"
+      LibraryVersion	      "1.2088"
       FontName		      "Verdana"
       FontSize		      11
       SourceBlock	      "powerlib/Measurements/Three-Phase\nV-I Measurement"
       SourceType	      "Three-Phase VI Measurement"
-      ShowPortLabels	      "FromPortIcon"
-      SystemSampleTime	      "-1"
-      FunctionWithSeparateData off
-      RTWMemSecFuncInitTerm   "Inherit from model"
-      RTWMemSecFuncExecute    "Inherit from model"
-      RTWMemSecDataConstants  "Inherit from model"
-      RTWMemSecDataInternal   "Inherit from model"
-      RTWMemSecDataParameters "Inherit from model"
-      GeneratePreprocessorConditionals off
       VoltageMeasurement      "phase-to-ground"
       SetLabelV		      off
       LabelV		      "Vabc"
@@ -957,22 +974,14 @@ Model {
       Ports		      []
       Position		      [40, 45, 106, 84]
       Priority		      "1"
-      LibraryVersion	      "1.1955"
+      LibraryVersion	      "1.2088"
       UserDataPersistent      on
       UserData		      "DataTag0"
       FontName		      "Verdana"
       SourceBlock	      "powerlib/powergui"
       SourceType	      "PSB option menu block"
-      ShowPortLabels	      "FromPortIcon"
-      SystemSampleTime	      "-1"
-      FunctionWithSeparateData off
-      RTWMemSecFuncInitTerm   "Inherit from model"
-      RTWMemSecFuncExecute    "Inherit from model"
-      RTWMemSecDataConstants  "Inherit from model"
-      RTWMemSecDataInternal   "Inherit from model"
-      RTWMemSecDataParameters "Inherit from model"
-      GeneratePreprocessorConditionals off
       SimulationMode	      "Phasor"
+      SolverType	      "Tustin"
       SampleTime	      "50e-6"
       frequency		      "60"
       SPID		      off
@@ -1084,7 +1093,7 @@ Model {
       SrcPort		      1
       Points		      [45, 0]
       Branch {
-	Points			[0, 100]
+	Points			[0, 105]
 	DstBlock		"Three-Phase\nControllable Load"
 	DstPort			1
       }
@@ -1106,7 +1115,7 @@ Model {
       Labels		      [2, 0]
       SrcBlock		      "Bus\nSelector"
       SrcPort		      1
-      Points		      [40, 0; 0, -125]
+      Points		      [40, 0; 0, -130]
       DstBlock		      "Load Power"
       DstPort		      2
     }
@@ -1144,6 +1153,16 @@ Model {
       Points		      [20, 0; 0, -15]
       DstBlock		      "Source VI"
       DstPort		      2
+    }
+    Annotation {
+      Name		      "Time Step Testing...\n\nFixed-step ode3:\n1e-6 ok\n1e-5 ok\n1e-4 ok\n1e-3 breaks\nInstability start"
+      "s around 2.5e-4\n\nFixed-step ode4:\n1e-4 ok\n1e-3 breaks\n\nFixed-step ode5:\n1e-4 ok\n1e-3 breaks\n\nFixed-ste"
+      "p ode8:\n1e-4 ok\n1e-3 breaks\n\nNOTE: InitFcn now sets Ts = 1e-5 (10 us),\ncomment out in the model callbacks t"
+      "o override"
+      Position		      [723, 442]
+      HorizontalAlignment     "left"
+      Interpreter	      "tex"
+      FontName		      "Arial"
     }
   }
 }

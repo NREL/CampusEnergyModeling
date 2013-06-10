@@ -1,0 +1,60 @@
+Program Version,EnergyPlus-Windows-64 8.0.0.008, YMD=2013.06.10 10:24
+1,5,Environment Title[],Latitude[deg],Longitude[deg],Time Zone[],Elevation[m]
+2,6,Day of Simulation[],Month[],Day of Month[],DST Indicator[1=yes 0=no],Hour[],StartMinute[],EndMinute[],DayType
+3,3,Cumulative Day of Simulation[],Month[],Day of Month[],DST Indicator[1=yes 0=no],DayType  ! When Daily Meters Requested
+4,2,Cumulative Days of Simulation[],Month[]  ! When Monthly Meters Requested
+5,1,Cumulative Days of Simulation[] ! When Run Period Meters Requested
+456,9,Cooling:Electricity [J] !Monthly  [Value,Min,Day,Hour,Minute,Max,Day,Hour,Minute]
+514,9,Heating:Gas [J] !Monthly  [Value,Min,Day,Hour,Minute,Max,Day,Hour,Minute]
+557,9,Fans:Electricity [J] !Monthly  [Value,Min,Day,Hour,Minute,Max,Day,Hour,Minute]
+482,9,HeatingCoils:EnergyTransfer [J] !Monthly  [Value,Min,Day,Hour,Minute,Max,Day,Hour,Minute]
+433,9,CoolingCoils:EnergyTransfer [J] !Monthly  [Value,Min,Day,Hour,Minute,Max,Day,Hour,Minute]
+41,9,InteriorLights:Electricity [J] !Monthly  [Value,Min,Day,Hour,Minute,Max,Day,Hour,Minute]
+135,9,InteriorEquipment:Electricity [J] !Monthly  [Value,Min,Day,Hour,Minute,Max,Day,Hour,Minute]
+457,11,Cooling:Electricity [J] !RunPeriod [Value,Min,Month,Day,Hour,Minute,Max,Month,Day,Hour,Minute]
+515,11,Heating:Gas [J] !RunPeriod [Value,Min,Month,Day,Hour,Minute,Max,Month,Day,Hour,Minute]
+558,11,Fans:Electricity [J] !RunPeriod [Value,Min,Month,Day,Hour,Minute,Max,Month,Day,Hour,Minute]
+483,11,HeatingCoils:EnergyTransfer [J] !RunPeriod [Value,Min,Month,Day,Hour,Minute,Max,Month,Day,Hour,Minute]
+434,11,CoolingCoils:EnergyTransfer [J] !RunPeriod [Value,Min,Month,Day,Hour,Minute,Max,Month,Day,Hour,Minute]
+42,11,InteriorLights:Electricity [J] !RunPeriod [Value,Min,Month,Day,Hour,Minute,Max,Month,Day,Hour,Minute]
+136,11,InteriorEquipment:Electricity [J] !RunPeriod [Value,Min,Month,Day,Hour,Minute,Max,Month,Day,Hour,Minute]
+11,9,Electricity:Facility [J] !Monthly  [Value,Min,Day,Hour,Minute,Max,Day,Hour,Minute]
+21,9,Electricity:Building [J] !Monthly  [Value,Min,Day,Hour,Minute,Max,Day,Hour,Minute]
+446,9,Electricity:HVAC [J] !Monthly  [Value,Min,Day,Hour,Minute,Max,Day,Hour,Minute]
+494,9,Gas:Facility [J] !Monthly  [Value,Min,Day,Hour,Minute,Max,Day,Hour,Minute]
+504,9,Gas:HVAC [J] !Monthly  [Value,Min,Day,Hour,Minute,Max,Day,Hour,Minute]
+12,11,Electricity:Facility [J] !RunPeriod [Value,Min,Month,Day,Hour,Minute,Max,Month,Day,Hour,Minute]
+22,11,Electricity:Building [J] !RunPeriod [Value,Min,Month,Day,Hour,Minute,Max,Month,Day,Hour,Minute]
+447,11,Electricity:HVAC [J] !RunPeriod [Value,Min,Month,Day,Hour,Minute,Max,Month,Day,Hour,Minute]
+495,11,Gas:Facility [J] !RunPeriod [Value,Min,Month,Day,Hour,Minute,Max,Month,Day,Hour,Minute]
+505,11,Gas:HVAC [J] !RunPeriod [Value,Min,Month,Day,Hour,Minute,Max,Month,Day,Hour,Minute]
+End of Data Dictionary
+1,Chicago Ohare Intl Ap IL USA TMY3 WMO#=725300,  41.98, -87.92,  -6.00, 201.00
+4,1, 6
+11,949158444.487119,2598750., 1, 1,15,21279406.0486874, 1,11,15
+21,597861000.,2598750., 1, 1,15,12276000., 1, 9,15
+41,483516000.,2178000., 1, 1,15,9801000., 1, 9,15
+135,114345000.,420750., 1, 1,15,2475000., 1, 9,15
+433,864322054.053347,0.0, 1, 1,15,24324922.7013329, 1, 8,15
+446,351297444.487118,0.0, 1, 1,15,9003406.04868744, 1,11,15
+456,252184301.629976,0.0, 1, 1,15,6750834.62011601, 1,11,15
+482,0.0,0.0, 1, 1,15,0.0, 1, 1,15
+494,0.0,0.0, 1, 1,15,0.0, 1, 1,15
+504,0.0,0.0, 1, 1,15,0.0, 1, 1,15
+514,0.0,0.0, 1, 1,15,0.0, 1, 1,15
+557,99113142.8571429,0.0, 1, 1,15,2252571.42857143, 1, 8,15
+5,1
+12,949158444.487119,2598750., 6, 1, 1,15,21279406.0486874, 6, 1,11,15
+22,597861000.,2598750., 6, 1, 1,15,12276000., 6, 1, 9,15
+42,483516000.,2178000., 6, 1, 1,15,9801000., 6, 1, 9,15
+136,114345000.,420750., 6, 1, 1,15,2475000., 6, 1, 9,15
+434,864322054.053347,0.0, 6, 1, 1,15,24324922.7013329, 6, 1, 8,15
+447,351297444.487118,0.0, 6, 1, 1,15,9003406.04868744, 6, 1,11,15
+457,252184301.629976,0.0, 6, 1, 1,15,6750834.62011601, 6, 1,11,15
+483,0.0,0.0, 6, 1, 1,15,0.0, 6, 1, 1,15
+495,0.0,0.0, 6, 1, 1,15,0.0, 6, 1, 1,15
+505,0.0,0.0, 6, 1, 1,15,0.0, 6, 1, 1,15
+515,0.0,0.0, 6, 1, 1,15,0.0, 6, 1, 1,15
+558,99113142.8571429,0.0, 6, 1, 1,15,2252571.42857143, 6, 1, 8,15
+End of Data
+ Number of Records Written=          24

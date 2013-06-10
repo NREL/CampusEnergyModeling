@@ -1,0 +1,987 @@
+Program Version:,EnergyPlus-Windows-64 8.0.0.008, YMD=2013.06.10 10:24
+ Tabular Output Report in Format: ,Comma
+
+Building:,Building
+Environment:,Chicago Ohare Intl Ap IL USA TMY3 WMO#=725300
+
+----------------------------------------------------------------------------------------------------
+REPORT:,Annual Building Utility Performance Summary
+FOR:,Entire Facility
+Values gathered over        24.00 hours
+
+WARNING: THE REPORT DOES NOT REPRESENT A FULL ANNUAL SIMULATION.
+
+
+
+Site and Source Energy
+
+,,Total Energy [GJ],Energy Per Total Building Area [MJ/m2],Energy Per Conditioned Building Area [MJ/m2]
+,Total Site Energy,0.95,1.02,1.53
+,Net Site Energy,0.95,1.02,1.53
+,Total Source Energy,3.01,3.24,4.86
+,Net Source Energy,3.01,3.24,4.86
+
+
+Site to Source Energy Conversion Factors
+
+,,Site=>Source Conversion Factor
+,Electricity,3.167
+,Natural Gas,1.084
+,District Cooling,1.056
+,District Heating,3.613
+,Steam,0.300
+,Gasoline,1.050
+,Diesel,1.050
+,Coal,1.050
+,Fuel Oil #1,1.050
+,Fuel Oil #2,1.050
+,Propane,1.050
+,Other Fuel 1,1.000
+,Other Fuel 2,1.000
+
+
+Building Area
+
+,,Area [m2]
+,Total Building Area,928.11
+,Net Conditioned Building Area,618.74
+,Unconditioned Building Area,309.37
+
+
+End Uses
+
+,,Electricity [GJ],Natural Gas [GJ],Additional Fuel [GJ],District Cooling [GJ],District Heating [GJ],Water [m3]
+,Heating,0.00,0.00,0.00,0.00,0.00,0.00
+,Cooling,0.25,0.00,0.00,0.00,0.00,0.00
+,Interior Lighting,0.48,0.00,0.00,0.00,0.00,0.00
+,Exterior Lighting,0.00,0.00,0.00,0.00,0.00,0.00
+,Interior Equipment,0.11,0.00,0.00,0.00,0.00,0.00
+,Exterior Equipment,0.00,0.00,0.00,0.00,0.00,0.00
+,Fans,0.10,0.00,0.00,0.00,0.00,0.00
+,Pumps,0.00,0.00,0.00,0.00,0.00,0.00
+,Heat Rejection,0.00,0.00,0.00,0.00,0.00,0.00
+,Humidification,0.00,0.00,0.00,0.00,0.00,0.00
+,Heat Recovery,0.00,0.00,0.00,0.00,0.00,0.00
+,Water Systems,0.00,0.00,0.00,0.00,0.00,0.00
+,Refrigeration,0.00,0.00,0.00,0.00,0.00,0.00
+,Generators,0.00,0.00,0.00,0.00,0.00,0.00
+,,,,,,,
+,Total End Uses,0.95,0.00,0.00,0.00,0.00,0.00
+
+
+End Uses By Subcategory
+
+,,Subcategory,Electricity [GJ],Natural Gas [GJ],Additional Fuel [GJ],District Cooling [GJ],District Heating [GJ],Water [m3]
+,Heating,General,0.00,0.00,0.00,0.00,0.00,0.00
+,Cooling,General,0.25,0.00,0.00,0.00,0.00,0.00
+,Interior Lighting,GeneralLights,0.48,0.00,0.00,0.00,0.00,0.00
+,Exterior Lighting,General,0.00,0.00,0.00,0.00,0.00,0.00
+,Interior Equipment,General,0.11,0.00,0.00,0.00,0.00,0.00
+,Exterior Equipment,General,0.00,0.00,0.00,0.00,0.00,0.00
+,Fans,General,0.10,0.00,0.00,0.00,0.00,0.00
+,Pumps,General,0.00,0.00,0.00,0.00,0.00,0.00
+,Heat Rejection,General,0.00,0.00,0.00,0.00,0.00,0.00
+,Humidification,General,0.00,0.00,0.00,0.00,0.00,0.00
+,Heat Recovery,General,0.00,0.00,0.00,0.00,0.00,0.00
+,Water Systems,General,0.00,0.00,0.00,0.00,0.00,0.00
+,Refrigeration,General,0.00,0.00,0.00,0.00,0.00,0.00
+,Generators,General,0.00,0.00,0.00,0.00,0.00,0.00
+
+
+Normalized Metrics
+
+Utility Use Per Conditioned Floor Area
+
+,,Electricity Intensity [MJ/m2],Natural Gas Intensity [MJ/m2],Additional Fuel Intensity [MJ/m2],District Cooling Intensity [MJ/m2],District Heating Intensity [MJ/m2],Water Intensity [m3/m2]
+,Lighting,0.78,0.00,0.00,0.00,0.00,0.00
+,HVAC,0.57,0.00,0.00,0.00,0.00,0.00
+,Other,0.18,0.00,0.00,0.00,0.00,0.00
+,Total,1.53,0.00,0.00,0.00,0.00,0.00
+
+
+Utility Use Per Total Floor Area
+
+,,Electricity Intensity [MJ/m2],Natural Gas Intensity [MJ/m2],Additional Fuel Intensity [MJ/m2],District Cooling Intensity [MJ/m2],District Heating Intensity [MJ/m2],Water Intensity [m3/m2]
+,Lighting,0.52,0.00,0.00,0.00,0.00,0.00
+,HVAC,0.38,0.00,0.00,0.00,0.00,0.00
+,Other,0.12,0.00,0.00,0.00,0.00,0.00
+,Total,1.02,0.00,0.00,0.00,0.00,0.00
+
+
+Electric Loads Satisfied
+
+,,Electricity [GJ],Percent Electricity [%]
+,Fuel-Fired Power Generation,0.00,0.00
+,High Temperature Geothermal*,0.00,0.00
+,Photovoltaic Power,0.00,0.00
+,Wind Power,0.00,0.00
+,Net Decrease in On-Site Storage,0.00,0.00
+,Total On-Site Electric Sources,0.00,0.00
+,,,
+,Electricity Coming From Utility,0.95,100.00
+,Surplus Electricity Going To Utility,0.00,0.00
+,Net Electricity From Utility,0.95,100.00
+,,,
+,Total On-Site and Utility Electric Sources,0.95,100.00
+,Total Electricity End Uses,0.95,100.00
+
+
+On-Site Thermal Sources
+
+,,Heat [GJ],Percent Heat [%]
+,Water-Side Heat Recovery,0.00,
+,Air to Air Heat Recovery for Cooling,0.00,
+,Air to Air Heat Recovery for Heating,0.00,
+,High-Temperature Geothermal*,0.00,
+,Solar Water Thermal,0.00,
+,Solar Air Thermal,0.00,
+,Total On-Site Thermal Sources,0.00,
+
+
+Water Source Summary
+
+,,Water [m3],Percent Water [%]
+,Rainwater Collection,0.00,-
+,Condensate Collection,0.00,-
+,Groundwater Well,0.00,-
+,Total On Site Water Sources,0.00,-
+,-,-,-
+,Initial Storage,0.00,-
+,Final Storage,0.00,-
+,Change in Storage,0.00,-
+,-,-,-
+,Water Supplied by Utility,0.00,-
+,-,-,-
+,Total On Site, Change in Storage, and Utility Water Sources,0.00,-
+,Total Water End Uses,0.00,-
+
+
+Comfort and Setpoint Not Met Summary
+
+,,Degrees [deltaC]
+,Tolerance for Zone Heating Setpoint Not Met Time,0.20
+,Tolerance for Zone Cooling Setpoint Not Met Time,0.20
+
+
+,,Facility [Hours]
+,Time Setpoint Not Met During Occupied Heating,0.00
+,Time Setpoint Not Met During Occupied Cooling,0.00
+,Time Not Comfortable Based on Simple ASHRAE 55-2004,1.75
+
+
+Note 1: An asterisk (*) indicates that the feature is not yet implemented.
+
+----------------------------------------------------------------------------------------------------
+REPORT:,Input Verification and Results Summary
+FOR:,Entire Facility
+General
+
+,,Value
+,Program Version and Build,EnergyPlus-Windows-64 8.0.0.008, YMD=2013.06.10 10:24
+,RunPeriod,Chicago Ohare Intl Ap IL USA TMY3 WMO#=725300
+,Weather File,Chicago Ohare Intl Ap IL USA TMY3 WMO#=725300
+,Latitude [deg],41.98
+,Longitude [deg],-87.9
+,Elevation [m],201.00
+,Time Zone,-6.0
+,North Axis Angle [deg],0.00
+,Rotation for Appendix G [deg],0.00
+,Hours Simulated [hrs],24.00
+
+
+ENVELOPE
+
+Window-Wall Ratio
+
+,,Total,North (315 to 45 deg),East (45 to 135 deg),South (135 to 225 deg),West (225 to 315 deg)
+,Gross Wall Area [m2],471.78,117.94,117.94,117.94,117.94
+,Window Opening Area [m2],93.45,23.40,23.32,23.40,23.32
+,Window-Wall Ratio [%],19.81,19.84,19.78,19.84,19.77
+
+
+Conditioned Window-Wall Ratio
+
+,,Total,North (315 to 45 deg),East (45 to 135 deg),South (135 to 225 deg),West (225 to 315 deg)
+,Gross Wall Area [m2],471.78,117.94,117.94,117.94,117.94
+,Window Opening Area [m2],93.45,23.40,23.32,23.40,23.32
+,Window-Wall Ratio [%],19.81,19.84,19.78,19.84,19.77
+
+
+Skylight-Roof Ratio
+
+,,Total
+,Gross Roof Area [m2],309.37
+,Skylight Area [m2],0.00
+,Skylight-Roof Ratio [%],0.00
+
+
+PERFORMANCE
+
+Zone Summary
+
+,,Area [m2],Conditioned (Y/N),Part of Total Floor Area (Y/N),Volume [m3],Multipliers,Gross Wall Area [m2],Window Glass Area [m2],Lighting [W/m2],People [m2 per person],Plug and Process [W/m2]
+,ZSF1,154.68,Yes,Yes,453.12,1.00,117.94,23.22,19.5559,47.30,4.4445
+,ZNF1,154.68,Yes,Yes,453.12,1.00,117.94,23.22,19.5559,47.30,4.4445
+,ZSF2,154.68,Yes,Yes,453.12,1.00,117.94,23.57,19.5559,47.30,4.4445
+,ZNF2,154.68,Yes,Yes,453.12,1.00,117.94,23.44,19.5559,47.30,4.4445
+,BASE-1,309.37,No,Yes,724.99,1.00,0.00,0.00,0.0000,,2.3467
+,Total,928.11,,,2537.47,,471.78,93.45,13.0373,70.96,3.7452
+,Conditioned Total,618.74,,,1812.48,,471.78,93.45,19.5559,47.30,4.4445
+,Unconditioned Total,309.37,,,724.99,,0.00,0.00,0.0000,,2.3467
+,Not Part of Total,0.00,,,0.00,,0.00,0.00,,,
+
+
+----------------------------------------------------------------------------------------------------
+REPORT:,Demand End Use Components Summary
+FOR:,Entire Facility
+End Uses
+
+,,Electricity [W],Natural Gas [W],Propane [W],District Cooling [W],Steam [W],Water [m3/s]
+,Time of Peak,01-JUN-10:15,-,-,-,-,-
+,Heating,0.00,0.00,0.00,0.00,0.00,0.00
+,Cooling,7500.93,0.00,0.00,0.00,0.00,0.00
+,Interior Lighting,10890.00,0.00,0.00,0.00,0.00,0.00
+,Exterior Lighting,0.00,0.00,0.00,0.00,0.00,0.00
+,Interior Equipment,2750.00,0.00,0.00,0.00,0.00,0.00
+,Exterior Equipment,0.00,0.00,0.00,0.00,0.00,0.00
+,Fans,2502.86,0.00,0.00,0.00,0.00,0.00
+,Pumps,0.00,0.00,0.00,0.00,0.00,0.00
+,Heat Rejection,0.00,0.00,0.00,0.00,0.00,0.00
+,Humidification,0.00,0.00,0.00,0.00,0.00,0.00
+,Heat Recovery,0.00,0.00,0.00,0.00,0.00,0.00
+,Water Systems,0.00,0.00,0.00,0.00,0.00,0.00
+,Refrigeration,0.00,0.00,0.00,0.00,0.00,0.00
+,Generators,0.00,0.00,0.00,0.00,0.00,0.00
+,,,,,,,
+,Total End Uses,23643.78,0.00,0.00,0.00,0.00,0.00
+
+
+End Uses By Subcategory
+
+,,Subcategory,Electricity [W],Natural Gas [W],Propane [W],District Cooling [W],Steam [W],Water [m3/s]
+,Heating,General,0.00,0.00,0.00,0.00,0.00,0.00
+,Cooling,General,7500.93,0.00,0.00,0.00,0.00,0.00
+,Interior Lighting,GeneralLights,10890.00,0.00,0.00,0.00,0.00,0.00
+,Exterior Lighting,General,0.00,0.00,0.00,0.00,0.00,0.00
+,Interior Equipment,General,2750.00,0.00,0.00,0.00,0.00,0.00
+,Exterior Equipment,General,0.00,0.00,0.00,0.00,0.00,0.00
+,Fans,General,2502.86,0.00,0.00,0.00,0.00,0.00
+,Pumps,General,0.00,0.00,0.00,0.00,0.00,0.00
+,Heat Rejection,General,0.00,0.00,0.00,0.00,0.00,0.00
+,Humidification,General,0.00,0.00,0.00,0.00,0.00,0.00
+,Heat Recovery,General,0.00,0.00,0.00,0.00,0.00,0.00
+,Water Systems,General,0.00,0.00,0.00,0.00,0.00,0.00
+,Refrigeration,General,0.00,0.00,0.00,0.00,0.00,0.00
+,Generators,General,0.00,0.00,0.00,0.00,0.00,0.00
+
+
+----------------------------------------------------------------------------------------------------
+REPORT:,Source Energy End Use Components Summary
+FOR:,Entire Facility
+Values gathered over        24.00 hours
+
+WARNING: THE REPORT DOES NOT REPRESENT A FULL ANNUAL SIMULATION.
+
+
+
+Source Energy End Use Components Summary
+
+,,Source Electricity [GJ],Source Natural Gas [GJ],Source Additional Fuel [GJ],Source District Cooling [GJ],Source District Heating [GJ]
+,Heating,0.00,0.00,0.00,0.00,0.00
+,Cooling,0.80,0.00,0.00,0.00,0.00
+,Interior Lighting,1.53,0.00,0.00,0.00,0.00
+,Exterior Lighting,0.00,0.00,0.00,0.00,0.00
+,Interior Equipment,0.36,0.00,0.00,0.00,0.00
+,Exterior Equipment,0.00,0.00,0.00,0.00,0.00
+,Fans,0.31,0.00,0.00,0.00,0.00
+,Pumps,0.00,0.00,0.00,0.00,0.00
+,Heat Rejection,0.00,0.00,0.00,0.00,0.00
+,Humidification,0.00,0.00,0.00,0.00,0.00
+,Heat Recovery,0.00,0.00,0.00,0.00,0.00
+,Water Systems,0.00,0.00,0.00,0.00,0.00
+,Refrigeration,0.00,0.00,0.00,0.00,0.00
+,Generators,0.00,0.00,0.00,0.00,0.00
+,,,,,,
+,Total Source Energy End Use Components,3.01,0.00,0.00,0.00,0.00
+
+
+Normalized Metrics
+
+Source Energy End Use Components Per Conditioned Floor Area
+
+,,Source Electricity [MJ/m2],Source Natural Gas [MJ/m2],Source Additional Fuel [MJ/m2],Source District Cooling [MJ/m2],Source District Heating [MJ/m2]
+,Heating,0.00,0.00,0.00,0.00,0.00
+,Cooling,1.29,0.00,0.00,0.00,0.00
+,Interior Lighting,2.47,0.00,0.00,0.00,0.00
+,Exterior Lighting,0.00,0.00,0.00,0.00,0.00
+,Interior Equipment,0.59,0.00,0.00,0.00,0.00
+,Exterior Equipment,0.00,0.00,0.00,0.00,0.00
+,Fans,0.51,0.00,0.00,0.00,0.00
+,Pumps,0.00,0.00,0.00,0.00,0.00
+,Heat Rejection,0.00,0.00,0.00,0.00,0.00
+,Humidification,0.00,0.00,0.00,0.00,0.00
+,Heat Recovery,0.00,0.00,0.00,0.00,0.00
+,Water Systems,0.00,0.00,0.00,0.00,0.00
+,Refrigeration,0.00,0.00,0.00,0.00,0.00
+,Generators,0.00,0.00,0.00,0.00,0.00
+,,,,,,
+,Total Source Energy End Use Components,4.86,0.00,0.00,0.00,0.00
+
+
+Source Energy End Use Components Per Total Floor Area
+
+,,Source Electricity [MJ/m2],Source Natural Gas [MJ/m2],Source Additional Fuel [MJ/m2],Source District Cooling [MJ/m2],Source District Heating [MJ/m2]
+,Heating,0.00,0.00,0.00,0.00,0.00
+,Cooling,1.29,0.00,0.00,0.00,0.00
+,Interior Lighting,2.47,0.00,0.00,0.00,0.00
+,Exterior Lighting,0.00,0.00,0.00,0.00,0.00
+,Interior Equipment,0.59,0.00,0.00,0.00,0.00
+,Exterior Equipment,0.00,0.00,0.00,0.00,0.00
+,Fans,0.51,0.00,0.00,0.00,0.00
+,Pumps,0.00,0.00,0.00,0.00,0.00
+,Heat Rejection,0.00,0.00,0.00,0.00,0.00
+,Humidification,0.00,0.00,0.00,0.00,0.00
+,Heat Recovery,0.00,0.00,0.00,0.00,0.00
+,Water Systems,0.00,0.00,0.00,0.00,0.00
+,Refrigeration,0.00,0.00,0.00,0.00,0.00
+,Generators,0.00,0.00,0.00,0.00,0.00
+,,,,,,
+,Total Source Energy End Use Components,4.86,0.00,0.00,0.00,0.00
+
+
+----------------------------------------------------------------------------------------------------
+REPORT:,Climatic Data Summary
+FOR:,Entire Facility
+SizingPeriod:DesignDay
+
+,,Maximum Dry Bulb [C],Daily Temperature Range [deltaC],Humidity Value,Humidity Type,Wind Speed [m/s],Wind Direction
+,CHICAGO_IL_USA ANNUAL HEATING 99% DESIGN CONDITIONS DB,-17.30,0.00,-17.30,Wetbulb [C],4.90,270.00
+,CHICAGO_IL_USA ANNUAL COOLING 1% DESIGN CONDITIONS DB/MCWB,31.50,10.70,23.00,Wetbulb [C],5.30,230.00
+
+
+Weather Statistics File
+
+,,Value
+,Reference,USA_IL_Chicago-OHare.Intl.AP.725300_TMY3
+,Site:Location,Chicago Ohare Intl Ap IL USA
+,Latitude,{N 41° 58'}
+,Longitude,{W  87° 55'}
+,Time Zone,{GMT -6.0 Hours}
+,Elevation (m) above sea level,201
+,Standard Pressure at Elevation,98934Pa
+,Data Source,TMY3
+,WMO Station,725300
+,Weather File Design Conditions,Climate Design Data 2009 ASHRAE Handbook
+,Heating Design Temperature 99.6% (C),-20°
+,Heating Design Temperature 99% (C),-16.6°
+,Cooling Design Temperature 0.4% (C),33.3°
+,Cooling Design Temperature 1% (C),31.6°
+,Cooling Design Temperature 2% (C),30.1°
+,Maximum Dry Bulb Temperature (C),35.0°
+,Maximum Dry Bulb Occurs on,Jul 19
+,Minimum Dry Bulb Temperature (C),-22.8°
+,Minimum Dry Bulb Occurs on,Jan  7
+,Maximum Dew Point Temperature (C),25.6°
+,Maximum Dew Point Occurs on,Aug  4
+,Minimum Dew Point Temperature (C),-28.3°
+,Minimum Dew Point Occurs on,Jan 27
+,Standard Heating Degree-Days (base 10°C),1685
+,Weather File Heating Degree-Days (base 10°C),1748
+,Standard Cooling Degree-Days (base 18.3°C),468
+,Weather File Cooling Degree-Days (base 18°C),506
+,Köppen Classification,Dfa
+,Köppen Description,Humid continental (hot summer, cold winter, no dry season, lat. 30-60°N)
+,Köppen Recommendation,Unbearably humid periods in summer, but passive cooling is possible
+
+
+----------------------------------------------------------------------------------------------------
+REPORT:,Envelope Summary
+FOR:,Entire Facility
+Opaque Exterior
+
+,,Construction,Reflectance,U-Factor with Film [W/m2-K],U-Factor no Film [W/m2-K],Gross Area [m2],Azimuth [deg],Tilt [deg],Cardinal Direction
+,EWALL,WALLR,0.35,0.654,0.725,29.49,90.00,90.00,E
+,SWALL,WALLR,0.35,0.654,0.725,58.97,180.00,90.00,S
+,WWALL,WALLR,0.35,0.654,0.725,29.49,270.00,90.00,W
+,ZE-W-5,WALLR,0.35,0.654,0.725,29.49,90.00,90.00,E
+,NWALL,WALLR,0.35,0.654,0.725,58.97,0.00,90.00,N
+,ZE-W-8,WALLR,0.35,0.654,0.725,29.49,270.00,90.00,W
+,ZE-W-11,WALLR,0.35,0.654,0.725,29.49,90.00,90.00,E
+,ZE-W-13,WALLR,0.35,0.654,0.725,58.97,180.00,90.00,S
+,ZE-W-15,WALLR,0.35,0.654,0.725,29.49,270.00,90.00,W
+,ZROOF,ROOFR,0.30,0.307,0.326,154.68,180.00,0.00,
+,ZE-W-17,WALLR,0.35,0.654,0.725,29.49,90.00,90.00,E
+,ZE-W-19,WALLR,0.35,0.654,0.725,58.97,0.00,90.00,N
+,ZE-W-21,WALLR,0.35,0.654,0.725,29.49,270.00,90.00,W
+,ZROOF-23,ROOFR,0.30,0.307,0.326,154.68,180.00,0.00,
+,SLAB-1,SLABL,0.35,3.052,11.824,309.37,180.00,180.00,
+
+
+Exterior Fenestration
+
+,,Construction,Glass Area [m2],Frame Area [m2],Divider Area [m2],Area of One Opening [m2],Area of Multiplied Openings [m2],Glass U-Factor [W/m2-K],Glass SHGC,Glass Visible Transmittance,Frame Conductance [W/m2-K],Divider Conductance [W/m2-K],Shade Control,Parent Surface,Azimuth [deg],Tilt [deg],Cardinal Direction
+,EWWNDW,DBL LOE (E2=.1) CLR 6MM/6MM AIR,5.80,0.00,0.00,5.80,5.80,2.371,0.569,0.745,,,No,EWALL,90.00,90.00,E
+,NSWNDW,DBL LOE (E2=.1) CLR 6MM/6MM AIR,11.61,0.00,0.00,11.61,11.61,2.371,0.569,0.745,,,No,SWALL,180.00,90.00,S
+,ZWINDOW-4,DBL LOE (E2=.1) CLR 6MM/6MM AIR,5.80,0.00,0.00,5.80,5.80,2.371,0.569,0.745,,,No,WWALL,270.00,90.00,W
+,ZWINDOW-6,DBL LOE (E2=.1) CLR 6MM/6MM AIR,5.80,0.00,0.00,5.80,5.80,2.371,0.569,0.745,,,No,ZE-W-5,90.00,90.00,E
+,ZWINDOW-7,DBL LOE (E2=.1) CLR 6MM/6MM AIR,11.61,0.00,0.00,11.61,11.61,2.371,0.569,0.745,,,No,NWALL,0.00,90.00,N
+,ZWINDOW-9,DBL LOE (E2=.1) CLR 6MM/6MM AIR,5.80,0.00,0.00,5.80,5.80,2.371,0.569,0.745,,,No,ZE-W-8,270.00,90.00,W
+,ZWINDOW-11,DBL LOE (E2=.1) CLR 6MM/6MM AIR,5.89,0.00,0.00,5.89,5.89,2.371,0.569,0.745,,,No,ZE-W-11,90.00,90.00,E
+,ZWINDOW-13,DBL LOE (E2=.1) CLR 6MM/6MM AIR,11.79,0.00,0.00,11.79,11.79,2.371,0.569,0.745,,,No,ZE-W-13,180.00,90.00,S
+,ZWINDOW-15,DBL LOE (E2=.1) CLR 6MM/6MM AIR,5.89,0.00,0.00,5.89,5.89,2.371,0.569,0.745,,,No,ZE-W-15,270.00,90.00,W
+,ZWINDOW-17,DBL LOE (E2=.1) CLR 6MM/6MM AIR,5.82,0.00,0.00,5.82,5.82,2.371,0.569,0.745,,,No,ZE-W-17,90.00,90.00,E
+,ZWINDOW-19,DBL LOE (E2=.1) CLR 6MM/6MM AIR,11.79,0.00,0.00,11.79,11.79,2.371,0.569,0.745,,,No,ZE-W-19,0.00,90.00,N
+,ZWINDOW-21,DBL LOE (E2=.1) CLR 6MM/6MM AIR,5.82,0.00,0.00,5.82,5.82,2.371,0.569,0.745,,,No,ZE-W-21,270.00,90.00,W
+,Total or Average,,,,,,93.45,2.371,0.569,0.745,,,,,,,
+,North Total or Average,,,,,,23.40,2.371,0.569,0.745,,,,,,,
+,Non-North Total or Average,,,,,,70.05,2.371,0.569,0.745,,,,,,,
+
+
+Interior Fenestration
+
+,,Construction,Area of One Opening [m2],Area of Openings [m2],Glass U-Factor [W/m2-K],Glass SHGC,Glass Visible Transmittance,Parent Surface
+,Total or Average,,,0.00,-,-,-,
+
+
+Exterior Door
+
+,,Construction,U-Factor with Film [W/m2-K],U-Factor no Film [W/m2-K],Gross Area [m2],Parent Surface
+,None,,,,,
+
+
+----------------------------------------------------------------------------------------------------
+REPORT:,Shading Summary
+FOR:,Entire Facility
+Sunlit Fraction
+
+,,March 21 9am,March 21 noon,March 21 3pm,June 21 9am,June 21 noon,June 21 3pm,December 21 9am,December 21 noon,December 21 3pm
+,None,,,,,,,,,
+
+
+Window Control
+
+,,Name,Type,Shaded Construction,Control,Glare Control
+,None,,,,,
+
+
+----------------------------------------------------------------------------------------------------
+REPORT:,Lighting Summary
+FOR:,Entire Facility
+Interior Lighting
+
+,,Zone,Lighting Power Density [W/m2],Zone Area [m2],Total Power [W],End Use Subcategory,Schedule Name,Scheduled Hours/Week [hr],Hours/Week > 1% [hr],Full Load Hours/Week [hr],Return Air Fraction,Conditioned (Y/N),Consumption [GJ]
+,ZSF1 LIGHTS 1,ZSF1,19.5559,154.68,3025.00,GeneralLights,LIT-SCHED,65.13,166.25,77.35,0.0000,Y,0.12
+,ZNF1 LIGHTS 1,ZNF1,19.5559,154.68,3025.00,GeneralLights,LIT-SCHED,65.13,166.25,77.35,0.0000,Y,0.12
+,ZSF2 LIGHTS 1,ZSF2,19.5559,154.68,3025.00,GeneralLights,LIT-SCHED,65.13,166.25,77.35,0.0000,Y,0.12
+,ZNF2 LIGHTS 1,ZNF2,19.5559,154.68,3025.00,GeneralLights,LIT-SCHED,65.13,166.25,77.35,0.0000,Y,0.12
+,Interior Lighting Total,,19.5559,618.74,12100.00,,,,,,,,0.48
+
+
+Daylighting
+
+,,Zone,Daylighting Type,Control Type,Fraction Controlled,Lighting Installed in Zone [W],Lighting Controlled [W]
+,None,,,,,,
+
+
+Exterior Lighting
+
+,,Total Watts,Astronomical Clock/Schedule,Schedule Name,Scheduled Hours/Week [hr],Hours/Week > 1% [hr],Full Load Hours/Week [hr],Consumption [GJ]
+,Exterior Lighting Total,0.00,,,,,,0.00
+
+
+----------------------------------------------------------------------------------------------------
+REPORT:,Equipment Summary
+FOR:,Entire Facility
+Central Plant
+
+,,Type,Nominal Capacity [W],Nominal Efficiency [W/W],IPLV in SI Units [W/W],IPLV in IP Units [Btu/W-h]
+,None,,,,,
+
+
+Cooling Coils
+
+,,Type,Design Coil Load [W],Nominal Total Capacity [W],Nominal Sensible Capacity [W],Nominal Latent Capacity [W],Nominal Sensible Heat Ratio,Nominal Efficiency [W/W],Nominal Coil UA Value [W/C],Nominal Coil Surface Area [m2]
+,ACDXCOIL 1,Coil:Cooling:DX:SingleSpeed,,13228.00,10582.40,2645.60,0.80,3.00,,
+,ACDXCOIL 2,Coil:Cooling:DX:SingleSpeed,,12483.00,9986.40,2496.60,0.80,3.00,,
+,ACDXCOIL 3,Coil:Cooling:DX:SingleSpeed,,14719.00,11775.20,2943.80,0.80,3.00,,
+,ACDXCOIL 4,Coil:Cooling:DX:SingleSpeed,,13973.00,11178.40,2794.60,0.80,3.00,,
+
+
+DX Cooling Coils
+
+,,DX Cooling Coil Type,Standard Rated Net Cooling Capacity [W],Standard Rated Net COP [W/W],EER [Btu/W-h],SEER [Btu/W-h],IEER [Btu/W-h]
+,ACDXCOIL 1,Coil:Cooling:DX:SingleSpeed,12676.8,2.56,8.72,9.26,8.96
+,ACDXCOIL 2,Coil:Cooling:DX:SingleSpeed,11962.9,2.56,8.72,9.26,8.96
+,ACDXCOIL 3,Coil:Cooling:DX:SingleSpeed,14105.7,2.56,8.72,9.26,8.96
+,ACDXCOIL 4,Coil:Cooling:DX:SingleSpeed,13390.8,2.56,8.72,9.26,8.96
+ANSI/AHRI ratings include supply fan
+
+
+DX Heating Coils
+
+,,DX Heating Coil Type,High Temperature Heating (net) Rating Capacity [W],Low Temperature Heating (net) Rating Capacity [W],HSPF [Btu/W-h],Region Number
+,None,,,,,
+
+
+Heating Coils
+
+,,Type,Design Coil Load [W],Nominal Total Capacity [W],Nominal Efficiency [W/W]
+,MAIN HEATING COIL 1,Coil:Heating:Gas,,15000.00,0.80
+,MAIN HEATING COIL 2,Coil:Heating:Gas,,15000.00,0.80
+,MAIN HEATING COIL 3,Coil:Heating:Gas,,15000.00,0.80
+,MAIN HEATING COIL 4,Coil:Heating:Gas,,15000.00,0.80
+
+
+Fans
+
+,,Type,Total Efficiency [W/W],Delta Pressure [pa],Max Air Flow Rate [m3/s],Rated Electric Power [W],Rated Power Per Max Air Flow Rate [W-s/m3],Motor Heat In Air Fraction,End Use
+,SUPPLY FAN 1,Fan:ConstantVolume,0.70,600.00,0.71,608.57,857.14,1.00,General
+,SUPPLY FAN 2,Fan:ConstantVolume,0.70,600.00,0.67,574.29,857.14,1.00,General
+,SUPPLY FAN 3,Fan:ConstantVolume,0.70,600.00,0.79,677.14,857.14,1.00,General
+,SUPPLY FAN 4,Fan:ConstantVolume,0.70,600.00,0.75,642.86,857.14,1.00,General
+
+
+Pumps
+
+,,Type,Control,Head [pa],Water Flow [m3/s],Electric Power [W],Power Per Water Flow Rate [W-s/m3],Motor Efficiency [W/W]
+,None,,,,,,,
+
+
+Service Water Heating
+
+,,Type,Storage Volume [m3],Input [W],Thermal Efficiency [W/W],Recovery Efficiency [W/W],Energy Factor
+,None,,,,,,
+
+
+----------------------------------------------------------------------------------------------------
+REPORT:,HVAC Sizing Summary
+FOR:,Entire Facility
+Zone Cooling
+
+,,Calculated Design Load [W],User Design Load [W],Calculated Design Air Flow [m3/s],User Design Air Flow [m3/s],Design Day Name,Date/Time Of Peak,Temperature at Peak [C],Humidity Ratio at Peak [kgWater/kgAir]
+,None,,,,,,,,
+
+
+Zone Heating
+
+,,Calculated Design Load [W],User Design Load [W],Calculated Design Air Flow [m3/s],User Design Air Flow [m3/s],Design Day Name,Date/Time Of Peak,Temperature at Peak [C],Humidity Ratio at Peak [kgWater/kgAir]
+,None,,,,,,,,
+
+
+System Design Air Flow Rates
+
+,,Calculated cooling [m3/s],User cooling [m3/s],Calculated heating [m3/s],User heating [m3/s]
+,None,,,,
+
+
+----------------------------------------------------------------------------------------------------
+REPORT:,System Summary
+FOR:,Entire Facility
+Economizer
+
+,,High Limit Shutoff Control,Minimum Outdoor Air [m3/s],Maximum Outdoor Air [m3/s],Return Air Temp Limit,Return Air Enthalpy Limit,Outdoor Air Temperature Limit [C],Outdoor Air Enthalpy Limit [C]
+,None,,,,,,,
+
+
+Demand Controlled Ventilation using Controller:MechanicalVentilation
+
+,,Controller:MechanicalVentilation Name,Outdoor Air Per Person [m3/s-person],Outdoor Air Per Area [m3/s-m2],Air Distribution Effectiveness in Cooling Mode,Air Distribution Effectiveness in Heating Mode,Air Distribution Effectiveness Schedule
+,None,,,,,,
+
+
+Time Not Comfortable Based on Simple ASHRAE 55-2004
+
+,,Winter Clothes [hr],Summer Clothes [hr],Summer or Winter Clothes [hr]
+,ZSF1,4.75,5.00,0.00
+,ZNF1,4.50,5.00,0.00
+,ZSF2,5.00,6.25,1.75
+,ZNF2,4.75,6.50,1.75
+,BASE-1,0.00,0.00,0.00
+,Facility,5.00,6.75,1.75
+Aggregated over the RunPeriods for Weather
+
+
+Time Setpoint Not Met
+
+,,During Heating [hr],During Cooling [hr],During Occupied Heating [hr],During Occupied Cooling [hr]
+,ZSF1,0.00,1.50,0.00,0.00
+,ZNF1,0.00,1.50,0.00,0.00
+,ZSF2,0.00,1.50,0.00,0.00
+,ZNF2,0.00,1.50,0.00,0.00
+,BASE-1,0.00,0.00,0.00,0.00
+,Facility,0.00,1.50,0.00,0.00
+Aggregated over the RunPeriods for Weather
+
+
+----------------------------------------------------------------------------------------------------
+REPORT:,Outdoor Air Summary
+FOR:,Entire Facility
+Average Outdoor Air During Occupied Hours
+
+,,Average Number of Occupants,Nominal Number of Occupants,Zone Volume [m3],Mechanical Ventilation [ach],Infiltration [ach],AFN Infiltration [ach],Simple Ventilation [ach]
+,ZSF1,2.78,3.27,453.12,0.259,0.000,0.000,0.000
+,ZNF1,2.78,3.27,453.12,0.259,0.000,0.000,0.000
+,ZSF2,2.78,3.27,453.12,0.259,0.000,0.000,0.000
+,ZNF2,2.78,3.27,453.12,0.259,0.000,0.000,0.000
+Values shown for a single zone without multipliers
+
+
+Minimum Outdoor Air During Occupied Hours
+
+,,Average Number of Occupants,Nominal Number of Occupants,Zone Volume [m3],Mechanical Ventilation [ach],Infiltration [ach],AFN Infiltration [ach],Simple Ventilation [ach]
+,ZSF1,2.78,3.27,453.12,0.256,0.000,0.000,0.000
+,ZNF1,2.78,3.27,453.12,0.256,0.000,0.000,0.000
+,ZSF2,2.78,3.27,453.12,0.256,0.000,0.000,0.000
+,ZNF2,2.78,3.27,453.12,0.256,0.000,0.000,0.000
+Values shown for a single zone without multipliers
+
+
+----------------------------------------------------------------------------------------------------
+REPORT:,Object Count Summary
+FOR:,Entire Facility
+Surfaces by Class
+
+,,Total,Outdoors
+,Wall,12,12
+,Floor,5,1
+,Roof,6,2
+,Internal Mass,4,0
+,Building Detached Shading,0,0
+,Fixed Detached Shading,0,0
+,Window,12,12
+,Door,0,0
+,Glass Door,0,0
+,Shading,0,0
+,Overhang,0,0
+,Fin,0,0
+,Tubular Daylighting Device Dome,0,0
+,Tubular Daylighting Device Diffuser,0,0
+
+
+HVAC
+
+,,Count
+,HVAC Air Loops,4
+,Conditioned Zones,4
+,Unconditioned Zones,1
+,Supply Plenums,0
+,Return Plenums,0
+
+
+Input Fields
+
+,,Count
+,IDF Objects,291
+,Defaulted Fields,38
+,Fields with Defaults,558
+,Autosized Fields,0
+,Autosizable Fields,40
+,Autocalculated Fields,4
+,Autocalculatable Fields,84
+
+
+----------------------------------------------------------------------------------------------------
+REPORT:,Energy Meters
+FOR:,Entire Facility
+Annual and Peak Values - Electricity
+
+,,Electricity Annual Value [GJ],Electricity Minimum Value [W],Timestamp of Minimum,Electricity Maximum Value [W],Timestamp of Maximum
+,Electricity:Facility,0.95,2887.50,01-JUN-00:15,23643.78,01-JUN-10:15
+,Electricity:Building,0.60,2887.50,01-JUN-00:15,13640.00,01-JUN-08:15
+,Electricity:Zone:ZSF1,0.15,721.88,01-JUN-00:15,3410.00,01-JUN-08:15
+,InteriorLights:Electricity,0.48,2420.00,01-JUN-00:15,10890.00,01-JUN-08:15
+,InteriorLights:Electricity:Zone:ZSF1,0.12,605.00,01-JUN-00:15,2722.50,01-JUN-08:15
+,GeneralLights:InteriorLights:Electricity,0.48,2420.00,01-JUN-00:15,10890.00,01-JUN-08:15
+,Electricity:Zone:ZNF1,0.15,721.88,01-JUN-00:15,3410.00,01-JUN-08:15
+,InteriorLights:Electricity:Zone:ZNF1,0.12,605.00,01-JUN-00:15,2722.50,01-JUN-08:15
+,Electricity:Zone:ZSF2,0.15,721.88,01-JUN-00:15,3410.00,01-JUN-08:15
+,InteriorLights:Electricity:Zone:ZSF2,0.12,605.00,01-JUN-00:15,2722.50,01-JUN-08:15
+,Electricity:Zone:ZNF2,0.15,721.88,01-JUN-00:15,3410.00,01-JUN-08:15
+,InteriorLights:Electricity:Zone:ZNF2,0.12,605.00,01-JUN-00:15,2722.50,01-JUN-08:15
+,InteriorEquipment:Electricity,0.11,467.50,01-JUN-00:15,2750.00,01-JUN-08:15
+,InteriorEquipment:Electricity:Zone:ZSF1,0.03,116.88,01-JUN-00:15,687.50,01-JUN-08:15
+,General:InteriorEquipment:Electricity,0.11,467.50,01-JUN-00:15,2750.00,01-JUN-08:15
+,InteriorEquipment:Electricity:Zone:ZNF1,0.03,116.88,01-JUN-00:15,687.50,01-JUN-08:15
+,InteriorEquipment:Electricity:Zone:ZSF2,0.03,116.88,01-JUN-00:15,687.50,01-JUN-08:15
+,InteriorEquipment:Electricity:Zone:ZNF2,0.03,116.88,01-JUN-00:15,687.50,01-JUN-08:15
+,Electricity:HVAC,0.35,0.00,01-JUN-00:15,10003.78,01-JUN-10:15
+,Cooling:Electricity,0.25,0.00,01-JUN-00:15,7500.93,01-JUN-10:15
+,Heating:Electricity,0.00,0.00,01-JUN-00:15,0.00,01-JUN-00:15
+,Fans:Electricity,0.10,0.00,01-JUN-00:15,2502.86,01-JUN-07:15
+,General:Fans:Electricity,0.10,0.00,01-JUN-00:15,2502.86,01-JUN-07:15
+,ElectricityPurchased:Facility,0.95,2887.50,01-JUN-00:15,23643.78,01-JUN-10:15
+,ElectricityPurchased:Plant,0.95,2887.50,01-JUN-00:15,23643.78,01-JUN-10:15
+,Cogeneration:ElectricityPurchased,0.95,2887.50,01-JUN-00:15,23643.78,01-JUN-10:15
+,ElectricitySurplusSold:Facility,0.00,0.00,01-JUN-00:15,0.00,01-JUN-00:15
+,ElectricitySurplusSold:Plant,0.00,0.00,01-JUN-00:15,0.00,01-JUN-00:15
+,Cogeneration:ElectricitySurplusSold,0.00,0.00,01-JUN-00:15,0.00,01-JUN-00:15
+,ElectricityNet:Facility,0.95,2887.50,01-JUN-00:15,23643.78,01-JUN-10:15
+,ElectricityNet:Plant,0.95,2887.50,01-JUN-00:15,23643.78,01-JUN-10:15
+,Cogeneration:ElectricityNet,0.95,2887.50,01-JUN-00:15,23643.78,01-JUN-10:15
+,Electricity:Plant,0.00,0.00,01-JUN-00:15,0.00,01-JUN-00:15
+
+
+Annual and Peak Values - Gas
+
+,,Gas Annual Value [GJ],Gas Minimum Value [W],Timestamp of Minimum,Gas Maximum Value [W],Timestamp of Maximum
+,Gas:Facility,0.00,0.00,01-JUN-00:15,0.00,01-JUN-00:15
+,Gas:HVAC,0.00,0.00,01-JUN-00:15,0.00,01-JUN-00:15
+,Heating:Gas,0.00,0.00,01-JUN-00:15,0.00,01-JUN-00:15
+
+
+Annual and Peak Values - Cooling
+
+,,Cooling Annual Value [GJ],Cooling Minimum Value [W],Timestamp of Minimum,Cooling Maximum Value [W],Timestamp of Maximum
+,None,,,,,
+
+
+Annual and Peak Values - Water
+
+,,Annual Value [m3],Minimum Value [m3/s],Timestamp of Minimum,Maximum Value [m3/s],Timestamp of Maximum
+,None,,,,,
+
+
+Annual and Peak Values - Other by Weight/Mass
+
+,,Annual Value [kg],Minimum Value [kg/s],Timestamp of Minimum,Maximum Value [kg/s],Timestamp of Maximum
+,Carbon Equivalent:Facility,0.00,0.000,01-JUN-00:15,0.000,01-JUN-00:15
+,CarbonEquivalentEmissions:Carbon Equivalent,0.00,0.000,01-JUN-00:15,0.000,01-JUN-00:15
+
+
+Annual and Peak Values - Other Volumetric
+
+,,Annual Value [m3],Minimum Value [m3/s],Timestamp of Minimum,Maximum Value [m3/s],Timestamp of Maximum
+,None,,,,,
+
+
+Annual and Peak Values - Other Liquid/Gas
+
+,,Annual Value [L],Minimum Value [L],Timestamp of Minimum,Maximum Value [L],Timestamp of Maximum
+,None,,,,,
+
+
+Annual and Peak Values - Other
+
+,,Annual Value [GJ],Minimum Value [W],Timestamp of Minimum,Maximum Value [W],Timestamp of Maximum
+,EnergyTransfer:Facility,1.59,0.00,01-JUN-00:15,48654.46,01-JUN-10:15
+,EnergyTransfer:Building,0.72,0.00,01-JUN-00:15,21983.84,01-JUN-10:15
+,EnergyTransfer:Zone:ZSF1,0.17,0.00,01-JUN-00:15,5525.48,01-JUN-11:30
+,Heating:EnergyTransfer,0.00,0.00,01-JUN-00:15,0.00,01-JUN-00:15
+,Heating:EnergyTransfer:Zone:ZSF1,0.00,0.00,01-JUN-00:15,0.00,01-JUN-00:15
+,Cooling:EnergyTransfer,0.72,0.00,01-JUN-00:15,21983.84,01-JUN-10:15
+,Cooling:EnergyTransfer:Zone:ZSF1,0.17,0.00,01-JUN-00:15,5525.48,01-JUN-11:30
+,EnergyTransfer:Zone:ZNF1,0.15,0.00,01-JUN-00:15,4782.05,01-JUN-09:30
+,Heating:EnergyTransfer:Zone:ZNF1,0.00,0.00,01-JUN-00:15,0.00,01-JUN-00:15
+,Cooling:EnergyTransfer:Zone:ZNF1,0.15,0.00,01-JUN-00:15,4782.05,01-JUN-09:30
+,EnergyTransfer:Zone:ZSF2,0.21,0.00,01-JUN-00:15,6494.12,01-JUN-11:30
+,Heating:EnergyTransfer:Zone:ZSF2,0.00,0.00,01-JUN-00:15,0.00,01-JUN-00:15
+,Cooling:EnergyTransfer:Zone:ZSF2,0.21,0.00,01-JUN-00:15,6494.12,01-JUN-11:30
+,EnergyTransfer:Zone:ZNF2,0.19,0.00,01-JUN-00:15,5524.39,01-JUN-09:45
+,Heating:EnergyTransfer:Zone:ZNF2,0.00,0.00,01-JUN-00:15,0.00,01-JUN-00:15
+,Cooling:EnergyTransfer:Zone:ZNF2,0.19,0.00,01-JUN-00:15,5524.39,01-JUN-09:45
+,EnergyTransfer:Zone:BASE-1,0.00,0.00,01-JUN-00:15,0.00,01-JUN-00:15
+,Heating:EnergyTransfer:Zone:BASE-1,0.00,0.00,01-JUN-00:15,0.00,01-JUN-00:15
+,Cooling:EnergyTransfer:Zone:BASE-1,0.00,0.00,01-JUN-00:15,0.00,01-JUN-00:15
+,EnergyTransfer:HVAC,0.86,0.00,01-JUN-00:15,27027.69,01-JUN-07:15
+,CoolingCoils:EnergyTransfer,0.86,0.00,01-JUN-00:15,27027.69,01-JUN-07:15
+,HeatingCoils:EnergyTransfer,0.00,0.00,01-JUN-00:15,0.00,01-JUN-00:15
+
+
+----------------------------------------------------------------------------------------------------
+REPORT:,Sensible Heat Gain Summary
+FOR:,Entire Facility
+Annual Building Sensible Heat Gain Components
+
+,,HVAC Input Sensible Air Heating [GJ],HVAC Input Sensible Air Cooling [GJ],HVAC Input Heated Surface Heating [GJ],HVAC Input Cooled Surface Cooling [GJ],People Sensible Heat Addition [GJ],Lights Sensible Heat Addition [GJ],Equipment Sensible Heat Addition [GJ],Window Heat Addition [GJ],Interzone Air Transfer Heat Addition [GJ],Infiltration Heat Addition [GJ],Opaque Surface Conduction and Other Heat Addition [GJ],Equipment Sensible Heat Removal [GJ],Window Heat Removal [GJ],Interzone Air Transfer Heat Removal [GJ],Infiltration Heat Removal [GJ],Opaque Surface Conduction and Other Heat Removal [GJ]
+,ZSF1,0.000,-0.166,0.000,0.000,0.008,0.121,0.029,0.120,0.000,0.000,0.000,0.000,-0.018,0.000,-0.024,-0.068
+,ZNF1,0.000,-0.147,0.000,0.000,0.008,0.121,0.029,0.104,0.000,0.000,0.000,0.000,-0.018,0.000,-0.025,-0.071
+,ZSF2,0.000,-0.214,0.000,0.000,0.008,0.121,0.029,0.120,0.000,0.000,0.000,0.000,-0.020,0.000,-0.027,-0.015
+,ZNF2,0.000,-0.193,0.000,0.000,0.008,0.121,0.029,0.102,0.000,0.000,0.000,0.000,-0.020,0.000,-0.028,-0.019
+,BASE-1,0.000,0.000,0.000,0.000,0.000,0.000,0.063,0.000,0.000,0.000,0.027,0.000,0.000,0.000,-0.089,-0.001
+,Total Facility,0.000,-0.721,0.000,0.000,0.030,0.484,0.177,0.446,0.000,0.000,0.027,0.000,-0.076,0.000,-0.193,-0.174
+
+
+Peak Cooling Sensible Heat Gain Components
+
+,,Time of Peak,HVAC Input Sensible Air Heating [W],HVAC Input Sensible Air Cooling [W],HVAC Input Heated Surface Heating [W],HVAC Input Cooled Surface Cooling [W],People Sensible Heat Addition [W],Lights Sensible Heat Addition [W],Equipment Sensible Heat Addition [W],Window Heat Addition [W],Interzone Air Transfer Heat Addition [W],Infiltration Heat Addition [W],Opaque Surface Conduction and Other Heat Addition [W],Equipment Sensible Heat Removal [W],Window Heat Removal [W],Interzone Air Transfer Heat Removal [W],Infiltration Heat Removal [W],Opaque Surface Conduction and Other Heat Removal [W]
+,ZSF1,01-JUN-07:05,0.00,-6902.15,0.00,0.00,0.00,605.00,116.88,1414.28,0.00,0.00,4765.99,0.00,0.00,0.00,0.00,0.00
+,ZNF1,01-JUN-07:05,0.00,-6684.90,0.00,0.00,0.00,605.00,116.88,1449.14,0.00,0.00,4513.89,0.00,0.00,0.00,0.00,0.00
+,ZSF2,01-JUN-07:05,0.00,-7984.26,0.00,0.00,0.00,605.00,116.88,1398.03,0.00,0.00,5864.35,0.00,0.00,0.00,0.00,0.00
+,ZNF2,01-JUN-07:05,0.00,-7661.59,0.00,0.00,0.00,605.00,116.88,1420.83,0.00,0.00,5518.89,0.00,0.00,0.00,0.00,0.00
+,BASE-1,-,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00
+,Total Facility,01-JUN-07:05,0.00,-29232.89,0.00,0.00,0.00,2420.00,1193.50,5682.28,0.00,0.00,19937.11,0.00,0.00,0.00,0.00,0.00
+
+
+Peak Heating Sensible Heat Gain Components
+
+,,Time of Peak,HVAC Input Sensible Air Heating [W],HVAC Input Sensible Air Cooling [W],HVAC Input Heated Surface Heating [W],HVAC Input Cooled Surface Cooling [W],People Sensible Heat Addition [W],Lights Sensible Heat Addition [W],Equipment Sensible Heat Addition [W],Window Heat Addition [W],Interzone Air Transfer Heat Addition [W],Infiltration Heat Addition [W],Opaque Surface Conduction and Other Heat Addition [W],Equipment Sensible Heat Removal [W],Window Heat Removal [W],Interzone Air Transfer Heat Removal [W],Infiltration Heat Removal [W],Opaque Surface Conduction and Other Heat Removal [W]
+,ZSF1,-,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00
+,ZNF1,-,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00
+,ZSF2,-,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00
+,ZNF2,-,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00
+,BASE-1,-,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00
+,Total Facility,-,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00
+
+
+----------------------------------------------------------------------------------------------------
+REPORT:,LEED Summary
+FOR:,Entire Facility
+Sec1.1A-General Information
+
+,,Data
+,Heating Degree Days,1748
+,Cooling Degree Days,506
+,Weather File,Chicago Ohare Intl Ap IL USA TMY3 WMO#=725300
+,HDD and CDD data source,Weather File Stat
+,Total gross floor area [m2],928.11
+
+
+EAp2-1. Space Usage Type
+
+,,Space Area [m2],Regularly Occupied Area [m2],Unconditioned Area [m2],Typical Hours/Week in Operation [hr/wk]
+,ZSF1,154.68,154.68,0.00,70.00
+,ZNF1,154.68,154.68,0.00,70.00
+,ZSF2,154.68,154.68,0.00,70.00
+,ZNF2,154.68,154.68,0.00,70.00
+,BASE-1,309.37,0.00,309.37,0.00
+,Totals,928.11,618.74,309.37,
+
+
+EAp2-2. Advisory Messages
+
+,,Data
+,Number of hours heating loads not met,0.00
+,Number of hours cooling loads not met,0.00
+,Number of hours not met,0.00
+
+
+EAp2-3. Energy Type Summary
+
+,,Utility Rate,Virtual Rate [$/unit energy],Units of Energy,Units of Demand
+,None,,,,
+
+
+EAp2-4/5. Performance Rating Method Compliance
+
+,,Electric Energy Use [GJ],Electric Demand [W],Natural Gas Energy Use [GJ],Natural Gas Demand [W],Additional Energy Use [GJ],Additional Demand [W]
+,Interior Lighting,0.48,10890.00,0.00,0.00,0.00,0.00
+,Exterior Lighting,0.00,0.00,0.00,0.00,0.00,0.00
+,Space Heating,0.00,0.00,0.00,0.00,0.00,0.00
+,Space Cooling,0.25,7500.93,0.00,0.00,0.00,0.00
+,Pumps,0.00,0.00,0.00,0.00,0.00,0.00
+,Heat Rejection,0.00,0.00,0.00,0.00,0.00,0.00
+,Fans-Interior,0.10,2502.86,0.00,0.00,0.00,0.00
+,Fans-Parking Garage,0.00,0.00,0.00,0.00,0.00,0.00
+,Service Water Heating,0.00,0.00,0.00,0.00,0.00,0.00
+,Receptacle Equipment,0.11,2750.00,0.00,0.00,0.00,0.00
+,Interior Lighting (process),0.00,0.00,0.00,0.00,0.00,0.00
+,Refrigeration Equipment,0.00,0.00,0.00,0.00,0.00,0.00
+,Cooking,0.00,0.00,0.00,0.00,0.00,0.00
+,Industrial Process,0.00,0.00,0.00,0.00,0.00,0.00
+,Elevators and Escalators,0.00,0.00,0.00,0.00,0.00,0.00
+,Total Line,0.95,,0.00,,0.00,
+
+
+EAp2-6. Energy Use Summary
+
+,,Process Subtotal [GJ],Total Energy Use [GJ]
+,Electricity,0.11,0.95
+,Natural Gas,0.00,0.00
+,Additional,0.00,0.00
+,Total,0.11,0.95
+
+
+EAp2-7. Energy Cost Summary
+
+,,Process Subtotal [$],Total Energy Cost [$]
+,Electricity,0.00,
+,Natural Gas,0.00,
+,Additional,0.00,
+,Total,0.00,
+Process energy cost based on ratio of process to total energy.
+
+
+L-1. Renewable Energy Source Summary
+
+,,Rated Capacity [kW],Annual Energy Generated [GJ]
+,Photovoltaic,0.00,0.00
+,Wind,0.00,0.00
+
+
+EAp2-17a. Energy Use Intensity - Electricity
+
+,,Electricty [MJ/m2]
+,Interior Lighting,0.52
+,Space Heating,0.00
+,Space Cooling,0.27
+,Fans-Interior,0.11
+,Service Water Heating,0.00
+,Receptacle Equipment,0.12
+,Miscellaneous,0.00
+,Subtotal,1.02
+
+
+EAp2-17b. Energy Use Intensity - Natural Gas
+
+,,Natural Gas [MJ/m2]
+,Space Heating,0.00
+,Service Water Heating,0.00
+,Miscellaneous,0.00
+,Subtotal,0.00
+
+
+EAp2-17c. Energy Use Intensity - Additional
+
+,,Additional [MJ/m2]
+,Miscellaneous,0.00
+,Subtotal,0.00
+
+
+EAp2-18. End Use Percentage
+
+,,Percent [%]
+,Interior Lighting,50.94
+,Space Heating,0.00
+,Space Cooling,26.57
+,Fans-Interior,10.44
+,Service Water Heating,0.00
+,Receptacle Equipment,12.05
+,Miscellaneous,0.00
+
+
+----------------------------------------------------------------------------------------------------
+REPORT:,Component Sizing Summary
+FOR:,Entire Facility
+----------------------------------------------------------------------------------------------------
+REPORT:,Surface Shadowing Summary
+FOR:,Entire Facility
+Surfaces (Walls, Roofs, etc) that may be Shadowed by Other Surfaces
+
+,,None
+
+
+Subsurfaces (Windows and Doors) that may be Shadowed by Surfaces
+
+,,Possible Shadow Receivers
+,EWALL,EWWNDW |
+,SWALL,NSWNDW |
+,WWALL,ZWINDOW-4 |
+,ZE-W-5,ZWINDOW-6 |
+,NWALL,ZWINDOW-7 |
+,ZE-W-8,ZWINDOW-9 |
+,ZE-W-11,ZWINDOW-11 |
+,ZE-W-13,ZWINDOW-13 |
+,ZE-W-15,ZWINDOW-15 |
+,ZE-W-17,ZWINDOW-17 |
+,ZE-W-19,ZWINDOW-19 |
+,ZE-W-21,ZWINDOW-21 |
+
+
+----------------------------------------------------------------------------------------------------
+REPORT:,Adaptive Comfort Summary
+FOR:,Entire Facility
+Time Not Meeting the Adaptive Comfort Models during Occupied Hours
+
+,,ASHRAE55 90% Acceptability Limits [Hours],ASHRAE55 80% Acceptability Limits  [Hours],CEN15251 Category I Acceptability Limits [Hours],CEN15251 Category II Acceptability Limits [Hours],CEN15251 Category III Acceptability Limits [Hours]
+
+

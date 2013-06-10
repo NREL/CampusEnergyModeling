@@ -1,0 +1,283 @@
+ Shadowing Combinations
+..Solar Distribution=FullInteriorAndExterior
+..In the following, only the first 10 reference surfaces will be shown.
+..But all surfaces are used in the calculations.
+ ==================================
+ Surface=EWALL is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           6
+ ...Surface=SWALL
+ ...Surface=NSWNDW
+ ...Surface=WWALL
+ ...Surface=ZWINDOW-4
+ ...Surface=FSFLOOR-1
+ ...Surface=FSCEING-1
+ Number of receiving sub surfaces=           1
+ ....Surface=EWWNDW
+ ==================================
+ Surface=EWWNDW is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=SWALL is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           6
+ ...Surface=EWALL
+ ...Surface=EWWNDW
+ ...Surface=WWALL
+ ...Surface=ZWINDOW-4
+ ...Surface=FSFLOOR-1
+ ...Surface=FSCEING-1
+ Number of receiving sub surfaces=           1
+ ....Surface=NSWNDW
+ ==================================
+ Surface=NSWNDW is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=WWALL is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           6
+ ...Surface=EWALL
+ ...Surface=EWWNDW
+ ...Surface=SWALL
+ ...Surface=NSWNDW
+ ...Surface=FSFLOOR-1
+ ...Surface=FSCEING-1
+ Number of receiving sub surfaces=           1
+ ....Surface=ZWINDOW-4
+ ==================================
+ Surface=ZWINDOW-4 is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=FSFLOOR-1 is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=FSCEING-1 is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ZSF1-MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ZE-W-5 is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           6
+ ...Surface=NWALL
+ ...Surface=ZWINDOW-7
+ ...Surface=ZE-W-8
+ ...Surface=ZWINDOW-9
+ ...Surface=FNFLOOR-1
+ ...Surface=FNCEING-1
+ Number of receiving sub surfaces=           1
+ ....Surface=ZWINDOW-6
+ ==================================
+ Surface=ZWINDOW-6 is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=NWALL is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           6
+ ...Surface=ZE-W-5
+ ...Surface=ZWINDOW-6
+ ...Surface=ZE-W-8
+ ...Surface=ZWINDOW-9
+ ...Surface=FNFLOOR-1
+ ...Surface=FNCEING-1
+ Number of receiving sub surfaces=           1
+ ....Surface=ZWINDOW-7
+ ==================================
+ Surface=ZWINDOW-7 is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ZE-W-8 is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           6
+ ...Surface=ZE-W-5
+ ...Surface=ZWINDOW-6
+ ...Surface=NWALL
+ ...Surface=ZWINDOW-7
+ ...Surface=FNFLOOR-1
+ ...Surface=FNCEING-1
+ Number of receiving sub surfaces=           1
+ ....Surface=ZWINDOW-9
+ ==================================
+ Surface=ZWINDOW-9 is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=FNFLOOR-1 is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=FNCEING-1 is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ZNF1-MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ZE-W-11 is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           6
+ ...Surface=ZE-W-13
+ ...Surface=ZWINDOW-13
+ ...Surface=ZE-W-15
+ ...Surface=ZWINDOW-15
+ ...Surface=SSFLOOR-1
+ ...Surface=ZROOF
+ Number of receiving sub surfaces=           1
+ ....Surface=ZWINDOW-11
+ ==================================
+ Surface=ZWINDOW-11 is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ZE-W-13 is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           6
+ ...Surface=ZE-W-11
+ ...Surface=ZWINDOW-11
+ ...Surface=ZE-W-15
+ ...Surface=ZWINDOW-15
+ ...Surface=SSFLOOR-1
+ ...Surface=ZROOF
+ Number of receiving sub surfaces=           1
+ ....Surface=ZWINDOW-13
+ ==================================
+ Surface=ZWINDOW-13 is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ZE-W-15 is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           6
+ ...Surface=ZE-W-11
+ ...Surface=ZWINDOW-11
+ ...Surface=ZE-W-13
+ ...Surface=ZWINDOW-13
+ ...Surface=SSFLOOR-1
+ ...Surface=ZROOF
+ Number of receiving sub surfaces=           1
+ ....Surface=ZWINDOW-15
+ ==================================
+ Surface=ZWINDOW-15 is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=SSFLOOR-1 is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ZROOF is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ZSF2-MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ZE-W-17 is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           6
+ ...Surface=ZE-W-19
+ ...Surface=ZWINDOW-19
+ ...Surface=ZE-W-21
+ ...Surface=ZWINDOW-21
+ ...Surface=SNFLOOR-1
+ ...Surface=ZROOF-23
+ Number of receiving sub surfaces=           1
+ ....Surface=ZWINDOW-17
+ ==================================
+ Surface=ZWINDOW-17 is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ZE-W-19 is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           6
+ ...Surface=ZE-W-17
+ ...Surface=ZWINDOW-17
+ ...Surface=ZE-W-21
+ ...Surface=ZWINDOW-21
+ ...Surface=SNFLOOR-1
+ ...Surface=ZROOF-23
+ Number of receiving sub surfaces=           1
+ ....Surface=ZWINDOW-19
+ ==================================
+ Surface=ZWINDOW-19 is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ZE-W-21 is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           6
+ ...Surface=ZE-W-17
+ ...Surface=ZWINDOW-17
+ ...Surface=ZE-W-19
+ ...Surface=ZWINDOW-19
+ ...Surface=SNFLOOR-1
+ ...Surface=ZROOF-23
+ Number of receiving sub surfaces=           1
+ ....Surface=ZWINDOW-21
+ ==================================
+ Surface=ZWINDOW-21 is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=SNFLOOR-1 is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ZROOF-23 is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ZNF2-MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=SLAB-1 is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=BSCEING-1 is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=BNCEING-1 is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0

@@ -1,0 +1,2788 @@
+ Shadowing Combinations
+..Solar Distribution=FullInteriorAndExterior
+..In the following, only the first 10 reference surfaces will be shown.
+..But all surfaces are used in the calculations.
+ ==================================
+ Surface=CANOPY is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=          10
+ ..Surface=DINING_FLR_5_WALL_EAST
+ ..Surface=KITCHEN_FLR_5_WALL_EAST
+ ..Surface=OR1_FLR_2_WALL_EAST
+ ..Surface=OR2_MULT5_FLR_2_WALL_EAST
+ ..Surface=PATROOM2_FLR_3_WALL_EAST
+ ..Surface=PATROOM2_FLR_4_WALL_EAST
+ ..Surface=PATROOM3_MULT10_FLR_3_WALL_EAST
+ ..Surface=PATROOM3_MULT10_FLR_4_WALL_EAST
+ ..Surface=PATROOM4_FLR_3_WALL_EAST
+ ..Surface=PATROOM4_FLR_4_WALL_EAST
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=Mir-CANOPY is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=BASEMENT_WALL_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=BASEMENT_WALL_NORTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=BASEMENT_WALL_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=BASEMENT_WALL_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=BASEMENT_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=BASEMENT_CEILING is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=BASEMENT INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_FLR_1_WALL_1_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_FLR_1_WALL_2_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_FLR_1_WALL_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_FLR_1_WALL_NORTH is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_FLR_1_WALL_SOUTH is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_FLR_1_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_FLR_1_CEILING is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_FLR_1 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_FLR_2_WALL_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_FLR_2_WALL_NORTH is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_FLR_2_WALL_SOUTH is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_FLR_2_WALL_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_FLR_2_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_FLR_2_CEILING is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_FLR_2 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_FLR_5_WALL_1_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_FLR_5_WALL_1_NORTH is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_FLR_5_WALL_1_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_FLR_5_WALL_1_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_FLR_5_WALL_2_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_FLR_5_WALL_2_NORTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_FLR_5_WALL_2_SOUTH is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_FLR_5_WALL_2_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_FLR_5_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_FLR_5_CEILING is used as Receiving Surface in calculations and is non-convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_FLR_5 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_NW_FLR_3_WALL_1_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_NW_FLR_3_WALL_1_NORTH is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_NW_FLR_3_WALL_1_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_NW_FLR_3_WALL_2_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_NW_FLR_3_WALL_2_NORTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_NW_FLR_3_WALL_2_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_NW_FLR_3_WALL_2_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_NW_FLR_3_WALL_3_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_NW_FLR_3_WALL_3_NORTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_NW_FLR_3_WALL_3_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_NW_FLR_3_WALL_4_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_NW_FLR_3_WALL_4_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_NW_FLR_3_WALL_5_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_NW_FLR_3_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_NW_FLR_3_CEILING is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_NW_FLR_3 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_NW_FLR_4_WALL_1_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_NW_FLR_4_WALL_1_NORTH is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_NW_FLR_4_WALL_1_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_NW_FLR_4_WALL_2_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_NW_FLR_4_WALL_2_NORTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_NW_FLR_4_WALL_2_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_NW_FLR_4_WALL_2_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_NW_FLR_4_WALL_3_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_NW_FLR_4_WALL_3_NORTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_NW_FLR_4_WALL_3_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_NW_FLR_4_WALL_4_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_NW_FLR_4_WALL_4_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_NW_FLR_4_WALL_5_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_NW_FLR_4_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_NW_FLR_4_CEILING is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_NW_FLR_4 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_NW_FLR_3_WALL_1_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_SE_FLR_3_WALL_1_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_SE_FLR_3_WALL_1_NORTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_SE_FLR_3_WALL_1_SOUTH is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_SE_FLR_3_WALL_1_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_SE_FLR_3_WALL_2_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_SE_FLR_3_WALL_2_NORTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_SE_FLR_3_WALL_2_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_SE_FLR_3_WALL_2_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_SE_FLR_3_WALL_3_NORTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_SE_FLR_3_WALL_3_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_SE_FLR_3_WALL_3_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_SE_FLR_3_WALL_4_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_SE_FLR_3_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_SE_FLR_3_CEILING is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_SE_FLR_3 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_NW_FLR_4_WALL_1_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_SE_FLR_4_WALL_1_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_SE_FLR_4_WALL_1_NORTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_SE_FLR_4_WALL_1_SOUTH is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_SE_FLR_4_WALL_1_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_SE_FLR_4_WALL_2_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_SE_FLR_4_WALL_2_NORTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_SE_FLR_4_WALL_2_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_SE_FLR_4_WALL_2_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_SE_FLR_4_WALL_3_NORTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_SE_FLR_4_WALL_3_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_SE_FLR_4_WALL_3_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_SE_FLR_4_WALL_4_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_SE_FLR_4_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_SE_FLR_4_CEILING is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=CORRIDOR_SE_FLR_4 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=DINING_FLR_5_WALL_EAST is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=DINING_FLR_5_WALL_NORTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=DINING_FLR_5_WALL_SOUTH is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           5
+ ...Surface=DINING_FLR_5_WALL_EAST
+ ...Surface=DINING_FLR_5_WALL_NORTH
+ ...Surface=DINING_FLR_5_WALL_WEST
+ ...Surface=DINING_FLR_5_FLOOR
+ ...Surface=DINING_FLR_5_CEILING
+ Number of receiving sub surfaces=           1
+ ....Surface=DINING_FLR_5_WALL_SOUTH_WINDOW
+ ==================================
+ Surface=DINING_FLR_5_WALL_SOUTH_WINDOW is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=DINING_FLR_5_WALL_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=DINING_FLR_5_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=DINING_FLR_5_CEILING is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=DINING_FLR_5 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ER_EXAM1_MULT4_FLR_1_WALL_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ER_EXAM1_MULT4_FLR_1_WALL_NORTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ER_EXAM1_MULT4_FLR_1_WALL_SOUTH is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ER_EXAM1_MULT4_FLR_1_WALL_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ER_EXAM1_MULT4_FLR_1_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ER_EXAM1_MULT4_FLR_1_CEILING is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ER_EXAM1_MULT4_FLR_1 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ER_EXAM3_MULT4_FLR_1_WALL_EAST is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           1
+ ..Surface=Mir-CANOPY
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ER_EXAM3_MULT4_FLR_1_WALL_NORTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ER_EXAM3_MULT4_FLR_1_WALL_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ER_EXAM3_MULT4_FLR_1_WALL_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ER_EXAM3_MULT4_FLR_1_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ER_EXAM3_MULT4_FLR_1_CEILING is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ER_EXAM3_MULT4_FLR_1 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ER_NURSESTAT_FLR_1_WALL_1_EAST is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           1
+ ..Surface=Mir-CANOPY
+ Number of back surfaces=           9
+ ...Surface=ER_NURSESTAT_FLR_1_WALL_1_NORTH
+ ...Surface=ER_NURSESTAT_FLR_1_WALL_1_SOUTH
+ ...Surface=ER_NURSESTAT_FLR_1_WALL_1_WEST
+ ...Surface=ER_NURSESTAT_FLR_1_WALL_2_EAST
+ ...Surface=ER_NURSESTAT_FLR_1_WALL_2_NORTH
+ ...Surface=ER_NURSESTAT_FLR_1_WALL_2_SOUTH
+ ...Surface=ER_NURSESTAT_FLR_1_WALL_3_EAST
+ ...Surface=ER_NURSESTAT_FLR_1_FLOOR
+ ...Surface=ER_NURSESTAT_FLR_1_CEILING
+ Number of receiving sub surfaces=           1
+ ....Surface=ER_NURSESTAT_FLR_1_WALL_1_EAST_WINDOW
+ ==================================
+ Surface=ER_NURSESTAT_FLR_1_WALL_1_EAST_WINDOW is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ER_NURSESTAT_FLR_1_WALL_1_NORTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ER_NURSESTAT_FLR_1_WALL_1_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ER_NURSESTAT_FLR_1_WALL_1_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ER_NURSESTAT_FLR_1_WALL_2_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ER_NURSESTAT_FLR_1_WALL_2_NORTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ER_NURSESTAT_FLR_1_WALL_2_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ER_NURSESTAT_FLR_1_WALL_3_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ER_NURSESTAT_FLR_1_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ER_NURSESTAT_FLR_1_CEILING is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ER_NURSESTN_LOBBY_FLR_1 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ER_EXAM2_FLR_1_WALL_EAST is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           1
+ ..Surface=Mir-CANOPY
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ER_EXAM2_FLR_1_WALL_NORTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ER_EXAM2_FLR_1_WALL_SOUTH is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ER_EXAM2_FLR_1_WALL_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ER_EXAM2_FLR_1_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ER_EXAM2_FLR_1_CEILING is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ER_TRAUMA1_FLR_1 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ER_EXAM4_FLR_1_WALL_EAST is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           1
+ ..Surface=Mir-CANOPY
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ER_EXAM4_FLR_1_WALL_NORTH is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ER_EXAM4_FLR_1_WALL_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ER_EXAM4_FLR_1_WALL_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ER_EXAM4_FLR_1_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ER_EXAM4_FLR_1_CEILING is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ER_TRAUMA2_FLR_1 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ER_EXAM5_MULT4_FLR_1_WALL_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ER_EXAM5_MULT4_FLR_1_WALL_NORTH is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ER_EXAM5_MULT4_FLR_1_WALL_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ER_EXAM5_MULT4_FLR_1_WALL_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ER_EXAM5_MULT4_FLR_1_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ER_EXAM5_MULT4_FLR_1_CEILING is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ER_TRIAGE_MULT4_FLR_1 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ICU_FLR_2_WALL_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ICU_FLR_2_WALL_NORTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ICU_FLR_2_WALL_SOUTH is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ICU_FLR_2_WALL_WEST is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           5
+ ...Surface=ICU_FLR_2_WALL_EAST
+ ...Surface=ICU_FLR_2_WALL_NORTH
+ ...Surface=ICU_FLR_2_WALL_SOUTH
+ ...Surface=ICU_FLR_2_FLOOR
+ ...Surface=ICU_FLR_2_CEILING
+ Number of receiving sub surfaces=           1
+ ....Surface=ICU_FLR_2_WALL_WEST_WINDOW
+ ==================================
+ Surface=ICU_FLR_2_WALL_WEST_WINDOW is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ICU_FLR_2_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ICU_FLR_2_CEILING is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ICU_FLR_2 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ICU_NURSESAT_FLR_2_WALL_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ICU_NURSESAT_FLR_2_WALL_NORTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ICU_NURSESAT_FLR_2_WALL_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ICU_NURSESAT_FLR_2_WALL_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ICU_NURSESAT_FLR_2_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ICU_NURSESAT_FLR_2_CEILING is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=ICU_NURSESTN_LOBBY_FLR_2 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=IC_PATROOM1_MULT5_FLR_2_WALL_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=IC_PATROOM1_MULT5_FLR_2_WALL_NORTH is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           5
+ ...Surface=IC_PATROOM1_MULT5_FLR_2_WALL_EAST
+ ...Surface=IC_PATROOM1_MULT5_FLR_2_WALL_SOUTH
+ ...Surface=IC_PATROOM1_MULT5_FLR_2_WALL_WEST
+ ...Surface=IC_PATROOM1_MULT5_FLR_2_FLOOR
+ ...Surface=IC_PATROOM1_MULT5_FLR_2_CEILING
+ Number of receiving sub surfaces=           1
+ ....Surface=IC_PATROOM1_MULT5_FLR_2_WALL_NORTH_WINDOW
+ ==================================
+ Surface=IC_PATROOM1_MULT5_FLR_2_WALL_NORTH_WINDOW is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=IC_PATROOM1_MULT5_FLR_2_WALL_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=IC_PATROOM1_MULT5_FLR_2_WALL_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=IC_PATROOM1_MULT5_FLR_2_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=IC_PATROOM1_MULT5_FLR_2_CEILING is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=IC_PATROOM1_MULT5_FLR_2 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=IC_PATROOM2_FLR_2_WALL_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=IC_PATROOM2_FLR_2_WALL_NORTH is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           6
+ ...Surface=IC_PATROOM2_FLR_2_WALL_EAST
+ ...Surface=IC_PATROOM2_FLR_2_WALL_SOUTH
+ ...Surface=IC_PATROOM2_FLR_2_WALL_WEST
+ ...Surface=IC_PATROOM2_FLR_2_WALL_WEST_WINDOW
+ ...Surface=IC_PATROOM2_FLR_2_FLOOR
+ ...Surface=IC_PATROOM2_FLR_2_CEILING
+ Number of receiving sub surfaces=           1
+ ....Surface=IC_PATROOM2_FLR_2_WALL_NORTH_WINDOW
+ ==================================
+ Surface=IC_PATROOM2_FLR_2_WALL_NORTH_WINDOW is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=IC_PATROOM2_FLR_2_WALL_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=IC_PATROOM2_FLR_2_WALL_WEST is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           6
+ ...Surface=IC_PATROOM2_FLR_2_WALL_EAST
+ ...Surface=IC_PATROOM2_FLR_2_WALL_NORTH
+ ...Surface=IC_PATROOM2_FLR_2_WALL_NORTH_WINDOW
+ ...Surface=IC_PATROOM2_FLR_2_WALL_SOUTH
+ ...Surface=IC_PATROOM2_FLR_2_FLOOR
+ ...Surface=IC_PATROOM2_FLR_2_CEILING
+ Number of receiving sub surfaces=           1
+ ....Surface=IC_PATROOM2_FLR_2_WALL_WEST_WINDOW
+ ==================================
+ Surface=IC_PATROOM2_FLR_2_WALL_WEST_WINDOW is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=IC_PATROOM2_FLR_2_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=IC_PATROOM2_FLR_2_CEILING is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=IC_PATROOM2_FLR_2 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=IC_PATROOM3_MULT6_FLR_2_WALL_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=IC_PATROOM3_MULT6_FLR_2_WALL_NORTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=IC_PATROOM3_MULT6_FLR_2_WALL_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=IC_PATROOM3_MULT6_FLR_2_WALL_WEST is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           5
+ ...Surface=IC_PATROOM3_MULT6_FLR_2_WALL_EAST
+ ...Surface=IC_PATROOM3_MULT6_FLR_2_WALL_NORTH
+ ...Surface=IC_PATROOM3_MULT6_FLR_2_WALL_SOUTH
+ ...Surface=IC_PATROOM3_MULT6_FLR_2_FLOOR
+ ...Surface=IC_PATROOM3_MULT6_FLR_2_CEILING
+ Number of receiving sub surfaces=           1
+ ....Surface=IC_PATROOM3_MULT6_FLR_2_WALL_WEST_WINDOW
+ ==================================
+ Surface=IC_PATROOM3_MULT6_FLR_2_WALL_WEST_WINDOW is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=IC_PATROOM3_MULT6_FLR_2_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=IC_PATROOM3_MULT6_FLR_2_CEILING is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=IC_PATROOM3_MULT6_FLR_2 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=KITCHEN_FLR_5_WALL_1_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=KITCHEN_FLR_5_WALL_2_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=KITCHEN_FLR_5_WALL_EAST is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=KITCHEN_FLR_5_WALL_NORTH is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=KITCHEN_FLR_5_WALL_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=KITCHEN_FLR_5_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=KITCHEN_FLR_5_CEILING is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=KITCHEN_FLR_5 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=LAB_FLR_3_WALL_1_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=LAB_FLR_3_WALL_1_NORTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=LAB_FLR_3_WALL_2_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=LAB_FLR_3_WALL_2_NORTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=LAB_FLR_3_WALL_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=LAB_FLR_3_WALL_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=LAB_FLR_3_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=LAB_FLR_3_CEILING is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=LAB_FLR_3 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=LAB_FLR_4_WALL_1_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=LAB_FLR_4_WALL_1_NORTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=LAB_FLR_4_WALL_2_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=LAB_FLR_4_WALL_2_NORTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=LAB_FLR_4_WALL_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=LAB_FLR_4_WALL_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=LAB_FLR_4_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=LAB_FLR_4_CEILING is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=LAB_FLR_4 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=LOBBY_FLR_1_WALL_1_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=LOBBY_FLR_1_WALL_1_SOUTH is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=LOBBY_FLR_1_WALL_1_WEST is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=          10
+ ...Surface=LOBBY_FLR_1_WALL_1_EAST
+ ...Surface=LOBBY_FLR_1_WALL_1_SOUTH
+ ...Surface=LOBBY_FLR_1_WALL_2_EAST
+ ...Surface=LOBBY_FLR_1_WALL_2_SOUTH
+ ...Surface=LOBBY_FLR_1_WALL_3_EAST
+ ...Surface=LOBBY_FLR_1_WALL_3_SOUTH
+ ...Surface=LOBBY_FLR_1_WALL_3_WEST
+ ...Surface=LOBBY_FLR_1_WALL_NORTH
+ ...Surface=LOBBY_FLR_1_FLOOR
+ ...Surface=LOBBY_FLR_1_CEILING
+ Number of receiving sub surfaces=           1
+ ....Surface=LOBBY_FLR_1_WALL_2_WEST
+ ==================================
+ Surface=LOBBY_FLR_1_WALL_2_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=LOBBY_FLR_1_WALL_2_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=LOBBY_FLR_1_WALL_2_SOUTH is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=LOBBY_FLR_1_WALL_3_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=LOBBY_FLR_1_WALL_3_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=LOBBY_FLR_1_WALL_3_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=LOBBY_FLR_1_WALL_NORTH is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=LOBBY_FLR_1_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=LOBBY_FLR_1_CEILING is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=LOBBY_RECORDS_FLR_1 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=NURSESAT_LOBBY_FLR_3_WALL_1_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=NURSESAT_LOBBY_FLR_3_WALL_1_NORTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=NURSESAT_LOBBY_FLR_3_WALL_1_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=NURSESAT_LOBBY_FLR_3_WALL_1_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=NURSESAT_LOBBY_FLR_3_WALL_2_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=NURSESAT_LOBBY_FLR_3_WALL_2_NORTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=NURSESAT_LOBBY_FLR_3_WALL_2_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=NURSESAT_LOBBY_FLR_3_WALL_2_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=NURSESAT_LOBBY_FLR_3_WALL_3_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=NURSESAT_LOBBY_FLR_3_WALL_3_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=NURSESAT_LOBBY_FLR_3_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=NURSESAT_LOBBY_FLR_3_CEILING is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=NURSESTN_LOBBY_FLR_3 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=NURSESAT_LOBBY_FLR_4_WALL_1_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=NURSESAT_LOBBY_FLR_4_WALL_1_NORTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=NURSESAT_LOBBY_FLR_4_WALL_1_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=NURSESAT_LOBBY_FLR_4_WALL_1_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=NURSESAT_LOBBY_FLR_4_WALL_2_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=NURSESAT_LOBBY_FLR_4_WALL_2_NORTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=NURSESAT_LOBBY_FLR_4_WALL_2_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=NURSESAT_LOBBY_FLR_4_WALL_2_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=NURSESAT_LOBBY_FLR_4_WALL_3_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=NURSESAT_LOBBY_FLR_4_WALL_3_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=NURSESAT_LOBBY_FLR_4_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=NURSESAT_LOBBY_FLR_4_CEILING is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=NURSESTN_LOBBY_FLR_4 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=NURSESAT_FLR_5_WALL_1_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=NURSESAT_FLR_5_WALL_2_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=NURSESAT_FLR_5_WALL_NORTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=NURSESAT_FLR_5_WALL_SOUTH is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=NURSESAT_FLR_5_WALL_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=NURSESAT_FLR_5_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=NURSESAT_FLR_5_CEILING is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=NURSESTN_LOBBY_FLR_5 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OR1_FLR_2_WALL_EAST is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OR1_FLR_2_WALL_NORTH is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OR1_FLR_2_WALL_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OR1_FLR_2_WALL_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OR1_FLR_2_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OR1_FLR_2_CEILING is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OR1_FLR_2 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OR2_MULT5_FLR_2_WALL_EAST is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OR2_MULT5_FLR_2_WALL_NORTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OR2_MULT5_FLR_2_WALL_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OR2_MULT5_FLR_2_WALL_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OR2_MULT5_FLR_2_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OR2_MULT5_FLR_2_CEILING is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OR2_MULT5_FLR_2 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OR3_FLR_2_WALL_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OR3_FLR_2_WALL_NORTH is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OR3_FLR_2_WALL_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OR3_FLR_2_WALL_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OR3_FLR_2_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OR3_FLR_2_CEILING is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OR3_FLR_2 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OR4_FLR_2_WALL_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OR4_FLR_2_WALL_NORTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OR4_FLR_2_WALL_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OR4_FLR_2_WALL_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OR4_FLR_2_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OR4_FLR_2_CEILING is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OR4_FLR_2 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OR_NURSESAT_FLR_2_WALL_1_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OR_NURSESAT_FLR_2_WALL_1_NORTH is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OR_NURSESAT_FLR_2_WALL_1_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OR_NURSESAT_FLR_2_WALL_2_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OR_NURSESAT_FLR_2_WALL_2_NORTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OR_NURSESAT_FLR_2_WALL_2_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OR_NURSESAT_FLR_2_WALL_3_NORTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OR_NURSESAT_FLR_2_WALL_SOUTH is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           9
+ ...Surface=OR_NURSESAT_FLR_2_WALL_1_EAST
+ ...Surface=OR_NURSESAT_FLR_2_WALL_1_NORTH
+ ...Surface=OR_NURSESAT_FLR_2_WALL_1_WEST
+ ...Surface=OR_NURSESAT_FLR_2_WALL_2_EAST
+ ...Surface=OR_NURSESAT_FLR_2_WALL_2_NORTH
+ ...Surface=OR_NURSESAT_FLR_2_WALL_2_WEST
+ ...Surface=OR_NURSESAT_FLR_2_WALL_3_NORTH
+ ...Surface=OR_NURSESAT_FLR_2_FLOOR
+ ...Surface=OR_NURSESAT_FLR_2_CEILING
+ Number of receiving sub surfaces=           1
+ ....Surface=OR_NURSESAT_FLR_2_WALL_SOUTH_WINDOW
+ ==================================
+ Surface=OR_NURSESAT_FLR_2_WALL_SOUTH_WINDOW is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OR_NURSESAT_FLR_2_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OR_NURSESAT_FLR_2_CEILING is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OR_NURSESTN_LOBBY_FLR_2 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OFFICE1_FLR_5_WALL_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OFFICE1_FLR_5_WALL_NORTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OFFICE1_FLR_5_WALL_SOUTH is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           6
+ ...Surface=OFFICE1_FLR_5_WALL_EAST
+ ...Surface=OFFICE1_FLR_5_WALL_NORTH
+ ...Surface=OFFICE1_FLR_5_WALL_WEST
+ ...Surface=OFFICE1_FLR_5_WALL_WEST_WINDOW
+ ...Surface=OFFICE1_FLR_5_FLOOR
+ ...Surface=OFFICE1_FLR_5_CEILING
+ Number of receiving sub surfaces=           1
+ ....Surface=OFFICE1_FLR_5_WALL_SOUTH_WINDOW
+ ==================================
+ Surface=OFFICE1_FLR_5_WALL_SOUTH_WINDOW is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OFFICE1_FLR_5_WALL_WEST is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           6
+ ...Surface=OFFICE1_FLR_5_WALL_EAST
+ ...Surface=OFFICE1_FLR_5_WALL_NORTH
+ ...Surface=OFFICE1_FLR_5_WALL_SOUTH
+ ...Surface=OFFICE1_FLR_5_WALL_SOUTH_WINDOW
+ ...Surface=OFFICE1_FLR_5_FLOOR
+ ...Surface=OFFICE1_FLR_5_CEILING
+ Number of receiving sub surfaces=           1
+ ....Surface=OFFICE1_FLR_5_WALL_WEST_WINDOW
+ ==================================
+ Surface=OFFICE1_FLR_5_WALL_WEST_WINDOW is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OFFICE1_FLR_5_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OFFICE1_FLR_5_CEILING is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OFFICE1_FLR_5 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OFFICE1_MULT4_FLR_1_WALL_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OFFICE1_MULT4_FLR_1_WALL_NORTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OFFICE1_MULT4_FLR_1_WALL_SOUTH is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           5
+ ...Surface=OFFICE1_MULT4_FLR_1_WALL_EAST
+ ...Surface=OFFICE1_MULT4_FLR_1_WALL_NORTH
+ ...Surface=OFFICE1_MULT4_FLR_1_WALL_WEST
+ ...Surface=OFFICE1_MULT4_FLR_1_FLOOR
+ ...Surface=OFFICE1_MULT4_FLR_1_CEILING
+ Number of receiving sub surfaces=           1
+ ....Surface=OFFICE1_MULT4_FLR_1_WALL_SOUTH_WINDOW
+ ==================================
+ Surface=OFFICE1_MULT4_FLR_1_WALL_SOUTH_WINDOW is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OFFICE1_MULT4_FLR_1_WALL_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OFFICE1_MULT4_FLR_1_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OFFICE1_MULT4_FLR_1_CEILING is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OFFICE1_MULT4_FLR_1 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OFFICE2_MULT5_FLR_5_WALL_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OFFICE2_MULT5_FLR_5_WALL_NORTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OFFICE2_MULT5_FLR_5_WALL_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OFFICE2_MULT5_FLR_5_WALL_WEST is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           5
+ ...Surface=OFFICE2_MULT5_FLR_5_WALL_EAST
+ ...Surface=OFFICE2_MULT5_FLR_5_WALL_NORTH
+ ...Surface=OFFICE2_MULT5_FLR_5_WALL_SOUTH
+ ...Surface=OFFICE2_MULT5_FLR_5_FLOOR
+ ...Surface=OFFICE2_MULT5_FLR_5_CEILING
+ Number of receiving sub surfaces=           1
+ ....Surface=OFFICE2_MULT5_FLR_5_WALL_WEST_WINDOW
+ ==================================
+ Surface=OFFICE2_MULT5_FLR_5_WALL_WEST_WINDOW is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OFFICE2_MULT5_FLR_5_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OFFICE2_MULT5_FLR_5_CEILING is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OFFICE2_MULT5_FLR_5 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OFFICE3_FLR_5_WALL_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OFFICE3_FLR_5_WALL_NORTH is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           6
+ ...Surface=OFFICE3_FLR_5_WALL_EAST
+ ...Surface=OFFICE3_FLR_5_WALL_SOUTH
+ ...Surface=OFFICE3_FLR_5_WALL_WEST
+ ...Surface=OFFICE3_FLR_5_WALL_WEST_WINDOW
+ ...Surface=OFFICE3_FLR_5_FLOOR
+ ...Surface=OFFICE3_FLR_5_CEILING
+ Number of receiving sub surfaces=           1
+ ....Surface=OFFICE3_FLR_5_WALL_NORTH_WINDOW
+ ==================================
+ Surface=OFFICE3_FLR_5_WALL_NORTH_WINDOW is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OFFICE3_FLR_5_WALL_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OFFICE3_FLR_5_WALL_WEST is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           6
+ ...Surface=OFFICE3_FLR_5_WALL_EAST
+ ...Surface=OFFICE3_FLR_5_WALL_NORTH
+ ...Surface=OFFICE3_FLR_5_WALL_NORTH_WINDOW
+ ...Surface=OFFICE3_FLR_5_WALL_SOUTH
+ ...Surface=OFFICE3_FLR_5_FLOOR
+ ...Surface=OFFICE3_FLR_5_CEILING
+ Number of receiving sub surfaces=           1
+ ....Surface=OFFICE3_FLR_5_WALL_WEST_WINDOW
+ ==================================
+ Surface=OFFICE3_FLR_5_WALL_WEST_WINDOW is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OFFICE3_FLR_5_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OFFICE3_FLR_5_CEILING is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OFFICE3_FLR_5 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OFFICE4_MULT6_FLR_5_WALL_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OFFICE4_MULT6_FLR_5_WALL_NORTH is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           5
+ ...Surface=OFFICE4_MULT6_FLR_5_WALL_EAST
+ ...Surface=OFFICE4_MULT6_FLR_5_WALL_SOUTH
+ ...Surface=OFFICE4_MULT6_FLR_5_WALL_WEST
+ ...Surface=OFFICE4_MULT6_FLR_5_FLOOR
+ ...Surface=OFFICE4_MULT6_FLR_5_CEILING
+ Number of receiving sub surfaces=           1
+ ....Surface=OFFICE4_MULT6_FLR_5_WALL_NORTH_WINDOW
+ ==================================
+ Surface=OFFICE4_MULT6_FLR_5_WALL_NORTH_WINDOW is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OFFICE4_MULT6_FLR_5_WALL_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OFFICE4_MULT6_FLR_5_WALL_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OFFICE4_MULT6_FLR_5_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OFFICE4_MULT6_FLR_5_CEILING is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=OFFICE4_MULT6_FLR_5 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM1_MULT10_FLR_3_WALL_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM1_MULT10_FLR_3_WALL_NORTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM1_MULT10_FLR_3_WALL_SOUTH is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           5
+ ...Surface=PATROOM1_MULT10_FLR_3_WALL_EAST
+ ...Surface=PATROOM1_MULT10_FLR_3_WALL_NORTH
+ ...Surface=PATROOM1_MULT10_FLR_3_WALL_WEST
+ ...Surface=PATROOM1_MULT10_FLR_3_FLOOR
+ ...Surface=PATROOM1_MULT10_FLR_3_CEILING
+ Number of receiving sub surfaces=           1
+ ....Surface=PATROOM1_MULT10_FLR_3_WALL_SOUTH_WINDOW
+ ==================================
+ Surface=PATROOM1_MULT10_FLR_3_WALL_SOUTH_WINDOW is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM1_MULT10_FLR_3_WALL_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM1_MULT10_FLR_3_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM1_MULT10_FLR_3_CEILING is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM1_MULT10_FLR_3 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM1_MULT10_FLR_4_WALL_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM1_MULT10_FLR_4_WALL_NORTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM1_MULT10_FLR_4_WALL_SOUTH is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           5
+ ...Surface=PATROOM1_MULT10_FLR_4_WALL_EAST
+ ...Surface=PATROOM1_MULT10_FLR_4_WALL_NORTH
+ ...Surface=PATROOM1_MULT10_FLR_4_WALL_WEST
+ ...Surface=PATROOM1_MULT10_FLR_4_FLOOR
+ ...Surface=PATROOM1_MULT10_FLR_4_CEILING
+ Number of receiving sub surfaces=           1
+ ....Surface=PATROOM1_MULT10_FLR_4_WALL_SOUTH_WINDOW
+ ==================================
+ Surface=PATROOM1_MULT10_FLR_4_WALL_SOUTH_WINDOW is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM1_MULT10_FLR_4_WALL_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM1_MULT10_FLR_4_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM1_MULT10_FLR_4_CEILING is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM1_MULT10_FLR_4 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM2_FLR_3_WALL_EAST is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           6
+ ...Surface=PATROOM2_FLR_3_WALL_NORTH
+ ...Surface=PATROOM2_FLR_3_WALL_SOUTH
+ ...Surface=PATROOM2_FLR_3_WALL_SOUTH_WINDOW
+ ...Surface=PATROOM2_FLR_3_WALL_WEST
+ ...Surface=PATROOM2_FLR_3_FLOOR
+ ...Surface=PATROOM2_FLR_3_CEILING
+ Number of receiving sub surfaces=           1
+ ....Surface=PATROOM2_FLR_3_WALL_EAST_WINDOW
+ ==================================
+ Surface=PATROOM2_FLR_3_WALL_EAST_WINDOW is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM2_FLR_3_WALL_NORTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM2_FLR_3_WALL_SOUTH is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           6
+ ...Surface=PATROOM2_FLR_3_WALL_EAST
+ ...Surface=PATROOM2_FLR_3_WALL_EAST_WINDOW
+ ...Surface=PATROOM2_FLR_3_WALL_NORTH
+ ...Surface=PATROOM2_FLR_3_WALL_WEST
+ ...Surface=PATROOM2_FLR_3_FLOOR
+ ...Surface=PATROOM2_FLR_3_CEILING
+ Number of receiving sub surfaces=           1
+ ....Surface=PATROOM2_FLR_3_WALL_SOUTH_WINDOW
+ ==================================
+ Surface=PATROOM2_FLR_3_WALL_SOUTH_WINDOW is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM2_FLR_3_WALL_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM2_FLR_3_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM2_FLR_3_CEILING is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM2_FLR_3 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM2_FLR_4_WALL_EAST is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           6
+ ...Surface=PATROOM2_FLR_4_WALL_NORTH
+ ...Surface=PATROOM2_FLR_4_WALL_SOUTH
+ ...Surface=PATROOM2_FLR_4_WALL_SOUTH_WINDOW
+ ...Surface=PATROOM2_FLR_4_WALL_WEST
+ ...Surface=PATROOM2_FLR_4_FLOOR
+ ...Surface=PATROOM2_FLR_4_CEILING
+ Number of receiving sub surfaces=           1
+ ....Surface=PATROOM2_FLR_4_WALL_EAST_WINDOW
+ ==================================
+ Surface=PATROOM2_FLR_4_WALL_EAST_WINDOW is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM2_FLR_4_WALL_NORTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM2_FLR_4_WALL_SOUTH is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           6
+ ...Surface=PATROOM2_FLR_4_WALL_EAST
+ ...Surface=PATROOM2_FLR_4_WALL_EAST_WINDOW
+ ...Surface=PATROOM2_FLR_4_WALL_NORTH
+ ...Surface=PATROOM2_FLR_4_WALL_WEST
+ ...Surface=PATROOM2_FLR_4_FLOOR
+ ...Surface=PATROOM2_FLR_4_CEILING
+ Number of receiving sub surfaces=           1
+ ....Surface=PATROOM2_FLR_4_WALL_SOUTH_WINDOW
+ ==================================
+ Surface=PATROOM2_FLR_4_WALL_SOUTH_WINDOW is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM2_FLR_4_WALL_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM2_FLR_4_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM2_FLR_4_CEILING is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM2_FLR_4 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM3_MULT10_FLR_3_WALL_EAST is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           5
+ ...Surface=PATROOM3_MULT10_FLR_3_WALL_NORTH
+ ...Surface=PATROOM3_MULT10_FLR_3_WALL_SOUTH
+ ...Surface=PATROOM3_MULT10_FLR_3_WALL_WEST
+ ...Surface=PATROOM3_MULT10_FLR_3_FLOOR
+ ...Surface=PATROOM3_MULT10_FLR_3_CEILING
+ Number of receiving sub surfaces=           1
+ ....Surface=PATROOM3_MULT10_FLR_3_WALL_EAST_WINDOW
+ ==================================
+ Surface=PATROOM3_MULT10_FLR_3_WALL_EAST_WINDOW is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM3_MULT10_FLR_3_WALL_NORTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM3_MULT10_FLR_3_WALL_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM3_MULT10_FLR_3_WALL_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM3_MULT10_FLR_3_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM3_MULT10_FLR_3_CEILING is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM3_MULT10_FLR_3 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM3_MULT10_FLR_4_WALL_EAST is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           5
+ ...Surface=PATROOM3_MULT10_FLR_4_WALL_NORTH
+ ...Surface=PATROOM3_MULT10_FLR_4_WALL_SOUTH
+ ...Surface=PATROOM3_MULT10_FLR_4_WALL_WEST
+ ...Surface=PATROOM3_MULT10_FLR_4_FLOOR
+ ...Surface=PATROOM3_MULT10_FLR_4_CEILING
+ Number of receiving sub surfaces=           1
+ ....Surface=PATROOM3_MULT10_FLR_4_WALL_EAST_WINDOW
+ ==================================
+ Surface=PATROOM3_MULT10_FLR_4_WALL_EAST_WINDOW is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM3_MULT10_FLR_4_WALL_NORTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM3_MULT10_FLR_4_WALL_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM3_MULT10_FLR_4_WALL_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM3_MULT10_FLR_4_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM3_MULT10_FLR_4_CEILING is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM3_MULT10_FLR_4 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM4_FLR_3_WALL_EAST is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           6
+ ...Surface=PATROOM4_FLR_3_WALL_NORTH
+ ...Surface=PATROOM4_FLR_3_WALL_NORTH_WINDOW
+ ...Surface=PATROOM4_FLR_3_WALL_SOUTH
+ ...Surface=PATROOM4_FLR_3_WALL_WEST
+ ...Surface=PATROOM4_FLR_3_FLOOR
+ ...Surface=PATROOM4_FLR_3_CEILING
+ Number of receiving sub surfaces=           1
+ ....Surface=PATROOM4_FLR_3_WALL_EAST_WINDOW
+ ==================================
+ Surface=PATROOM4_FLR_3_WALL_EAST_WINDOW is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM4_FLR_3_WALL_NORTH is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           6
+ ...Surface=PATROOM4_FLR_3_WALL_EAST
+ ...Surface=PATROOM4_FLR_3_WALL_EAST_WINDOW
+ ...Surface=PATROOM4_FLR_3_WALL_SOUTH
+ ...Surface=PATROOM4_FLR_3_WALL_WEST
+ ...Surface=PATROOM4_FLR_3_FLOOR
+ ...Surface=PATROOM4_FLR_3_CEILING
+ Number of receiving sub surfaces=           1
+ ....Surface=PATROOM4_FLR_3_WALL_NORTH_WINDOW
+ ==================================
+ Surface=PATROOM4_FLR_3_WALL_NORTH_WINDOW is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM4_FLR_3_WALL_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM4_FLR_3_WALL_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM4_FLR_3_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM4_FLR_3_CEILING is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM4_FLR_3 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM4_FLR_4_WALL_EAST is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           6
+ ...Surface=PATROOM4_FLR_4_WALL_NORTH
+ ...Surface=PATROOM4_FLR_4_WALL_NORTH_WINDOW
+ ...Surface=PATROOM4_FLR_4_WALL_SOUTH
+ ...Surface=PATROOM4_FLR_4_WALL_WEST
+ ...Surface=PATROOM4_FLR_4_FLOOR
+ ...Surface=PATROOM4_FLR_4_CEILING
+ Number of receiving sub surfaces=           1
+ ....Surface=PATROOM4_FLR_4_WALL_EAST_WINDOW
+ ==================================
+ Surface=PATROOM4_FLR_4_WALL_EAST_WINDOW is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM4_FLR_4_WALL_NORTH is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           6
+ ...Surface=PATROOM4_FLR_4_WALL_EAST
+ ...Surface=PATROOM4_FLR_4_WALL_EAST_WINDOW
+ ...Surface=PATROOM4_FLR_4_WALL_SOUTH
+ ...Surface=PATROOM4_FLR_4_WALL_WEST
+ ...Surface=PATROOM4_FLR_4_FLOOR
+ ...Surface=PATROOM4_FLR_4_CEILING
+ Number of receiving sub surfaces=           1
+ ....Surface=PATROOM4_FLR_4_WALL_NORTH_WINDOW
+ ==================================
+ Surface=PATROOM4_FLR_4_WALL_NORTH_WINDOW is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM4_FLR_4_WALL_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM4_FLR_4_WALL_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM4_FLR_4_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM4_FLR_4_CEILING is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM4_FLR_4 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM5_MULT10_FLR_3_WALL_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM5_MULT10_FLR_3_WALL_NORTH is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           5
+ ...Surface=PATROOM5_MULT10_FLR_3_WALL_EAST
+ ...Surface=PATROOM5_MULT10_FLR_3_WALL_SOUTH
+ ...Surface=PATROOM5_MULT10_FLR_3_WALL_WEST
+ ...Surface=PATROOM5_MULT10_FLR_3_FLOOR
+ ...Surface=PATROOM5_MULT10_FLR_3_CEILING
+ Number of receiving sub surfaces=           1
+ ....Surface=PATROOM5_MULT10_FLR_3_WALL_NORTH_WINDOW
+ ==================================
+ Surface=PATROOM5_MULT10_FLR_3_WALL_NORTH_WINDOW is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM5_MULT10_FLR_3_WALL_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM5_MULT10_FLR_3_WALL_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM5_MULT10_FLR_3_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM5_MULT10_FLR_3_CEILING is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM5_MULT10_FLR_3 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM5_MULT10_FLR_4_WALL_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM5_MULT10_FLR_4_WALL_NORTH is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           5
+ ...Surface=PATROOM5_MULT10_FLR_4_WALL_EAST
+ ...Surface=PATROOM5_MULT10_FLR_4_WALL_SOUTH
+ ...Surface=PATROOM5_MULT10_FLR_4_WALL_WEST
+ ...Surface=PATROOM5_MULT10_FLR_4_FLOOR
+ ...Surface=PATROOM5_MULT10_FLR_4_CEILING
+ Number of receiving sub surfaces=           1
+ ....Surface=PATROOM5_MULT10_FLR_4_WALL_NORTH_WINDOW
+ ==================================
+ Surface=PATROOM5_MULT10_FLR_4_WALL_NORTH_WINDOW is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM5_MULT10_FLR_4_WALL_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM5_MULT10_FLR_4_WALL_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM5_MULT10_FLR_4_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM5_MULT10_FLR_4_CEILING is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM5_MULT10_FLR_4 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM6_FLR_3_WALL_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM6_FLR_3_WALL_NORTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM6_FLR_3_WALL_SOUTH is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           6
+ ...Surface=PATROOM6_FLR_3_WALL_EAST
+ ...Surface=PATROOM6_FLR_3_WALL_NORTH
+ ...Surface=PATROOM6_FLR_3_WALL_WEST
+ ...Surface=PATROOM6_FLR_3_WALL_WEST_WINDOW
+ ...Surface=PATROOM6_FLR_3_FLOOR
+ ...Surface=PATROOM6_FLR_3_CEILING
+ Number of receiving sub surfaces=           1
+ ....Surface=PATROOM6_FLR_3_WALL_SOUTH_WINDOW
+ ==================================
+ Surface=PATROOM6_FLR_3_WALL_SOUTH_WINDOW is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM6_FLR_3_WALL_WEST is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           6
+ ...Surface=PATROOM6_FLR_3_WALL_EAST
+ ...Surface=PATROOM6_FLR_3_WALL_NORTH
+ ...Surface=PATROOM6_FLR_3_WALL_SOUTH
+ ...Surface=PATROOM6_FLR_3_WALL_SOUTH_WINDOW
+ ...Surface=PATROOM6_FLR_3_FLOOR
+ ...Surface=PATROOM6_FLR_3_CEILING
+ Number of receiving sub surfaces=           1
+ ....Surface=PATROOM6_FLR_3_WALL_WEST_WINDOW
+ ==================================
+ Surface=PATROOM6_FLR_3_WALL_WEST_WINDOW is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM6_FLR_3_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM6_FLR_3_CEILING is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM6_FLR_3 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM6_FLR_4_WALL_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM6_FLR_4_WALL_NORTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM6_FLR_4_WALL_SOUTH is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           6
+ ...Surface=PATROOM6_FLR_4_WALL_EAST
+ ...Surface=PATROOM6_FLR_4_WALL_NORTH
+ ...Surface=PATROOM6_FLR_4_WALL_WEST
+ ...Surface=PATROOM6_FLR_4_WALL_WEST_WINDOW
+ ...Surface=PATROOM6_FLR_4_FLOOR
+ ...Surface=PATROOM6_FLR_4_CEILING
+ Number of receiving sub surfaces=           1
+ ....Surface=PATROOM6_FLR_4_WALL_SOUTH_WINDOW
+ ==================================
+ Surface=PATROOM6_FLR_4_WALL_SOUTH_WINDOW is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM6_FLR_4_WALL_WEST is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           6
+ ...Surface=PATROOM6_FLR_4_WALL_EAST
+ ...Surface=PATROOM6_FLR_4_WALL_NORTH
+ ...Surface=PATROOM6_FLR_4_WALL_SOUTH
+ ...Surface=PATROOM6_FLR_4_WALL_SOUTH_WINDOW
+ ...Surface=PATROOM6_FLR_4_FLOOR
+ ...Surface=PATROOM6_FLR_4_CEILING
+ Number of receiving sub surfaces=           1
+ ....Surface=PATROOM6_FLR_4_WALL_WEST_WINDOW
+ ==================================
+ Surface=PATROOM6_FLR_4_WALL_WEST_WINDOW is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM6_FLR_4_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM6_FLR_4_CEILING is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM6_FLR_4 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM7_MULT10_FLR_3_WALL_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM7_MULT10_FLR_3_WALL_NORTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM7_MULT10_FLR_3_WALL_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM7_MULT10_FLR_3_WALL_WEST is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           5
+ ...Surface=PATROOM7_MULT10_FLR_3_WALL_EAST
+ ...Surface=PATROOM7_MULT10_FLR_3_WALL_NORTH
+ ...Surface=PATROOM7_MULT10_FLR_3_WALL_SOUTH
+ ...Surface=PATROOM7_MULT10_FLR_3_FLOOR
+ ...Surface=PATROOM7_MULT10_FLR_3_CEILING
+ Number of receiving sub surfaces=           1
+ ....Surface=PATROOM7_MULT10_FLR_3_WALL_WEST_WINDOW
+ ==================================
+ Surface=PATROOM7_MULT10_FLR_3_WALL_WEST_WINDOW is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM7_MULT10_FLR_3_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM7_MULT10_FLR_3_CEILING is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM7_MULT10_FLR_3 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM7_MULT10_FLR_4_WALL_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM7_MULT10_FLR_4_WALL_NORTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM7_MULT10_FLR_4_WALL_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM7_MULT10_FLR_4_WALL_WEST is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           5
+ ...Surface=PATROOM7_MULT10_FLR_4_WALL_EAST
+ ...Surface=PATROOM7_MULT10_FLR_4_WALL_NORTH
+ ...Surface=PATROOM7_MULT10_FLR_4_WALL_SOUTH
+ ...Surface=PATROOM7_MULT10_FLR_4_FLOOR
+ ...Surface=PATROOM7_MULT10_FLR_4_CEILING
+ Number of receiving sub surfaces=           1
+ ....Surface=PATROOM7_MULT10_FLR_4_WALL_WEST_WINDOW
+ ==================================
+ Surface=PATROOM7_MULT10_FLR_4_WALL_WEST_WINDOW is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM7_MULT10_FLR_4_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM7_MULT10_FLR_4_CEILING is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM7_MULT10_FLR_4 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM8_FLR_3_WALL_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM8_FLR_3_WALL_NORTH is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           6
+ ...Surface=PATROOM8_FLR_3_WALL_EAST
+ ...Surface=PATROOM8_FLR_3_WALL_SOUTH
+ ...Surface=PATROOM8_FLR_3_WALL_WEST
+ ...Surface=PATROOM8_FLR_3_WALL_WEST_WINDOW
+ ...Surface=PATROOM8_FLR_3_FLOOR
+ ...Surface=PATROOM8_FLR_3_CEILING
+ Number of receiving sub surfaces=           1
+ ....Surface=PATROOM8_FLR_3_WALL_NORTH_WINDOW
+ ==================================
+ Surface=PATROOM8_FLR_3_WALL_NORTH_WINDOW is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM8_FLR_3_WALL_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM8_FLR_3_WALL_WEST is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           6
+ ...Surface=PATROOM8_FLR_3_WALL_EAST
+ ...Surface=PATROOM8_FLR_3_WALL_NORTH
+ ...Surface=PATROOM8_FLR_3_WALL_NORTH_WINDOW
+ ...Surface=PATROOM8_FLR_3_WALL_SOUTH
+ ...Surface=PATROOM8_FLR_3_FLOOR
+ ...Surface=PATROOM8_FLR_3_CEILING
+ Number of receiving sub surfaces=           1
+ ....Surface=PATROOM8_FLR_3_WALL_WEST_WINDOW
+ ==================================
+ Surface=PATROOM8_FLR_3_WALL_WEST_WINDOW is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM8_FLR_3_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM8_FLR_3_CEILING is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM8_FLR_3 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM8_FLR_4_WALL_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM8_FLR_4_WALL_NORTH is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           6
+ ...Surface=PATROOM8_FLR_4_WALL_EAST
+ ...Surface=PATROOM8_FLR_4_WALL_SOUTH
+ ...Surface=PATROOM8_FLR_4_WALL_WEST
+ ...Surface=PATROOM8_FLR_4_WALL_WEST_WINDOW
+ ...Surface=PATROOM8_FLR_4_FLOOR
+ ...Surface=PATROOM8_FLR_4_CEILING
+ Number of receiving sub surfaces=           1
+ ....Surface=PATROOM8_FLR_4_WALL_NORTH_WINDOW
+ ==================================
+ Surface=PATROOM8_FLR_4_WALL_NORTH_WINDOW is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM8_FLR_4_WALL_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM8_FLR_4_WALL_WEST is used as Receiving Surface in calculations and is convex.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           6
+ ...Surface=PATROOM8_FLR_4_WALL_EAST
+ ...Surface=PATROOM8_FLR_4_WALL_NORTH
+ ...Surface=PATROOM8_FLR_4_WALL_NORTH_WINDOW
+ ...Surface=PATROOM8_FLR_4_WALL_SOUTH
+ ...Surface=PATROOM8_FLR_4_FLOOR
+ ...Surface=PATROOM8_FLR_4_CEILING
+ Number of receiving sub surfaces=           1
+ ....Surface=PATROOM8_FLR_4_WALL_WEST_WINDOW
+ ==================================
+ Surface=PATROOM8_FLR_4_WALL_WEST_WINDOW is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM8_FLR_4_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM8_FLR_4_CEILING is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PATROOM8_FLR_4 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PHYSTHERAPY_FLR_3_WALL_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PHYSTHERAPY_FLR_3_WALL_NORTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PHYSTHERAPY_FLR_3_WALL_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PHYSTHERAPY_FLR_3_WALL_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PHYSTHERAPY_FLR_3_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PHYSTHERAPY_FLR_3_CEILING is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=PHYSTHERAPY_FLR_3 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=RADIOLOGY_FLR_4_WALL_EAST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=RADIOLOGY_FLR_4_WALL_NORTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=RADIOLOGY_FLR_4_WALL_SOUTH is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=RADIOLOGY_FLR_4_WALL_WEST is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=RADIOLOGY_FLR_4_FLOOR is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=RADIOLOGY_FLR_4_CEILING is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0
+ ==================================
+ Surface=RADIOLOGY_FLR_4 INTERNAL MASS is not used as Receiving Surface in calculations.
+ Number of general casting surfaces=           0
+ Number of back surfaces=           0
+ Number of receiving sub surfaces=           0

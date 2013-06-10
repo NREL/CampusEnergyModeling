@@ -1,0 +1,15 @@
+1. RefBldgHospitalNew2004_Chicago.idf	
+Chicago 	
+Hospital, new construction 90.1-2004; DOE Commercial Reference Building; based on Version 1.3_5.0
+2. RefBldgLargeHotelNew2004_Chicago.idf
+Chicago 	
+Large hotel, new construction 90.1-2004; DOE Commercial Reference Building; based on Version 1.3_5.0																				
+3. RefBldgLargeOfficeNew2004_Chicago.idf
+Chicago 	
+Large office, new construction 90.1-2004; DOE Commercial Reference Building; based on Version 1.3_5.0																				
+4. RefBldgOutPatientNew2004_Chicago.idf	
+Chicago 	
+Outpatient Facility, new construction 90.1-2004; DOE Commercial Reference Building; based on Version 1.3_5.0																				
+5. RefBldgPrimarySchoolNew2004_Chicago.idf	
+Chicago 	
+Primary School, new construction 90.1-2004; DOE Commercial Reference Building; based on Version 1.3_5.0																				

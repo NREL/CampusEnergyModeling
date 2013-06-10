@@ -1,0 +1,74 @@
+Program Version,EnergyPlus-Windows-64 8.0.0.008, YMD=2013.06.10 17:07,IDD_Version 8.0.0.008
+   ************* Beginning Zone Sizing Calculations
+   ** Warning ** CheckUsedConstructions: There are 1 nominally unused constructions in input.
+   **   ~~~   ** For explicit details on each unused construction, use Output:Diagnostics,DisplayExtraWarnings;
+   ** Warning ** Calculated design heating load for zone=CORRIDOR_NW_FLR_3 is zero.
+   **   ~~~   ** Check Sizing:Zone and ZoneControl:Thermostat inputs.
+   ** Warning ** Calculated design heating load for zone=CORRIDOR_NW_FLR_4 is zero.
+   **   ~~~   ** Check Sizing:Zone and ZoneControl:Thermostat inputs.
+   ** Warning ** Calculated design heating load for zone=CORRIDOR_SE_FLR_3 is zero.
+   **   ~~~   ** Check Sizing:Zone and ZoneControl:Thermostat inputs.
+   ** Warning ** Calculated design heating load for zone=CORRIDOR_SE_FLR_4 is zero.
+   **   ~~~   ** Check Sizing:Zone and ZoneControl:Thermostat inputs.
+   ** Warning ** Calculated design heating load for zone=ER_EXAM3_MULT4_FLR_1 is zero.
+   **   ~~~   ** Check Sizing:Zone and ZoneControl:Thermostat inputs.
+   ** Warning ** Calculated design heating load for zone=ER_NURSESTN_LOBBY_FLR_1 is zero.
+   **   ~~~   ** Check Sizing:Zone and ZoneControl:Thermostat inputs.
+   ** Warning ** Calculated design heating load for zone=ICU_NURSESTN_LOBBY_FLR_2 is zero.
+   **   ~~~   ** Check Sizing:Zone and ZoneControl:Thermostat inputs.
+   ** Warning ** Calculated design heating load for zone=LAB_FLR_3 is zero.
+   **   ~~~   ** Check Sizing:Zone and ZoneControl:Thermostat inputs.
+   ** Warning ** Calculated design heating load for zone=LAB_FLR_4 is zero.
+   **   ~~~   ** Check Sizing:Zone and ZoneControl:Thermostat inputs.
+   ** Warning ** Calculated design heating load for zone=NURSESTN_LOBBY_FLR_3 is zero.
+   **   ~~~   ** Check Sizing:Zone and ZoneControl:Thermostat inputs.
+   ** Warning ** Calculated design heating load for zone=NURSESTN_LOBBY_FLR_4 is zero.
+   **   ~~~   ** Check Sizing:Zone and ZoneControl:Thermostat inputs.
+   ** Warning ** Calculated design heating load for zone=OR2_MULT5_FLR_2 is zero.
+   **   ~~~   ** Check Sizing:Zone and ZoneControl:Thermostat inputs.
+   ** Warning ** Calculated design heating load for zone=OR3_FLR_2 is zero.
+   **   ~~~   ** Check Sizing:Zone and ZoneControl:Thermostat inputs.
+   ** Warning ** Calculated design heating load for zone=OR4_FLR_2 is zero.
+   **   ~~~   ** Check Sizing:Zone and ZoneControl:Thermostat inputs.
+   ** Warning ** Calculated design heating load for zone=PHYSTHERAPY_FLR_3 is zero.
+   **   ~~~   ** Check Sizing:Zone and ZoneControl:Thermostat inputs.
+   ** Warning ** Calculated design heating load for zone=RADIOLOGY_FLR_4 is zero.
+   **   ~~~   ** Check Sizing:Zone and ZoneControl:Thermostat inputs.
+   ************* Beginning System Sizing Calculations
+   ************* Beginning Plant Sizing Calculations
+   ** Warning ** DXFOut: Could not triangulate surface="LOBBY_FLR_1_CEILING", type="Roof", check surface vertex order(entry)
+   **   ~~~   ** ...use Output:Diagnostics,DisplayExtraWarnings; to show more details on individual surfaces.
+   ************* Testing Individual Branch Integrity
+   ************* All Branches passed integrity testing
+   ************* Testing Individual Supply Air Path Integrity
+   ************* All Supply Air Paths passed integrity testing
+   ************* Testing Individual Return Air Path Integrity
+   ************* All Return Air Paths passed integrity testing
+   ************* No node connection errors were found.
+   ************* Beginning Simulation
+   ** Warning ** CHILLER:ELECTRIC:REFORMULATEDEIR "COOLSYS1 CHILLER": The condenser outlet temperature (14.15 C) is outside the range of condenser outlet temperatures (X var) given in Electric Input to Cooling Output Ratio Function of Part-load Ratio bicubic curve = REFORMEIRCHILLER CARRIER 19XR 1259KW/6.26COP/VANES EIRFPLR
+   **   ~~~   ** The range specified = 14.56 C to 34.97 C. Environment=Chicago Ohare Intl Ap IL USA TMY3 WMO#=725300, at Simulation time=06/01 00:00 - 00:15
+   ************* Simulation Error Summary *************
+   ************* There are 1 unused schedules in input.
+   ************* Use Output:Diagnostics,DisplayUnusedSchedules; to see them.
+   *************
+   ************* ===== Recurring Error Summary =====
+   ************* The following recurring error messages occurred.
+   *************
+   *************  ** Warning ** CHILLER:ELECTRIC:REFORMULATEDEIR "COOLSYS1 CHILLER": The cond outlet temp range in Electric Input to Cooling Output Ratio Function of PLR curve error continues.
+   *************  **   ~~~   **   This error occurred 30 total times;
+   *************  **   ~~~   **   during Warmup 0 times;
+   *************  **   ~~~   **   during Sizing 0 times.
+   *************  **   ~~~   **   Max=14.331513  Min=13.27426
+   *************
+   *************
+   ************* ===== Final Error Summary =====
+   ************* The following error categories occurred.  Consider correcting or noting.
+   ************* Nominally Unused Constructions
+   ************* ..The nominally unused constructions warning is provided to alert you to potential conditions that can cause
+   ************* ..extra time during simulation. Each construction is calculated by the algorithm indicated in the HeatBalanceAlgorithm
+   ************* ..object. You may remove the constructions indicated (when you use the DisplayExtraWarnings option).
+   *************
+   ************* EnergyPlus Warmup Error Summary. During Warmup: 0 Warning; 0 Severe Errors.
+   ************* EnergyPlus Sizing Error Summary. During Sizing: 17 Warning; 0 Severe Errors.
+   ************* EnergyPlus Completed Successfully-- 49 Warning; 0 Severe Errors; Elapsed Time=00hr 00min 25.04sec

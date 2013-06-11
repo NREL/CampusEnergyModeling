@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.10"
+    ComputedModelVersion    "1.27"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -23,8 +23,8 @@ Model {
   MaxMDLFileLineLength	  120
   InitFcn		  "Ts = 1e-5;\n"
   UserBdParams		  "PhysicalModelingChecksum;PhysicalModelingParameterChecksum;PhysicalModelingProducts"
-  PhysicalModelingChecksum "1217160643"
-  PhysicalModelingParameterChecksum "3245848786"
+  PhysicalModelingChecksum "3884411175"
+  PhysicalModelingParameterChecksum "3158418141"
   PhysicalModelingProducts "Power_System_Blocks"
   Created		  "Wed Jun 05 13:15:02 2013"
   Creator		  "sfrank1"
@@ -32,9 +32,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Jun 06 14:43:54 2013"
-  RTWModifiedTimeStamp	  292426885
-  ModelVersionFormat	  "1.%<AutoIncrement:10>"
+  LastModifiedDate	  "Tue Jun 11 15:19:50 2013"
+  RTWModifiedTimeStamp	  292857550
+  ModelVersionFormat	  "1.%<AutoIncrement:27>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -72,6 +72,7 @@ Model {
     $ObjectID		    1
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "simpowersystems_simple_phasor"
+    signals_		    []
     overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
@@ -137,9 +138,9 @@ Model {
 	  $ObjectID		  3
 	  Version		  "1.11.1"
 	  StartTime		  "0.0"
-	  StopTime		  "1"
+	  StopTime		  "inf"
 	  AbsTol		  "auto"
-	  FixedStep		  "Ts"
+	  FixedStep		  "1"
 	  InitialStep		  "auto"
 	  MaxNumMinSteps	  "-1"
 	  MaxOrder		  5
@@ -154,8 +155,8 @@ Model {
 	  RelTol		  "1e-3"
 	  SolverMode		  "Auto"
 	  ConcurrentTasks	  off
-	  Solver		  "ode45"
-	  SolverName		  "ode45"
+	  Solver		  "FixedStepDiscrete"
+	  SolverName		  "FixedStepDiscrete"
 	  SolverJacobianMethodControl "auto"
 	  ShapePreserveControl	  "DisableAll"
 	  ZeroCrossControl	  "UseLocalSettings"
@@ -634,7 +635,7 @@ Model {
       }
       Name		      "Configuration"
       CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition     [ 504, 70, 1417, 904 ] 
+      ConfigPrmDlgPosition     [ 488, 10, 1433, 920 ] 
     }
     PropName		    "ConfigurationSets"
   }
@@ -675,8 +676,14 @@ Model {
   }
   BlockParameterDefaults {
     Block {
-      BlockType		      BusSelector
-      OutputAsBus	      off
+      BlockType		      ComplexToMagnitudeAngle
+      Output		      "Magnitude and angle"
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      ComplexToRealImag
+      Output		      "Real and imag"
+      SampleTime	      "-1"
     }
     Block {
       BlockType		      Constant
@@ -692,12 +699,141 @@ Model {
       PreserveConstantTs      off
     }
     Block {
+      BlockType		      Demux
+      Outputs		      "4"
+      DisplayOption	      "none"
+      BusSelectionMode	      off
+    }
+    Block {
+      BlockType		      Display
+      Format		      "short"
+      Decimation	      "10"
+      Floating		      off
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      From
+      IconDisplay	      "Tag"
+      TagVisibility	      "local"
+    }
+    Block {
+      BlockType		      Gain
+      Gain		      "1"
+      Multiplication	      "Element-wise(K.*u)"
+      ParamMin		      "[]"
+      ParamMax		      "[]"
+      ParamDataTypeStr	      "Inherit: Same as input"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Goto
+      IconDisplay	      "Tag"
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      OutputFunctionCall      off
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchInputForFeedbackSignals off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      MagnitudeAngleToComplex
+      Input		      "Magnitude and angle"
+      ConstantPart	      "0"
+      ApproximationMethod     "None"
+      NumberOfIterations      "11"
+      ScaleReciprocalGainFactor	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Memory
+      X0		      "0"
+      InheritSampleTime	      off
+      LinearizeMemory	      off
+      LinearizeAsDelay	      off
+      StateMustResolveToSignalObject off
+      RTWStateStorageClass    "Auto"
+    }
+    Block {
       BlockType		      Mux
       Inputs		      "4"
       DisplayOption	      "none"
       UseBusObject	      off
       BusObject		      "BusObject"
       NonVirtualBus	      off
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      SourceOfInitialOutputValue "Dialog"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      PMIOPort
+    }
+    Block {
+      BlockType		      Product
+      Inputs		      "2"
+      Multiplication	      "Element-wise(.*)"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Zero"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      RealImagToComplex
+      Input		      "Real and imag"
+      ConstantPart	      "0"
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Saturate
+      UpperLimitSource	      "Dialog"
+      UpperLimit	      "0.5"
+      LowerLimitSource	      "Dialog"
+      LowerLimit	      "-0.5"
+      LinearizeAsGain	      on
+      ZeroCross		      on
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as input"
+      LockScale		      off
+      RndMeth		      "Floor"
     }
     Block {
       BlockType		      Scope
@@ -717,18 +853,48 @@ Model {
       SampleTime	      "-1"
     }
     Block {
-      BlockType		      Step
-      Time		      "1"
-      Before		      "0"
-      After		      "1"
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      CheckFcnCallInpInsideContextMsg off
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      DataTypeOverrideAppliesTo	"AllNumericTypes"
+      MinMaxOverflowLogging   "UseLocalSettings"
+      SFBlockType	      "NONE"
+      Variant		      off
+      GeneratePreprocessorConditionals off
+    }
+    Block {
+      BlockType		      Sum
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
+      AccumDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
       SampleTime	      "-1"
-      VectorParams1D	      on
-      ZeroCross		      on
     }
   }
   System {
     Name		    "simpowersystems_simple_phasor"
-    Location		    [484, 82, 1909, 1011]
+    Location		    [484, 82, 1908, 1011]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    212
@@ -742,54 +908,1796 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "18"
+    SIDHighWatermark	    "147"
     Block {
       BlockType		      Reference
-      Name		      "1W Dummy Load"
-      SID		      "11"
-      Ports		      [0, 0, 0, 0, 0, 3]
-      Position		      [397, 495, 453, 560]
-      BlockRotation	      270
-      BlockMirror	      on
-      AttributesFormatString  "\\n"
-      LibraryVersion	      "1.2088"
+      Name		      "3-Phase\nActive & Reactive Power\n(Phasor Type)"
+      SID		      "74"
+      Ports		      [2, 1]
+      Position		      [275, 324, 330, 386]
+      ZOrder		      -1
+      ShowName		      off
+      LibraryVersion	      "1.644"
       FontName		      "Verdana"
       FontSize		      11
-      SourceBlock	      "powerlib/Elements/Three-Phase\nParallel RLC Load"
-      SourceType	      "Three-Phase Parallel RLC Load"
-      LConnTagsString	      "A|B|C"
-      Configuration	      "Y (grounded)"
-      NominalVoltage	      "480"
-      NominalFrequency	      "60"
-      ActivePower	      "1"
-      InductivePower	      "0"
-      CapacitivePower	      "0"
-      Measurements	      "None"
-      LoadType		      "constant Z"
-    }
-    Block {
-      BlockType		      BusSelector
-      Name		      "Bus\nSelector"
-      SID		      "15"
-      Ports		      [1, 1]
-      Position		      [630, 341, 635, 379]
-      ShowName		      off
-      OutputSignals	      "Active power P (W),Reactive power Q (var)"
-      OutputAsBus	      on
+      SourceBlock	      "powerlib_extras/Phasor\nLibrary/3-Phase\nActive & Reactive Power\n(Phasor Type)"
+      SourceType	      "3-Phase Active & Reactive Power (Phasor Type)"
       Port {
 	PortNumber		1
 	Name			"Measured PQ"
-	PropagatedSignals	"Active power P (W), Reactive power Q (var)"
+	PropagatedSignals	", "
 	RTWStorageClass		"Auto"
 	DataLoggingNameMode	"SignalName"
       }
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant"
+      SID		      "6"
+      Position		      [80, 225, 110, 255]
+      NamePlacement	      "alternate"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Constant Power Load"
+      SID		      "20"
+      Ports		      [1, 0, 0, 0, 0, 4]
+      Position		      [450, 442, 490, 528]
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      MaskType		      "Constant Power Load"
+      MaskDescription	      "Implements a controllable constant power load, where VI* = P + jQ (in per-unit)."
+      MaskHelp		      "Implements a controllable constant power load, where VI* = P + jQ (in per-unit)."
+      MaskPromptString	      "Nominal three-phase real power (W)|Nominal three-phase reactive power (VAR)|Nominal line"
+      "-to-line voltage (VRMS)|Nominal frequency (Hz)|Lower voltage limit (pu)"
+      MaskStyleString	      "edit,edit,edit,edit,edit"
+      MaskVariables	      "PNom=@1;QNom=@2;VNom=@3;fNom=@4;VLow=@5;"
+      MaskTunableValueString  "on,on,on,off,on"
+      MaskCallbackString      "||||"
+      MaskEnableString	      "on,on,on,on,on"
+      MaskVisibilityString    "on,on,on,on,on"
+      MaskToolTipString	      "on,on,on,on,on"
+      MaskInitialization      "% Check voltages\nif VNom <= 0\n    error('Nominal line-to-line voltage for a constant "
+      "power block must be strictly positive.');\nend\nif VLow <= 0\n    error('Lower cutoff voltage for a constant pow"
+      "er block must be strictly positive.');\nend\n"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "5000|2000|480|60|0.7"
+      System {
+	Name			"Constant Power Load"
+	Location		[325, 211, 1864, 847]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "PQ"
+	  SID			  "21"
+	  Position		  [40, 93, 70, 107]
+	  IconDisplay		  "Port number"
+	  PortDimensions	  "2"
+	  SignalType		  "real"
+	}
+	Block {
+	  BlockType		  ComplexToMagnitudeAngle
+	  Name			  "Complex to\nMagnitude-Angle"
+	  SID			  "94"
+	  Ports			  [1, 2]
+	  Position		  [250, 283, 280, 312]
+	  ZOrder		  -6
+	  BlockMirror		  on
+	  Output		  "Magnitude and angle"
+	}
+	Block {
+	  BlockType		  ComplexToMagnitudeAngle
+	  Name			  "Complex to\nMagnitude-Angle1"
+	  SID			  "98"
+	  Ports			  [1, 2]
+	  Position		  [260, 448, 290, 477]
+	  ZOrder		  -6
+	  BlockMirror		  on
+	  Output		  "Magnitude and angle"
+	}
+	Block {
+	  BlockType		  ComplexToMagnitudeAngle
+	  Name			  "Complex to\nMagnitude-Angle2"
+	  SID			  "99"
+	  Ports			  [1, 2]
+	  Position		  [910, 493, 940, 522]
+	  ZOrder		  -6
+	  Output		  "Magnitude and angle"
+	}
+	Block {
+	  BlockType		  ComplexToMagnitudeAngle
+	  Name			  "Complex to\nMagnitude-Angle3"
+	  SID			  "110"
+	  Ports			  [1, 2]
+	  Position		  [465, 158, 495, 187]
+	  ZOrder		  -6
+	  Output		  "Magnitude and angle"
+	}
+	Block {
+	  BlockType		  ComplexToMagnitudeAngle
+	  Name			  "Complex to\nMagnitude-Angle4"
+	  SID			  "132"
+	  Ports			  [1, 2]
+	  Position		  [1280, 163, 1310, 192]
+	  ZOrder		  -6
+	  Output		  "Magnitude and angle"
+	}
+	Block {
+	  BlockType		  ComplexToMagnitudeAngle
+	  Name			  "Complex to\nMagnitude-Angle5"
+	  SID			  "133"
+	  Ports			  [1, 2]
+	  Position		  [1280, 283, 1310, 312]
+	  ZOrder		  -6
+	  Output		  "Magnitude and angle"
+	}
+	Block {
+	  BlockType		  ComplexToMagnitudeAngle
+	  Name			  "Complex to\nMagnitude-Angle6"
+	  SID			  "134"
+	  Ports			  [1, 2]
+	  Position		  [1280, 403, 1310, 432]
+	  ZOrder		  -6
+	  Output		  "Magnitude and angle"
+	}
+	Block {
+	  BlockType		  ComplexToRealImag
+	  Name			  "Complex to\nReal-Imag"
+	  SID			  "109"
+	  Ports			  [1, 2]
+	  Position		  [435, 23, 465, 52]
+	  ZOrder		  -7
+	  Output		  "Real and imag"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Conjugate"
+	  SID			  "101"
+	  Ports			  [1, 1]
+	  Position		  [411, 355, 449, 395]
+	  ZOrder		  -17
+	  BlockRotation		  270
+	  BlockMirror		  on
+	  NamePlacement		  "alternate"
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  Port {
+	    PortNumber		    1
+	    Name		    "ITarget"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  System {
+	    Name		    "Conjugate"
+	    Location		    [433, 403, 860, 534]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In"
+	      SID		      "102"
+	      Position		      [40, 48, 70, 62]
+	      ZOrder		      -1
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      ComplexToRealImag
+	      Name		      "Complex to\nReal-Imag"
+	      SID		      "104"
+	      Ports		      [1, 2]
+	      Position		      [115, 38, 145, 67]
+	      ZOrder		      -7
+	      Output		      "Real and imag"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Gain"
+	      SID		      "106"
+	      Position		      [195, 45, 225, 75]
+	      ZOrder		      -8
+	      Gain		      "-1"
+	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      RealImagToComplex
+	      Name		      "Real-Imag to\nComplex"
+	      SID		      "105"
+	      Ports		      [2, 1]
+	      Position		      [280, 38, 310, 67]
+	      ZOrder		      -21
+	      Input		      "Real and imag"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out"
+	      SID		      "103"
+	      Position		      [350, 48, 380, 62]
+	      ZOrder		      -2
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "In"
+	      SrcPort		      1
+	      DstBlock		      "Complex to\nReal-Imag"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Complex to\nReal-Imag"
+	      SrcPort		      1
+	      DstBlock		      "Real-Imag to\nComplex"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Complex to\nReal-Imag"
+	      SrcPort		      2
+	      DstBlock		      "Gain"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Gain"
+	      SrcPort		      1
+	      DstBlock		      "Real-Imag to\nComplex"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Real-Imag to\nComplex"
+	      SrcPort		      1
+	      DstBlock		      "Out"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Convert to 1-phase"
+	  SID			  "65"
+	  Position		  [355, 105, 385, 135]
+	  ZOrder		  -8
+	  Gain			  "1/3"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	  Port {
+	    PortNumber		    1
+	    Name		    "S1"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Correction Current"
+	  SID			  "55"
+	  Ports			  [2, 1]
+	  Position		  [460, 455, 480, 475]
+	  IconShape		  "round"
+	  Inputs		  "-+|"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	  Port {
+	    PortNumber		    1
+	    Name		    "IVar"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux"
+	  SID			  "52"
+	  Ports			  [1, 2]
+	  Position		  [135, 52, 140, 143]
+	  ZOrder		  -6
+	  ShowName		  off
+	  Outputs		  "2"
+	  DisplayOption		  "bar"
+	  Port {
+	    PortNumber		    1
+	    Name		    "P"
+	    PropagatedSignals	    "Target P"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    2
+	    Name		    "Q"
+	    PropagatedSignals	    "Target Q"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux1"
+	  SID			  "135"
+	  Ports			  [1, 3]
+	  Position		  [1230, 119, 1235, 481]
+	  ZOrder		  -7
+	  ShowName		  off
+	  Outputs		  "3"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Display
+	  Name			  "Display 1-phase P Target"
+	  SID			  "107"
+	  Ports			  [1]
+	  Position		  [535, 15, 625, 45]
+	  ZOrder		  -1
+	  BackgroundColor	  "cyan"
+	  Decimation		  "1"
+	  Lockdown		  off
+	}
+	Block {
+	  BlockType		  Display
+	  Name			  "Display 1-phase Q Target"
+	  SID			  "108"
+	  Ports			  [1]
+	  Position		  [535, 75, 625, 105]
+	  ZOrder		  -1
+	  BackgroundColor	  "cyan"
+	  Decimation		  "1"
+	  Lockdown		  off
+	}
+	Block {
+	  BlockType		  Display
+	  Name			  "Display Correction\nCurrent Angle"
+	  SID			  "100"
+	  Ports			  [1]
+	  Position		  [1010, 550, 1100, 580]
+	  ZOrder		  -1
+	  BackgroundColor	  "orange"
+	  Decimation		  "1"
+	  Lockdown		  off
+	}
+	Block {
+	  BlockType		  Display
+	  Name			  "Display Correction\nCurrent Mag."
+	  SID			  "88"
+	  Ports			  [1]
+	  Position		  [1010, 485, 1100, 515]
+	  ZOrder		  -1
+	  BackgroundColor	  "orange"
+	  Decimation		  "1"
+	  Lockdown		  off
+	}
+	Block {
+	  BlockType		  Display
+	  Name			  "Display Measured\nPos. Seq. Current Angle"
+	  SID			  "96"
+	  Ports			  [1]
+	  Position		  [60, 500, 150, 530]
+	  ZOrder		  -1
+	  BlockMirror		  on
+	  BackgroundColor	  "orange"
+	  Decimation		  "1"
+	  Lockdown		  off
+	}
+	Block {
+	  BlockType		  Display
+	  Name			  "Display Measured\nPos. Seq. Current Mag."
+	  SID			  "97"
+	  Ports			  [1]
+	  Position		  [60, 440, 150, 470]
+	  ZOrder		  -1
+	  BlockMirror		  on
+	  BackgroundColor	  "orange"
+	  Decimation		  "1"
+	  Lockdown		  off
+	}
+	Block {
+	  BlockType		  Display
+	  Name			  "Display Pos. Seq.\nVoltage Angle"
+	  SID			  "112"
+	  Ports			  [1]
+	  Position		  [535, 190, 625, 220]
+	  ZOrder		  -1
+	  BackgroundColor	  "orange"
+	  Decimation		  "1"
+	  Lockdown		  off
+	}
+	Block {
+	  BlockType		  Display
+	  Name			  "Display Pos. Seq.\nVoltage Mag."
+	  SID			  "111"
+	  Ports			  [1]
+	  Position		  [535, 130, 625, 160]
+	  ZOrder		  -1
+	  BackgroundColor	  "orange"
+	  Decimation		  "1"
+	  Lockdown		  off
+	}
+	Block {
+	  BlockType		  Display
+	  Name			  "Display Target\nPos. Seq. Current Angle"
+	  SID			  "95"
+	  Ports			  [1]
+	  Position		  [65, 290, 155, 320]
+	  ZOrder		  -1
+	  BlockMirror		  on
+	  BackgroundColor	  "orange"
+	  Decimation		  "1"
+	  Lockdown		  off
+	}
+	Block {
+	  BlockType		  Display
+	  Name			  "Display Target\nPos. Seq. Current Mag."
+	  SID			  "93"
+	  Ports			  [1]
+	  Position		  [65, 230, 155, 260]
+	  ZOrder		  -1
+	  BlockMirror		  on
+	  BackgroundColor	  "orange"
+	  Decimation		  "1"
+	  Lockdown		  off
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Divide"
+	  SID			  "48"
+	  Ports			  [2, 1]
+	  Position		  [412, 305, 443, 335]
+	  BlockRotation		  270
+	  BlockMirror		  on
+	  NamePlacement		  "alternate"
+	  Inputs		  "*/"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  RndMeth		  "Floor"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From"
+	  SID			  "68"
+	  Position		  [901, 30, 929, 70]
+	  ZOrder		  -9
+	  BlockRotation		  270
+	  BlockMirror		  on
+	  NamePlacement		  "alternate"
+	  GotoTag		  "IVar"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto"
+	  SID			  "67"
+	  Position		  [680, 450, 720, 480]
+	  ZOrder		  -10
+	  GotoTag		  "IVar"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "IA"
+	  SID			  "47"
+	  Ports			  [1, 0, 0, 0, 0, 1, 1]
+	  Position		  [907, 205, 943, 250]
+	  BlockRotation		  270
+	  BlockMirror		  on
+	  NamePlacement		  "alternate"
+	  LibraryVersion	  "1.2088"
+	  FontName		  "Verdana"
+	  FontSize		  11
+	  SourceBlock		  "powerlib/Electrical\nSources/Controlled Current Source"
+	  SourceType		  "Controlled Current Source"
+	  Initialize		  off
+	  Source_Type		  "AC"
+	  Amplitude		  "0"
+	  Phase			  "0"
+	  Frequency		  "0"
+	  Measurements		  "Current"
+	}
+	Block {
+	  BlockType		  Display
+	  Name			  "IA Angle"
+	  SID			  "136"
+	  Ports			  [1]
+	  Position		  [1370, 170, 1460, 200]
+	  ZOrder		  -1
+	  BackgroundColor	  "lightBlue"
+	  Decimation		  "1"
+	  Lockdown		  off
+	}
+	Block {
+	  BlockType		  Display
+	  Name			  "IA Mag"
+	  SID			  "137"
+	  Ports			  [1]
+	  Position		  [1370, 105, 1460, 135]
+	  ZOrder		  -1
+	  BackgroundColor	  "lightBlue"
+	  Decimation		  "1"
+	  Lockdown		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "IB"
+	  SID			  "69"
+	  Ports			  [1, 0, 0, 0, 0, 1, 1]
+	  Position		  [977, 205, 1013, 250]
+	  BlockRotation		  270
+	  BlockMirror		  on
+	  NamePlacement		  "alternate"
+	  LibraryVersion	  "1.2088"
+	  FontName		  "Verdana"
+	  FontSize		  11
+	  SourceBlock		  "powerlib/Electrical\nSources/Controlled Current Source"
+	  SourceType		  "Controlled Current Source"
+	  Initialize		  off
+	  Source_Type		  "AC"
+	  Amplitude		  "0"
+	  Phase			  "0"
+	  Frequency		  "0"
+	  Measurements		  "Current"
+	}
+	Block {
+	  BlockType		  Display
+	  Name			  "IB Angle"
+	  SID			  "138"
+	  Ports			  [1]
+	  Position		  [1370, 305, 1460, 335]
+	  ZOrder		  -1
+	  BackgroundColor	  "lightBlue"
+	  Decimation		  "1"
+	  Lockdown		  off
+	}
+	Block {
+	  BlockType		  Display
+	  Name			  "IB Mag"
+	  SID			  "139"
+	  Ports			  [1]
+	  Position		  [1370, 245, 1460, 275]
+	  ZOrder		  -1
+	  BackgroundColor	  "lightBlue"
+	  Decimation		  "1"
+	  Lockdown		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "IC"
+	  SID			  "70"
+	  Ports			  [1, 0, 0, 0, 0, 1, 1]
+	  Position		  [1047, 205, 1083, 250]
+	  BlockRotation		  270
+	  BlockMirror		  on
+	  NamePlacement		  "alternate"
+	  LibraryVersion	  "1.2088"
+	  FontName		  "Verdana"
+	  FontSize		  11
+	  SourceBlock		  "powerlib/Electrical\nSources/Controlled Current Source"
+	  SourceType		  "Controlled Current Source"
+	  Initialize		  off
+	  Source_Type		  "AC"
+	  Amplitude		  "0"
+	  Phase			  "0"
+	  Frequency		  "0"
+	  Measurements		  "Current"
+	}
+	Block {
+	  BlockType		  Display
+	  Name			  "IC Angle"
+	  SID			  "140"
+	  Ports			  [1]
+	  Position		  [1370, 435, 1460, 465]
+	  ZOrder		  -1
+	  BackgroundColor	  "lightBlue"
+	  Decimation		  "1"
+	  Lockdown		  off
+	}
+	Block {
+	  BlockType		  Display
+	  Name			  "IC Mag"
+	  SID			  "141"
+	  Ports			  [1]
+	  Position		  [1370, 375, 1460, 405]
+	  ZOrder		  -1
+	  BackgroundColor	  "lightBlue"
+	  Decimation		  "1"
+	  Lockdown		  off
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Measurements"
+	  SID			  "59"
+	  Ports			  [2, 2]
+	  Position		  [570, 263, 625, 332]
+	  BlockMirror		  on
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  Port {
+	    PortNumber		    1
+	    Name		    "VMeas"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    2
+	    Name		    "IMeas"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  System {
+	    Name		    "Measurements"
+	    Location		    [787, 475, 1801, 946]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "VIn"
+	      SID		      "60"
+	      Position		      [520, 83, 550, 97]
+	      BlockMirror	      on
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "IIn"
+	      SID		      "63"
+	      Position		      [520, 223, 550, 237]
+	      BlockMirror	      on
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      ComplexToMagnitudeAngle
+	      Name		      "Complex to\nMagnitude-Angle"
+	      SID		      "119"
+	      Ports		      [1, 2]
+	      Position		      [760, 78, 790, 107]
+	      ZOrder		      -6
+	      Output		      "Magnitude and angle"
+	    }
+	    Block {
+	      BlockType		      ComplexToMagnitudeAngle
+	      Name		      "Complex to\nMagnitude-Angle1"
+	      SID		      "125"
+	      Ports		      [1, 2]
+	      Position		      [760, 198, 790, 227]
+	      ZOrder		      -6
+	      Output		      "Magnitude and angle"
+	    }
+	    Block {
+	      BlockType		      ComplexToMagnitudeAngle
+	      Name		      "Complex to\nMagnitude-Angle2"
+	      SID		      "126"
+	      Ports		      [1, 2]
+	      Position		      [760, 318, 790, 347]
+	      ZOrder		      -6
+	      Output		      "Magnitude and angle"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Deg to\nRad 1"
+	      SID		      "145"
+	      Position		      [295, 90, 325, 120]
+	      ZOrder		      -8
+	      BlockMirror	      on
+	      Gain		      "pi/180"
+	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Deg to\nRad 2"
+	      SID		      "146"
+	      Position		      [295, 230, 325, 260]
+	      ZOrder		      -8
+	      BlockMirror	      on
+	      Gain		      "pi/180"
+	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux"
+	      SID		      "117"
+	      Ports		      [1, 3]
+	      Position		      [710, 34, 715, 396]
+	      ZOrder		      -7
+	      ShowName		      off
+	      Outputs		      "3"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Saturate
+	      Name		      "Lower\nVoltage\nCutoff"
+	      SID		      "56"
+	      Ports		      [1, 1]
+	      Position		      [215, 60, 245, 90]
+	      BlockMirror	      on
+	      NamePlacement	      "alternate"
+	      InputPortMap	      "u0"
+	      UpperLimit	      "inf"
+	      LowerLimit	      "VLow*VNom/sqrt(3)"
+	    }
+	    Block {
+	      BlockType		      MagnitudeAngleToComplex
+	      Name		      "Mag/Angle to\nComplex (Current)"
+	      SID		      "51"
+	      Ports		      [2, 1]
+	      Position		      [135, 200, 175, 260]
+	      ZOrder		      -12
+	      BlockMirror	      on
+	      Input		      "Magnitude and angle"
+	      ScaleReciprocalGainFactor	on
+	    }
+	    Block {
+	      BlockType		      MagnitudeAngleToComplex
+	      Name		      "Mag/Angle to\nComplex (Voltage)"
+	      SID		      "49"
+	      Ports		      [2, 1]
+	      Position		      [135, 60, 175, 120]
+	      ZOrder		      -12
+	      BlockMirror	      on
+	      Input		      "Magnitude and angle"
+	      ScaleReciprocalGainFactor	on
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Peak to\nRMS 1"
+	      SID		      "115"
+	      Position		      [295, 60, 325, 90]
+	      ZOrder		      -8
+	      BlockMirror	      on
+	      NamePlacement	      "alternate"
+	      Gain		      "1/sqrt(2)"
+	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Peak to\nRMS 2"
+	      SID		      "113"
+	      Position		      [295, 200, 325, 230]
+	      ZOrder		      -8
+	      BlockMirror	      on
+	      NamePlacement	      "alternate"
+	      Gain		      "1/sqrt(2)"
+	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Positive Sequence\nCurrent Measurement (A)"
+	      SID		      "46"
+	      Ports		      [1, 2]
+	      Position		      [390, 199, 445, 261]
+	      ZOrder		      -4
+	      BlockMirror	      on
+	      LibraryVersion	      "1.644"
+	      FontName		      "Verdana"
+	      FontSize		      11
+	      SourceBlock	      "powerlib_extras/Phasor\nLibrary/Sequence Analyzer\n(Phasor Type)"
+	      SourceType	      "Sequence Analyzer (Phasor Type)"
+	      seq		      "Positive"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Positive Sequence\nVoltage Measurement (V)"
+	      SID		      "45"
+	      Ports		      [1, 2]
+	      Position		      [390, 59, 445, 121]
+	      ZOrder		      -4
+	      BlockMirror	      on
+	      LibraryVersion	      "1.644"
+	      FontName		      "Verdana"
+	      FontSize		      11
+	      SourceBlock	      "powerlib_extras/Phasor\nLibrary/Sequence Analyzer\n(Phasor Type)"
+	      SourceType	      "Sequence Analyzer (Phasor Type)"
+	      seq		      "Positive"
+	    }
+	    Block {
+	      BlockType		      Display
+	      Name		      "VA Angle"
+	      SID		      "120"
+	      Ports		      [1]
+	      Position		      [850, 85, 940, 115]
+	      ZOrder		      -1
+	      BackgroundColor	      "lightBlue"
+	      Decimation	      "1"
+	      Lockdown		      off
+	    }
+	    Block {
+	      BlockType		      Display
+	      Name		      "VA Mag"
+	      SID		      "116"
+	      Ports		      [1]
+	      Position		      [850, 20, 940, 50]
+	      ZOrder		      -1
+	      BackgroundColor	      "lightBlue"
+	      Decimation	      "1"
+	      Lockdown		      off
+	    }
+	    Block {
+	      BlockType		      Display
+	      Name		      "VB Angle"
+	      SID		      "121"
+	      Ports		      [1]
+	      Position		      [850, 220, 940, 250]
+	      ZOrder		      -1
+	      BackgroundColor	      "lightBlue"
+	      Decimation	      "1"
+	      Lockdown		      off
+	    }
+	    Block {
+	      BlockType		      Display
+	      Name		      "VB Mag"
+	      SID		      "122"
+	      Ports		      [1]
+	      Position		      [850, 160, 940, 190]
+	      ZOrder		      -1
+	      BackgroundColor	      "lightBlue"
+	      Decimation	      "1"
+	      Lockdown		      off
+	    }
+	    Block {
+	      BlockType		      Display
+	      Name		      "VC Angle"
+	      SID		      "123"
+	      Ports		      [1]
+	      Position		      [850, 350, 940, 380]
+	      ZOrder		      -1
+	      BackgroundColor	      "lightBlue"
+	      Decimation	      "1"
+	      Lockdown		      off
+	    }
+	    Block {
+	      BlockType		      Display
+	      Name		      "VC Mag"
+	      SID		      "124"
+	      Ports		      [1]
+	      Position		      [850, 290, 940, 320]
+	      ZOrder		      -1
+	      BackgroundColor	      "lightBlue"
+	      Decimation	      "1"
+	      Lockdown		      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "VPos"
+	      SID		      "61"
+	      Position		      [40, 83, 70, 97]
+	      BlockMirror	      on
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "IPos"
+	      SID		      "62"
+	      Position		      [40, 223, 70, 237]
+	      BlockMirror	      on
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "Positive Sequence\nVoltage Measurement (V)"
+	      SrcPort		      1
+	      DstBlock		      "Peak to\nRMS 1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Positive Sequence\nCurrent Measurement (A)"
+	      SrcPort		      1
+	      DstBlock		      "Peak to\nRMS 2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Positive Sequence\nCurrent Measurement (A)"
+	      SrcPort		      2
+	      DstBlock		      "Deg to\nRad 2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Lower\nVoltage\nCutoff"
+	      SrcPort		      1
+	      DstBlock		      "Mag/Angle to\nComplex (Voltage)"
+	      DstPort		      1
+	    }
+	    Line {
+	      Labels		      [0, 0]
+	      SrcBlock		      "VIn"
+	      SrcPort		      1
+	      Points		      [-35, 0]
+	      Branch {
+		DstBlock		"Positive Sequence\nVoltage Measurement (V)"
+		DstPort			1
+	      }
+	      Branch {
+		Labels			[2, 0]
+		Points			[0, -40; 135, 0; 0, 165]
+		DstBlock		"Demux"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "IIn"
+	      SrcPort		      1
+	      DstBlock		      "Positive Sequence\nCurrent Measurement (A)"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Mag/Angle to\nComplex (Voltage)"
+	      SrcPort		      1
+	      DstBlock		      "VPos"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Mag/Angle to\nComplex (Current)"
+	      SrcPort		      1
+	      DstBlock		      "IPos"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Peak to\nRMS 1"
+	      SrcPort		      1
+	      DstBlock		      "Lower\nVoltage\nCutoff"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Peak to\nRMS 2"
+	      SrcPort		      1
+	      DstBlock		      "Mag/Angle to\nComplex (Current)"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      1
+	      DstBlock		      "Complex to\nMagnitude-Angle"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Complex to\nMagnitude-Angle"
+	      SrcPort		      1
+	      Points		      [20, 0; 0, -50]
+	      DstBlock		      "VA Mag"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Complex to\nMagnitude-Angle"
+	      SrcPort		      2
+	      DstBlock		      "VA Angle"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      2
+	      DstBlock		      "Complex to\nMagnitude-Angle1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Complex to\nMagnitude-Angle1"
+	      SrcPort		      1
+	      Points		      [20, 0; 0, -30]
+	      DstBlock		      "VB Mag"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Complex to\nMagnitude-Angle1"
+	      SrcPort		      2
+	      Points		      [40, 0]
+	      DstBlock		      "VB Angle"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      3
+	      DstBlock		      "Complex to\nMagnitude-Angle2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Complex to\nMagnitude-Angle2"
+	      SrcPort		      1
+	      Points		      [20, 0; 0, -20]
+	      DstBlock		      "VC Mag"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Complex to\nMagnitude-Angle2"
+	      SrcPort		      2
+	      Points		      [40, 0]
+	      DstBlock		      "VC Angle"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Deg to\nRad 1"
+	      SrcPort		      1
+	      DstBlock		      "Mag/Angle to\nComplex (Voltage)"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Positive Sequence\nVoltage Measurement (V)"
+	      SrcPort		      2
+	      DstBlock		      "Deg to\nRad 1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Deg to\nRad 2"
+	      SrcPort		      1
+	      DstBlock		      "Mag/Angle to\nComplex (Current)"
+	      DstPort		      2
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Memory
+	  Name			  "Memory"
+	  SID			  "147"
+	  Position		  [535, 450, 565, 480]
+	  ZOrder		  -13
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Multimeter"
+	  SID			  "131"
+	  Ports			  [0, 1, 0, 0, 0, 1]
+	  Position		  [1145, 281, 1185, 319]
+	  ZOrder		  -7
+	  LibraryVersion	  "1.2088"
+	  FontName		  "Verdana"
+	  FontSize		  11
+	  SourceBlock		  "powerlib/Measurements/Multimeter"
+	  SourceType		  "MultimeterPSB"
+	  PhasorSimulation	  on
+	  OutputType		  "Complex"
+	  sel			  "[1 2 3]"
+	  L			  "3"
+	  Gain			  "[1 1 1]"
+	  yselected		  "{'Isrc: Constant Power Load/IA','Isrc: Constant Power Load/IB','Isrc: Constant Power Load/IC'};"
+	  PSBOutputType		  "1"
+	  PSBequivalent		  "0"
+	  AxesSetting		  "[0,0.1,-100,100]"
+	  Display		  "0"
+	  SavedBlockNames	  "-11"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Nominal Load"
+	  SID			  "19"
+	  Ports			  [0, 0, 0, 0, 0, 3, 1]
+	  Position		  [757, 340, 813, 405]
+	  ZOrder		  -21
+	  BlockRotation		  270
+	  BlockMirror		  on
+	  AttributesFormatString  "\\n"
+	  LibraryVersion	  "1.2088"
+	  FontName		  "Verdana"
+	  FontSize		  11
+	  SourceBlock		  "powerlib/Elements/Three-Phase\nParallel RLC Load"
+	  SourceType		  "Three-Phase Parallel RLC Load"
+	  LConnTagsString	  "A|B|C"
+	  RConnTagsString	  "N"
+	  Configuration		  "Y (neutral)"
+	  NominalVoltage	  "VNom"
+	  NominalFrequency	  "fNom"
+	  ActivePower		  "PNom"
+	  InductivePower	  "max(QNom,0)"
+	  CapacitivePower	  "max(-QNom,0)"
+	  Measurements		  "None"
+	  LoadType		  "constant PQ"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "RMS to Peak"
+	  SID			  "142"
+	  Position		  [620, 450, 650, 480]
+	  ZOrder		  -8
+	  Gain			  "sqrt(2)"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Real to Imag"
+	  SID			  "53"
+	  Position		  [200, 105, 230, 135]
+	  ZOrder		  -8
+	  Gain			  "1j"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum"
+	  SID			  "54"
+	  Ports			  [2, 1]
+	  Position		  [280, 110, 300, 130]
+	  ZOrder		  -18
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "++|"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	  Port {
+	    PortNumber		    1
+	    Name		    "S3"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Three-Phase\nV-I Measurement"
+	  SID			  "44"
+	  Ports			  [0, 2, 0, 0, 0, 3, 3]
+	  Position		  [713, 200, 817, 250]
+	  ZOrder		  -8
+	  BlockRotation		  270
+	  BlockMirror		  on
+	  NamePlacement		  "alternate"
+	  LibraryVersion	  "1.2088"
+	  FontName		  "Verdana"
+	  FontSize		  11
+	  SourceBlock		  "powerlib/Measurements/Three-Phase\nV-I Measurement"
+	  SourceType		  "Three-Phase VI Measurement"
+	  VoltageMeasurement	  "phase-to-ground"
+	  SetLabelV		  off
+	  LabelV		  "Vabc"
+	  Vpu			  off
+	  VpuLL			  off
+	  CurrentMeasurement	  "yes"
+	  SetLabelI		  off
+	  LabelI		  "Iabc"
+	  Ipu			  off
+	  Pbase			  "100e6"
+	  Vbase			  "VNom"
+	  OutputType		  "Complex"
+	  PhasorSimulation	  on
+	  PSBequivalent		  "0"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "a"
+	  SID			  "71"
+	  Position		  [1040, 105, 1070, 135]
+	  ZOrder		  -8
+	  BlockRotation		  270
+	  BlockMirror		  on
+	  NamePlacement		  "alternate"
+	  Gain			  "exp(j*2*pi/3)"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "a^2"
+	  SID			  "66"
+	  Position		  [970, 105, 1000, 135]
+	  ZOrder		  -8
+	  BlockRotation		  270
+	  BlockMirror		  on
+	  NamePlacement		  "alternate"
+	  Gain			  "exp(-j*2*pi/3)"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  "A"
+	  SID			  "40"
+	  Position		  [715, 40, 745, 55]
+	  BlockRotation		  270
+	  BlockMirror		  on
+	  Port			  "1"
+	  Side			  "Left"
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  "B"
+	  SID			  "41"
+	  Position		  [750, 65, 780, 80]
+	  BlockRotation		  270
+	  BlockMirror		  on
+	  Port			  "2"
+	  Side			  "Left"
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  "C"
+	  SID			  "42"
+	  Position		  [785, 90, 815, 105]
+	  BlockRotation		  270
+	  BlockMirror		  on
+	  Port			  "3"
+	  Side			  "Left"
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  "N"
+	  SID			  "43"
+	  Position		  [770, 560, 800, 575]
+	  BlockRotation		  270
+	  Port			  "4"
+	  Side			  "Left"
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "A"
+	  SrcPort		  RConn1
+	  Points		  [0, 90]
+	  Branch {
+	    ConnectType		    "DEST_SRC"
+	    DstBlock		    "Three-Phase\nV-I Measurement"
+	    DstPort		    LConn1
+	  }
+	  Branch {
+	    ConnectType		    "DEST_SRC"
+	    Points		    [205, 0]
+	    DstBlock		    "IA"
+	    DstPort		    LConn1
+	  }
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "B"
+	  SrcPort		  RConn1
+	  Points		  [0, 75]
+	  Branch {
+	    ConnectType		    "DEST_SRC"
+	    DstBlock		    "Three-Phase\nV-I Measurement"
+	    DstPort		    LConn2
+	  }
+	  Branch {
+	    ConnectType		    "DEST_SRC"
+	    Points		    [240, 0]
+	    DstBlock		    "IB"
+	    DstPort		    LConn1
+	  }
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "C"
+	  SrcPort		  RConn1
+	  Points		  [0, 60]
+	  Branch {
+	    ConnectType		    "DEST_SRC"
+	    DstBlock		    "Three-Phase\nV-I Measurement"
+	    DstPort		    LConn3
+	  }
+	  Branch {
+	    ConnectType		    "DEST_SRC"
+	    Points		    [275, 0]
+	    DstBlock		    "IC"
+	    DstPort		    LConn1
+	  }
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Three-Phase\nV-I Measurement"
+	  SrcPort		  RConn1
+	  DstBlock		  "Nominal Load"
+	  DstPort		  LConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Three-Phase\nV-I Measurement"
+	  SrcPort		  RConn2
+	  DstBlock		  "Nominal Load"
+	  DstPort		  LConn2
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Three-Phase\nV-I Measurement"
+	  SrcPort		  RConn3
+	  DstBlock		  "Nominal Load"
+	  DstPort		  LConn3
+	}
+	Line {
+	  SrcBlock		  "Three-Phase\nV-I Measurement"
+	  SrcPort		  1
+	  Points		  [0, 25]
+	  DstBlock		  "Measurements"
+	  DstPort		  1
+	}
+	Line {
+	  LineType		  "Connection"
+	  Points		  [995, 455; 70, 0; 0, -155]
+	  Branch {
+	    ConnectType		    "SRC_DEST"
+	    SrcBlock		    "IB"
+	    SrcPort		    RConn1
+	    Points		    [0, 190]
+	  }
+	  Branch {
+	    ConnectType		    "SRC_SRC"
+	    Points		    [-70, 0]
+	    Branch {
+	      ConnectType	      "DEST_DEST"
+	      SrcBlock		      "IA"
+	      SrcPort		      RConn1
+	      Points		      [0, 190]
+	    }
+	    Branch {
+	      ConnectType	      "DEST_SRC"
+	      Points		      [-140, 0]
+	      Branch {
+		ConnectType		"DEST_DEST"
+		SrcBlock		"Nominal Load"
+		SrcPort			RConn1
+		Points			[0, 35]
+	      }
+	      Branch {
+		ConnectType		"DEST_SRC"
+		DstBlock		"N"
+		DstPort			RConn1
+	      }
+	    }
+	  }
+	  Branch {
+	    ConnectType		    "DEST_SRC"
+	    DstBlock		    "IC"
+	    DstPort		    RConn1
+	  }
+	  Branch {
+	    ConnectType		    "DEST_SRC"
+	    DstBlock		    "Multimeter"
+	    DstPort		    LConn1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Three-Phase\nV-I Measurement"
+	  SrcPort		  2
+	  Points		  [0, 60]
+	  DstBlock		  "Measurements"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "PQ"
+	  SrcPort		  1
+	  DstBlock		  "Demux"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "Q"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Demux"
+	  SrcPort		  2
+	  DstBlock		  "Real to Imag"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "P"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Demux"
+	  SrcPort		  1
+	  Points		  [145, 0]
+	  DstBlock		  "Sum"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Real to Imag"
+	  SrcPort		  1
+	  DstBlock		  "Sum"
+	  DstPort		  2
+	}
+	Line {
+	  Name			  "VMeas"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Measurements"
+	  SrcPort		  1
+	  Points		  [-115, 0]
+	  Branch {
+	    Points		    [-15, 0]
+	    DstBlock		    "Divide"
+	    DstPort		    2
+	  }
+	  Branch {
+	    DstBlock		    "Complex to\nMagnitude-Angle3"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  Name			  "S3"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Sum"
+	  SrcPort		  1
+	  DstBlock		  "Convert to 1-phase"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "S1"
+	  SrcBlock		  "Convert to 1-phase"
+	  SrcPort		  1
+	  Points		  [30, 0]
+	  Branch {
+	    Labels		    [1, 0]
+	    DstBlock		    "Divide"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Complex to\nReal-Imag"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Divide"
+	  SrcPort		  1
+	  DstBlock		  "Conjugate"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "IMeas"
+	  Labels		  [2, 0]
+	  SrcBlock		  "Measurements"
+	  SrcPort		  2
+	  Points		  [-95, 0; 0, 125]
+	  Branch {
+	    DstBlock		    "Correction Current"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [-140, 0; 0, 25]
+	    DstBlock		    "Complex to\nMagnitude-Angle1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "From"
+	  SrcPort		  1
+	  Points		  [0, 5]
+	  Branch {
+	    DstBlock		    "IA"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [70, 0]
+	    Branch {
+	      DstBlock		      "a^2"
+	      DstPort		      1
+	    }
+	    Branch {
+	      Points		      [70, 0]
+	      DstBlock		      "a"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "a^2"
+	  SrcPort		  1
+	  DstBlock		  "IB"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "a"
+	  SrcPort		  1
+	  DstBlock		  "IC"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "IVar"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Correction Current"
+	  SrcPort		  1
+	  DstBlock		  "Memory"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Complex to\nMagnitude-Angle"
+	  SrcPort		  1
+	  Points		  [0, -45]
+	  DstBlock		  "Display Target\nPos. Seq. Current Mag."
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Complex to\nMagnitude-Angle"
+	  SrcPort		  2
+	  DstBlock		  "Display Target\nPos. Seq. Current Angle"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Complex to\nMagnitude-Angle1"
+	  SrcPort		  1
+	  DstBlock		  "Display Measured\nPos. Seq. Current Mag."
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Complex to\nMagnitude-Angle1"
+	  SrcPort		  2
+	  Points		  [-45, 0; 0, 45]
+	  DstBlock		  "Display Measured\nPos. Seq. Current Angle"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Complex to\nMagnitude-Angle2"
+	  SrcPort		  1
+	  DstBlock		  "Display Correction\nCurrent Mag."
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Complex to\nMagnitude-Angle2"
+	  SrcPort		  2
+	  Points		  [25, 0; 0, 50]
+	  DstBlock		  "Display Correction\nCurrent Angle"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "ITarget"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Conjugate"
+	  SrcPort		  1
+	  Points		  [0, 30]
+	  Branch {
+	    Points		    [0, 35]
+	    DstBlock		    "Correction Current"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [-100, 0; 0, -130]
+	    DstBlock		    "Complex to\nMagnitude-Angle"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Complex to\nReal-Imag"
+	  SrcPort		  1
+	  DstBlock		  "Display 1-phase P Target"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Complex to\nReal-Imag"
+	  SrcPort		  2
+	  Points		  [50, 0]
+	  DstBlock		  "Display 1-phase Q Target"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Complex to\nMagnitude-Angle3"
+	  SrcPort		  1
+	  Points		  [10, 0; 0, -20]
+	  DstBlock		  "Display Pos. Seq.\nVoltage Mag."
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Complex to\nMagnitude-Angle3"
+	  SrcPort		  2
+	  Points		  [10, 0; 0, 25]
+	  DstBlock		  "Display Pos. Seq.\nVoltage Angle"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux1"
+	  SrcPort		  1
+	  DstBlock		  "Complex to\nMagnitude-Angle4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Complex to\nMagnitude-Angle4"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, -50]
+	  DstBlock		  "IA Mag"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Complex to\nMagnitude-Angle4"
+	  SrcPort		  2
+	  DstBlock		  "IA Angle"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux1"
+	  SrcPort		  2
+	  DstBlock		  "Complex to\nMagnitude-Angle5"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Complex to\nMagnitude-Angle5"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, -30]
+	  DstBlock		  "IB Mag"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Complex to\nMagnitude-Angle5"
+	  SrcPort		  2
+	  Points		  [40, 0]
+	  DstBlock		  "IB Angle"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux1"
+	  SrcPort		  3
+	  DstBlock		  "Complex to\nMagnitude-Angle6"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Complex to\nMagnitude-Angle6"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, -20]
+	  DstBlock		  "IC Mag"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Complex to\nMagnitude-Angle6"
+	  SrcPort		  2
+	  Points		  [40, 0]
+	  DstBlock		  "IC Angle"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Multimeter"
+	  SrcPort		  1
+	  DstBlock		  "Demux1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "RMS to Peak"
+	  SrcPort		  1
+	  DstBlock		  "Goto"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Memory"
+	  SrcPort		  1
+	  Points		  [20, 0]
+	  Branch {
+	    Points		    [0, 45]
+	    DstBlock		    "Complex to\nMagnitude-Angle2"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "RMS to Peak"
+	    DstPort		    1
+	  }
+	}
+	Annotation {
+	  Name			  "IVar = ITarget - IMeas"
+	  Position		  [456, 501]
+	}
+	Annotation {
+	  Name			  "Pos. Sequence Current -> Phase Current"
+	  Position		  [1041, 51]
+	}
+      }
+    }
+    Block {
+      BlockType		      Demux
+      Name		      "Demux"
+      SID		      "79"
+      Ports		      [1, 2]
+      Position		      [470, 221, 475, 259]
+      ZOrder		      -6
+      ShowName		      off
+      Outputs		      "2"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Demux
+      Name		      "Demux1"
+      SID		      "80"
+      Ports		      [1, 2]
+      Position		      [470, 336, 475, 374]
+      ZOrder		      -6
+      ShowName		      off
+      Outputs		      "2"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Display Measured P"
+      SID		      "128"
+      Ports		      [1]
+      Position		      [415, 95, 505, 125]
+      ZOrder		      -1
+      BlockMirror	      on
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Display Measured Q"
+      SID		      "129"
+      Ports		      [1]
+      Position		      [615, 95, 705, 125]
+      ZOrder		      -1
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Display Target P"
+      SID		      "127"
+      Ports		      [1]
+      Position		      [415, 50, 505, 80]
+      ZOrder		      -1
+      BlockMirror	      on
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Display Target Q"
+      SID		      "130"
+      Ports		      [1]
+      Position		      [615, 50, 705, 80]
+      ZOrder		      -1
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Ground"
+      SID		      "76"
+      Ports		      [0, 0, 0, 0, 0, 1]
+      Position		      [379, 560, 401, 585]
+      ZOrder		      -3
+      BlockRotation	      270
+      BlockMirror	      on
+      ShowName		      off
+      LibraryVersion	      "1.2088"
+      FontName		      "Verdana"
+      FontSize		      11
+      SourceBlock	      "powerlib/Elements/Ground"
+      SourceType	      "Ground"
+      LConnTagsString	      "a"
     }
     Block {
       BlockType		      Reference
       Name		      "Ideal\nThree-Phase\nSource"
       SID		      "4"
       Ports		      [0, 0, 0, 0, 0, 0, 3]
-      Position		      [120, 333, 205, 407]
+      Position		      [50, 433, 135, 507]
       LibraryVersion	      "1.2088"
       FontName		      "Verdana"
       FontSize		      11
@@ -802,7 +2710,7 @@ Model {
       SpecifyImpedance	      on
       Resistance	      "0"
       Inductance	      "0"
-      ShortCircuitLevel	      "100e3"
+      ShortCircuitLevel	      "1e6"
       BaseVoltage	      "480"
       XRratio		      "1"
       BusType		      "swing"
@@ -816,14 +2724,14 @@ Model {
       Name		      "Load Power"
       SID		      "9"
       Ports		      [2]
-      Position		      [740, 206, 770, 239]
+      Position		      [775, 231, 805, 264]
       BackgroundColor	      "orange"
       Floating		      off
       Location		      [29, 70, 651, 517]
-      Open		      on
+      Open		      off
       NumInputPorts	      "2"
       TickLabels	      "on"
-      ZoomMode		      "xonly"
+      ZoomMode		      "yonly"
       List {
 	ListType		AxesTitles
 	axes1			"%<SignalLabel>"
@@ -839,8 +2747,8 @@ Model {
 	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
 	MarkerStyles		"none|none|none|none|none|none"
       }
-      YMin		      "-5~-5"
-      YMax		      "5~5"
+      YMin		      "4880~-1"
+      YMax		      "5000~1"
       DataFormat	      "StructureWithTime"
       LimitDataPoints	      off
       SampleTime	      "0"
@@ -850,103 +2758,100 @@ Model {
       Name		      "Mux"
       SID		      "7"
       Ports		      [2, 1]
-      Position		      [370, 146, 375, 279]
+      Position		      [300, 171, 305, 304]
       ShowName		      off
       Inputs		      "2"
       DisplayOption	      "bar"
       Port {
 	PortNumber		1
 	Name			"Target PQ"
-	PropagatedSignals	"Target PQ, "
+	PropagatedSignals	"Target P, Target Q"
 	RTWStorageClass		"Auto"
 	DataLoggingNameMode	"SignalName"
       }
     }
     Block {
-      BlockType		      Constant
-      Name		      "Reactive Power Demand"
-      SID		      "6"
-      Position		      [260, 230, 290, 260]
-      Value		      "0"
-    }
-    Block {
-      BlockType		      Step
-      Name		      "Real Power Demand"
-      SID		      "14"
-      Position		      [265, 165, 295, 195]
-      BackgroundColor	      "lightBlue"
-      Time		      "0.5"
-      Before		      "5e3"
-      After		      "10e3"
-      SampleTime	      "0"
+      BlockType		      Mux
+      Name		      "Mux1"
+      SID		      "81"
+      Ports		      [2, 1]
+      Position		      [640, 221, 645, 259]
+      ZOrder		      -12
+      ShowName		      off
+      Inputs		      "2"
+      DisplayOption	      "bar"
       Port {
 	PortNumber		1
-	Name			"Target PQ"
+	Name			"Compare P"
+	PropagatedSignals	"Target P, "
 	RTWStorageClass		"Auto"
 	DataLoggingNameMode	"SignalName"
       }
     }
     Block {
-      BlockType		      Scope
-      Name		      "Source VI"
-      SID		      "17"
-      Ports		      [2]
-      Position		      [345, 316, 375, 349]
-      BackgroundColor	      "orange"
-      Floating		      off
-      Location		      [30, 584, 649, 1020]
-      Open		      on
-      NumInputPorts	      "2"
-      TickLabels	      "on"
-      ZoomMode		      "xonly"
-      List {
-	ListType		AxesTitles
-	axes1			"%<SignalLabel>"
-	axes2			"%<SignalLabel>"
+      BlockType		      Mux
+      Name		      "Mux2"
+      SID		      "82"
+      Ports		      [2, 1]
+      Position		      [640, 296, 645, 334]
+      ZOrder		      -12
+      ShowName		      off
+      Inputs		      "2"
+      DisplayOption	      "bar"
+      Port {
+	PortNumber		1
+	Name			"Compare Q"
+	PropagatedSignals	"Target Q, "
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
       }
-      List {
-	ListType		ScopeGraphics
-	FigureColor		"[0.5 0.5 0.5]"
-	AxesColor		"[0 0 0]"
-	AxesTickColor		"[1 1 1]"
-	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-	LineStyles		"-|-|-|-|-|-"
-	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
-	MarkerStyles		"none|none|none|none|none|none"
-      }
-      YMin		      "260~0"
-      YMax		      "400~175"
-      SaveName		      "ScopeData1"
-      DataFormat	      "StructureWithTime"
-      LimitDataPoints	      off
-      SampleTime	      "0"
     }
     Block {
       BlockType		      Reference
-      Name		      "Three-Phase\nControllable Load"
-      SID		      "2"
-      Ports		      [1, 1, 0, 0, 0, 3]
-      Position		      [490, 310, 565, 405]
-      LibraryVersion	      "1.2088"
-      FontName		      "Verdana"
-      FontSize		      11
-      SourceBlock	      "powerlib/Elements/Three-Phase\nDynamic Load"
-      SourceType	      "Three-Phase Dynamic Load"
-      NominalVoltage	      "[480 60]"
-      ActiveReactivePowers    "[100e3 0e3]"
-      PositiveSequence	      " [1 0]"
-      ExternalControl	      on
-      NpNq		      " [0 0]"
-      TimeConstants	      "[0  0  0  0]"
-      MinimumVoltage	      "0.7"
-      LoadFlowParameters      "[4,0,0,0,0]"
+      Name		      "Reactive Power"
+      SID		      "73"
+      Ports		      [1, 1]
+      Position		      [190, 255, 220, 285]
+      ZOrder		      -28
+      LibraryVersion	      "1.256"
+      SourceBlock	      "simulink/Math\nOperations/Slider\nGain"
+      SourceType	      "Slider Gain"
+      low		      "-5000"
+      gain		      "0"
+      high		      "5000"
+      Port {
+	PortNumber		1
+	Name			"Target Q"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Real Power"
+      SID		      "72"
+      Ports		      [1, 1]
+      Position		      [190, 190, 220, 220]
+      ZOrder		      -28
+      LibraryVersion	      "1.256"
+      SourceBlock	      "simulink/Math\nOperations/Slider\nGain"
+      SourceType	      "Slider Gain"
+      low		      "0"
+      gain		      "5000"
+      high		      "10000"
+      Port {
+	PortNumber		1
+	Name			"Target P"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
     }
     Block {
       BlockType		      Reference
       Name		      "Three-Phase\nV-I Measurement"
       SID		      "18"
       Ports		      [0, 2, 0, 0, 0, 3, 3]
-      Position		      [250, 332, 300, 408]
+      Position		      [180, 432, 230, 508]
       LibraryVersion	      "1.2088"
       FontName		      "Verdana"
       FontSize		      11
@@ -963,7 +2868,7 @@ Model {
       Ipu		      off
       Pbase		      "100e6"
       Vbase		      "500e3"
-      OutputType	      "Magnitude"
+      OutputType	      "Complex"
       PhasorSimulation	      on
       PSBequivalent	      "0"
     }
@@ -1020,69 +2925,24 @@ Model {
       methode		      off
     }
     Line {
-      LineType		      "Connection"
-      SrcBlock		      "1W Dummy Load"
-      SrcPort		      LConn1
-      Points		      [0, -110]
-      Branch {
-	ConnectType		"DEST_SRC"
-	Points			[0, -25]
-	DstBlock		"Three-Phase\nControllable Load"
-	DstPort			LConn1
-      }
-      Branch {
-	ConnectType		"DEST_DEST"
-	SrcBlock		"Three-Phase\nV-I Measurement"
-	SrcPort			RConn1
-	Points			[90, 0]
-      }
-    }
-    Line {
-      LineType		      "Connection"
-      SrcBlock		      "1W Dummy Load"
-      SrcPort		      LConn2
-      Points		      [0, -95]
-      Branch {
-	ConnectType		"DEST_SRC"
-	Points			[0, -15]
-	DstBlock		"Three-Phase\nControllable Load"
-	DstPort			LConn2
-      }
-      Branch {
-	ConnectType		"DEST_DEST"
-	SrcBlock		"Three-Phase\nV-I Measurement"
-	SrcPort			RConn2
-	Points			[110, 0]
-      }
-    }
-    Line {
-      LineType		      "Connection"
-      SrcBlock		      "1W Dummy Load"
-      SrcPort		      LConn3
-      Points		      [0, -80]
-      Branch {
-	ConnectType		"DEST_SRC"
-	Points			[0, -5]
-	DstBlock		"Three-Phase\nControllable Load"
-	DstPort			LConn3
-      }
-      Branch {
-	ConnectType		"DEST_DEST"
-	SrcBlock		"Three-Phase\nV-I Measurement"
-	SrcPort			RConn3
-	Points			[130, 0]
-      }
-    }
-    Line {
-      SrcBlock		      "Reactive Power Demand"
+      SrcBlock		      "Constant"
       SrcPort		      1
-      DstBlock		      "Mux"
-      DstPort		      2
+      Points		      [30, 0]
+      Branch {
+	Points			[0, 30]
+	DstBlock		"Reactive Power"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -35]
+	DstBlock		"Real Power"
+	DstPort			1
+      }
     }
     Line {
-      Name		      "Target PQ"
+      Name		      "Target P"
       Labels		      [0, 0]
-      SrcBlock		      "Real Power Demand"
+      SrcBlock		      "Real Power"
       SrcPort		      1
       DstBlock		      "Mux"
       DstPort		      1
@@ -1091,33 +2951,17 @@ Model {
       Name		      "Target PQ"
       SrcBlock		      "Mux"
       SrcPort		      1
-      Points		      [45, 0]
+      Points		      [40, 0]
       Branch {
-	Points			[0, 105]
-	DstBlock		"Three-Phase\nControllable Load"
+	Points			[0, 215]
+	DstBlock		"Constant Power Load"
 	DstPort			1
       }
       Branch {
 	Labels			[1, 0]
-	DstBlock		"Load Power"
+	DstBlock		"Demux"
 	DstPort			1
       }
-    }
-    Line {
-      Labels		      [0, 0]
-      SrcBlock		      "Three-Phase\nControllable Load"
-      SrcPort		      1
-      DstBlock		      "Bus\nSelector"
-      DstPort		      1
-    }
-    Line {
-      Name		      "Measured PQ"
-      Labels		      [2, 0]
-      SrcBlock		      "Bus\nSelector"
-      SrcPort		      1
-      Points		      [40, 0; 0, -130]
-      DstBlock		      "Load Power"
-      DstPort		      2
     }
     Line {
       LineType		      "Connection"
@@ -1143,26 +2987,134 @@ Model {
     Line {
       SrcBlock		      "Three-Phase\nV-I Measurement"
       SrcPort		      1
-      Points		      [10, 0; 0, -15]
-      DstBlock		      "Source VI"
+      Points		      [10, 0; 0, -100]
+      DstBlock		      "3-Phase\nActive & Reactive Power\n(Phasor Type)"
       DstPort		      1
     }
     Line {
       SrcBlock		      "Three-Phase\nV-I Measurement"
       SrcPort		      2
-      Points		      [20, 0; 0, -15]
-      DstBlock		      "Source VI"
+      Points		      [20, 0; 0, -85]
+      DstBlock		      "3-Phase\nActive & Reactive Power\n(Phasor Type)"
       DstPort		      2
     }
-    Annotation {
-      Name		      "Time Step Testing...\n\nFixed-step ode3:\n1e-6 ok\n1e-5 ok\n1e-4 ok\n1e-3 breaks\nInstability start"
-      "s around 2.5e-4\n\nFixed-step ode4:\n1e-4 ok\n1e-3 breaks\n\nFixed-step ode5:\n1e-4 ok\n1e-3 breaks\n\nFixed-ste"
-      "p ode8:\n1e-4 ok\n1e-3 breaks\n\nNOTE: InitFcn now sets Ts = 1e-5 (10 us),\ncomment out in the model callbacks t"
-      "o override"
-      Position		      [723, 442]
-      HorizontalAlignment     "left"
-      Interpreter	      "tex"
-      FontName		      "Arial"
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Three-Phase\nV-I Measurement"
+      SrcPort		      RConn3
+      DstBlock		      "Constant Power Load"
+      DstPort		      LConn3
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Three-Phase\nV-I Measurement"
+      SrcPort		      RConn2
+      DstBlock		      "Constant Power Load"
+      DstPort		      LConn2
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Three-Phase\nV-I Measurement"
+      SrcPort		      RConn1
+      DstBlock		      "Constant Power Load"
+      DstPort		      LConn1
+    }
+    Line {
+      Name		      "Target Q"
+      Labels		      [0, 0]
+      SrcBlock		      "Reactive Power"
+      SrcPort		      1
+      DstBlock		      "Mux"
+      DstPort		      2
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Constant Power Load"
+      SrcPort		      LConn4
+      Points		      [-45, 0]
+      DstBlock		      "Ground"
+      DstPort		      LConn1
+    }
+    Line {
+      Name		      "Measured PQ"
+      Labels		      [1, 1]
+      SrcBlock		      "3-Phase\nActive & Reactive Power\n(Phasor Type)"
+      SrcPort		      1
+      DstBlock		      "Demux1"
+      DstPort		      1
+    }
+    Line {
+      Name		      "Compare P"
+      Labels		      [0, 0]
+      SrcBlock		      "Mux1"
+      SrcPort		      1
+      DstBlock		      "Load Power"
+      DstPort		      1
+    }
+    Line {
+      Name		      "Compare Q"
+      Labels		      [0, 0]
+      SrcBlock		      "Mux2"
+      SrcPort		      1
+      Points		      [55, 0; 0, -60]
+      DstBlock		      "Load Power"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Demux"
+      SrcPort		      1
+      Points		      [75, 0]
+      Branch {
+	DstBlock		"Mux1"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -165]
+	DstBlock		"Display Target P"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Demux1"
+      SrcPort		      1
+      Points		      [65, 0; 0, -95]
+      Branch {
+	Points			[0, -140]
+	DstBlock		"Display Measured P"
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"Mux1"
+	DstPort			2
+      }
+    }
+    Line {
+      SrcBlock		      "Demux"
+      SrcPort		      2
+      Points		      [45, 0; 0, 55; 40, 0]
+      Branch {
+	DstBlock		"Mux2"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -240]
+	DstBlock		"Display Target Q"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Demux1"
+      SrcPort		      2
+      Points		      [95, 0; 0, -40]
+      Branch {
+	DstBlock		"Mux2"
+	DstPort			2
+      }
+      Branch {
+	Points			[0, -215]
+	DstBlock		"Display Measured Q"
+	DstPort			1
+      }
     }
   }
 }

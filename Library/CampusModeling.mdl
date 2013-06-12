@@ -16,9 +16,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Jun 12 16:04:12 2013"
-  RTWModifiedTimeStamp	  292951279
-  ModelVersionFormat	  "1.%<AutoIncrement:10>"
+  LastModifiedDate	  "Wed Jun 12 16:17:17 2013"
+  RTWModifiedTimeStamp	  292954626
+  ModelVersionFormat	  "1.%<AutoIncrement:11>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -844,7 +844,7 @@ Library {
       MaskIconUnits	      "autoscale"
       System {
 	Name			"Weather"
-	Location		[948, 338, 1446, 638]
+	Location		[1025, 418, 1523, 718]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -871,14 +871,22 @@ Library {
 	  Opaque		  off
 	  RequestExecContextInheritance	off
 	  MaskHideContents	  off
-	  MaskDescription	  "Example custom library block. Applies a -1 gain to the input signal."
-	  MaskHelp		  "Example custom library block. Applies a -1 gain to the input signal."
+	  MaskDescription	  "Example custom library block. Applies a user-specified gain to the input signal."
+	  MaskHelp		  "Example custom library block. Applies a user-specified gain to the input signal."
+	  MaskPromptString	  "Enter a gain"
+	  MaskStyleString	  "edit"
+	  MaskVariables		  "gain=@1;"
+	  MaskTunableValueString  "on"
+	  MaskEnableString	  "on"
+	  MaskVisibilityString	  "on"
+	  MaskToolTipString	  "on"
 	  MaskDisplay		  "plot([0.8 -1 -1 0 -1 -1 0.8],[1 1 0 0 0 -1 -1],4,4,-4,-4)"
 	  MaskIconFrame		  on
 	  MaskIconOpaque	  on
 	  MaskIconRotate	  "none"
 	  MaskPortRotate	  "default"
 	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "2"
 	  System {
 	    Name		    "Example"
 	    Location		    [433, 403, 931, 703]
@@ -908,7 +916,7 @@ Library {
 	      SID		      "8"
 	      Position		      [235, 95, 265, 125]
 	      ZOrder		      -8
-	      Gain		      "-1"
+	      Gain		      "gain"
 	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
 	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
 	      SaturateOnIntegerOverflow	off

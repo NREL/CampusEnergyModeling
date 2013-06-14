@@ -1,0 +1,919 @@
+  Processing Data Dictionary (Energy+.idd) File -- Complete
+  Maximum number of Alpha Args=        4500
+  Maximum number of Numeric Args=       21040
+  Number of Object Definitions=         684
+  Number of Section Definitions=           2
+  Processing Input Data File (in.idf) -- Start
+      1 ! PlantLoopChainHeating.idf
+      2 !
+      3 ! Basic file description:
+      4 ! This input file is a plant-only simulation using the LoadProfile:Plant object; no zones are simulated.
+      5 ! The main purpose is to demonstrate plant heat exchangers to connect multiple loops. There are three
+      6 ! plant loops: 1) the "FTLB LOAD Loop" contains the load profile for heating load, 2) the "Transfer Loop" ,
+      7 ! and, 3) the "FTLB Loop".  The heating load placed on the FTLB LOAD Loop is met by a Heat exchanger connecting the Transfer
+      8 ! loop to the FTLB LOAD Loop.  The heating load placed on the Transfer Loop is met by a heat exchanger connection the FTLB loop to the
+      9 ! Transfer Loop.  District heating meets the heating load on the FTLB Loop.
+     10 ! Run:      2 design days
+     11 ! Building: None.
+     12 ! System:   None.
+     13 ! Plant:    A chain of 3 plant loops that connect a LoadProfile:Plant to DistrictHeating by heat exchangers
+     14 
+     15   Version,8.0;
+     16 
+     17   Building,
+     18     Plant Load Profile Example,  !- Name
+     19     0.0,                     !- North Axis {deg}
+     20     Suburbs,                 !- Terrain
+     21     0.04,                    !- Loads Convergence Tolerance Value
+     22     0.04,                    !- Temperature Convergence Tolerance Value {deltaC}
+     23     FullInteriorAndExterior, !- Solar Distribution
+     24     25,                      !- Maximum Number of Warmup Days
+     25     6;                       !- Minimum Number of Warmup Days
+     26 
+     27   Timestep,6;
+     28 
+     29   GlobalGeometryRules,
+     30     UpperLeftCorner,         !- Starting Vertex Position
+     31     CounterClockWise,        !- Vertex Entry Direction
+     32     Relative;                !- Coordinate System
+     33 
+     34   Site:Location,
+     35     CHICAGO_IL_USA_WMO_725300,  !- Name
+     36     42.00,                   !- Latitude {deg}
+     37     -87.88,                  !- Longitude {deg}
+     38     -6.00,                   !- Time Zone {hr}
+     39     190.00;                  !- Elevation {m}
+     40 
+     41  ! CHICAGO_IL_USA Annual Cooling (DB=>MWB) 1%, MaxDB=31.5°C MWB=23°C
+     42 
+     43   SizingPeriod:DesignDay,
+     44     CHICAGO Ann Clg 1% Condns DB=>MWB,  !- Name
+     45     7,                       !- Month
+     46     21,                      !- Day of Month
+     47     SummerDesignDay,         !- Day Type
+     48     31.5,                    !- Maximum Dry-Bulb Temperature {C}
+     49     10.7,                    !- Daily Dry-Bulb Temperature Range {deltaC}
+     50     ,                        !- Dry-Bulb Temperature Range Modifier Type
+     51     ,                        !- Dry-Bulb Temperature Range Modifier Schedule Name
+     52     Wetbulb,                 !- Humidity Condition Type
+     53     23,                      !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
+     54     ,                        !- Humidity Condition Day Schedule Name
+     55     ,                        !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+     56     ,                        !- Enthalpy at Maximum Dry-Bulb {J/kg}
+     57     ,                        !- Daily Wet-Bulb Temperature Range {deltaC}
+     58     99063.,                  !- Barometric Pressure {Pa}
+     59     5.3,                     !- Wind Speed {m/s}
+     60     230,                     !- Wind Direction {deg}
+     61     No,                      !- Rain Indicator
+     62     No,                      !- Snow Indicator
+     63     No,                      !- Daylight Saving Time Indicator
+     64     ASHRAEClearSky,          !- Solar Model Indicator
+     65     ,                        !- Beam Solar Day Schedule Name
+     66     ,                        !- Diffuse Solar Day Schedule Name
+     67     ,                        !- ASHRAE Clear Sky Optical Depth for Beam Irradiance (taub) {dimensionless}
+     68     ,                        !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance (taud) {dimensionless}
+     69     1.00;                    !- Sky Clearness
+     70 
+     71  ! CHICAGO_IL_USA Annual Heating 99%, MaxDB=-17.3°C
+     72 
+     73   SizingPeriod:DesignDay,
+     74     CHICAGO Ann Htg 99% Condns DB,  !- Name
+     75     1,                       !- Month
+     76     21,                      !- Day of Month
+     77     WinterDesignDay,         !- Day Type
+     78     -17.3,                   !- Maximum Dry-Bulb Temperature {C}
+     79     0.0,                     !- Daily Dry-Bulb Temperature Range {deltaC}
+     80     ,                        !- Dry-Bulb Temperature Range Modifier Type
+     81     ,                        !- Dry-Bulb Temperature Range Modifier Schedule Name
+     82     Wetbulb,                 !- Humidity Condition Type
+     83     -17.3,                   !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
+     84     ,                        !- Humidity Condition Day Schedule Name
+     85     ,                        !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+     86     ,                        !- Enthalpy at Maximum Dry-Bulb {J/kg}
+     87     ,                        !- Daily Wet-Bulb Temperature Range {deltaC}
+     88     99063.,                  !- Barometric Pressure {Pa}
+     89     4.9,                     !- Wind Speed {m/s}
+     90     270,                     !- Wind Direction {deg}
+     91     No,                      !- Rain Indicator
+     92     No,                      !- Snow Indicator
+     93     No,                      !- Daylight Saving Time Indicator
+     94     ASHRAEClearSky,          !- Solar Model Indicator
+     95     ,                        !- Beam Solar Day Schedule Name
+     96     ,                        !- Diffuse Solar Day Schedule Name
+     97     ,                        !- ASHRAE Clear Sky Optical Depth for Beam Irradiance (taub) {dimensionless}
+     98     ,                        !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance (taud) {dimensionless}
+     99     0.00;                    !- Sky Clearness
+    100 
+    101   RunPeriod,
+    102     Annual,                        !- Name
+    103     1,                       !- Begin Month
+    104     1,                       !- Begin Day of Month
+    105     12,                      !- End Month
+    106     31,                      !- End Day of Month
+    107     Tuesday,                 !- Day of Week for Start Day
+    108     Yes,                     !- Use Weather File Holidays and Special Days
+    109     Yes,                     !- Use Weather File Daylight Saving Period
+    110     No,                      !- Apply Weekend Holiday Rule
+    111     Yes,                     !- Use Weather File Rain Indicators
+    112     Yes;                     !- Use Weather File Snow Indicators
+    113 
+    114   SimulationControl,
+    115     NO,                      !- Do Zone Sizing Calculation
+    116     NO,                      !- Do System Sizing Calculation
+    117     NO,                      !- Do Plant Sizing Calculation
+    118     YES,                     !- Run Simulation for Sizing Periods
+    119     Yes;                     !- Run Simulation for Weather File Run Periods
+    120 
+    121 !___________________________________________________________________________________
+    122 
+    123   PlantLoop,
+    124     FTLB LOAD Loop,               !- Name
+    125     WATER,                   !- Fluid Type
+    126     ,                        !- User Defined Fluid Type
+    127     FTLB LOAD Loop Operation,     !- Plant Equipment Operation Scheme Name
+    128     FTLB LOAD Supply Outlet Node,      !- Loop Temperature Setpoint Node Name
+    129     100,                     !- Maximum Loop Temperature {C}
+    130     3,                       !- Minimum Loop Temperature {C}
+    131     0.003,                   !- Maximum Loop Flow Rate {m3/s}
+    132     0,                       !- Minimum Loop Flow Rate {m3/s}
+    133     autocalculate,           !- Plant Loop Volume {m3}
+    134     FTLB LOAD Supply Inlet Node,       !- Plant Side Inlet Node Name
+    135     FTLB LOAD Supply Outlet Node,      !- Plant Side Outlet Node Name
+    136     FTLB LOAD Supply Branches,         !- Plant Side Branch List Name
+    137     FTLB LOAD Supply Connectors,       !- Plant Side Connector List Name
+    138     FTLB LOAD Demand Inlet Node,       !- Demand Side Inlet Node Name
+    139     FTLB LOAD Demand Outlet Node,      !- Demand Side Outlet Node Name
+    140     FTLB LOAD Demand Branches,         !- Demand Side Branch List Name
+    141     FTLB LOAD Demand Connectors,       !- Demand Side Connector List Name
+    142     OPTIMAL;                 !- Load Distribution Scheme
+    143 
+    144   SetpointManager:Scheduled,
+    145     FTLB LOAD Loop Setpoint Manager,  !- Name
+    146     Temperature,             !- Control Variable
+    147     FTLB LOAD Loop Temp Sch,      !- Schedule Name
+    148     FTLB LOAD Loop Setpoint Node List;  !- Setpoint Node or NodeList Name
+    149 
+    150   NodeList,
+    151     FTLB LOAD Loop Setpoint Node List,  !- Name
+    152     FTLB LOAD Supply Outlet Node;      !- Node 1 Name
+    153 
+    154   PlantEquipmentOperationSchemes,
+    155     FTLB LOAD Loop Operation,     !- Name
+    156     PlantEquipmentOperation:Uncontrolled,  !- Control Scheme 1 Object Type
+    157     FTLB LOAD operation,          !- Control Scheme 1 Name
+    158     AlwaysOnSchedule;        !- Control Scheme 1 Schedule Name
+    159 
+    160   PlantEquipmentOperation:Uncontrolled,
+    161     FTLB LOAD operation,          !- Name
+    162     FTLB TRANSFER to FTLB LOAD HX equip;           !- Range 1 Equipment List Name
+    163 
+    164   PlantEquipmentList,
+    165     FTLB TRANSFER to FTLB LOAD HX equip,           !- Name
+    166     HeatExchanger:FluidToFluid,         !- Equipment 1 Object Type
+    167     FTLB TRANSFER to FTLB LOAD HX;       !- Equipment 1 Name
+    168 
+    169   BranchList,
+    170     FTLB LOAD Supply Branches,         !- Name
+    171     FTLB LOAD Supply Inlet Branch,     !- Branch 1 Name
+    172     FTLB LOAD TRANSFER Branch,          !- Branch 2 Name
+    173     FTLB LOAD Supply Outlet Branch;    !- Branch 3 Name
+    174 
+    175   ConnectorList,
+    176     FTLB LOAD Supply Connectors,       !- Name
+    177     Connector:Splitter,      !- Connector 1 Object Type
+    178     FTLB LOAD Supply Splitter,         !- Connector 1 Name
+    179     Connector:Mixer,         !- Connector 2 Object Type
+    180     FTLB LOAD Supply Mixer;            !- Connector 2 Name
+    181 
+    182   Connector:Splitter,
+    183     FTLB LOAD Supply Splitter,         !- Name
+    184     FTLB LOAD Supply Inlet Branch,     !- Inlet Branch Name
+    185     FTLB LOAD TRANSFER Branch;          !- Outlet Branch 1 Name
+    186 
+    187   Connector:Mixer,
+    188     FTLB LOAD Supply Mixer,            !- Name
+    189     FTLB LOAD Supply Outlet Branch,    !- Outlet Branch Name
+    190     FTLB LOAD TRANSFER Branch;          !- Inlet Branch 1 Name
+    191 
+    192   Branch,
+    193     FTLB LOAD Supply Inlet Branch,     !- Name
+    194     0,                       !- Maximum Flow Rate {m3/s}
+    195     ,                        !- Pressure Drop Curve Name
+    196     Pump:VariableSpeed,      !- Component 1 Object Type
+    197     FTLB LOAD Pump,                    !- Component 1 Name
+    198     FTLB LOAD Supply Inlet Node,       !- Component 1 Inlet Node Name
+    199     FTLB LOAD Supply Pump-Heating Node,!- Component 1 Outlet Node Name
+    200      ;                  !- Component 1 Branch Control Type
+    201 
+    202   Pump:VariableSpeed,
+    203     FTLB LOAD Pump,                    !- Name
+    204     FTLB LOAD Supply Inlet Node,       !- Inlet Node Name
+    205     FTLB LOAD Supply Pump-Heating Node,!- Outlet Node Name
+    206     0.005,                   !- Rated Flow Rate {m3/s}
+    207     300000,                  !- Rated Pump Head {Pa}
+    208     2250,                    !- Rated Power Consumption {W}
+    209     0.87,                    !- Motor Efficiency
+    210     0.0,                     !- Fraction of Motor Inefficiencies to Fluid Stream
+    211     0,                       !- Coefficient 1 of the Part Load Performance Curve
+    212     1,                       !- Coefficient 2 of the Part Load Performance Curve
+    213     0,                       !- Coefficient 3 of the Part Load Performance Curve
+    214     0,                       !- Coefficient 4 of the Part Load Performance Curve
+    215     0,                       !- Minimum Flow Rate {m3/s}
+    216     INTERMITTENT;            !- Pump Control Type
+    217 
+    218   Branch,
+    219     FTLB LOAD TRANSFER Branch,          !- Name
+    220     0,                       !- Maximum Flow Rate {m3/s}
+    221     ,                        !- Pressure Drop Curve Name
+    222     HeatExchanger:FluidToFluid,         !- Component 1 Object Type
+    223     FTLB TRANSFER to FTLB LOAD HX,       !- Component 1 Name
+    224     FTLB LOAD Supply Heating Inlet Node,  !- Component 1 Inlet Node Name
+    225     FTLB LOAD Supply Heating Outlet Node,  !- Component 1 Outlet Node Name
+    226      ;                  !- Component 1 Branch Control Type
+    227 
+    228  HeatExchanger:FluidToFluid,
+    229     FTLB TRANSFER to FTLB LOAD HX , !- Name
+    230     AlwaysOnSchedule, !- Availability Schedule Name
+    231     FTLB TRANSFER Demand HX Inlet Node , !- Loop Demand Side Inlet Node Name
+    232     FTLB TRANSFER Demand HX Outlet Node , !- Loop Demand Side Outlet Node Name
+    233     0.003 , !- Loop Demand Side Design Flow Rate
+    234     FTLB LOAD Supply Heating Inlet Node , !- Loop Supply Side Inlet Node Name
+    235     FTLB LOAD Supply Heating Outlet Node , !- Loop Supply Side Outlet Node Name
+    236     0.003 , !- Loop Supply Side Design Flow Rate
+    237     CrossFlowBothUnMixed, !- Heat Exchange Model Type
+    238     1500 , !- Heat Exchanger U-Factor Times Area Value
+    239     HeatingSetpointModulated , !- Control Type
+    240     FTLB LOAD Supply Outlet Node, !- Heat Exchanger Setpoint Node Name
+    241     0.2 , !- Minimum Temperature Difference to Activate Heat Exchanger
+    242     LoopToLoop; !- Heat Transfer Metering End Use Type
+    243 
+    244 
+    245   Branch,
+    246     FTLB LOAD Supply Outlet Branch,    !- Name
+    247     0,                       !- Maximum Flow Rate {m3/s}
+    248     ,                        !- Pressure Drop Curve Name
+    249     Pipe:Adiabatic,          !- Component 1 Object Type
+    250     FTLB LOAD Supply Outlet Pipe,      !- Component 1 Name
+    251     FTLB LOAD Supply Heating-Pipe Node,!- Component 1 Inlet Node Name
+    252     FTLB LOAD Supply Outlet Node,      !- Component 1 Outlet Node Name
+    253     PASSIVE;                 !- Component 1 Branch Control Type
+    254 
+    255   Pipe:Adiabatic,
+    256     FTLB LOAD Supply Outlet Pipe,      !- Name
+    257     FTLB LOAD Supply Heating-Pipe Node,!- Inlet Node Name
+    258     FTLB LOAD Supply Outlet Node;      !- Outlet Node Name
+    259 
+    260   BranchList,
+    261     FTLB LOAD Demand Branches,         !- Name
+    262     FTLB LOAD Demand Inlet Branch,     !- Branch 1 Name
+    263     FTLB LOAD Load Profile Branch 1,   !- Branch 2 Name
+    264     FTLB LOAD Demand Outlet Branch;    !- Branch 3 Name
+    265 
+    266   ConnectorList,
+    267     FTLB LOAD Demand Connectors,       !- Name
+    268     Connector:Splitter,      !- Connector 1 Object Type
+    269     FTLB LOAD Demand Splitter,         !- Connector 1 Name
+    270     Connector:Mixer,         !- Connector 2 Object Type
+    271     FTLB LOAD Demand Mixer;            !- Connector 2 Name
+    272 
+    273   Connector:Splitter,
+    274     FTLB LOAD Demand Splitter,         !- Name
+    275     FTLB LOAD Demand Inlet Branch,     !- Inlet Branch Name
+    276     FTLB LOAD Load Profile Branch 1;   !- Outlet Branch 1 Name
+    277 
+    278   Connector:Mixer,
+    279     FTLB LOAD Demand Mixer,            !- Name
+    280     FTLB LOAD Demand Outlet Branch,    !- Outlet Branch Name
+    281     FTLB LOAD Load Profile Branch 1;   !- Inlet Branch 1 Name
+    282 
+    283   Branch,
+    284     FTLB LOAD Demand Inlet Branch,     !- Name
+    285     0,                       !- Maximum Flow Rate {m3/s}
+    286     ,                        !- Pressure Drop Curve Name
+    287     Pipe:Adiabatic,          !- Component 1 Object Type
+    288     FTLB LOAD Demand Inlet Pipe,       !- Component 1 Name
+    289     FTLB LOAD Demand Inlet Node,       !- Component 1 Inlet Node Name
+    290     FTLB LOAD Demand Pipe-Load Profile Node,  !- Component 1 Outlet Node Name
+    291      ;                 !- Component 1 Branch Control Type
+    292 
+    293   Pipe:Adiabatic,
+    294     FTLB LOAD Demand Inlet Pipe,       !- Name
+    295     FTLB LOAD Demand Inlet Node,       !- Inlet Node Name
+    296     FTLB LOAD Demand Pipe-Load Profile Node;  !- Outlet Node Name
+    297 
+    298   Branch,
+    299     FTLB LOAD Load Profile Branch 1,   !- Name
+    300     0,                       !- Maximum Flow Rate {m3/s}
+    301     ,                        !- Pressure Drop Curve Name
+    302     LoadProfile:Plant,       !- Component 1 Object Type
+    303     Load Profile FTLB,          !- Component 1 Name
+    304     Demand Load Profile FTLB Inlet Node,  !- Component 1 Inlet Node Name
+    305     Demand Load Profile FTLB Outlet Node,  !- Component 1 Outlet Node Name
+    306     ACTIVE;                  !- Component 1 Branch Control Type
+    307 
+    308   LoadProfile:Plant,
+    309     Load Profile FTLB,          !- Name
+    310     Demand Load Profile FTLB Inlet Node,  !- Inlet Node Name
+    311     Demand Load Profile FTLB Outlet Node,  !- Outlet Node Name
+    312     Load Profile FTLB Load Schedule,  !- Load Schedule Name
+    313     0.002,                   !- Peak Flow Rate {m3/s}
+    314     Load Profile FTLB Flow Frac Schedule;  !- Flow Rate Fraction Schedule Name
+    315 
+    316   Branch,
+    317     FTLB LOAD Demand Outlet Branch,    !- Name
+    318     0,                       !- Maximum Flow Rate {m3/s}
+    319     ,                        !- Pressure Drop Curve Name
+    320     Pipe:Adiabatic,          !- Component 1 Object Type
+    321     FTLB LOAD Demand Outlet Pipe,      !- Component 1 Name
+    322     FTLB LOAD Demand Load Profile-Pipe Node,  !- Component 1 Inlet Node Name
+    323     FTLB LOAD Demand Outlet Node,      !- Component 1 Outlet Node Name
+    324      ;                 !- Component 1 Branch Control Type
+    325 
+    326   Pipe:Adiabatic,
+    327     FTLB LOAD Demand Outlet Pipe,      !- Name
+    328     FTLB LOAD Demand Load Profile-Pipe Node,  !- Inlet Node Name
+    329     FTLB LOAD Demand Outlet Node;      !- Outlet Node Name
+    330 
+    331 ! END FTLB LOAD Loop
+    332 !___________________________________________________________________________________
+    333 !
+    334 ! BEGIN TRANSFER Loop
+    335 
+    336   PlantLoop,
+    337     TRANSFER Loop,               !- Name
+    338     WATER,                   !- Fluid Type
+    339     ,                        !- User Defined Fluid Type
+    340     TRANSFER Loop Operation,     !- Plant Equipment Operation Scheme Name
+    341     TRANSFER Supply Outlet Node,      !- Loop Temperature Setpoint Node Name
+    342     100,                     !- Maximum Loop Temperature {C}
+    343     3,                       !- Minimum Loop Temperature {C}
+    344     0.003,                   !- Maximum Loop Flow Rate {m3/s}
+    345     0,                       !- Minimum Loop Flow Rate {m3/s}
+    346     autocalculate,           !- Plant Loop Volume {m3}
+    347     TRANSFER Supply Inlet Node,       !- Plant Side Inlet Node Name
+    348     TRANSFER Supply Outlet Node,      !- Plant Side Outlet Node Name
+    349     TRANSFER Supply Branches,         !- Plant Side Branch List Name
+    350     TRANSFER Supply Connectors,       !- Plant Side Connector List Name
+    351     TRANSFER Demand Inlet Node,       !- Demand Side Inlet Node Name
+    352     TRANSFER Demand Outlet Node,      !- Demand Side Outlet Node Name
+    353     TRANSFER Demand Branches,         !- Demand Side Branch List Name
+    354     TRANSFER Demand Connectors,       !- Demand Side Connector List Name
+    355     OPTIMAL;                 !- Load Distribution Scheme
+    356 
+    357   SetpointManager:Scheduled,
+    358     TRANSFER Loop Setpoint Manager,  !- Name
+    359     Temperature,             !- Control Variable
+    360     TRANSFER Loop Temp Sch,      !- Schedule Name
+    361     TRANSFER Loop Setpoint Node List;  !- Setpoint Node or NodeList Name
+    362 
+    363   NodeList,
+    364     TRANSFER Loop Setpoint Node List,  !- Name
+    365     TRANSFER Supply Outlet Node;      !- Node 1 Name
+    366 
+    367   PlantEquipmentOperationSchemes,
+    368     TRANSFER Loop Operation,     !- Name
+    369     PlantEquipmentOperation:HeatingLoad,  !- Control Scheme 1 Object Type
+    370     TRANSFER HX,          !- Control Scheme 1 Name
+    371     AlwaysOnSchedule;        !- Control Scheme 1 Schedule Name
+    372 
+    373   PlantEquipmentOperation:HeatingLoad,
+    374     TRANSFER HX,          !- Name
+    375     0,                       !- Load Range 1 Lower Limit {W}
+    376     10000000,                !- Load Range 1 Upper Limit {W}
+    377     TRANSFER Heating Plant;           !- Range 1 Equipment List Name
+    378 
+    379   PlantEquipmentList,
+    380     TRANSFER Heating Plant,           !- Name
+    381     HeatExchanger:FluidToFluid,         !- Equipment 1 Object Type
+    382     FTLB to TRANSFER HX;       !- Equipment 1 Name
+    383 
+    384   BranchList,
+    385     TRANSFER Supply Branches,         !- Name
+    386     TRANSFER Supply Inlet Branch,     !- Branch 1 Name
+    387     TRANSFER Heating Branch,          !- Branch 2 Name
+    388     TRANSFER Supply Outlet Branch;    !- Branch 3 Name
+    389 
+    390   ConnectorList,
+    391     TRANSFER Supply Connectors,       !- Name
+    392     Connector:Splitter,      !- Connector 1 Object Type
+    393     TRANSFER Supply Splitter,         !- Connector 1 Name
+    394     Connector:Mixer,         !- Connector 2 Object Type
+    395     TRANSFER Supply Mixer;            !- Connector 2 Name
+    396 
+    397   Connector:Splitter,
+    398     TRANSFER Supply Splitter,         !- Name
+    399     TRANSFER Supply Inlet Branch,     !- Inlet Branch Name
+    400     TRANSFER Heating Branch;          !- Outlet Branch 1 Name
+    401 
+    402   Connector:Mixer,
+    403     TRANSFER Supply Mixer,            !- Name
+    404     TRANSFER Supply Outlet Branch,    !- Outlet Branch Name
+    405     TRANSFER Heating Branch;          !- Inlet Branch 1 Name
+    406 
+    407   Branch,
+    408     TRANSFER Supply Inlet Branch,     !- Name
+    409     0,                       !- Maximum Flow Rate {m3/s}
+    410     ,                        !- Pressure Drop Curve Name
+    411     Pump:VariableSpeed,      !- Component 1 Object Type
+    412     TRANSFER Pump,                    !- Component 1 Name
+    413     TRANSFER Supply Inlet Node,       !- Component 1 Inlet Node Name
+    414     TRANSFER Supply Pump-Heating Node,!- Component 1 Outlet Node Name
+    415      ;                  !- Component 1 Branch Control Type
+    416 
+    417   Pump:VariableSpeed,
+    418     TRANSFER Pump,                    !- Name
+    419     TRANSFER Supply Inlet Node,       !- Inlet Node Name
+    420     TRANSFER Supply Pump-Heating Node,!- Outlet Node Name
+    421     0.005,                   !- Rated Flow Rate {m3/s}
+    422     300000,                  !- Rated Pump Head {Pa}
+    423     2250,                    !- Rated Power Consumption {W}
+    424     0.87,                    !- Motor Efficiency
+    425     0.0,                     !- Fraction of Motor Inefficiencies to Fluid Stream
+    426     0,                       !- Coefficient 1 of the Part Load Performance Curve
+    427     1,                       !- Coefficient 2 of the Part Load Performance Curve
+    428     0,                       !- Coefficient 3 of the Part Load Performance Curve
+    429     0,                       !- Coefficient 4 of the Part Load Performance Curve
+    430     0,                       !- Minimum Flow Rate {m3/s}
+    431     INTERMITTENT;            !- Pump Control Type
+    432 
+    433   Branch,
+    434     TRANSFER Heating Branch,          !- Name
+    435     0,                       !- Maximum Flow Rate {m3/s}
+    436     ,                        !- Pressure Drop Curve Name
+    437     HeatExchanger:FluidToFluid,         !- Component 1 Object Type
+    438     FTLB to TRANSFER HX,       !- Component 1 Name
+    439     TRANSFER Supply Heating Inlet Node,  !- Component 1 Inlet Node Name
+    440     TRANSFER Supply Heating Outlet Node,  !- Component 1 Outlet Node Name
+    441      ;                  !- Component 1 Branch Control Type
+    442 
+    443  HeatExchanger:FluidToFluid,
+    444     FTLB to TRANSFER HX , !- Name
+    445     AlwaysOnSchedule, !- Availability Schedule Name
+    446     FTLB Demand HX Inlet Node , !- Loop Demand Side Inlet Node Name
+    447     FTLB Demand HX Outlet Node , !- Loop Demand Side Outlet Node Name
+    448     0.003 , !- Loop Demand Side Design Flow Rate
+    449     TRANSFER Supply Heating Inlet Node, !- Loop Supply Side Inlet Node Name
+    450     TRANSFER Supply Heating Outlet Node, !- Loop Supply Side Outlet Node Name
+    451     0.003 , !- Loop Supply Side Design Flow Rate
+    452     CrossFlowSupplyMixedDemandUnMixed, !- Heat Exchange Model Type
+    453     1500 , !- Heat Exchanger U-Factor Times Area Value
+    454     OperationSchemeModulated , !- Control Type
+    455     TRANSFER Supply Outlet Node, !- Heat Exchanger Setpoint Node Name
+    456     0.2 , !- Minimum Temperature Difference to Activate Heat Exchanger
+    457     LoopToLoop; !- Heat Transfer Metering End Use Type
+    458 
+    459 
+    460 
+    461   Branch,
+    462     TRANSFER Supply Outlet Branch,    !- Name
+    463     0,                       !- Maximum Flow Rate {m3/s}
+    464     ,                        !- Pressure Drop Curve Name
+    465     Pipe:Adiabatic,          !- Component 1 Object Type
+    466     TRANSFER Supply Outlet Pipe,      !- Component 1 Name
+    467     TRANSFER Supply Heating-Pipe Node,!- Component 1 Inlet Node Name
+    468     TRANSFER Supply Outlet Node,      !- Component 1 Outlet Node Name
+    469      ;                 !- Component 1 Branch Control Type
+    470 
+    471   Pipe:Adiabatic,
+    472    TRANSFER Supply Outlet Pipe,      !- Name
+    473     TRANSFER Supply Heating-Pipe Node,!- Inlet Node Name
+    474     TRANSFER Supply Outlet Node;      !- Outlet Node Name
+    475 
+    476   BranchList,
+    477     TRANSFER Demand Branches,         !- Name
+    478     TRANSFER Demand Inlet Branch,     !- Branch 1 Name
+    479     FTLB TRANSFER Demand HX Branch 1,   !- Branch 2 Name
+    480     TRANSFER Demand Outlet Branch;    !- Branch 3 Name
+    481 
+    482   ConnectorList,
+    483     TRANSFER Demand Connectors,       !- Name
+    484     Connector:Splitter,      !- Connector 1 Object Type
+    485     TRANSFER Demand Splitter,         !- Connector 1 Name
+    486     Connector:Mixer,         !- Connector 2 Object Type
+    487     TRANSFER Demand Mixer;            !- Connector 2 Name
+    488 
+    489   Connector:Splitter,
+    490     TRANSFER Demand Splitter,         !- Name
+    491     TRANSFER Demand Inlet Branch,     !- Inlet Branch Name
+    492     FTLB TRANSFER Demand HX Branch 1;   !- Outlet Branch 1 Name
+    493 
+    494   Connector:Mixer,
+    495     TRANSFER Demand Mixer,            !- Name
+    496     TRANSFER Demand Outlet Branch,    !- Outlet Branch Name
+    497     FTLB TRANSFER Demand HX Branch 1;   !- Inlet Branch 1 Name
+    498 
+    499   Branch,
+    500     TRANSFER Demand Inlet Branch,     !- Name
+    501     0,                       !- Maximum Flow Rate {m3/s}
+    502     ,                        !- Pressure Drop Curve Name
+    503     Pipe:Adiabatic,          !- Component 1 Object Type
+    504     TRANSFER Demand Inlet Pipe,       !- Component 1 Name
+    505     TRANSFER Demand Inlet Node,       !- Component 1 Inlet Node Name
+    506     TRANSFER Demand Pipe-Load Profile Node,  !- Component 1 Outlet Node Name
+    507      ;                 !- Component 1 Branch Control Type
+    508 
+    509   Pipe:Adiabatic,
+    510     TRANSFER Demand Inlet Pipe,       !- Name
+    511     TRANSFER Demand Inlet Node,       !- Inlet Node Name
+    512     TRANSFER Demand Pipe-Load Profile Node;  !- Outlet Node Name
+    513 
+    514   Branch,
+    515     FTLB TRANSFER Demand HX Branch 1,   !- Name
+    516     0,                       !- Maximum Flow Rate {m3/s}
+    517     ,                        !- Pressure Drop Curve Name
+    518     HeatExchanger:FluidToFluid,       !- Component 1 Object Type
+    519     FTLB TRANSFER to FTLB LOAD HX,          !- Component 1 Name
+    520     FTLB TRANSFER Demand HX Inlet Node,  !- Component 1 Inlet Node Name
+    521     FTLB TRANSFER Demand HX Outlet Node,  !- Component 1 Outlet Node Name
+    522     ACTIVE;                  !- Component 1 Branch Control Type
+    523 
+    524   Branch,
+    525     TRANSFER Demand Outlet Branch,    !- Name
+    526     0,                       !- Maximum Flow Rate {m3/s}
+    527     ,                        !- Pressure Drop Curve Name
+    528     Pipe:Adiabatic,          !- Component 1 Object Type
+    529     TRANSFER Demand Outlet Pipe,      !- Component 1 Name
+    530     TRANSFER Demand Load Profile-Pipe Node,  !- Component 1 Inlet Node Name
+    531     TRANSFER Demand Outlet Node,      !- Component 1 Outlet Node Name
+    532      ;                 !- Component 1 Branch Control Type
+    533 
+    534   Pipe:Adiabatic,
+    535     TRANSFER Demand Outlet Pipe,      !- Name
+    536     TRANSFER Demand Load Profile-Pipe Node,  !- Inlet Node Name
+    537     TRANSFER Demand Outlet Node;      !- Outlet Node Name
+    538 
+    539 ! END Transfer loop
+    540 !_________________________________________________________________________________
+    541 !
+    542 ! BEGIN FTLB loop
+    543 
+    544   PlantLoop,
+    545     FTLB Loop,               !- Name
+    546     WATER,                   !- Fluid Type
+    547     ,                        !- User Defined Fluid Type
+    548     FTLB Loop Operation,     !- Plant Equipment Operation Scheme Name
+    549     FTLB Supply Outlet Node,      !- Loop Temperature Setpoint Node Name
+    550     100,                     !- Maximum Loop Temperature {C}
+    551     3,                       !- Minimum Loop Temperature {C}
+    552     0.003,                   !- Maximum Loop Flow Rate {m3/s}
+    553     0,                       !- Minimum Loop Flow Rate {m3/s}
+    554     autocalculate,           !- Plant Loop Volume {m3}
+    555     FTLB Supply Inlet Node,       !- Plant Side Inlet Node Name
+    556     FTLB Supply Outlet Node,      !- Plant Side Outlet Node Name
+    557     FTLB Supply Branches,         !- Plant Side Branch List Name
+    558     FTLB Supply Connectors,       !- Plant Side Connector List Name
+    559     FTLB Demand Inlet Node,       !- Demand Side Inlet Node Name
+    560     FTLB Demand Outlet Node,      !- Demand Side Outlet Node Name
+    561     FTLB Demand Branches,         !- Demand Side Branch List Name
+    562     FTLB Demand Connectors,       !- Demand Side Connector List Name
+    563     OPTIMAL;                 !- Load Distribution Scheme
+    564 
+    565   SetpointManager:Scheduled,
+    566     FTLB Loop Setpoint Manager,  !- Name
+    567     Temperature,             !- Control Variable
+    568     FTLB Loop Temp Sch,      !- Schedule Name
+    569     FTLB Loop Setpoint Node List;  !- Setpoint Node or NodeList Name
+    570 
+    571   NodeList,
+    572     FTLB Loop Setpoint Node List,  !- Name
+    573     FTLB Supply Outlet Node;      !- Node 1 Name
+    574 
+    575   PlantEquipmentOperationSchemes,
+    576     FTLB Loop Operation,     !- Name
+    577     PlantEquipmentOperation:HeatingLoad,  !- Control Scheme 1 Object Type
+    578     FTLB Purchased Only,          !- Control Scheme 1 Name
+    579     AlwaysOnSchedule;        !- Control Scheme 1 Schedule Name
+    580 
+    581   PlantEquipmentOperation:HeatingLoad,
+    582     FTLB Purchased Only,          !- Name
+    583     0,                       !- Load Range 1 Lower Limit {W}
+    584     10000000,                !- Load Range 1 Upper Limit {W}
+    585     FTLB Heating Plant;           !- Range 1 Equipment List Name
+    586 
+    587   PlantEquipmentList,
+    588     FTLB Heating Plant,           !- Name
+    589     DistrictHeating,         !- Equipment 1 Object Type
+    590     FTLB Purchased Heating;       !- Equipment 1 Name
+    591 
+    592   BranchList,
+    593     FTLB Supply Branches,         !- Name
+    594     FTLB Supply Inlet Branch,     !- Branch 1 Name
+    595     FTLB Heating Branch,          !- Branch 2 Name
+    596     FTLB Supply Outlet Branch;    !- Branch 3 Name
+    597 
+    598   ConnectorList,
+    599     FTLB Supply Connectors,       !- Name
+    600     Connector:Splitter,      !- Connector 1 Object Type
+    601     FTLB Supply Splitter,         !- Connector 1 Name
+    602     Connector:Mixer,         !- Connector 2 Object Type
+    603     FTLB Supply Mixer;            !- Connector 2 Name
+    604 
+    605   Connector:Splitter,
+    606     FTLB Supply Splitter,         !- Name
+    607     FTLB Supply Inlet Branch,     !- Inlet Branch Name
+    608     FTLB Heating Branch;          !- Outlet Branch 1 Name
+    609 
+    610   Connector:Mixer,
+    611     FTLB Supply Mixer,            !- Name
+    612     FTLB Supply Outlet Branch,    !- Outlet Branch Name
+    613     FTLB Heating Branch;          !- Inlet Branch 1 Name
+    614 
+    615   Branch,
+    616     FTLB Supply Inlet Branch,     !- Name
+    617     0,                       !- Maximum Flow Rate {m3/s}
+    618     ,                        !- Pressure Drop Curve Name
+    619     Pump:VariableSpeed,      !- Component 1 Object Type
+    620     FTLB Pump,                    !- Component 1 Name
+    621     FTLB Supply Inlet Node,       !- Component 1 Inlet Node Name
+    622     FTLB Supply Pump-Heating Node,!- Component 1 Outlet Node Name
+    623      ;                  !- Component 1 Branch Control Type
+    624 
+    625   Pump:VariableSpeed,
+    626     FTLB Pump,                    !- Name
+    627     FTLB Supply Inlet Node,       !- Inlet Node Name
+    628     FTLB Supply Pump-Heating Node,!- Outlet Node Name
+    629     0.005,                   !- Rated Flow Rate {m3/s}
+    630     300000,                  !- Rated Pump Head {Pa}
+    631     2250,                    !- Rated Power Consumption {W}
+    632     0.87,                    !- Motor Efficiency
+    633     0.0,                     !- Fraction of Motor Inefficiencies to Fluid Stream
+    634     0,                       !- Coefficient 1 of the Part Load Performance Curve
+    635     1,                       !- Coefficient 2 of the Part Load Performance Curve
+    636     0,                       !- Coefficient 3 of the Part Load Performance Curve
+    637     0,                       !- Coefficient 4 of the Part Load Performance Curve
+    638     0,                       !- Minimum Flow Rate {m3/s}
+    639     INTERMITTENT;            !- Pump Control Type
+    640 
+    641   Branch,
+    642     FTLB Heating Branch,          !- Name
+    643     0,                       !- Maximum Flow Rate {m3/s}
+    644     ,                        !- Pressure Drop Curve Name
+    645     DistrictHeating,         !- Component 1 Object Type
+    646     FTLB Purchased Heating,       !- Component 1 Name
+    647     FTLB Supply Heating Inlet Node,  !- Component 1 Inlet Node Name
+    648     FTLB Supply Heating Outlet Node,  !- Component 1 Outlet Node Name
+    649      ;                  !- Component 1 Branch Control Type
+    650 
+    651   DistrictHeating,
+    652     FTLB Purchased Heating,       !- Name
+    653     FTLB Supply Heating Inlet Node,  !- Hot Water Inlet Node Name
+    654     FTLB Supply Heating Outlet Node,  !- Hot Water Outlet Node Name
+    655     1000000;                 !- Nominal Capacity {W}
+    656 
+    657   Branch,
+    658     FTLB Supply Outlet Branch,    !- Name
+    659     0,                       !- Maximum Flow Rate {m3/s}
+    660     ,                        !- Pressure Drop Curve Name
+    661     Pipe:Adiabatic,          !- Component 1 Object Type
+    662     FTLB Supply Outlet Pipe,      !- Component 1 Name
+    663     FTLB Supply Heating-Pipe Node,!- Component 1 Inlet Node Name
+    664     FTLB Supply Outlet Node,      !- Component 1 Outlet Node Name
+    665      ;                 !- Component 1 Branch Control Type
+    666 
+    667   Pipe:Adiabatic,
+    668     FTLB Supply Outlet Pipe,      !- Name
+    669     FTLB Supply Heating-Pipe Node,!- Inlet Node Name
+    670     FTLB Supply Outlet Node;      !- Outlet Node Name
+    671 
+    672   BranchList,
+    673     FTLB Demand Branches,         !- Name
+    674     FTLB Demand Inlet Branch,     !- Branch 1 Name
+    675     FTLB Demand HX Branch,   !- Branch 2 Name
+    676     FTLB Demand Outlet Branch;    !- Branch 3 Name
+    677 
+    678   ConnectorList,
+    679     FTLB Demand Connectors,       !- Name
+    680     Connector:Splitter,      !- Connector 1 Object Type
+    681     FTLB Demand Splitter,         !- Connector 1 Name
+    682     Connector:Mixer,         !- Connector 2 Object Type
+    683     FTLB Demand Mixer;            !- Connector 2 Name
+    684 
+    685   Connector:Splitter,
+    686     FTLB Demand Splitter,         !- Name
+    687     FTLB Demand Inlet Branch,     !- Inlet Branch Name
+    688     FTLB Demand HX Branch;   !- Outlet Branch 1 Name
+    689 
+    690   Connector:Mixer,
+    691     FTLB Demand Mixer,            !- Name
+    692     FTLB Demand Outlet Branch,    !- Outlet Branch Name
+    693     FTLB Demand HX Branch;   !- Inlet Branch 1 Name
+    694 
+    695   Branch,
+    696     FTLB Demand Inlet Branch,     !- Name
+    697     0,                       !- Maximum Flow Rate {m3/s}
+    698     ,                        !- Pressure Drop Curve Name
+    699     Pipe:Adiabatic,          !- Component 1 Object Type
+    700     FTLB Demand Inlet Pipe,       !- Component 1 Name
+    701     FTLB Demand Inlet Node,       !- Component 1 Inlet Node Name
+    702     FTLB Demand Pipe-Load Profile Node,  !- Component 1 Outlet Node Name
+    703      ;                 !- Component 1 Branch Control Type
+    704 
+    705   Pipe:Adiabatic,
+    706     FTLB Demand Inlet Pipe,       !- Name
+    707     FTLB Demand Inlet Node,       !- Inlet Node Name
+    708     FTLB Demand Pipe-Load Profile Node;  !- Outlet Node Name
+    709 
+    710   Branch,
+    711     FTLB Demand HX Branch,   !- Name
+    712     0,                       !- Maximum Flow Rate {m3/s}
+    713     ,                        !- Pressure Drop Curve Name
+    714     HeatExchanger:FluidToFluid,       !- Component 1 Object Type
+    715     FTLB to TRANSFER HX,          !- Component 1 Name
+    716     FTLB Demand HX Inlet Node,  !- Component 1 Inlet Node Name
+    717     FTLB Demand HX Outlet Node,  !- Component 1 Outlet Node Name
+    718      ;                  !- Component 1 Branch Control Type
+    719 
+    720 
+    721   Branch,
+    722     FTLB Demand Outlet Branch,    !- Name
+    723     0,                       !- Maximum Flow Rate {m3/s}
+    724     ,                        !- Pressure Drop Curve Name
+    725     Pipe:Adiabatic,          !- Component 1 Object Type
+    726     FTLB Demand Outlet Pipe,      !- Component 1 Name
+    727     FTLB Demand Load Profile-Pipe Node,  !- Component 1 Inlet Node Name
+    728     FTLB Demand Outlet Node,      !- Component 1 Outlet Node Name
+    729     PASSIVE;                 !- Component 1 Branch Control Type
+    730 
+    731   Pipe:Adiabatic,
+    732     FTLB Demand Outlet Pipe,      !- Name
+    733     FTLB Demand Load Profile-Pipe Node,  !- Inlet Node Name
+    734     FTLB Demand Outlet Node;      !- Outlet Node Name
+    735 
+    736 !____________________________________________________________________
+    737 
+    738   ScheduleTypeLimits,
+    739     Any Number;              !- Name
+    740 
+    741   ScheduleTypeLimits,
+    742     On/Off,                  !- Name
+    743     0,                       !- Lower Limit Value
+    744     1,                       !- Upper Limit Value
+    745     DISCRETE;                !- Numeric Type
+    746 
+    747   Schedule:Compact,
+    748     FTLB LOAD Loop Temp Sch,      !- Name
+    749     Any Number,              !- Schedule Type Limits Name
+    750     THROUGH: 12/31,          !- Field 1
+    751     FOR: AllDays,            !- Field 2
+    752     UNTIL: 24:00,60.0;       !- Field 3
+    753 
+    754   Schedule:Compact,
+    755     TRANSFER Loop Temp Sch,      !- Name
+    756     Any Number,              !- Schedule Type Limits Name
+    757     THROUGH: 12/31,          !- Field 1
+    758     FOR: AllDays,            !- Field 2
+    759     UNTIL: 24:00,75.0;       !- Field 3
+    760 
+    761   Schedule:Compact,
+    762     FTLB Loop Temp Sch,      !- Name
+    763     Any Number,              !- Schedule Type Limits Name
+    764     THROUGH: 12/31,          !- Field 1
+    765     FOR: AllDays,            !- Field 2
+    766     UNTIL: 24:00,95.0;       !- Field 3
+    767 
+    768   Schedule:Compact,
+    769     AlwaysOnSchedule,        !- Name
+    770     On/Off,                  !- Schedule Type Limits Name
+    771     THROUGH: 12/31,          !- Field 1
+    772     FOR: AllDays,            !- Field 2
+    773     UNTIL: 24:00,1;          !- Field 3
+    774 
+    775   Schedule:Compact,
+    776     Load Profile FTLB Load Schedule,  !- Name
+    777     Any Number,              !- Schedule Type Limits Name
+    778     THROUGH: 12/31,          !- Field 1
+    779     FOR: AllDays,            !- Field 2
+    780     UNTIL: 4:00,8000,        !- Field 3
+    781     UNTIL: 8:00,6000,        !- Field 5
+    782     UNTIL: 9:00,0,           !- Field 7
+    783     UNTIL: 12:00,6000,       !- Field 9
+    784     UNTIL: 24:00,10000;      !- Field 11
+    785 
+    786   Schedule:Compact,
+    787     Load Profile FTLB Flow Frac Schedule,  !- Name
+    788     Any Number,              !- Schedule Type Limits Name
+    789     THROUGH: 12/31,          !- Field 1
+    790     FOR: AllDays,            !- Field 2
+    791     UNTIL: 24:00,1.0;        !- Field 3
+    792 
+    793   Output:VariableDictionary,IDF;
+    794 
+    795   Output:Variable,*,Plant Load Profile Mass Flow Rate,Hourly;
+    796 
+    797   Output:Variable,*,Plant Load Profile Heat Transfer Rate,Hourly;
+    798 
+    799   Output:Variable,*,Plant Load Profile Heat Transfer Energy,Hourly;
+    800 
+    801   Output:Variable,*,District Hot Water Rate,Hourly;
+    802 
+    803   Output:Variable,*,District Hot Water Energy,Hourly;
+    804 
+    805 
+    806   Output:Meter:MeterFileOnly,Heating:DistrictHeating,monthly;
+    807 
+    808   Output:Meter:MeterFileOnly,Heating:DistrictHeating,runperiod;
+    809 
+    810   Output:Meter:MeterFileOnly,Electricity:Facility,monthly;
+    811 
+    812   Output:Meter:MeterFileOnly,Electricity:Plant,monthly;
+    813 
+    814   Output:Meter:MeterFileOnly,Electricity:Facility,runperiod;
+    815 
+    816   Output:Meter:MeterFileOnly,Electricity:Plant,runperiod;
+    817 
+    818   OutputControl:Table:Style,
+    819     HTML;                    !- Column Separator
+    820 
+    821   Output:Table:SummaryReports,
+    822     AllSummary;              !- Report 1 Name
+    823 
+    824 Output:SQLite, simple;
+    825 Output:Variable,*,Fluid Heat Exchanger Heat Transfer Rate,Hourly; !- HVAC Average [W]
+    826 Output:Variable,*,Fluid Heat Exchanger Heat Transfer Energy,Hourly; !- HVAC Sum [J]
+    827 Output:Variable,*,Fluid Heat Exchanger Loop Supply Side Mass Flow Rate,Hourly; !- HVAC Average [kg/s]
+    828 Output:Variable,*,Fluid Heat Exchanger Loop Supply Side Inlet Temperature,Hourly; !- HVAC Average [C]
+    829 Output:Variable,*,Fluid Heat Exchanger Loop Supply Side Outlet Temperature,Hourly; !- HVAC Average [C]
+    830 Output:Variable,*,Fluid Heat Exchanger Loop Demand Side Mass Flow Rate,Hourly; !- HVAC Average [kg/s]
+    831 Output:Variable,*,Fluid Heat Exchanger Loop Demand Side Inlet Temperature,Hourly; !- HVAC Average [C]
+    832 Output:Variable,*,Fluid Heat Exchanger Loop Demand Side Outlet Temperature,Hourly; !- HVAC Average [C]
+    833 Output:Variable,*,Fluid Heat Exchanger Operation Status,Hourly; !- HVAC Average []
+    834 Output:Variable,*,Fluid Heat Exchanger Effectiveness,Hourly; !- HVAC Average []
+    835 Output:Variable,*,Plant Loop Cooling Demand,Hourly; !- HVAC Average [W]
+    836 Output:Variable,*,Plant Loop Heating Demand,Hourly; !- HVAC Average [W]
+    837 Output:Variable,*,Plant Loop InletNode Flowrate,Hourly; !- HVAC Average [kg/s]
+    838 Output:Variable,*,Plant Loop InletNode Temperature,Hourly; !- HVAC Average [C]
+    839 Output:Variable,*,Plant Loop OutletNode Temperature,Hourly; !- HVAC Average [C]
+  Processing Input Data File (in.idf) -- Complete
+  Maximum number of Alpha IDF Args=          14
+  Maximum number of Numeric IDF Args=          14
+  Number of IDF "Lines"=         123
+  Number of Defaulted Fields=           6
+  Number of Fields with Defaults=         157
+  Number of Autosized Fields=           0
+  Number of Autosizable Fields =          33
+  Number of Autocalculated Fields=           3
+  Number of Autocalculatable Fields =           3
+ Getting object=OUTPUT:SQLITE
+ Getting object=VERSION
+ Getting object=TIMESTEP
+ Getting object=SIMULATIONCONTROL
+ Getting object=OUTPUT:VARIABLEDICTIONARY
+ Getting object=BRANCH
+ Getting object=NODELIST
+ Getting object=BRANCHLIST
+ Getting object=SIZINGPERIOD:DESIGNDAY
+ Getting object=RUNPERIOD
+ Getting object=SITE:LOCATION
+ Getting object=OUTPUT:VARIABLE
+ Getting object=SCHEDULE:COMPACT
+  Processing Schedule Input -- Start
+ Getting object=SCHEDULETYPELIMITS
+  Processing Schedule Input -- Complete
+ Getting object=BUILDING
+ Getting object=GLOBALGEOMETRYRULES
+ Getting object=SETPOINTMANAGER:SCHEDULED
+ Getting object=PLANTLOOP
+ Getting object=CONNECTORLIST
+ Getting object=CONNECTOR:SPLITTER
+ Getting object=CONNECTOR:MIXER
+ Getting object=PIPE:ADIABATIC
+ Getting object=LOADPROFILE:PLANT
+ Getting object=HEATEXCHANGER:FLUIDTOFLUID
+ Getting object=DISTRICTHEATING
+ Getting object=PLANTEQUIPMENTOPERATIONSCHEMES
+ Getting object=PLANTEQUIPMENTOPERATION:HEATINGLOAD
+ Getting object=PLANTEQUIPMENTLIST
+ Getting object=PLANTEQUIPMENTOPERATION:UNCONTROLLED
+ Getting object=PUMP:VARIABLESPEED
+ Getting object=OUTPUT:METER:METERFILEONLY
+ Getting object=OUTPUTCONTROL:TABLE:STYLE
+ Getting object=OUTPUT:TABLE:SUMMARYREPORTS
+ NumOfRVariable=         736
+ NumOfRVariable(Total)=         736
+ NumOfRVariable(Actual)=          48
+ NumOfRVariable(Summed)=          12
+ NumOfRVariable(Meter)=          12
+ NumOfIVariable=          17
+ NumOfIVariable(Total)=          17
+ NumOfIVariable(Actual)=           0
+ NumOfIVariable(Summed)=           0
+ MaxRVariable=        1000
+ MaxIVariable=          10
+ NumEnergyMeters=          18
+ NumVarMeterArrays=          12
+ maxUniqueKeyCount=        1500
+ maxNumberOfFigures=           0
+ MAXHCArrayBounds=          10
+ MaxVerticesPerSurface=           4
+ ClippingAlgorithm=SutherlandHodgman
+ MonthlyFieldSetInputCount=           0
+ NumConsideredOutputVariables=          20
+ MaxConsideredOutputVariables=          20
+ numActuatorsUsed=           0
+ numEMSActuatorsAvailable=           0
+ maxEMSActuatorsAvailable=           0
+ numInternalVariablesUsed=           0
+ numEMSInternalVarsAvailable=           0
+ maxEMSInternalVarsAvailable=           0
+ NumOfNodeConnections=         116
+ MaxNumOfNodeConnections=        1000

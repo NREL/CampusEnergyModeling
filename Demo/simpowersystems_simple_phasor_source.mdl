@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.32"
+    ComputedModelVersion    "1.33"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -32,7 +32,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [1912.0, -8.0, 1936.0, 1096.0]
+      Location		      [1912.0, 0.0, 1936.0, 1092.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -41,7 +41,7 @@ Model {
 	DockPosition		"Left"
 	Width			[50]
 	Height			[50]
-	Filter			[8]
+	Filter			[9]
       }
       Object {
 	$PropName		"ExplorerBarInfo"
@@ -49,37 +49,16 @@ Model {
 	$ClassName		"Simulink.ExplorerBarInfo"
 	Visible			[1]
       }
-      Array {
-	Type			"Simulink.EditorInfo"
-	Dimension		3
-	Object {
-	  $ObjectID		  5
-	  IsActive		  [0]
-	  ViewObjType		  "SimulinkTopLevel"
-	  LoadSaveID		  "0"
-	  Extents		  [1886.0, 919.0]
-	  ZoomFactor		  [1.75]
-	  Offset		  [-130.20670537074056, 224.03949757700946]
-	}
-	Object {
-	  $ObjectID		  6
-	  IsActive		  [0]
-	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "169"
-	  Extents		  [1886.0, 919.0]
-	  ZoomFactor		  [1.0]
-	  Offset		  [0.0, -9.5374993979930878]
-	}
-	Object {
-	  $ObjectID		  7
-	  IsActive		  [1]
-	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "20"
-	  Extents		  [1886.0, 919.0]
-	  ZoomFactor		  [1.0]
-	  Offset		  [-266.85714285714221, -138.97772589148514]
-	}
-	PropName		"EditorsInfo"
+      Object {
+	$PropName		"EditorsInfo"
+	$ObjectID		5
+	$ClassName		"Simulink.EditorInfo"
+	IsActive		[1]
+	ViewObjType		"SimulinkSubsys"
+	LoadSaveID		"20"
+	Extents			[1886.0, 918.0]
+	ZoomFactor		[1.0]
+	Offset			[-67.057142857142082, -113.45943748234311]
       }
     }
   }
@@ -92,9 +71,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "bjohnson"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Jun 14 13:17:28 2013"
-  RTWModifiedTimeStamp	  293116646
-  ModelVersionFormat	  "1.%<AutoIncrement:32>"
+  LastModifiedDate	  "Fri Jun 14 13:30:14 2013"
+  RTWModifiedTimeStamp	  293117412
+  ModelVersionFormat	  "1.%<AutoIncrement:33>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -129,7 +108,7 @@ Model {
   TryForcingSFcnDF	  off
   Object {
     $PropName		    "DataLoggingOverride"
-    $ObjectID		    8
+    $ObjectID		    6
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "simpowersystems_simple_phasor"
     signals_		    []
@@ -189,13 +168,13 @@ Model {
     Type		    "Handle"
     Dimension		    1
     Simulink.ConfigSet {
-      $ObjectID		      9
+      $ObjectID		      7
       Version		      "1.13.0"
       Array {
 	Type			"Handle"
 	Dimension		9
 	Simulink.SolverCC {
-	  $ObjectID		  10
+	  $ObjectID		  8
 	  Version		  "1.13.0"
 	  StartTime		  "0.0"
 	  StopTime		  "inf"
@@ -230,7 +209,7 @@ Model {
 	  InsertRTBMode		  "Whenever possible"
 	}
 	Simulink.DataIOCC {
-	  $ObjectID		  11
+	  $ObjectID		  9
 	  Version		  "1.13.0"
 	  Decimation		  "1"
 	  ExternalInput		  "[t, u]"
@@ -262,7 +241,7 @@ Model {
 	  Refine		  "1"
 	}
 	Simulink.OptimizationCC {
-	  $ObjectID		  12
+	  $ObjectID		  10
 	  Version		  "1.13.0"
 	  Array {
 	    Type		    "Cell"
@@ -318,7 +297,7 @@ Model {
 	  ParallelExecutionInRapidAccelerator on
 	}
 	Simulink.DebuggingCC {
-	  $ObjectID		  13
+	  $ObjectID		  11
 	  Version		  "1.13.0"
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
@@ -408,7 +387,7 @@ Model {
 	  SFTransitionActionBeforeConditionDiag	"warning"
 	}
 	Simulink.HardwareCC {
-	  $ObjectID		  14
+	  $ObjectID		  12
 	  Version		  "1.13.0"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
@@ -449,7 +428,7 @@ Model {
 	  ProdEqTarget		  on
 	}
 	Simulink.ModelReferenceCC {
-	  $ObjectID		  15
+	  $ObjectID		  13
 	  Version		  "1.13.0"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
 	  CheckModelReferenceTargetMessage "error"
@@ -464,7 +443,7 @@ Model {
 	  SupportModelReferenceSimTargetCustomCode off
 	}
 	Simulink.SFSimCC {
-	  $ObjectID		  16
+	  $ObjectID		  14
 	  Version		  "1.13.0"
 	  SFSimEnableDebug	  on
 	  SFSimOverflowDetection  on
@@ -479,7 +458,7 @@ Model {
 	}
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
-	  $ObjectID		  17
+	  $ObjectID		  15
 	  Version		  "1.13.0"
 	  Array {
 	    Type		    "Cell"
@@ -542,7 +521,7 @@ Model {
 	    Type		    "Handle"
 	    Dimension		    2
 	    Simulink.CodeAppCC {
-	      $ObjectID		      18
+	      $ObjectID		      16
 	      Version		      "1.13.0"
 	      Array {
 		Type			"Cell"
@@ -609,7 +588,7 @@ Model {
 	    }
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
-	      $ObjectID		      19
+	      $ObjectID		      17
 	      Version		      "1.13.0"
 	      Array {
 		Type			"Cell"
@@ -692,7 +671,7 @@ Model {
 	  }
 	}
 	SSC.SimscapeCC {
-	  $ObjectID		  20
+	  $ObjectID		  18
 	  Version		  "1.0"
 	  Array {
 	    Type		    "Cell"
@@ -721,11 +700,11 @@ Model {
   }
   Simulink.ConfigSet {
     $PropName		    "ActiveConfigurationSet"
-    $ObjectID		    9
+    $ObjectID		    7
   }
   Object {
     $PropName		    "DataTransfer"
-    $ObjectID		    21
+    $ObjectID		    19
     $ClassName		    "Simulink.GlobalDataTransfer"
     DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
     DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
@@ -830,12 +809,6 @@ Model {
       RndMeth		      "Floor"
       SaturateOnIntegerOverflow	on
       SampleTime	      "-1"
-    }
-    Block {
-      BlockType		      Goto
-      GotoTag		      "A"
-      IconDisplay	      "Tag"
-      TagVisibility	      "local"
     }
     Block {
       BlockType		      Inport
@@ -983,8 +956,8 @@ Model {
   }
   System {
     Name		    "simpowersystems_simple_phasor_source"
-    Location		    [1912, -8, 3848, 1088]
-    Open		    on
+    Location		    [1912, 0, 3848, 1092]
+    Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    212
     ScreenColor		    "white"
@@ -995,9 +968,9 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "175"
+    ZoomFactor		    "200"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "192"
+    SIDHighWatermark	    "193"
     Block {
       BlockType		      Reference
       Name		      "3-Phase\nActive & Reactive Power\n(Phasor Type)"
@@ -1042,7 +1015,7 @@ Model {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		22
+	$ObjectID		20
 	$ClassName		"Simulink.Mask"
 	Type			"Constant Power Load"
 	Description		"Implements a controllable constant power load, where VI* = P + jQ (in per-unit)."
@@ -1051,14 +1024,14 @@ Model {
 	  Type			  "Simulink.MaskParameter"
 	  Dimension		  2
 	  Object {
-	    $ObjectID		    23
+	    $ObjectID		    21
 	    Type		    "edit"
 	    Name		    "VNom"
 	    Prompt		    "Nominal line-to-line voltage (VRMS)"
 	    Value		    "480"
 	  }
 	  Object {
-	    $ObjectID		    24
+	    $ObjectID		    22
 	    Type		    "edit"
 	    Name		    "fNom"
 	    Prompt		    "Nominal frequency (Hz)"
@@ -1070,7 +1043,7 @@ Model {
       }
       System {
 	Name			"Constant Power Load"
-	Location		[1912, -8, 3848, 1088]
+	Location		[1912, 0, 3848, 1092]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1417,14 +1390,6 @@ Model {
 	  SaturateOnIntegerOverflow off
 	}
 	Block {
-	  BlockType		  Goto
-	  Name			  "Goto"
-	  SID			  "67"
-	  Position		  [930, 550, 970, 580]
-	  ZOrder		  -10
-	  GotoTag		  "IVar"
-	}
-	Block {
 	  BlockType		  Reference
 	  Name			  "IAnom"
 	  SID			  "150"
@@ -1536,8 +1501,8 @@ Model {
 	  }
 	  System {
 	    Name		    "Measurements"
-	    Location		    [1912, -8, 3848, 1088]
-	    Open		    on
+	    Location		    [1912, 0, 3848, 1092]
+	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -2101,14 +2066,8 @@ Model {
 	  SrcBlock		  "RMS to Peak"
 	  SrcPort		  1
 	  Points		  [10, 0]
-	  Branch {
-	    DstBlock		    "Goto"
-	    DstPort		    1
-	  }
-	  Branch {
-	    DstBlock		    "Correction Current1"
-	    DstPort		    2
-	  }
+	  DstBlock		  "Correction Current1"
+	  DstPort		  2
 	}
 	Line {
 	  SrcBlock		  "Memory"
@@ -2200,6 +2159,11 @@ Model {
 	  Points		  [65, 0]
 	  DstBlock		  "Correction Current1"
 	  DstPort		  1
+	}
+	Annotation {
+	  SID			  "193"
+	  Name			  "Need these resistors\nto keep SimPowerSystems happy "
+	  Position		  [1246, 488]
 	}
 	Annotation {
 	  SID			  "148"
@@ -2481,7 +2445,7 @@ Model {
       Position		      [40, 45, 106, 84]
       ZOrder		      -31
       Priority		      "1"
-      LibraryVersion	      "*1.2191"
+      LibraryVersion	      "1.2191"
       UserDataPersistent      on
       UserData		      "DataTag0"
       FontName		      "Verdana"

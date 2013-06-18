@@ -11,14 +11,18 @@
 
 global MLEPSETTINGS
 
+EplusDir = 'C:\EnergyPlusV8-0-0-mlep';
+JavaDir = 'C:\Program Files (x86)\Java\jre6\bin';
+
+% Get MLE+ Path Name
 homePath = mfilename('fullpath');
-% Remove 
 indexHome = strfind(homePath, 'mlepInit');
 homePath = homePath(1:indexHome-1);
 bcvtbDir = [homePath 'bcvtb'];
 
-EplusDir = 'C:\EnergyPlusV8-0-0-mlep';
-JavaDir = 'C:\Program Files (x86)\Java\jre6\bin';
+% Add and Save MLE+ Path
+addpath(homePath);
+savepath;
 
 if ispc
     % Windows
@@ -46,6 +50,4 @@ else
         {'ENERGYPLUS_DIR', EplusDir},...  % Path to the EnergyPlus
         {'PATH', ['usr/bin/java' ';' EplusDir]}...  % System path, should include E+ and JRE
         };
-    % JavaDir = '/usr/bin/java'
-    
 end

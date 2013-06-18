@@ -198,7 +198,9 @@ function Start(block)
 processobj = mlepProcess;
 processobj.program = block.DialogPrm(1).Data;
 processobj.workDir = block.DialogPrm(4).Data;
-processobj.bcvtbDir = block.DialogPrm(8).Data;
+if ~isempty(block.DialogPrm(8).Data)
+    processobj.bcvtbDir = block.DialogPrm(8).Data;
+end
 processobj.arguments = [block.DialogPrm(2).Data ' ' block.DialogPrm(3).Data];
 processobj.acceptTimeout = block.DialogPrm(5).Data;
 processobj.port = block.DialogPrm(6).Data;

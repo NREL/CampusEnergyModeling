@@ -5,7 +5,6 @@ Library {
   SavedCharacterEncoding  "windows-1252"
   LibraryType		  "BlockLibrary"
   SaveDefaultBlockParams  on
-  LockLinksToLibrary	  on
   ScopeRefreshTime	  0.035000
   OverrideScopeRefreshTime on
   DisableAllScopes	  off
@@ -17,9 +16,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "wbernal"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Jun 18 14:33:17 2013"
+  LastModifiedDate	  "Tue Jun 18 16:02:36 2013"
   RTWModifiedTimeStamp	  293465904
-  ModelVersionFormat	  "1.%<AutoIncrement:23>"
+  ModelVersionFormat	  "1.%<AutoIncrement:24>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -690,7 +689,7 @@ Library {
   }
   System {
     Name		    "CampusModeling"
-    Location		    [535, 370, 1163, 764]
+    Location		    [711, 297, 1339, 691]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -784,8 +783,8 @@ Library {
       MaskPortRotate	      "default"
       MaskIconUnits	      "autoscale"
       MaskValueString	      "'C:\\\\EnergyPlusV8-0-0-mlep\\\\RunEPlus.bat'|'U:\\\\Simulink-mlep\\\\Hospital\\\\RefBldg"
-      "HospitalNew2004_Chicago'|'USA_IL_Chicago-OHare.Intl.AP.725300_TMY3'|'U:\\\\Simulink-mlep\\\\Hospital'|6000|0|''|"
-      "'U:\\\\Simulink-mlep\\\\bcvtb'|900|2"
+      "HospitalNew2004_Chicago'|'USA_IL_Chicago-OHare.Intl.AP.725300_TMY3'|'U:\\\\Simulink-mlep\\\\Hospital'|80000|0|''"
+      "|'U:\\\\Simulink-mlep\\\\bcvtb'|900|2"
     }
     Block {
       BlockType		      SubSystem

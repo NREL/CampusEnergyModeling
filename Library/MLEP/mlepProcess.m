@@ -300,12 +300,9 @@ classdef mlepProcess < handle
             % Obtain default settings from the global variable MLEPSETTINGS
             % If that variable does not exist, assign default values to
             % settings.
-            %global MLEPSETTINGS
+            global MLEPSETTINGS
             
             noSettings = isempty(MLEPSETTINGS) || ~isstruct(MLEPSETTINGS);
-            
-            noSettings = 1;
-            
             
             if noSettings
                 % Try to run mlepInit

@@ -5,6 +5,7 @@ Library {
   SavedCharacterEncoding  "windows-1252"
   LibraryType		  "BlockLibrary"
   SaveDefaultBlockParams  on
+  LockLinksToLibrary	  on
   ScopeRefreshTime	  0.035000
   OverrideScopeRefreshTime on
   DisableAllScopes	  off
@@ -14,11 +15,11 @@ Library {
   Creator		  "sfrank1"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "sfrank1"
+  LastModifiedBy	  "wbernal"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Jun 12 16:17:17 2013"
-  RTWModifiedTimeStamp	  292954626
-  ModelVersionFormat	  "1.%<AutoIncrement:11>"
+  LastModifiedDate	  "Tue Jun 18 14:33:17 2013"
+  RTWModifiedTimeStamp	  293465904
+  ModelVersionFormat	  "1.%<AutoIncrement:23>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -642,6 +643,11 @@ Library {
       Interpolate	      on
     }
     Block {
+      BlockType		      M-S-Function
+      FunctionName	      "matlabfile"
+      DisplayMFileStacktrace  on
+    }
+    Block {
       BlockType		      Outport
       Port		      "1"
       OutMin		      "[]"
@@ -684,7 +690,7 @@ Library {
   }
   System {
     Name		    "CampusModeling"
-    Location		    [727, 203, 1355, 597]
+    Location		    [535, 370, 1163, 764]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -698,7 +704,7 @@ Library {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "14"
+    SIDHighWatermark	    "15"
     Block {
       BlockType		      SubSystem
       Name		      "Buildings"
@@ -738,6 +744,48 @@ Library {
 	ShowPageBoundaries	off
 	ZoomFactor		"100"
       }
+    }
+    Block {
+      BlockType		      M-S-Function
+      Name		      "E+ Building"
+      SID		      "15"
+      Ports		      [1, 3]
+      Position		      [390, 47, 570, 173]
+      FunctionName	      "mlepSimulinkBlk"
+      Parameters	      "progname, modelfile, weatherfile, workdir, timeout, port, host, bcvtbdir, deltaT, noutputd"
+      MaskType		      "EnergyPlus Cosimulation"
+      MaskDescription	      "This block implements cosimulation with EnergyPlus by allowing Simulink to exchange input"
+      " and output data with it. Currently, EnergyPlus only supports real data."
+      MaskHelp		      "This block implements cosimulation with EnergyPlus by allowing Simulink to\nexchange input and "
+      "output data with it.\n\nWhen a simulation starts, EnergyPlus is also started. It will then run in\nparallel with"
+      " Simulink. They exchange input and output data via socket\ncommunication. When the simulation terminates, Energy"
+      "Plus will exit.\n\nRefer to the manuals of MLE+ and/or BCVTB/EnergyPlus for details.\n\nINPUTS:\n- real: real ve"
+      "ctor input to EnergyPlus.\n\nOUTPUTS:\n- flag: status of EnergyPlus (0 if OK, if flag is non-zero, the simulatio"
+      "n should stop).\n- time: current simulation time of EnergyPlus, in seconds.\n- real: real vector output from Ene"
+      "rgyPlus."
+      MaskPromptString	      "E+ Executable Path|IDF File (without extension)|Weather Profile|Working Directory|Timeou"
+      "t (in milliseconds)|Socket Port (0 = any available)|Socket Host ('' = local host)|BCVTB Directory|Time Step (in "
+      "seconds)|Number of Real Outputs"
+      MaskStyleString	      "edit,edit,edit,edit,edit,edit,edit,edit,edit,edit"
+      MaskVariables	      "progname=@1;modelfile=@2;weatherfile=@3;workdir=@4;timeout=@5;port=@6;host=@7;bcvtbdir=@8;d"
+      "eltaT=@9;noutputd=@10;"
+      MaskTunableValueString  "off,off,off,off,off,off,off,off,off,off"
+      MaskCallbackString      "|||||||||"
+      MaskEnableString	      "on,on,on,on,on,on,on,on,on,on"
+      MaskVisibilityString    "on,on,on,on,on,on,on,on,on,on"
+      MaskToolTipString	      "on,on,on,on,on,on,on,on,on,on"
+      MaskDisplay	      "disp('E+\\nCosimulation');\nport_label('output', 1, 'flag');\nport_label('output', 2, 'time')"
+      ";\nport_label('output', 3, 'real');\n% port_label('output', 4, 'int');\n% port_label('output', 5, 'bool');\nport"
+      "_label('input', 1, 'real');\n% port_label('input', 2, 'int');\n% port_label('input', 3, 'bool');\nimage(imread('"
+      "building.png'))"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "'C:\\\\EnergyPlusV8-0-0-mlep\\\\RunEPlus.bat'|'U:\\\\Simulink-mlep\\\\Hospital\\\\RefBldg"
+      "HospitalNew2004_Chicago'|'USA_IL_Chicago-OHare.Intl.AP.725300_TMY3'|'U:\\\\Simulink-mlep\\\\Hospital'|6000|0|''|"
+      "'U:\\\\Simulink-mlep\\\\bcvtb'|900|2"
     }
     Block {
       BlockType		      SubSystem

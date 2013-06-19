@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.17"
+    ComputedModelVersion    "1.21"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -27,9 +27,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "wbernal"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Jun 19 13:17:48 2013"
-  RTWModifiedTimeStamp	  293548104
-  ModelVersionFormat	  "1.%<AutoIncrement:17>"
+  LastModifiedDate	  "Wed Jun 19 16:00:57 2013"
+  RTWModifiedTimeStamp	  293558452
+  ModelVersionFormat	  "1.%<AutoIncrement:21>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -67,6 +67,7 @@ Model {
     $ObjectID		    1
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "runCampusSim"
+    signals_		    []
     overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
@@ -801,7 +802,7 @@ Model {
   }
   System {
     Name		    "runCampusSim"
-    Location		    [1602, 74, 3198, 1179]
+    Location		    [2, 82, 1598, 1171]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -2272,7 +2273,7 @@ Model {
       Position		      [1320, 497, 1380, 628]
       BackgroundColor	      "orange"
       Floating		      off
-      Location		      [1601, 48, 3201, 1199]
+      Location		      [1150, 133, 2750, 1284]
       Open		      off
       NumInputPorts	      "2"
       List {
@@ -2291,8 +2292,8 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       TimeRange		      "3000000"
-      YMin		      "5~0"
-      YMax		      "32.5~525000"
+      YMin		      "12.5~0"
+      YMax		      "21.5~425000"
       DataFormat	      "StructureWithTime"
       LimitDataPoints	      off
       SampleTime	      "0"

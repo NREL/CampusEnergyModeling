@@ -20,9 +20,17 @@ indexHome = strfind(homePath, 'mlepInit');
 homePath = homePath(1:indexHome-1);
 bcvtbDir = [homePath 'bcvtb'];
 
+currDir = pwd;
+cd([homePath '..']);
+
 % Add and Save MLE+ Path
+libPath = pwd;
+addpath(libPath);
 addpath(homePath);
+addpath(bcvtbDir);
 savepath;
+
+cd(currDir);
 
 if ispc
     % Windows

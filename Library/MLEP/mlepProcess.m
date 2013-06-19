@@ -303,7 +303,6 @@ classdef mlepProcess < handle
             global MLEPSETTINGS
             
             noSettings = isempty(MLEPSETTINGS) || ~isstruct(MLEPSETTINGS);
-            
             if noSettings
                 % Try to run mlepInit
                 if exist('mlepInit', 'file') == 2

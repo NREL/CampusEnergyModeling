@@ -16,13 +16,13 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "wbernal"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Jun 18 16:02:36 2013"
-  RTWModifiedTimeStamp	  293465904
-  ModelVersionFormat	  "1.%<AutoIncrement:24>"
+  LastModifiedDate	  "Tue Jun 18 17:17:20 2013"
+  RTWModifiedTimeStamp	  293476194
+  ModelVersionFormat	  "1.%<AutoIncrement:26>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
-  LibraryLinkDisplay	  "user"
+  LibraryLinkDisplay	  "all"
   WideLines		  off
   ShowLineDimensions	  off
   ShowPortDataTypes	  off
@@ -689,7 +689,7 @@ Library {
   }
   System {
     Name		    "CampusModeling"
-    Location		    [711, 297, 1339, 691]
+    Location		    [670, 194, 1453, 722]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -703,7 +703,7 @@ Library {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "15"
+    SIDHighWatermark	    "16"
     Block {
       BlockType		      SubSystem
       Name		      "Buildings"
@@ -784,7 +784,7 @@ Library {
       MaskIconUnits	      "autoscale"
       MaskValueString	      "'C:\\\\EnergyPlusV8-0-0-mlep\\\\RunEPlus.bat'|'U:\\\\Simulink-mlep\\\\Hospital\\\\RefBldg"
       "HospitalNew2004_Chicago'|'USA_IL_Chicago-OHare.Intl.AP.725300_TMY3'|'U:\\\\Simulink-mlep\\\\Hospital'|80000|0|''"
-      "|'U:\\\\Simulink-mlep\\\\bcvtb'|900|2"
+      "|''|900|2"
     }
     Block {
       BlockType		      SubSystem

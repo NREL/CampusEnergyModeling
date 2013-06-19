@@ -1,0 +1,17 @@
+SetpointManager:Scheduled,
+  CoolSys1 Chiller Setpoint Manager,  !- Name
+  Temperature,             !- Control Variable
+  CW-Loop-Temp-Schedule,   !- Schedule Name
+  CoolSys1 Supply Equipment Outlet Node;  !- Setpoint Node or NodeList Name
+    
+SetpointManager:Scheduled,
+  CoolSys1 Loop Setpoint Manager,  !- Name
+  Temperature,             !- Control Variable
+  CW-Loop-Temp-Schedule,   !- Schedule Name
+  CoolSys1 Supply Outlet Node;  !- Setpoint Node or NodeList Name
+  
+  ExternalInterface:Schedule,
+    ChillWaterTempSch,                         !- Name
+    Temperature,                    !- ScheduleType
+    6.7;                 !- Initial value, used during warm-up    
+    

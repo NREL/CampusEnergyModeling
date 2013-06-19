@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.164"
+    ComputedModelVersion    "1.177"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -32,9 +32,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "wbernal"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Jun 19 16:12:26 2013"
-  RTWModifiedTimeStamp	  293558999
-  ModelVersionFormat	  "1.%<AutoIncrement:164>"
+  LastModifiedDate	  "Wed Jun 19 16:44:17 2013"
+  RTWModifiedTimeStamp	  293561039
+  ModelVersionFormat	  "1.%<AutoIncrement:177>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -616,7 +616,7 @@ Model {
       Name		      "Configuration"
       ExtraOptions	      "-aEnforceIntegerDowncast=1 -aPrefixModelToSubsysFcnNames=1 "
       CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition     [ 328, 165, 1272, 947 ] 
+      ConfigPrmDlgPosition     [ 320, 135, 1280, 955 ] 
     }
     PropName		    "ConfigurationSets"
   }
@@ -943,7 +943,7 @@ Model {
   }
   System {
     Name		    "rtdemo1"
-    Location		    [439, 447, 1160, 752]
+    Location		    [435, 383, 1164, 794]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    212
@@ -1051,7 +1051,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"sc_user_interface"
-	Location		[1602, 74, 3198, 1162]
+	Location		[2, 82, 1598, 1154]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	212
@@ -1095,7 +1095,7 @@ Model {
 	  Name			  "Campus"
 	  SID			  "35"
 	  Ports			  [6, 5]
-	  Position		  [555, 363, 1030, 622]
+	  Position		  [540, 363, 1015, 622]
 	  MinAlgLoopOccurrences	  off
 	  PropExecContextOutsideSubsystem off
 	  RTWSystemCode		  "Auto"
@@ -1114,7 +1114,7 @@ Model {
 	  MaskIconUnits		  "autoscale"
 	  System {
 	    Name		    "Campus"
-	    Location		    [1642, 172, 3238, 1237]
+	    Location		    [1602, 74, 3198, 1179]
 	    Open		    on
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -1274,7 +1274,7 @@ Model {
 	      BlockType		      Goto
 	      Name		      "Goto5"
 	      SID		      "51"
-	      Position		      [855, 794, 920, 816]
+	      Position		      [855, 789, 920, 811]
 	      ZOrder		      -10
 	      BackgroundColor	      "lightBlue"
 	      GotoTag		      "flag4"
@@ -1300,15 +1300,15 @@ Model {
 	      SourceBlock	      "CampusModeling/E+ Building"
 	      SourceType	      "EnergyPlus Cosimulation"
 	      progname		      "'C:\\EnergyPlusV8-0-0-mlep\\RunEPlus.bat'"
-	      modelfile		      "'U:\\Simulink-mlep\\Hospital\\RefBldgHospitalNew2004_Chicago'"
+	      modelfile		      "'U:\\CampusModeling\\Demo\\mlep_campus_rtlab_io\\Hospital\\RefBldgHospitalNew2004_Chicago'"
 	      weatherfile	      "'USA_IL_Chicago-OHare.Intl.AP.725300_TMY3'"
-	      workdir		      "'U:\\Simulink-mlep\\Hospital'"
-	      timeout		      "80000"
+	      workdir		      "'U:\\CampusModeling\\Demo\\mlep_campus_rtlab_io\\Hospital'"
+	      timeout		      "200000"
 	      port		      "0"
 	      host		      "''"
 	      bcvtbdir		      "''"
 	      deltaT		      "900"
-	      noutputd		      "2"
+	      noutputd		      "12"
 	    }
 	    Block {
 	      BlockType		      Reference
@@ -1320,15 +1320,15 @@ Model {
 	      SourceBlock	      "CampusModeling/E+ Building"
 	      SourceType	      "EnergyPlus Cosimulation"
 	      progname		      "'C:\\EnergyPlusV8-0-0-mlep\\RunEPlus.bat'"
-	      modelfile		      "'U:\\Simulink-mlep\\Hospital\\RefBldgHospitalNew2004_Chicago'"
+	      modelfile		      "'U:\\CampusModeling\\Demo\\mlep_campus_rtlab_io\\Hospital1\\RefBldgHospitalNew2004_Chicago'"
 	      weatherfile	      "'USA_IL_Chicago-OHare.Intl.AP.725300_TMY3'"
-	      workdir		      "'U:\\Simulink-mlep\\Hospital'"
-	      timeout		      "80000"
+	      workdir		      "'U:\\CampusModeling\\Demo\\mlep_campus_rtlab_io\\Hospital1'"
+	      timeout		      "200000"
 	      port		      "0"
 	      host		      "''"
 	      bcvtbdir		      "''"
 	      deltaT		      "900"
-	      noutputd		      "2"
+	      noutputd		      "12"
 	    }
 	    Block {
 	      BlockType		      Reference
@@ -1340,15 +1340,15 @@ Model {
 	      SourceBlock	      "CampusModeling/E+ Building"
 	      SourceType	      "EnergyPlus Cosimulation"
 	      progname		      "'C:\\EnergyPlusV8-0-0-mlep\\RunEPlus.bat'"
-	      modelfile		      "'U:\\Simulink-mlep\\Hospital\\RefBldgHospitalNew2004_Chicago'"
+	      modelfile		      "'U:\\CampusModeling\\Demo\\mlep_campus_rtlab_io\\Hospital2\\RefBldgHospitalNew2004_Chicago'"
 	      weatherfile	      "'USA_IL_Chicago-OHare.Intl.AP.725300_TMY3'"
-	      workdir		      "'U:\\Simulink-mlep\\Hospital'"
-	      timeout		      "80000"
+	      workdir		      "'U:\\CampusModeling\\Demo\\mlep_campus_rtlab_io\\Hospital2'"
+	      timeout		      "200000"
 	      port		      "0"
 	      host		      "''"
 	      bcvtbdir		      "''"
 	      deltaT		      "900"
-	      noutputd		      "2"
+	      noutputd		      "12"
 	    }
 	    Block {
 	      BlockType		      SubSystem
@@ -2101,15 +2101,16 @@ Model {
 	      SourceBlock	      "CampusModeling/E+ Building"
 	      SourceType	      "EnergyPlus Cosimulation"
 	      progname		      "'C:\\EnergyPlusV8-0-0-mlep\\RunEPlus.bat'"
-	      modelfile		      "'U:\\Simulink-mlep\\Hospital\\RefBldgHospitalNew2004_Chicago'"
+	      modelfile		      "'U:\\CampusModeling\\Demo\\mlep_campus_rtlab_io\\SecondarySchool\\RefBldgSecondarySchoolNew20"
+	      "04_Chicago'"
 	      weatherfile	      "'USA_IL_Chicago-OHare.Intl.AP.725300_TMY3'"
-	      workdir		      "'U:\\Simulink-mlep\\Hospital'"
-	      timeout		      "80000"
+	      workdir		      "'U:\\CampusModeling\\Demo\\mlep_campus_rtlab_io\\SecondarySchool'"
+	      timeout		      "200000"
 	      port		      "0"
 	      host		      "''"
 	      bcvtbdir		      "''"
 	      deltaT		      "900"
-	      noutputd		      "2"
+	      noutputd		      "21"
 	    }
 	    Block {
 	      BlockType		      Reference
@@ -2121,15 +2122,16 @@ Model {
 	      SourceBlock	      "CampusModeling/E+ Building"
 	      SourceType	      "EnergyPlus Cosimulation"
 	      progname		      "'C:\\EnergyPlusV8-0-0-mlep\\RunEPlus.bat'"
-	      modelfile		      "'U:\\Simulink-mlep\\Hospital\\RefBldgHospitalNew2004_Chicago'"
+	      modelfile		      "'U:\\CampusModeling\\Demo\\mlep_campus_rtlab_io\\SecondarySchool1\\RefBldgSecondarySchoolNew2"
+	      "004_Chicago'"
 	      weatherfile	      "'USA_IL_Chicago-OHare.Intl.AP.725300_TMY3'"
-	      workdir		      "'U:\\Simulink-mlep\\Hospital'"
-	      timeout		      "80000"
+	      workdir		      "'U:\\CampusModeling\\Demo\\mlep_campus_rtlab_io\\SecondarySchool1'"
+	      timeout		      "200000"
 	      port		      "0"
 	      host		      "''"
 	      bcvtbdir		      "''"
 	      deltaT		      "900"
-	      noutputd		      "2"
+	      noutputd		      "21"
 	    }
 	    Block {
 	      BlockType		      Terminator
@@ -2336,7 +2338,7 @@ Model {
 	      BlockType		      Outport
 	      Name		      "Out4"
 	      SID		      "86"
-	      Position		      [830, 888, 860, 902]
+	      Position		      [830, 893, 860, 907]
 	      BackgroundColor	      "lightBlue"
 	      Port		      "4"
 	      IconDisplay	      "Port number"
@@ -4050,7 +4052,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"sm_computation"
-	Location		[2, 82, 1598, 1171]
+	Location		[-2, 82, 1602, 1171]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	212

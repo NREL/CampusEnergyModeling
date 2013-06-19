@@ -11,7 +11,7 @@ classdef mlepProcess < handle
     %       <a href="https://gaia.lbl.gov/bcvtb">BCVTB (hyperlink)</a>
     %
     % (C) 2010-2011 by Truong Nghiem (nghiem@seas.upenn.edu)
-
+    
     % Last update: 2011-07-13 by Truong X. Nghiem
     
     % HISTORY:
@@ -28,14 +28,16 @@ classdef mlepProcess < handle
         port = 0;       % Socket port (default 0 = any free port)
         host = '';      % Host name (default '' = localhost)
         bcvtbDir;       % Directory to BCVTB (default '' means that if
-                        % no environment variable exist, set it to current
-                        % directory)
+        % no environment variable exist, set it to current
+        % directory)
         configFile = 'socket.cfg';  % Name of socket configuration file
         configFileWriteOnce = false;  % if true, only write the socket config file
-                                      % for the first time and when server
-                                      % socket changes.
+        % for the first time and when server
+        % socket changes.
         acceptTimeout = 20000;  % Timeout for waiting for the client to connect
         execcmd;        % How to execute EnergyPlus from Matlab (system/Java)
+        status = 0;
+        msg = '';
     end
     
     properties (SetAccess=private, GetAccess=public)
@@ -90,12 +92,33 @@ classdef mlepProcess < handle
                 rethrow(ErrObj);
             end
             
+%             if status == 0 && isjava(obj.commSocket)
+%                 % Create writer and reader
+%                 obj.createStreams;
+%                 obj.isRunning = true;
+%             end
+        end
+        
+        %%==============================================================
+        function [status, msg] = acceptSocket(obj)
+            % status and msg are returned from the client process
+            % status = 0 --> success
+            status = obj.status;
+            msg = obj.msg;
+            
+            % Accept Socket
+            obj.commSocket = obj.serverSocket.accept;
+            
+            % Create Streams
             if status == 0 && isjava(obj.commSocket)
                 % Create writer and reader
                 obj.createStreams;
                 obj.isRunning = true;
+                msg = '';
             end
         end
+        
+        %%==============================================================
         
         function stop(obj, stopSignal)
             if ~obj.isRunning, return; end
@@ -134,7 +157,7 @@ classdef mlepProcess < handle
         end
         
         function [status, TOut, ROut, IOut, BOut] = feedInputs(obj,...
-                                    TInputs, RInputs, IInputs, BInputs)
+                TInputs, RInputs, IInputs, BInputs)
             % Runs simulation with sequences of inputs, and returns outputs
             % The process will be started if it is not running, and it will
             % not be stopped when this function returns.
@@ -157,12 +180,12 @@ classdef mlepProcess < handle
             IOut = [];
             BOut = [];
             status = 0;
-
+            
             nRuns = length(TInputs);
             if nRuns < 1
                 disp('nRuns is zero.');
-                status = -1; 
-                return; 
+                status = -1;
+                return;
             end
             
             TOut = nan(nRuns, 1);
@@ -185,7 +208,7 @@ classdef mlepProcess < handle
                 RInputs(1,:), IInputs(1,:), BInputs(1,:)));
             
             readpacket = obj.read;
-    
+            
             if isempty(readpacket)
                 disp('Cannot read first input packets.');
                 status = -1;
@@ -210,7 +233,7 @@ classdef mlepProcess < handle
                         return;
                 end
             end
-                
+            
             for kRun = 2:nRuns
                 fprintf('Run %d at time %g with U = %g.\n', kRun, TInputs(kRun), RInputs(kRun,:));
                 obj.write(mlepEncodeData(obj.version, 0, TInputs(kRun),...
@@ -339,7 +362,7 @@ classdef mlepProcess < handle
                 obj.execcmd = '';
             else
                 obj.execcmd = MLEPSETTINGS.execcmd;
-            end 
+            end
         end
     end
 end

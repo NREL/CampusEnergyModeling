@@ -55,7 +55,7 @@ block.InputPort(1).DirectFeedthrough = false;
 % block.InputPort(2).DatatypeID  = -1;  % inherited type
 % block.InputPort(2).Complexity  = 'Real';
 % block.InputPort(2).DirectFeedthrough = false;
-%
+% 
 % block.InputPort(3).Dimensions        = -1;  % inherited size
 % block.InputPort(3).DatatypeID  = -1;  % inherited type
 % block.InputPort(3).Complexity  = 'Real';
@@ -86,7 +86,7 @@ block.OutputPort(3).SamplingMode = 'sample';
 % block.OutputPort(4).DatatypeID  = 0; % double
 % block.OutputPort(4).Complexity  = 'Real';
 % block.OutputPort(4).SamplingMode = 'sample';
-%
+% 
 % nDim = block.DialogPrm(12).Data;  % real outputs
 % if nDim < 1, nDim = 1; end
 % block.OutputPort(5).Dimensions  = nDim;  % bool outputs
@@ -129,6 +129,33 @@ block.RegBlockMethod('Terminate', @Terminate); % Required
 block.RegBlockMethod('SetInputPortDimensions', @SetInputPortDimensions);
 block.RegBlockMethod('SetInputPortSamplingMode', @SetInputPortSamplingMode);
 
+%%=================================================
+%% Start MLE+ 
+% Create the mlepProcess object and start EnergyPlus
+processobj = mlepProcess;
+processobj.program = block.DialogPrm(1).Data;
+processobj.workDir = block.DialogPrm(4).Data;
+if ~isempty(block.DialogPrm(8).Data)
+    processobj.bcvtbDir = block.DialogPrm(8).Data;
+end
+%processobj.bcvtbDir = block.DialogPrm(8).Data;
+processobj.arguments = [block.DialogPrm(2).Data ' ' block.DialogPrm(3).Data];
+processobj.acceptTimeout = block.DialogPrm(5).Data;
+processobj.port = block.DialogPrm(6).Data;
+processobj.host= block.DialogPrm(7).Data;
+
+% Start processobj
+[status, msg] = processobj.start;
+processobj.status = status;
+processobj.msg = msg;
+
+if status ~= 0
+    error('Cannot start EnergyPlus: %s.', msg);
+end
+
+% Save processobj to UserData of the block
+set_param(block.BlockHandle, 'UserData', processobj);
+%%=================================================
 %end setup
 
 %%
@@ -140,7 +167,7 @@ block.RegBlockMethod('SetInputPortSamplingMode', @SetInputPortSamplingMode);
 %%
 % function DoPostPropSetup(block)
 % block.NumDworks = 1;
-%
+%   
 % block.Dwork(1).Name            = 'x1';
 % block.Dwork(1).Dimensions      = 1;
 % block.Dwork(1).DatatypeID      = 0;      % double
@@ -162,8 +189,8 @@ block.InputPort(port).Dimensions = dimsInfo;
 
 %%
 %% InitializeConditions:
-%%   Functionality    : Called at the start of simulation and if it is
-%%                      present in an enabled subsystem configured to reset
+%%   Functionality    : Called at the start of simulation and if it is 
+%%                      present in an enabled subsystem configured to reset 
 %%                      states, it will be called when the enabled subsystem
 %%                      restarts execution to reset the states.
 %%   Required         : No
@@ -177,7 +204,7 @@ block.InputPort(port).Dimensions = dimsInfo;
 %%
 %% Start:
 %%   Functionality    : Called once at start of model execution. If you
-%%                      have states that should be initialized once, this
+%%                      have states that should be initialized once, this 
 %%                      is the place to do it.
 %%   Required         : No
 %%   C-MEX counterpart: mdlStart
@@ -192,26 +219,35 @@ function Start(block)
 % noutputi, noutputb
 
 % Create the mlepProcess object and start EnergyPlus
-processobj = mlepProcess;
-processobj.program = block.DialogPrm(1).Data;
-processobj.workDir = block.DialogPrm(4).Data;
-if ~isempty(block.DialogPrm(8).Data)
-    processobj.bcvtbDir = block.DialogPrm(8).Data;
+%% COMMENT 
+% % processobj = mlepProcess;
+% % processobj.program = block.DialogPrm(1).Data;
+% % processobj.workDir = block.DialogPrm(4).Data;
+% % processobj.bcvtbDir = block.DialogPrm(8).Data;
+% % processobj.arguments = [block.DialogPrm(2).Data ' ' block.DialogPrm(3).Data];
+% % processobj.acceptTimeout = block.DialogPrm(5).Data;
+% % processobj.port = block.DialogPrm(6).Data;
+% % processobj.host= block.DialogPrm(7).Data;
+% % 
+% % % Start processobj
+% % [status, msg] = processobj.start;
+% % if status ~= 0
+% %     error('Cannot start EnergyPlus: %s.', msg);
+% % end
+% % 
+% Get processobj
+processobj = get_param(block.BlockHandle, 'UserData');
+if ~isa(processobj, 'mlepProcess')
+    error('Internal error: Cosimulation process object is lost.');
 end
-%processobj.bcvtbDir = block.DialogPrm(8).Data;
-processobj.arguments = [block.DialogPrm(2).Data ' ' block.DialogPrm(3).Data];
-processobj.acceptTimeout = block.DialogPrm(5).Data;
-processobj.port = block.DialogPrm(6).Data;
-processobj.host= block.DialogPrm(7).Data;
-
-% Start processobj
-[status, msg] = processobj.start;
+% Accept Socket 
+[status, msg] = processobj.acceptSocket;
 if status ~= 0
     error('Cannot start EnergyPlus: %s.', msg);
 end
-
-% Save processobj to UserData of the block
+% % % Save processobj to UserData of the block
 set_param(block.BlockHandle, 'UserData', processobj);
+%% COMMENT 
 
 %endfunction
 
@@ -237,8 +273,8 @@ if processobj.isRunning
     
     % Send signals to E+
     rvalues = block.InputPort(1).Data;
-    %     ivalues = block.InputPort(2).Data;
-    %     bvalues = block.InputPort(3).Data;
+%     ivalues = block.InputPort(2).Data;
+%     bvalues = block.InputPort(3).Data;
     
     processobj.write(mlepEncodeRealData(VERNUMBER, 0, block.CurrentTime, rvalues));
     % Read from E+
@@ -255,15 +291,15 @@ if processobj.isRunning
         block.OutputPort(1).Data = flag;
     else
         if isempty(rvalues), rvalues = 0; end
-        %         if isempty(ivalues), ivalues = 0; end
-        %         if isempty(bvalues), bvalues = 0; end
-        
+%         if isempty(ivalues), ivalues = 0; end
+%         if isempty(bvalues), bvalues = 0; end
+
         % Set outputs of block
         block.OutputPort(1).Data = flag;
         block.OutputPort(2).Data = timevalue;
         block.OutputPort(3).Data = rvalues(:);
-        %         block.OutputPort(4).Data = ivalues(:);
-        %         block.OutputPort(5).Data = bvalues(:);
+%         block.OutputPort(4).Data = ivalues(:);
+%         block.OutputPort(5).Data = bvalues(:);
     end
 end
 
@@ -277,7 +313,7 @@ end
 %%   C-MEX counterpart: mdlUpdate
 %%
 % function Update(block)
-%
+% 
 % block.Dwork(1).Data = block.InputPort(1).Data;
 
 %end Update

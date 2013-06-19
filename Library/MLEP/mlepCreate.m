@@ -208,18 +208,8 @@ end
 
 % Listen for the external program to connect
 try
-    %pause(10);
-    
-    simsock = serversock.accept;
-    
-%     simsock = [];
-%     count = 0;
-%     while isempty(simsock) && count < 15 
-%         simsock = serversock.accept;
-%         simsock
-%         count = count +1;
-%     end
-%     simsock
+    %simsock = serversock.accept;
+    simsock = []; % simsock dummy
 catch ErrObj
     % Error, usually because the external program failed to connect
     serversock.close; % serversock = [];

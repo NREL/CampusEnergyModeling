@@ -1,0 +1,11 @@
+col name        unit            datatype	desc
+1   date        mm/dd/yyyy      %s          "Date of data record"
+2   time        HH:MM           %s          "Time of data record (local standard time)"
+5   GHI         Wh/m^2          %f          "Global horizontal irradiance"
+8   DNI         Wh/m^2          %f          "Direct normal irradiance"
+11  DHI         Wh/m^2          %f          "Diffuse horizontal irradiance"
+26  Cloud       -               %f          "Total sky cover (fraction)"
+32  DryBulbTemp deg_C           %f          "Dry-bulb temperature"
+38  RH          pct             %f          "Relative humidity (percentage)"
+44  WindDir     deg             %f          "Wind direction (deg from N)"
+47  WindSpeed   m/s             %f          "Wind speed"

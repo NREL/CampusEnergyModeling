@@ -1,6 +1,6 @@
 Library {
   Name			  "CampusModeling"
-  Version		  7.8
+  Version		  8.1
   MdlSubVersion		  0
   SavedCharacterEncoding  "windows-1252"
   LibraryType		  "BlockLibrary"
@@ -10,15 +10,54 @@ Library {
   DisableAllScopes	  off
   FPTRunName		  "Run 1"
   MaxMDLFileLineLength	  120
+  Object {
+    $PropName		    "BdWindowsInfo"
+    $ObjectID		    1
+    $ClassName		    "Simulink.BDWindowsInfo"
+    Object {
+      $PropName		      "WindowsInfo"
+      $ObjectID		      2
+      $ClassName	      "Simulink.WindowInfo"
+      IsActive		      [1]
+      Location		      [580.0, 52.0, 951.0, 1080.0]
+      Object {
+	$PropName		"ModelBrowserInfo"
+	$ObjectID		3
+	$ClassName		"Simulink.ModelBrowserInfo"
+	Visible			[0]
+	DockPosition		"Left"
+	Width			[50]
+	Height			[50]
+	Filter			[9]
+      }
+      Object {
+	$PropName		"ExplorerBarInfo"
+	$ObjectID		4
+	$ClassName		"Simulink.ExplorerBarInfo"
+	Visible			[1]
+      }
+      Object {
+	$PropName		"EditorsInfo"
+	$ObjectID		5
+	$ClassName		"Simulink.EditorInfo"
+	IsActive		[1]
+	ViewObjType		"SimulinkSubsys"
+	LoadSaveID		"14"
+	Extents			[901.0, 914.0]
+	ZoomFactor		[1.0]
+	Offset			[0.0, 0.0]
+      }
+    }
+  }
   Created		  "Wed Jun 12 15:19:08 2013"
   Creator		  "sfrank1"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "wbernal"
+  LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Jun 18 17:17:20 2013"
-  RTWModifiedTimeStamp	  293476194
-  ModelVersionFormat	  "1.%<AutoIncrement:26>"
+  LastModifiedDate	  "Wed Jun 26 12:50:51 2013"
+  RTWModifiedTimeStamp	  294151820
+  ModelVersionFormat	  "1.%<AutoIncrement:36>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -86,14 +125,14 @@ Library {
     Type		    "Handle"
     Dimension		    1
     Simulink.ConfigSet {
-      $ObjectID		      1
-      Version		      "1.11.1"
+      $ObjectID		      6
+      Version		      "1.13.0"
       Array {
 	Type			"Handle"
 	Dimension		8
 	Simulink.SolverCC {
-	  $ObjectID		  2
-	  Version		  "1.11.1"
+	  $ObjectID		  7
+	  Version		  "1.13.0"
 	  StartTime		  "0.0"
 	  StopTime		  "10.0"
 	  AbsTol		  "auto"
@@ -111,6 +150,7 @@ Library {
 	  MaxConsecutiveMinStep	  "1"
 	  RelTol		  "1e-3"
 	  SolverMode		  "Auto"
+	  EnableConcurrentExecution off
 	  ConcurrentTasks	  off
 	  Solver		  "ode45"
 	  SolverName		  "ode45"
@@ -126,8 +166,8 @@ Library {
 	  InsertRTBMode		  "Whenever possible"
 	}
 	Simulink.DataIOCC {
-	  $ObjectID		  3
-	  Version		  "1.11.1"
+	  $ObjectID		  8
+	  Version		  "1.13.0"
 	  Decimation		  "1"
 	  ExternalInput		  "[t, u]"
 	  FinalStateName	  "xFinal"
@@ -158,8 +198,8 @@ Library {
 	  Refine		  "1"
 	}
 	Simulink.OptimizationCC {
-	  $ObjectID		  4
-	  Version		  "1.11.1"
+	  $ObjectID		  9
+	  Version		  "1.13.0"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    8
@@ -211,11 +251,11 @@ Library {
 	  BufferReusableBoundary  on
 	  SimCompilerOptimization "Off"
 	  AccelVerboseBuild	  off
-	  AccelParallelForEachSubsystem	on
+	  ParallelExecutionInRapidAccelerator on
 	}
 	Simulink.DebuggingCC {
-	  $ObjectID		  5
-	  Version		  "1.11.1"
+	  $ObjectID		  10
+	  Version		  "1.13.0"
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
 	  ArrayBoundsChecking	  "none"
@@ -264,7 +304,7 @@ Library {
 	  UnnecessaryDatatypeConvMsg "none"
 	  VectorMatrixConversionMsg "none"
 	  InvalidFcnCallConnMsg	  "error"
-	  FcnCallInpInsideContextMsg "Enable All"
+	  FcnCallInpInsideContextMsg "EnableAllAsWarning"
 	  SignalLabelMismatchMsg  "none"
 	  UnconnectedInputMsg	  "warning"
 	  UnconnectedOutputMsg	  "warning"
@@ -300,14 +340,17 @@ Library {
 	  SFNoUnconditionalDefaultTransitionDiag "warning"
 	  SFTransitionOutsideNaturalParentDiag "warning"
 	  SFUnconditionalTransitionShadowingDiag "warning"
+	  SFUndirectedBroadcastEventsDiag "warning"
+	  SFTransitionActionBeforeConditionDiag	"warning"
 	}
 	Simulink.HardwareCC {
-	  $ObjectID		  6
-	  Version		  "1.11.1"
+	  $ObjectID		  11
+	  Version		  "1.13.0"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
 	  ProdBitPerInt		  32
 	  ProdBitPerLong	  32
+	  ProdBitPerLongLong	  64
 	  ProdBitPerFloat	  32
 	  ProdBitPerDouble	  64
 	  ProdBitPerPointer	  32
@@ -317,17 +360,20 @@ Library {
 	  ProdEndianess		  "Unspecified"
 	  ProdWordSize		  32
 	  ProdShiftRightIntArith  on
+	  ProdLongLongMode	  off
 	  ProdHWDeviceType	  "32-bit Generic"
 	  TargetBitPerChar	  8
 	  TargetBitPerShort	  16
 	  TargetBitPerInt	  32
 	  TargetBitPerLong	  32
+	  TargetBitPerLongLong	  64
 	  TargetBitPerFloat	  32
 	  TargetBitPerDouble	  64
 	  TargetBitPerPointer	  32
 	  TargetLargestAtomicInteger "Char"
 	  TargetLargestAtomicFloat "None"
 	  TargetShiftRightIntArith on
+	  TargetLongLongMode	  off
 	  TargetIntDivRoundTo	  "Undefined"
 	  TargetEndianess	  "Unspecified"
 	  TargetWordSize	  32
@@ -339,8 +385,8 @@ Library {
 	  ProdEqTarget		  on
 	}
 	Simulink.ModelReferenceCC {
-	  $ObjectID		  7
-	  Version		  "1.11.1"
+	  $ObjectID		  12
+	  Version		  "1.13.0"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
 	  CheckModelReferenceTargetMessage "error"
 	  EnableParallelModelReferenceBuilds off
@@ -354,8 +400,8 @@ Library {
 	  SupportModelReferenceSimTargetCustomCode off
 	}
 	Simulink.SFSimCC {
-	  $ObjectID		  8
-	  Version		  "1.11.1"
+	  $ObjectID		  13
+	  Version		  "1.13.0"
 	  SFSimEnableDebug	  on
 	  SFSimOverflowDetection  on
 	  SFSimEcho		  on
@@ -369,8 +415,8 @@ Library {
 	}
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
-	  $ObjectID		  9
-	  Version		  "1.11.1"
+	  $ObjectID		  14
+	  Version		  "1.13.0"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    8
@@ -388,6 +434,7 @@ Library {
 	  GenCodeOnly		  off
 	  MakeCommand		  "make_rtw"
 	  GenerateMakefile	  on
+	  PackageGeneratedCodeAndArtifacts off
 	  TemplateMakefile	  "grt_default_tmf"
 	  GenerateReport	  off
 	  SaveLog		  off
@@ -404,6 +451,14 @@ Library {
 	  RTWUseSimCustomCode	  off
 	  IncludeHyperlinkInReport off
 	  LaunchReport		  off
+	  PortableWordSizes	  off
+	  GenerateErtSFunction	  off
+	  CreateSILPILBlock	  "None"
+	  CodeExecutionProfiling  off
+	  CodeExecutionProfileVariable "executionProfile"
+	  CodeProfilingSaveOptions "SummaryOnly"
+	  CodeProfilingInstrumentation off
+	  SILDebugging		  off
 	  TargetLang		  "C"
 	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
 	  IncludeERTFirstTime	  off
@@ -413,8 +468,9 @@ Library {
 	  GenerateTraceReportSf	  off
 	  GenerateTraceReportEml  off
 	  GenerateCodeInfo	  off
-	  GenerateSLWebview	  off
+	  GenerateWebview	  off
 	  GenerateCodeMetricsReport off
+	  GenerateCodeReplacementReport	off
 	  RTWCompilerOptimization "Off"
 	  CheckMdlBeforeBuild	  "Off"
 	  CustomRebuildMode	  "OnUpdate"
@@ -422,8 +478,8 @@ Library {
 	    Type		    "Handle"
 	    Dimension		    2
 	    Simulink.CodeAppCC {
-	      $ObjectID		      10
-	      Version		      "1.11.1"
+	      $ObjectID		      15
+	      Version		      "1.13.0"
 	      Array {
 		Type			"Cell"
 		Dimension		21
@@ -459,6 +515,7 @@ Library {
 	      PreserveName	      off
 	      PreserveNameWithParent  off
 	      ShowEliminatedStatement off
+	      OperatorAnnotations     off
 	      IncAutoGenComments      off
 	      SimulinkDataObjDesc     off
 	      SFDataObjDesc	      off
@@ -466,7 +523,7 @@ Library {
 	      IncDataTypeInIds	      off
 	      MangleLength	      1
 	      CustomSymbolStrGlobalVar "$R$N$M"
-	      CustomSymbolStrType     "$N$R$M"
+	      CustomSymbolStrType     "$N$R$M_T"
 	      CustomSymbolStrField    "$N$M"
 	      CustomSymbolStrFcn      "$R$N$M$F"
 	      CustomSymbolStrFcnArg   "rt$I$N$M"
@@ -481,14 +538,15 @@ Library {
 	      SimulinkBlockComments   on
 	      MATLABSourceComments    off
 	      EnableCustomComments    off
+	      InternalIdentifier      "Shortened"
 	      InlinedPrmAccess	      "Literals"
 	      ReqsInCode	      off
 	      UseSimReservedNames     off
 	    }
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
-	      $ObjectID		      11
-	      Version		      "1.11.1"
+	      $ObjectID		      16
+	      Version		      "1.13.0"
 	      Array {
 		Type			"Cell"
 		Dimension		16
@@ -501,22 +559,21 @@ Library {
 		Cell			"GenerateTestInterfaces"
 		Cell			"ModelStepFunctionPrototypeControlCompliant"
 		Cell			"CPPClassGenCompliant"
-		Cell			"MultiInstanceERTCode"
+		Cell			"PortableWordSizes"
 		Cell			"PurelyIntegerCode"
 		Cell			"SupportComplex"
 		Cell			"SupportAbsoluteTime"
 		Cell			"SupportContinuousTime"
 		Cell			"SupportNonInlinedSFcns"
-		Cell			"PortableWordSizes"
+		Cell			"GenerateAllocFcn"
 		PropName		"DisabledProps"
 	      }
 	      TargetFcnLib	      "ansi_tfl_table_tmw.mat"
 	      TargetLibSuffix	      ""
 	      TargetPreCompLibLocation ""
-	      TargetFunctionLibrary   "ANSI_C"
+	      CodeReplacementLibrary  "ANSI_C"
 	      UtilityFuncGeneration   "Auto"
 	      ERTMultiwordTypeDef     "System defined"
-	      CodeExecutionProfiling  off
 	      ERTMultiwordLength      256
 	      MultiwordLength	      2048
 	      GenerateFullHeader      on
@@ -547,10 +604,12 @@ Library {
 	      SupportVariableSizeSignals off
 	      EnableShiftOperators    on
 	      ParenthesesLevel	      "Nominal"
-	      PortableWordSizes	      off
+	      MATLABClassNameForMDSCustomization "Simulink.SoftwareTarget.GRTCustomization"
 	      ModelStepFunctionPrototypeControlCompliant off
 	      CPPClassGenCompliant    off
 	      AutosarCompliant	      off
+	      GRTInterface	      on
+	      GenerateAllocFcn	      off
 	      UseMalloc		      off
 	      ExtMode		      off
 	      ExtModeStaticAlloc      off
@@ -576,6 +635,7 @@ Library {
     }
     PropName		    "ConfigurationSets"
   }
+  ExplicitPartitioning	  off
   BlockDefaults {
     ForegroundColor	    "black"
     BackgroundColor	    "white"
@@ -607,39 +667,35 @@ Library {
     FontWeight		    "normal"
     FontAngle		    "normal"
   }
+  MaskDefaults {
+    SelfModifiable	    "off"
+    IconFrame		    "on"
+    IconOpaque		    "on"
+    RunInitForIconRedraw    "off"
+    IconRotate		    "none"
+    PortRotate		    "default"
+    IconUnits		    "autoscale"
+  }
+  MaskParameterDefaults {
+    Evaluate		    "on"
+    Tunable		    "on"
+    NeverSave		    "off"
+    Internal		    "off"
+    ReadOnly		    "off"
+    Enabled		    "on"
+    Visible		    "on"
+    ToolTip		    "on"
+  }
   BlockParameterDefaults {
     Block {
-      BlockType		      Gain
-      Gain		      "1"
-      Multiplication	      "Element-wise(K.*u)"
-      ParamMin		      "[]"
-      ParamMax		      "[]"
-      ParamDataTypeStr	      "Inherit: Same as input"
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: Same as input"
-      LockScale		      off
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	on
-      SampleTime	      "-1"
-    }
-    Block {
-      BlockType		      Inport
-      Port		      "1"
-      OutputFunctionCall      off
-      OutMin		      "[]"
-      OutMax		      "[]"
+      BlockType		      FromFile
+      FileName		      "untitled.mat"
       OutDataTypeStr	      "Inherit: auto"
-      LockScale		      off
-      BusOutputAsStruct	      off
-      PortDimensions	      "-1"
-      VarSizeSig	      "Inherit"
       SampleTime	      "-1"
-      SignalType	      "auto"
-      SamplingMode	      "auto"
-      LatchByDelayingOutsideSignal off
-      LatchInputForFeedbackSignals off
-      Interpolate	      on
+      ExtrapolationBeforeFirstDataPoint	"Linear extrapolation"
+      InterpolationWithinTimeRange "Linear interpolation"
+      ExtrapolationAfterLastDataPoint "Linear extrapolation"
+      ZeroCross		      off
     }
     Block {
       BlockType		      M-S-Function
@@ -673,6 +729,7 @@ Library {
       SystemSampleTime	      "-1"
       RTWFcnNameOpts	      "Auto"
       RTWFileNameOpts	      "Auto"
+      FunctionInterfaceSpec   "void_void"
       RTWMemSecFuncInitTerm   "Inherit from model"
       RTWMemSecFuncExecute    "Inherit from model"
       RTWMemSecDataConstants  "Inherit from model"
@@ -689,8 +746,8 @@ Library {
   }
   System {
     Name		    "CampusModeling"
-    Location		    [670, 194, 1453, 722]
-    Open		    on
+    Location		    [52, 49, 528, 628]
+    Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -703,7 +760,7 @@ Library {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "16"
+    SIDHighWatermark	    "22"
     Block {
       BlockType		      SubSystem
       Name		      "Buildings"
@@ -721,16 +778,16 @@ Library {
       Opaque		      off
       RequestExecContextInheritance off
       MaskHideContents	      off
-      MaskDisplay	      "disp('Buildings')"
-      MaskIconFrame	      on
-      MaskIconOpaque	      on
-      MaskIconRotate	      "none"
-      MaskPortRotate	      "default"
-      MaskIconUnits	      "autoscale"
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		17
+	$ClassName		"Simulink.Mask"
+	Display			"disp('Buildings')"
+      }
       System {
 	Name			"Buildings"
-	Location		[948, 338, 1446, 638]
-	Open			off
+	Location		[580, 52, 1531, 1132]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -742,49 +799,119 @@ Library {
 	TiledPageScale		1
 	ShowPageBoundaries	off
 	ZoomFactor		"100"
+	Block {
+	  BlockType		  M-S-Function
+	  Name			  "E+ Building"
+	  SID			  "18"
+	  Ports			  [1, 3]
+	  Position		  [45, 37, 225, 163]
+	  ZOrder		  2
+	  FunctionName		  "mlepSimulinkBlk"
+	  Parameters		  "progname, modelfile, weatherfile, workdir, timeout, port, host, bcvtbdir, deltaT, noutputd"
+	  Object {
+	    $PropName		    "MaskObject"
+	    $ObjectID		    18
+	    $ClassName		    "Simulink.Mask"
+	    Type		    "EnergyPlus Cosimulation"
+	    Description		    "This block implements cosimulation with EnergyPlus by allowing Simulink to exchange input and o"
+	    "utput data with it. Currently, EnergyPlus only supports real data."
+	    Help		    "This block implements cosimulation with EnergyPlus by allowing Simulink to\nexchange input and output "
+	    "data with it.\n\nWhen a simulation starts, EnergyPlus is also started. It will then run in\nparallel with Simulin"
+	    "k. They exchange input and output data via socket\ncommunication. When the simulation terminates, EnergyPlus will"
+	    " exit.\n\nRefer to the manuals of MLE+ and/or BCVTB/EnergyPlus for details.\n\nINPUTS:\n- real: real vector input"
+	    " to EnergyPlus.\n\nOUTPUTS:\n- flag: status of EnergyPlus (0 if OK, if flag is non-zero, the simulation should st"
+	    "op).\n- time: current simulation time of EnergyPlus, in seconds.\n- real: real vector output from EnergyPlus."
+	    Display		    "image(imread('building.png'))\ndisp('E+\\nCosimulation');\n\n% Inputs\nport_label('input', 1, 'real"
+	    "');\n\n% Outputs\nport_label('output', 1, 'flag');\nport_label('output', 2, 'time');\nport_label('output', 3, 're"
+	    "al');\n"
+	    Array {
+	      Type		      "Simulink.MaskParameter"
+	      Dimension		      10
+	      Object {
+		$ObjectID		19
+		Type			"edit"
+		Name			"progname"
+		Prompt			"E+ Executable Path"
+		Value			"'C:\\EnergyPlusV8-0-0\\RunEPlus.bat'"
+		Tunable			"off"
+	      }
+	      Object {
+		$ObjectID		20
+		Type			"edit"
+		Name			"modelfile"
+		Prompt			"IDF File (without extension)"
+		Value			"'\\path\\to\\dir\\idf_file'"
+		Tunable			"off"
+	      }
+	      Object {
+		$ObjectID		21
+		Type			"edit"
+		Name			"weatherfile"
+		Prompt			"Weather Profile"
+		Value			"'USA_IL_Chicago-OHare.Intl.AP.725300_TMY3'"
+		Tunable			"off"
+	      }
+	      Object {
+		$ObjectID		22
+		Type			"edit"
+		Name			"workdir"
+		Prompt			"Working Directory"
+		Value			"'\\path\\to\\dir'"
+		Tunable			"off"
+	      }
+	      Object {
+		$ObjectID		23
+		Type			"edit"
+		Name			"timeout"
+		Prompt			"Timeout (in milliseconds)"
+		Value			"80000"
+		Tunable			"off"
+	      }
+	      Object {
+		$ObjectID		24
+		Type			"edit"
+		Name			"port"
+		Prompt			"Socket Port (0 = any available)"
+		Value			"0"
+		Tunable			"off"
+	      }
+	      Object {
+		$ObjectID		25
+		Type			"edit"
+		Name			"host"
+		Prompt			"Socket Host ('' = local host)"
+		Value			"''"
+		Tunable			"off"
+	      }
+	      Object {
+		$ObjectID		26
+		Type			"edit"
+		Name			"bcvtbdir"
+		Prompt			"BCVTB Directory"
+		Value			"''"
+		Tunable			"off"
+	      }
+	      Object {
+		$ObjectID		27
+		Type			"edit"
+		Name			"deltaT"
+		Prompt			"Time Step (in seconds)"
+		Value			"900"
+		Tunable			"off"
+	      }
+	      Object {
+		$ObjectID		28
+		Type			"edit"
+		Name			"noutputd"
+		Prompt			"Number of Real Outputs"
+		Value			"2"
+		Tunable			"off"
+	      }
+	      PropName		      "Parameters"
+	    }
+	  }
+	}
       }
-    }
-    Block {
-      BlockType		      M-S-Function
-      Name		      "E+ Building"
-      SID		      "15"
-      Ports		      [1, 3]
-      Position		      [390, 47, 570, 173]
-      FunctionName	      "mlepSimulinkBlk"
-      Parameters	      "progname, modelfile, weatherfile, workdir, timeout, port, host, bcvtbdir, deltaT, noutputd"
-      MaskType		      "EnergyPlus Cosimulation"
-      MaskDescription	      "This block implements cosimulation with EnergyPlus by allowing Simulink to exchange input"
-      " and output data with it. Currently, EnergyPlus only supports real data."
-      MaskHelp		      "This block implements cosimulation with EnergyPlus by allowing Simulink to\nexchange input and "
-      "output data with it.\n\nWhen a simulation starts, EnergyPlus is also started. It will then run in\nparallel with"
-      " Simulink. They exchange input and output data via socket\ncommunication. When the simulation terminates, Energy"
-      "Plus will exit.\n\nRefer to the manuals of MLE+ and/or BCVTB/EnergyPlus for details.\n\nINPUTS:\n- real: real ve"
-      "ctor input to EnergyPlus.\n\nOUTPUTS:\n- flag: status of EnergyPlus (0 if OK, if flag is non-zero, the simulatio"
-      "n should stop).\n- time: current simulation time of EnergyPlus, in seconds.\n- real: real vector output from Ene"
-      "rgyPlus."
-      MaskPromptString	      "E+ Executable Path|IDF File (without extension)|Weather Profile|Working Directory|Timeou"
-      "t (in milliseconds)|Socket Port (0 = any available)|Socket Host ('' = local host)|BCVTB Directory|Time Step (in "
-      "seconds)|Number of Real Outputs"
-      MaskStyleString	      "edit,edit,edit,edit,edit,edit,edit,edit,edit,edit"
-      MaskVariables	      "progname=@1;modelfile=@2;weatherfile=@3;workdir=@4;timeout=@5;port=@6;host=@7;bcvtbdir=@8;d"
-      "eltaT=@9;noutputd=@10;"
-      MaskTunableValueString  "off,off,off,off,off,off,off,off,off,off"
-      MaskCallbackString      "|||||||||"
-      MaskEnableString	      "on,on,on,on,on,on,on,on,on,on"
-      MaskVisibilityString    "on,on,on,on,on,on,on,on,on,on"
-      MaskToolTipString	      "on,on,on,on,on,on,on,on,on,on"
-      MaskDisplay	      "disp('E+\\nCosimulation');\nport_label('output', 1, 'flag');\nport_label('output', 2, 'time')"
-      ";\nport_label('output', 3, 'real');\n% port_label('output', 4, 'int');\n% port_label('output', 5, 'bool');\nport"
-      "_label('input', 1, 'real');\n% port_label('input', 2, 'int');\n% port_label('input', 3, 'bool');\nimage(imread('"
-      "building.png'))"
-      MaskIconFrame	      on
-      MaskIconOpaque	      on
-      MaskIconRotate	      "none"
-      MaskPortRotate	      "default"
-      MaskIconUnits	      "autoscale"
-      MaskValueString	      "'C:\\\\EnergyPlusV8-0-0-mlep\\\\RunEPlus.bat'|'U:\\\\Simulink-mlep\\\\Hospital\\\\RefBldg"
-      "HospitalNew2004_Chicago'|'USA_IL_Chicago-OHare.Intl.AP.725300_TMY3'|'U:\\\\Simulink-mlep\\\\Hospital'|80000|0|''"
-      "|''|900|2"
     }
     Block {
       BlockType		      SubSystem
@@ -803,15 +930,15 @@ Library {
       Opaque		      off
       RequestExecContextInheritance off
       MaskHideContents	      off
-      MaskDisplay	      "disp('Electrical')"
-      MaskIconFrame	      on
-      MaskIconOpaque	      on
-      MaskIconRotate	      "none"
-      MaskPortRotate	      "default"
-      MaskIconUnits	      "autoscale"
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		29
+	$ClassName		"Simulink.Mask"
+	Display			"disp('Electrical')"
+      }
       System {
 	Name			"Electrical"
-	Location		[948, 338, 1446, 638]
+	Location		[858, 52, 1524, 904]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -843,15 +970,15 @@ Library {
       Opaque		      off
       RequestExecContextInheritance off
       MaskHideContents	      off
-      MaskDisplay	      "disp('PV')"
-      MaskIconFrame	      on
-      MaskIconOpaque	      on
-      MaskIconRotate	      "none"
-      MaskPortRotate	      "default"
-      MaskIconUnits	      "autoscale"
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		30
+	$ClassName		"Simulink.Mask"
+	Display			"disp('PV')"
+      }
       System {
 	Name			"PV"
-	Location		[948, 338, 1446, 638]
+	Location		[858, 52, 1524, 904]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -883,15 +1010,15 @@ Library {
       Opaque		      off
       RequestExecContextInheritance off
       MaskHideContents	      off
-      MaskDisplay	      "disp('Weather')"
-      MaskIconFrame	      on
-      MaskIconOpaque	      on
-      MaskIconRotate	      "none"
-      MaskPortRotate	      "default"
-      MaskIconUnits	      "autoscale"
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		31
+	$ClassName		"Simulink.Mask"
+	Display			"disp('Weather')"
+      }
       System {
 	Name			"Weather"
-	Location		[1025, 418, 1523, 718]
+	Location		[52, 49, 801, 628]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -906,10 +1033,10 @@ Library {
 	ZoomFactor		"100"
 	Block {
 	  BlockType		  SubSystem
-	  Name			  "Example"
+	  Name			  "Weather Data"
 	  SID			  "1"
-	  Ports			  [1, 1]
-	  Position		  [35, 29, 115, 101]
+	  Ports			  [0, 1]
+	  Position		  [40, 35, 115, 125]
 	  ZOrder		  -17
 	  MinAlgLoopOccurrences	  off
 	  PropExecContextOutsideSubsystem off
@@ -918,25 +1045,68 @@ Library {
 	  Opaque		  off
 	  RequestExecContextInheritance	off
 	  MaskHideContents	  off
-	  MaskDescription	  "Example custom library block. Applies a user-specified gain to the input signal."
-	  MaskHelp		  "Example custom library block. Applies a user-specified gain to the input signal."
-	  MaskPromptString	  "Enter a gain"
-	  MaskStyleString	  "edit"
-	  MaskVariables		  "gain=@1;"
-	  MaskTunableValueString  "on"
-	  MaskEnableString	  "on"
-	  MaskVisibilityString	  "on"
-	  MaskToolTipString	  "on"
-	  MaskDisplay		  "plot([0.8 -1 -1 0 -1 -1 0.8],[1 1 0 0 0 -1 -1],4,4,-4,-4)"
-	  MaskIconFrame		  on
-	  MaskIconOpaque	  on
-	  MaskIconRotate	  "none"
-	  MaskPortRotate	  "default"
-	  MaskIconUnits		  "autoscale"
-	  MaskValueString	  "2"
+	  Object {
+	    $PropName		    "MaskObject"
+	    $ObjectID		    32
+	    $ClassName		    "Simulink.Mask"
+	    Type		    "Weather Data From File"
+	    Description		    "Reads weather data from the specified binary file and outputs it as a Simulink bus signal.\n\nT"
+	    "he utility function convertTMY3() to creates a .MAT file compatible with this block. Use of this block requires t"
+	    "hat a Simulink bus object named 'BusDef_Weather' be defined in the base workspace. See the block help for details"
+	    "."
+	    Help		    "This block reads weather data from a binary (.MAT) file and outputs it as\na Simulink bus signal. Beca"
+	    "use the block uses Simulink's 'From File' block\ninternally for file I/O, there are several requirements for it t"
+	    "o function\ncorrectly:\n1. The user must create a bus definition named 'BusDef_Weather' for the\nweather data and"
+	    " save it to the base MATLAB workspace. This bus definition \nwill be automatically generated from the weather fil"
+	    "e if the 'Create\nSimulink bus definition automatically' checkbox is checked.\n2. The .MAT file must contain time"
+	    " series objects organized within a\nstructure (struct) object called 'ans'.\n3. The structure must match the bus "
+	    "definition. (If the block is allowed to\nautomatically generate the Simulink bus definition, this requirement wil"
+	    "l\nbe satisfied.)\n3. The .MAT file must be version 7.3 or higher.\n4. All time series in the .MAT file must have"
+	    " units of seconds; otherwise\nSimulink will interpret them incorrectly.\n\nThe utility script convertTMY3() is av"
+	    "ailable to convert TMY3-formatted\nweather data into MATLAB time series objects compatible with these\nrequiremen"
+	    "ts. See the convertTMY3() function documentation for details."
+	    Initialization	    "% Set the input file\nset_param([gcb '/From File'], 'Filename', fname);\n\n% Create the weath"
+	    "er bus automatically\nif initbus\n    % Open the weather data file\n    try\n        load(fname);\n        tmy3 ="
+	    " ans;\n    catch err\n        warning('CampusModeling:Weather:invalidFile', ...\n            ['Cannot open specif"
+	    "ied weather data file. ' ...\n             'Simulink bus definition cannot be created ' ...\n             'automa"
+	    "tically.']);\n         return\n    end\n    \n    % Create the bus\n    BusDef_Weather = Simulink.Bus;\n    BusDe"
+	    "f_Weather.Description = 'TMY3 Weather Data';\n    \n    % Populate the bus\n    fn = fieldnames(tmy3);\n    for i"
+	    " = 1:length(fn)\n        % Create bus element w/ proper names, etc\n        x = Simulink.BusElement;\n        x.N"
+	    "ame = fn{i};\n        if isfield( tmy3.(fn{i}).DataInfo, 'Units')\n            x.DocUnits = tmy3.(fn{i}).DataInfo"
+	    ".Units;\n        end\n        if isfield( tmy3.(fn{i}).DataInfo, 'UserData')\n            x.Description = tmy3.(f"
+	    "n{i}).DataInfo.UserData;\n        end\n\n        % Store in bus\n        BusDef_Weather.Elements(i) = x;\n    end"
+	    "\n    \n    % Place in base workspace\n    assignin('base', 'BusDef_Weather', BusDef_Weather);\n    \n    % Clear"
+	    " local copy\n    clear('BusDef_Weather');\nend\n\n% Check for the precense of a bus definition\nok = evalin( 'bas"
+	    "e', 'exist(''BusDef_Weather'',''var'')' );\nassert( ok == 1, ...\n    'CampusModeling:Weather:missingBusDefinitio"
+	    "n', ...\n    ['No bus definition for weather data exists in ' ...\n     'the base workspace; please create one.']"
+	    " );\n"
+	    SelfModifiable	    "on"
+	    Display		    "image(imread('SkyImage.png'))\nport_label('output', 1, 'data');"
+	    Array {
+	      Type		      "Simulink.MaskParameter"
+	      Dimension		      2
+	      Object {
+		$ObjectID		33
+		Type			"edit"
+		Name			"fname"
+		Prompt			"Weather file"
+		Value			"'TMY3.mat'"
+		Tunable			"off"
+	      }
+	      Object {
+		$ObjectID		34
+		Type			"checkbox"
+		Name			"initbus"
+		Prompt			"Create Simulink bus definition automatically?"
+		Value			"on"
+		Tunable			"off"
+	      }
+	      PropName		      "Parameters"
+	    }
+	  }
 	  System {
-	    Name		    "Example"
-	    Location		    [433, 403, 931, 703]
+	    Name		    "Weather Data"
+	    Location		    [52, 49, 801, 628]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -949,41 +1119,30 @@ Library {
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
 	    ZoomFactor		    "100"
+	    SIDHighWatermark	    "24"
 	    Block {
-	      BlockType		      Inport
-	      Name		      "Input"
-	      SID		      "2"
-	      Position		      [110, 103, 140, 117]
-	      ZOrder		      -1
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Gain
-	      Name		      "Gain"
-	      SID		      "8"
-	      Position		      [235, 95, 265, 125]
-	      ZOrder		      -8
-	      Gain		      "gain"
-	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
-	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-	      SaturateOnIntegerOverflow	off
+	      BlockType		      FromFile
+	      Name		      "From File"
+	      SID		      "1:22"
+	      Position		      [35, 43, 100, 67]
+	      ZOrder		      28
+	      FileName		      "TMY3.mat"
+	      OutDataTypeStr	      "Bus: BusDef_Weather"
+	      SampleTime	      "0"
+	      ExtrapolationBeforeFirstDataPoint	"Hold first value"
+	      ExtrapolationAfterLastDataPoint "Hold last value"
 	    }
 	    Block {
 	      BlockType		      Outport
 	      Name		      "Output"
-	      SID		      "3"
-	      Position		      [360, 103, 390, 117]
+	      SID		      "1:3"
+	      Position		      [170, 48, 200, 62]
 	      ZOrder		      -2
 	      IconDisplay	      "Port number"
+	      OutDataTypeStr	      "Bus: BusDef_Weather"
 	    }
 	    Line {
-	      SrcBlock		      "Input"
-	      SrcPort		      1
-	      DstBlock		      "Gain"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Gain"
+	      SrcBlock		      "From File"
 	      SrcPort		      1
 	      DstBlock		      "Output"
 	      DstPort		      1

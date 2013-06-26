@@ -3,15 +3,15 @@
 % set of MATLAB time series objects. Each time series object corresponds to
 % one data field from the TMY3 data specification.
 %
-% By default, only a subset of the TMY3 data are imported:
-%   Global horizontal irradiance (GHI)
-%   ...
-% This subset can be overridden by passing a customized column
-% specification to the function (see OPTIONAL INPUTS and COMMENTS
-% sections).
+% By default, only a subset of the TMY3 data are imported, as specified in
+% the file 'TMY3_column_specification.txt'. This subset can be overridden
+% by passing a customized column specification to the function (see
+% OPTIONAL INPUTS and COMMENTS sections).
 %
 % To use the output of convertTMY3() in Simulink, save the result to a .MAT
-% file and use a 'From File' block to load it into Simulink.
+% file in the variable 'ans' and load it into Simulink using a 'From File'
+% block (or the 'Weather Data' block in the campus modeling Simulink
+% library).
 %
 % SYNTAX:
 %   x = convertTMY3(filename,varargin)
@@ -27,8 +27,6 @@
 %
 %   'offset', [val]             Specify the time offset for the generated
 %                               vector of hourly data. (Default = -0.5)
-%   'unit', [val]               Specify the unit for the 1:N output time
-%                               vector. (Default = 'hours')
 %   'columnSpec', [val]         Provide a customizes specification for
 %                               which data columns should be pulled from
 %                               the TMY3 data file. (This should only be
@@ -51,12 +49,11 @@
 %
 %   '--UseOriginalTimestamps'   If set, then parse the output using the
 %                               original timestamps in the TMY3 file rather
-%                               than create a new 8760 hour vector.
-%                               This also overrides the 'unit' input above.
+%                               than create a synthesized time vector.
 %
 % OUTPUTS:
 %   x           A MATLAB structure containing time series corresponding to
-%               the TMY3 data.
+%               the TMY3 data, in time units of seconds.
 %
 % COMMENTS:
 % 1. TMY3 data is designed to represent a single, continuous year (8760
@@ -65,21 +62,19 @@
 %    should not be used to create the time vector for the MATLAB time
 %    series. Instead, a monotonically increasing vector of hours 1 to N,
 %    where N is the number of data points (usually 8760), matches the
-%    intended use of the data. To override this behavior, see the optional
-%    inputs.
+%    intended use of the data. To override this behavior, set the flag
+%    '--UseOriginalTimestamps' (see above).
 %
 % 2. The optional input 'offset' adjusts the time vector by the offset
-%    amount (backward for negative offsets) in the unit specified by the
-%    optional input 'unit'. The default value of -0.5 positions the time
-%    stamp for each hour in the center of the hour, as opposed to at the
-%    end as is default for TMY3 data. NOTE: If the original time stamps are
-%    used, then the units for offset are assumed to be hours and the actual
-%    value in 'unit' is ignored.
+%    amount in hours (backward for negative offsets). The default value of
+%    -0.5 positions the time stamp for each hour in the center of the hour
+%    as opposed to at the end as is default for TMY3 data.
 %
 % 3. The structure organization matches Simulink's requirements for using a
 %    'From File' block to import time series data. It would also be
 %    possible to create a single time series with multiple data columns or
 %    a 'tscollection' object containing the individual time series.
+%    However, these approaches are less extensible in Simulink.
 %
 % 4. This function uses textscan() for the actual file I/O. It will
 %    construct the string of values to import using the column
@@ -102,10 +97,7 @@
 
 function x = convertTMY3(filename,varargin)
     %% Defaults
-    % Default time unit
-    timeUnit = 'hours';
-    
-    % Default time offset to apply
+    % Default time offset to apply (in hours)
     offset = -0.5;
     
     % Empty column specification (loaded later)
@@ -200,20 +192,24 @@ function x = convertTMY3(filename,varargin)
         tFormat = columnSpec.unit( tIdx );
         
         % Parse time from 'date' and 'time' fields; apply offset
+        % Output is in days since midnight, Jan 1, 0000
         datetime = [char(C{1,dCol}), repmat(' ',n,1), char(C{1,tCol})];
         t = datenum( datetime, [dFormat ' ' tFormat] ) + offset/24;
         
-        % Change time unit to days (since Jan 1, 0000)
-        timeUnit = 'days';
-        
-        % Determine the start date and correct the time vector accordingly
+        % Determine the start date and adjust the time vector accordingly
         startDate = datestr(min(t));
         t = t - min(t);
         
+        % Now, change time unit to seconds
+        t = t * 86400;      % 60 sec * 60 min * 24 hr
+        
     % Use synthesized time
     else
-        % Create a standard 1:N time vector + offset
+        % Create a standard 1:N hours time vector + offset
         t = (1:n)' + offset;
+        
+        % Now, change time unit to seconds
+        t = t * 3600;      % 60 sec * 60 min
     end
     
     % Sort t and return sorted indices
@@ -237,7 +233,7 @@ function x = convertTMY3(filename,varargin)
         x.(columnSpec.name{i}) = timeseries(data(ord), t);
         
         % Assign time series time properties
-        x.(columnSpec.name{i}).TimeInfo.Units = timeUnit;
+        x.(columnSpec.name{i}).TimeInfo.Units = 'seconds';
         x.(columnSpec.name{i}).TimeInfo.StartDate = startDate;
         x.(columnSpec.name{i}).TimeInfo.Format = 0;
         

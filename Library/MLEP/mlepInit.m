@@ -11,8 +11,8 @@
 
 global MLEPSETTINGS
 
-EplusDir = 'C:\EnergyPlusV8-0-0-mlep';
-JavaDir = 'C:\Program Files (x86)\Java\jre6\bin';
+EplusDir = 'C:\EnergyPlusV8-0-0';
+JavaDir = 'C:\Program Files (x86)\Java\jre7\bin';
 
 % Get MLE+ Path Name
 homePath = mfilename('fullpath');

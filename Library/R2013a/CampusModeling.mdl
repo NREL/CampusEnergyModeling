@@ -1,6 +1,6 @@
 Library {
   Name			  "CampusModeling"
-  Version		  7.8
+  Version		  8.1
   MdlSubVersion		  0
   SavedCharacterEncoding  "windows-1252"
   LibraryType		  "BlockLibrary"
@@ -10,15 +10,54 @@ Library {
   DisableAllScopes	  off
   FPTRunName		  "Run 1"
   MaxMDLFileLineLength	  120
+  Object {
+    $PropName		    "BdWindowsInfo"
+    $ObjectID		    1
+    $ClassName		    "Simulink.BDWindowsInfo"
+    Object {
+      $PropName		      "WindowsInfo"
+      $ObjectID		      2
+      $ClassName	      "Simulink.WindowInfo"
+      IsActive		      [1]
+      Location		      [828.0, 117.0, 951.0, 882.0]
+      Object {
+	$PropName		"ModelBrowserInfo"
+	$ObjectID		3
+	$ClassName		"Simulink.ModelBrowserInfo"
+	Visible			[0]
+	DockPosition		"Left"
+	Width			[50]
+	Height			[50]
+	Filter			[9]
+      }
+      Object {
+	$PropName		"ExplorerBarInfo"
+	$ObjectID		4
+	$ClassName		"Simulink.ExplorerBarInfo"
+	Visible			[1]
+      }
+      Object {
+	$PropName		"EditorsInfo"
+	$ObjectID		5
+	$ClassName		"Simulink.EditorInfo"
+	IsActive		[1]
+	ViewObjType		"SimulinkSubsys"
+	LoadSaveID		"12"
+	Extents			[901.0, 716.0]
+	ZoomFactor		[1.0]
+	Offset			[0.0, 0.0]
+      }
+    }
+  }
   Created		  "Wed Jun 12 15:19:08 2013"
   Creator		  "sfrank1"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Jun 26 16:37:23 2013"
-  RTWModifiedTimeStamp	  294165438
-  ModelVersionFormat	  "1.%<AutoIncrement:39>"
+  LastModifiedDate	  "Wed Jun 26 16:59:31 2013"
+  RTWModifiedTimeStamp	  294166653
+  ModelVersionFormat	  "1.%<AutoIncrement:40>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -86,14 +125,14 @@ Library {
     Type		    "Handle"
     Dimension		    1
     Simulink.ConfigSet {
-      $ObjectID		      1
-      Version		      "1.11.1"
+      $ObjectID		      6
+      Version		      "1.13.0"
       Array {
 	Type			"Handle"
 	Dimension		8
 	Simulink.SolverCC {
-	  $ObjectID		  2
-	  Version		  "1.11.1"
+	  $ObjectID		  7
+	  Version		  "1.13.0"
 	  StartTime		  "0.0"
 	  StopTime		  "10.0"
 	  AbsTol		  "auto"
@@ -111,6 +150,7 @@ Library {
 	  MaxConsecutiveMinStep	  "1"
 	  RelTol		  "1e-3"
 	  SolverMode		  "Auto"
+	  EnableConcurrentExecution off
 	  ConcurrentTasks	  off
 	  Solver		  "ode45"
 	  SolverName		  "ode45"
@@ -126,8 +166,8 @@ Library {
 	  InsertRTBMode		  "Whenever possible"
 	}
 	Simulink.DataIOCC {
-	  $ObjectID		  3
-	  Version		  "1.11.1"
+	  $ObjectID		  8
+	  Version		  "1.13.0"
 	  Decimation		  "1"
 	  ExternalInput		  "[t, u]"
 	  FinalStateName	  "xFinal"
@@ -158,8 +198,8 @@ Library {
 	  Refine		  "1"
 	}
 	Simulink.OptimizationCC {
-	  $ObjectID		  4
-	  Version		  "1.11.1"
+	  $ObjectID		  9
+	  Version		  "1.13.0"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    8
@@ -211,11 +251,11 @@ Library {
 	  BufferReusableBoundary  on
 	  SimCompilerOptimization "Off"
 	  AccelVerboseBuild	  off
-	  AccelParallelForEachSubsystem	on
+	  ParallelExecutionInRapidAccelerator on
 	}
 	Simulink.DebuggingCC {
-	  $ObjectID		  5
-	  Version		  "1.11.1"
+	  $ObjectID		  10
+	  Version		  "1.13.0"
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
 	  ArrayBoundsChecking	  "none"
@@ -264,7 +304,7 @@ Library {
 	  UnnecessaryDatatypeConvMsg "none"
 	  VectorMatrixConversionMsg "none"
 	  InvalidFcnCallConnMsg	  "error"
-	  FcnCallInpInsideContextMsg "Enable All"
+	  FcnCallInpInsideContextMsg "EnableAllAsWarning"
 	  SignalLabelMismatchMsg  "none"
 	  UnconnectedInputMsg	  "warning"
 	  UnconnectedOutputMsg	  "warning"
@@ -300,14 +340,17 @@ Library {
 	  SFNoUnconditionalDefaultTransitionDiag "warning"
 	  SFTransitionOutsideNaturalParentDiag "warning"
 	  SFUnconditionalTransitionShadowingDiag "warning"
+	  SFUndirectedBroadcastEventsDiag "warning"
+	  SFTransitionActionBeforeConditionDiag	"warning"
 	}
 	Simulink.HardwareCC {
-	  $ObjectID		  6
-	  Version		  "1.11.1"
+	  $ObjectID		  11
+	  Version		  "1.13.0"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
 	  ProdBitPerInt		  32
 	  ProdBitPerLong	  32
+	  ProdBitPerLongLong	  64
 	  ProdBitPerFloat	  32
 	  ProdBitPerDouble	  64
 	  ProdBitPerPointer	  32
@@ -317,17 +360,20 @@ Library {
 	  ProdEndianess		  "Unspecified"
 	  ProdWordSize		  32
 	  ProdShiftRightIntArith  on
+	  ProdLongLongMode	  off
 	  ProdHWDeviceType	  "32-bit Generic"
 	  TargetBitPerChar	  8
 	  TargetBitPerShort	  16
 	  TargetBitPerInt	  32
 	  TargetBitPerLong	  32
+	  TargetBitPerLongLong	  64
 	  TargetBitPerFloat	  32
 	  TargetBitPerDouble	  64
 	  TargetBitPerPointer	  32
 	  TargetLargestAtomicInteger "Char"
 	  TargetLargestAtomicFloat "None"
 	  TargetShiftRightIntArith on
+	  TargetLongLongMode	  off
 	  TargetIntDivRoundTo	  "Undefined"
 	  TargetEndianess	  "Unspecified"
 	  TargetWordSize	  32
@@ -339,8 +385,8 @@ Library {
 	  ProdEqTarget		  on
 	}
 	Simulink.ModelReferenceCC {
-	  $ObjectID		  7
-	  Version		  "1.11.1"
+	  $ObjectID		  12
+	  Version		  "1.13.0"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
 	  CheckModelReferenceTargetMessage "error"
 	  EnableParallelModelReferenceBuilds off
@@ -354,8 +400,8 @@ Library {
 	  SupportModelReferenceSimTargetCustomCode off
 	}
 	Simulink.SFSimCC {
-	  $ObjectID		  8
-	  Version		  "1.11.1"
+	  $ObjectID		  13
+	  Version		  "1.13.0"
 	  SFSimEnableDebug	  on
 	  SFSimOverflowDetection  on
 	  SFSimEcho		  on
@@ -369,8 +415,8 @@ Library {
 	}
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
-	  $ObjectID		  9
-	  Version		  "1.11.1"
+	  $ObjectID		  14
+	  Version		  "1.13.0"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    8
@@ -388,6 +434,7 @@ Library {
 	  GenCodeOnly		  off
 	  MakeCommand		  "make_rtw"
 	  GenerateMakefile	  on
+	  PackageGeneratedCodeAndArtifacts off
 	  TemplateMakefile	  "grt_default_tmf"
 	  GenerateReport	  off
 	  SaveLog		  off
@@ -404,6 +451,14 @@ Library {
 	  RTWUseSimCustomCode	  off
 	  IncludeHyperlinkInReport off
 	  LaunchReport		  off
+	  PortableWordSizes	  off
+	  GenerateErtSFunction	  off
+	  CreateSILPILBlock	  "None"
+	  CodeExecutionProfiling  off
+	  CodeExecutionProfileVariable "executionProfile"
+	  CodeProfilingSaveOptions "SummaryOnly"
+	  CodeProfilingInstrumentation off
+	  SILDebugging		  off
 	  TargetLang		  "C"
 	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
 	  IncludeERTFirstTime	  off
@@ -413,8 +468,9 @@ Library {
 	  GenerateTraceReportSf	  off
 	  GenerateTraceReportEml  off
 	  GenerateCodeInfo	  off
-	  GenerateSLWebview	  off
+	  GenerateWebview	  off
 	  GenerateCodeMetricsReport off
+	  GenerateCodeReplacementReport	off
 	  RTWCompilerOptimization "Off"
 	  CheckMdlBeforeBuild	  "Off"
 	  CustomRebuildMode	  "OnUpdate"
@@ -422,8 +478,8 @@ Library {
 	    Type		    "Handle"
 	    Dimension		    2
 	    Simulink.CodeAppCC {
-	      $ObjectID		      10
-	      Version		      "1.11.1"
+	      $ObjectID		      15
+	      Version		      "1.13.0"
 	      Array {
 		Type			"Cell"
 		Dimension		21
@@ -459,6 +515,7 @@ Library {
 	      PreserveName	      off
 	      PreserveNameWithParent  off
 	      ShowEliminatedStatement off
+	      OperatorAnnotations     off
 	      IncAutoGenComments      off
 	      SimulinkDataObjDesc     off
 	      SFDataObjDesc	      off
@@ -481,14 +538,15 @@ Library {
 	      SimulinkBlockComments   on
 	      MATLABSourceComments    off
 	      EnableCustomComments    off
+	      InternalIdentifier      "Shortened"
 	      InlinedPrmAccess	      "Literals"
 	      ReqsInCode	      off
 	      UseSimReservedNames     off
 	    }
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
-	      $ObjectID		      11
-	      Version		      "1.11.1"
+	      $ObjectID		      16
+	      Version		      "1.13.0"
 	      Array {
 		Type			"Cell"
 		Dimension		16
@@ -513,10 +571,9 @@ Library {
 	      TargetFcnLib	      "ansi_tfl_table_tmw.mat"
 	      TargetLibSuffix	      ""
 	      TargetPreCompLibLocation ""
-	      TargetFunctionLibrary   "ANSI_C"
+	      CodeReplacementLibrary  "ANSI_C"
 	      UtilityFuncGeneration   "Auto"
 	      ERTMultiwordTypeDef     "System defined"
-	      CodeExecutionProfiling  off
 	      ERTMultiwordLength      256
 	      MultiwordLength	      2048
 	      GenerateFullHeader      on
@@ -547,10 +604,12 @@ Library {
 	      SupportVariableSizeSignals off
 	      EnableShiftOperators    on
 	      ParenthesesLevel	      "Nominal"
-	      PortableWordSizes	      off
+	      MATLABClassNameForMDSCustomization "Simulink.SoftwareTarget.GRTCustomization"
 	      ModelStepFunctionPrototypeControlCompliant off
 	      CPPClassGenCompliant    off
 	      AutosarCompliant	      off
+	      GRTInterface	      on
+	      GenerateAllocFcn	      off
 	      UseMalloc		      off
 	      ExtMode		      off
 	      ExtModeStaticAlloc      off
@@ -576,6 +635,7 @@ Library {
     }
     PropName		    "ConfigurationSets"
   }
+  ExplicitPartitioning	  off
   BlockDefaults {
     ForegroundColor	    "black"
     BackgroundColor	    "white"
@@ -607,6 +667,25 @@ Library {
     FontWeight		    "normal"
     FontAngle		    "normal"
   }
+  MaskDefaults {
+    SelfModifiable	    "off"
+    IconFrame		    "on"
+    IconOpaque		    "on"
+    RunInitForIconRedraw    "off"
+    IconRotate		    "none"
+    PortRotate		    "default"
+    IconUnits		    "autoscale"
+  }
+  MaskParameterDefaults {
+    Evaluate		    "on"
+    Tunable		    "on"
+    NeverSave		    "off"
+    Internal		    "off"
+    ReadOnly		    "off"
+    Enabled		    "on"
+    Visible		    "on"
+    ToolTip		    "on"
+  }
   BlockParameterDefaults {
     Block {
       BlockType		      ComplexToMagnitudeAngle
@@ -621,8 +700,19 @@ Library {
     }
     Block {
       BlockType		      From
+      GotoTag		      "A"
       IconDisplay	      "Tag"
       TagVisibility	      "local"
+    }
+    Block {
+      BlockType		      FromFile
+      FileName		      "untitled.mat"
+      OutDataTypeStr	      "Inherit: auto"
+      SampleTime	      "-1"
+      ExtrapolationBeforeFirstDataPoint	"Linear extrapolation"
+      InterpolationWithinTimeRange "Linear interpolation"
+      ExtrapolationAfterLastDataPoint "Linear extrapolation"
+      ZeroCross		      off
     }
     Block {
       BlockType		      Gain
@@ -641,7 +731,9 @@ Library {
     }
     Block {
       BlockType		      Goto
+      GotoTag		      "A"
       IconDisplay	      "Tag"
+      TagVisibility	      "local"
     }
     Block {
       BlockType		      Inport
@@ -759,6 +851,7 @@ Library {
       SystemSampleTime	      "-1"
       RTWFcnNameOpts	      "Auto"
       RTWFileNameOpts	      "Auto"
+      FunctionInterfaceSpec   "void_void"
       RTWMemSecFuncInitTerm   "Inherit from model"
       RTWMemSecFuncExecute    "Inherit from model"
       RTWMemSecDataConstants  "Inherit from model"
@@ -791,8 +884,8 @@ Library {
   }
   System {
     Name		    "CampusModeling"
-    Location		    [629, 112, 1580, 1011]
-    Open		    on
+    Location		    [828, 117, 1779, 999]
+    Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -805,7 +898,7 @@ Library {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "126"
+    SIDHighWatermark	    "122"
     Block {
       BlockType		      SubSystem
       Name		      "Buildings"
@@ -823,9 +916,15 @@ Library {
       Opaque		      off
       RequestExecContextInheritance off
       MaskHideContents	      off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		17
+	$ClassName		"Simulink.Mask"
+	Display			"disp('Buildings')"
+      }
       System {
 	Name			"Buildings"
-	Location		[629, 112, 1580, 1011]
+	Location		[828, 117, 1779, 999]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -847,6 +946,108 @@ Library {
 	  ZOrder		  2
 	  FunctionName		  "mlepSimulinkBlk"
 	  Parameters		  "progname, modelfile, weatherfile, workdir, timeout, port, host, bcvtbdir, deltaT, noutputd"
+	  Object {
+	    $PropName		    "MaskObject"
+	    $ObjectID		    18
+	    $ClassName		    "Simulink.Mask"
+	    Type		    "EnergyPlus Cosimulation"
+	    Description		    "This block implements cosimulation with EnergyPlus by allowing Simulink to exchange input and o"
+	    "utput data with it. Currently, EnergyPlus only supports real data."
+	    Help		    "This block implements cosimulation with EnergyPlus by allowing Simulink to\nexchange input and output "
+	    "data with it.\n\nWhen a simulation starts, EnergyPlus is also started. It will then run in\nparallel with Simulin"
+	    "k. They exchange input and output data via socket\ncommunication. When the simulation terminates, EnergyPlus will"
+	    " exit.\n\nRefer to the manuals of MLE+ and/or BCVTB/EnergyPlus for details.\n\nINPUTS:\n- real: real vector input"
+	    " to EnergyPlus.\n\nOUTPUTS:\n- flag: status of EnergyPlus (0 if OK, if flag is non-zero, the simulation should st"
+	    "op).\n- time: current simulation time of EnergyPlus, in seconds.\n- real: real vector output from EnergyPlus."
+	    Display		    "image(imread('building.png'))\ndisp('E+\\nCosimulation');\n\n% Inputs\nport_label('input', 1, 'real"
+	    "');\n\n% Outputs\nport_label('output', 1, 'flag');\nport_label('output', 2, 'time');\nport_label('output', 3, 're"
+	    "al');\n"
+	    Array {
+	      Type		      "Simulink.MaskParameter"
+	      Dimension		      10
+	      Object {
+		$ObjectID		19
+		Type			"edit"
+		Name			"progname"
+		Prompt			"E+ Executable Path"
+		Value			"'C:\\EnergyPlusV8-0-0\\RunEPlus.bat'"
+		Tunable			"off"
+	      }
+	      Object {
+		$ObjectID		20
+		Type			"edit"
+		Name			"modelfile"
+		Prompt			"IDF File (without extension)"
+		Value			"'\\path\\to\\dir\\idf_file'"
+		Tunable			"off"
+	      }
+	      Object {
+		$ObjectID		21
+		Type			"edit"
+		Name			"weatherfile"
+		Prompt			"Weather Profile"
+		Value			"'USA_IL_Chicago-OHare.Intl.AP.725300_TMY3'"
+		Tunable			"off"
+	      }
+	      Object {
+		$ObjectID		22
+		Type			"edit"
+		Name			"workdir"
+		Prompt			"Working Directory"
+		Value			"'\\path\\to\\dir'"
+		Tunable			"off"
+	      }
+	      Object {
+		$ObjectID		23
+		Type			"edit"
+		Name			"timeout"
+		Prompt			"Timeout (in milliseconds)"
+		Value			"80000"
+		Tunable			"off"
+	      }
+	      Object {
+		$ObjectID		24
+		Type			"edit"
+		Name			"port"
+		Prompt			"Socket Port (0 = any available)"
+		Value			"0"
+		Tunable			"off"
+	      }
+	      Object {
+		$ObjectID		25
+		Type			"edit"
+		Name			"host"
+		Prompt			"Socket Host ('' = local host)"
+		Value			"''"
+		Tunable			"off"
+	      }
+	      Object {
+		$ObjectID		26
+		Type			"edit"
+		Name			"bcvtbdir"
+		Prompt			"BCVTB Directory"
+		Value			"''"
+		Tunable			"off"
+	      }
+	      Object {
+		$ObjectID		27
+		Type			"edit"
+		Name			"deltaT"
+		Prompt			"Time Step (in seconds)"
+		Value			"900"
+		Tunable			"off"
+	      }
+	      Object {
+		$ObjectID		28
+		Type			"edit"
+		Name			"noutputd"
+		Prompt			"Number of Real Outputs"
+		Value			"2"
+		Tunable			"off"
+	      }
+	      PropName		      "Parameters"
+	    }
+	  }
 	}
       }
     }
@@ -867,9 +1068,15 @@ Library {
       Opaque		      off
       RequestExecContextInheritance off
       MaskHideContents	      off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		29
+	$ClassName		"Simulink.Mask"
+	Display			"disp('Electrical')"
+      }
       System {
 	Name			"Electrical"
-	Location		[629, 112, 1892, 1011]
+	Location		[828, 117, 1779, 999]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -885,10 +1092,10 @@ Library {
 	Block {
 	  BlockType		  SubSystem
 	  Name			  "Constant Power\nSource or Load"
-	  SID			  "23"
+	  SID			  "74"
 	  Ports			  [1, 0, 0, 0, 0, 4]
-	  Position		  [65, 42, 145, 128]
-	  ZOrder		  1
+	  Position		  [45, 37, 125, 123]
+	  ZOrder		  4
 	  MinAlgLoopOccurrences	  off
 	  PropExecContextOutsideSubsystem off
 	  RTWSystemCode		  "Auto"
@@ -896,10 +1103,81 @@ Library {
 	  Opaque		  off
 	  RequestExecContextInheritance	off
 	  MaskHideContents	  off
+	  Object {
+	    $PropName		    "MaskObject"
+	    $ObjectID		    30
+	    $ClassName		    "Simulink.Mask"
+	    Type		    "Constant Power Source/Load"
+	    Description		    "Implements a controllable three-phase, constant power source or load, where VI* = P + jQ (in pe"
+	    "r-unit)."
+	    Help		    "Implements a controllable three-phase, constant power source or load,\nwhere VI* = P + jQ (in per-unit"
+	    ").\n\nTO DO: Additional documentation."
+	    Initialization	    "% Check voltages\nif VNom <= 0\n    error('Nominal line-to-line voltage for a constant power "
+	    "block must be strictly positive.');\nend\nif VLow <= 0\n    error('Lower cutoff voltage for a constant power bloc"
+	    "k must be strictly positive.');\nend\n\n% Note: block internals are with a load convention.\n% The following supp"
+	    "lies a negative multiplier to the load\n% if the source convention is selected.\nif Conven == 1\n    % Source con"
+	    "vention\n    InputGain = -1;\nelse\n    % Load convention\n    InputGain = 1;\nend\n"
+	    Array {
+	      Type		      "Simulink.MaskParameter"
+	      Dimension		      6
+	      Object {
+		$ObjectID		31
+		Type			"popup"
+		Array {
+		  Type			  "Cell"
+		  Dimension		  2
+		  Cell			  "source"
+		  Cell			  "load"
+		  PropName		  "TypeOptions"
+		}
+		Name			"Conven"
+		Prompt			"Electrical convention"
+		Value			"source"
+		Tunable			"off"
+	      }
+	      Object {
+		$ObjectID		32
+		Type			"edit"
+		Name			"PNom"
+		Prompt			"Nominal three-phase real power (W)"
+		Value			"5000"
+	      }
+	      Object {
+		$ObjectID		33
+		Type			"edit"
+		Name			"QNom"
+		Prompt			"Nominal three-phase reactive power (VAR)"
+		Value			"2000"
+	      }
+	      Object {
+		$ObjectID		34
+		Type			"edit"
+		Name			"VNom"
+		Prompt			"Nominal line-to-line voltage (VRMS)"
+		Value			"480"
+	      }
+	      Object {
+		$ObjectID		35
+		Type			"edit"
+		Name			"fNom"
+		Prompt			"Nominal frequency (Hz)"
+		Value			"60"
+		Tunable			"off"
+	      }
+	      Object {
+		$ObjectID		36
+		Type			"edit"
+		Name			"VLow"
+		Prompt			"Lower voltage limit (pu)"
+		Value			"0.7"
+	      }
+	      PropName		      "Parameters"
+	    }
+	  }
 	  System {
 	    Name		    "Constant Power\nSource or Load"
 	    Location		    [629, 112, 1892, 1011]
-	    Open		    on
+	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -914,7 +1192,7 @@ Library {
 	    Block {
 	      BlockType		      Inport
 	      Name		      "PQ"
-	      SID		      "24"
+	      SID		      "75"
 	      Position		      [40, 93, 70, 107]
 	      ZOrder		      -1
 	      IconDisplay	      "Port number"
@@ -924,7 +1202,7 @@ Library {
 	    Block {
 	      BlockType		      Math
 	      Name		      "Conjugate"
-	      SID		      "104"
+	      SID		      "76"
 	      Ports		      [1, 1]
 	      Position		      [340, 385, 370, 415]
 	      ZOrder		      1
@@ -942,7 +1220,7 @@ Library {
 	    Block {
 	      BlockType		      Gain
 	      Name		      "Convert to 1-phase"
-	      SID		      "39"
+	      SID		      "77"
 	      Position		      [330, 185, 360, 215]
 	      ZOrder		      -8
 	      BlockRotation	      270
@@ -962,7 +1240,7 @@ Library {
 	    Block {
 	      BlockType		      Sum
 	      Name		      "Correction Current"
-	      SID		      "40"
+	      SID		      "78"
 	      Ports		      [2, 1]
 	      Position		      [410, 455, 430, 475]
 	      ZOrder		      -19
@@ -981,7 +1259,7 @@ Library {
 	    Block {
 	      BlockType		      Demux
 	      Name		      "Demux"
-	      SID		      "41"
+	      SID		      "79"
 	      Ports		      [1, 2]
 	      Position		      [190, 52, 195, 143]
 	      ZOrder		      -6
@@ -1004,7 +1282,7 @@ Library {
 	    Block {
 	      BlockType		      Product
 	      Name		      "Divide"
-	      SID		      "53"
+	      SID		      "80"
 	      Ports		      [2, 1]
 	      Position		      [337, 335, 368, 365]
 	      ZOrder		      -32
@@ -1020,7 +1298,7 @@ Library {
 	    Block {
 	      BlockType		      From
 	      Name		      "From"
-	      SID		      "54"
+	      SID		      "81"
 	      Position		      [851, 30, 879, 70]
 	      ZOrder		      -9
 	      BlockRotation	      270
@@ -1031,23 +1309,22 @@ Library {
 	    Block {
 	      BlockType		      Goto
 	      Name		      "Goto"
-	      SID		      "55"
+	      SID		      "82"
 	      Position		      [630, 450, 670, 480]
 	      ZOrder		      -10
 	      GotoTag		      "IVar"
-	      TagVisibility	      "local"
 	    }
 	    Block {
 	      BlockType		      Reference
 	      Name		      "IA"
-	      SID		      "56"
+	      SID		      "83"
 	      Ports		      [1, 0, 0, 0, 0, 1, 1]
 	      Position		      [857, 205, 893, 250]
 	      ZOrder		      -35
 	      BlockRotation	      270
 	      BlockMirror	      on
 	      NamePlacement	      "alternate"
-	      LibraryVersion	      "1.2088"
+	      LibraryVersion	      "1.2191"
 	      FontName		      "Verdana"
 	      FontSize		      11
 	      SourceBlock	      "powerlib/Electrical\nSources/Controlled Current Source"
@@ -1062,14 +1339,14 @@ Library {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "IB"
-	      SID		      "59"
+	      SID		      "84"
 	      Ports		      [1, 0, 0, 0, 0, 1, 1]
 	      Position		      [927, 205, 963, 250]
 	      ZOrder		      -38
 	      BlockRotation	      270
 	      BlockMirror	      on
 	      NamePlacement	      "alternate"
-	      LibraryVersion	      "1.2088"
+	      LibraryVersion	      "1.2191"
 	      FontName		      "Verdana"
 	      FontSize		      11
 	      SourceBlock	      "powerlib/Electrical\nSources/Controlled Current Source"
@@ -1084,14 +1361,14 @@ Library {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "IC"
-	      SID		      "62"
+	      SID		      "85"
 	      Ports		      [1, 0, 0, 0, 0, 1, 1]
 	      Position		      [997, 205, 1033, 250]
 	      ZOrder		      -41
 	      BlockRotation	      270
 	      BlockMirror	      on
 	      NamePlacement	      "alternate"
-	      LibraryVersion	      "1.2088"
+	      LibraryVersion	      "1.2191"
 	      FontName		      "Verdana"
 	      FontSize		      11
 	      SourceBlock	      "powerlib/Electrical\nSources/Controlled Current Source"
@@ -1106,7 +1383,7 @@ Library {
 	    Block {
 	      BlockType		      Gain
 	      Name		      "Match Electrical\nConvention"
-	      SID		      "105"
+	      SID		      "86"
 	      Position		      [110, 85, 140, 115]
 	      ZOrder		      2
 	      Gain		      "InputGain"
@@ -1117,7 +1394,7 @@ Library {
 	    Block {
 	      BlockType		      SubSystem
 	      Name		      "Measurements"
-	      SID		      "65"
+	      SID		      "87"
 	      Ports		      [2, 2]
 	      Position		      [520, 263, 575, 332]
 	      ZOrder		      -44
@@ -1159,7 +1436,7 @@ Library {
 		Block {
 		  BlockType		  Inport
 		  Name			  "VIn"
-		  SID			  "66"
+		  SID			  "88"
 		  Position		  [60, 43, 90, 57]
 		  ZOrder		  -1
 		  IconDisplay		  "Port number"
@@ -1167,7 +1444,7 @@ Library {
 		Block {
 		  BlockType		  Inport
 		  Name			  "IIn"
-		  SID			  "67"
+		  SID			  "89"
 		  Position		  [60, 183, 90, 197]
 		  ZOrder		  -2
 		  Port			  "2"
@@ -1176,16 +1453,15 @@ Library {
 		Block {
 		  BlockType		  ComplexToMagnitudeAngle
 		  Name			  "Complex to\nMagnitude-Angle"
-		  SID			  "124"
+		  SID			  "90"
 		  Ports			  [1, 2]
 		  Position		  [305, 23, 335, 72]
 		  ZOrder		  13
-		  Output		  "Magnitude and angle"
 		}
 		Block {
 		  BlockType		  Saturate
 		  Name			  "Lower\nVoltage\nCutoff"
-		  SID			  "74"
+		  SID			  "91"
 		  Ports			  [1, 1]
 		  Position		  [380, 20, 410, 50]
 		  ZOrder		  14
@@ -1197,17 +1473,15 @@ Library {
 		Block {
 		  BlockType		  MagnitudeAngleToComplex
 		  Name			  "Magnitude-Angle\nto Complex"
-		  SID			  "125"
+		  SID			  "92"
 		  Ports			  [2, 1]
 		  Position		  [455, 22, 485, 73]
 		  ZOrder		  15
-		  Input			  "Magnitude and angle"
-		  ScaleReciprocalGainFactor on
 		}
 		Block {
 		  BlockType		  Gain
 		  Name			  "Peak to\nRMS 1"
-		  SID			  "122"
+		  SID			  "93"
 		  Position		  [130, 35, 160, 65]
 		  ZOrder		  10
 		  NamePlacement		  "alternate"
@@ -1219,7 +1493,7 @@ Library {
 		Block {
 		  BlockType		  Gain
 		  Name			  "Peak to\nRMS 2"
-		  SID			  "123"
+		  SID			  "94"
 		  Position		  [130, 175, 160, 205]
 		  ZOrder		  11
 		  NamePlacement		  "alternate"
@@ -1231,7 +1505,7 @@ Library {
 		Block {
 		  BlockType		  SubSystem
 		  Name			  "Positive Sequence\n(Phasor)\nCurrent"
-		  SID			  "116"
+		  SID			  "95"
 		  Ports			  [1, 1]
 		  Position		  [205, 167, 250, 213]
 		  ZOrder		  9
@@ -1242,6 +1516,12 @@ Library {
 		  Opaque		  off
 		  RequestExecContextInheritance	off
 		  MaskHideContents	  off
+		  Object {
+		    $PropName		    "MaskObject"
+		    $ObjectID		    37
+		    $ClassName		    "Simulink.Mask"
+		    Initialization	    "j=sqrt(-1);\na=exp(j*2*pi/3);\na2=exp(-j*2*pi/3);"
+		  }
 		  System {
 		    Name		    "Positive Sequence\n(Phasor)\nCurrent"
 		    Location		    [-8, -8, 1928, 1048]
@@ -1260,7 +1540,7 @@ Library {
 		    Block {
 		    BlockType		    Inport
 		    Name		    "abc"
-		    SID			    "117"
+		    SID			    "96"
 		    Position		    [65, 98, 95, 112]
 		    ZOrder		    4
 		    IconDisplay		    "Port number"
@@ -1268,7 +1548,7 @@ Library {
 		    Block {
 		    BlockType		    Gain
 		    Name		    "Gain1"
-		    SID			    "118"
+		    SID			    "97"
 		    Position		    [155, 85, 225, 125]
 		    ZOrder		    3
 		    Gain		    "[1 a a2]"
@@ -1276,7 +1556,7 @@ Library {
 		    Block {
 		    BlockType		    Gain
 		    Name		    "Gain3"
-		    SID			    "119"
+		    SID			    "98"
 		    Position		    [315, 87, 365, 123]
 		    ZOrder		    2
 		    ShowName		    off
@@ -1285,7 +1565,7 @@ Library {
 		    Block {
 		    BlockType		    Sum
 		    Name		    "Sum"
-		    SID			    "120"
+		    SID			    "99"
 		    Ports		    [1, 1]
 		    Position		    [255, 95, 275, 115]
 		    ZOrder		    1
@@ -1296,21 +1576,15 @@ Library {
 		    Block {
 		    BlockType		    Outport
 		    Name		    "seq"
-		    SID			    "121"
+		    SID			    "100"
 		    Position		    [435, 98, 465, 112]
 		    ZOrder		    5
 		    IconDisplay		    "Port number"
 		    }
 		    Line {
-		    SrcBlock		    "abc"
+		    SrcBlock		    "Sum"
 		    SrcPort		    1
-		    DstBlock		    "Gain1"
-		    DstPort		    1
-		    }
-		    Line {
-		    SrcBlock		    "Gain3"
-		    SrcPort		    1
-		    DstBlock		    "seq"
+		    DstBlock		    "Gain3"
 		    DstPort		    1
 		    }
 		    Line {
@@ -1320,9 +1594,15 @@ Library {
 		    DstPort		    1
 		    }
 		    Line {
-		    SrcBlock		    "Sum"
+		    SrcBlock		    "Gain3"
 		    SrcPort		    1
-		    DstBlock		    "Gain3"
+		    DstBlock		    "seq"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "abc"
+		    SrcPort		    1
+		    DstBlock		    "Gain1"
 		    DstPort		    1
 		    }
 		  }
@@ -1330,7 +1610,7 @@ Library {
 		Block {
 		  BlockType		  SubSystem
 		  Name			  "Positive Sequence\n(Phasor)\nVoltage"
-		  SID			  "111"
+		  SID			  "101"
 		  Ports			  [1, 1]
 		  Position		  [205, 27, 250, 73]
 		  ZOrder		  7
@@ -1341,6 +1621,12 @@ Library {
 		  Opaque		  off
 		  RequestExecContextInheritance	off
 		  MaskHideContents	  off
+		  Object {
+		    $PropName		    "MaskObject"
+		    $ObjectID		    38
+		    $ClassName		    "Simulink.Mask"
+		    Initialization	    "j=sqrt(-1);\na=exp(j*2*pi/3);\na2=exp(-j*2*pi/3);"
+		  }
 		  System {
 		    Name		    "Positive Sequence\n(Phasor)\nVoltage"
 		    Location		    [-8, -8, 1928, 1048]
@@ -1359,7 +1645,7 @@ Library {
 		    Block {
 		    BlockType		    Inport
 		    Name		    "abc"
-		    SID			    "112"
+		    SID			    "102"
 		    Position		    [65, 98, 95, 112]
 		    ZOrder		    4
 		    IconDisplay		    "Port number"
@@ -1367,7 +1653,7 @@ Library {
 		    Block {
 		    BlockType		    Gain
 		    Name		    "Gain1"
-		    SID			    "106"
+		    SID			    "103"
 		    Position		    [155, 85, 225, 125]
 		    ZOrder		    3
 		    Gain		    "[1 a a2]"
@@ -1375,7 +1661,7 @@ Library {
 		    Block {
 		    BlockType		    Gain
 		    Name		    "Gain3"
-		    SID			    "107"
+		    SID			    "104"
 		    Position		    [315, 87, 365, 123]
 		    ZOrder		    2
 		    ShowName		    off
@@ -1384,7 +1670,7 @@ Library {
 		    Block {
 		    BlockType		    Sum
 		    Name		    "Sum"
-		    SID			    "108"
+		    SID			    "105"
 		    Ports		    [1, 1]
 		    Position		    [255, 95, 275, 115]
 		    ZOrder		    1
@@ -1395,21 +1681,15 @@ Library {
 		    Block {
 		    BlockType		    Outport
 		    Name		    "seq"
-		    SID			    "113"
+		    SID			    "106"
 		    Position		    [435, 98, 465, 112]
 		    ZOrder		    5
 		    IconDisplay		    "Port number"
 		    }
 		    Line {
-		    SrcBlock		    "abc"
+		    SrcBlock		    "Sum"
 		    SrcPort		    1
-		    DstBlock		    "Gain1"
-		    DstPort		    1
-		    }
-		    Line {
-		    SrcBlock		    "Gain3"
-		    SrcPort		    1
-		    DstBlock		    "seq"
+		    DstBlock		    "Gain3"
 		    DstPort		    1
 		    }
 		    Line {
@@ -1419,9 +1699,15 @@ Library {
 		    DstPort		    1
 		    }
 		    Line {
-		    SrcBlock		    "Sum"
+		    SrcBlock		    "Gain3"
 		    SrcPort		    1
-		    DstBlock		    "Gain3"
+		    DstBlock		    "seq"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "abc"
+		    SrcPort		    1
+		    DstBlock		    "Gain1"
 		    DstPort		    1
 		    }
 		  }
@@ -1429,7 +1715,7 @@ Library {
 		Block {
 		  BlockType		  Outport
 		  Name			  "VPos"
-		  SID			  "87"
+		  SID			  "107"
 		  Position		  [535, 43, 565, 57]
 		  ZOrder		  4
 		  IconDisplay		  "Port number"
@@ -1437,52 +1723,22 @@ Library {
 		Block {
 		  BlockType		  Outport
 		  Name			  "IPos"
-		  SID			  "88"
+		  SID			  "108"
 		  Position		  [535, 183, 565, 197]
 		  ZOrder		  12
 		  Port			  "2"
 		  IconDisplay		  "Port number"
 		}
 		Line {
-		  SrcBlock		  "VIn"
-		  SrcPort		  1
-		  DstBlock		  "Peak to\nRMS 1"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "IIn"
-		  SrcPort		  1
-		  DstBlock		  "Peak to\nRMS 2"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Peak to\nRMS 1"
-		  SrcPort		  1
-		  DstBlock		  "Positive Sequence\n(Phasor)\nVoltage"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Peak to\nRMS 2"
-		  SrcPort		  1
-		  DstBlock		  "Positive Sequence\n(Phasor)\nCurrent"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Positive Sequence\n(Phasor)\nCurrent"
-		  SrcPort		  1
-		  DstBlock		  "IPos"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Positive Sequence\n(Phasor)\nVoltage"
-		  SrcPort		  1
-		  DstBlock		  "Complex to\nMagnitude-Angle"
-		  DstPort		  1
-		}
-		Line {
 		  SrcBlock		  "Complex to\nMagnitude-Angle"
+		  SrcPort		  2
+		  DstBlock		  "Magnitude-Angle\nto Complex"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Lower\nVoltage\nCutoff"
 		  SrcPort		  1
-		  DstBlock		  "Lower\nVoltage\nCutoff"
+		  DstBlock		  "Magnitude-Angle\nto Complex"
 		  DstPort		  1
 		}
 		Line {
@@ -1492,37 +1748,67 @@ Library {
 		  DstPort		  1
 		}
 		Line {
-		  SrcBlock		  "Lower\nVoltage\nCutoff"
+		  SrcBlock		  "Complex to\nMagnitude-Angle"
 		  SrcPort		  1
-		  DstBlock		  "Magnitude-Angle\nto Complex"
+		  DstBlock		  "Lower\nVoltage\nCutoff"
 		  DstPort		  1
 		}
 		Line {
-		  SrcBlock		  "Complex to\nMagnitude-Angle"
-		  SrcPort		  2
-		  DstBlock		  "Magnitude-Angle\nto Complex"
-		  DstPort		  2
+		  SrcBlock		  "Positive Sequence\n(Phasor)\nVoltage"
+		  SrcPort		  1
+		  DstBlock		  "Complex to\nMagnitude-Angle"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Positive Sequence\n(Phasor)\nCurrent"
+		  SrcPort		  1
+		  DstBlock		  "IPos"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Peak to\nRMS 2"
+		  SrcPort		  1
+		  DstBlock		  "Positive Sequence\n(Phasor)\nCurrent"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Peak to\nRMS 1"
+		  SrcPort		  1
+		  DstBlock		  "Positive Sequence\n(Phasor)\nVoltage"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "IIn"
+		  SrcPort		  1
+		  DstBlock		  "Peak to\nRMS 2"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "VIn"
+		  SrcPort		  1
+		  DstBlock		  "Peak to\nRMS 1"
+		  DstPort		  1
 		}
 	      }
 	    }
 	    Block {
 	      BlockType		      Memory
 	      Name		      "Memory"
-	      SID		      "89"
+	      SID		      "109"
 	      Position		      [485, 450, 515, 480]
 	      ZOrder		      -13
 	    }
 	    Block {
 	      BlockType		      Reference
 	      Name		      "Nominal Load"
-	      SID		      "91"
+	      SID		      "110"
 	      Ports		      [0, 0, 0, 0, 0, 3, 1]
 	      Position		      [707, 340, 763, 405]
 	      ZOrder		      -21
 	      BlockRotation	      270
 	      BlockMirror	      on
 	      AttributesFormatString  "\\n"
-	      LibraryVersion	      "1.2088"
+	      LibraryVersion	      "1.2191"
 	      FontName		      "Verdana"
 	      FontSize		      11
 	      SourceBlock	      "powerlib/Elements/Three-Phase\nParallel RLC Load"
@@ -1541,7 +1827,7 @@ Library {
 	    Block {
 	      BlockType		      Gain
 	      Name		      "RMS to Peak"
-	      SID		      "92"
+	      SID		      "111"
 	      Position		      [570, 450, 600, 480]
 	      ZOrder		      -8
 	      Gain		      "sqrt(2)"
@@ -1552,7 +1838,7 @@ Library {
 	    Block {
 	      BlockType		      Gain
 	      Name		      "Real to Imag"
-	      SID		      "93"
+	      SID		      "112"
 	      Position		      [255, 105, 285, 135]
 	      ZOrder		      -8
 	      Gain		      "1j"
@@ -1563,7 +1849,7 @@ Library {
 	    Block {
 	      BlockType		      Sum
 	      Name		      "Sum"
-	      SID		      "94"
+	      SID		      "113"
 	      Ports		      [2, 1]
 	      Position		      [335, 110, 355, 130]
 	      ZOrder		      -18
@@ -1586,14 +1872,14 @@ Library {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "Three-Phase\nV-I Measurement"
-	      SID		      "95"
+	      SID		      "114"
 	      Ports		      [0, 2, 0, 0, 0, 3, 3]
 	      Position		      [663, 200, 767, 250]
 	      ZOrder		      -8
 	      BlockRotation	      270
 	      BlockMirror	      on
 	      NamePlacement	      "alternate"
-	      LibraryVersion	      "1.2088"
+	      LibraryVersion	      "1.2191"
 	      FontName		      "Verdana"
 	      FontSize		      11
 	      SourceBlock	      "powerlib/Measurements/Three-Phase\nV-I Measurement"
@@ -1616,7 +1902,7 @@ Library {
 	    Block {
 	      BlockType		      Gain
 	      Name		      "a"
-	      SID		      "96"
+	      SID		      "115"
 	      Position		      [990, 105, 1020, 135]
 	      ZOrder		      -8
 	      BlockRotation	      270
@@ -1630,7 +1916,7 @@ Library {
 	    Block {
 	      BlockType		      Gain
 	      Name		      "a^2"
-	      SID		      "97"
+	      SID		      "116"
 	      Position		      [920, 105, 950, 135]
 	      ZOrder		      -8
 	      BlockRotation	      270
@@ -1644,7 +1930,7 @@ Library {
 	    Block {
 	      BlockType		      PMIOPort
 	      Name		      "A"
-	      SID		      "98"
+	      SID		      "117"
 	      Position		      [665, 40, 695, 55]
 	      ZOrder		      -54
 	      BlockRotation	      270
@@ -1655,7 +1941,7 @@ Library {
 	    Block {
 	      BlockType		      PMIOPort
 	      Name		      "B"
-	      SID		      "99"
+	      SID		      "118"
 	      Position		      [700, 65, 730, 80]
 	      ZOrder		      -55
 	      BlockRotation	      270
@@ -1666,7 +1952,7 @@ Library {
 	    Block {
 	      BlockType		      PMIOPort
 	      Name		      "C"
-	      SID		      "100"
+	      SID		      "119"
 	      Position		      [735, 90, 765, 105]
 	      ZOrder		      -56
 	      BlockRotation	      270
@@ -1677,7 +1963,7 @@ Library {
 	    Block {
 	      BlockType		      PMIOPort
 	      Name		      "N"
-	      SID		      "101"
+	      SID		      "120"
 	      Position		      [720, 560, 750, 575]
 	      ZOrder		      -57
 	      BlockRotation	      270
@@ -1685,197 +1971,60 @@ Library {
 	      Side		      "Left"
 	    }
 	    Line {
-	      LineType		      "Connection"
-	      SrcBlock		      "A"
-	      SrcPort		      RConn1
-	      Points		      [0, 90]
-	      Branch {
-		ConnectType		"DEST_SRC"
-		DstBlock		"Three-Phase\nV-I Measurement"
-		DstPort			LConn1
-	      }
-	      Branch {
-		ConnectType		"DEST_SRC"
-		Points			[205, 0]
-		DstBlock		"IA"
-		DstPort			LConn1
-	      }
-	    }
-	    Line {
-	      LineType		      "Connection"
-	      SrcBlock		      "B"
-	      SrcPort		      RConn1
-	      Points		      [0, 75]
-	      Branch {
-		ConnectType		"DEST_SRC"
-		DstBlock		"Three-Phase\nV-I Measurement"
-		DstPort			LConn2
-	      }
-	      Branch {
-		ConnectType		"DEST_SRC"
-		Points			[240, 0]
-		DstBlock		"IB"
-		DstPort			LConn1
-	      }
-	    }
-	    Line {
-	      LineType		      "Connection"
-	      SrcBlock		      "C"
-	      SrcPort		      RConn1
-	      Points		      [0, 60]
-	      Branch {
-		ConnectType		"DEST_SRC"
-		DstBlock		"Three-Phase\nV-I Measurement"
-		DstPort			LConn3
-	      }
-	      Branch {
-		ConnectType		"DEST_SRC"
-		Points			[275, 0]
-		DstBlock		"IC"
-		DstPort			LConn1
-	      }
-	    }
-	    Line {
-	      LineType		      "Connection"
-	      SrcBlock		      "Three-Phase\nV-I Measurement"
-	      SrcPort		      RConn1
-	      DstBlock		      "Nominal Load"
-	      DstPort		      LConn1
-	    }
-	    Line {
-	      LineType		      "Connection"
-	      SrcBlock		      "Three-Phase\nV-I Measurement"
-	      SrcPort		      RConn2
-	      DstBlock		      "Nominal Load"
-	      DstPort		      LConn2
-	    }
-	    Line {
-	      LineType		      "Connection"
-	      SrcBlock		      "Three-Phase\nV-I Measurement"
-	      SrcPort		      RConn3
-	      DstBlock		      "Nominal Load"
-	      DstPort		      LConn3
-	    }
-	    Line {
-	      SrcBlock		      "Three-Phase\nV-I Measurement"
-	      SrcPort		      1
-	      Points		      [0, 25]
-	      DstBlock		      "Measurements"
+	      Name		      "IMeas"
+	      Labels		      [1, 1]
+	      SrcBlock		      "Measurements"
+	      SrcPort		      2
+	      Points		      [-95, 0]
+	      DstBlock		      "Correction Current"
 	      DstPort		      1
 	    }
 	    Line {
-	      LineType		      "Connection"
-	      SrcBlock		      "IB"
-	      SrcPort		      RConn1
-	      Points		      [0, 190]
-	      Branch {
-		ConnectType		"DEST_SRC"
-		Points			[-70, 0]
-		Branch {
-		  ConnectType		  "DEST_DEST"
-		  SrcBlock		  "IA"
-		  SrcPort		  RConn1
-		  Points		  [0, 190]
-		}
-		Branch {
-		  ConnectType		  "DEST_SRC"
-		  Points		  [-140, 0]
-		  Branch {
-		    ConnectType		    "DEST_DEST"
-		    SrcBlock		    "Nominal Load"
-		    SrcPort		    RConn1
-		    Points		    [0, 35]
-		  }
-		  Branch {
-		    ConnectType		    "DEST_SRC"
-		    DstBlock		    "N"
-		    DstPort		    RConn1
-		  }
-		}
-	      }
-	      Branch {
-		ConnectType		"DEST_SRC"
-		Points			[70, 0]
-		DstBlock		"IC"
-		DstPort			RConn1
-	      }
-	    }
-	    Line {
-	      SrcBlock		      "Three-Phase\nV-I Measurement"
-	      SrcPort		      2
-	      Points		      [0, 60]
-	      DstBlock		      "Measurements"
+	      Name		      "VMeas"
+	      Labels		      [1, 1]
+	      SrcBlock		      "Measurements"
+	      SrcPort		      1
+	      Points		      [-155, 0]
+	      DstBlock		      "Divide"
 	      DstPort		      2
 	    }
 	    Line {
-	      Name		      "QTarget"
-	      Labels		      [0, 0]
+	      Name		      "PTarget"
+	      Labels		      [1, 1]
 	      SrcBlock		      "Demux"
-	      SrcPort		      2
-	      DstBlock		      "Real to Imag"
+	      SrcPort		      1
+	      Points		      [145, 0]
+	      DstBlock		      "Sum"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Real to Imag"
+	      SrcPort		      1
+	      DstBlock		      "Sum"
 	      DstPort		      1
 	    }
 	    Line {
-	      Name		      "STarget"
-	      Labels		      [0, 0]
-	      SrcBlock		      "Sum"
+	      SrcBlock		      "Match Electrical\nConvention"
 	      SrcPort		      1
-	      DstBlock		      "Convert to 1-phase"
+	      DstBlock		      "Demux"
 	      DstPort		      1
 	    }
 	    Line {
-	      Name		      "STarget1"
-	      Labels		      [1, 0]
-	      SrcBlock		      "Convert to 1-phase"
+	      SrcBlock		      "PQ"
 	      SrcPort		      1
-	      DstBlock		      "Divide"
+	      DstBlock		      "Match Electrical\nConvention"
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "Divide"
+	      SrcBlock		      "Memory"
 	      SrcPort		      1
-	      DstBlock		      "Conjugate"
+	      DstBlock		      "RMS to Peak"
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "From"
+	      SrcBlock		      "RMS to Peak"
 	      SrcPort		      1
-	      Points		      [0, 5]
-	      Branch {
-		DstBlock		"IA"
-		DstPort			1
-	      }
-	      Branch {
-		Points			[70, 0]
-		Branch {
-		  DstBlock		  "a^2"
-		  DstPort		  1
-		}
-		Branch {
-		  Points		  [70, 0]
-		  DstBlock		  "a"
-		  DstPort		  1
-		}
-	      }
-	    }
-	    Line {
-	      SrcBlock		      "a^2"
-	      SrcPort		      1
-	      DstBlock		      "IB"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "a"
-	      SrcPort		      1
-	      DstBlock		      "IC"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "IVar"
-	      Labels		      [0, 0]
-	      SrcBlock		      "Correction Current"
-	      SrcPort		      1
-	      DstBlock		      "Memory"
+	      DstBlock		      "Goto"
 	      DstPort		      1
 	    }
 	    Line {
@@ -1888,69 +2037,210 @@ Library {
 	      DstPort		      2
 	    }
 	    Line {
-	      SrcBlock		      "RMS to Peak"
+	      Name		      "IVar"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Correction Current"
 	      SrcPort		      1
-	      DstBlock		      "Goto"
+	      DstBlock		      "Memory"
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "Memory"
+	      SrcBlock		      "a"
 	      SrcPort		      1
-	      DstBlock		      "RMS to Peak"
+	      DstBlock		      "IC"
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "PQ"
+	      SrcBlock		      "a^2"
 	      SrcPort		      1
-	      DstBlock		      "Match Electrical\nConvention"
+	      DstBlock		      "IB"
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "Match Electrical\nConvention"
+	      SrcBlock		      "From"
 	      SrcPort		      1
-	      DstBlock		      "Demux"
+	      Points		      [0, 5]
+	      Branch {
+		Points			[70, 0]
+		Branch {
+		  Points		  [70, 0]
+		  DstBlock		  "a"
+		  DstPort		  1
+		}
+		Branch {
+		  DstBlock		  "a^2"
+		  DstPort		  1
+		}
+	      }
+	      Branch {
+		DstBlock		"IA"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Divide"
+	      SrcPort		      1
+	      DstBlock		      "Conjugate"
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "Real to Imag"
+	      Name		      "STarget1"
+	      Labels		      [1, 0]
+	      SrcBlock		      "Convert to 1-phase"
 	      SrcPort		      1
-	      DstBlock		      "Sum"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "PTarget"
-	      Labels		      [1, 1]
-	      SrcBlock		      "Demux"
-	      SrcPort		      1
-	      Points		      [145, 0]
-	      DstBlock		      "Sum"
-	      DstPort		      2
-	    }
-	    Line {
-	      Name		      "VMeas"
-	      Labels		      [1, 1]
-	      SrcBlock		      "Measurements"
-	      SrcPort		      1
-	      Points		      [-155, 0]
 	      DstBlock		      "Divide"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "STarget"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Sum"
+	      SrcPort		      1
+	      DstBlock		      "Convert to 1-phase"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "QTarget"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Demux"
+	      SrcPort		      2
+	      DstBlock		      "Real to Imag"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Three-Phase\nV-I Measurement"
+	      SrcPort		      2
+	      Points		      [0, 60]
+	      DstBlock		      "Measurements"
 	      DstPort		      2
 	    }
 	    Line {
-	      Name		      "IMeas"
-	      Labels		      [1, 1]
-	      SrcBlock		      "Measurements"
-	      SrcPort		      2
-	      Points		      [-95, 0]
-	      DstBlock		      "Correction Current"
+	      LineType		      "Connection"
+	      Points		      [945, 455; 70, 0; 0, -190]
+	      DstBlock		      "IC"
+	      DstPort		      RConn1
+	      Branch {
+		ConnectType		"SRC_SRC"
+		Points			[-70, 0]
+		Branch {
+		  ConnectType		  "DEST_SRC"
+		  Points		  [-140, 0]
+		  Branch {
+		    ConnectType		    "DEST_SRC"
+		    DstBlock		    "N"
+		    DstPort		    RConn1
+		  }
+		  Branch {
+		    ConnectType		    "DEST_DEST"
+		    SrcBlock		    "Nominal Load"
+		    SrcPort		    RConn1
+		    Points		    [0, 35]
+		  }
+		}
+		Branch {
+		  ConnectType		  "DEST_DEST"
+		  SrcBlock		  "IA"
+		  SrcPort		  RConn1
+		  Points		  [0, 190]
+		}
+	      }
+	      Branch {
+		ConnectType		"SRC_DEST"
+		SrcBlock		"IB"
+		SrcPort			RConn1
+		Points			[0, 190]
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Three-Phase\nV-I Measurement"
+	      SrcPort		      1
+	      Points		      [0, 25]
+	      DstBlock		      "Measurements"
 	      DstPort		      1
 	    }
-	    Annotation {
-	      Name		      "IVar = ITarget - IMeas"
-	      Position		      [406, 501]
+	    Line {
+	      LineType		      "Connection"
+	      SrcBlock		      "Three-Phase\nV-I Measurement"
+	      SrcPort		      RConn3
+	      DstBlock		      "Nominal Load"
+	      DstPort		      LConn3
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      SrcBlock		      "Three-Phase\nV-I Measurement"
+	      SrcPort		      RConn2
+	      DstBlock		      "Nominal Load"
+	      DstPort		      LConn2
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      SrcBlock		      "Three-Phase\nV-I Measurement"
+	      SrcPort		      RConn1
+	      DstBlock		      "Nominal Load"
+	      DstPort		      LConn1
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      Points		      [750, 180; 275, 0; 0, 10]
+	      DstBlock		      "IC"
+	      DstPort		      LConn1
+	      Branch {
+		ConnectType		"SRC_SRC"
+		DstBlock		"Three-Phase\nV-I Measurement"
+		DstPort			LConn3
+	      }
+	      Branch {
+		ConnectType		"SRC_DEST"
+		SrcBlock		"C"
+		SrcPort			RConn1
+		Points			[0, 60]
+	      }
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      Points		      [715, 170; 240, 0; 0, 20]
+	      DstBlock		      "IB"
+	      DstPort		      LConn1
+	      Branch {
+		ConnectType		"SRC_SRC"
+		DstBlock		"Three-Phase\nV-I Measurement"
+		DstPort			LConn2
+	      }
+	      Branch {
+		ConnectType		"SRC_DEST"
+		SrcBlock		"B"
+		SrcPort			RConn1
+		Points			[0, 75]
+	      }
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      Points		      [680, 160; 205, 0; 0, 30]
+	      DstBlock		      "IA"
+	      DstPort		      LConn1
+	      Branch {
+		ConnectType		"SRC_SRC"
+		DstBlock		"Three-Phase\nV-I Measurement"
+		DstPort			LConn1
+	      }
+	      Branch {
+		ConnectType		"SRC_DEST"
+		SrcBlock		"A"
+		SrcPort			RConn1
+		Points			[0, 90]
+	      }
 	    }
 	    Annotation {
+	      SID		      "122"
 	      Name		      "Pos. Sequence Current -> Phase Current"
 	      Position		      [991, 51]
+	      ZOrder		      -1
+	    }
+	    Annotation {
+	      SID		      "121"
+	      Name		      "IVar = ITarget - IMeas"
+	      Position		      [406, 501]
+	      ZOrder		      -2
 	    }
 	  }
 	}
@@ -1973,6 +2263,12 @@ Library {
       Opaque		      off
       RequestExecContextInheritance off
       MaskHideContents	      off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		39
+	$ClassName		"Simulink.Mask"
+	Display			"disp('PV')"
+      }
       System {
 	Name			"PV"
 	Location		[858, 52, 1524, 904]
@@ -2007,9 +2303,15 @@ Library {
       Opaque		      off
       RequestExecContextInheritance off
       MaskHideContents	      off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		40
+	$ClassName		"Simulink.Mask"
+	Display			"disp('Weather')"
+      }
       System {
 	Name			"Weather"
-	Location		[629, 112, 1580, 1011]
+	Location		[828, 117, 1779, 999]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -2022,6 +2324,124 @@ Library {
 	TiledPageScale		1
 	ShowPageBoundaries	off
 	ZoomFactor		"100"
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Weather Data"
+	  SID			  "1"
+	  Ports			  [0, 1]
+	  Position		  [40, 35, 115, 125]
+	  ZOrder		  -17
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  Object {
+	    $PropName		    "MaskObject"
+	    $ObjectID		    41
+	    $ClassName		    "Simulink.Mask"
+	    Type		    "Weather Data From File"
+	    Description		    "Reads weather data from the specified binary file and outputs it as a Simulink bus signal.\n\nT"
+	    "he utility function convertTMY3() to creates a .MAT file compatible with this block. Use of this block requires t"
+	    "hat a Simulink bus object named 'BusDef_Weather' be defined in the base workspace. See the block help for details"
+	    "."
+	    Help		    "This block reads weather data from a binary (.MAT) file and outputs it as\na Simulink bus signal. Beca"
+	    "use the block uses Simulink's 'From File' block\ninternally for file I/O, there are several requirements for it t"
+	    "o function\ncorrectly:\n1. The user must create a bus definition named 'BusDef_Weather' for the\nweather data and"
+	    " save it to the base MATLAB workspace. This bus definition \nwill be automatically generated from the weather fil"
+	    "e if the 'Create\nSimulink bus definition automatically' checkbox is checked.\n2. The .MAT file must contain time"
+	    " series objects organized within a\nstructure (struct) object called 'ans'.\n3. The structure must match the bus "
+	    "definition. (If the block is allowed to\nautomatically generate the Simulink bus definition, this requirement wil"
+	    "l\nbe satisfied.)\n3. The .MAT file must be version 7.3 or higher.\n4. All time series in the .MAT file must have"
+	    " units of seconds; otherwise\nSimulink will interpret them incorrectly.\n\nThe utility script convertTMY3() is av"
+	    "ailable to convert TMY3-formatted\nweather data into MATLAB time series objects compatible with these\nrequiremen"
+	    "ts. See the convertTMY3() function documentation for details."
+	    Initialization	    "% Set the input file\nset_param([gcb '/From File'], 'Filename', fname);\n\n% Create the weath"
+	    "er bus automatically\nif initbus\n    % Open the weather data file\n    try\n        load(fname);\n        tmy3 ="
+	    " ans;\n    catch err\n        warning('CampusModeling:Weather:invalidFile', ...\n            ['Cannot open specif"
+	    "ied weather data file. ' ...\n             'Simulink bus definition cannot be created ' ...\n             'automa"
+	    "tically.']);\n         return\n    end\n    \n    % Create the bus\n    BusDef_Weather = Simulink.Bus;\n    BusDe"
+	    "f_Weather.Description = 'TMY3 Weather Data';\n    \n    % Populate the bus\n    fn = fieldnames(tmy3);\n    for i"
+	    " = 1:length(fn)\n        % Create bus element w/ proper names, etc\n        x = Simulink.BusElement;\n        x.N"
+	    "ame = fn{i};\n        if isfield( tmy3.(fn{i}).DataInfo, 'Units')\n            x.DocUnits = tmy3.(fn{i}).DataInfo"
+	    ".Units;\n        end\n        if isfield( tmy3.(fn{i}).DataInfo, 'UserData')\n            x.Description = tmy3.(f"
+	    "n{i}).DataInfo.UserData;\n        end\n\n        % Store in bus\n        BusDef_Weather.Elements(i) = x;\n    end"
+	    "\n    \n    % Place in base workspace\n    assignin('base', 'BusDef_Weather', BusDef_Weather);\n    \n    % Clear"
+	    " local copy\n    clear('BusDef_Weather');\nend\n\n% Check for the precense of a bus definition\nok = evalin( 'bas"
+	    "e', 'exist(''BusDef_Weather'',''var'')' );\nassert( ok == 1, ...\n    'CampusModeling:Weather:missingBusDefinitio"
+	    "n', ...\n    ['No bus definition for weather data exists in ' ...\n     'the base workspace; please create one.']"
+	    " );\n"
+	    SelfModifiable	    "on"
+	    Display		    "image(imread('SkyImage.png'))\nport_label('output', 1, 'data');"
+	    Array {
+	      Type		      "Simulink.MaskParameter"
+	      Dimension		      2
+	      Object {
+		$ObjectID		42
+		Type			"edit"
+		Name			"fname"
+		Prompt			"Weather file"
+		Value			"'TMY3.mat'"
+		Tunable			"off"
+	      }
+	      Object {
+		$ObjectID		43
+		Type			"checkbox"
+		Name			"initbus"
+		Prompt			"Create Simulink bus definition automatically?"
+		Value			"on"
+		Tunable			"off"
+	      }
+	      PropName		      "Parameters"
+	    }
+	  }
+	  System {
+	    Name		    "Weather Data"
+	    Location		    [52, 49, 801, 628]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    SIDHighWatermark	    "24"
+	    Block {
+	      BlockType		      FromFile
+	      Name		      "From File"
+	      SID		      "1:22"
+	      Position		      [35, 43, 100, 67]
+	      ZOrder		      28
+	      FileName		      "TMY3.mat"
+	      OutDataTypeStr	      "Bus: BusDef_Weather"
+	      SampleTime	      "0"
+	      ExtrapolationBeforeFirstDataPoint	"Hold first value"
+	      ExtrapolationAfterLastDataPoint "Hold last value"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Output"
+	      SID		      "1:3"
+	      Position		      [170, 48, 200, 62]
+	      ZOrder		      -2
+	      IconDisplay	      "Port number"
+	      OutDataTypeStr	      "Bus: BusDef_Weather"
+	    }
+	    Line {
+	      SrcBlock		      "From File"
+	      SrcPort		      1
+	      DstBlock		      "Output"
+	      DstPort		      1
+	    }
+	  }
+	}
       }
     }
   }

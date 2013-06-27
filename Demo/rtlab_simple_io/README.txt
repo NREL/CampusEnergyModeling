@@ -1,10 +1,29 @@
-NOTE: Make sure to include the conf and bin files. More information inside the Simulink Model. 
+This demonstration consists of two files:
+1.	'rtlab_simple_io.mdl' demonstrates simple communication using RT-LAB and an Opal-RT real-time target.
+2.	'model_aio' demonstrates hardware-in-loop analog I/O.
 
-Features:
-• This is setup to run on the RT-LAB machine but can also run properly in Simulink. 
-• Simulink model and configuration files to use AnalogIn/AnalogOut modules in the RT-LAB platform. 
+Features: 
+•	Demonstrates communication with an Opal-RT real-time target
+•	Simulink model and configuration files to use AnalogIn/AnalogOut modules in the RT-LAB platform
+	
+Requirements:
+•	MATLAB/Simulink (R2011b)
+•	RT-LAB
+•	Compatible Opal-RT real-time target (see 'Details')
 
+Instructions:
+1.	Review the 'Details' section below for required information.
+1.	Open the model in Simulink.
+2.	Simulate the model in Simulink and verify that no errors occur.
+3.	Create a project in RT-LAB and add these files (see the RT-LAB documentation).
+	NOTE: Make sure to include the conf and bin files. More information inside the Simulink Model.
+4.	Compile and run the project on the Opal-RT target.
 
+Comments:
+•	The model is set up to run on the RT-LAB machine but will also run properly in Simulink.
+•	Eventually, this demo might (should?) include the RT-LAB project files.
+
+Details:
 OP5142 Analog In/Out Example
 
 This example demonstrates how the Opal-RT OP5142 card can be used in an RT-LAB model for applying voltage values to the Analog Out channels of one OP5330 module and returning voltage values from Analog In channels of one OP5340 module, by using the OP5142EX1 Analog Out and OP5142EX1 Analog In blocks.

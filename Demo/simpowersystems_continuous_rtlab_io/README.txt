@@ -1,7 +1,7 @@
-This is demonstration of a phasor (frequency-domain) SimPowerSystems model running on Opal-RT hardware using RT-LAB and MATLAB 2011b.
+This is demonstration of a continuous (time-domain) SimPowerSystems model running on Opal-RT hardware using RT-LAB and MATLAB 2011b.
 
 Features: 
-•	SimPowerSystems phasor (frequency-domain) model running in real-time
+•	SimPowerSystems continuous (time-domain) model running in real-time
 •	Demonstration of I/O with RT-LAB for plotting/visualization
 	
 Requirements:

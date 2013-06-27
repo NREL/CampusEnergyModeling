@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.25"
+    ComputedModelVersion    "1.26"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -39,7 +39,7 @@ Model {
 	DockPosition		"Left"
 	Width			[50]
 	Height			[50]
-	Filter			[8]
+	Filter			[9]
       }
       Object {
 	$PropName		"ExplorerBarInfo"
@@ -56,7 +56,7 @@ Model {
 	LoadSaveID		"0"
 	Extents			[1641.0, 797.0]
 	ZoomFactor		[1.0]
-	Offset			[0.41610080961140739, 49.416666666666572]
+	Offset			[0.41610080961140739, 49.0]
       }
     }
   }
@@ -66,9 +66,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Jun 26 13:29:28 2013"
+  LastModifiedDate	  "Thu Jun 27 11:41:56 2013"
   RTWModifiedTimeStamp	  294154085
-  ModelVersionFormat	  "1.%<AutoIncrement:25>"
+  ModelVersionFormat	  "1.%<AutoIncrement:26>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1043,7 +1043,7 @@ Model {
       Ports		      [1, 3]
       Position		      [620, 163, 815, 297]
       ZOrder		      -19
-      LibraryVersion	      "1.36"
+      LibraryVersion	      "1.40"
       SourceBlock	      "CampusModeling/Buildings/E+ Building"
       SourceType	      "EnergyPlus Cosimulation"
       progname		      "'C:\\EnergyPlusV8-0-0\\RunEPlus.bat'"
@@ -1064,7 +1064,7 @@ Model {
       Ports		      [1, 3]
       Position		      [615, 494, 805, 626]
       ZOrder		      -20
-      LibraryVersion	      "1.36"
+      LibraryVersion	      "1.40"
       SourceBlock	      "CampusModeling/Buildings/E+ Building"
       SourceType	      "EnergyPlus Cosimulation"
       progname		      "'C:\\EnergyPlusV8-0-0\\RunEPlus.bat'"
@@ -1085,7 +1085,7 @@ Model {
       Ports		      [1, 3]
       Position		      [620, 821, 810, 959]
       ZOrder		      -21
-      LibraryVersion	      "1.36"
+      LibraryVersion	      "1.40"
       SourceBlock	      "CampusModeling/Buildings/E+ Building"
       SourceType	      "EnergyPlus Cosimulation"
       progname		      "'C:\\EnergyPlusV8-0-0\\RunEPlus.bat'"
@@ -2109,7 +2109,7 @@ Model {
       Ports		      [1, 3]
       Position		      [620, 328, 810, 462]
       ZOrder		      -35
-      LibraryVersion	      "1.36"
+      LibraryVersion	      "1.40"
       SourceBlock	      "CampusModeling/Buildings/E+ Building"
       SourceType	      "EnergyPlus Cosimulation"
       progname		      "'C:\\EnergyPlusV8-0-0\\RunEPlus.bat'"
@@ -2130,7 +2130,7 @@ Model {
       Ports		      [1, 3]
       Position		      [615, 659, 815, 791]
       ZOrder		      -36
-      LibraryVersion	      "1.36"
+      LibraryVersion	      "1.40"
       SourceBlock	      "CampusModeling/Buildings/E+ Building"
       SourceType	      "EnergyPlus Cosimulation"
       progname		      "'C:\\EnergyPlusV8-0-0\\RunEPlus.bat'"
@@ -2204,7 +2204,7 @@ Model {
       BackgroundColor	      "orange"
       Floating		      off
       Location		      [909, 200, 1762, 899]
-      Open		      on
+      Open		      off
       NumInputPorts	      "2"
       List {
 	ListType		AxesTitles
@@ -2223,8 +2223,8 @@ Model {
       }
       ShowLegends	      off
       TimeRange		      "3000000"
-      YMin		      "5~0"
-      YMax		      "32.5~650000"
+      YMin		      "12~0"
+      YMax		      "29~425000"
       DataFormat	      "StructureWithTime"
       LimitDataPoints	      off
       SampleTime	      "0"

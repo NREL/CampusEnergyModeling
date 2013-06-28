@@ -14,8 +14,7 @@ Requirements:
 •	Campus Modeling project MATLAB/Simulink libraries
 
 Instructions: 
-1.	Open MATLAB and set the working directory to the folder that contains this README file
-2.	Run the script 'weather_demo_init.m' to convert and save the TMY3 weather data to binary format
-3.	Run the model 'weather_demo.mdl' and view the results on the scope
-4.	If desired, change the 'Weather Data' block to read a different data source and re-run the model
-
+1.	Open MATLAB and set the working directory to the folder that contains this README file.
+2.	Run the script 'weather_demo_init.m' to convert and save the TMY3 weather data to binary format.
+3.	Run the model 'weather_demo.mdl' and view the results on the scope.
+4.	If desired, change the 'Weather Data' block to read a different data source and re-run the model.

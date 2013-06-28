@@ -17,7 +17,7 @@
 %   x = convertTMY3(filename,varargin)
 %
 % INPUTS:
-%   filename =  The name of the TMY3 data fil to convert
+%   filename =  The name of the TMY3 data file to convert
 %   varargin =  (Optional) Additional arguments passed as name-value pairs
 %               (see OPTIONAL INPUTS below)
 %

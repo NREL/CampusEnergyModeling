@@ -10,9 +10,6 @@ Requirements:
 •	SimPowerSystems
 
 Instructions: 
-1.	Run the model
-2.	Adjust the real and reactive power sliders up and down while the simulation runs
-3.	Stop the simulation and examine the results in the scope
-
-
-
+1.	Run the model.
+2.	Adjust the real and reactive power sliders up and down while the simulation runs.
+3.	Stop the simulation and examine the results in the scope.

@@ -11,10 +11,10 @@ Requirements:
 •	Compatible Opal-RT real-time target
 
 Instructions: 
-1.	Open the model in Simulink
-2.	Simulate the model in Simulink and verify that no errors occur
-3.	Create a project in RT-LAB and add these files (see the RT-LAB documentation)
-4.	Compile and run the project on the Opal-RT target
+1.	Open the model in Simulink.
+2.	Simulate the model in Simulink and verify that no errors occur.
+3.	Create a project in RT-LAB and add these files (see the RT-LAB documentation).
+4.	Compile and run the project on the Opal-RT target.
 
 Comments:
 •	The model is set up to run on the RT-LAB machine but will also run properly in Simulink.

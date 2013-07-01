@@ -31,6 +31,12 @@
 % 1. This function is intended to be called internally by other functions,
 %    and therefore performs no error checking of its own on the optional
 %    arguments.
+%
+% REFERENCE:
+%   S. Frank, "Optimal Design of Mixed AC-DC Distribution Systems for
+%   Commercial Buildings," Appendix G, Dissertation, Colorado School of
+%   Mines, Golden, CO, 2013. [Online]. Available:
+%   http://www.stevefrank.info/publications.html
 
 %% License %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Optimization of Mixed AC-DC Building Electrical Distribution Systems    %

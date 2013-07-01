@@ -52,9 +52,16 @@
 %    and therefore performs no error checking of its own on the optional
 %    arguments, including matching of name-value pairs. If you get weird
 %    errors when using argCheck(), check for proper name-value pairs.
+%
 % 2. The function will blindly assert such things as simultaneous strict
 %    negativity and positivity (obiviously generating an error for any
 %    input), so care should be taken when turning on these assertions.
+%
+% REFERENCE:
+%   S. Frank, "Optimal Design of Mixed AC-DC Distribution Systems for
+%   Commercial Buildings," Appendix G, Dissertation, Colorado School of
+%   Mines, Golden, CO, 2013. [Online]. Available:
+%   http://www.stevefrank.info/publications.html
 
 %% License %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Optimization of Mixed AC-DC Building Electrical Distribution Systems    %

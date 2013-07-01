@@ -55,12 +55,16 @@
 % 2. The smaller 'Itol' is, the longer the script will take to run. Set it
 %    to something reasonable.
 %
-% REFERENCE:
+% REFERENCES:
 %   L. Gentile Polese, S. Frank, M. Alahmad, K. Lee, and C. Waters,
 %   "Modeling and power efficiency analysis of building electrical
 %   distribution systems," National Renewable Energy Laboratory, Golden,
 %   CO, Technical Report TP-5500-52657, Sep. 2011.
 %
+%   S. Frank, "Optimal Design of Mixed AC-DC Distribution Systems for
+%   Commercial Buildings," Appendix G, Dissertation, Colorado School of
+%   Mines, Golden, CO, 2013. [Online]. Available:
+%   http://www.stevefrank.info/publications.html
 
 %% License %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Optimization of Mixed AC-DC Building Electrical Distribution Systems    %

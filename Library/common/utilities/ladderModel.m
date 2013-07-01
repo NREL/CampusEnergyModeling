@@ -38,6 +38,12 @@
 % 1. Default values for N, kR, and kL are set to provide an optimal
 %    response from DC through 1 decade above the skin effect corner
 %    frequency. (See Skin Effect paper.)
+%
+% REFERENCE:
+%   S. Frank, "Optimal Design of Mixed AC-DC Distribution Systems for
+%   Commercial Buildings," Appendix G, Dissertation, Colorado School of
+%   Mines, Golden, CO, 2013. [Online]. Available:
+%   http://www.stevefrank.info/publications.html
 
 %% License %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Optimization of Mixed AC-DC Building Electrical Distribution Systems    %

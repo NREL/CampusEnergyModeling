@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.41"
+    ComputedModelVersion    "1.42"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -32,7 +32,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [540.0, 16.0, 1370.0, 1013.0]
+      Location		      [27.0, 12.0, 1370.0, 1013.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -71,9 +71,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Jun 26 17:01:26 2013"
-  RTWModifiedTimeStamp	  294166854
-  ModelVersionFormat	  "1.%<AutoIncrement:41>"
+  LastModifiedDate	  "Mon Jul 01 17:07:06 2013"
+  RTWModifiedTimeStamp	  294599216
+  ModelVersionFormat	  "1.%<AutoIncrement:42>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -819,7 +819,7 @@ Model {
   }
   System {
     Name		    "simpowersystems_constant_power"
-    Location		    [540, 16, 1910, 1029]
+    Location		    [27, 12, 1397, 1025]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    212
@@ -869,7 +869,7 @@ Model {
       Ports		      [1, 0, 0, 0, 0, 4]
       Position		      [470, 442, 550, 528]
       ZOrder		      5
-      LibraryVersion	      "1.40"
+      LibraryVersion	      "1.42"
       SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "load"
@@ -955,7 +955,7 @@ Model {
       ZOrder		      -14
       BackgroundColor	      "lightBlue"
       Floating		      off
-      Location		      [93, 477, 522, 1016]
+      Location		      [938, 328, 1367, 867]
       Open		      off
       NumInputPorts	      "2"
       TickLabels	      "on"

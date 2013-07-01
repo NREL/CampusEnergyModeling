@@ -41,8 +41,8 @@ Library {
 	$ObjectID		5
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"12"
+	ViewObjType		"SimulinkTopLevel"
+	LoadSaveID		"0"
 	Extents			[901.0, 716.0]
 	ZoomFactor		[1.0]
 	Offset			[0.0, 0.0]
@@ -55,9 +55,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Jun 26 16:59:31 2013"
-  RTWModifiedTimeStamp	  294166653
-  ModelVersionFormat	  "1.%<AutoIncrement:40>"
+  LastModifiedDate	  "Mon Jul 01 17:18:33 2013"
+  RTWModifiedTimeStamp	  294599651
+  ModelVersionFormat	  "1.%<AutoIncrement:43>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -693,10 +693,36 @@ Library {
       SampleTime	      "-1"
     }
     Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      SamplingMode	      "Sample based"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Inherit from 'Constant value'"
+      LockScale		      off
+      SampleTime	      "inf"
+      FramePeriod	      "inf"
+      PreserveConstantTs      off
+    }
+    Block {
       BlockType		      Demux
       Outputs		      "4"
       DisplayOption	      "none"
       BusSelectionMode	      off
+    }
+    Block {
+      BlockType		      EnablePort
+      StatesWhenEnabling      "held"
+      PropagateVarSize	      "Only when enabling"
+      ShowOutputPort	      off
+      ZeroCross		      on
+      PortDimensions	      "1"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "double"
+      Interpolate	      on
     }
     Block {
       BlockType		      From
@@ -752,6 +778,169 @@ Library {
       LatchByDelayingOutsideSignal off
       LatchInputForFeedbackSignals off
       Interpolate	      on
+    }
+    Block {
+      BlockType		      Logic
+      Operator		      "AND"
+      Inputs		      "2"
+      IconShape		      "rectangular"
+      AllPortsSameDT	      on
+      OutDataTypeStr	      "Inherit: Logical (see Configuration Parameters: Optimization)"
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Lookup_n-D
+      NumberOfTableDimensions "2"
+      BreakpointsForDimension1 "[10,22,31]"
+      BreakpointsForDimension2 "[10,22,31]"
+      BreakpointsForDimension3 "[1:3]"
+      BreakpointsForDimension4 "[1:3]"
+      BreakpointsForDimension5 "[1:3]"
+      BreakpointsForDimension6 "[1:3]"
+      BreakpointsForDimension7 "[1:3]"
+      BreakpointsForDimension8 "[1:3]"
+      BreakpointsForDimension9 "[1:3]"
+      BreakpointsForDimension10	"[1:3]"
+      BreakpointsForDimension11	"[1:3]"
+      BreakpointsForDimension12	"[1:3]"
+      BreakpointsForDimension13	"[1:3]"
+      BreakpointsForDimension14	"[1:3]"
+      BreakpointsForDimension15	"[1:3]"
+      BreakpointsForDimension16	"[1:3]"
+      BreakpointsForDimension17	"[1:3]"
+      BreakpointsForDimension18	"[1:3]"
+      BreakpointsForDimension19	"[1:3]"
+      BreakpointsForDimension20	"[1:3]"
+      BreakpointsForDimension21	"[1:3]"
+      BreakpointsForDimension22	"[1:3]"
+      BreakpointsForDimension23	"[1:3]"
+      BreakpointsForDimension24	"[1:3]"
+      BreakpointsForDimension25	"[1:3]"
+      BreakpointsForDimension26	"[1:3]"
+      BreakpointsForDimension27	"[1:3]"
+      BreakpointsForDimension28	"[1:3]"
+      BreakpointsForDimension29	"[1:3]"
+      BreakpointsForDimension30	"[1:3]"
+      BreakpointsForDimension1Min "[]"
+      BreakpointsForDimension2Min "[]"
+      BreakpointsForDimension3Min "[]"
+      BreakpointsForDimension4Min "[]"
+      BreakpointsForDimension5Min "[]"
+      BreakpointsForDimension6Min "[]"
+      BreakpointsForDimension7Min "[]"
+      BreakpointsForDimension8Min "[]"
+      BreakpointsForDimension9Min "[]"
+      BreakpointsForDimension10Min "[]"
+      BreakpointsForDimension11Min "[]"
+      BreakpointsForDimension12Min "[]"
+      BreakpointsForDimension13Min "[]"
+      BreakpointsForDimension14Min "[]"
+      BreakpointsForDimension15Min "[]"
+      BreakpointsForDimension16Min "[]"
+      BreakpointsForDimension17Min "[]"
+      BreakpointsForDimension18Min "[]"
+      BreakpointsForDimension19Min "[]"
+      BreakpointsForDimension20Min "[]"
+      BreakpointsForDimension21Min "[]"
+      BreakpointsForDimension22Min "[]"
+      BreakpointsForDimension23Min "[]"
+      BreakpointsForDimension24Min "[]"
+      BreakpointsForDimension25Min "[]"
+      BreakpointsForDimension26Min "[]"
+      BreakpointsForDimension27Min "[]"
+      BreakpointsForDimension28Min "[]"
+      BreakpointsForDimension29Min "[]"
+      BreakpointsForDimension30Min "[]"
+      BreakpointsForDimension1Max "[]"
+      BreakpointsForDimension2Max "[]"
+      BreakpointsForDimension3Max "[]"
+      BreakpointsForDimension4Max "[]"
+      BreakpointsForDimension5Max "[]"
+      BreakpointsForDimension6Max "[]"
+      BreakpointsForDimension7Max "[]"
+      BreakpointsForDimension8Max "[]"
+      BreakpointsForDimension9Max "[]"
+      BreakpointsForDimension10Max "[]"
+      BreakpointsForDimension11Max "[]"
+      BreakpointsForDimension12Max "[]"
+      BreakpointsForDimension13Max "[]"
+      BreakpointsForDimension14Max "[]"
+      BreakpointsForDimension15Max "[]"
+      BreakpointsForDimension16Max "[]"
+      BreakpointsForDimension17Max "[]"
+      BreakpointsForDimension18Max "[]"
+      BreakpointsForDimension19Max "[]"
+      BreakpointsForDimension20Max "[]"
+      BreakpointsForDimension21Max "[]"
+      BreakpointsForDimension22Max "[]"
+      BreakpointsForDimension23Max "[]"
+      BreakpointsForDimension24Max "[]"
+      BreakpointsForDimension25Max "[]"
+      BreakpointsForDimension26Max "[]"
+      BreakpointsForDimension27Max "[]"
+      BreakpointsForDimension28Max "[]"
+      BreakpointsForDimension29Max "[]"
+      BreakpointsForDimension30Max "[]"
+      BreakpointsForDimension1DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension2DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension3DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension4DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension5DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension6DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension7DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension8DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension9DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension10DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension11DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension12DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension13DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension14DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension15DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension16DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension17DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension18DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension19DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension20DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension21DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension22DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension23DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension24DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension25DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension26DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension27DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension28DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension29DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension30DataTypeStr "Inherit: Same as corresponding input"
+      IndexSearchMethod	      "Binary search"
+      BeginIndexSearchUsingPreviousIndexResult off
+      UseOneInputPortForAllInputData off
+      Table		      "[4 5 6;16 19 20;10 18 23]"
+      TableMin		      "[]"
+      TableMax		      "[]"
+      TableDataTypeStr	      "Inherit: Same as output"
+      IntermediateResultsDataTypeStr "Inherit: Same as output"
+      InterpMethod	      "Linear"
+      ExtrapMethod	      "Linear"
+      DiagnosticForOutOfRangeInput "None"
+      RemoveProtectionInput   off
+      UseLastTableValue	      off
+      SampleTime	      "-1"
+      InputSameDT	      on
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+      FractionDataTypeStr     "Inherit: Inherit via internal rule"
+      SupportTunableTableSize off
+      MaximumIndicesForEachDimension "[]"
+      LUTDesignTableMode      "Redesign Table"
+      LUTDesignDataSource     "Block Dialog"
+      LUTDesignFunctionName   "sqrt(x)"
+      LUTDesignUseExistingBP  on
+      LUTDesignRelError	      "0.01"
+      LUTDesignAbsError	      "1e-6"
     }
     Block {
       BlockType		      M-S-Function
@@ -881,11 +1070,26 @@ Library {
       SaturateOnIntegerOverflow	on
       SampleTime	      "-1"
     }
+    Block {
+      BlockType		      Switch
+      Criteria		      "u2 >= Threshold"
+      Threshold		      "0"
+      InputSameDT	      on
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      ZeroCross		      on
+      SampleTime	      "-1"
+      AllowDiffInputSizes     off
+    }
   }
   System {
     Name		    "CampusModeling"
     Location		    [828, 117, 1779, 999]
-    Open		    off
+    Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -898,7 +1102,7 @@ Library {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "122"
+    SIDHighWatermark	    "144"
     Block {
       BlockType		      SubSystem
       Name		      "Buildings"
@@ -1077,7 +1281,7 @@ Library {
       System {
 	Name			"Electrical"
 	Location		[828, 117, 1779, 999]
-	Open			on
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1110,13 +1314,19 @@ Library {
 	    Type		    "Constant Power Source/Load"
 	    Description		    "Implements a controllable three-phase, constant power source or load, where VI* = P + jQ (in pe"
 	    "r-unit)."
-	    Help		    "Implements a controllable three-phase, constant power source or load,\nwhere VI* = P + jQ (in per-unit"
-	    ").\n\nTO DO: Additional documentation."
-	    Initialization	    "% Check voltages\nif VNom <= 0\n    error('Nominal line-to-line voltage for a constant power "
-	    "block must be strictly positive.');\nend\nif VLow <= 0\n    error('Lower cutoff voltage for a constant power bloc"
-	    "k must be strictly positive.');\nend\n\n% Note: block internals are with a load convention.\n% The following supp"
-	    "lies a negative multiplier to the load\n% if the source convention is selected.\nif Conven == 1\n    % Source con"
-	    "vention\n    InputGain = -1;\nelse\n    % Load convention\n    InputGain = 1;\nend\n"
+	    Help		    "Implements a controllable three-phase, constant power source or load\nin SimPowerSystems (phasor mode)"
+	    ". The load characteristic is given by\nP + jQ = sqrt(3)VI*, in which\n    V = Positive sequence line-to-line volt"
+	    "age (V)\n    I = Positive sequence phase current (A)\n    P = Positive sequence real power (from PQ input)\n    Q"
+	    " = Positive sequence reactive power (from PQ input)\n\nThe block supplies P + jQ if the source convention is spec"
+	    "ified and\nconsumes P + jQ if the load convention is specified.\n\nThe nominal input fields in the mask are used "
+	    "to initialize the block\nparameters. If the nominal values are close to the actual values during\nsimulation, the"
+	    "n the block will converge more rapidly.\n\nIf the positive sequence voltage falls below the per-unit lower voltag"
+	    "e\nlimit (on the base specified by the nominal line-to-line voltage), then\nthe block will behave as a constant c"
+	    "urrent source rather than a constant\npower source, with the current magnitude capped at the level required to\ns"
+	    "upply full power at V = 0.7 pu. This feature avoids current runaway that\nwould otherwise occur during voltage co"
+	    "llapes.\n\nNOTE: This block is compatible only with SimPowerSystems' phasor simulation\nmode."
+	    Initialization	    "% Call initialization to calculate block variables\nInputGain = ...\n    ConstantPowerSourceL"
+	    "oad_cb(gcb, 'init', ...\n    Conven, PNom, QNom, VNom, fNom, VLow);"
 	    Array {
 	      Type		      "Simulink.MaskParameter"
 	      Dimension		      6
@@ -1176,7 +1386,7 @@ Library {
 	  }
 	  System {
 	    Name		    "Constant Power\nSource or Load"
-	    Location		    [629, 112, 1892, 1011]
+	    Location		    [828, 117, 1779, 999]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -1420,7 +1630,7 @@ Library {
 	      }
 	      System {
 		Name			"Measurements"
-		Location		[629, 112, 1892, 1011]
+		Location		[828, 117, 1779, 999]
 		Open			off
 		ModelBrowserVisibility	off
 		ModelBrowserWidth	200
@@ -1524,7 +1734,7 @@ Library {
 		  }
 		  System {
 		    Name		    "Positive Sequence\n(Phasor)\nCurrent"
-		    Location		    [-8, -8, 1928, 1048]
+		    Location		    [828, 117, 1779, 999]
 		    Open		    off
 		    ModelBrowserVisibility  off
 		    ModelBrowserWidth	    200
@@ -2271,7 +2481,7 @@ Library {
       }
       System {
 	Name			"PV"
-	Location		[858, 52, 1524, 904]
+	Location		[828, 117, 1779, 999]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -2284,6 +2494,563 @@ Library {
 	TiledPageScale		1
 	ShowPageBoundaries	off
 	ZoomFactor		"100"
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Generic Inverter"
+	  SID			  "123"
+	  Ports			  [1, 1]
+	  Position		  [55, 49, 150, 151]
+	  ZOrder		  2
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  Object {
+	    $PropName		    "MaskObject"
+	    $ObjectID		    40
+	    $ClassName		    "Simulink.Mask"
+	    Type		    "Generic Inverter"
+	    Description		    "Implements the efficiency characteristic for a generic PV inverter using one of three models:\n"
+	    "- Fixed efficiency\n- Quadratic loss model\n- Lookup table\n\nSee the help for details for each of these models."
+	    Help		    "This block implements the efficiency characteristic for a generic PV\ninverter using one of three mode"
+	    "ls:\n- Fixed efficiency\n- Quadratic loss model\n- Lookup table\n\nFixed Efficiency:\nSpecify the fixed inverter "
+	    "efficiency as a fraction.\n\nQuadratic Loss Model:\nSpecify the loss model coefficients such that\nPout = Pin - ("
+	    "alpha + beta*Pin + gamma*Pin^2).\n\nLookup Table:\nSpecify two of the following three vectors: input power, outpu"
+	    "t power, and\nefficiency. Efficiencies must be entered as fractions and vector lengths\nmust match. The block aut"
+	    "omatically calculates the appropriate input-output\npower characteristic from the inputs provided according to th"
+	    "e\nrelationship Efficiency = Pout / Pin.\n\nWhen using the lookup table, do not include zeros in the efficiency v"
+	    "ector.\nOtherwise, a divide by zero error may result."
+	    Initialization	    "% Call initialization to calculate block variables\n[a, b, c, look_Pin, look_Pout] = ...\n   "
+	    " GenericInverter_cb(gcb, 'init', model_type, ...\n	fixed_eff, alpha, beta, gamma, ...\n    lookup_pair, lookup_in"
+	    ", lookup_out, lookup_eff);"
+	    Array {
+	      Type		      "Simulink.MaskParameter"
+	      Dimension		      9
+	      Object {
+		$ObjectID		41
+		Type			"popup"
+		Array {
+		  Type			  "Cell"
+		  Dimension		  3
+		  Cell			  "Fixed Efficiency"
+		  Cell			  "Quadratic"
+		  Cell			  "Lookup Table"
+		  PropName		  "TypeOptions"
+		}
+		Name			"model_type"
+		Prompt			"Inverter model"
+		Value			"Fixed Efficiency"
+		Tunable			"off"
+		Callback		"% Dynamic mask callback\nGenericInverter_cb(gcb, 'model_type') "
+	      }
+	      Object {
+		$ObjectID		42
+		Type			"edit"
+		Name			"fixed_eff"
+		Prompt			"Efficiency"
+		Value			"0.95"
+	      }
+	      Object {
+		$ObjectID		43
+		Type			"edit"
+		Name			"alpha"
+		Prompt			"Constant loss coefficient (W)"
+		Value			"1"
+		Enabled			"off"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		44
+		Type			"edit"
+		Name			"beta"
+		Prompt			"Linear loss coefficient (W/W)"
+		Value			"0.01"
+		Enabled			"off"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		45
+		Type			"edit"
+		Name			"gamma"
+		Prompt			"Quadratic loss coefficient (W/W^2)"
+		Value			"0.001"
+		Enabled			"off"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		46
+		Type			"popup"
+		Array {
+		  Type			  "Cell"
+		  Dimension		  3
+		  Cell			  "Input Power + Output Power"
+		  Cell			  "Input Power + Efficiency"
+		  Cell			  "Output Power + Efficiency"
+		  PropName		  "TypeOptions"
+		}
+		Name			"lookup_pair"
+		Prompt			"Specify..."
+		Value			"Input Power + Output Power"
+		Tunable			"off"
+		Enabled			"off"
+		Visible			"off"
+		Callback		"% Dynamic mask callback\nGenericInverter_cb(gcb, 'lookup_pair')"
+	      }
+	      Object {
+		$ObjectID		47
+		Type			"edit"
+		Name			"lookup_in"
+		Prompt			"Input power (W)"
+		Value			"[0, 10, 25, 50, 75, 100]"
+		Enabled			"off"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		48
+		Type			"edit"
+		Name			"lookup_out"
+		Prompt			"Output power (W)"
+		Value			"[0, 9, 24, 49, 73, 97]"
+		Enabled			"off"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		49
+		Type			"edit"
+		Name			"lookup_eff"
+		Prompt			"Efficiency"
+		Value			"[0.10, 0.80, 0.87, 0.93, 0.90, 0.88]"
+		Enabled			"off"
+		Visible			"off"
+	      }
+	      PropName		      "Parameters"
+	    }
+	  }
+	  System {
+	    Name		    "Generic Inverter"
+	    Location		    [88, 287, 1236, 1019]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Pin"
+	      SID		      "124"
+	      Position		      [35, 183, 65, 197]
+	      ZOrder		      -1
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nNot"
+	      SID		      "125"
+	      Ports		      [1, 1]
+	      Position		      [259, 245, 291, 275]
+	      ZOrder		      5
+	      BlockRotation	      270
+	      BlockMirror	      on
+	      NamePlacement	      "alternate"
+	      Operator		      "NOT"
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Lookup Table"
+	      SID		      "126"
+	      Ports		      [1, 1, 1]
+	      Position		      [225, 314, 325, 356]
+	      ZOrder		      2
+	      TreatAsAtomicUnit	      on
+	      MinAlgLoopOccurrences   off
+	      PropExecContextOutsideSubsystem off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      Opaque		      off
+	      RequestExecContextInheritance off
+	      MaskHideContents	      off
+	      System {
+		Name			"Lookup Table"
+		Location		[88, 287, 1236, 1019]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "Pin"
+		  SID			  "127"
+		  Position		  [110, 103, 140, 117]
+		  ZOrder		  -1
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  EnablePort
+		  Name			  "Enable"
+		  SID			  "128"
+		  Ports			  []
+		  Position		  [235, 20, 255, 40]
+		  ZOrder		  -2
+		}
+		Block {
+		  BlockType		  Lookup_n-D
+		  Name			  "1-D Lookup\nTable"
+		  SID			  "129"
+		  Ports			  [1, 1]
+		  Position		  [215, 78, 280, 142]
+		  ZOrder		  1
+		  NumberOfTableDimensions "1"
+		  BreakpointsForDimension1 "look_Pin"
+		  IndexSearchMethod	  "Linear search"
+		  BeginIndexSearchUsingPreviousIndexResult on
+		  UseOneInputPortForAllInputData on
+		  Table			  "look_Pout"
+		  DiagnosticForOutOfRangeInput "Warning"
+		  RndMeth		  "Simplest"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Pout"
+		  SID			  "130"
+		  Position		  [360, 103, 390, 117]
+		  ZOrder		  -3
+		  IconDisplay		  "Port number"
+		}
+		Line {
+		  SrcBlock		  "Pin"
+		  SrcPort		  1
+		  DstBlock		  "1-D Lookup\nTable"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "1-D Lookup\nTable"
+		  SrcPort		  1
+		  DstBlock		  "Pout"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Loss\nModel"
+	      SID		      "131"
+	      Position		      [140, 175, 170, 205]
+	      ZOrder		      7
+	      Value		      "model_type"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Quadratic Model"
+	      SID		      "132"
+	      Ports		      [1, 1, 1]
+	      Position		      [225, 84, 325, 126]
+	      ZOrder		      1
+	      NamePlacement	      "alternate"
+	      TreatAsAtomicUnit	      on
+	      MinAlgLoopOccurrences   off
+	      PropExecContextOutsideSubsystem off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      Opaque		      off
+	      RequestExecContextInheritance off
+	      MaskHideContents	      off
+	      System {
+		Name			"Quadratic Model"
+		Location		[88, 287, 1236, 1019]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "Pin"
+		  SID			  "133"
+		  Position		  [95, 103, 125, 117]
+		  ZOrder		  -1
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  EnablePort
+		  Name			  "Enable"
+		  SID			  "134"
+		  Ports			  []
+		  Position		  [235, 20, 255, 40]
+		  ZOrder		  -2
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant Loss\nCoefficient"
+		  SID			  "135"
+		  Position		  [270, 305, 300, 335]
+		  ZOrder		  4
+		  Value			  "a"
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "Linear Loss\nCoefficient"
+		  SID			  "136"
+		  Position		  [270, 235, 300, 265]
+		  ZOrder		  2
+		  Gain			  "b"
+		  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "Quadratic Loss\nCoefficient"
+		  SID			  "137"
+		  Position		  [270, 165, 300, 195]
+		  ZOrder		  3
+		  Gain			  "c"
+		  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Math
+		  Name			  "Square"
+		  SID			  "138"
+		  Ports			  [1, 1]
+		  Position		  [200, 165, 230, 195]
+		  ZOrder		  1
+		  Operator		  "magnitude^2"
+		}
+		Block {
+		  BlockType		  Sum
+		  Name			  "Sum"
+		  SID			  "139"
+		  Ports			  [2, 1]
+		  Position		  [400, 95, 430, 125]
+		  ZOrder		  7
+		  ShowName		  off
+		  IconShape		  "round"
+		  Inputs		  "|+-"
+		  InputSameDT		  off
+		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Sum
+		  Name			  "Sum1"
+		  SID			  "140"
+		  Ports			  [3, 1]
+		  Position		  [400, 165, 430, 195]
+		  ZOrder		  8
+		  BlockRotation		  270
+		  ShowName		  off
+		  IconShape		  "round"
+		  Inputs		  "+++||"
+		  InputSameDT		  off
+		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
+		  Port {
+		    PortNumber		    1
+		    Name		    "Ploss"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Pout"
+		  SID			  "141"
+		  Position		  [485, 103, 515, 117]
+		  ZOrder		  -3
+		  IconDisplay		  "Port number"
+		}
+		Line {
+		  SrcBlock		  "Pin"
+		  SrcPort		  1
+		  Points		  [41, 0]
+		  Branch {
+		    DstBlock		    "Sum"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, 70]
+		    Branch {
+		    Points		    [0, 70]
+		    DstBlock		    "Linear Loss\nCoefficient"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Square"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Line {
+		  SrcBlock		  "Square"
+		  SrcPort		  1
+		  DstBlock		  "Quadratic Loss\nCoefficient"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Quadratic Loss\nCoefficient"
+		  SrcPort		  1
+		  DstBlock		  "Sum1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Sum"
+		  SrcPort		  1
+		  DstBlock		  "Pout"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "Ploss"
+		  Labels		  [1, 1]
+		  SrcBlock		  "Sum1"
+		  SrcPort		  1
+		  DstBlock		  "Sum"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Linear Loss\nCoefficient"
+		  SrcPort		  1
+		  Points		  [89, 0]
+		  DstBlock		  "Sum1"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Constant Loss\nCoefficient"
+		  SrcPort		  1
+		  Points		  [110, 0]
+		  DstBlock		  "Sum1"
+		  DstPort		  3
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Select"
+	      SID		      "142"
+	      Ports		      [1, 1]
+	      Position		      [210, 175, 240, 205]
+	      ZOrder		      6
+	      LibraryVersion	      "1.274"
+	      SourceBlock	      "simulink/Logic and Bit\nOperations/Compare\nTo Constant"
+	      SourceType	      "Compare To Constant"
+	      relop		      "<="
+	      const		      "2"
+	      OutDataTypeStr	      "boolean"
+	      ZeroCross		      on
+	    }
+	    Block {
+	      BlockType		      Switch
+	      Name		      "Switch"
+	      SID		      "143"
+	      Position		      [445, 170, 495, 210]
+	      ZOrder		      4
+	      Criteria		      "u2 > Threshold"
+	      InputSameDT	      off
+	      SaturateOnIntegerOverflow	off
+	      ZeroCross		      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Pout"
+	      SID		      "144"
+	      Position		      [545, 183, 575, 197]
+	      ZOrder		      -2
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "Switch"
+	      SrcPort		      1
+	      DstBlock		      "Pout"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Loss\nModel"
+	      SrcPort		      1
+	      DstBlock		      "Select"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Logical\nNot"
+	      SrcPort		      1
+	      DstBlock		      "Lookup Table"
+	      DstPort		      enable
+	    }
+	    Line {
+	      SrcBlock		      "Pin"
+	      SrcPort		      1
+	      Points		      [30, 0]
+	      Branch {
+		Points			[0, -85]
+		DstBlock		"Quadratic Model"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 145]
+		DstBlock		"Lookup Table"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Quadratic Model"
+	      SrcPort		      1
+	      Points		      [55, 0; 0, 70]
+	      DstBlock		      "Switch"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Select"
+	      SrcPort		      1
+	      Points		      [30, 0]
+	      Branch {
+		DstBlock		"Logical\nNot"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Switch"
+		DstPort			2
+	      }
+	      Branch {
+		DstBlock		"Quadratic Model"
+		DstPort			enable
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Lookup Table"
+	      SrcPort		      1
+	      Points		      [55, 0; 0, -130]
+	      DstBlock		      "Switch"
+	      DstPort		      3
+	    }
+	  }
+	}
       }
     }
     Block {
@@ -2305,7 +3072,7 @@ Library {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		40
+	$ObjectID		50
 	$ClassName		"Simulink.Mask"
 	Display			"disp('Weather')"
       }
@@ -2340,7 +3107,7 @@ Library {
 	  MaskHideContents	  off
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    41
+	    $ObjectID		    51
 	    $ClassName		    "Simulink.Mask"
 	    Type		    "Weather Data From File"
 	    Description		    "Reads weather data from the specified binary file and outputs it as a Simulink bus signal.\n\nT"
@@ -2358,28 +3125,14 @@ Library {
 	    " units of seconds; otherwise\nSimulink will interpret them incorrectly.\n\nThe utility script convertTMY3() is av"
 	    "ailable to convert TMY3-formatted\nweather data into MATLAB time series objects compatible with these\nrequiremen"
 	    "ts. See the convertTMY3() function documentation for details."
-	    Initialization	    "% Set the input file\nset_param([gcb '/From File'], 'Filename', fname);\n\n% Create the weath"
-	    "er bus automatically\nif initbus\n    % Open the weather data file\n    try\n        load(fname);\n        tmy3 ="
-	    " ans;\n    catch err\n        warning('CampusModeling:Weather:invalidFile', ...\n            ['Cannot open specif"
-	    "ied weather data file. ' ...\n             'Simulink bus definition cannot be created ' ...\n             'automa"
-	    "tically.']);\n         return\n    end\n    \n    % Create the bus\n    BusDef_Weather = Simulink.Bus;\n    BusDe"
-	    "f_Weather.Description = 'TMY3 Weather Data';\n    \n    % Populate the bus\n    fn = fieldnames(tmy3);\n    for i"
-	    " = 1:length(fn)\n        % Create bus element w/ proper names, etc\n        x = Simulink.BusElement;\n        x.N"
-	    "ame = fn{i};\n        if isfield( tmy3.(fn{i}).DataInfo, 'Units')\n            x.DocUnits = tmy3.(fn{i}).DataInfo"
-	    ".Units;\n        end\n        if isfield( tmy3.(fn{i}).DataInfo, 'UserData')\n            x.Description = tmy3.(f"
-	    "n{i}).DataInfo.UserData;\n        end\n\n        % Store in bus\n        BusDef_Weather.Elements(i) = x;\n    end"
-	    "\n    \n    % Place in base workspace\n    assignin('base', 'BusDef_Weather', BusDef_Weather);\n    \n    % Clear"
-	    " local copy\n    clear('BusDef_Weather');\nend\n\n% Check for the precense of a bus definition\nok = evalin( 'bas"
-	    "e', 'exist(''BusDef_Weather'',''var'')' );\nassert( ok == 1, ...\n    'CampusModeling:Weather:missingBusDefinitio"
-	    "n', ...\n    ['No bus definition for weather data exists in ' ...\n     'the base workspace; please create one.']"
-	    " );\n"
+	    Initialization	    "% Run initialization callback\nWeather_cb(gcb, 'init', fname, initbus)"
 	    SelfModifiable	    "on"
 	    Display		    "image(imread('SkyImage.png'))\nport_label('output', 1, 'data');"
 	    Array {
 	      Type		      "Simulink.MaskParameter"
 	      Dimension		      2
 	      Object {
-		$ObjectID		42
+		$ObjectID		52
 		Type			"edit"
 		Name			"fname"
 		Prompt			"Weather file"
@@ -2387,7 +3140,7 @@ Library {
 		Tunable			"off"
 	      }
 	      Object {
-		$ObjectID		43
+		$ObjectID		53
 		Type			"checkbox"
 		Name			"initbus"
 		Prompt			"Create Simulink bus definition automatically?"

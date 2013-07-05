@@ -1,5 +1,5 @@
 Library {
-  Name			  "CampusModeling"
+  Name			  "CampusModeling2"
   Version		  7.8
   MdlSubVersion		  0
   SavedCharacterEncoding  "windows-1252"
@@ -16,9 +16,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Jun 26 16:38:40 2013"
-  RTWModifiedTimeStamp	  294165518
-  ModelVersionFormat	  "1.%<AutoIncrement:39>"
+  LastModifiedDate	  "Fri Jul 05 16:48:17 2013"
+  RTWModifiedTimeStamp	  294943448
+  ModelVersionFormat	  "1.%<AutoIncrement:56>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -614,10 +614,36 @@ Library {
       SampleTime	      "-1"
     }
     Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      SamplingMode	      "Sample based"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Inherit from 'Constant value'"
+      LockScale		      off
+      SampleTime	      "inf"
+      FramePeriod	      "inf"
+      PreserveConstantTs      off
+    }
+    Block {
       BlockType		      Demux
       Outputs		      "4"
       DisplayOption	      "none"
       BusSelectionMode	      off
+    }
+    Block {
+      BlockType		      EnablePort
+      StatesWhenEnabling      "held"
+      PropagateVarSize	      "Only when enabling"
+      ShowOutputPort	      off
+      ZeroCross		      on
+      PortDimensions	      "1"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "double"
+      Interpolate	      on
     }
     Block {
       BlockType		      From
@@ -660,6 +686,169 @@ Library {
       LatchByDelayingOutsideSignal off
       LatchInputForFeedbackSignals off
       Interpolate	      on
+    }
+    Block {
+      BlockType		      Logic
+      Operator		      "AND"
+      Inputs		      "2"
+      IconShape		      "rectangular"
+      AllPortsSameDT	      on
+      OutDataTypeStr	      "Inherit: Logical (see Configuration Parameters: Optimization)"
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Lookup_n-D
+      NumberOfTableDimensions "2"
+      BreakpointsForDimension1 "[10,22,31]"
+      BreakpointsForDimension2 "[10,22,31]"
+      BreakpointsForDimension3 "[1:3]"
+      BreakpointsForDimension4 "[1:3]"
+      BreakpointsForDimension5 "[1:3]"
+      BreakpointsForDimension6 "[1:3]"
+      BreakpointsForDimension7 "[1:3]"
+      BreakpointsForDimension8 "[1:3]"
+      BreakpointsForDimension9 "[1:3]"
+      BreakpointsForDimension10	"[1:3]"
+      BreakpointsForDimension11	"[1:3]"
+      BreakpointsForDimension12	"[1:3]"
+      BreakpointsForDimension13	"[1:3]"
+      BreakpointsForDimension14	"[1:3]"
+      BreakpointsForDimension15	"[1:3]"
+      BreakpointsForDimension16	"[1:3]"
+      BreakpointsForDimension17	"[1:3]"
+      BreakpointsForDimension18	"[1:3]"
+      BreakpointsForDimension19	"[1:3]"
+      BreakpointsForDimension20	"[1:3]"
+      BreakpointsForDimension21	"[1:3]"
+      BreakpointsForDimension22	"[1:3]"
+      BreakpointsForDimension23	"[1:3]"
+      BreakpointsForDimension24	"[1:3]"
+      BreakpointsForDimension25	"[1:3]"
+      BreakpointsForDimension26	"[1:3]"
+      BreakpointsForDimension27	"[1:3]"
+      BreakpointsForDimension28	"[1:3]"
+      BreakpointsForDimension29	"[1:3]"
+      BreakpointsForDimension30	"[1:3]"
+      BreakpointsForDimension1Min "[]"
+      BreakpointsForDimension2Min "[]"
+      BreakpointsForDimension3Min "[]"
+      BreakpointsForDimension4Min "[]"
+      BreakpointsForDimension5Min "[]"
+      BreakpointsForDimension6Min "[]"
+      BreakpointsForDimension7Min "[]"
+      BreakpointsForDimension8Min "[]"
+      BreakpointsForDimension9Min "[]"
+      BreakpointsForDimension10Min "[]"
+      BreakpointsForDimension11Min "[]"
+      BreakpointsForDimension12Min "[]"
+      BreakpointsForDimension13Min "[]"
+      BreakpointsForDimension14Min "[]"
+      BreakpointsForDimension15Min "[]"
+      BreakpointsForDimension16Min "[]"
+      BreakpointsForDimension17Min "[]"
+      BreakpointsForDimension18Min "[]"
+      BreakpointsForDimension19Min "[]"
+      BreakpointsForDimension20Min "[]"
+      BreakpointsForDimension21Min "[]"
+      BreakpointsForDimension22Min "[]"
+      BreakpointsForDimension23Min "[]"
+      BreakpointsForDimension24Min "[]"
+      BreakpointsForDimension25Min "[]"
+      BreakpointsForDimension26Min "[]"
+      BreakpointsForDimension27Min "[]"
+      BreakpointsForDimension28Min "[]"
+      BreakpointsForDimension29Min "[]"
+      BreakpointsForDimension30Min "[]"
+      BreakpointsForDimension1Max "[]"
+      BreakpointsForDimension2Max "[]"
+      BreakpointsForDimension3Max "[]"
+      BreakpointsForDimension4Max "[]"
+      BreakpointsForDimension5Max "[]"
+      BreakpointsForDimension6Max "[]"
+      BreakpointsForDimension7Max "[]"
+      BreakpointsForDimension8Max "[]"
+      BreakpointsForDimension9Max "[]"
+      BreakpointsForDimension10Max "[]"
+      BreakpointsForDimension11Max "[]"
+      BreakpointsForDimension12Max "[]"
+      BreakpointsForDimension13Max "[]"
+      BreakpointsForDimension14Max "[]"
+      BreakpointsForDimension15Max "[]"
+      BreakpointsForDimension16Max "[]"
+      BreakpointsForDimension17Max "[]"
+      BreakpointsForDimension18Max "[]"
+      BreakpointsForDimension19Max "[]"
+      BreakpointsForDimension20Max "[]"
+      BreakpointsForDimension21Max "[]"
+      BreakpointsForDimension22Max "[]"
+      BreakpointsForDimension23Max "[]"
+      BreakpointsForDimension24Max "[]"
+      BreakpointsForDimension25Max "[]"
+      BreakpointsForDimension26Max "[]"
+      BreakpointsForDimension27Max "[]"
+      BreakpointsForDimension28Max "[]"
+      BreakpointsForDimension29Max "[]"
+      BreakpointsForDimension30Max "[]"
+      BreakpointsForDimension1DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension2DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension3DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension4DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension5DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension6DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension7DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension8DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension9DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension10DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension11DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension12DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension13DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension14DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension15DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension16DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension17DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension18DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension19DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension20DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension21DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension22DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension23DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension24DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension25DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension26DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension27DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension28DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension29DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension30DataTypeStr "Inherit: Same as corresponding input"
+      IndexSearchMethod	      "Binary search"
+      BeginIndexSearchUsingPreviousIndexResult off
+      UseOneInputPortForAllInputData off
+      Table		      "[4 5 6;16 19 20;10 18 23]"
+      TableMin		      "[]"
+      TableMax		      "[]"
+      TableDataTypeStr	      "Inherit: Same as output"
+      IntermediateResultsDataTypeStr "Inherit: Same as output"
+      InterpMethod	      "Linear"
+      ExtrapMethod	      "Linear"
+      DiagnosticForOutOfRangeInput "None"
+      RemoveProtectionInput   off
+      UseLastTableValue	      off
+      SampleTime	      "-1"
+      InputSameDT	      on
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+      FractionDataTypeStr     "Inherit: Inherit via internal rule"
+      SupportTunableTableSize off
+      MaximumIndicesForEachDimension "[]"
+      LUTDesignTableMode      "Redesign Table"
+      LUTDesignDataSource     "Block Dialog"
+      LUTDesignFunctionName   "sqrt(x)"
+      LUTDesignUseExistingBP  on
+      LUTDesignRelError	      "0.01"
+      LUTDesignAbsError	      "1e-6"
     }
     Block {
       BlockType		      M-S-Function
@@ -788,10 +977,25 @@ Library {
       SaturateOnIntegerOverflow	on
       SampleTime	      "-1"
     }
+    Block {
+      BlockType		      Switch
+      Criteria		      "u2 >= Threshold"
+      Threshold		      "0"
+      InputSameDT	      on
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      ZeroCross		      on
+      SampleTime	      "-1"
+      AllowDiffInputSizes     off
+    }
   }
   System {
-    Name		    "CampusModeling"
-    Location		    [629, 112, 1580, 1011]
+    Name		    "CampusModeling2"
+    Location		    [828, 117, 1779, 851]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -805,7 +1009,7 @@ Library {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "126"
+    SIDHighWatermark	    "168"
     Block {
       BlockType		      SubSystem
       Name		      "Buildings"
@@ -813,7 +1017,7 @@ Library {
       Tag		      "Weather"
       Description	      "Contains blocks for acquiring and manipulating weather data."
       Ports		      []
-      Position		      [220, 49, 342, 168]
+      Position		      [380, 49, 502, 168]
       ZOrder		      -17
       BackgroundColor	      "green"
       MinAlgLoopOccurrences   off
@@ -831,7 +1035,7 @@ Library {
       MaskIconUnits	      "autoscale"
       System {
 	Name			"Buildings"
-	Location		[629, 112, 1580, 1011]
+	Location		[828, 117, 1779, 851]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -856,12 +1060,12 @@ Library {
 	  MaskType		  "EnergyPlus Cosimulation"
 	  MaskDescription	  "This block implements cosimulation with EnergyPlus by allowing Simulink to exchange input and ou"
 	  "tput data with it. Currently, EnergyPlus only supports real data."
-	  MaskHelp		  "This block implements cosimulation with EnergyPlus by allowing Simulink to\nexchange input and output "
-	  "data with it.\n\nWhen a simulation starts, EnergyPlus is also started. It will then run in\nparallel with Simulink."
-	  " They exchange input and output data via socket\ncommunication. When the simulation terminates, EnergyPlus will exi"
-	  "t.\n\nRefer to the manuals of MLE+ and/or BCVTB/EnergyPlus for details.\n\nINPUTS:\n- real: real vector input to En"
-	  "ergyPlus.\n\nOUTPUTS:\n- flag: status of EnergyPlus (0 if OK, if flag is non-zero, the simulation should stop).\n- "
-	  "time: current simulation time of EnergyPlus, in seconds.\n- real: real vector output from EnergyPlus."
+	  MaskHelp		  "This block implements cosimulation with EnergyPlus by allowing Simulink to exchange input and output d"
+	  "ata with it.\n\nWhen a simulation starts, EnergyPlus is also started. It will then run in parallel with Simulink. T"
+	  "hey exchange input and output data via socket communication. When the simulation terminates, EnergyPlus will exit.\n"
+	  "\nRefer to the manuals of MLE+ and/or BCVTB/EnergyPlus for details.\n\nINPUTS:\n- real: real vector input to Energy"
+	  "Plus.\n\nOUTPUTS:\n- flag: status of EnergyPlus (0 if OK, if flag is non-zero, the simulation should stop).\n- time"
+	  ": current simulation time of EnergyPlus, in seconds.\n- real: real vector output from EnergyPlus."
 	  MaskPromptString	  "E+ Executable Path|IDF File (without extension)|Weather Profile|Working Directory|Timeout (in m"
 	  "illiseconds)|Socket Port (0 = any available)|Socket Host ('' = local host)|BCVTB Directory|Time Step (in seconds)|N"
 	  "umber of Real Outputs"
@@ -888,12 +1092,52 @@ Library {
     }
     Block {
       BlockType		      SubSystem
+      Name		      "Data Acquisition"
+      SID		      "145"
+      Tag		      "Weather"
+      Description	      "Contains blocks for acquiring and manipulating weather data."
+      Ports		      []
+      Position		      [710, 49, 832, 168]
+      ZOrder		      1
+      BackgroundColor	      "cyan"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      MaskDisplay	      "disp('Data\\nAcquisition')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Data Acquisition"
+	Location		[828, 117, 1779, 851]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+      }
+    }
+    Block {
+      BlockType		      SubSystem
       Name		      "Electrical"
       SID		      "12"
       Tag		      "Weather"
       Description	      "Contains blocks for acquiring and manipulating weather data."
       Ports		      []
-      Position		      [50, 214, 172, 333]
+      Position		      [50, 49, 172, 168]
       ZOrder		      -17
       BackgroundColor	      "orange"
       MinAlgLoopOccurrences   off
@@ -911,7 +1155,7 @@ Library {
       MaskIconUnits	      "autoscale"
       System {
 	Name			"Electrical"
-	Location		[629, 112, 1892, 1011]
+	Location		[828, 117, 1779, 851]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -927,10 +1171,10 @@ Library {
 	Block {
 	  BlockType		  SubSystem
 	  Name			  "Constant Power\nSource or Load"
-	  SID			  "23"
+	  SID			  "74"
 	  Ports			  [1, 0, 0, 0, 0, 4]
-	  Position		  [65, 42, 145, 128]
-	  ZOrder		  1
+	  Position		  [45, 37, 125, 123]
+	  ZOrder		  4
 	  MinAlgLoopOccurrences	  off
 	  PropExecContextOutsideSubsystem off
 	  RTWSystemCode		  "Auto"
@@ -941,22 +1185,28 @@ Library {
 	  MaskType		  "Constant Power Source/Load"
 	  MaskDescription	  "Implements a controllable three-phase, constant power source or load, where VI* = P + jQ (in per"
 	  "-unit)."
-	  MaskHelp		  "Implements a controllable three-phase, constant power source or load,\nwhere VI* = P + jQ (in per-unit"
-	  ").\n\nTO DO: Additional documentation."
+	  MaskHelp		  "Implements a controllable three-phase, constant power source or load in SimPowerSystems (phasor mode)."
+	  " The load characteristic is given by P + jQ = sqrt(3)VI*, in which\n    V = Positive sequence line-to-line voltage "
+	  "(V)\n    I = Positive sequence phase current (A)\n    P = Positive sequence real power (from PQ input)\n    Q = Pos"
+	  "itive sequence reactive power (from PQ input)\n\nThe block supplies P + jQ if the source convention is specified an"
+	  "d consumes P + jQ if the load convention is specified.\n\nThe nominal input fields in the mask are used to initiali"
+	  "ze the block parameters. If the nominal values are close to the actual values during simulation, then the block wil"
+	  "l converge more rapidly.\n\nIf the positive sequence voltage falls below the per-unit lower voltage limit (on the b"
+	  "ase specified by the nominal line-to-line voltage), then the block will behave as a constant current source rather "
+	  "than a constant power source, with the current magnitude capped at the level required to supply full power at V = 0"
+	  ".7 pu. This feature avoids current runaway that would otherwise occur during voltage collapes.\n\nNOTE: This block "
+	  "is compatible only with SimPowerSystems' phasor simulation mode."
 	  MaskPromptString	  "Electrical convention|Nominal three-phase real power (W)|Nominal three-phase reactive power (VA"
 	  "R)|Nominal line-to-line voltage (VRMS)|Nominal frequency (Hz)|Lower voltage limit (pu)"
-	  MaskStyleString	  "popup(load|source),edit,edit,edit,edit,edit"
+	  MaskStyleString	  "popup(source|load),edit,edit,edit,edit,edit"
 	  MaskVariables		  "Conven=@1;PNom=@2;QNom=@3;VNom=@4;fNom=@5;VLow=@6;"
 	  MaskTunableValueString  "off,on,on,on,off,on"
 	  MaskCallbackString	  "|||||"
 	  MaskEnableString	  "on,on,on,on,on,on"
 	  MaskVisibilityString	  "on,on,on,on,on,on"
 	  MaskToolTipString	  "on,on,on,on,on,on"
-	  MaskInitialization	  "% Check voltages\nif VNom <= 0\n    error('Nominal line-to-line voltage for a constant power "
-	  "block must be strictly positive.');\nend\nif VLow <= 0\n    error('Lower cutoff voltage for a constant power block "
-	  "must be strictly positive.');\nend\n\n% Note: block internals are with a load convention.\n% The following supplies"
-	  " a negative multiplier to the load\n% if the source convention is selected.\nif Conven == 1\n    % Load convention\n"
-	  "    InputGain = 1;\nelseif Conven == 2\n    % Source convention\n    InputGain = -1;\nend\n"
+	  MaskInitialization	  "% Call initialization to calculate block variables\nInputGain = ...\n    ConstantPowerSourceL"
+	  "oad_cb(gcb, 'init', ...\n    Conven, PNom, QNom, VNom, fNom, VLow);"
 	  MaskIconFrame		  on
 	  MaskIconOpaque	  on
 	  MaskIconRotate	  "none"
@@ -965,7 +1215,7 @@ Library {
 	  MaskValueString	  "source|5000|2000|480|60|0.7"
 	  System {
 	    Name		    "Constant Power\nSource or Load"
-	    Location		    [629, 112, 1892, 1011]
+	    Location		    [828, 117, 1779, 999]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -981,7 +1231,7 @@ Library {
 	    Block {
 	      BlockType		      Inport
 	      Name		      "PQ"
-	      SID		      "24"
+	      SID		      "75"
 	      Position		      [40, 93, 70, 107]
 	      ZOrder		      -1
 	      IconDisplay	      "Port number"
@@ -991,7 +1241,7 @@ Library {
 	    Block {
 	      BlockType		      Math
 	      Name		      "Conjugate"
-	      SID		      "104"
+	      SID		      "76"
 	      Ports		      [1, 1]
 	      Position		      [340, 385, 370, 415]
 	      ZOrder		      1
@@ -1009,7 +1259,7 @@ Library {
 	    Block {
 	      BlockType		      Gain
 	      Name		      "Convert to 1-phase"
-	      SID		      "39"
+	      SID		      "77"
 	      Position		      [330, 185, 360, 215]
 	      ZOrder		      -8
 	      BlockRotation	      270
@@ -1029,7 +1279,7 @@ Library {
 	    Block {
 	      BlockType		      Sum
 	      Name		      "Correction Current"
-	      SID		      "40"
+	      SID		      "78"
 	      Ports		      [2, 1]
 	      Position		      [410, 455, 430, 475]
 	      ZOrder		      -19
@@ -1048,7 +1298,7 @@ Library {
 	    Block {
 	      BlockType		      Demux
 	      Name		      "Demux"
-	      SID		      "41"
+	      SID		      "79"
 	      Ports		      [1, 2]
 	      Position		      [190, 52, 195, 143]
 	      ZOrder		      -6
@@ -1071,7 +1321,7 @@ Library {
 	    Block {
 	      BlockType		      Product
 	      Name		      "Divide"
-	      SID		      "53"
+	      SID		      "80"
 	      Ports		      [2, 1]
 	      Position		      [337, 335, 368, 365]
 	      ZOrder		      -32
@@ -1087,7 +1337,7 @@ Library {
 	    Block {
 	      BlockType		      From
 	      Name		      "From"
-	      SID		      "54"
+	      SID		      "81"
 	      Position		      [851, 30, 879, 70]
 	      ZOrder		      -9
 	      BlockRotation	      270
@@ -1098,7 +1348,7 @@ Library {
 	    Block {
 	      BlockType		      Goto
 	      Name		      "Goto"
-	      SID		      "55"
+	      SID		      "82"
 	      Position		      [630, 450, 670, 480]
 	      ZOrder		      -10
 	      GotoTag		      "IVar"
@@ -1107,14 +1357,14 @@ Library {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "IA"
-	      SID		      "56"
+	      SID		      "83"
 	      Ports		      [1, 0, 0, 0, 0, 1, 1]
 	      Position		      [857, 205, 893, 250]
 	      ZOrder		      -35
 	      BlockRotation	      270
 	      BlockMirror	      on
 	      NamePlacement	      "alternate"
-	      LibraryVersion	      "1.2191"
+	      LibraryVersion	      "1.2088"
 	      FontName		      "Verdana"
 	      FontSize		      11
 	      SourceBlock	      "powerlib/Electrical\nSources/Controlled Current Source"
@@ -1129,14 +1379,14 @@ Library {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "IB"
-	      SID		      "59"
+	      SID		      "84"
 	      Ports		      [1, 0, 0, 0, 0, 1, 1]
 	      Position		      [927, 205, 963, 250]
 	      ZOrder		      -38
 	      BlockRotation	      270
 	      BlockMirror	      on
 	      NamePlacement	      "alternate"
-	      LibraryVersion	      "1.2191"
+	      LibraryVersion	      "1.2088"
 	      FontName		      "Verdana"
 	      FontSize		      11
 	      SourceBlock	      "powerlib/Electrical\nSources/Controlled Current Source"
@@ -1151,14 +1401,14 @@ Library {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "IC"
-	      SID		      "62"
+	      SID		      "85"
 	      Ports		      [1, 0, 0, 0, 0, 1, 1]
 	      Position		      [997, 205, 1033, 250]
 	      ZOrder		      -41
 	      BlockRotation	      270
 	      BlockMirror	      on
 	      NamePlacement	      "alternate"
-	      LibraryVersion	      "1.2191"
+	      LibraryVersion	      "1.2088"
 	      FontName		      "Verdana"
 	      FontSize		      11
 	      SourceBlock	      "powerlib/Electrical\nSources/Controlled Current Source"
@@ -1173,7 +1423,7 @@ Library {
 	    Block {
 	      BlockType		      Gain
 	      Name		      "Match Electrical\nConvention"
-	      SID		      "105"
+	      SID		      "86"
 	      Position		      [110, 85, 140, 115]
 	      ZOrder		      2
 	      Gain		      "InputGain"
@@ -1184,7 +1434,7 @@ Library {
 	    Block {
 	      BlockType		      SubSystem
 	      Name		      "Measurements"
-	      SID		      "65"
+	      SID		      "87"
 	      Ports		      [2, 2]
 	      Position		      [520, 263, 575, 332]
 	      ZOrder		      -44
@@ -1210,7 +1460,7 @@ Library {
 	      }
 	      System {
 		Name			"Measurements"
-		Location		[629, 112, 1892, 1011]
+		Location		[828, 117, 1779, 999]
 		Open			off
 		ModelBrowserVisibility	off
 		ModelBrowserWidth	200
@@ -1226,7 +1476,7 @@ Library {
 		Block {
 		  BlockType		  Inport
 		  Name			  "VIn"
-		  SID			  "66"
+		  SID			  "88"
 		  Position		  [60, 43, 90, 57]
 		  ZOrder		  -1
 		  IconDisplay		  "Port number"
@@ -1234,7 +1484,7 @@ Library {
 		Block {
 		  BlockType		  Inport
 		  Name			  "IIn"
-		  SID			  "67"
+		  SID			  "89"
 		  Position		  [60, 183, 90, 197]
 		  ZOrder		  -2
 		  Port			  "2"
@@ -1243,7 +1493,7 @@ Library {
 		Block {
 		  BlockType		  ComplexToMagnitudeAngle
 		  Name			  "Complex to\nMagnitude-Angle"
-		  SID			  "124"
+		  SID			  "90"
 		  Ports			  [1, 2]
 		  Position		  [305, 23, 335, 72]
 		  ZOrder		  13
@@ -1252,7 +1502,7 @@ Library {
 		Block {
 		  BlockType		  Saturate
 		  Name			  "Lower\nVoltage\nCutoff"
-		  SID			  "74"
+		  SID			  "91"
 		  Ports			  [1, 1]
 		  Position		  [380, 20, 410, 50]
 		  ZOrder		  14
@@ -1264,7 +1514,7 @@ Library {
 		Block {
 		  BlockType		  MagnitudeAngleToComplex
 		  Name			  "Magnitude-Angle\nto Complex"
-		  SID			  "125"
+		  SID			  "92"
 		  Ports			  [2, 1]
 		  Position		  [455, 22, 485, 73]
 		  ZOrder		  15
@@ -1274,7 +1524,7 @@ Library {
 		Block {
 		  BlockType		  Gain
 		  Name			  "Peak to\nRMS 1"
-		  SID			  "122"
+		  SID			  "93"
 		  Position		  [130, 35, 160, 65]
 		  ZOrder		  10
 		  NamePlacement		  "alternate"
@@ -1286,7 +1536,7 @@ Library {
 		Block {
 		  BlockType		  Gain
 		  Name			  "Peak to\nRMS 2"
-		  SID			  "123"
+		  SID			  "94"
 		  Position		  [130, 175, 160, 205]
 		  ZOrder		  11
 		  NamePlacement		  "alternate"
@@ -1298,7 +1548,7 @@ Library {
 		Block {
 		  BlockType		  SubSystem
 		  Name			  "Positive Sequence\n(Phasor)\nCurrent"
-		  SID			  "116"
+		  SID			  "95"
 		  Ports			  [1, 1]
 		  Position		  [205, 167, 250, 213]
 		  ZOrder		  9
@@ -1317,7 +1567,7 @@ Library {
 		  MaskIconUnits		  "autoscale"
 		  System {
 		    Name		    "Positive Sequence\n(Phasor)\nCurrent"
-		    Location		    [-8, -8, 1928, 1048]
+		    Location		    [828, 117, 1779, 999]
 		    Open		    off
 		    ModelBrowserVisibility  off
 		    ModelBrowserWidth	    200
@@ -1333,7 +1583,7 @@ Library {
 		    Block {
 		    BlockType		    Inport
 		    Name		    "abc"
-		    SID			    "117"
+		    SID			    "96"
 		    Position		    [65, 98, 95, 112]
 		    ZOrder		    4
 		    IconDisplay		    "Port number"
@@ -1341,7 +1591,7 @@ Library {
 		    Block {
 		    BlockType		    Gain
 		    Name		    "Gain1"
-		    SID			    "118"
+		    SID			    "97"
 		    Position		    [155, 85, 225, 125]
 		    ZOrder		    3
 		    Gain		    "[1 a a2]"
@@ -1349,7 +1599,7 @@ Library {
 		    Block {
 		    BlockType		    Gain
 		    Name		    "Gain3"
-		    SID			    "119"
+		    SID			    "98"
 		    Position		    [315, 87, 365, 123]
 		    ZOrder		    2
 		    ShowName		    off
@@ -1358,7 +1608,7 @@ Library {
 		    Block {
 		    BlockType		    Sum
 		    Name		    "Sum"
-		    SID			    "120"
+		    SID			    "99"
 		    Ports		    [1, 1]
 		    Position		    [255, 95, 275, 115]
 		    ZOrder		    1
@@ -1369,21 +1619,15 @@ Library {
 		    Block {
 		    BlockType		    Outport
 		    Name		    "seq"
-		    SID			    "121"
+		    SID			    "100"
 		    Position		    [435, 98, 465, 112]
 		    ZOrder		    5
 		    IconDisplay		    "Port number"
 		    }
 		    Line {
-		    SrcBlock		    "abc"
+		    SrcBlock		    "Sum"
 		    SrcPort		    1
-		    DstBlock		    "Gain1"
-		    DstPort		    1
-		    }
-		    Line {
-		    SrcBlock		    "Gain3"
-		    SrcPort		    1
-		    DstBlock		    "seq"
+		    DstBlock		    "Gain3"
 		    DstPort		    1
 		    }
 		    Line {
@@ -1393,9 +1637,15 @@ Library {
 		    DstPort		    1
 		    }
 		    Line {
-		    SrcBlock		    "Sum"
+		    SrcBlock		    "Gain3"
 		    SrcPort		    1
-		    DstBlock		    "Gain3"
+		    DstBlock		    "seq"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "abc"
+		    SrcPort		    1
+		    DstBlock		    "Gain1"
 		    DstPort		    1
 		    }
 		  }
@@ -1403,7 +1653,7 @@ Library {
 		Block {
 		  BlockType		  SubSystem
 		  Name			  "Positive Sequence\n(Phasor)\nVoltage"
-		  SID			  "111"
+		  SID			  "101"
 		  Ports			  [1, 1]
 		  Position		  [205, 27, 250, 73]
 		  ZOrder		  7
@@ -1438,7 +1688,7 @@ Library {
 		    Block {
 		    BlockType		    Inport
 		    Name		    "abc"
-		    SID			    "112"
+		    SID			    "102"
 		    Position		    [65, 98, 95, 112]
 		    ZOrder		    4
 		    IconDisplay		    "Port number"
@@ -1446,7 +1696,7 @@ Library {
 		    Block {
 		    BlockType		    Gain
 		    Name		    "Gain1"
-		    SID			    "106"
+		    SID			    "103"
 		    Position		    [155, 85, 225, 125]
 		    ZOrder		    3
 		    Gain		    "[1 a a2]"
@@ -1454,7 +1704,7 @@ Library {
 		    Block {
 		    BlockType		    Gain
 		    Name		    "Gain3"
-		    SID			    "107"
+		    SID			    "104"
 		    Position		    [315, 87, 365, 123]
 		    ZOrder		    2
 		    ShowName		    off
@@ -1463,7 +1713,7 @@ Library {
 		    Block {
 		    BlockType		    Sum
 		    Name		    "Sum"
-		    SID			    "108"
+		    SID			    "105"
 		    Ports		    [1, 1]
 		    Position		    [255, 95, 275, 115]
 		    ZOrder		    1
@@ -1474,21 +1724,15 @@ Library {
 		    Block {
 		    BlockType		    Outport
 		    Name		    "seq"
-		    SID			    "113"
+		    SID			    "106"
 		    Position		    [435, 98, 465, 112]
 		    ZOrder		    5
 		    IconDisplay		    "Port number"
 		    }
 		    Line {
-		    SrcBlock		    "abc"
+		    SrcBlock		    "Sum"
 		    SrcPort		    1
-		    DstBlock		    "Gain1"
-		    DstPort		    1
-		    }
-		    Line {
-		    SrcBlock		    "Gain3"
-		    SrcPort		    1
-		    DstBlock		    "seq"
+		    DstBlock		    "Gain3"
 		    DstPort		    1
 		    }
 		    Line {
@@ -1498,9 +1742,15 @@ Library {
 		    DstPort		    1
 		    }
 		    Line {
-		    SrcBlock		    "Sum"
+		    SrcBlock		    "Gain3"
 		    SrcPort		    1
-		    DstBlock		    "Gain3"
+		    DstBlock		    "seq"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "abc"
+		    SrcPort		    1
+		    DstBlock		    "Gain1"
 		    DstPort		    1
 		    }
 		  }
@@ -1508,7 +1758,7 @@ Library {
 		Block {
 		  BlockType		  Outport
 		  Name			  "VPos"
-		  SID			  "87"
+		  SID			  "107"
 		  Position		  [535, 43, 565, 57]
 		  ZOrder		  4
 		  IconDisplay		  "Port number"
@@ -1516,52 +1766,22 @@ Library {
 		Block {
 		  BlockType		  Outport
 		  Name			  "IPos"
-		  SID			  "88"
+		  SID			  "108"
 		  Position		  [535, 183, 565, 197]
 		  ZOrder		  12
 		  Port			  "2"
 		  IconDisplay		  "Port number"
 		}
 		Line {
-		  SrcBlock		  "VIn"
-		  SrcPort		  1
-		  DstBlock		  "Peak to\nRMS 1"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "IIn"
-		  SrcPort		  1
-		  DstBlock		  "Peak to\nRMS 2"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Peak to\nRMS 1"
-		  SrcPort		  1
-		  DstBlock		  "Positive Sequence\n(Phasor)\nVoltage"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Peak to\nRMS 2"
-		  SrcPort		  1
-		  DstBlock		  "Positive Sequence\n(Phasor)\nCurrent"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Positive Sequence\n(Phasor)\nCurrent"
-		  SrcPort		  1
-		  DstBlock		  "IPos"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Positive Sequence\n(Phasor)\nVoltage"
-		  SrcPort		  1
-		  DstBlock		  "Complex to\nMagnitude-Angle"
-		  DstPort		  1
-		}
-		Line {
 		  SrcBlock		  "Complex to\nMagnitude-Angle"
+		  SrcPort		  2
+		  DstBlock		  "Magnitude-Angle\nto Complex"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Lower\nVoltage\nCutoff"
 		  SrcPort		  1
-		  DstBlock		  "Lower\nVoltage\nCutoff"
+		  DstBlock		  "Magnitude-Angle\nto Complex"
 		  DstPort		  1
 		}
 		Line {
@@ -1571,37 +1791,67 @@ Library {
 		  DstPort		  1
 		}
 		Line {
-		  SrcBlock		  "Lower\nVoltage\nCutoff"
+		  SrcBlock		  "Complex to\nMagnitude-Angle"
 		  SrcPort		  1
-		  DstBlock		  "Magnitude-Angle\nto Complex"
+		  DstBlock		  "Lower\nVoltage\nCutoff"
 		  DstPort		  1
 		}
 		Line {
-		  SrcBlock		  "Complex to\nMagnitude-Angle"
-		  SrcPort		  2
-		  DstBlock		  "Magnitude-Angle\nto Complex"
-		  DstPort		  2
+		  SrcBlock		  "Positive Sequence\n(Phasor)\nVoltage"
+		  SrcPort		  1
+		  DstBlock		  "Complex to\nMagnitude-Angle"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Positive Sequence\n(Phasor)\nCurrent"
+		  SrcPort		  1
+		  DstBlock		  "IPos"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Peak to\nRMS 2"
+		  SrcPort		  1
+		  DstBlock		  "Positive Sequence\n(Phasor)\nCurrent"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Peak to\nRMS 1"
+		  SrcPort		  1
+		  DstBlock		  "Positive Sequence\n(Phasor)\nVoltage"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "IIn"
+		  SrcPort		  1
+		  DstBlock		  "Peak to\nRMS 2"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "VIn"
+		  SrcPort		  1
+		  DstBlock		  "Peak to\nRMS 1"
+		  DstPort		  1
 		}
 	      }
 	    }
 	    Block {
 	      BlockType		      Memory
 	      Name		      "Memory"
-	      SID		      "89"
+	      SID		      "109"
 	      Position		      [485, 450, 515, 480]
 	      ZOrder		      -13
 	    }
 	    Block {
 	      BlockType		      Reference
 	      Name		      "Nominal Load"
-	      SID		      "91"
+	      SID		      "110"
 	      Ports		      [0, 0, 0, 0, 0, 3, 1]
 	      Position		      [707, 340, 763, 405]
 	      ZOrder		      -21
 	      BlockRotation	      270
 	      BlockMirror	      on
 	      AttributesFormatString  "\\n"
-	      LibraryVersion	      "1.2191"
+	      LibraryVersion	      "1.2088"
 	      FontName		      "Verdana"
 	      FontSize		      11
 	      SourceBlock	      "powerlib/Elements/Three-Phase\nParallel RLC Load"
@@ -1620,7 +1870,7 @@ Library {
 	    Block {
 	      BlockType		      Gain
 	      Name		      "RMS to Peak"
-	      SID		      "92"
+	      SID		      "111"
 	      Position		      [570, 450, 600, 480]
 	      ZOrder		      -8
 	      Gain		      "sqrt(2)"
@@ -1631,7 +1881,7 @@ Library {
 	    Block {
 	      BlockType		      Gain
 	      Name		      "Real to Imag"
-	      SID		      "93"
+	      SID		      "112"
 	      Position		      [255, 105, 285, 135]
 	      ZOrder		      -8
 	      Gain		      "1j"
@@ -1642,7 +1892,7 @@ Library {
 	    Block {
 	      BlockType		      Sum
 	      Name		      "Sum"
-	      SID		      "94"
+	      SID		      "113"
 	      Ports		      [2, 1]
 	      Position		      [335, 110, 355, 130]
 	      ZOrder		      -18
@@ -1665,14 +1915,14 @@ Library {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "Three-Phase\nV-I Measurement"
-	      SID		      "95"
+	      SID		      "114"
 	      Ports		      [0, 2, 0, 0, 0, 3, 3]
 	      Position		      [663, 200, 767, 250]
 	      ZOrder		      -8
 	      BlockRotation	      270
 	      BlockMirror	      on
 	      NamePlacement	      "alternate"
-	      LibraryVersion	      "1.2191"
+	      LibraryVersion	      "1.2088"
 	      FontName		      "Verdana"
 	      FontSize		      11
 	      SourceBlock	      "powerlib/Measurements/Three-Phase\nV-I Measurement"
@@ -1695,7 +1945,7 @@ Library {
 	    Block {
 	      BlockType		      Gain
 	      Name		      "a"
-	      SID		      "96"
+	      SID		      "115"
 	      Position		      [990, 105, 1020, 135]
 	      ZOrder		      -8
 	      BlockRotation	      270
@@ -1709,7 +1959,7 @@ Library {
 	    Block {
 	      BlockType		      Gain
 	      Name		      "a^2"
-	      SID		      "97"
+	      SID		      "116"
 	      Position		      [920, 105, 950, 135]
 	      ZOrder		      -8
 	      BlockRotation	      270
@@ -1723,7 +1973,7 @@ Library {
 	    Block {
 	      BlockType		      PMIOPort
 	      Name		      "A"
-	      SID		      "98"
+	      SID		      "117"
 	      Position		      [665, 40, 695, 55]
 	      ZOrder		      -54
 	      BlockRotation	      270
@@ -1734,7 +1984,7 @@ Library {
 	    Block {
 	      BlockType		      PMIOPort
 	      Name		      "B"
-	      SID		      "99"
+	      SID		      "118"
 	      Position		      [700, 65, 730, 80]
 	      ZOrder		      -55
 	      BlockRotation	      270
@@ -1745,7 +1995,7 @@ Library {
 	    Block {
 	      BlockType		      PMIOPort
 	      Name		      "C"
-	      SID		      "100"
+	      SID		      "119"
 	      Position		      [735, 90, 765, 105]
 	      ZOrder		      -56
 	      BlockRotation	      270
@@ -1756,7 +2006,7 @@ Library {
 	    Block {
 	      BlockType		      PMIOPort
 	      Name		      "N"
-	      SID		      "101"
+	      SID		      "120"
 	      Position		      [720, 560, 750, 575]
 	      ZOrder		      -57
 	      BlockRotation	      270
@@ -1764,197 +2014,60 @@ Library {
 	      Side		      "Left"
 	    }
 	    Line {
-	      LineType		      "Connection"
-	      SrcBlock		      "A"
-	      SrcPort		      RConn1
-	      Points		      [0, 90]
-	      Branch {
-		ConnectType		"DEST_SRC"
-		DstBlock		"Three-Phase\nV-I Measurement"
-		DstPort			LConn1
-	      }
-	      Branch {
-		ConnectType		"DEST_SRC"
-		Points			[205, 0]
-		DstBlock		"IA"
-		DstPort			LConn1
-	      }
-	    }
-	    Line {
-	      LineType		      "Connection"
-	      SrcBlock		      "B"
-	      SrcPort		      RConn1
-	      Points		      [0, 75]
-	      Branch {
-		ConnectType		"DEST_SRC"
-		DstBlock		"Three-Phase\nV-I Measurement"
-		DstPort			LConn2
-	      }
-	      Branch {
-		ConnectType		"DEST_SRC"
-		Points			[240, 0]
-		DstBlock		"IB"
-		DstPort			LConn1
-	      }
-	    }
-	    Line {
-	      LineType		      "Connection"
-	      SrcBlock		      "C"
-	      SrcPort		      RConn1
-	      Points		      [0, 60]
-	      Branch {
-		ConnectType		"DEST_SRC"
-		DstBlock		"Three-Phase\nV-I Measurement"
-		DstPort			LConn3
-	      }
-	      Branch {
-		ConnectType		"DEST_SRC"
-		Points			[275, 0]
-		DstBlock		"IC"
-		DstPort			LConn1
-	      }
-	    }
-	    Line {
-	      LineType		      "Connection"
-	      SrcBlock		      "Three-Phase\nV-I Measurement"
-	      SrcPort		      RConn1
-	      DstBlock		      "Nominal Load"
-	      DstPort		      LConn1
-	    }
-	    Line {
-	      LineType		      "Connection"
-	      SrcBlock		      "Three-Phase\nV-I Measurement"
-	      SrcPort		      RConn2
-	      DstBlock		      "Nominal Load"
-	      DstPort		      LConn2
-	    }
-	    Line {
-	      LineType		      "Connection"
-	      SrcBlock		      "Three-Phase\nV-I Measurement"
-	      SrcPort		      RConn3
-	      DstBlock		      "Nominal Load"
-	      DstPort		      LConn3
-	    }
-	    Line {
-	      SrcBlock		      "Three-Phase\nV-I Measurement"
-	      SrcPort		      1
-	      Points		      [0, 25]
-	      DstBlock		      "Measurements"
+	      Name		      "IMeas"
+	      Labels		      [1, 1]
+	      SrcBlock		      "Measurements"
+	      SrcPort		      2
+	      Points		      [-95, 0]
+	      DstBlock		      "Correction Current"
 	      DstPort		      1
 	    }
 	    Line {
-	      LineType		      "Connection"
-	      SrcBlock		      "IB"
-	      SrcPort		      RConn1
-	      Points		      [0, 190]
-	      Branch {
-		ConnectType		"DEST_SRC"
-		Points			[-70, 0]
-		Branch {
-		  ConnectType		  "DEST_DEST"
-		  SrcBlock		  "IA"
-		  SrcPort		  RConn1
-		  Points		  [0, 190]
-		}
-		Branch {
-		  ConnectType		  "DEST_SRC"
-		  Points		  [-140, 0]
-		  Branch {
-		    ConnectType		    "DEST_DEST"
-		    SrcBlock		    "Nominal Load"
-		    SrcPort		    RConn1
-		    Points		    [0, 35]
-		  }
-		  Branch {
-		    ConnectType		    "DEST_SRC"
-		    DstBlock		    "N"
-		    DstPort		    RConn1
-		  }
-		}
-	      }
-	      Branch {
-		ConnectType		"DEST_SRC"
-		Points			[70, 0]
-		DstBlock		"IC"
-		DstPort			RConn1
-	      }
-	    }
-	    Line {
-	      SrcBlock		      "Three-Phase\nV-I Measurement"
-	      SrcPort		      2
-	      Points		      [0, 60]
-	      DstBlock		      "Measurements"
+	      Name		      "VMeas"
+	      Labels		      [1, 1]
+	      SrcBlock		      "Measurements"
+	      SrcPort		      1
+	      Points		      [-155, 0]
+	      DstBlock		      "Divide"
 	      DstPort		      2
 	    }
 	    Line {
-	      Name		      "QTarget"
-	      Labels		      [0, 0]
+	      Name		      "PTarget"
+	      Labels		      [1, 1]
 	      SrcBlock		      "Demux"
-	      SrcPort		      2
-	      DstBlock		      "Real to Imag"
+	      SrcPort		      1
+	      Points		      [145, 0]
+	      DstBlock		      "Sum"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Real to Imag"
+	      SrcPort		      1
+	      DstBlock		      "Sum"
 	      DstPort		      1
 	    }
 	    Line {
-	      Name		      "STarget"
-	      Labels		      [0, 0]
-	      SrcBlock		      "Sum"
+	      SrcBlock		      "Match Electrical\nConvention"
 	      SrcPort		      1
-	      DstBlock		      "Convert to 1-phase"
+	      DstBlock		      "Demux"
 	      DstPort		      1
 	    }
 	    Line {
-	      Name		      "STarget1"
-	      Labels		      [1, 0]
-	      SrcBlock		      "Convert to 1-phase"
+	      SrcBlock		      "PQ"
 	      SrcPort		      1
-	      DstBlock		      "Divide"
+	      DstBlock		      "Match Electrical\nConvention"
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "Divide"
+	      SrcBlock		      "Memory"
 	      SrcPort		      1
-	      DstBlock		      "Conjugate"
+	      DstBlock		      "RMS to Peak"
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "From"
+	      SrcBlock		      "RMS to Peak"
 	      SrcPort		      1
-	      Points		      [0, 5]
-	      Branch {
-		DstBlock		"IA"
-		DstPort			1
-	      }
-	      Branch {
-		Points			[70, 0]
-		Branch {
-		  DstBlock		  "a^2"
-		  DstPort		  1
-		}
-		Branch {
-		  Points		  [70, 0]
-		  DstBlock		  "a"
-		  DstPort		  1
-		}
-	      }
-	    }
-	    Line {
-	      SrcBlock		      "a^2"
-	      SrcPort		      1
-	      DstBlock		      "IB"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "a"
-	      SrcPort		      1
-	      DstBlock		      "IC"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "IVar"
-	      Labels		      [0, 0]
-	      SrcBlock		      "Correction Current"
-	      SrcPort		      1
-	      DstBlock		      "Memory"
+	      DstBlock		      "Goto"
 	      DstPort		      1
 	    }
 	    Line {
@@ -1967,69 +2080,206 @@ Library {
 	      DstPort		      2
 	    }
 	    Line {
-	      SrcBlock		      "RMS to Peak"
+	      Name		      "IVar"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Correction Current"
 	      SrcPort		      1
-	      DstBlock		      "Goto"
+	      DstBlock		      "Memory"
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "Memory"
+	      SrcBlock		      "a"
 	      SrcPort		      1
-	      DstBlock		      "RMS to Peak"
+	      DstBlock		      "IC"
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "PQ"
+	      SrcBlock		      "a^2"
 	      SrcPort		      1
-	      DstBlock		      "Match Electrical\nConvention"
+	      DstBlock		      "IB"
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "Match Electrical\nConvention"
+	      SrcBlock		      "From"
 	      SrcPort		      1
-	      DstBlock		      "Demux"
+	      Points		      [0, 5]
+	      Branch {
+		Points			[70, 0]
+		Branch {
+		  Points		  [70, 0]
+		  DstBlock		  "a"
+		  DstPort		  1
+		}
+		Branch {
+		  DstBlock		  "a^2"
+		  DstPort		  1
+		}
+	      }
+	      Branch {
+		DstBlock		"IA"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Divide"
+	      SrcPort		      1
+	      DstBlock		      "Conjugate"
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "Real to Imag"
+	      Name		      "STarget1"
+	      Labels		      [1, 0]
+	      SrcBlock		      "Convert to 1-phase"
 	      SrcPort		      1
-	      DstBlock		      "Sum"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "PTarget"
-	      Labels		      [1, 1]
-	      SrcBlock		      "Demux"
-	      SrcPort		      1
-	      Points		      [145, 0]
-	      DstBlock		      "Sum"
-	      DstPort		      2
-	    }
-	    Line {
-	      Name		      "VMeas"
-	      Labels		      [1, 1]
-	      SrcBlock		      "Measurements"
-	      SrcPort		      1
-	      Points		      [-155, 0]
 	      DstBlock		      "Divide"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "STarget"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Sum"
+	      SrcPort		      1
+	      DstBlock		      "Convert to 1-phase"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "QTarget"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Demux"
+	      SrcPort		      2
+	      DstBlock		      "Real to Imag"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Three-Phase\nV-I Measurement"
+	      SrcPort		      2
+	      Points		      [0, 60]
+	      DstBlock		      "Measurements"
 	      DstPort		      2
 	    }
 	    Line {
-	      Name		      "IMeas"
-	      Labels		      [1, 1]
-	      SrcBlock		      "Measurements"
-	      SrcPort		      2
-	      Points		      [-95, 0]
-	      DstBlock		      "Correction Current"
+	      LineType		      "Connection"
+	      Points		      [945, 455; 70, 0; 0, -190]
+	      DstBlock		      "IC"
+	      DstPort		      RConn1
+	      Branch {
+		ConnectType		"SRC_SRC"
+		Points			[-70, 0]
+		Branch {
+		  ConnectType		  "DEST_SRC"
+		  Points		  [-140, 0]
+		  Branch {
+		    ConnectType		    "DEST_SRC"
+		    DstBlock		    "N"
+		    DstPort		    RConn1
+		  }
+		  Branch {
+		    ConnectType		    "DEST_DEST"
+		    SrcBlock		    "Nominal Load"
+		    SrcPort		    RConn1
+		    Points		    [0, 35]
+		  }
+		}
+		Branch {
+		  ConnectType		  "DEST_DEST"
+		  SrcBlock		  "IA"
+		  SrcPort		  RConn1
+		  Points		  [0, 190]
+		}
+	      }
+	      Branch {
+		ConnectType		"SRC_DEST"
+		SrcBlock		"IB"
+		SrcPort			RConn1
+		Points			[0, 190]
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Three-Phase\nV-I Measurement"
+	      SrcPort		      1
+	      Points		      [0, 25]
+	      DstBlock		      "Measurements"
 	      DstPort		      1
 	    }
-	    Annotation {
-	      Name		      "IVar = ITarget - IMeas"
-	      Position		      [406, 501]
+	    Line {
+	      LineType		      "Connection"
+	      SrcBlock		      "Three-Phase\nV-I Measurement"
+	      SrcPort		      RConn3
+	      DstBlock		      "Nominal Load"
+	      DstPort		      LConn3
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      SrcBlock		      "Three-Phase\nV-I Measurement"
+	      SrcPort		      RConn2
+	      DstBlock		      "Nominal Load"
+	      DstPort		      LConn2
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      SrcBlock		      "Three-Phase\nV-I Measurement"
+	      SrcPort		      RConn1
+	      DstBlock		      "Nominal Load"
+	      DstPort		      LConn1
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      Points		      [750, 180; 275, 0; 0, 10]
+	      DstBlock		      "IC"
+	      DstPort		      LConn1
+	      Branch {
+		ConnectType		"SRC_SRC"
+		DstBlock		"Three-Phase\nV-I Measurement"
+		DstPort			LConn3
+	      }
+	      Branch {
+		ConnectType		"SRC_DEST"
+		SrcBlock		"C"
+		SrcPort			RConn1
+		Points			[0, 60]
+	      }
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      Points		      [715, 170; 240, 0; 0, 20]
+	      DstBlock		      "IB"
+	      DstPort		      LConn1
+	      Branch {
+		ConnectType		"SRC_SRC"
+		DstBlock		"Three-Phase\nV-I Measurement"
+		DstPort			LConn2
+	      }
+	      Branch {
+		ConnectType		"SRC_DEST"
+		SrcBlock		"B"
+		SrcPort			RConn1
+		Points			[0, 75]
+	      }
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      Points		      [680, 160; 205, 0; 0, 30]
+	      DstBlock		      "IA"
+	      DstPort		      LConn1
+	      Branch {
+		ConnectType		"SRC_SRC"
+		DstBlock		"Three-Phase\nV-I Measurement"
+		DstPort			LConn1
+	      }
+	      Branch {
+		ConnectType		"SRC_DEST"
+		SrcBlock		"A"
+		SrcPort			RConn1
+		Points			[0, 90]
+	      }
 	    }
 	    Annotation {
 	      Name		      "Pos. Sequence Current -> Phase Current"
 	      Position		      [991, 51]
+	    }
+	    Annotation {
+	      Name		      "IVar = ITarget - IMeas"
+	      Position		      [406, 501]
 	    }
 	  }
 	}
@@ -2042,7 +2292,7 @@ Library {
       Tag		      "Weather"
       Description	      "Contains blocks for acquiring and manipulating weather data."
       Ports		      []
-      Position		      [220, 214, 342, 333]
+      Position		      [215, 49, 337, 168]
       ZOrder		      -17
       BackgroundColor	      "yellow"
       MinAlgLoopOccurrences   off
@@ -2060,7 +2310,7 @@ Library {
       MaskIconUnits	      "autoscale"
       System {
 	Name			"PV"
-	Location		[858, 52, 1524, 904]
+	Location		[828, 117, 1779, 851]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -2073,6 +2323,552 @@ Library {
 	TiledPageScale		1
 	ShowPageBoundaries	off
 	ZoomFactor		"100"
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Generic Inverter"
+	  SID			  "123"
+	  Ports			  [1, 1]
+	  Position		  [325, 44, 420, 156]
+	  ZOrder		  2
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  MaskType		  "Generic Inverter"
+	  MaskDescription	  "Implements the efficiency characteristic for a generic PV inverter using one of three models:\n-"
+	  " Fixed efficiency\n- Quadratic loss model\n- Lookup table\n\nSee the help for details for each of these models."
+	  MaskHelp		  "This block implements the efficiency characteristic for a generic PV inverter using one of three model"
+	  "s:\n- Fixed efficiency\n- Quadratic loss model\n- Lookup table\n\nFixed Efficiency:\nSpecify the fixed inverter eff"
+	  "iciency as a fraction.\n\nQuadratic Loss Model:\nSpecify the loss model coefficients such that\nPout = Pin - (alpha"
+	  " + beta*Pin + gamma*Pin²).\n\nLookup Table:\nSpecify two of the following three vectors: input power, output power,"
+	  " and efficiency. Efficiencies must be entered as fractions and vector lengths must match. The block automatically c"
+	  "alculates the appropriate input-output power characteristic from the inputs provided according to the relationship "
+	  "Efficiency = Pout / Pin.\n\nCAUTION: When using the lookup table, do not include zeros in the efficiency vector. Ot"
+	  "herwise, a divide by zero error may result."
+	  MaskPromptString	  "Inverter model|Efficiency|Constant loss coefficient (W)|Linear loss coefficient (W/W)|Quadratic"
+	  " loss coefficient (W/W²)|Specify...|Input power (W)|Output power (W)|Efficiency"
+	  MaskStyleString	  "popup(Fixed Efficiency|Quadratic|Lookup Table),edit,edit,edit,edit,popup(Input Power + Output Po"
+	  "wer|Input Power + Efficiency|Output Power + Efficiency),edit,edit,edit"
+	  MaskVariables		  "model_type=@1;fixed_eff=@2;alpha=@3;beta=@4;gamma=@5;lookup_pair=@6;lookup_in=@7;lookup_out=@8;lo"
+	  "okup_eff=@9;"
+	  MaskTunableValueString  "off,on,on,on,on,off,on,on,on"
+	  MaskCallbackString	  "% Dynamic mask callback\nGenericInverter_cb(gcb, 'model_type') |||||% Dynamic mask callback\n"
+	  "GenericInverter_cb(gcb, 'lookup_pair')|||"
+	  MaskEnableString	  "on,on,off,off,off,off,off,off,off"
+	  MaskVisibilityString	  "on,on,off,off,off,off,off,off,off"
+	  MaskToolTipString	  "on,on,on,on,on,on,on,on,on"
+	  MaskInitialization	  "% Call initialization to calculate block variables\n[a, b, c, look_Pin, look_Pout] = ...\n   "
+	  " GenericInverter_cb(gcb, 'init', model_type, ...\n	fixed_eff, alpha, beta, gamma, ...\n    lookup_pair, lookup_in, "
+	  "lookup_out, lookup_eff);"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskPortRotate	  "default"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "Fixed Efficiency|0.95|1|0.01|0.001|Input Power + Output Power|[0, 10, 25, 50, 75, 100]|[0, 9, 24"
+	  ", 49, 73, 97]|[0.10, 0.80, 0.87, 0.93, 0.90, 0.88]"
+	  System {
+	    Name		    "Generic Inverter"
+	    Location		    [88, 287, 1236, 1019]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Pin"
+	      SID		      "124"
+	      Position		      [35, 183, 65, 197]
+	      ZOrder		      -1
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nNot"
+	      SID		      "125"
+	      Ports		      [1, 1]
+	      Position		      [259, 245, 291, 275]
+	      ZOrder		      5
+	      BlockRotation	      270
+	      BlockMirror	      on
+	      NamePlacement	      "alternate"
+	      Operator		      "NOT"
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Lookup Table"
+	      SID		      "126"
+	      Ports		      [1, 1, 1]
+	      Position		      [225, 314, 325, 356]
+	      ZOrder		      2
+	      TreatAsAtomicUnit	      on
+	      MinAlgLoopOccurrences   off
+	      PropExecContextOutsideSubsystem off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      Opaque		      off
+	      RequestExecContextInheritance off
+	      MaskHideContents	      off
+	      System {
+		Name			"Lookup Table"
+		Location		[88, 287, 1236, 1019]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "Pin"
+		  SID			  "127"
+		  Position		  [110, 103, 140, 117]
+		  ZOrder		  -1
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  EnablePort
+		  Name			  "Enable"
+		  SID			  "128"
+		  Ports			  []
+		  Position		  [235, 20, 255, 40]
+		  ZOrder		  -2
+		}
+		Block {
+		  BlockType		  Lookup_n-D
+		  Name			  "1-D Lookup\nTable"
+		  SID			  "129"
+		  Ports			  [1, 1]
+		  Position		  [215, 78, 280, 142]
+		  ZOrder		  1
+		  NumberOfTableDimensions "1"
+		  BreakpointsForDimension1 "look_Pin"
+		  IndexSearchMethod	  "Linear search"
+		  BeginIndexSearchUsingPreviousIndexResult on
+		  UseOneInputPortForAllInputData on
+		  Table			  "look_Pout"
+		  DiagnosticForOutOfRangeInput "Warning"
+		  RndMeth		  "Simplest"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Pout"
+		  SID			  "130"
+		  Position		  [360, 103, 390, 117]
+		  ZOrder		  -3
+		  IconDisplay		  "Port number"
+		}
+		Line {
+		  SrcBlock		  "Pin"
+		  SrcPort		  1
+		  DstBlock		  "1-D Lookup\nTable"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "1-D Lookup\nTable"
+		  SrcPort		  1
+		  DstBlock		  "Pout"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Loss\nModel"
+	      SID		      "131"
+	      Position		      [140, 175, 170, 205]
+	      ZOrder		      7
+	      Value		      "model_type"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Quadratic Model"
+	      SID		      "132"
+	      Ports		      [1, 1, 1]
+	      Position		      [225, 84, 325, 126]
+	      ZOrder		      1
+	      NamePlacement	      "alternate"
+	      TreatAsAtomicUnit	      on
+	      MinAlgLoopOccurrences   off
+	      PropExecContextOutsideSubsystem off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      Opaque		      off
+	      RequestExecContextInheritance off
+	      MaskHideContents	      off
+	      System {
+		Name			"Quadratic Model"
+		Location		[88, 287, 1236, 1019]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "Pin"
+		  SID			  "133"
+		  Position		  [95, 103, 125, 117]
+		  ZOrder		  -1
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  EnablePort
+		  Name			  "Enable"
+		  SID			  "134"
+		  Ports			  []
+		  Position		  [235, 20, 255, 40]
+		  ZOrder		  -2
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant Loss\nCoefficient"
+		  SID			  "135"
+		  Position		  [270, 305, 300, 335]
+		  ZOrder		  4
+		  Value			  "a"
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "Linear Loss\nCoefficient"
+		  SID			  "136"
+		  Position		  [270, 235, 300, 265]
+		  ZOrder		  2
+		  Gain			  "b"
+		  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "Quadratic Loss\nCoefficient"
+		  SID			  "137"
+		  Position		  [270, 165, 300, 195]
+		  ZOrder		  3
+		  Gain			  "c"
+		  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Math
+		  Name			  "Square"
+		  SID			  "138"
+		  Ports			  [1, 1]
+		  Position		  [200, 165, 230, 195]
+		  ZOrder		  1
+		  Operator		  "magnitude^2"
+		}
+		Block {
+		  BlockType		  Sum
+		  Name			  "Sum"
+		  SID			  "139"
+		  Ports			  [2, 1]
+		  Position		  [400, 95, 430, 125]
+		  ZOrder		  7
+		  ShowName		  off
+		  IconShape		  "round"
+		  Inputs		  "|+-"
+		  InputSameDT		  off
+		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Sum
+		  Name			  "Sum1"
+		  SID			  "140"
+		  Ports			  [3, 1]
+		  Position		  [400, 165, 430, 195]
+		  ZOrder		  8
+		  BlockRotation		  270
+		  ShowName		  off
+		  IconShape		  "round"
+		  Inputs		  "+++||"
+		  InputSameDT		  off
+		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
+		  Port {
+		    PortNumber		    1
+		    Name		    "Ploss"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Pout"
+		  SID			  "141"
+		  Position		  [485, 103, 515, 117]
+		  ZOrder		  -3
+		  IconDisplay		  "Port number"
+		}
+		Line {
+		  SrcBlock		  "Pin"
+		  SrcPort		  1
+		  Points		  [41, 0]
+		  Branch {
+		    DstBlock		    "Sum"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, 70]
+		    Branch {
+		    Points		    [0, 70]
+		    DstBlock		    "Linear Loss\nCoefficient"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Square"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Line {
+		  SrcBlock		  "Square"
+		  SrcPort		  1
+		  DstBlock		  "Quadratic Loss\nCoefficient"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Quadratic Loss\nCoefficient"
+		  SrcPort		  1
+		  DstBlock		  "Sum1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Sum"
+		  SrcPort		  1
+		  DstBlock		  "Pout"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "Ploss"
+		  Labels		  [1, 1]
+		  SrcBlock		  "Sum1"
+		  SrcPort		  1
+		  DstBlock		  "Sum"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Linear Loss\nCoefficient"
+		  SrcPort		  1
+		  Points		  [89, 0]
+		  DstBlock		  "Sum1"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Constant Loss\nCoefficient"
+		  SrcPort		  1
+		  Points		  [110, 0]
+		  DstBlock		  "Sum1"
+		  DstPort		  3
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Select"
+	      SID		      "142"
+	      Ports		      [1, 1]
+	      Position		      [210, 175, 240, 205]
+	      ZOrder		      6
+	      LibraryVersion	      "1.274"
+	      SourceBlock	      "simulink/Logic and Bit\nOperations/Compare\nTo Constant"
+	      SourceType	      "Compare To Constant"
+	      relop		      "<="
+	      const		      "2"
+	      OutDataTypeStr	      "boolean"
+	      ZeroCross		      on
+	    }
+	    Block {
+	      BlockType		      Switch
+	      Name		      "Switch"
+	      SID		      "143"
+	      Position		      [445, 170, 495, 210]
+	      ZOrder		      4
+	      Criteria		      "u2 > Threshold"
+	      InputSameDT	      off
+	      SaturateOnIntegerOverflow	off
+	      ZeroCross		      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Pout"
+	      SID		      "144"
+	      Position		      [545, 183, 575, 197]
+	      ZOrder		      -2
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "Switch"
+	      SrcPort		      1
+	      DstBlock		      "Pout"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Loss\nModel"
+	      SrcPort		      1
+	      DstBlock		      "Select"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Logical\nNot"
+	      SrcPort		      1
+	      DstBlock		      "Lookup Table"
+	      DstPort		      enable
+	    }
+	    Line {
+	      SrcBlock		      "Pin"
+	      SrcPort		      1
+	      Points		      [30, 0]
+	      Branch {
+		Points			[0, -85]
+		DstBlock		"Quadratic Model"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 145]
+		DstBlock		"Lookup Table"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Quadratic Model"
+	      SrcPort		      1
+	      Points		      [55, 0; 0, 70]
+	      DstBlock		      "Switch"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Select"
+	      SrcPort		      1
+	      Points		      [30, 0]
+	      Branch {
+		DstBlock		"Logical\nNot"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Switch"
+		DstPort			2
+	      }
+	      Branch {
+		DstBlock		"Quadratic Model"
+		DstPort			enable
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Lookup Table"
+	      SrcPort		      1
+	      Points		      [55, 0; 0, -130]
+	      DstBlock		      "Switch"
+	      DstPort		      3
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  M-S-Function
+	  Name			  "PVWatts Cosimulation"
+	  SID			  "168"
+	  Ports			  [4, 3]
+	  Position		  [45, 42, 255, 158]
+	  ZOrder		  48
+	  UserDataPersistent	  on
+	  UserData		  "DataTag0"
+	  FunctionName		  "pvwatts_sfun"
+	  Parameters		  "lat, lon, start_time, tz, time_step, system_size, derate, azimuth, tilt, track_mode, rotlim, t_ref, "
+	  "t_noct, gamma, i_ref, poa_cutin, init_tcell, init_poa, output_dc, output_celltemp, output_poa"
+	  MaskType		  "PVWatts Cosimulation"
+	  MaskDescription	  "This block implements cosimulation of a photovoltaic (PV) array using the PVWatts module of the "
+	  "SAM Simulation Code (SSC) SDK. Data entry is organized in four tabs:\n1. Time and Location: where the array is loca"
+	  "ted and when the simulation occurs.\n2. Array: PV array nameplate rating and physical characteristics.\n3. Cell: Cu"
+	  "stomized model parameters for the PV cells (optional).\n4. Simulation: Initial conditions and simulation options.\n"
+	  "\nSee the block help for more information."
+	  MaskHelp		  "This block implements cosimulation of a photovoltaic (PV) array using the PVWatts (pvwattsfunc) module"
+	  " of the SAM Simulation Code (SSC) SDK. The cosimulation runs in SSC at the time step specified in the 'Time and Loc"
+	  "ation' tab (which need not be identical to the Simulink time step).\n\nThe block inputs accept weather data synced "
+	  "to the simulation time stamp:\n1. Beam irradiance (W/m²) - Also known as \"direct normal irradiance\"\n2. Diffuse i"
+	  "rradiance (W/m²) - Also known as \"diffuse horizontal irradiance\"\n3. Ambient temperature (°C)\n4. Wind speed (m/s"
+	  ")\n\nThe block mask provides inputs for most (although not all) of the remaining PV array model parameters availabl"
+	  "e for PVWatts in SSC, such as the array ratings, physical location and orientation, PV cell characteristics, etc. T"
+	  "he four input tabs in the block mask are:\n1. Time and Location: where the array is located and when the simulation"
+	  " occurs.\n2. Array: PV array nameplate rating and physical characteristics.\n3. Cell: Customized model parameters f"
+	  "or the PV cells (optional).\n4. Simulation: Initial conditions and simulation options.\n\nThe block outputs are, in"
+	  " order:\n1. Array DC output power (W)\n2. Array cell temperature (°C)\n3. Plane of array irradiance (W/m²)\nEach ou"
+	  "tput may be individually enabled or disabled on the 'Simulation' tab. Please note that enabling or disabling output"
+	  "s will change the number of output ports on the block, possibly disrupting existing signal connections in Simulink."
+	  "\n\nNotes:\n1. CAUTION: Checking 'Use latitude tile' will discard the existing tilt angle and replace it with the a"
+	  "bsolute value of the latitude.\n2. CAUTION: Unchecking 'Customize photovoltaic cell data' will discard any existing"
+	  " customizations in the PV cell data fields.\n3. The block is designed to model the DC operation of a PV array only."
+	  " Therefore, no inverter efficiency mask parameter or AC power output are provided. To model inverter losses, apply "
+	  "an external inverter model to the DC power output, such as the 'Generic Inverter' model available in the Campus Mod"
+	  "eling Simulink library.\n\n\nDetailed documentation for the SSC SDK is available for download at:\nhttps://sam.nrel"
+	  ".gov/content/sam-simulation-core-sdk\nAdditional description for the SSC module input and output variables may be o"
+	  "btained using the SSCdev application distributed with SSC SDK; see the SSC SDK documentation for usage instructions"
+	  "."
+	  MaskPromptString	  "Latitude|Longitude|Initial date/time (dd-mmm-yyyy HH:MM:SS)|Time zone (offset from UTC)|Time st"
+	  "ep (s)|Array nameplate capacity (W)|System derate factor (0-1)|Azimuth angle (N = 0°, E = 90°, S = 180°, W = 270°)|"
+	  "Tilt angle|Use latitude tilt|Tracking mode|Tracker rotation limit (+/-)|Customize photovoltaic cell data|Reference "
+	  "cell temperature (°C)|Nominal operating cell temperature (°C)|Maximum power temperature coefficient (%/°C)|Irradian"
+	  "ce condition for cell rating (W/m²)|Minimum irradiance for operation (W/m²)|Initial cell temperature (°C)|Initial p"
+	  "lane of array irradiance (W/m²)|Output DC power (W)|Output cell temperature (°C)|Output plane of array irradiance ("
+	  "W/m²)"
+	  MaskStyleString	  "edit,edit,edit,edit,edit,edit,edit,edit,edit,checkbox,popup(Fixed|1-Axis|2-Axis|Azimuth Axis),ed"
+	  "it,checkbox,edit,edit,edit,edit,edit,edit,edit,checkbox,checkbox,checkbox"
+	  MaskVariables		  "lat=@1;lon=@2;start_time=&3;tz=@4;time_step=@5;system_size=@6;derate=@7;azimuth=@8;tilt=@9;use_la"
+	  "t_tilt=@10;track_mode=@11;rotlim=@12;use_cell_data=@13;t_ref=@14;t_noct=@15;gamma=@16;i_ref=@17;poa_cutin=@18;init_"
+	  "tcell=@19;init_poa=@20;output_dc=@21;output_celltemp=@22;output_poa=@23;"
+	  MaskTunableValueString  "off,off,off,off,off,off,off,off,off,off,off,off,off,off,off,off,off,off,off,off,off,off,off"
+	  MaskCallbackString	  "PVWatts_cb(gcb, 'use_lat_tilt');|||||||||PVWatts_cb(gcb, 'use_lat_tilt');|PVWatts_cb(gcb, 'tr"
+	  "ack_mode');||PVWatts_cb(gcb, 'use_cell_data');||||||||||"
+	  MaskEnableString	  "on,on,on,on,on,on,on,on,off,on,on,on,on,off,off,off,off,off,on,on,on,on,on"
+	  MaskVisibilityString	  "on,on,on,on,on,on,on,on,on,on,on,off,on,on,on,on,on,on,on,on,on,on,on"
+	  MaskToolTipString	  "on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on"
+	  MaskInitialization	  "PVWatts_cb(gcb, 'redraw_mask');"
+	  MaskSelfModifiable	  on
+	  MaskDisplay		  "% This mask display is automatically generated by PVWatts_cb()\nimage(imread('pvwatts_light.png'))\n"
+	  "disp('PVWatts\\nCosimulation')\n\n% Label input ports\nport_label('input', 1, 'Beam'); % Beam irradiance (W/m^2)\np"
+	  "ort_label('input', 2, 'Diffuse'); % Diffuse irradiance (W/m^2)\nport_label('input', 3, 'Temp'); % Ambient temperatu"
+	  "re (deg C)\nport_label('input', 4, 'Wind'); % Wind speed (m/s)\n\n% Label output ports\nport_label('output', 1, 'DC"
+	  " power'); % DC output power (W)\nport_label('output', 2, 'Cell Temp'); % Cell Temperature (deg C)\nport_label('outp"
+	  "ut', 3, 'POA Irradiance'); % % Point of array irradiance\n"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskPortRotate	  "default"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "40|105|1-Jan-2012 00:00:00|-6|600|1000|0.95|180|40|on|Fixed|45|off|25|45|-0.5|1000|0|25|0|on|on|"
+	  "on"
+	  MaskTabNameString	  "Time and Location,Time and Location,Time and Location,Time and Location,Time and Location,Arra"
+	  "y,Array,Array,Array,Array,Array,Array,Cell,Cell,Cell,Cell,Cell,Cell,Simulation,Simulation,Simulation,Simulation,Sim"
+	  "ulation"
+	}
       }
     }
     Block {
@@ -2082,7 +2878,7 @@ Library {
       Tag		      "Weather"
       Description	      "Contains blocks for acquiring and manipulating weather data."
       Ports		      []
-      Position		      [50, 49, 172, 168]
+      Position		      [545, 49, 667, 168]
       ZOrder		      -17
       BackgroundColor	      "lightBlue"
       MinAlgLoopOccurrences   off
@@ -2100,8 +2896,8 @@ Library {
       MaskIconUnits	      "autoscale"
       System {
 	Name			"Weather"
-	Location		[629, 112, 1580, 1011]
-	Open			on
+	Location		[828, 117, 1779, 851]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -2115,5 +2911,67 @@ Library {
 	ZoomFactor		"100"
       }
     }
+  }
+}
+MatData {
+  NumRecords		  1
+  DataRecord {
+    Tag			    DataTag0
+    Data		    "  %)30     .    &!(   8    (     @         %    \"     $    !     0         %  0 \"@    $    \\    9&EA"
+    ";&]G     &]U='!U=',   !S<V-V87(     <W-C9&%T80   '-I;7-T87)T  !S<V-M;V1U;&4       X   #8!@  !@    @    \"         "
+    " 4    (     0    $    !          4 !  0     0   % !  !L870                 ;&]N                 '-T87)T7W1I;64    "
+    "   !T>@                  =&EM95]S=&5P         '-Y<W1E;5]S:7IE      !D97)A=&4             87II;75T:            '1I;"
+    "'0               !T<F%C:U]M;V1E        <F]T;&EM             '1?<F5F              !T7VYO8W0             9V%M;6$    "
+    "          &E?<F5F              !P;V%?8W5T:6X         :6YI=%]T8V5L;        &EN:71?<&]A          !O=71P=71?9&,      "
+    "   ;W5T<'5T7V-E;&QT96UP &]U='!U=%]P;V$        .    .     8    (    !@         %    \"     $    !     0         )  "
+    "  \"    !^%ZU&XWD- #@   #@    &    \"     8         !0    @    !     0    $         \"0    @   #L4;@>A4M:0 X   !( "
+    "   !@    @    $          4    (     0   !,    !         !     3    ,2U*86XM,C Q,B P,#HP,#HP,       #@   #@    &   "
+    " \"     8         !0    @    !     0    $         \"0    @            8P X    X    !@    @    &          4    (   "
+    "  0    $    !          D    (          # @D .    .     8    (    !@         %    \"     $    !     0         )    "
+    "\"           0(] #@   #@    &    \"     8         !0    @    !     0    $         \"0    @   !F9F9F9F;N/PX    X   "
+    " !@    @    &          4    (     0    $    !          D    (          \" 9D .    .     8    (    !@         %    "
+    "\"     $    !     0         )    \"    !^%ZU&XWD- #@   #@    &    \"     8         !0    @    !     0    $        "
+    " \"0    @           #P/PX    X    !@    @    &          4    (     0    $    !          D    (          \" 1D .   "
+    " .     8    (    !@         %    \"     $    !     0         )    \"            #E #@   #@    &    \"     8       "
+    "  !0    @    !     0    $         \"0    @          (!&0 X    X    !@    @    &          4    (     0    $    !   "
+    "       D    (            X+\\.    .     8    (    !@         %    \"     $    !     0         )    \"           0("
+    "] #@   #@    &    \"     8         !0    @    !     0    $         \"0    @               X    X    !@    @    &  "
+    "        4    (     0    $    !          D    (            .4 .    .     8    (    !@         %    \"     $    !   "
+    "  0         )    \"               #@   #@    &    \"     8         !0    @    !     0    $         \"0    @       "
+    "    #P/PX    X    !@    @    &          4    (     0    $    !          D    (            \\#\\.    .     8    (  "
+    "  !@         %    \"     $    !     0         )    \"            / _#@   , !   &    \"     (         !0    @    ! "
+    "    P    $         !0 $  L    !    %@   %9A<DYA;64     3W5T<'5T4&]R=     X    P    !@    @    $          4    (   "
+    "  0    (    !         !   @!D8P  #@   #@    &    \"     8         !0    @    !     0    $         \"0    @        "
+    "   #P/PX    X    !@    @    $          4    (     0    4    !         !     %    =&-E;&P    .    .     8    (    !"
+    "@         %    \"     $    !     0         )    \"             ! #@   #     &    \"     0         !0    @    !    "
+    " P    $         $  # '!O80 .    .     8    (    !@         %    \"     $    !     0         )    \"             A "
+    "#@   $ (   &    \"     (         !0    @    !     0    $         !0 $  P    !    1 $  &QA=            &QO;@       "
+    "    '1Z             '1I;65?<W1E<    '-Y<W1E;5]S:7IE &1E<F%T90       '1R86-K7VUO9&4  &%Z:6UU=&@      '1I;'0        "
+    "  ')O=&QI;0       '1?;F]C=        '1?<F5F         &=A;6UA         &E?<F5F         '!O85]C=71I;@   '1C96QL         "
+    "'!O80           'EE87(          &UO;G1H         &1A>0           &AO=7(          &UI;G5T90       &)E86T          &1"
+    "I9F9U<V4      '1A;6(          '=S<&0          &1C                   .    .     8    (    !@         %    \"     $ "
+    "   !     0         )    \"    !^%ZU&XWD- #@   #@    &    \"     8         !0    @    !     0    $         \"0    @"
+    "   #L4;@>A4M:0 X    X    !@    @    &          4    (     0    $    !          D    (            &$ .    .     8  "
+    "  (    !@         %    \"     $    !     0         )    \"    %5555555<4_#@   #@    &    \"     8         !0    @ "
+    "   !     0    $         \"0    @    S,S,S,S/C/PX    X    !@    @    &          4    (     0    $    !          D  "
+    "  (    9F9F9F9F[C\\.    .     8    (    !@         %    \"     $    !     0         )    \"               #@   #@ "
+    "   &    \"     8         !0    @    !     0    $         \"0    @          (!F0 X    X    !@    @    &          4 "
+    "   (     0    $    !          D    (    'X7K4;C>0T .    .     8    (    !@         %    \"     $    !     0       "
+    "  )    \"           @$9 #@   #@    &    \"     8         !0    @    !     0    $         \"0    @          (!&0 X "
+    "   X    !@    @    &          4    (     0    $    !          D    (            .4 .    .     8    (    !@        "
+    " %    \"     $    !     0         )    \"            .\"_#@   #@    &    \"     8         !0    @    !     0    $ "
+    "        \"0    @          $\"/0 X    X    !@    @    &          4    (     0    $    !          D    (            "
+    "   .    .     8    (    !@         %    \"     $    !     0         )    \"               #@   #@    &    \"     8"
+    "         !0    @    !     0    $         \"0    @               X    X    !@    @    &          4    (     0    $ "
+    "   !          D    (          !PGT .    .     8    (    !@         %    \"     $    !     0         )    \"       "
+    "     !Q #@   #@    &    \"     8         !0    @    !     0    $         \"0    @            U0 X    X    !@    @ "
+    "   &          4    (     0    $    !          D    (               .    .     8    (    !@         %    \"     $  "
+    "  !     0         )    \"               #@   #@    &    \"     8         !0    @    !     0    $         \"0    @ "
+    "              X    X    !@    @    &          4    (     0    $    !          D    (               .    .     8   "
+    " (    !@         %    \"     $    !     0         )    \"    ,W,S,S,3#A #@   #@    &    \"     8         !0    @  "
+    "  !     0    $         \"0    @   \":F9F9F9D50 X    X    !@    @    &          4    (     0    $    !          D  "
+    "  (               .    ,     8    (    !@         %    \"                0         )          X    X    !@    @   "
+    " &          4    (     0    $    !          D    (         ()N)D$.    ,     8    (    !@         %    \"          "
+    "      0         )          "
   }
 }

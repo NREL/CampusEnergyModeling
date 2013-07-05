@@ -41,8 +41,8 @@ Library {
 	$ObjectID		5
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"13"
+	ViewObjType		"SimulinkTopLevel"
+	LoadSaveID		"0"
 	Extents			[901.0, 568.0]
 	ZoomFactor		[1.0]
 	Offset			[0.0, 0.0]
@@ -55,9 +55,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Jul 05 10:46:23 2013"
-  RTWModifiedTimeStamp	  294921982
-  ModelVersionFormat	  "1.%<AutoIncrement:48>"
+  LastModifiedDate	  "Fri Jul 05 14:36:25 2013"
+  RTWModifiedTimeStamp	  294935725
+  ModelVersionFormat	  "1.%<AutoIncrement:52>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1089,7 +1089,7 @@ Library {
   System {
     Name		    "CampusModeling"
     Location		    [828, 117, 1779, 851]
-    Open		    off
+    Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -1128,7 +1128,7 @@ Library {
       }
       System {
 	Name			"Buildings"
-	Location		[828, 117, 1779, 999]
+	Location		[828, 117, 1779, 851]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1157,12 +1157,12 @@ Library {
 	    Type		    "EnergyPlus Cosimulation"
 	    Description		    "This block implements cosimulation with EnergyPlus by allowing Simulink to exchange input and o"
 	    "utput data with it. Currently, EnergyPlus only supports real data."
-	    Help		    "This block implements cosimulation with EnergyPlus by allowing Simulink to\nexchange input and output "
-	    "data with it.\n\nWhen a simulation starts, EnergyPlus is also started. It will then run in\nparallel with Simulin"
-	    "k. They exchange input and output data via socket\ncommunication. When the simulation terminates, EnergyPlus will"
-	    " exit.\n\nRefer to the manuals of MLE+ and/or BCVTB/EnergyPlus for details.\n\nINPUTS:\n- real: real vector input"
-	    " to EnergyPlus.\n\nOUTPUTS:\n- flag: status of EnergyPlus (0 if OK, if flag is non-zero, the simulation should st"
-	    "op).\n- time: current simulation time of EnergyPlus, in seconds.\n- real: real vector output from EnergyPlus."
+	    Help		    "This block implements cosimulation with EnergyPlus by allowing Simulink to exchange input and output d"
+	    "ata with it.\n\nWhen a simulation starts, EnergyPlus is also started. It will then run in parallel with Simulink."
+	    " They exchange input and output data via socket communication. When the simulation terminates, EnergyPlus will ex"
+	    "it.\n\nRefer to the manuals of MLE+ and/or BCVTB/EnergyPlus for details.\n\nINPUTS:\n- real: real vector input to"
+	    " EnergyPlus.\n\nOUTPUTS:\n- flag: status of EnergyPlus (0 if OK, if flag is non-zero, the simulation should stop)"
+	    ".\n- time: current simulation time of EnergyPlus, in seconds.\n- real: real vector output from EnergyPlus."
 	    Display		    "image(imread('building.png'))\ndisp('E+\\nCosimulation');\n\n% Inputs\nport_label('input', 1, 'real"
 	    "');\n\n% Outputs\nport_label('output', 1, 'flag');\nport_label('output', 2, 'time');\nport_label('output', 3, 're"
 	    "al');\n"
@@ -1280,7 +1280,7 @@ Library {
       }
       System {
 	Name			"Data Acquisition"
-	Location		[828, 117, 1779, 509]
+	Location		[828, 117, 1779, 851]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1320,7 +1320,7 @@ Library {
       }
       System {
 	Name			"Electrical"
-	Location		[828, 117, 1779, 999]
+	Location		[828, 117, 1779, 851]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1354,17 +1354,17 @@ Library {
 	    Type		    "Constant Power Source/Load"
 	    Description		    "Implements a controllable three-phase, constant power source or load, where VI* = P + jQ (in pe"
 	    "r-unit)."
-	    Help		    "Implements a controllable three-phase, constant power source or load\nin SimPowerSystems (phasor mode)"
-	    ". The load characteristic is given by\nP + jQ = sqrt(3)VI*, in which\n    V = Positive sequence line-to-line volt"
-	    "age (V)\n    I = Positive sequence phase current (A)\n    P = Positive sequence real power (from PQ input)\n    Q"
-	    " = Positive sequence reactive power (from PQ input)\n\nThe block supplies P + jQ if the source convention is spec"
-	    "ified and\nconsumes P + jQ if the load convention is specified.\n\nThe nominal input fields in the mask are used "
-	    "to initialize the block\nparameters. If the nominal values are close to the actual values during\nsimulation, the"
-	    "n the block will converge more rapidly.\n\nIf the positive sequence voltage falls below the per-unit lower voltag"
-	    "e\nlimit (on the base specified by the nominal line-to-line voltage), then\nthe block will behave as a constant c"
-	    "urrent source rather than a constant\npower source, with the current magnitude capped at the level required to\ns"
-	    "upply full power at V = 0.7 pu. This feature avoids current runaway that\nwould otherwise occur during voltage co"
-	    "llapes.\n\nNOTE: This block is compatible only with SimPowerSystems' phasor simulation\nmode."
+	    Help		    "Implements a controllable three-phase, constant power source or load in SimPowerSystems (phasor mode)."
+	    " The load characteristic is given by P + jQ = sqrt(3)VI*, in which\n    V = Positive sequence line-to-line voltag"
+	    "e (V)\n    I = Positive sequence phase current (A)\n    P = Positive sequence real power (from PQ input)\n    Q ="
+	    " Positive sequence reactive power (from PQ input)\n\nThe block supplies P + jQ if the source convention is specif"
+	    "ied and consumes P + jQ if the load convention is specified.\n\nThe nominal input fields in the mask are used to "
+	    "initialize the block parameters. If the nominal values are close to the actual values during simulation, then the"
+	    " block will converge more rapidly.\n\nIf the positive sequence voltage falls below the per-unit lower voltage lim"
+	    "it (on the base specified by the nominal line-to-line voltage), then the block will behave as a constant current "
+	    "source rather than a constant power source, with the current magnitude capped at the level required to supply ful"
+	    "l power at V = 0.7 pu. This feature avoids current runaway that would otherwise occur during voltage collapes.\n\n"
+	    "NOTE: This block is compatible only with SimPowerSystems' phasor simulation mode."
 	    Initialization	    "% Call initialization to calculate block variables\nInputGain = ...\n    ConstantPowerSourceL"
 	    "oad_cb(gcb, 'init', ...\n    Conven, PNom, QNom, VNom, fNom, VLow);"
 	    Array {
@@ -2522,7 +2522,7 @@ Library {
       System {
 	Name			"PV"
 	Location		[828, 117, 1779, 851]
-	Open			on
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -2555,14 +2555,14 @@ Library {
 	    Type		    "Generic Inverter"
 	    Description		    "Implements the efficiency characteristic for a generic PV inverter using one of three models:\n"
 	    "- Fixed efficiency\n- Quadratic loss model\n- Lookup table\n\nSee the help for details for each of these models."
-	    Help		    "This block implements the efficiency characteristic for a generic PV\ninverter using one of three mode"
-	    "ls:\n- Fixed efficiency\n- Quadratic loss model\n- Lookup table\n\nFixed Efficiency:\nSpecify the fixed inverter "
-	    "efficiency as a fraction.\n\nQuadratic Loss Model:\nSpecify the loss model coefficients such that\nPout = Pin - ("
-	    "alpha + beta*Pin + gamma*Pin²).\n\nLookup Table:\nSpecify two of the following three vectors: input power, output"
-	    " power, and\nefficiency. Efficiencies must be entered as fractions and vector lengths\nmust match. The block auto"
-	    "matically calculates the appropriate input-output\npower characteristic from the inputs provided according to the"
-	    "\nrelationship Efficiency = Pout / Pin.\n\nWhen using the lookup table, do not include zeros in the efficiency ve"
-	    "ctor.\nOtherwise, a divide by zero error may result."
+	    Help		    "This block implements the efficiency characteristic for a generic PV inverter using one of three model"
+	    "s:\n- Fixed efficiency\n- Quadratic loss model\n- Lookup table\n\nFixed Efficiency:\nSpecify the fixed inverter e"
+	    "fficiency as a fraction.\n\nQuadratic Loss Model:\nSpecify the loss model coefficients such that\nPout = Pin - (a"
+	    "lpha + beta*Pin + gamma*Pin²).\n\nLookup Table:\nSpecify two of the following three vectors: input power, output "
+	    "power, and efficiency. Efficiencies must be entered as fractions and vector lengths must match. The block automat"
+	    "ically calculates the appropriate input-output power characteristic from the inputs provided according to the rel"
+	    "ationship Efficiency = Pout / Pin.\n\nCAUTION: When using the lookup table, do not include zeros in the efficienc"
+	    "y vector. Otherwise, a divide by zero error may result."
 	    Initialization	    "% Call initialization to calculate block variables\n[a, b, c, look_Pin, look_Pout] = ...\n   "
 	    " GenericInverter_cb(gcb, 'init', model_type, ...\n	fixed_eff, alpha, beta, gamma, ...\n    lookup_pair, lookup_in"
 	    ", lookup_out, lookup_eff);"
@@ -3108,6 +3108,33 @@ Library {
 	    $ObjectID		    51
 	    $ClassName		    "Simulink.Mask"
 	    Type		    "PVWatts Cosimulation"
+	    Description		    "This block implements cosimulation of a photovoltaic (PV) array using the PVWatts module of the"
+	    " SAM Simulation Code (SSC) SDK. Data entry is organized in four tabs:\n1. Time and Location: where the array is l"
+	    "ocated and when the simulation occurs.\n2. Array: PV array nameplate rating and physical characteristics.\n3. Cel"
+	    "l: Customized model parameters for the PV cells (optional).\n4. Simulation: Initial conditions and simulation opt"
+	    "ions.\n\nSee the block help for more information."
+	    Help		    "This block implements cosimulation of a photovoltaic (PV) array using the PVWatts (pvwattsfunc) module"
+	    " of the SAM Simulation Code (SSC) SDK. The cosimulation runs in SSC at the time step specified in the 'Time and L"
+	    "ocation' tab (which need not be identical to the Simulink time step).\n\nThe block inputs accept weather data syn"
+	    "ced to the simulation time stamp:\n1. Beam irradiance (W/m²) - Also known as \"direct normal irradiance\"\n2. Dif"
+	    "fuse irradiance (W/m²) - Also known as \"diffuse horizontal irradiance\"\n3. Ambient temperature (°C)\n4. Wind sp"
+	    "eed (m/s)\n\nThe block mask provides inputs for most (although not all) of the remaining PV array model parameter"
+	    "s available for PVWatts in SSC, such as the array ratings, physical location and orientation, PV cell characteris"
+	    "tics, etc. The four input tabs in the block mask are:\n1. Time and Location: where the array is located and when "
+	    "the simulation occurs.\n2. Array: PV array nameplate rating and physical characteristics.\n3. Cell: Customized mo"
+	    "del parameters for the PV cells (optional).\n4. Simulation: Initial conditions and simulation options.\n\nThe blo"
+	    "ck outputs are, in order:\n1. Array DC output power (W)\n2. Array cell temperature (°C)\n3. Plane of array irradi"
+	    "ance (W/m²)\nEach output may be individually enabled or disabled on the 'Simulation' tab. Please note that enabli"
+	    "ng or disabling outputs will change the number of output ports on the block, possibly disrupting existing signal "
+	    "connections in Simulink.\n\nNotes:\n1. CAUTION: Checking 'Use latitude tile' will discard the existing tilt angle"
+	    " and replace it with the absolute value of the latitude.\n2. CAUTION: Unchecking 'Customize photovoltaic cell dat"
+	    "a' will discard any existing customizations in the PV cell data fields.\n3. The block is designed to model the DC"
+	    " operation of a PV array only. Therefore, no inverter efficiency mask parameter or AC power output are provided. "
+	    "To model inverter losses, apply an external inverter model to the DC power output, such as the 'Generic Inverter'"
+	    " model available in the Campus Modeling Simulink library.\n\n\nDetailed documentation for the SSC SDK is availabl"
+	    "e for download at:\nhttps://sam.nrel.gov/content/sam-simulation-core-sdk\nAdditional description for the SSC modu"
+	    "le input and output variables may be obtained using the SSCdev application distributed with SSC SDK; see the SSC "
+	    "SDK documentation for usage instructions."
 	    Initialization	    "PVWatts_cb(gcb, 'redraw_mask');"
 	    SelfModifiable	    "on"
 	    Display		    "% This mask display is automatically generated by PVWatts_cb()\nimage('pvwatts_light.png')\ndisp('P"
@@ -3188,7 +3215,7 @@ Library {
 		$ObjectID		59
 		Type			"edit"
 		Name			"azimuth"
-		Prompt			"Azimuth angle (E = 90°, S = 180°, W = 270°)"
+		Prompt			"Azimuth angle (N = 0°, E = 90°, S = 180°, W = 270°)"
 		Value			"180"
 		Tunable			"off"
 		TabName			"Array"
@@ -3414,17 +3441,17 @@ Library {
 	    "he utility function convertTMY3() to creates a .MAT file compatible with this block. Use of this block requires t"
 	    "hat a Simulink bus object named 'BusDef_Weather' be defined in the base workspace. See the block help for details"
 	    "."
-	    Help		    "This block reads weather data from a binary (.MAT) file and outputs it as\na Simulink bus signal. Beca"
-	    "use the block uses Simulink's 'From File' block\ninternally for file I/O, there are several requirements for it t"
-	    "o function\ncorrectly:\n1. The user must create a bus definition named 'BusDef_Weather' for the\nweather data and"
-	    " save it to the base MATLAB workspace. This bus definition \nwill be automatically generated from the weather fil"
-	    "e if the 'Create\nSimulink bus definition automatically' checkbox is checked.\n2. The .MAT file must contain time"
-	    " series objects organized within a\nstructure (struct) object called 'ans'.\n3. The structure must match the bus "
-	    "definition. (If the block is allowed to\nautomatically generate the Simulink bus definition, this requirement wil"
-	    "l\nbe satisfied.)\n3. The .MAT file must be version 7.3 or higher.\n4. All time series in the .MAT file must have"
-	    " units of seconds; otherwise\nSimulink will interpret them incorrectly.\n\nThe utility script convertTMY3() is av"
-	    "ailable to convert TMY3-formatted\nweather data into MATLAB time series objects compatible with these\nrequiremen"
-	    "ts. See the convertTMY3() function documentation for details."
+	    Help		    "This block reads weather data from a binary (.MAT) file and outputs it as a Simulink bus signal. Becau"
+	    "se the block uses Simulink's 'From File' block internally for file I/O, there are several requirements for it to "
+	    "function correctly:\n1. The user must create a bus definition named 'BusDef_Weather' for the weather data and sav"
+	    "e it to the base MATLAB workspace. This bus definition will be automatically generated from the weather file if t"
+	    "he 'Create Simulink bus definition automatically' checkbox is checked.\n2. The .MAT file must contain time series"
+	    " objects organized within a structure (struct) object called 'ans'.\n3. The structure must match the bus definiti"
+	    "on. (If the block is allowed to automatically generate the Simulink bus definition, this requirement will be sati"
+	    "sfied.)\n3. The .MAT file must be version 7.3 or higher.\n4. All time series in the .MAT file must have units of "
+	    "seconds; otherwise Simulink will interpret them incorrectly.\n\nThe utility script convertTMY3() is available to "
+	    "convert TMY3-formatted weather data into MATLAB time series objects compatible with these requirements. See the c"
+	    "onvertTMY3() function documentation for details."
 	    Initialization	    "% Run initialization callback\nWeather_cb(gcb, 'init', fname, initbus)"
 	    SelfModifiable	    "on"
 	    Display		    "image(imread('SkyImage.png'))\nport_label('output', 1, 'data');"
@@ -3465,7 +3492,7 @@ Library {
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
 	    ZoomFactor		    "100"
-	    SIDHighWatermark	    "26"
+	    SIDHighWatermark	    "30"
 	    Block {
 	      BlockType		      FromFile
 	      Name		      "From File"

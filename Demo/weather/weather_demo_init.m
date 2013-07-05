@@ -1,5 +1,5 @@
 %% Weather Demo Initialization Script
-% This script initializes the demo by create time series .MAT files of
+% This script initializes the demo by creating time series .MAT files of
 % weather data from TMY3-formatted sources. When used with appropriate bus
 % definitions, These .MAT files are compatible with the Simulink 'From
 % File' block.

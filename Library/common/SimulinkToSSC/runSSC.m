@@ -123,13 +123,15 @@ function output = runSSC(module, input, output, varargin)
     % Check for errors
     if ~ok
         % Get error messages
+        i = 0;
         msg = '';
-        while 1,
-            err = SSC.ssccall('module_log', module, ii);
+        while true,
+            err = SSC.ssccall('module_log', module, i);
             if strcmp(err,''),
                 break;
             else
                 msg = [msg err '\n'];
+                i = i + 1;
             end
         end
         
@@ -182,7 +184,7 @@ function output = runSSC(module, input, output, varargin)
     end
     
     %% Cleanup
-    % Free the PVWatts module that we created
+    % Free the SSC module that we created
     SSC.ssccall('module_free', module);
     
     % Release the data container and all of its variables

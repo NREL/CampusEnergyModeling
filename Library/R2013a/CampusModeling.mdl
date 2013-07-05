@@ -19,7 +19,7 @@ Library {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [828.0, 117.0, 951.0, 882.0]
+      Location		      [828.0, 117.0, 951.0, 734.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -41,9 +41,9 @@ Library {
 	$ObjectID		5
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkTopLevel"
-	LoadSaveID		"0"
-	Extents			[901.0, 716.0]
+	ViewObjType		"SimulinkSubsys"
+	LoadSaveID		"13"
+	Extents			[901.0, 568.0]
 	ZoomFactor		[1.0]
 	Offset			[0.0, 0.0]
       }
@@ -55,9 +55,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Jul 01 17:18:33 2013"
-  RTWModifiedTimeStamp	  294599651
-  ModelVersionFormat	  "1.%<AutoIncrement:43>"
+  LastModifiedDate	  "Fri Jul 05 10:46:23 2013"
+  RTWModifiedTimeStamp	  294921982
+  ModelVersionFormat	  "1.%<AutoIncrement:48>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1088,8 +1088,8 @@ Library {
   }
   System {
     Name		    "CampusModeling"
-    Location		    [828, 117, 1779, 999]
-    Open		    on
+    Location		    [828, 117, 1779, 851]
+    Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -1102,7 +1102,7 @@ Library {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "144"
+    SIDHighWatermark	    "168"
     Block {
       BlockType		      SubSystem
       Name		      "Buildings"
@@ -1110,7 +1110,7 @@ Library {
       Tag		      "Weather"
       Description	      "Contains blocks for acquiring and manipulating weather data."
       Ports		      []
-      Position		      [220, 49, 342, 168]
+      Position		      [380, 49, 502, 168]
       ZOrder		      -17
       BackgroundColor	      "green"
       MinAlgLoopOccurrences   off
@@ -1257,12 +1257,52 @@ Library {
     }
     Block {
       BlockType		      SubSystem
+      Name		      "Data Acquisition"
+      SID		      "145"
+      Tag		      "Weather"
+      Description	      "Contains blocks for acquiring and manipulating weather data."
+      Ports		      []
+      Position		      [710, 49, 832, 168]
+      ZOrder		      1
+      BackgroundColor	      "cyan"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		29
+	$ClassName		"Simulink.Mask"
+	Display			"disp('Data\\nAcquisition')"
+      }
+      System {
+	Name			"Data Acquisition"
+	Location		[828, 117, 1779, 509]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+      }
+    }
+    Block {
+      BlockType		      SubSystem
       Name		      "Electrical"
       SID		      "12"
       Tag		      "Weather"
       Description	      "Contains blocks for acquiring and manipulating weather data."
       Ports		      []
-      Position		      [50, 214, 172, 333]
+      Position		      [50, 49, 172, 168]
       ZOrder		      -17
       BackgroundColor	      "orange"
       MinAlgLoopOccurrences   off
@@ -1274,7 +1314,7 @@ Library {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		29
+	$ObjectID		30
 	$ClassName		"Simulink.Mask"
 	Display			"disp('Electrical')"
       }
@@ -1309,7 +1349,7 @@ Library {
 	  MaskHideContents	  off
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    30
+	    $ObjectID		    31
 	    $ClassName		    "Simulink.Mask"
 	    Type		    "Constant Power Source/Load"
 	    Description		    "Implements a controllable three-phase, constant power source or load, where VI* = P + jQ (in pe"
@@ -1331,7 +1371,7 @@ Library {
 	      Type		      "Simulink.MaskParameter"
 	      Dimension		      6
 	      Object {
-		$ObjectID		31
+		$ObjectID		32
 		Type			"popup"
 		Array {
 		  Type			  "Cell"
@@ -1346,28 +1386,28 @@ Library {
 		Tunable			"off"
 	      }
 	      Object {
-		$ObjectID		32
+		$ObjectID		33
 		Type			"edit"
 		Name			"PNom"
 		Prompt			"Nominal three-phase real power (W)"
 		Value			"5000"
 	      }
 	      Object {
-		$ObjectID		33
+		$ObjectID		34
 		Type			"edit"
 		Name			"QNom"
 		Prompt			"Nominal three-phase reactive power (VAR)"
 		Value			"2000"
 	      }
 	      Object {
-		$ObjectID		34
+		$ObjectID		35
 		Type			"edit"
 		Name			"VNom"
 		Prompt			"Nominal line-to-line voltage (VRMS)"
 		Value			"480"
 	      }
 	      Object {
-		$ObjectID		35
+		$ObjectID		36
 		Type			"edit"
 		Name			"fNom"
 		Prompt			"Nominal frequency (Hz)"
@@ -1375,7 +1415,7 @@ Library {
 		Tunable			"off"
 	      }
 	      Object {
-		$ObjectID		36
+		$ObjectID		37
 		Type			"edit"
 		Name			"VLow"
 		Prompt			"Lower voltage limit (pu)"
@@ -1728,7 +1768,7 @@ Library {
 		  MaskHideContents	  off
 		  Object {
 		    $PropName		    "MaskObject"
-		    $ObjectID		    37
+		    $ObjectID		    38
 		    $ClassName		    "Simulink.Mask"
 		    Initialization	    "j=sqrt(-1);\na=exp(j*2*pi/3);\na2=exp(-j*2*pi/3);"
 		  }
@@ -1833,7 +1873,7 @@ Library {
 		  MaskHideContents	  off
 		  Object {
 		    $PropName		    "MaskObject"
-		    $ObjectID		    38
+		    $ObjectID		    39
 		    $ClassName		    "Simulink.Mask"
 		    Initialization	    "j=sqrt(-1);\na=exp(j*2*pi/3);\na2=exp(-j*2*pi/3);"
 		  }
@@ -2463,7 +2503,7 @@ Library {
       Tag		      "Weather"
       Description	      "Contains blocks for acquiring and manipulating weather data."
       Ports		      []
-      Position		      [220, 214, 342, 333]
+      Position		      [215, 49, 337, 168]
       ZOrder		      -17
       BackgroundColor	      "yellow"
       MinAlgLoopOccurrences   off
@@ -2475,14 +2515,14 @@ Library {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		39
+	$ObjectID		40
 	$ClassName		"Simulink.Mask"
 	Display			"disp('PV')"
       }
       System {
 	Name			"PV"
-	Location		[828, 117, 1779, 999]
-	Open			off
+	Location		[828, 117, 1779, 851]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -2499,7 +2539,7 @@ Library {
 	  Name			  "Generic Inverter"
 	  SID			  "123"
 	  Ports			  [1, 1]
-	  Position		  [55, 49, 150, 151]
+	  Position		  [325, 44, 420, 156]
 	  ZOrder		  2
 	  MinAlgLoopOccurrences	  off
 	  PropExecContextOutsideSubsystem off
@@ -2510,7 +2550,7 @@ Library {
 	  MaskHideContents	  off
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    40
+	    $ObjectID		    41
 	    $ClassName		    "Simulink.Mask"
 	    Type		    "Generic Inverter"
 	    Description		    "Implements the efficiency characteristic for a generic PV inverter using one of three models:\n"
@@ -2518,11 +2558,11 @@ Library {
 	    Help		    "This block implements the efficiency characteristic for a generic PV\ninverter using one of three mode"
 	    "ls:\n- Fixed efficiency\n- Quadratic loss model\n- Lookup table\n\nFixed Efficiency:\nSpecify the fixed inverter "
 	    "efficiency as a fraction.\n\nQuadratic Loss Model:\nSpecify the loss model coefficients such that\nPout = Pin - ("
-	    "alpha + beta*Pin + gamma*Pin^2).\n\nLookup Table:\nSpecify two of the following three vectors: input power, outpu"
-	    "t power, and\nefficiency. Efficiencies must be entered as fractions and vector lengths\nmust match. The block aut"
-	    "omatically calculates the appropriate input-output\npower characteristic from the inputs provided according to th"
-	    "e\nrelationship Efficiency = Pout / Pin.\n\nWhen using the lookup table, do not include zeros in the efficiency v"
-	    "ector.\nOtherwise, a divide by zero error may result."
+	    "alpha + beta*Pin + gamma*Pin²).\n\nLookup Table:\nSpecify two of the following three vectors: input power, output"
+	    " power, and\nefficiency. Efficiencies must be entered as fractions and vector lengths\nmust match. The block auto"
+	    "matically calculates the appropriate input-output\npower characteristic from the inputs provided according to the"
+	    "\nrelationship Efficiency = Pout / Pin.\n\nWhen using the lookup table, do not include zeros in the efficiency ve"
+	    "ctor.\nOtherwise, a divide by zero error may result."
 	    Initialization	    "% Call initialization to calculate block variables\n[a, b, c, look_Pin, look_Pout] = ...\n   "
 	    " GenericInverter_cb(gcb, 'init', model_type, ...\n	fixed_eff, alpha, beta, gamma, ...\n    lookup_pair, lookup_in"
 	    ", lookup_out, lookup_eff);"
@@ -2530,7 +2570,7 @@ Library {
 	      Type		      "Simulink.MaskParameter"
 	      Dimension		      9
 	      Object {
-		$ObjectID		41
+		$ObjectID		42
 		Type			"popup"
 		Array {
 		  Type			  "Cell"
@@ -2547,14 +2587,14 @@ Library {
 		Callback		"% Dynamic mask callback\nGenericInverter_cb(gcb, 'model_type') "
 	      }
 	      Object {
-		$ObjectID		42
+		$ObjectID		43
 		Type			"edit"
 		Name			"fixed_eff"
 		Prompt			"Efficiency"
 		Value			"0.95"
 	      }
 	      Object {
-		$ObjectID		43
+		$ObjectID		44
 		Type			"edit"
 		Name			"alpha"
 		Prompt			"Constant loss coefficient (W)"
@@ -2563,7 +2603,7 @@ Library {
 		Visible			"off"
 	      }
 	      Object {
-		$ObjectID		44
+		$ObjectID		45
 		Type			"edit"
 		Name			"beta"
 		Prompt			"Linear loss coefficient (W/W)"
@@ -2572,16 +2612,16 @@ Library {
 		Visible			"off"
 	      }
 	      Object {
-		$ObjectID		45
+		$ObjectID		46
 		Type			"edit"
 		Name			"gamma"
-		Prompt			"Quadratic loss coefficient (W/W^2)"
+		Prompt			"Quadratic loss coefficient (W/W²)"
 		Value			"0.001"
 		Enabled			"off"
 		Visible			"off"
 	      }
 	      Object {
-		$ObjectID		46
+		$ObjectID		47
 		Type			"popup"
 		Array {
 		  Type			  "Cell"
@@ -2600,7 +2640,7 @@ Library {
 		Callback		"% Dynamic mask callback\nGenericInverter_cb(gcb, 'lookup_pair')"
 	      }
 	      Object {
-		$ObjectID		47
+		$ObjectID		48
 		Type			"edit"
 		Name			"lookup_in"
 		Prompt			"Input power (W)"
@@ -2609,7 +2649,7 @@ Library {
 		Visible			"off"
 	      }
 	      Object {
-		$ObjectID		48
+		$ObjectID		49
 		Type			"edit"
 		Name			"lookup_out"
 		Prompt			"Output power (W)"
@@ -2618,7 +2658,7 @@ Library {
 		Visible			"off"
 	      }
 	      Object {
-		$ObjectID		49
+		$ObjectID		50
 		Type			"edit"
 		Name			"lookup_eff"
 		Prompt			"Efficiency"
@@ -3051,6 +3091,266 @@ Library {
 	    }
 	  }
 	}
+	Block {
+	  BlockType		  M-S-Function
+	  Name			  "PVWatts Cosimulation"
+	  SID			  "168"
+	  Ports			  [4, 3]
+	  Position		  [45, 42, 255, 158]
+	  ZOrder		  48
+	  UserDataPersistent	  on
+	  UserData		  "DataTag0"
+	  FunctionName		  "pvwatts_sfun"
+	  Parameters		  "lat, lon, start_time, tz, time_step, system_size, derate, azimuth, tilt, track_mode, rotlim, t_ref, "
+	  "t_noct, gamma, i_ref, poa_cutin, init_tcell, init_poa, output_dc, output_celltemp, output_poa"
+	  Object {
+	    $PropName		    "MaskObject"
+	    $ObjectID		    51
+	    $ClassName		    "Simulink.Mask"
+	    Type		    "PVWatts Cosimulation"
+	    Initialization	    "PVWatts_cb(gcb, 'redraw_mask');"
+	    SelfModifiable	    "on"
+	    Display		    "% This mask display is automatically generated by PVWatts_cb()\nimage('pvwatts_light.png')\ndisp('P"
+	    "VWatts\\nCosimulation')\n\n% Label input ports\nport_label('input', 1, 'Beam'); % Beam irradiance (W/m^2)\nport_l"
+	    "abel('input', 2, 'Diffuse'); % Diffuse irradiance (W/m^2)\nport_label('input', 3, 'Temp'); % Ambient temperature "
+	    "(deg C)\nport_label('input', 4, 'Wind'); % Wind speed (m/s)\n\n% Label output ports\nport_label('output', 1, 'DC "
+	    "power'); % DC output power (W)\nport_label('output', 2, 'Cell Temp'); % Cell Temperature (deg C)\nport_label('out"
+	    "put', 3, 'POA Irradiance'); % % Point of array irradiance\n"
+	    Array {
+	      Type		      "Simulink.MaskParameter"
+	      Dimension		      23
+	      Object {
+		$ObjectID		52
+		Type			"edit"
+		Name			"lat"
+		Prompt			"Latitude"
+		Value			"39.74"
+		Tunable			"off"
+		Callback		"PVWatts_cb(gcb, 'use_lat_tilt');"
+		TabName			"Time and Location"
+	      }
+	      Object {
+		$ObjectID		53
+		Type			"edit"
+		Name			"lon"
+		Prompt			"Longitude"
+		Value			"105.18"
+		Tunable			"off"
+		TabName			"Time and Location"
+	      }
+	      Object {
+		$ObjectID		54
+		Type			"edit"
+		Name			"start_time"
+		Prompt			"Initial date/time (dd-mmm-yyyy HH:MM:SS)"
+		Value			"1-Jan-2012 00:00:00"
+		Evaluate		"off"
+		Tunable			"off"
+		TabName			"Time and Location"
+	      }
+	      Object {
+		$ObjectID		55
+		Type			"edit"
+		Name			"tz"
+		Prompt			"Time zone (offset from UTC)"
+		Value			"-6"
+		Tunable			"off"
+		TabName			"Time and Location"
+	      }
+	      Object {
+		$ObjectID		56
+		Type			"edit"
+		Name			"time_step"
+		Prompt			"Time step (s)"
+		Value			"600"
+		Tunable			"off"
+		TabName			"Time and Location"
+	      }
+	      Object {
+		$ObjectID		57
+		Type			"edit"
+		Name			"system_size"
+		Prompt			"Array nameplate capacity (W)"
+		Value			"1000"
+		Tunable			"off"
+		TabName			"Array"
+	      }
+	      Object {
+		$ObjectID		58
+		Type			"edit"
+		Name			"derate"
+		Prompt			"System derate factor (0-1)"
+		Value			"0.95"
+		Tunable			"off"
+		TabName			"Array"
+	      }
+	      Object {
+		$ObjectID		59
+		Type			"edit"
+		Name			"azimuth"
+		Prompt			"Azimuth angle (E = 90°, S = 180°, W = 270°)"
+		Value			"180"
+		Tunable			"off"
+		TabName			"Array"
+	      }
+	      Object {
+		$ObjectID		60
+		Type			"edit"
+		Name			"tilt"
+		Prompt			"Tilt angle"
+		Value			"39.74"
+		Tunable			"off"
+		Enabled			"off"
+		TabName			"Array"
+	      }
+	      Object {
+		$ObjectID		61
+		Type			"checkbox"
+		Name			"use_lat_tilt"
+		Prompt			"Use latitude tilt"
+		Value			"on"
+		Tunable			"off"
+		Callback		"PVWatts_cb(gcb, 'use_lat_tilt');"
+		TabName			"Array"
+	      }
+	      Object {
+		$ObjectID		62
+		Type			"popup"
+		Array {
+		  Type			  "Cell"
+		  Dimension		  4
+		  Cell			  "Fixed"
+		  Cell			  "1-Axis"
+		  Cell			  "2-Axis"
+		  Cell			  "Azimuth Axis"
+		  PropName		  "TypeOptions"
+		}
+		Name			"track_mode"
+		Prompt			"Tracking mode"
+		Value			"Fixed"
+		Tunable			"off"
+		Callback		"PVWatts_cb(gcb, 'track_mode');"
+		TabName			"Array"
+	      }
+	      Object {
+		$ObjectID		63
+		Type			"edit"
+		Name			"rotlim"
+		Prompt			"Tracker rotation limit (+/-)"
+		Value			"45"
+		Tunable			"off"
+		Visible			"off"
+		TabName			"Array"
+	      }
+	      Object {
+		$ObjectID		64
+		Type			"checkbox"
+		Name			"use_cell_data"
+		Prompt			"Customize photovoltaic cell data"
+		Value			"off"
+		Tunable			"off"
+		Callback		"PVWatts_cb(gcb, 'use_cell_data');"
+		TabName			"Cell"
+	      }
+	      Object {
+		$ObjectID		65
+		Type			"edit"
+		Name			"t_ref"
+		Prompt			"Reference cell temperature (°C)"
+		Value			"25"
+		Tunable			"off"
+		Enabled			"off"
+		TabName			"Cell"
+	      }
+	      Object {
+		$ObjectID		66
+		Type			"edit"
+		Name			"t_noct"
+		Prompt			"Nominal operating cell temperature (°C)"
+		Value			"45"
+		Tunable			"off"
+		Enabled			"off"
+		TabName			"Cell"
+	      }
+	      Object {
+		$ObjectID		67
+		Type			"edit"
+		Name			"gamma"
+		Prompt			"Maximum power temperature coefficient (%/°C)"
+		Value			"-0.5"
+		Tunable			"off"
+		Enabled			"off"
+		TabName			"Cell"
+	      }
+	      Object {
+		$ObjectID		68
+		Type			"edit"
+		Name			"i_ref"
+		Prompt			"Irradiance condition for cell rating (W/m²)"
+		Value			"1000"
+		Tunable			"off"
+		Enabled			"off"
+		TabName			"Cell"
+	      }
+	      Object {
+		$ObjectID		69
+		Type			"edit"
+		Name			"poa_cutin"
+		Prompt			"Minimum irradiance for operation (W/m²)"
+		Value			"0"
+		Tunable			"off"
+		Enabled			"off"
+		TabName			"Cell"
+	      }
+	      Object {
+		$ObjectID		70
+		Type			"edit"
+		Name			"init_tcell"
+		Prompt			"Initial cell temperature (°C)"
+		Value			"25"
+		Tunable			"off"
+		TabName			"Simulation"
+	      }
+	      Object {
+		$ObjectID		71
+		Type			"edit"
+		Name			"init_poa"
+		Prompt			"Initial plane of array irradiance (W/m²)"
+		Value			"0"
+		Tunable			"off"
+		TabName			"Simulation"
+	      }
+	      Object {
+		$ObjectID		72
+		Type			"checkbox"
+		Name			"output_dc"
+		Prompt			"Output DC power (W)"
+		Value			"on"
+		Tunable			"off"
+		TabName			"Simulation"
+	      }
+	      Object {
+		$ObjectID		73
+		Type			"checkbox"
+		Name			"output_celltemp"
+		Prompt			"Output cell temperature (°C)"
+		Value			"on"
+		Tunable			"off"
+		TabName			"Simulation"
+	      }
+	      Object {
+		$ObjectID		74
+		Type			"checkbox"
+		Name			"output_poa"
+		Prompt			"Output plane of array irradiance (W/m²)"
+		Value			"on"
+		Tunable			"off"
+		TabName			"Simulation"
+	      }
+	      PropName		      "Parameters"
+	    }
+	  }
+	}
       }
     }
     Block {
@@ -3060,7 +3360,7 @@ Library {
       Tag		      "Weather"
       Description	      "Contains blocks for acquiring and manipulating weather data."
       Ports		      []
-      Position		      [50, 49, 172, 168]
+      Position		      [545, 49, 667, 168]
       ZOrder		      -17
       BackgroundColor	      "lightBlue"
       MinAlgLoopOccurrences   off
@@ -3072,13 +3372,13 @@ Library {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		50
+	$ObjectID		75
 	$ClassName		"Simulink.Mask"
 	Display			"disp('Weather')"
       }
       System {
 	Name			"Weather"
-	Location		[828, 117, 1779, 999]
+	Location		[828, 117, 1779, 851]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -3107,7 +3407,7 @@ Library {
 	  MaskHideContents	  off
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    51
+	    $ObjectID		    76
 	    $ClassName		    "Simulink.Mask"
 	    Type		    "Weather Data From File"
 	    Description		    "Reads weather data from the specified binary file and outputs it as a Simulink bus signal.\n\nT"
@@ -3132,7 +3432,7 @@ Library {
 	      Type		      "Simulink.MaskParameter"
 	      Dimension		      2
 	      Object {
-		$ObjectID		52
+		$ObjectID		77
 		Type			"edit"
 		Name			"fname"
 		Prompt			"Weather file"
@@ -3140,11 +3440,11 @@ Library {
 		Tunable			"off"
 	      }
 	      Object {
-		$ObjectID		53
+		$ObjectID		78
 		Type			"checkbox"
 		Name			"initbus"
 		Prompt			"Create Simulink bus definition automatically?"
-		Value			"on"
+		Value			"off"
 		Tunable			"off"
 	      }
 	      PropName		      "Parameters"
@@ -3165,7 +3465,7 @@ Library {
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
 	    ZoomFactor		    "100"
-	    SIDHighWatermark	    "24"
+	    SIDHighWatermark	    "26"
 	    Block {
 	      BlockType		      FromFile
 	      Name		      "From File"
@@ -3197,5 +3497,67 @@ Library {
 	}
       }
     }
+  }
+}
+MatData {
+  NumRecords		  1
+  DataRecord {
+    Tag			    DataTag0
+    Data		    "  %)30     .    &!(   8    (     @         %    \"     $    !     0         %  0 \"@    $    \\    9&EA"
+    ";&]G     &]U='!U=',   !S<V-V87(     <W-C9&%T80   '-I;7-T87)T  !S<V-M;V1U;&4       X   #8!@  !@    @    \"         "
+    " 4    (     0    $    !          4 !  0     0   % !  !L870                 ;&]N                 '-T87)T7W1I;64    "
+    "   !T>@                  =&EM95]S=&5P         '-Y<W1E;5]S:7IE      !D97)A=&4             87II;75T:            '1I;"
+    "'0               !T<F%C:U]M;V1E        <F]T;&EM             '1?<F5F              !T7VYO8W0             9V%M;6$    "
+    "          &E?<F5F              !P;V%?8W5T:6X         :6YI=%]T8V5L;        &EN:71?<&]A          !O=71P=71?9&,      "
+    "   ;W5T<'5T7V-E;&QT96UP &]U='!U=%]P;V$        .    .     8    (    !@         %    \"     $    !     0         )  "
+    "  \"    !^%ZU&XWD- #@   #@    &    \"     8         !0    @    !     0    $         \"0    @   #L4;@>A4M:0 X   !( "
+    "   !@    @    $          4    (     0   !,    !         !     3    ,2U*86XM,C Q,B P,#HP,#HP,       #@   #@    &   "
+    " \"     8         !0    @    !     0    $         \"0    @            8P X    X    !@    @    &          4    (   "
+    "  0    $    !          D    (          # @D .    .     8    (    !@         %    \"     $    !     0         )    "
+    "\"           0(] #@   #@    &    \"     8         !0    @    !     0    $         \"0    @   !F9F9F9F;N/PX    X   "
+    " !@    @    &          4    (     0    $    !          D    (          \" 9D .    .     8    (    !@         %    "
+    "\"     $    !     0         )    \"    !^%ZU&XWD- #@   #@    &    \"     8         !0    @    !     0    $        "
+    " \"0    @           #P/PX    X    !@    @    &          4    (     0    $    !          D    (          \" 1D .   "
+    " .     8    (    !@         %    \"     $    !     0         )    \"            #E #@   #@    &    \"     8       "
+    "  !0    @    !     0    $         \"0    @          (!&0 X    X    !@    @    &          4    (     0    $    !   "
+    "       D    (            X+\\.    .     8    (    !@         %    \"     $    !     0         )    \"           0("
+    "] #@   #@    &    \"     8         !0    @    !     0    $         \"0    @               X    X    !@    @    &  "
+    "        4    (     0    $    !          D    (            .4 .    .     8    (    !@         %    \"     $    !   "
+    "  0         )    \"               #@   #@    &    \"     8         !0    @    !     0    $         \"0    @       "
+    "    #P/PX    X    !@    @    &          4    (     0    $    !          D    (            \\#\\.    .     8    (  "
+    "  !@         %    \"     $    !     0         )    \"            / _#@   , !   &    \"     (         !0    @    ! "
+    "    P    $         !0 $  L    !    %@   %9A<DYA;64     3W5T<'5T4&]R=     X    P    !@    @    $          4    (   "
+    "  0    (    !         !   @!D8P  #@   #@    &    \"     8         !0    @    !     0    $         \"0    @        "
+    "   #P/PX    X    !@    @    $          4    (     0    4    !         !     %    =&-E;&P    .    .     8    (    !"
+    "@         %    \"     $    !     0         )    \"             ! #@   #     &    \"     0         !0    @    !    "
+    " P    $         $  # '!O80 .    .     8    (    !@         %    \"     $    !     0         )    \"             A "
+    "#@   $ (   &    \"     (         !0    @    !     0    $         !0 $  P    !    1 $  &QA=            &QO;@       "
+    "    '1Z             '1I;65?<W1E<    '-Y<W1E;5]S:7IE &1E<F%T90       '1R86-K7VUO9&4  &%Z:6UU=&@      '1I;'0        "
+    "  ')O=&QI;0       '1?;F]C=        '1?<F5F         &=A;6UA         &E?<F5F         '!O85]C=71I;@   '1C96QL         "
+    "'!O80           'EE87(          &UO;G1H         &1A>0           &AO=7(          &UI;G5T90       &)E86T          &1"
+    "I9F9U<V4      '1A;6(          '=S<&0          &1C                   .    .     8    (    !@         %    \"     $ "
+    "   !     0         )    \"    !^%ZU&XWD- #@   #@    &    \"     8         !0    @    !     0    $         \"0    @"
+    "   #L4;@>A4M:0 X    X    !@    @    &          4    (     0    $    !          D    (            &$ .    .     8  "
+    "  (    !@         %    \"     $    !     0         )    \"    %5555555<4_#@   #@    &    \"     8         !0    @ "
+    "   !     0    $         \"0    @    S,S,S,S/C/PX    X    !@    @    &          4    (     0    $    !          D  "
+    "  (    9F9F9F9F[C\\.    .     8    (    !@         %    \"     $    !     0         )    \"               #@   #@ "
+    "   &    \"     8         !0    @    !     0    $         \"0    @          (!F0 X    X    !@    @    &          4 "
+    "   (     0    $    !          D    (    'X7K4;C>0T .    .     8    (    !@         %    \"     $    !     0       "
+    "  )    \"           @$9 #@   #@    &    \"     8         !0    @    !     0    $         \"0    @          (!&0 X "
+    "   X    !@    @    &          4    (     0    $    !          D    (            .4 .    .     8    (    !@        "
+    " %    \"     $    !     0         )    \"            .\"_#@   #@    &    \"     8         !0    @    !     0    $ "
+    "        \"0    @          $\"/0 X    X    !@    @    &          4    (     0    $    !          D    (            "
+    "   .    .     8    (    !@         %    \"     $    !     0         )    \"               #@   #@    &    \"     8"
+    "         !0    @    !     0    $         \"0    @               X    X    !@    @    &          4    (     0    $ "
+    "   !          D    (          !PGT .    .     8    (    !@         %    \"     $    !     0         )    \"       "
+    "     !Q #@   #@    &    \"     8         !0    @    !     0    $         \"0    @            U0 X    X    !@    @ "
+    "   &          4    (     0    $    !          D    (               .    .     8    (    !@         %    \"     $  "
+    "  !     0         )    \"               #@   #@    &    \"     8         !0    @    !     0    $         \"0    @ "
+    "              X    X    !@    @    &          4    (     0    $    !          D    (               .    .     8   "
+    " (    !@         %    \"     $    !     0         )    \"    ,W,S,S,3#A #@   #@    &    \"     8         !0    @  "
+    "  !     0    $         \"0    @   \":F9F9F9D50 X    X    !@    @    &          4    (     0    $    !          D  "
+    "  (               .    ,     8    (    !@         %    \"                0         )          X    X    !@    @   "
+    " &          4    (     0    $    !          D    (         ()N)D$.    ,     8    (    !@         %    \"          "
+    "      0         )          "
   }
 }

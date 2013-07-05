@@ -1,0 +1,21 @@
+ 				
+var tab pvwattsfunc				
+number	year	2012	Year	yr
+number	month	6	Month	mn
+number	day	21	Day	dy
+number	hour	12	Hour	hr
+number	minute	0	Minute	min
+number	lat	39.742	Latitude	deg
+number	lon	105.18	Longitude	deg
+number	tz	6	Time zone	hr
+number	beam	970	Beam normal irradiance	W/m2
+number	diffuse	86	Diffuse irradiance	W/m2
+number	tamb	25.4	Ambient temperature	C
+number	wspd	3.6	Wind speed	m/s
+number	time_step	0.016666667	Time step of input data	hr
+number	system_size	100	Nameplate capacity	kW
+number	derate	0.95	System derate value	frac
+number	track_mode	0	Tracking mode	0/1/2/3
+number	azimuth	180	Azimuth angle	deg
+number	tilt	40	Tilt angle	deg
+number	inv_eff	0.95	Inverter efficiency at rated power	frac

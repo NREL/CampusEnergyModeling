@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.38"
+    ComputedModelVersion    "1.40"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -66,9 +66,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Jul 05 11:26:15 2013"
-  RTWModifiedTimeStamp	  294924353
-  ModelVersionFormat	  "1.%<AutoIncrement:38>"
+  LastModifiedDate	  "Wed Jul 10 09:17:19 2013"
+  RTWModifiedTimeStamp	  295348638
+  ModelVersionFormat	  "1.%<AutoIncrement:40>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -907,7 +907,7 @@ Model {
       Ports		      [1, 1]
       Position		      [690, 10574, 785, 10686]
       ZOrder		      64
-      LibraryVersion	      "1.48"
+      LibraryVersion	      "1.52"
       SourceBlock	      "CampusModeling/PV/Generic Inverter"
       SourceType	      "Generic Inverter"
       model_type	      "Quadratic"
@@ -1000,7 +1000,7 @@ Model {
       Ports		      [4, 3]
       Position		      [345, 10612, 555, 10728]
       ZOrder		      65
-      LibraryVersion	      "1.48"
+      LibraryVersion	      "1.52"
       UserDataPersistent      on
       UserData		      "DataTag0"
       SourceBlock	      "CampusModeling/PV/PVWatts Cosimulation"
@@ -1063,7 +1063,7 @@ Model {
       Ports		      [0, 1]
       Position		      [55, 10625, 130, 10715]
       ZOrder		      60
-      LibraryVersion	      "1.48"
+      LibraryVersion	      "1.52"
       SourceBlock	      "CampusModeling/Weather/Weather Data"
       SourceType	      "Weather Data From File"
       fname		      "'Weather.mat'"
@@ -1229,7 +1229,7 @@ MatData {
     "   !     0         )    \"    !^%ZU&XWD- #@   #@    &    \"     8         !0    @    !     0    $         \"0    @"
     "   #L4;@>A4M:0 X    X    !@    @    &          4    (     0    $    !          D    (            &$ .    .     8  "
     "  (    !@         %    \"     $    !     0         )    \"    %5555555<4_#@   #@    &    \"     8         !0    @ "
-    "   !     0    $         \"0    @    S,S,S,S/C/PX    X    !@    @    &          4    (     0    $    !          D  "
+    "   !     0    $         \"0    @           #P/PX    X    !@    @    &          4    (     0    $    !          D  "
     "  (    9F9F9F9F[C\\.    .     8    (    !@         %    \"     $    !     0         )    \"               #@   #@ "
     "   &    \"     8         !0    @    !     0    $         \"0    @          (!F0 X    X    !@    @    &          4 "
     "   (     0    $    !          D    (    'X7K4;C>0T .    .     8    (    !@         %    \"     $    !     0       "

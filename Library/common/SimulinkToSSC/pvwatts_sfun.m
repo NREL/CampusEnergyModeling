@@ -286,7 +286,7 @@ function Start(block)
     d.sscvar.lon = d.dialog.lon;
     d.sscvar.tz = -d.dialog.tz;                         % TO DO: Check this timezone conversion
     d.sscvar.time_step = d.dialog.time_step / 3600;     % sec -> hr
-    d.sscvar.system_size = d.dialog.time_step / 1000;   % W -> kW
+    d.sscvar.system_size = d.dialog.system_size / 1000; % W -> kW
     d.sscvar.derate = d.dialog.derate;
     d.sscvar.track_mode = d.dialog.track_mode - 1;
     d.sscvar.azimuth = d.dialog.azimuth;

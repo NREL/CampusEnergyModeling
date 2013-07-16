@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.736"
+    ComputedModelVersion    "1.740"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -58,13 +58,13 @@ Model {
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
 	Extents			[1761.0, 852.0]
-	ZoomFactor		[0.8]
-	Offset			[575.78087970631759, -22.166666666666629]
+	ZoomFactor		[0.6]
+	Offset			[464.54754637298424, -62.450000000000273]
       }
     }
   }
-  PhysicalModelingChecksum "882152038"
-  PhysicalModelingParameterChecksum "3196947361"
+  PhysicalModelingChecksum "1882923102"
+  PhysicalModelingParameterChecksum "3281749075"
   PhysicalModelingProducts "Power_System_Blocks"
   Created		  "Thu Sep 30 16:43:56 1999"
   Creator		  "MathWorks"
@@ -72,9 +72,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Jul 16 09:50:41 2013"
-  RTWModifiedTimeStamp	  295869040
-  ModelVersionFormat	  "1.%<AutoIncrement:736>"
+  LastModifiedDate	  "Tue Jul 16 10:16:27 2013"
+  RTWModifiedTimeStamp	  295870024
+  ModelVersionFormat	  "1.%<AutoIncrement:740>"
   ConfigurationManager	  "none"
   SampleTimeColors	  on
   SampleTimeAnnotations	  on
@@ -875,9 +875,43 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "80"
+    ZoomFactor		    "60"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "2411"
+    SIDHighWatermark	    "2425"
+    Block {
+      BlockType		      Reference
+      Name		      "Building 1"
+      SID		      "2217"
+      Ports		      [1, 0, 0, 0, 0, 4]
+      Position		      [1270, 527, 1310, 613]
+      ZOrder		      144
+      LibraryVersion	      "1.52"
+      SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
+      SourceType	      "Constant Power Source/Load"
+      Conven		      "load"
+      PNom		      "15e3"
+      QNom		      "5e3"
+      VNom		      "208"
+      fNom		      "60"
+      VLow		      "0.7"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Building 2"
+      SID		      "2381"
+      Ports		      [1, 0, 0, 0, 0, 4]
+      Position		      [1670, 527, 1710, 613]
+      ZOrder		      242
+      LibraryVersion	      "1.52"
+      SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
+      SourceType	      "Constant Power Source/Load"
+      Conven		      "load"
+      PNom		      "15e3"
+      QNom		      "5e3"
+      VNom		      "208"
+      fNom		      "60"
+      VLow		      "0.7"
+    }
     Block {
       BlockType		      SubSystem
       Name		      "CBL 1"
@@ -1282,6 +1316,23 @@ Model {
     }
     Block {
       BlockType		      Reference
+      Name		      "Central Plant"
+      SID		      "2422"
+      Ports		      [1, 0, 0, 0, 0, 4]
+      Position		      [1270, 787, 1310, 873]
+      ZOrder		      275
+      LibraryVersion	      "1.52"
+      SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
+      SourceType	      "Constant Power Source/Load"
+      Conven		      "load"
+      PNom		      "12e3"
+      QNom		      "4e3"
+      VNom		      "208"
+      fNom		      "60"
+      VLow		      "0.7"
+    }
+    Block {
+      BlockType		      Reference
       Name		      "Charger1"
       SID		      "2255"
       Ports		      [1, 0, 0, 0, 0, 4]
@@ -1386,7 +1437,7 @@ Model {
       BlockType		      Constant
       Name		      "Constant1"
       SID		      "2215"
-      Position		      [1105, 510, 1135, 540]
+      Position		      [1190, 510, 1220, 540]
       ZOrder		      142
       ForegroundColor	      "[0.501961, 0.501961, 0.501961]"
       NamePlacement	      "alternate"
@@ -1408,6 +1459,16 @@ Model {
       SID		      "2379"
       Position		      [1590, 510, 1620, 540]
       ZOrder		      240
+      ForegroundColor	      "[0.501961, 0.501961, 0.501961]"
+      NamePlacement	      "alternate"
+      Value		      "[15e3 5e3]"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant3"
+      SID		      "2412"
+      Position		      [1190, 770, 1220, 800]
+      ZOrder		      273
       ForegroundColor	      "[0.501961, 0.501961, 0.501961]"
       NamePlacement	      "alternate"
       Value		      "[15e3 5e3]"
@@ -1595,7 +1656,7 @@ Model {
       Name		      "Ground1"
       SID		      "2216"
       Ports		      [0, 0, 0, 0, 0, 1]
-      Position		      [1144, 620, 1166, 645]
+      Position		      [1229, 620, 1251, 645]
       ZOrder		      143
       BlockRotation	      270
       BlockMirror	      on
@@ -1627,6 +1688,21 @@ Model {
       Ports		      [0, 0, 0, 0, 0, 1]
       Position		      [1629, 620, 1651, 645]
       ZOrder		      241
+      BlockRotation	      270
+      BlockMirror	      on
+      ShowName		      off
+      LibraryVersion	      "1.2191"
+      SourceBlock	      "powerlib/Elements/Ground"
+      SourceType	      "Ground"
+      LConnTagsString	      "a"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Ground3"
+      SID		      "2413"
+      Ports		      [0, 0, 0, 0, 0, 1]
+      Position		      [1229, 880, 1251, 905]
+      ZOrder		      274
       BlockRotation	      270
       BlockMirror	      on
       ShowName		      off
@@ -1730,7 +1806,7 @@ Model {
       Name		      "Line Load 1"
       SID		      "2331"
       Ports		      [0, 0, 0, 0, 0, 3, 3]
-      Position		      [930, 548, 990, 592]
+      Position		      [1015, 548, 1075, 592]
       ZOrder		      211
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -2128,38 +2204,205 @@ Model {
       }
     }
     Block {
-      BlockType		      Reference
-      Name		      "Load-1"
-      SID		      "2217"
-      Ports		      [1, 0, 0, 0, 0, 4]
-      Position		      [1185, 527, 1225, 613]
-      ZOrder		      144
-      LibraryVersion	      "1.52"
-      SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
-      SourceType	      "Constant Power Source/Load"
-      Conven		      "load"
-      PNom		      "15e3"
-      QNom		      "5e3"
-      VNom		      "208"
-      fNom		      "60"
-      VLow		      "0.7"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Load-2"
-      SID		      "2381"
-      Ports		      [1, 0, 0, 0, 0, 4]
-      Position		      [1670, 527, 1710, 613]
-      ZOrder		      242
-      LibraryVersion	      "1.52"
-      SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
-      SourceType	      "Constant Power Source/Load"
-      Conven		      "load"
-      PNom		      "15e3"
-      QNom		      "5e3"
-      VNom		      "208"
-      fNom		      "60"
-      VLow		      "0.7"
+      BlockType		      SubSystem
+      Name		      "Line Load 3"
+      SID		      "2414"
+      Ports		      [0, 0, 0, 0, 0, 3, 3]
+      Position		      [1015, 808, 1075, 852]
+      ZOrder		      276
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		44
+	$ClassName		"Simulink.Mask"
+	Type			"Short Cable"
+	Description		"This block implements a short cable using three phase mutual inductance.\nSelf impedances and mutual im"
+	"pedances are set by entering positive and zero sequences parameters."
+	Display			"plot(0,0,100,100,[20,20,80,80,90,80,80,20,20,10],[50,40,40,50,50,50,61,61,50,50])"
+	IconOpaque		"off"
+	Array {
+	  Type			  "Simulink.MaskParameter"
+	  Dimension		  5
+	  Object {
+	    $ObjectID		    45
+	    Type		    "edit"
+	    Name		    "R1"
+	    Prompt		    "Positive Sequence R (ohms/1000ft)"
+	    Value		    "0.1280"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    46
+	    Type		    "edit"
+	    Name		    "X1"
+	    Prompt		    "Positive Sequence XL (ohms/1000ft)"
+	    Value		    "0.0507"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    47
+	    Type		    "edit"
+	    Name		    "R0"
+	    Prompt		    "Zero Sequence R (ohms/1000ft)"
+	    Value		    "0.2035"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    48
+	    Type		    "edit"
+	    Name		    "X0"
+	    Prompt		    "Zero Sequence XL (ohms/1000ft)"
+	    Value		    "0.1290"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    49
+	    Type		    "edit"
+	    Name		    "L"
+	    Prompt		    "Line Length (ft)"
+	    Value		    "50"
+	    Tunable		    "off"
+	  }
+	  PropName		  "Parameters"
+	}
+      }
+      System {
+	Name			"Line Load 3"
+	Location		[905, 107, 1434, 679]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Reference
+	  Name			  "Three-Phase\nMutual Inductance\nZ1-Z0"
+	  SID			  "2415"
+	  Ports			  [0, 0, 0, 0, 0, 3, 3]
+	  Position		  [130, 21, 200, 119]
+	  ZOrder		  -1
+	  AttributesFormatString  "\\n"
+	  LibraryVersion	  "1.2191"
+	  SourceBlock		  "powerlib/Elements/Three-Phase\nMutual Inductance\nZ1-Z0"
+	  SourceType		  "Three-Phase Mutual Inductance Z1-Z0"
+	  LConnTagsString	  "a|b|c"
+	  RConnTagsString	  "A|B|C"
+	  PositiveSequence	  "[R1 X1/376.9911]*L/1000"
+	  ZeroSequence		  "[R0 X0/376.9911]*L/1000"
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  "A"
+	  SID			  "2416"
+	  Position		  [40, 33, 70, 47]
+	  ZOrder		  -2
+	  Port			  "1"
+	  Side			  "Left"
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  "B"
+	  SID			  "2417"
+	  Position		  [40, 63, 70, 77]
+	  ZOrder		  -3
+	  Port			  "2"
+	  Side			  "Left"
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  "C "
+	  SID			  "2418"
+	  Position		  [40, 93, 70, 107]
+	  ZOrder		  -4
+	  Port			  "3"
+	  Side			  "Left"
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  "a"
+	  SID			  "2419"
+	  Position		  [245, 33, 275, 47]
+	  ZOrder		  -5
+	  BlockMirror		  on
+	  Port			  "4"
+	  Side			  "Right"
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  "b"
+	  SID			  "2420"
+	  Position		  [245, 63, 275, 77]
+	  ZOrder		  -6
+	  BlockMirror		  on
+	  Port			  "5"
+	  Side			  "Right"
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  "c"
+	  SID			  "2421"
+	  Position		  [245, 93, 275, 107]
+	  ZOrder		  -7
+	  BlockMirror		  on
+	  Port			  "6"
+	  Side			  "Right"
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "A"
+	  SrcPort		  RConn1
+	  DstBlock		  "Three-Phase\nMutual Inductance\nZ1-Z0"
+	  DstPort		  LConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "B"
+	  SrcPort		  RConn1
+	  DstBlock		  "Three-Phase\nMutual Inductance\nZ1-Z0"
+	  DstPort		  LConn2
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "C "
+	  SrcPort		  RConn1
+	  DstBlock		  "Three-Phase\nMutual Inductance\nZ1-Z0"
+	  DstPort		  LConn3
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Three-Phase\nMutual Inductance\nZ1-Z0"
+	  SrcPort		  RConn1
+	  DstBlock		  "a"
+	  DstPort		  RConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Three-Phase\nMutual Inductance\nZ1-Z0"
+	  SrcPort		  RConn2
+	  DstBlock		  "b"
+	  DstPort		  RConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Three-Phase\nMutual Inductance\nZ1-Z0"
+	  SrcPort		  RConn3
+	  DstBlock		  "c"
+	  DstPort		  RConn1
+	}
+      }
     }
     Block {
       BlockType		      Mux
@@ -2524,7 +2767,7 @@ Model {
       Name		      "T:Load1"
       SID		      "2357"
       Ports		      [0, 0, 0, 0, 0, 3, 3]
-      Position		      [1025, 548, 1080, 592]
+      Position		      [1110, 548, 1165, 592]
       ZOrder		      216
       LibraryVersion	      "1.2191"
       FontName		      "Verdana"
@@ -2558,6 +2801,38 @@ Model {
       Ports		      [0, 0, 0, 0, 0, 3, 3]
       Position		      [1510, 548, 1565, 592]
       ZOrder		      243
+      LibraryVersion	      "1.2191"
+      FontName		      "Verdana"
+      FontSize		      11
+      SourceBlock	      "powerlib/Elements/Three-Phase\nTransformer\n(Two Windings)"
+      SourceType	      "Three-Phase Transformer (Two Windings)"
+      Winding1Connection      "Delta (D11)"
+      UNITS		      "pu"
+      NominalPower	      "[50e3 , 60 ]"
+      Winding1		      "[13.2e3 , 0.01/2 , 0.0566/(120*pi)/2]"
+      Winding2Connection      "Yg"
+      Winding2		      "[208 , 0.01/2 , 0.0566/(120*pi)/2]"
+      SetSaturation	      off
+      Rm		      "500"
+      Lm		      "500"
+      Saturation	      "[ 0,0 ; 0.0024,1.2 ; 1.0,1.52 ]"
+      Hysteresis	      off
+      DataFile		      "'hysteresis'"
+      SetInitialFlux	      off
+      InitialFluxes	      "[ 0.8 , -0.8 , 0.7 ]"
+      Measurements	      "None"
+      MoreParameters	      off
+      BreakLoop		      off
+      DataType		      off
+      TransfoNumber	      "1"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "T:Load3"
+      SID		      "2423"
+      Ports		      [0, 0, 0, 0, 0, 3, 3]
+      Position		      [1110, 808, 1165, 852]
+      ZOrder		      277
       LibraryVersion	      "1.2191"
       FontName		      "Verdana"
       FontSize		      11
@@ -2968,7 +3243,7 @@ Model {
       Name		      "load 1"
       SID		      "2218"
       Ports		      [0, 0, 0, 0, 0, 3, 3]
-      Position		      [1120, 545, 1125, 595]
+      Position		      [1205, 545, 1210, 595]
       ZOrder		      141
       BackgroundColor	      "black"
       LibraryVersion	      "1.2191"
@@ -3017,6 +3292,32 @@ Model {
     }
     Block {
       BlockType		      Reference
+      Name		      "load 3"
+      SID		      "2424"
+      Ports		      [0, 0, 0, 0, 0, 3, 3]
+      Position		      [1205, 805, 1210, 855]
+      ZOrder		      272
+      BackgroundColor	      "black"
+      LibraryVersion	      "1.2191"
+      SourceBlock	      "powerlib/Measurements/Three-Phase\nV-I Measurement"
+      SourceType	      "Three-Phase VI Measurement"
+      VoltageMeasurement      "phase-to-ground"
+      SetLabelV		      on
+      LabelV		      "Vabc_Load3"
+      Vpu		      off
+      VpuLL		      off
+      CurrentMeasurement      "yes"
+      SetLabelI		      on
+      LabelI		      "Iabc_Load3"
+      Ipu		      off
+      Pbase		      "1e6"
+      Vbase		      "25e3"
+      OutputType	      "Magnitude"
+      PhasorSimulation	      on
+      PSBequivalent	      "0"
+    }
+    Block {
+      BlockType		      Reference
       Name		      "node 0"
       SID		      "2370"
       Ports		      [0, 0, 0, 0, 0, 3, 3]
@@ -3046,7 +3347,7 @@ Model {
       Name		      "node 1"
       SID		      "17"
       Ports		      [0, 0, 0, 0, 0, 3, 3]
-      Position		      [955, 380, 960, 430]
+      Position		      [1040, 380, 1045, 430]
       ZOrder		      -146
       BackgroundColor	      "black"
       LibraryVersion	      "1.2191"
@@ -3130,7 +3431,7 @@ Model {
       DropShadow	      on
       ShowName		      off
       Priority		      "2"
-      LibraryVersion	      "*1.2191"
+      LibraryVersion	      "1.2191"
       UserDataPersistent      on
       UserData		      "DataTag0"
       SourceBlock	      "powerlib/powergui"
@@ -3184,7 +3485,7 @@ Model {
       Name		      "wire 0-1"
       SID		      "720"
       Ports		      [0, 0, 0, 0, 0, 3, 3]
-      Position		      [775, 383, 835, 427]
+      Position		      [860, 383, 920, 427]
       ZOrder		      -26
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -3195,7 +3496,7 @@ Model {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		44
+	$ObjectID		50
 	$ClassName		"Simulink.Mask"
 	Type			"Short Cable"
 	Description		"This block implements a short cable using three phase mutual inductance.\nSelf impedances and mutual im"
@@ -3206,7 +3507,7 @@ Model {
 	  Type			  "Simulink.MaskParameter"
 	  Dimension		  5
 	  Object {
-	    $ObjectID		    45
+	    $ObjectID		    51
 	    Type		    "edit"
 	    Name		    "R1"
 	    Prompt		    "Positive Sequence R (ohms/1000ft)"
@@ -3214,7 +3515,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    46
+	    $ObjectID		    52
 	    Type		    "edit"
 	    Name		    "X1"
 	    Prompt		    "Positive Sequence XL (ohms/1000ft)"
@@ -3222,7 +3523,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    47
+	    $ObjectID		    53
 	    Type		    "edit"
 	    Name		    "R0"
 	    Prompt		    "Zero Sequence R (ohms/1000ft)"
@@ -3230,7 +3531,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    48
+	    $ObjectID		    54
 	    Type		    "edit"
 	    Name		    "X0"
 	    Prompt		    "Zero Sequence XL (ohms/1000ft)"
@@ -3238,7 +3539,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    49
+	    $ObjectID		    55
 	    Type		    "edit"
 	    Name		    "L"
 	    Prompt		    "Line Length (ft)"
@@ -3396,7 +3697,7 @@ Model {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		50
+	$ObjectID		56
 	$ClassName		"Simulink.Mask"
 	Type			"Short Cable"
 	Description		"This block implements a short cable using three phase mutual inductance.\nSelf impedances and mutual im"
@@ -3407,7 +3708,7 @@ Model {
 	  Type			  "Simulink.MaskParameter"
 	  Dimension		  5
 	  Object {
-	    $ObjectID		    51
+	    $ObjectID		    57
 	    Type		    "edit"
 	    Name		    "R1"
 	    Prompt		    "Positive Sequence R (ohms/1000ft)"
@@ -3415,7 +3716,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    52
+	    $ObjectID		    58
 	    Type		    "edit"
 	    Name		    "X1"
 	    Prompt		    "Positive Sequence XL (ohms/1000ft)"
@@ -3423,7 +3724,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    53
+	    $ObjectID		    59
 	    Type		    "edit"
 	    Name		    "R0"
 	    Prompt		    "Zero Sequence R (ohms/1000ft)"
@@ -3431,7 +3732,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    54
+	    $ObjectID		    60
 	    Type		    "edit"
 	    Name		    "X0"
 	    Prompt		    "Zero Sequence XL (ohms/1000ft)"
@@ -3439,7 +3740,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    55
+	    $ObjectID		    61
 	    Type		    "edit"
 	    Name		    "L"
 	    Prompt		    "Line Length (ft)"
@@ -3597,7 +3898,7 @@ Model {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		56
+	$ObjectID		62
 	$ClassName		"Simulink.Mask"
 	Type			"Short Cable"
 	Description		"This block implements a short cable using three phase mutual inductance.\nSelf impedances and mutual im"
@@ -3608,7 +3909,7 @@ Model {
 	  Type			  "Simulink.MaskParameter"
 	  Dimension		  5
 	  Object {
-	    $ObjectID		    57
+	    $ObjectID		    63
 	    Type		    "edit"
 	    Name		    "R1"
 	    Prompt		    "Positive Sequence R (ohms/1000ft)"
@@ -3616,7 +3917,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    58
+	    $ObjectID		    64
 	    Type		    "edit"
 	    Name		    "X1"
 	    Prompt		    "Positive Sequence XL (ohms/1000ft)"
@@ -3624,7 +3925,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    59
+	    $ObjectID		    65
 	    Type		    "edit"
 	    Name		    "R0"
 	    Prompt		    "Zero Sequence R (ohms/1000ft)"
@@ -3632,7 +3933,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    60
+	    $ObjectID		    66
 	    Type		    "edit"
 	    Name		    "X0"
 	    Prompt		    "Zero Sequence XL (ohms/1000ft)"
@@ -3640,7 +3941,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    61
+	    $ObjectID		    67
 	    Type		    "edit"
 	    Name		    "L"
 	    Prompt		    "Line Length (ft)"
@@ -3798,7 +4099,7 @@ Model {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		62
+	$ObjectID		68
 	$ClassName		"Simulink.Mask"
 	Type			"Short Cable"
 	Description		"This block implements a short cable using three phase mutual inductance.\nSelf impedances and mutual im"
@@ -3809,7 +4110,7 @@ Model {
 	  Type			  "Simulink.MaskParameter"
 	  Dimension		  5
 	  Object {
-	    $ObjectID		    63
+	    $ObjectID		    69
 	    Type		    "edit"
 	    Name		    "R1"
 	    Prompt		    "Positive Sequence R (ohms/1000ft)"
@@ -3817,7 +4118,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    64
+	    $ObjectID		    70
 	    Type		    "edit"
 	    Name		    "X1"
 	    Prompt		    "Positive Sequence XL (ohms/1000ft)"
@@ -3825,7 +4126,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    65
+	    $ObjectID		    71
 	    Type		    "edit"
 	    Name		    "R0"
 	    Prompt		    "Zero Sequence R (ohms/1000ft)"
@@ -3833,7 +4134,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    66
+	    $ObjectID		    72
 	    Type		    "edit"
 	    Name		    "X0"
 	    Prompt		    "Zero Sequence XL (ohms/1000ft)"
@@ -3841,7 +4142,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    67
+	    $ObjectID		    73
 	    Type		    "edit"
 	    Name		    "L"
 	    Prompt		    "Line Length (ft)"
@@ -4112,7 +4413,7 @@ Model {
     }
     Line {
       LineType		      "Connection"
-      SrcBlock		      "Load-1"
+      SrcBlock		      "Building 1"
       SrcPort		      LConn4
       Points		      [-15, 0]
       DstBlock		      "Ground1"
@@ -4120,21 +4421,21 @@ Model {
     }
     Line {
       LineType		      "Connection"
-      SrcBlock		      "Load-1"
+      SrcBlock		      "Building 1"
       SrcPort		      LConn2
       DstBlock		      "load 1"
       DstPort		      RConn2
     }
     Line {
       LineType		      "Connection"
-      SrcBlock		      "Load-1"
+      SrcBlock		      "Building 1"
       SrcPort		      LConn1
       DstBlock		      "load 1"
       DstPort		      RConn1
     }
     Line {
       LineType		      "Connection"
-      SrcBlock		      "Load-1"
+      SrcBlock		      "Building 1"
       SrcPort		      LConn3
       DstBlock		      "load 1"
       DstPort		      RConn3
@@ -4143,7 +4444,7 @@ Model {
       SrcBlock		      "Constant1"
       SrcPort		      1
       Points		      [16, 0; 0, 15]
-      DstBlock		      "Load-1"
+      DstBlock		      "Building 1"
       DstPort		      1
     }
     Line {
@@ -5034,22 +5335,52 @@ Model {
       LineType		      "Connection"
       SrcBlock		      "node 0"
       SrcPort		      RConn3
-      DstBlock		      "wire 0-1"
-      DstPort		      LConn3
+      Points		      [67, 0]
+      Branch {
+	ConnectType		"DEST_DEST"
+	SrcBlock		"Line Load 3"
+	SrcPort			LConn3
+	Points			[-213, 0; 0, -425]
+      }
+      Branch {
+	ConnectType		"DEST_SRC"
+	DstBlock		"wire 0-1"
+	DstPort			LConn3
+      }
     }
     Line {
       LineType		      "Connection"
       SrcBlock		      "node 0"
       SrcPort		      RConn2
-      DstBlock		      "wire 0-1"
-      DstPort		      LConn2
+      Points		      [77, 0]
+      Branch {
+	ConnectType		"DEST_DEST"
+	SrcBlock		"Line Load 3"
+	SrcPort			LConn2
+	Points			[-203, 0; 0, -425]
+      }
+      Branch {
+	ConnectType		"DEST_SRC"
+	DstBlock		"wire 0-1"
+	DstPort			LConn2
+      }
     }
     Line {
       LineType		      "Connection"
       SrcBlock		      "node 0"
       SrcPort		      RConn1
-      DstBlock		      "wire 0-1"
-      DstPort		      LConn1
+      Points		      [87, 0]
+      Branch {
+	ConnectType		"DEST_DEST"
+	SrcBlock		"Line Load 3"
+	SrcPort			LConn1
+	Points			[-193, 0; 0, -425]
+      }
+      Branch {
+	ConnectType		"DEST_SRC"
+	DstBlock		"wire 0-1"
+	DstPort			LConn1
+      }
     }
     Line {
       SrcBlock		      "PpvRated"
@@ -5081,28 +5412,28 @@ Model {
     }
     Line {
       LineType		      "Connection"
-      SrcBlock		      "Load-2"
+      SrcBlock		      "Building 2"
       SrcPort		      LConn3
       DstBlock		      "load 2"
       DstPort		      RConn3
     }
     Line {
       LineType		      "Connection"
-      SrcBlock		      "Load-2"
+      SrcBlock		      "Building 2"
       SrcPort		      LConn1
       DstBlock		      "load 2"
       DstPort		      RConn1
     }
     Line {
       LineType		      "Connection"
-      SrcBlock		      "Load-2"
+      SrcBlock		      "Building 2"
       SrcPort		      LConn2
       DstBlock		      "load 2"
       DstPort		      RConn2
     }
     Line {
       LineType		      "Connection"
-      SrcBlock		      "Load-2"
+      SrcBlock		      "Building 2"
       SrcPort		      LConn4
       Points		      [-15, 0]
       DstBlock		      "Ground2"
@@ -5112,7 +5443,7 @@ Model {
       SrcBlock		      "Constant2"
       SrcPort		      1
       Points		      [16, 0; 0, 15]
-      DstBlock		      "Load-2"
+      DstBlock		      "Building 2"
       DstPort		      1
     }
     Line {
@@ -5240,9 +5571,87 @@ Model {
       DstBlock		      "Scope3"
       DstPort		      2
     }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Central Plant"
+      SrcPort		      LConn4
+      Points		      [-15, 0]
+      DstBlock		      "Ground3"
+      DstPort		      LConn1
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Central Plant"
+      SrcPort		      LConn2
+      DstBlock		      "load 3"
+      DstPort		      RConn2
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Central Plant"
+      SrcPort		      LConn1
+      DstBlock		      "load 3"
+      DstPort		      RConn1
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Central Plant"
+      SrcPort		      LConn3
+      DstBlock		      "load 3"
+      DstPort		      RConn3
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "T:Load3"
+      SrcPort		      LConn2
+      DstBlock		      "Line Load 3"
+      DstPort		      RConn2
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "T:Load3"
+      SrcPort		      LConn1
+      DstBlock		      "Line Load 3"
+      DstPort		      RConn1
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "T:Load3"
+      SrcPort		      LConn3
+      DstBlock		      "Line Load 3"
+      DstPort		      RConn3
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "T:Load3"
+      SrcPort		      RConn2
+      DstBlock		      "load 3"
+      DstPort		      LConn2
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "T:Load3"
+      SrcPort		      RConn1
+      DstBlock		      "load 3"
+      DstPort		      LConn1
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "T:Load3"
+      SrcPort		      RConn3
+      DstBlock		      "load 3"
+      DstPort		      LConn3
+    }
+    Line {
+      SrcBlock		      "Constant3"
+      SrcPort		      1
+      Points		      [16, 0; 0, 15]
+      DstBlock		      "Central Plant"
+      DstPort		      1
+    }
     Annotation {
       SID		      "1859"
-      Name		      "Simple Demo consisting of 3 buildings, 6 car chargers, and 1 PV system"
+      Name		      "Simple Demo consisting of 2 buildings, 1 campus thermal plant, 6 EV chargers, and 1 PV system"
       Position		      [1368, 9]
       ZOrder		      -1
       FontName		      "Arial"

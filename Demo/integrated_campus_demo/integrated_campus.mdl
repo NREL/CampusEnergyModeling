@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.740"
+    ComputedModelVersion    "1.742"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -33,7 +33,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [9.0, 6.0, 1811.0, 1026.0]
+      Location		      [-8.0, -8.0, 1936.0, 1056.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -57,9 +57,9 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1761.0, 852.0]
-	ZoomFactor		[0.6]
-	Offset			[464.54754637298424, -62.450000000000273]
+	Extents			[1886.0, 882.0]
+	ZoomFactor		[1.0]
+	Offset			[747.26639358350428, -117.78290934567625]
       }
     }
   }
@@ -70,11 +70,11 @@ Model {
   Creator		  "MathWorks"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "sfrank1"
+  LastModifiedBy	  "bjohnson"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Jul 16 10:16:27 2013"
-  RTWModifiedTimeStamp	  295870024
-  ModelVersionFormat	  "1.%<AutoIncrement:740>"
+  LastModifiedDate	  "Tue Jul 16 15:59:29 2013"
+  RTWModifiedTimeStamp	  295890941
+  ModelVersionFormat	  "1.%<AutoIncrement:742>"
   ConfigurationManager	  "none"
   SampleTimeColors	  on
   SampleTimeAnnotations	  on
@@ -860,10 +860,26 @@ Model {
       Variant		      off
       GeneratePreprocessorConditionals off
     }
+    Block {
+      BlockType		      Sum
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
+      AccumDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
   }
   System {
     Name		    "integrated_campus"
-    Location		    [9, 6, 1820, 1032]
+    Location		    [-8, -8, 1928, 1048]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -875,15 +891,15 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "60"
+    ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "2425"
+    SIDHighWatermark	    "2467"
     Block {
       BlockType		      Reference
       Name		      "Building 1"
       SID		      "2217"
       Ports		      [1, 0, 0, 0, 0, 4]
-      Position		      [1270, 527, 1310, 613]
+      Position		      [1270, 612, 1310, 698]
       ZOrder		      144
       LibraryVersion	      "1.52"
       SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
@@ -900,7 +916,7 @@ Model {
       Name		      "Building 2"
       SID		      "2381"
       Ports		      [1, 0, 0, 0, 0, 4]
-      Position		      [1670, 527, 1710, 613]
+      Position		      [1670, 612, 1710, 698]
       ZOrder		      242
       LibraryVersion	      "1.52"
       SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
@@ -917,7 +933,7 @@ Model {
       Name		      "CBL 1"
       SID		      "2321"
       Ports		      [0, 0, 0, 0, 0, 3, 3]
-      Position		      [2330, 538, 2390, 582]
+      Position		      [2330, 623, 2390, 667]
       ZOrder		      206
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -1118,7 +1134,7 @@ Model {
       Name		      "CBL PV-sec1"
       SID		      "2313"
       Ports		      [0, 0, 0, 0, 0, 3, 3]
-      Position		      [2530, 538, 2590, 582]
+      Position		      [2530, 623, 2590, 667]
       ZOrder		      204
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -1319,7 +1335,7 @@ Model {
       Name		      "Central Plant"
       SID		      "2422"
       Ports		      [1, 0, 0, 0, 0, 4]
-      Position		      [1270, 787, 1310, 873]
+      Position		      [1270, 872, 1310, 958]
       ZOrder		      275
       LibraryVersion	      "1.52"
       SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
@@ -1336,7 +1352,7 @@ Model {
       Name		      "Charger1"
       SID		      "2255"
       Ports		      [1, 0, 0, 0, 0, 4]
-      Position		      [2085, 527, 2125, 613]
+      Position		      [2085, 612, 2125, 698]
       ZOrder		      163
       LibraryVersion	      "1.52"
       SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
@@ -1353,7 +1369,7 @@ Model {
       Name		      "Charger2"
       SID		      "2384"
       Ports		      [1, 0, 0, 0, 0, 4]
-      Position		      [2085, 672, 2125, 758]
+      Position		      [2085, 757, 2125, 843]
       ZOrder		      244
       LibraryVersion	      "1.52"
       SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
@@ -1370,7 +1386,7 @@ Model {
       Name		      "Charger3"
       SID		      "2385"
       Ports		      [1, 0, 0, 0, 0, 4]
-      Position		      [2085, 817, 2125, 903]
+      Position		      [2085, 902, 2125, 988]
       ZOrder		      245
       LibraryVersion	      "1.52"
       SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
@@ -1387,7 +1403,7 @@ Model {
       Name		      "Charger4"
       SID		      "2386"
       Ports		      [1, 0, 0, 0, 0, 4]
-      Position		      [2085, 947, 2125, 1033]
+      Position		      [2085, 1032, 2125, 1118]
       ZOrder		      246
       LibraryVersion	      "1.52"
       SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
@@ -1404,7 +1420,7 @@ Model {
       Name		      "Charger5"
       SID		      "2387"
       Ports		      [1, 0, 0, 0, 0, 4]
-      Position		      [2085, 1092, 2125, 1178]
+      Position		      [2085, 1177, 2125, 1263]
       ZOrder		      247
       LibraryVersion	      "1.52"
       SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
@@ -1421,7 +1437,7 @@ Model {
       Name		      "Charger6"
       SID		      "2388"
       Ports		      [1, 0, 0, 0, 0, 4]
-      Position		      [2085, 1237, 2125, 1323]
+      Position		      [2085, 1322, 2125, 1408]
       ZOrder		      248
       LibraryVersion	      "1.52"
       SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
@@ -1437,7 +1453,7 @@ Model {
       BlockType		      Constant
       Name		      "Constant1"
       SID		      "2215"
-      Position		      [1190, 510, 1220, 540]
+      Position		      [1190, 595, 1220, 625]
       ZOrder		      142
       ForegroundColor	      "[0.501961, 0.501961, 0.501961]"
       NamePlacement	      "alternate"
@@ -1447,7 +1463,7 @@ Model {
       BlockType		      Constant
       Name		      "Constant10"
       SID		      "2293"
-      Position		      [2005, 1220, 2035, 1250]
+      Position		      [2005, 1305, 2035, 1335]
       ZOrder		      190
       ForegroundColor	      "[0.501961, 0.501961, 0.501961]"
       NamePlacement	      "alternate"
@@ -1457,7 +1473,7 @@ Model {
       BlockType		      Constant
       Name		      "Constant2"
       SID		      "2379"
-      Position		      [1590, 510, 1620, 540]
+      Position		      [1590, 595, 1620, 625]
       ZOrder		      240
       ForegroundColor	      "[0.501961, 0.501961, 0.501961]"
       NamePlacement	      "alternate"
@@ -1467,7 +1483,7 @@ Model {
       BlockType		      Constant
       Name		      "Constant3"
       SID		      "2412"
-      Position		      [1190, 770, 1220, 800]
+      Position		      [1190, 855, 1220, 885]
       ZOrder		      273
       ForegroundColor	      "[0.501961, 0.501961, 0.501961]"
       NamePlacement	      "alternate"
@@ -1477,7 +1493,7 @@ Model {
       BlockType		      Constant
       Name		      "Constant4"
       SID		      "2253"
-      Position		      [2005, 510, 2035, 540]
+      Position		      [2005, 595, 2035, 625]
       ZOrder		      161
       ForegroundColor	      "[0.501961, 0.501961, 0.501961]"
       NamePlacement	      "alternate"
@@ -1487,7 +1503,7 @@ Model {
       BlockType		      Constant
       Name		      "Constant6"
       SID		      "2279"
-      Position		      [2005, 655, 2035, 685]
+      Position		      [2005, 740, 2035, 770]
       ZOrder		      170
       ForegroundColor	      "[0.901961, 0.000000, 0.000000]"
       NamePlacement	      "alternate"
@@ -1497,7 +1513,7 @@ Model {
       BlockType		      Constant
       Name		      "Constant7"
       SID		      "2284"
-      Position		      [2005, 800, 2035, 830]
+      Position		      [2005, 885, 2035, 915]
       ZOrder		      175
       ForegroundColor	      "[0.901961, 0.000000, 0.000000]"
       NamePlacement	      "alternate"
@@ -1507,7 +1523,7 @@ Model {
       BlockType		      Constant
       Name		      "Constant8"
       SID		      "2291"
-      Position		      [2005, 930, 2035, 960]
+      Position		      [2005, 1015, 2035, 1045]
       ZOrder		      180
       ForegroundColor	      "[0.901961, 0.000000, 0.000000]"
       NamePlacement	      "alternate"
@@ -1517,7 +1533,7 @@ Model {
       BlockType		      Constant
       Name		      "Constant9"
       SID		      "2292"
-      Position		      [2005, 1075, 2035, 1105]
+      Position		      [2005, 1160, 2035, 1190]
       ZOrder		      185
       ForegroundColor	      "[0.901961, 0.000000, 0.000000]"
       NamePlacement	      "alternate"
@@ -1528,7 +1544,7 @@ Model {
       Name		      "From Xcel"
       SID		      "557"
       Ports		      [0, 0, 0, 0, 0, 0, 3]
-      Position		      [510, 376, 595, 434]
+      Position		      [510, 461, 595, 519]
       ZOrder		      -8
       LibraryVersion	      "1.2191"
       FontName		      "Verdana"
@@ -1555,7 +1571,7 @@ Model {
       BlockType		      From
       Name		      "From1"
       SID		      "2391"
-      Position		      [1795, 226, 1870, 244]
+      Position		      [1390, 246, 1465, 264]
       ZOrder		      252
       ShowName		      off
       GotoTag		      "Vabc_Load2"
@@ -1563,29 +1579,109 @@ Model {
     }
     Block {
       BlockType		      From
-      Name		      "From13"
-      SID		      "1854"
-      Position		      [1370, 221, 1445, 239]
-      ZOrder		      28
+      Name		      "From10"
+      SID		      "2428"
+      Position		      [1390, 336, 1465, 354]
+      ZOrder		      279
       ShowName		      off
-      GotoTag		      "Vabc_PV480"
+      GotoTag		      "Iabc_Load2"
+      TagVisibility	      "global"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From11"
+      SID		      "2458"
+      Position		      [2020, 91, 2095, 109]
+      ZOrder		      309
+      ShowName		      off
+      GotoTag		      "Vabc_Charger2"
+      TagVisibility	      "global"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From12"
+      SID		      "2459"
+      Position		      [2020, 111, 2095, 129]
+      ZOrder		      310
+      ShowName		      off
+      GotoTag		      "Iabc_Charger2"
+      TagVisibility	      "global"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From13"
+      SID		      "2460"
+      Position		      [2020, 236, 2095, 254]
+      ZOrder		      313
+      ShowName		      off
+      GotoTag		      "Vabc_Charger4"
       TagVisibility	      "global"
     }
     Block {
       BlockType		      From
       Name		      "From14"
-      SID		      "1855"
-      Position		      [1370, 241, 1445, 259]
-      ZOrder		      29
+      SID		      "2434"
+      Position		      [2020, 21, 2095, 39]
+      ZOrder		      287
       ShowName		      off
-      GotoTag		      "Iabc_PV480"
+      GotoTag		      "Vabc_Charger1"
+      TagVisibility	      "global"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From15"
+      SID		      "2435"
+      Position		      [2020, 41, 2095, 59]
+      ZOrder		      288
+      ShowName		      off
+      GotoTag		      "Iabc_Charger1"
+      TagVisibility	      "global"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From16"
+      SID		      "2461"
+      Position		      [2020, 256, 2095, 274]
+      ZOrder		      314
+      ShowName		      off
+      GotoTag		      "Iabc_Charger4"
+      TagVisibility	      "global"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From17"
+      SID		      "2462"
+      Position		      [2020, 161, 2095, 179]
+      ZOrder		      311
+      ShowName		      off
+      GotoTag		      "Vabc_Charger3"
+      TagVisibility	      "global"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From18"
+      SID		      "2463"
+      Position		      [2020, 181, 2095, 199]
+      ZOrder		      312
+      ShowName		      off
+      GotoTag		      "Iabc_Charger3"
+      TagVisibility	      "global"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From19"
+      SID		      "2464"
+      Position		      [2020, 306, 2095, 324]
+      ZOrder		      315
+      ShowName		      off
+      GotoTag		      "Vabc_Charger5"
       TagVisibility	      "global"
     }
     Block {
       BlockType		      From
       Name		      "From2"
       SID		      "2392"
-      Position		      [1795, 246, 1870, 264]
+      Position		      [1390, 266, 1465, 284]
       ZOrder		      253
       ShowName		      off
       GotoTag		      "Iabc_Load2"
@@ -1593,9 +1689,39 @@ Model {
     }
     Block {
       BlockType		      From
+      Name		      "From20"
+      SID		      "2465"
+      Position		      [2020, 326, 2095, 344]
+      ZOrder		      316
+      ShowName		      off
+      GotoTag		      "Iabc_Charger5"
+      TagVisibility	      "global"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From21"
+      SID		      "2466"
+      Position		      [2020, 376, 2095, 394]
+      ZOrder		      317
+      ShowName		      off
+      GotoTag		      "Vabc_Charger6"
+      TagVisibility	      "global"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From22"
+      SID		      "2467"
+      Position		      [2020, 396, 2095, 414]
+      ZOrder		      318
+      ShowName		      off
+      GotoTag		      "Iabc_Charger6"
+      TagVisibility	      "global"
+    }
+    Block {
+      BlockType		      From
       Name		      "From3"
       SID		      "2408"
-      Position		      [1795, 156, 1870, 174]
+      Position		      [1390, 176, 1465, 194]
       ZOrder		      268
       ShowName		      off
       GotoTag		      "Vabc_Load1"
@@ -1605,7 +1731,7 @@ Model {
       BlockType		      From
       Name		      "From4"
       SID		      "2409"
-      Position		      [1795, 176, 1870, 194]
+      Position		      [1390, 196, 1465, 214]
       ZOrder		      269
       ShowName		      off
       GotoTag		      "Iabc_Load1"
@@ -1613,9 +1739,19 @@ Model {
     }
     Block {
       BlockType		      From
+      Name		      "From5"
+      SID		      "2427"
+      Position		      [1390, 316, 1465, 334]
+      ZOrder		      278
+      ShowName		      off
+      GotoTag		      "Vabc_Load2"
+      TagVisibility	      "global"
+    }
+    Block {
+      BlockType		      From
       Name		      "From6"
       SID		      "1771"
-      Position		      [1005, 141, 1080, 159]
+      Position		      [990, 231, 1065, 249]
       ZOrder		      -9
       ShowName		      off
       GotoTag		      "Vabc_PV480"
@@ -1625,7 +1761,7 @@ Model {
       BlockType		      From
       Name		      "From7"
       SID		      "1772"
-      Position		      [1005, 171, 1080, 189]
+      Position		      [990, 261, 1065, 279]
       ZOrder		      -9
       ShowName		      off
       GotoTag		      "Iabc_PV480"
@@ -1635,7 +1771,7 @@ Model {
       BlockType		      From
       Name		      "From8"
       SID		      "1773"
-      Position		      [1005, 211, 1080, 229]
+      Position		      [990, 301, 1065, 319]
       ZOrder		      -9
       ShowName		      off
       GotoTag		      "Vabc_0"
@@ -1645,7 +1781,7 @@ Model {
       BlockType		      From
       Name		      "From9"
       SID		      "1774"
-      Position		      [1005, 241, 1080, 259]
+      Position		      [990, 331, 1065, 349]
       ZOrder		      -9
       ShowName		      off
       GotoTag		      "Iabc_0"
@@ -1656,7 +1792,7 @@ Model {
       Name		      "Ground1"
       SID		      "2216"
       Ports		      [0, 0, 0, 0, 0, 1]
-      Position		      [1229, 620, 1251, 645]
+      Position		      [1229, 705, 1251, 730]
       ZOrder		      143
       BlockRotation	      270
       BlockMirror	      on
@@ -1671,7 +1807,7 @@ Model {
       Name		      "Ground10"
       SID		      "2296"
       Ports		      [0, 0, 0, 0, 0, 1]
-      Position		      [2044, 1330, 2066, 1355]
+      Position		      [2044, 1415, 2066, 1440]
       ZOrder		      191
       BlockRotation	      270
       BlockMirror	      on
@@ -1686,7 +1822,7 @@ Model {
       Name		      "Ground2"
       SID		      "2380"
       Ports		      [0, 0, 0, 0, 0, 1]
-      Position		      [1629, 620, 1651, 645]
+      Position		      [1629, 705, 1651, 730]
       ZOrder		      241
       BlockRotation	      270
       BlockMirror	      on
@@ -1701,7 +1837,7 @@ Model {
       Name		      "Ground3"
       SID		      "2413"
       Ports		      [0, 0, 0, 0, 0, 1]
-      Position		      [1229, 880, 1251, 905]
+      Position		      [1229, 965, 1251, 990]
       ZOrder		      274
       BlockRotation	      270
       BlockMirror	      on
@@ -1716,7 +1852,7 @@ Model {
       Name		      "Ground4"
       SID		      "2254"
       Ports		      [0, 0, 0, 0, 0, 1]
-      Position		      [2044, 620, 2066, 645]
+      Position		      [2044, 705, 2066, 730]
       ZOrder		      162
       BlockRotation	      270
       BlockMirror	      on
@@ -1731,7 +1867,7 @@ Model {
       Name		      "Ground5"
       SID		      "2268"
       Ports		      [0, 0, 0, 0, 0, 1]
-      Position		      [2659, 610, 2681, 635]
+      Position		      [2659, 695, 2681, 720]
       ZOrder		      166
       BlockRotation	      270
       BlockMirror	      on
@@ -1746,7 +1882,7 @@ Model {
       Name		      "Ground6"
       SID		      "2280"
       Ports		      [0, 0, 0, 0, 0, 1]
-      Position		      [2044, 765, 2066, 790]
+      Position		      [2044, 850, 2066, 875]
       ZOrder		      171
       BlockRotation	      270
       BlockMirror	      on
@@ -1761,7 +1897,7 @@ Model {
       Name		      "Ground7"
       SID		      "2285"
       Ports		      [0, 0, 0, 0, 0, 1]
-      Position		      [2044, 910, 2066, 935]
+      Position		      [2044, 995, 2066, 1020]
       ZOrder		      176
       BlockRotation	      270
       BlockMirror	      on
@@ -1776,7 +1912,7 @@ Model {
       Name		      "Ground8"
       SID		      "2294"
       Ports		      [0, 0, 0, 0, 0, 1]
-      Position		      [2044, 1040, 2066, 1065]
+      Position		      [2044, 1125, 2066, 1150]
       ZOrder		      181
       BlockRotation	      270
       BlockMirror	      on
@@ -1791,7 +1927,7 @@ Model {
       Name		      "Ground9"
       SID		      "2295"
       Ports		      [0, 0, 0, 0, 0, 1]
-      Position		      [2044, 1185, 2066, 1210]
+      Position		      [2044, 1270, 2066, 1295]
       ZOrder		      186
       BlockRotation	      270
       BlockMirror	      on
@@ -1806,7 +1942,7 @@ Model {
       Name		      "Line Load 1"
       SID		      "2331"
       Ports		      [0, 0, 0, 0, 0, 3, 3]
-      Position		      [1015, 548, 1075, 592]
+      Position		      [1015, 633, 1075, 677]
       ZOrder		      211
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -2007,7 +2143,7 @@ Model {
       Name		      "Line Load 2"
       SID		      "2339"
       Ports		      [0, 0, 0, 0, 0, 3, 3]
-      Position		      [1415, 548, 1475, 592]
+      Position		      [1415, 633, 1475, 677]
       ZOrder		      213
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -2208,7 +2344,7 @@ Model {
       Name		      "Line Load 3"
       SID		      "2414"
       Ports		      [0, 0, 0, 0, 0, 3, 3]
-      Position		      [1015, 808, 1075, 852]
+      Position		      [1015, 893, 1075, 937]
       ZOrder		      276
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -2409,51 +2545,133 @@ Model {
       Name		      "Mux1"
       SID		      "2410"
       Ports		      [2, 1]
-      Position		      [2010, 156, 2015, 194]
+      Position		      [1605, 176, 1610, 214]
       ZOrder		      270
       ShowName		      off
       Inputs		      "2"
       DisplayOption	      "bar"
+      Port {
+	PortNumber		1
+	Name			"P,Q load 1"
+	PropagatedSignals	", "
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux10"
+      SID		      "2450"
+      Ports		      [2, 1]
+      Position		      [2235, 236, 2240, 274]
+      ZOrder		      301
+      ShowName		      off
+      Inputs		      "2"
+      DisplayOption	      "bar"
+      Port {
+	PortNumber		1
+	Name			"P,Q load 1"
+	PropagatedSignals	", "
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux11"
+      SID		      "2451"
+      Ports		      [2, 1]
+      Position		      [2235, 306, 2240, 344]
+      ZOrder		      297
+      ShowName		      off
+      Inputs		      "2"
+      DisplayOption	      "bar"
+      Port {
+	PortNumber		1
+	Name			"P,Q load 2"
+	PropagatedSignals	", "
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux12"
+      SID		      "2452"
+      Ports		      [2, 1]
+      Position		      [2235, 376, 2240, 414]
+      ZOrder		      305
+      ShowName		      off
+      Inputs		      "2"
+      DisplayOption	      "bar"
+      Port {
+	PortNumber		1
+	Name			"P,Q central plant"
+	PropagatedSignals	", "
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
     }
     Block {
       BlockType		      Mux
       Name		      "Mux2"
-      SID		      "2396"
+      SID		      "2437"
       Ports		      [2, 1]
-      Position		      [1585, 156, 1590, 194]
-      ZOrder		      256
+      Position		      [2235, 21, 2240, 59]
+      ZOrder		      289
       ShowName		      off
       Inputs		      "2"
       DisplayOption	      "bar"
+      Port {
+	PortNumber		1
+	Name			"P,Q load 1"
+	PropagatedSignals	", "
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
     }
     Block {
       BlockType		      Mux
       Name		      "Mux3"
       SID		      "2397"
       Ports		      [2, 1]
-      Position		      [1205, 146, 1210, 184]
+      Position		      [1190, 236, 1195, 274]
       ZOrder		      258
       ShowName		      off
       Inputs		      "2"
       DisplayOption	      "bar"
+      Port {
+	PortNumber		1
+	Name			"P,Q from PV"
+	PropagatedSignals	", "
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
     }
     Block {
       BlockType		      Mux
       Name		      "Mux4"
-      SID		      "1853"
+      SID		      "2438"
       Ports		      [2, 1]
-      Position		      [1520, 221, 1525, 259]
-      ZOrder		      27
+      Position		      [2235, 91, 2240, 129]
+      ZOrder		      285
       ShowName		      off
       Inputs		      "2"
       DisplayOption	      "bar"
+      Port {
+	PortNumber		1
+	Name			"P,Q load 2"
+	PropagatedSignals	", "
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
     }
     Block {
       BlockType		      Mux
       Name		      "Mux5"
       SID		      "2367"
       Ports		      [2, 1]
-      Position		      [2620, 446, 2625, 484]
+      Position		      [2620, 531, 2625, 569]
       ZOrder		      226
       ShowName		      off
       Inputs		      "2"
@@ -2464,29 +2682,79 @@ Model {
       Name		      "Mux6"
       SID		      "2399"
       Ports		      [2, 1]
-      Position		      [1205, 211, 1210, 249]
+      Position		      [1190, 301, 1195, 339]
       ZOrder		      260
       ShowName		      off
       Inputs		      "2"
       DisplayOption	      "bar"
+      Port {
+	PortNumber		1
+	Name			"P,Q from grid"
+	PropagatedSignals	", "
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
     }
     Block {
       BlockType		      Mux
       Name		      "Mux7"
       SID		      "2402"
       Ports		      [2, 1]
-      Position		      [2010, 226, 2015, 264]
+      Position		      [1605, 246, 1610, 284]
       ZOrder		      263
       ShowName		      off
       Inputs		      "2"
       DisplayOption	      "bar"
+      Port {
+	PortNumber		1
+	Name			"P,Q load 2"
+	PropagatedSignals	", "
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux8"
+      SID		      "2429"
+      Ports		      [2, 1]
+      Position		      [1605, 316, 1610, 354]
+      ZOrder		      280
+      ShowName		      off
+      Inputs		      "2"
+      DisplayOption	      "bar"
+      Port {
+	PortNumber		1
+	Name			"P,Q central plant"
+	PropagatedSignals	", "
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux9"
+      SID		      "2439"
+      Ports		      [2, 1]
+      Position		      [2235, 161, 2240, 199]
+      ZOrder		      293
+      ShowName		      off
+      Inputs		      "2"
+      DisplayOption	      "bar"
+      Port {
+	PortNumber		1
+	Name			"P,Q central plant"
+	PropagatedSignals	", "
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
     }
     Block {
       BlockType		      Sin
       Name		      "P"
       SID		      "2365"
       Ports		      [0, 1]
-      Position		      [2440, 425, 2470, 455]
+      Position		      [2440, 510, 2470, 540]
       ZOrder		      224
       Frequency		      "2*pi/(24*60*60)"
     }
@@ -2495,7 +2763,7 @@ Model {
       Name		      "PV"
       SID		      "2266"
       Ports		      [1, 0, 0, 0, 0, 4]
-      Position		      [2700, 517, 2740, 603]
+      Position		      [2700, 602, 2740, 688]
       ZOrder		      164
       ForegroundColor	      "red"
       BackgroundColor	      "yellow"
@@ -2514,7 +2782,7 @@ Model {
       Name		      "PV_13.2"
       SID		      "2329"
       Ports		      [0, 0, 0, 0, 0, 3, 3]
-      Position		      [2285, 535, 2290, 585]
+      Position		      [2285, 620, 2290, 670]
       ZOrder		      209
       BlockMirror	      on
       BackgroundColor	      "black"
@@ -2541,7 +2809,7 @@ Model {
       Name		      "PV_480"
       SID		      "1525"
       Ports		      [0, 0, 0, 0, 0, 3, 3]
-      Position		      [2620, 535, 2625, 585]
+      Position		      [2620, 620, 2625, 670]
       ZOrder		      208
       BlockMirror	      on
       BackgroundColor	      "black"
@@ -2568,7 +2836,7 @@ Model {
       Name		      "Power\n(3ph, Phasor)"
       SID		      "2404"
       Ports		      [2, 2]
-      Position		      [1125, 145, 1175, 185]
+      Position		      [1110, 235, 1160, 275]
       ZOrder		      264
       LibraryVersion	      "1.31"
       FontName		      "Arial"
@@ -2580,7 +2848,7 @@ Model {
       Name		      "Power\n(3ph, Phasor)1"
       SID		      "2405"
       Ports		      [2, 2]
-      Position		      [1125, 210, 1175, 250]
+      Position		      [1110, 300, 1160, 340]
       ZOrder		      265
       LibraryVersion	      "1.31"
       FontName		      "Arial"
@@ -2589,11 +2857,23 @@ Model {
     }
     Block {
       BlockType		      Reference
-      Name		      "Power\n(3ph, Phasor)2"
-      SID		      "2406"
+      Name		      "Power\n(3ph, Phasor)10"
+      SID		      "2455"
       Ports		      [2, 2]
-      Position		      [1505, 155, 1555, 195]
-      ZOrder		      266
+      Position		      [2155, 375, 2205, 415]
+      ZOrder		      306
+      LibraryVersion	      "1.31"
+      FontName		      "Arial"
+      SourceBlock	      "powerlib_meascontrol/Measurements/Power\n(3ph, Phasor)"
+      SourceType	      "Power (3ph, Phasor)"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Power\n(3ph, Phasor)2"
+      SID		      "2440"
+      Ports		      [2, 2]
+      Position		      [2155, 90, 2205, 130]
+      ZOrder		      286
       LibraryVersion	      "1.31"
       FontName		      "Arial"
       SourceBlock	      "powerlib_meascontrol/Measurements/Power\n(3ph, Phasor)"
@@ -2604,7 +2884,7 @@ Model {
       Name		      "Power\n(3ph, Phasor)3"
       SID		      "2407"
       Ports		      [2, 2]
-      Position		      [1930, 225, 1980, 265]
+      Position		      [1525, 245, 1575, 285]
       ZOrder		      267
       LibraryVersion	      "1.31"
       FontName		      "Arial"
@@ -2616,8 +2896,68 @@ Model {
       Name		      "Power\n(3ph, Phasor)4"
       SID		      "2411"
       Ports		      [2, 2]
-      Position		      [1930, 155, 1980, 195]
+      Position		      [1525, 175, 1575, 215]
       ZOrder		      271
+      LibraryVersion	      "1.31"
+      FontName		      "Arial"
+      SourceBlock	      "powerlib_meascontrol/Measurements/Power\n(3ph, Phasor)"
+      SourceType	      "Power (3ph, Phasor)"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Power\n(3ph, Phasor)5"
+      SID		      "2430"
+      Ports		      [2, 2]
+      Position		      [1525, 315, 1575, 355]
+      ZOrder		      281
+      LibraryVersion	      "1.31"
+      FontName		      "Arial"
+      SourceBlock	      "powerlib_meascontrol/Measurements/Power\n(3ph, Phasor)"
+      SourceType	      "Power (3ph, Phasor)"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Power\n(3ph, Phasor)6"
+      SID		      "2441"
+      Ports		      [2, 2]
+      Position		      [2155, 20, 2205, 60]
+      ZOrder		      290
+      LibraryVersion	      "1.31"
+      FontName		      "Arial"
+      SourceBlock	      "powerlib_meascontrol/Measurements/Power\n(3ph, Phasor)"
+      SourceType	      "Power (3ph, Phasor)"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Power\n(3ph, Phasor)7"
+      SID		      "2442"
+      Ports		      [2, 2]
+      Position		      [2155, 160, 2205, 200]
+      ZOrder		      294
+      LibraryVersion	      "1.31"
+      FontName		      "Arial"
+      SourceBlock	      "powerlib_meascontrol/Measurements/Power\n(3ph, Phasor)"
+      SourceType	      "Power (3ph, Phasor)"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Power\n(3ph, Phasor)8"
+      SID		      "2453"
+      Ports		      [2, 2]
+      Position		      [2155, 305, 2205, 345]
+      ZOrder		      298
+      LibraryVersion	      "1.31"
+      FontName		      "Arial"
+      SourceBlock	      "powerlib_meascontrol/Measurements/Power\n(3ph, Phasor)"
+      SourceType	      "Power (3ph, Phasor)"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Power\n(3ph, Phasor)9"
+      SID		      "2454"
+      Ports		      [2, 2]
+      Position		      [2155, 235, 2205, 275]
+      ZOrder		      302
       LibraryVersion	      "1.31"
       FontName		      "Arial"
       SourceBlock	      "powerlib_meascontrol/Measurements/Power\n(3ph, Phasor)"
@@ -2627,7 +2967,7 @@ Model {
       BlockType		      Gain
       Name		      "PpvRated"
       SID		      "2371"
-      Position		      [2550, 425, 2580, 455]
+      Position		      [2550, 510, 2580, 540]
       ZOrder		      230
       Gain		      "30e3"
       ParamDataTypeStr	      "Inherit: Inherit via internal rule"
@@ -2638,7 +2978,7 @@ Model {
       BlockType		      Constant
       Name		      "Q1"
       SID		      "2366"
-      Position		      [2445, 478, 2465, 502]
+      Position		      [2445, 563, 2465, 587]
       ZOrder		      225
       Value		      "0"
       SampleTime	      "-1"
@@ -2648,7 +2988,7 @@ Model {
       Name		      "Saturation"
       SID		      "2368"
       Ports		      [1, 1]
-      Position		      [2495, 425, 2525, 455]
+      Position		      [2495, 510, 2525, 540]
       ZOrder		      227
       InputPortMap	      "u0"
       UpperLimit	      "inf"
@@ -2659,7 +2999,7 @@ Model {
       Name		      "Scope1"
       SID		      "2401"
       Ports		      [2]
-      Position		      [1260, 159, 1320, 241]
+      Position		      [1275, 244, 1320, 331]
       ZOrder		      261
       Floating		      off
       Location		      [86, 66, 1895, 1058]
@@ -2692,20 +3032,19 @@ Model {
     }
     Block {
       BlockType		      Scope
-      Name		      "Scope3"
-      SID		      "2394"
-      Ports		      [2]
-      Position		      [2065, 164, 2125, 246]
-      ZOrder		      250
+      Name		      "Scope2"
+      SID		      "2443"
+      Ports		      [1]
+      Position		      [2450, 184, 2510, 266]
+      ZOrder		      282
       Floating		      off
-      Location		      [1, 48, 1921, 1039]
+      Location		      [5, 48, 1925, 1039]
       Open		      off
-      NumInputPorts	      "2"
+      NumInputPorts	      "1"
       ZoomMode		      "xonly"
       List {
 	ListType		AxesTitles
 	axes1			"%<SignalLabel>"
-	axes2			"%<SignalLabel>"
       }
       List {
 	ListType		ScopeGraphics
@@ -2719,29 +3058,29 @@ Model {
       }
       ShowLegends	      off
       TimeRange		      "10"
-      YMin		      "-2500~25"
-      YMax		      "45000~400"
-      SaveName		      "ScopeData3"
+      YMin		      "-2500"
+      YMax		      "45000"
       DataFormat	      "StructureWithTime"
       LimitDataPoints	      off
       SampleTime	      "0"
     }
     Block {
       BlockType		      Scope
-      Name		      "Scope5"
-      SID		      "1733"
-      Ports		      [2]
-      Position		      [1635, 179, 1695, 261]
-      ZOrder		      -133
+      Name		      "Scope3"
+      SID		      "2457"
+      Ports		      [3]
+      Position		      [1740, 179, 1800, 261]
+      ZOrder		      308
       Floating		      off
-      Location		      [14, 61, 1901, 1041]
+      Location		      [5, 48, 1925, 1039]
       Open		      off
-      NumInputPorts	      "2"
+      NumInputPorts	      "3"
       ZoomMode		      "xonly"
       List {
 	ListType		AxesTitles
 	axes1			"%<SignalLabel>"
 	axes2			"%<SignalLabel>"
+	axes3			"%<SignalLabel>"
       }
       List {
 	ListType		ScopeGraphics
@@ -2755,19 +3094,38 @@ Model {
       }
       ShowLegends	      off
       TimeRange		      "10"
-      YMin		      "0~25"
-      YMax		      "9500~400"
+      YMin		      "-2500~-5~-5"
+      YMax		      "45000~5~5"
       SaveName		      "ScopeData2"
       DataFormat	      "StructureWithTime"
       LimitDataPoints	      off
       SampleTime	      "0"
     }
     Block {
+      BlockType		      Sum
+      Name		      "Sum"
+      SID		      "2456"
+      Ports		      [6, 1]
+      Position		      [2340, 180, 2360, 265]
+      ZOrder		      307
+      ShowName		      off
+      Inputs		      "++++++"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+      Port {
+	PortNumber		1
+	Name			"EV total power"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
       BlockType		      Reference
       Name		      "T:Load1"
       SID		      "2357"
       Ports		      [0, 0, 0, 0, 0, 3, 3]
-      Position		      [1110, 548, 1165, 592]
+      Position		      [1110, 633, 1165, 677]
       ZOrder		      216
       LibraryVersion	      "1.2191"
       FontName		      "Verdana"
@@ -2799,7 +3157,7 @@ Model {
       Name		      "T:Load2"
       SID		      "2382"
       Ports		      [0, 0, 0, 0, 0, 3, 3]
-      Position		      [1510, 548, 1565, 592]
+      Position		      [1510, 633, 1565, 677]
       ZOrder		      243
       LibraryVersion	      "1.2191"
       FontName		      "Verdana"
@@ -2831,7 +3189,7 @@ Model {
       Name		      "T:Load3"
       SID		      "2423"
       Ports		      [0, 0, 0, 0, 0, 3, 3]
-      Position		      [1110, 808, 1165, 852]
+      Position		      [1110, 893, 1165, 937]
       ZOrder		      277
       LibraryVersion	      "1.2191"
       FontName		      "Verdana"
@@ -2863,7 +3221,7 @@ Model {
       Name		      "T:Parking1"
       SID		      "2277"
       Ports		      [0, 0, 0, 0, 0, 3, 3]
-      Position		      [1915, 548, 1970, 592]
+      Position		      [1915, 633, 1970, 677]
       ZOrder		      168
       LibraryVersion	      "1.2191"
       FontName		      "Verdana"
@@ -2895,7 +3253,7 @@ Model {
       Name		      "T:Parking2"
       SID		      "2372"
       Ports		      [0, 0, 0, 0, 0, 3, 3]
-      Position		      [1915, 693, 1970, 737]
+      Position		      [1915, 778, 1970, 822]
       ZOrder		      232
       LibraryVersion	      "1.2191"
       FontName		      "Verdana"
@@ -2927,7 +3285,7 @@ Model {
       Name		      "T:Parking3"
       SID		      "2375"
       Ports		      [0, 0, 0, 0, 0, 3, 3]
-      Position		      [1915, 838, 1970, 882]
+      Position		      [1915, 923, 1970, 967]
       ZOrder		      235
       LibraryVersion	      "1.2191"
       FontName		      "Verdana"
@@ -2959,7 +3317,7 @@ Model {
       Name		      "T:Parking4"
       SID		      "2376"
       Ports		      [0, 0, 0, 0, 0, 3, 3]
-      Position		      [1915, 968, 1970, 1012]
+      Position		      [1915, 1053, 1970, 1097]
       ZOrder		      236
       LibraryVersion	      "1.2191"
       FontName		      "Verdana"
@@ -2991,7 +3349,7 @@ Model {
       Name		      "T:Parking5"
       SID		      "2377"
       Ports		      [0, 0, 0, 0, 0, 3, 3]
-      Position		      [1915, 1113, 1970, 1157]
+      Position		      [1915, 1198, 1970, 1242]
       ZOrder		      237
       LibraryVersion	      "1.2191"
       FontName		      "Verdana"
@@ -3023,7 +3381,7 @@ Model {
       Name		      "T:Parking6"
       SID		      "2378"
       Ports		      [0, 0, 0, 0, 0, 3, 3]
-      Position		      [1915, 1258, 1970, 1302]
+      Position		      [1915, 1343, 1970, 1387]
       ZOrder		      238
       LibraryVersion	      "1.2191"
       FontName		      "Verdana"
@@ -3055,7 +3413,7 @@ Model {
       Name		      "T:XF2-PV1"
       SID		      "2312"
       Ports		      [0, 0, 0, 0, 0, 3, 3]
-      Position		      [2430, 538, 2485, 582]
+      Position		      [2430, 623, 2485, 667]
       ZOrder		      231
       LibraryVersion	      "1.2191"
       FontName		      "Verdana"
@@ -3087,7 +3445,7 @@ Model {
       Name		      "charger\nmeas 1"
       SID		      "2256"
       Ports		      [0, 0, 0, 0, 0, 3, 3]
-      Position		      [2020, 545, 2025, 595]
+      Position		      [2020, 630, 2025, 680]
       ZOrder		      160
       BackgroundColor	      "black"
       LibraryVersion	      "1.2191"
@@ -3113,7 +3471,7 @@ Model {
       Name		      "charger\nmeas 2"
       SID		      "2306"
       Ports		      [0, 0, 0, 0, 0, 3, 3]
-      Position		      [2020, 690, 2025, 740]
+      Position		      [2020, 775, 2025, 825]
       ZOrder		      197
       BackgroundColor	      "black"
       LibraryVersion	      "1.2191"
@@ -3139,7 +3497,7 @@ Model {
       Name		      "charger\nmeas 3"
       SID		      "2308"
       Ports		      [0, 0, 0, 0, 0, 3, 3]
-      Position		      [2020, 835, 2025, 885]
+      Position		      [2020, 920, 2025, 970]
       ZOrder		      199
       BackgroundColor	      "black"
       LibraryVersion	      "1.2191"
@@ -3165,7 +3523,7 @@ Model {
       Name		      "charger\nmeas 4"
       SID		      "2309"
       Ports		      [0, 0, 0, 0, 0, 3, 3]
-      Position		      [2020, 965, 2025, 1015]
+      Position		      [2020, 1050, 2025, 1100]
       ZOrder		      200
       BackgroundColor	      "black"
       LibraryVersion	      "1.2191"
@@ -3191,7 +3549,7 @@ Model {
       Name		      "charger\nmeas 5"
       SID		      "2310"
       Ports		      [0, 0, 0, 0, 0, 3, 3]
-      Position		      [2020, 1110, 2025, 1160]
+      Position		      [2020, 1195, 2025, 1245]
       ZOrder		      201
       BackgroundColor	      "black"
       LibraryVersion	      "1.2191"
@@ -3217,7 +3575,7 @@ Model {
       Name		      "charger\nmeas 6"
       SID		      "2311"
       Ports		      [0, 0, 0, 0, 0, 3, 3]
-      Position		      [2020, 1255, 2025, 1305]
+      Position		      [2020, 1340, 2025, 1390]
       ZOrder		      202
       BackgroundColor	      "black"
       LibraryVersion	      "1.2191"
@@ -3243,7 +3601,7 @@ Model {
       Name		      "load 1"
       SID		      "2218"
       Ports		      [0, 0, 0, 0, 0, 3, 3]
-      Position		      [1205, 545, 1210, 595]
+      Position		      [1205, 630, 1210, 680]
       ZOrder		      141
       BackgroundColor	      "black"
       LibraryVersion	      "1.2191"
@@ -3269,7 +3627,7 @@ Model {
       Name		      "load 2"
       SID		      "2383"
       Ports		      [0, 0, 0, 0, 0, 3, 3]
-      Position		      [1605, 545, 1610, 595]
+      Position		      [1605, 630, 1610, 680]
       ZOrder		      239
       BackgroundColor	      "black"
       LibraryVersion	      "1.2191"
@@ -3295,7 +3653,7 @@ Model {
       Name		      "load 3"
       SID		      "2424"
       Ports		      [0, 0, 0, 0, 0, 3, 3]
-      Position		      [1205, 805, 1210, 855]
+      Position		      [1205, 890, 1210, 940]
       ZOrder		      272
       BackgroundColor	      "black"
       LibraryVersion	      "1.2191"
@@ -3321,7 +3679,7 @@ Model {
       Name		      "node 0"
       SID		      "2370"
       Ports		      [0, 0, 0, 0, 0, 3, 3]
-      Position		      [700, 380, 705, 430]
+      Position		      [700, 465, 705, 515]
       ZOrder		      229
       BackgroundColor	      "black"
       LibraryVersion	      "1.2191"
@@ -3347,7 +3705,7 @@ Model {
       Name		      "node 1"
       SID		      "17"
       Ports		      [0, 0, 0, 0, 0, 3, 3]
-      Position		      [1040, 380, 1045, 430]
+      Position		      [1040, 465, 1045, 515]
       ZOrder		      -146
       BackgroundColor	      "black"
       LibraryVersion	      "1.2191"
@@ -3373,7 +3731,7 @@ Model {
       Name		      "node 2"
       SID		      "2227"
       Ports		      [0, 0, 0, 0, 0, 3, 3]
-      Position		      [1605, 380, 1610, 430]
+      Position		      [1605, 465, 1610, 515]
       ZOrder		      146
       BackgroundColor	      "black"
       LibraryVersion	      "1.2191"
@@ -3399,7 +3757,7 @@ Model {
       Name		      "node 4"
       SID		      "2257"
       Ports		      [0, 0, 0, 0, 0, 3, 3]
-      Position		      [1930, 380, 1935, 430]
+      Position		      [1930, 465, 1935, 515]
       ZOrder		      159
       BackgroundColor	      "black"
       LibraryVersion	      "1.2191"
@@ -3425,13 +3783,13 @@ Model {
       Name		      "powergui"
       SID		      "400"
       Ports		      []
-      Position		      [1021, 40, 1110, 73]
+      Position		      [1021, 125, 1110, 158]
       ZOrder		      -198
       ForegroundColor	      "yellow"
       DropShadow	      on
       ShowName		      off
       Priority		      "2"
-      LibraryVersion	      "1.2191"
+      LibraryVersion	      "*1.2191"
       UserDataPersistent      on
       UserData		      "DataTag0"
       SourceBlock	      "powerlib/powergui"
@@ -3485,7 +3843,7 @@ Model {
       Name		      "wire 0-1"
       SID		      "720"
       Ports		      [0, 0, 0, 0, 0, 3, 3]
-      Position		      [860, 383, 920, 427]
+      Position		      [860, 468, 920, 512]
       ZOrder		      -26
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -3686,7 +4044,7 @@ Model {
       Name		      "wire 1-2"
       SID		      "2219"
       Ports		      [0, 0, 0, 0, 0, 3, 3]
-      Position		      [1250, 383, 1310, 427]
+      Position		      [1250, 468, 1310, 512]
       ZOrder		      145
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -3887,7 +4245,7 @@ Model {
       Name		      "wire 2-3"
       SID		      "2245"
       Ports		      [0, 0, 0, 0, 0, 3, 3]
-      Position		      [1740, 383, 1800, 427]
+      Position		      [1740, 468, 1800, 512]
       ZOrder		      152
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -4088,7 +4446,7 @@ Model {
       Name		      "wire 4-5"
       SID		      "2269"
       Ports		      [0, 0, 0, 0, 0, 3, 3]
-      Position		      [2025, 383, 2085, 427]
+      Position		      [2025, 468, 2085, 512]
       ZOrder		      167
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -4350,45 +4708,13 @@ Model {
       DstPort		      2
     }
     Line {
+      Name		      "P,Q from PV"
+      Labels		      [1, 0]
       SrcBlock		      "Mux3"
       SrcPort		      1
-      Points		      [20, 0; 0, 15]
+      Points		      [56, 0; 0, 10]
       DstBlock		      "Scope1"
       DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Mux4"
-      SrcPort		      1
-      DstBlock		      "Scope5"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "From13"
-      SrcPort		      1
-      Points		      [15, 0]
-      Branch {
-	Points			[0, -65]
-	DstBlock		"Power\n(3ph, Phasor)2"
-	DstPort			1
-      }
-      Branch {
-	DstBlock		"Mux4"
-	DstPort			1
-      }
-    }
-    Line {
-      SrcBlock		      "From14"
-      SrcPort		      1
-      Points		      [33, 0]
-      Branch {
-	Points			[0, -65]
-	DstBlock		"Power\n(3ph, Phasor)2"
-	DstPort			2
-      }
-      Branch {
-	DstBlock		"Mux4"
-	DstPort			2
-      }
     }
     Line {
       LineType		      "Connection"
@@ -4521,10 +4847,10 @@ Model {
     }
     Line {
       LineType		      "Connection"
-      Points		      [1872, 570; -1, 0; 0, -165]
+      Points		      [1872, 655; -1, 0; 0, -165]
       Branch {
 	ConnectType		"SRC_DEST"
-	Points			[1872, 715; 0, -145]
+	Points			[1872, 800; 0, -145]
 	Branch {
 	  ConnectType		  "SRC_DEST"
 	  SrcBlock		  "T:Parking2"
@@ -4533,7 +4859,7 @@ Model {
 	}
 	Branch {
 	  ConnectType		  "SRC_DEST"
-	  Points		  [1872, 860; 0, -145]
+	  Points		  [1872, 945; 0, -145]
 	  Branch {
 	    ConnectType		    "SRC_DEST"
 	    SrcBlock		    "T:Parking3"
@@ -4542,7 +4868,7 @@ Model {
 	  }
 	  Branch {
 	    ConnectType		    "SRC_DEST"
-	    Points		    [1872, 990; 0, -130]
+	    Points		    [1872, 1075; 0, -130]
 	    Branch {
 	      ConnectType	      "SRC_DEST"
 	      SrcBlock		      "T:Parking4"
@@ -4551,7 +4877,7 @@ Model {
 	    }
 	    Branch {
 	      ConnectType	      "SRC_DEST"
-	      Points		      [1872, 1135; 0, -145]
+	      Points		      [1872, 1220; 0, -145]
 	      Branch {
 		ConnectType		"SRC_DEST"
 		SrcBlock		"T:Parking6"
@@ -4587,10 +4913,10 @@ Model {
     }
     Line {
       LineType		      "Connection"
-      Points		      [1859, 585; 0, -165]
+      Points		      [1859, 670; 0, -165]
       Branch {
 	ConnectType		"SRC_DEST"
-	Points			[1859, 730; 0, -145]
+	Points			[1859, 815; 0, -145]
 	Branch {
 	  ConnectType		  "SRC_DEST"
 	  SrcBlock		  "T:Parking2"
@@ -4599,7 +4925,7 @@ Model {
 	}
 	Branch {
 	  ConnectType		  "SRC_DEST"
-	  Points		  [1859, 875; 0, -145]
+	  Points		  [1859, 960; 0, -145]
 	  Branch {
 	    ConnectType		    "SRC_DEST"
 	    SrcBlock		    "T:Parking3"
@@ -4608,7 +4934,7 @@ Model {
 	  }
 	  Branch {
 	    ConnectType		    "SRC_DEST"
-	    Points		    [1859, 1005; 0, -130]
+	    Points		    [1859, 1090; 0, -130]
 	    Branch {
 	      ConnectType	      "SRC_DEST"
 	      SrcBlock		      "T:Parking4"
@@ -4617,7 +4943,7 @@ Model {
 	    }
 	    Branch {
 	      ConnectType	      "SRC_DEST"
-	      Points		      [1859, 1150; 0, -145]
+	      Points		      [1859, 1235; 0, -145]
 	      Branch {
 		ConnectType		"SRC_DEST"
 		SrcBlock		"T:Parking6"
@@ -4654,10 +4980,10 @@ Model {
     }
     Line {
       LineType		      "Connection"
-      Points		      [1882, 555; 0, -165]
+      Points		      [1882, 640; 0, -165]
       Branch {
 	ConnectType		"SRC_DEST"
-	Points			[1882, 700; 0, -145]
+	Points			[1882, 785; 0, -145]
 	Branch {
 	  ConnectType		  "SRC_DEST"
 	  SrcBlock		  "T:Parking2"
@@ -4666,7 +4992,7 @@ Model {
 	}
 	Branch {
 	  ConnectType		  "SRC_DEST"
-	  Points		  [1882, 845; 0, -145]
+	  Points		  [1882, 930; 0, -145]
 	  Branch {
 	    ConnectType		    "SRC_DEST"
 	    SrcBlock		    "T:Parking3"
@@ -4675,7 +5001,7 @@ Model {
 	  }
 	  Branch {
 	    ConnectType		    "SRC_DEST"
-	    Points		    [1882, 975; 0, -130]
+	    Points		    [1882, 1060; 0, -130]
 	    Branch {
 	      ConnectType	      "SRC_DEST"
 	      SrcBlock		      "T:Parking4"
@@ -4684,7 +5010,7 @@ Model {
 	    }
 	    Branch {
 	      ConnectType	      "SRC_DEST"
-	      Points		      [1882, 1120; 0, -145]
+	      Points		      [1882, 1205; 0, -145]
 	      Branch {
 		ConnectType		"SRC_DEST"
 		SrcBlock		"T:Parking6"
@@ -5302,13 +5628,6 @@ Model {
       DstPort		      2
     }
     Line {
-      SrcBlock		      "Mux2"
-      SrcPort		      1
-      Points		      [17, 0; 0, 25]
-      DstBlock		      "Scope5"
-      DstPort		      1
-    }
-    Line {
       LineType		      "Connection"
       SrcBlock		      "From Xcel"
       SrcPort		      RConn2
@@ -5466,18 +5785,6 @@ Model {
       DstPort		      2
     }
     Line {
-      SrcBlock		      "Power\n(3ph, Phasor)2"
-      SrcPort		      2
-      DstBlock		      "Mux2"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "Power\n(3ph, Phasor)2"
-      SrcPort		      1
-      DstBlock		      "Mux2"
-      DstPort		      1
-    }
-    Line {
       SrcBlock		      "Power\n(3ph, Phasor)"
       SrcPort		      2
       DstBlock		      "Mux3"
@@ -5490,9 +5797,11 @@ Model {
       DstPort		      1
     }
     Line {
+      Name		      "P,Q from grid"
+      Labels		      [1, 1]
       SrcBlock		      "Mux6"
       SrcPort		      1
-      Points		      [20, 0; 0, -10]
+      Points		      [57, 0; 0, -10]
       DstBlock		      "Scope1"
       DstPort		      2
     }
@@ -5558,16 +5867,19 @@ Model {
       DstPort		      1
     }
     Line {
+      Name		      "P,Q load 1"
+      Labels		      [1, 1]
       SrcBlock		      "Mux1"
       SrcPort		      1
-      Points		      [20, 0; 0, 10]
       DstBlock		      "Scope3"
       DstPort		      1
     }
     Line {
+      Name		      "P,Q load 2"
+      Labels		      [2, 0]
       SrcBlock		      "Mux7"
       SrcPort		      1
-      Points		      [20, 0; 0, -20]
+      Points		      [34, 0; 0, -45]
       DstBlock		      "Scope3"
       DstPort		      2
     }
@@ -5649,10 +5961,249 @@ Model {
       DstBlock		      "Central Plant"
       DstPort		      1
     }
+    Line {
+      SrcBlock		      "From5"
+      SrcPort		      1
+      DstBlock		      "Power\n(3ph, Phasor)5"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From10"
+      SrcPort		      1
+      DstBlock		      "Power\n(3ph, Phasor)5"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Power\n(3ph, Phasor)5"
+      SrcPort		      2
+      DstBlock		      "Mux8"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Power\n(3ph, Phasor)5"
+      SrcPort		      1
+      DstBlock		      "Mux8"
+      DstPort		      1
+    }
+    Line {
+      Name		      "P,Q central plant"
+      Labels		      [2, 1]
+      SrcBlock		      "Mux8"
+      SrcPort		      1
+      Points		      [72, 0; 0, -90]
+      DstBlock		      "Scope3"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "From11"
+      SrcPort		      1
+      DstBlock		      "Power\n(3ph, Phasor)2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From12"
+      SrcPort		      1
+      DstBlock		      "Power\n(3ph, Phasor)2"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Power\n(3ph, Phasor)2"
+      SrcPort		      2
+      DstBlock		      "Mux4"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Power\n(3ph, Phasor)2"
+      SrcPort		      1
+      DstBlock		      "Mux4"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From14"
+      SrcPort		      1
+      DstBlock		      "Power\n(3ph, Phasor)6"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From15"
+      SrcPort		      1
+      DstBlock		      "Power\n(3ph, Phasor)6"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Power\n(3ph, Phasor)6"
+      SrcPort		      2
+      DstBlock		      "Mux2"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Power\n(3ph, Phasor)6"
+      SrcPort		      1
+      DstBlock		      "Mux2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From17"
+      SrcPort		      1
+      DstBlock		      "Power\n(3ph, Phasor)7"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From18"
+      SrcPort		      1
+      DstBlock		      "Power\n(3ph, Phasor)7"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Power\n(3ph, Phasor)7"
+      SrcPort		      2
+      DstBlock		      "Mux9"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Power\n(3ph, Phasor)7"
+      SrcPort		      1
+      DstBlock		      "Mux9"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From19"
+      SrcPort		      1
+      DstBlock		      "Power\n(3ph, Phasor)8"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From20"
+      SrcPort		      1
+      DstBlock		      "Power\n(3ph, Phasor)8"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Power\n(3ph, Phasor)8"
+      SrcPort		      2
+      DstBlock		      "Mux11"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Power\n(3ph, Phasor)8"
+      SrcPort		      1
+      DstBlock		      "Mux11"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From13"
+      SrcPort		      1
+      DstBlock		      "Power\n(3ph, Phasor)9"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From16"
+      SrcPort		      1
+      DstBlock		      "Power\n(3ph, Phasor)9"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Power\n(3ph, Phasor)9"
+      SrcPort		      2
+      DstBlock		      "Mux10"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Power\n(3ph, Phasor)9"
+      SrcPort		      1
+      DstBlock		      "Mux10"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From21"
+      SrcPort		      1
+      DstBlock		      "Power\n(3ph, Phasor)10"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From22"
+      SrcPort		      1
+      DstBlock		      "Power\n(3ph, Phasor)10"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Power\n(3ph, Phasor)10"
+      SrcPort		      2
+      DstBlock		      "Mux12"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Power\n(3ph, Phasor)10"
+      SrcPort		      1
+      DstBlock		      "Mux12"
+      DstPort		      1
+    }
+    Line {
+      Name		      "P,Q central plant"
+      SrcBlock		      "Mux9"
+      SrcPort		      1
+      Points		      [17, 0; 0, 35]
+      DstBlock		      "Sum"
+      DstPort		      3
+    }
+    Line {
+      Name		      "P,Q load 1"
+      SrcBlock		      "Mux10"
+      SrcPort		      1
+      Points		      [17, 0; 0, -25]
+      DstBlock		      "Sum"
+      DstPort		      4
+    }
+    Line {
+      Name		      "P,Q load 2"
+      SrcBlock		      "Mux4"
+      SrcPort		      1
+      Points		      [26, 0; 0, 90]
+      DstBlock		      "Sum"
+      DstPort		      2
+    }
+    Line {
+      Name		      "P,Q load 2"
+      SrcBlock		      "Mux11"
+      SrcPort		      1
+      Points		      [27, 0; 0, -80]
+      DstBlock		      "Sum"
+      DstPort		      5
+    }
+    Line {
+      Name		      "P,Q load 1"
+      SrcBlock		      "Mux2"
+      SrcPort		      1
+      Points		      [33, 0; 0, 145]
+      DstBlock		      "Sum"
+      DstPort		      1
+    }
+    Line {
+      Name		      "P,Q central plant"
+      SrcBlock		      "Mux12"
+      SrcPort		      1
+      Points		      [33, 0; 0, -135]
+      DstBlock		      "Sum"
+      DstPort		      6
+    }
+    Line {
+      Name		      "EV total power"
+      Labels		      [1, 1]
+      SrcBlock		      "Sum"
+      SrcPort		      1
+      DstBlock		      "Scope2"
+      DstPort		      1
+    }
+    Annotation {
+      SID		      "2426"
+      Name		      "Note: The PQ input on each source and load block is a vector of the format [P Q], where the \nfirst"
+      " and second elements are P = real power, Q = reactive power, respectively. "
+      Position		      [1442, 786]
+    }
     Annotation {
       SID		      "1859"
       Name		      "Simple Demo consisting of 2 buildings, 1 campus thermal plant, 6 EV chargers, and 1 PV system"
-      Position		      [1368, 9]
+      Position		      [1368, 94]
       ZOrder		      -1
       FontName		      "Arial"
       FontSize		      20

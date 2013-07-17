@@ -284,7 +284,7 @@ function Start(block)
     d.sscvar = struct();
     d.sscvar.lat = d.dialog.lat;
     d.sscvar.lon = d.dialog.lon;
-    d.sscvar.tz = -d.dialog.tz;                         % TO DO: Check this timezone conversion
+    d.sscvar.tz = d.dialog.tz;
     d.sscvar.time_step = d.dialog.time_step / 3600;     % sec -> hr
     d.sscvar.system_size = d.dialog.system_size / 1000; % W -> kW
     d.sscvar.derate = d.dialog.derate;
@@ -303,9 +303,7 @@ function Start(block)
     % NOTES:
     % 1. 'year', 'month', 'day', 'hour', and 'minute' are set during each
     %    output calculation by parsing the current simulation time
-    % 2. Timezone 'tz' must be converted from a UTC offset in hours to the
-    %    internal format required by pvwattsfunc (TO DO: which is what?)
-    % 3. 'track_mode' is offset by -1 to convert from a 1-4 scale to 0-3.
+    % 2. 'track_mode' is offset by -1 to convert from a 1-4 scale to 0-3.
     
     % Initialize pvwattsfunc module in SSC...
     % Load SSC library

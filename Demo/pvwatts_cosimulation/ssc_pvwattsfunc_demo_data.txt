@@ -6,8 +6,8 @@ number	day	21	Day	dy
 number	hour	12	Hour	hr
 number	minute	0	Minute	min
 number	lat	39.742	Latitude	deg
-number	lon	105.18	Longitude	deg
-number	tz	6	Time zone	hr
+number	lon	-105.18	Longitude	deg
+number	tz	-6	Time zone	hr
 number	beam	970	Beam normal irradiance	W/m2
 number	diffuse	86	Diffuse irradiance	W/m2
 number	tamb	25.4	Ambient temperature	C

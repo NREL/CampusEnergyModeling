@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.40"
+    ComputedModelVersion    "1.42"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -66,9 +66,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Jul 10 09:17:19 2013"
-  RTWModifiedTimeStamp	  295348638
-  ModelVersionFormat	  "1.%<AutoIncrement:40>"
+  LastModifiedDate	  "Wed Jul 17 08:54:19 2013"
+  RTWModifiedTimeStamp	  295952041
+  ModelVersionFormat	  "1.%<AutoIncrement:42>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1006,7 +1006,7 @@ Model {
       SourceBlock	      "CampusModeling/PV/PVWatts Cosimulation"
       SourceType	      "PVWatts Cosimulation"
       lat		      "39.74"
-      lon		      "105.18"
+      lon		      "-105.18"
       start_time	      "1-Jun-2012 00:00:00"
       tz		      "-6"
       time_step		      "600"
@@ -1200,7 +1200,7 @@ MatData {
     "'0               !T<F%C:U]M;V1E        <F]T;&EM             '1?<F5F              !T7VYO8W0             9V%M;6$    "
     "          &E?<F5F              !P;V%?8W5T:6X         :6YI=%]T8V5L;        &EN:71?<&]A          !O=71P=71?9&,      "
     "   ;W5T<'5T7V-E;&QT96UP &]U='!U=%]P;V$        .    .     8    (    !@         %    \"     $    !     0         )  "
-    "  \"    !^%ZU&XWD- #@   #@    &    \"     8         !0    @    !     0    $         \"0    @   #L4;@>A4M:0 X   !( "
+    "  \"    !^%ZU&XWD- #@   #@    &    \"     8         !0    @    !     0    $         \"0    @   #L4;@>A4M:P X   !( "
     "   !@    @    $          4    (     0   !,    !         !     3    ,2U*=6XM,C Q,B P,#HP,#HP,       #@   #@    &   "
     " \"     8         !0    @    !     0    $         \"0    @            8P X    X    !@    @    &          4    (   "
     "  0    $    !          D    (          # @D .    .     8    (    !@         %    \"     $    !     0         )    "
@@ -1227,7 +1227,7 @@ MatData {
     "'!O80           'EE87(          &UO;G1H         &1A>0           &AO=7(          &UI;G5T90       &)E86T          &1"
     "I9F9U<V4      '1A;6(          '=S<&0          &1C                   .    .     8    (    !@         %    \"     $ "
     "   !     0         )    \"    !^%ZU&XWD- #@   #@    &    \"     8         !0    @    !     0    $         \"0    @"
-    "   #L4;@>A4M:0 X    X    !@    @    &          4    (     0    $    !          D    (            &$ .    .     8  "
+    "   #L4;@>A4M:P X    X    !@    @    &          4    (     0    $    !          D    (            &, .    .     8  "
     "  (    !@         %    \"     $    !     0         )    \"    %5555555<4_#@   #@    &    \"     8         !0    @ "
     "   !     0    $         \"0    @           #P/PX    X    !@    @    &          4    (     0    $    !          D  "
     "  (    9F9F9F9F[C\\.    .     8    (    !@         %    \"     $    !     0         )    \"               #@   #@ "

@@ -41,8 +41,8 @@ Library {
 	$ObjectID		5
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkTopLevel"
-	LoadSaveID		"0"
+	ViewObjType		"SimulinkSubsys"
+	LoadSaveID		"13"
 	Extents			[901.0, 568.0]
 	ZoomFactor		[1.0]
 	Offset			[0.0, 0.0]
@@ -55,9 +55,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Jul 05 14:36:25 2013"
-  RTWModifiedTimeStamp	  294935725
-  ModelVersionFormat	  "1.%<AutoIncrement:52>"
+  LastModifiedDate	  "Wed Jul 17 14:52:37 2013"
+  RTWModifiedTimeStamp	  295973554
+  ModelVersionFormat	  "1.%<AutoIncrement:53>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1089,7 +1089,7 @@ Library {
   System {
     Name		    "CampusModeling"
     Location		    [828, 117, 1779, 851]
-    Open		    on
+    Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -2522,7 +2522,7 @@ Library {
       System {
 	Name			"PV"
 	Location		[828, 117, 1779, 851]
-	Open			off
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -3161,7 +3161,7 @@ Library {
 		Type			"edit"
 		Name			"lon"
 		Prompt			"Longitude"
-		Value			"105.18"
+		Value			"-105.18"
 		Tunable			"off"
 		TabName			"Time and Location"
 	      }
@@ -3537,7 +3537,7 @@ MatData {
     "'0               !T<F%C:U]M;V1E        <F]T;&EM             '1?<F5F              !T7VYO8W0             9V%M;6$    "
     "          &E?<F5F              !P;V%?8W5T:6X         :6YI=%]T8V5L;        &EN:71?<&]A          !O=71P=71?9&,      "
     "   ;W5T<'5T7V-E;&QT96UP &]U='!U=%]P;V$        .    .     8    (    !@         %    \"     $    !     0         )  "
-    "  \"    !^%ZU&XWD- #@   #@    &    \"     8         !0    @    !     0    $         \"0    @   #L4;@>A4M:0 X   !( "
+    "  \"    !^%ZU&XWD- #@   #@    &    \"     8         !0    @    !     0    $         \"0    @   #L4;@>A4M:P X   !( "
     "   !@    @    $          4    (     0   !,    !         !     3    ,2U*86XM,C Q,B P,#HP,#HP,       #@   #@    &   "
     " \"     8         !0    @    !     0    $         \"0    @            8P X    X    !@    @    &          4    (   "
     "  0    $    !          D    (          # @D .    .     8    (    !@         %    \"     $    !     0         )    "

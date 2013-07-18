@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.743"
+    ComputedModelVersion    "1.755"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -33,7 +33,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-8.0, 0.0, 1936.0, 1056.0]
+      Location		      [-8.0, -8.0, 1936.0, 1056.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -58,8 +58,8 @@ Model {
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
 	Extents			[1886.0, 882.0]
-	ZoomFactor		[0.6]
-	Offset			[437.36942796918976, -350.48536080726285]
+	ZoomFactor		[1.0]
+	Offset			[784.38306025017107, -13.216242679008928]
       }
     }
   }
@@ -70,11 +70,11 @@ Model {
   Creator		  "MathWorks"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "bjohnson"
+  LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Jul 18 09:46:06 2013"
-  RTWModifiedTimeStamp	  296041562
-  ModelVersionFormat	  "1.%<AutoIncrement:743>"
+  LastModifiedDate	  "Thu Jul 18 10:57:05 2013"
+  RTWModifiedTimeStamp	  296045818
+  ModelVersionFormat	  "1.%<AutoIncrement:755>"
   ConfigurationManager	  "none"
   SampleTimeColors	  on
   SampleTimeAnnotations	  on
@@ -176,7 +176,7 @@ Model {
 	  $ObjectID		  8
 	  Version		  "1.13.0"
 	  StartTime		  "0.0"
-	  StopTime		  "12*60*60"
+	  StopTime		  "24*3600"
 	  AbsTol		  "auto"
 	  FixedStep		  "1"
 	  InitialStep		  "auto"
@@ -367,7 +367,7 @@ Model {
 	  SimStateInterfaceChecksumMismatchMsg "warning"
 	  SimStateOlderReleaseMsg "error"
 	  InitInArrayFormatMsg	  "warning"
-	  StrictBusMsg		  "None"
+	  StrictBusMsg		  "ErrorLevel1"
 	  BusNameAdapt		  "WarnAndRepair"
 	  NonBusSignalsTreatedAsBus "none"
 	  LoggingUnavailableSignals "error"
@@ -674,8 +674,8 @@ Model {
 	PropName		"Components"
       }
       Name		      "Configuration"
-      CurrentDlgPage	      "Diagnostics/Sample Time"
-      ConfigPrmDlgPosition     [ 473, 100, 1447, 896 ] 
+      CurrentDlgPage	      "Solver"
+      ConfigPrmDlgPosition     [ 457, 40, 1463, 912 ] 
     }
     PropName		    "ConfigurationSets"
   }
@@ -746,6 +746,11 @@ Model {
   }
   BlockParameterDefaults {
     Block {
+      BlockType		      BusSelector
+      OutputSignals	      "signal1,signal2,signal3"
+      OutputAsBus	      off
+    }
+    Block {
       BlockType		      Constant
       Value		      "1"
       VectorParams1D	      on
@@ -765,19 +770,43 @@ Model {
       TagVisibility	      "local"
     }
     Block {
-      BlockType		      Gain
-      Gain		      "1"
-      Multiplication	      "Element-wise(K.*u)"
-      ParamMin		      "[]"
-      ParamMax		      "[]"
-      ParamDataTypeStr	      "Inherit: Same as input"
+      BlockType		      Goto
+      GotoTag		      "A"
+      IconDisplay	      "Tag"
+      TagVisibility	      "local"
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      OutputFunctionCall      off
       OutMin		      "[]"
       OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: Same as input"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchInputForFeedbackSignals off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Math
+      Operator		      "exp"
+      OutputSignalType	      "auto"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
       LockScale		      off
       RndMeth		      "Floor"
       SaturateOnIntegerOverflow	on
-      SampleTime	      "-1"
+      IntermediateResultsDataTypeStr "Inherit: Inherit via internal rule"
+      AlgorithmType	      "Newton-Raphson"
+      Iterations	      "3"
     }
     Block {
       BlockType		      Mux
@@ -788,22 +817,39 @@ Model {
       NonVirtualBus	      off
     }
     Block {
+      BlockType		      Outport
+      Port		      "1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      SourceOfInitialOutputValue "Dialog"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
       BlockType		      PMIOPort
     }
     Block {
-      BlockType		      Saturate
-      UpperLimitSource	      "Dialog"
-      UpperLimit	      "0.5"
-      LowerLimitSource	      "Dialog"
-      LowerLimit	      "-0.5"
-      LinearizeAsGain	      on
-      ZeroCross		      on
-      SampleTime	      "-1"
+      BlockType		      Product
+      Inputs		      "2"
+      Multiplication	      "Element-wise(.*)"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
       OutMin		      "[]"
       OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: Same as input"
+      OutDataTypeStr	      "Inherit: Same as first input"
       LockScale		      off
-      RndMeth		      "Floor"
+      RndMeth		      "Zero"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
     }
     Block {
       BlockType		      Scope
@@ -824,17 +870,19 @@ Model {
       SampleTime	      "-1"
     }
     Block {
-      BlockType		      Sin
-      SineType		      "Time based"
-      TimeSource	      "Use simulation time"
-      Amplitude		      "1"
-      Bias		      "0"
-      Frequency		      "1"
-      Phase		      "0"
-      Samples		      "10"
-      Offset		      "0"
+      BlockType		      Sqrt
+      Operator		      "sqrt"
+      OutputSignalType	      "auto"
       SampleTime	      "-1"
-      VectorParams1D	      on
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      IntermediateResultsDataTypeStr "Inherit: Inherit via internal rule"
+      AlgorithmType	      "Exact"
+      Iterations	      "3"
     }
     Block {
       BlockType		      SubSystem
@@ -876,10 +924,23 @@ Model {
       SaturateOnIntegerOverflow	on
       SampleTime	      "-1"
     }
+    Block {
+      BlockType		      VariableTransportDelay
+      VariableDelayType	      "Variable time delay"
+      MaximumDelay	      "1"
+      InitialOutput	      "0"
+      MaximumPoints	      "1024"
+      FixedBuffer	      off
+      ZeroDelay		      off
+      TransDelayFeedthrough   off
+      PadeOrder		      "0"
+      AbsoluteTolerance	      "auto"
+      ContinuousStateAttributes	"''"
+    }
   }
   System {
     Name		    "integrated_campus"
-    Location		    [-8, 0, 1928, 1056]
+    Location		    [-8, -8, 1928, 1048]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -891,9 +952,9 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "60"
+    ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "2476"
+    SIDHighWatermark	    "2584"
     Block {
       BlockType		      Reference
       Name		      "Building 1"
@@ -1461,16 +1522,6 @@ Model {
     }
     Block {
       BlockType		      Constant
-      Name		      "Constant10"
-      SID		      "2293"
-      Position		      [2005, 1305, 2035, 1335]
-      ZOrder		      190
-      ForegroundColor	      "[0.501961, 0.501961, 0.501961]"
-      NamePlacement	      "alternate"
-      Value		      "[6e3 2e3]"
-    }
-    Block {
-      BlockType		      Constant
       Name		      "Constant2"
       SID		      "2379"
       Position		      [1590, 595, 1620, 625]
@@ -1490,54 +1541,1508 @@ Model {
       Value		      "[15e3 5e3]"
     }
     Block {
-      BlockType		      Constant
-      Name		      "Constant4"
-      SID		      "2253"
-      Position		      [2005, 595, 2035, 625]
-      ZOrder		      161
-      ForegroundColor	      "[0.501961, 0.501961, 0.501961]"
-      NamePlacement	      "alternate"
-      Value		      "[6e3 2e3]"
+      BlockType		      Reference
+      Name		      "EV Charge\nProfile"
+      SID		      "2480"
+      Ports		      [0, 1]
+      Position		      [2260, 810, 2290, 840]
+      ZOrder		      324
+      LibraryVersion	      "1.274"
+      SourceBlock	      "simulink/Sources/Repeating\nSequence"
+      SourceType	      "Repeating table"
+      rep_seq_t		      "[0 6.9 7 9 10 11 12 13 14 15 24] * 3600"
+      rep_seq_y		      "[0 0 0.9 0.9 0.8 0.6 0.5 0.3 0.1 0 0] * 6.0e3"
     }
     Block {
-      BlockType		      Constant
-      Name		      "Constant6"
-      SID		      "2279"
-      Position		      [2005, 740, 2035, 770]
-      ZOrder		      170
-      ForegroundColor	      "[0.901961, 0.000000, 0.000000]"
+      BlockType		      SubSystem
+      Name		      "EV Charger 1"
+      SID		      "2487"
+      Ports		      [1, 1]
+      Position		      [1980, 586, 2040, 614]
+      ZOrder		      331
       NamePlacement	      "alternate"
-      Value		      "[6e3 2e3]"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      System {
+	Name			"EV Charger 1"
+	Location		[-8, -8, 1928, 1048]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "Profile"
+	  SID			  "2488"
+	  Position		  [110, 103, 140, 117]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	  Port {
+	    PortNumber		    1
+	    Name		    "P"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Math
+	  Name			  "1/PF"
+	  SID			  "2498"
+	  Ports			  [1, 1]
+	  Position		  [180, 290, 210, 320]
+	  ZOrder		  13
+	  Operator		  "reciprocal"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Add"
+	  SID			  "2495"
+	  Ports			  [2, 1]
+	  Position		  [355, 290, 385, 320]
+	  ZOrder		  6
+	  IconShape		  "round"
+	  Inputs		  "|+-"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux"
+	  SID			  "2497"
+	  Ports			  [2, 1]
+	  Position		  [600, 253, 605, 317]
+	  ZOrder		  8
+	  ShowName		  off
+	  Inputs		  "2"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "One"
+	  SID			  "2494"
+	  Position		  [290, 355, 320, 385]
+	  ZOrder		  5
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "PF"
+	  SID			  "2491"
+	  Position		  [110, 290, 140, 320]
+	  ZOrder		  11
+	  Value			  "0.95"
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product"
+	  SID			  "2496"
+	  Ports			  [2, 1]
+	  Position		  [510, 282, 540, 313]
+	  ZOrder		  7
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  RndMeth		  "Floor"
+	  SaturateOnIntegerOverflow off
+	  Port {
+	    PortNumber		    1
+	    Name		    "Q"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Random Delay\n(0-2 hr)"
+	  SID			  "2505"
+	  Position		  [160, 180, 190, 210]
+	  ZOrder		  334
+	  Value			  "2*3600*rand(1)"
+	}
+	Block {
+	  BlockType		  Sqrt
+	  Name			  "Sqrt"
+	  SID			  "2493"
+	  Position		  [430, 290, 460, 320]
+	  ZOrder		  4
+	}
+	Block {
+	  BlockType		  Math
+	  Name			  "Squared"
+	  SID			  "2492"
+	  Ports			  [1, 1]
+	  Position		  [260, 290, 290, 320]
+	  ZOrder		  12
+	  Operator		  "magnitude^2"
+	}
+	Block {
+	  BlockType		  VariableTransportDelay
+	  Name			  "Variable\nTime Delay"
+	  SID			  "2483"
+	  Ports			  [2, 1]
+	  Position		  [290, 102, 320, 133]
+	  ZOrder		  331
+	  VariableDelayType	  "Variable transport delay"
+	  MaximumDelay		  "6*3600"
+	  MaximumPoints		  "32768"
+	  ZeroDelay		  on
+	  Port {
+	    PortNumber		    1
+	    Name		    "P"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "PQ"
+	  SID			  "2489"
+	  Position		  [690, 278, 720, 292]
+	  ZOrder		  9
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  Name			  "P"
+	  FontName		  "Helvetica"
+	  FontSize		  9
+	  FontWeight		  "normal"
+	  FontAngle		  "normal"
+	  Labels		  [2, 0]
+	  SrcBlock		  "Variable\nTime Delay"
+	  SrcPort		  1
+	  Points		  [154, 0; 0, 150]
+	  Branch {
+	    Points		    [0, 20]
+	    DstBlock		    "Product"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Mux"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Add"
+	  SrcPort		  1
+	  DstBlock		  "Sqrt"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sqrt"
+	  SrcPort		  1
+	  DstBlock		  "Product"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  DstBlock		  "PQ"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "Q"
+	  Labels		  [1, 1]
+	  SrcBlock		  "Product"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "PF"
+	  SrcPort		  1
+	  DstBlock		  "1/PF"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "1/PF"
+	  SrcPort		  1
+	  DstBlock		  "Squared"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "One"
+	  SrcPort		  1
+	  Points		  [45, 0]
+	  DstBlock		  "Add"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Squared"
+	  SrcPort		  1
+	  DstBlock		  "Add"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "P"
+	  SrcBlock		  "Profile"
+	  SrcPort		  1
+	  DstBlock		  "Variable\nTime Delay"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Random Delay\n(0-2 hr)"
+	  SrcPort		  1
+	  Points		  [42, 0; 0, -70]
+	  DstBlock		  "Variable\nTime Delay"
+	  DstPort		  2
+	}
+      }
     }
     Block {
-      BlockType		      Constant
-      Name		      "Constant7"
-      SID		      "2284"
-      Position		      [2005, 885, 2035, 915]
-      ZOrder		      175
-      ForegroundColor	      "[0.901961, 0.000000, 0.000000]"
+      BlockType		      SubSystem
+      Name		      "EV Charger 2"
+      SID		      "2514"
+      Ports		      [1, 1]
+      Position		      [1975, 741, 2035, 769]
+      ZOrder		      334
       NamePlacement	      "alternate"
-      Value		      "[6e3 2e3]"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      System {
+	Name			"EV Charger 2"
+	Location		[-8, -8, 1928, 1048]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "Profile"
+	  SID			  "2515"
+	  Position		  [110, 103, 140, 117]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	  Port {
+	    PortNumber		    1
+	    Name		    "P"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Math
+	  Name			  "1/PF"
+	  SID			  "2516"
+	  Ports			  [1, 1]
+	  Position		  [180, 290, 210, 320]
+	  ZOrder		  13
+	  Operator		  "reciprocal"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Add"
+	  SID			  "2517"
+	  Ports			  [2, 1]
+	  Position		  [355, 290, 385, 320]
+	  ZOrder		  6
+	  IconShape		  "round"
+	  Inputs		  "|+-"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux"
+	  SID			  "2518"
+	  Ports			  [2, 1]
+	  Position		  [600, 253, 605, 317]
+	  ZOrder		  8
+	  ShowName		  off
+	  Inputs		  "2"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "One"
+	  SID			  "2519"
+	  Position		  [290, 355, 320, 385]
+	  ZOrder		  5
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "PF"
+	  SID			  "2520"
+	  Position		  [110, 290, 140, 320]
+	  ZOrder		  11
+	  Value			  "0.95"
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product"
+	  SID			  "2521"
+	  Ports			  [2, 1]
+	  Position		  [510, 282, 540, 313]
+	  ZOrder		  7
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  RndMeth		  "Floor"
+	  SaturateOnIntegerOverflow off
+	  Port {
+	    PortNumber		    1
+	    Name		    "Q"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Random Delay\n(0-2 hr)"
+	  SID			  "2522"
+	  Position		  [160, 180, 190, 210]
+	  ZOrder		  334
+	  Value			  "2*3600*rand(1)"
+	}
+	Block {
+	  BlockType		  Sqrt
+	  Name			  "Sqrt"
+	  SID			  "2523"
+	  Position		  [430, 290, 460, 320]
+	  ZOrder		  4
+	}
+	Block {
+	  BlockType		  Math
+	  Name			  "Squared"
+	  SID			  "2524"
+	  Ports			  [1, 1]
+	  Position		  [260, 290, 290, 320]
+	  ZOrder		  12
+	  Operator		  "magnitude^2"
+	}
+	Block {
+	  BlockType		  VariableTransportDelay
+	  Name			  "Variable\nTime Delay"
+	  SID			  "2525"
+	  Ports			  [2, 1]
+	  Position		  [290, 102, 320, 133]
+	  ZOrder		  331
+	  VariableDelayType	  "Variable transport delay"
+	  MaximumDelay		  "6*3600"
+	  MaximumPoints		  "32768"
+	  ZeroDelay		  on
+	  Port {
+	    PortNumber		    1
+	    Name		    "P"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "PQ"
+	  SID			  "2526"
+	  Position		  [690, 278, 720, 292]
+	  ZOrder		  9
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  Name			  "P"
+	  FontName		  "Helvetica"
+	  FontSize		  9
+	  FontWeight		  "normal"
+	  FontAngle		  "normal"
+	  Labels		  [2, 0]
+	  SrcBlock		  "Variable\nTime Delay"
+	  SrcPort		  1
+	  Points		  [154, 0; 0, 150]
+	  Branch {
+	    Points		    [0, 20]
+	    DstBlock		    "Product"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Mux"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Add"
+	  SrcPort		  1
+	  DstBlock		  "Sqrt"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sqrt"
+	  SrcPort		  1
+	  DstBlock		  "Product"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  DstBlock		  "PQ"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "Q"
+	  Labels		  [1, 1]
+	  SrcBlock		  "Product"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "PF"
+	  SrcPort		  1
+	  DstBlock		  "1/PF"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "1/PF"
+	  SrcPort		  1
+	  DstBlock		  "Squared"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "One"
+	  SrcPort		  1
+	  Points		  [45, 0]
+	  DstBlock		  "Add"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Squared"
+	  SrcPort		  1
+	  DstBlock		  "Add"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "P"
+	  SrcBlock		  "Profile"
+	  SrcPort		  1
+	  DstBlock		  "Variable\nTime Delay"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Random Delay\n(0-2 hr)"
+	  SrcPort		  1
+	  Points		  [42, 0; 0, -70]
+	  DstBlock		  "Variable\nTime Delay"
+	  DstPort		  2
+	}
+      }
     }
     Block {
-      BlockType		      Constant
-      Name		      "Constant8"
-      SID		      "2291"
-      Position		      [2005, 1015, 2035, 1045]
-      ZOrder		      180
-      ForegroundColor	      "[0.901961, 0.000000, 0.000000]"
+      BlockType		      SubSystem
+      Name		      "EV Charger 3"
+      SID		      "2528"
+      Ports		      [1, 1]
+      Position		      [1975, 886, 2035, 914]
+      ZOrder		      336
       NamePlacement	      "alternate"
-      Value		      "[6e3 2e3]"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      System {
+	Name			"EV Charger 3"
+	Location		[-8, -8, 1928, 1048]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "Profile"
+	  SID			  "2529"
+	  Position		  [110, 103, 140, 117]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	  Port {
+	    PortNumber		    1
+	    Name		    "P"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Math
+	  Name			  "1/PF"
+	  SID			  "2530"
+	  Ports			  [1, 1]
+	  Position		  [180, 290, 210, 320]
+	  ZOrder		  13
+	  Operator		  "reciprocal"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Add"
+	  SID			  "2531"
+	  Ports			  [2, 1]
+	  Position		  [355, 290, 385, 320]
+	  ZOrder		  6
+	  IconShape		  "round"
+	  Inputs		  "|+-"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux"
+	  SID			  "2532"
+	  Ports			  [2, 1]
+	  Position		  [600, 253, 605, 317]
+	  ZOrder		  8
+	  ShowName		  off
+	  Inputs		  "2"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "One"
+	  SID			  "2533"
+	  Position		  [290, 355, 320, 385]
+	  ZOrder		  5
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "PF"
+	  SID			  "2534"
+	  Position		  [110, 290, 140, 320]
+	  ZOrder		  11
+	  Value			  "0.95"
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product"
+	  SID			  "2535"
+	  Ports			  [2, 1]
+	  Position		  [510, 282, 540, 313]
+	  ZOrder		  7
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  RndMeth		  "Floor"
+	  SaturateOnIntegerOverflow off
+	  Port {
+	    PortNumber		    1
+	    Name		    "Q"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Random Delay\n(0-2 hr)"
+	  SID			  "2536"
+	  Position		  [160, 180, 190, 210]
+	  ZOrder		  334
+	  Value			  "2*3600*rand(1)"
+	}
+	Block {
+	  BlockType		  Sqrt
+	  Name			  "Sqrt"
+	  SID			  "2537"
+	  Position		  [430, 290, 460, 320]
+	  ZOrder		  4
+	}
+	Block {
+	  BlockType		  Math
+	  Name			  "Squared"
+	  SID			  "2538"
+	  Ports			  [1, 1]
+	  Position		  [260, 290, 290, 320]
+	  ZOrder		  12
+	  Operator		  "magnitude^2"
+	}
+	Block {
+	  BlockType		  VariableTransportDelay
+	  Name			  "Variable\nTime Delay"
+	  SID			  "2539"
+	  Ports			  [2, 1]
+	  Position		  [290, 102, 320, 133]
+	  ZOrder		  331
+	  VariableDelayType	  "Variable transport delay"
+	  MaximumDelay		  "6*3600"
+	  MaximumPoints		  "32768"
+	  ZeroDelay		  on
+	  Port {
+	    PortNumber		    1
+	    Name		    "P"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "PQ"
+	  SID			  "2540"
+	  Position		  [690, 278, 720, 292]
+	  ZOrder		  9
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  Name			  "P"
+	  FontName		  "Helvetica"
+	  FontSize		  9
+	  FontWeight		  "normal"
+	  FontAngle		  "normal"
+	  Labels		  [2, 0]
+	  SrcBlock		  "Variable\nTime Delay"
+	  SrcPort		  1
+	  Points		  [154, 0; 0, 150]
+	  Branch {
+	    Points		    [0, 20]
+	    DstBlock		    "Product"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Mux"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Add"
+	  SrcPort		  1
+	  DstBlock		  "Sqrt"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sqrt"
+	  SrcPort		  1
+	  DstBlock		  "Product"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  DstBlock		  "PQ"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "Q"
+	  Labels		  [1, 1]
+	  SrcBlock		  "Product"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "PF"
+	  SrcPort		  1
+	  DstBlock		  "1/PF"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "1/PF"
+	  SrcPort		  1
+	  DstBlock		  "Squared"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "One"
+	  SrcPort		  1
+	  Points		  [45, 0]
+	  DstBlock		  "Add"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Squared"
+	  SrcPort		  1
+	  DstBlock		  "Add"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "P"
+	  SrcBlock		  "Profile"
+	  SrcPort		  1
+	  DstBlock		  "Variable\nTime Delay"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Random Delay\n(0-2 hr)"
+	  SrcPort		  1
+	  Points		  [42, 0; 0, -70]
+	  DstBlock		  "Variable\nTime Delay"
+	  DstPort		  2
+	}
+      }
     }
     Block {
-      BlockType		      Constant
-      Name		      "Constant9"
-      SID		      "2292"
-      Position		      [2005, 1160, 2035, 1190]
-      ZOrder		      185
-      ForegroundColor	      "[0.901961, 0.000000, 0.000000]"
+      BlockType		      SubSystem
+      Name		      "EV Charger 4"
+      SID		      "2542"
+      Ports		      [1, 1]
+      Position		      [1975, 1016, 2035, 1044]
+      ZOrder		      338
       NamePlacement	      "alternate"
-      Value		      "[6e3 2e3]"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      System {
+	Name			"EV Charger 4"
+	Location		[-8, -8, 1928, 1048]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "Profile"
+	  SID			  "2543"
+	  Position		  [110, 103, 140, 117]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	  Port {
+	    PortNumber		    1
+	    Name		    "P"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Math
+	  Name			  "1/PF"
+	  SID			  "2544"
+	  Ports			  [1, 1]
+	  Position		  [180, 290, 210, 320]
+	  ZOrder		  13
+	  Operator		  "reciprocal"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Add"
+	  SID			  "2545"
+	  Ports			  [2, 1]
+	  Position		  [355, 290, 385, 320]
+	  ZOrder		  6
+	  IconShape		  "round"
+	  Inputs		  "|+-"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux"
+	  SID			  "2546"
+	  Ports			  [2, 1]
+	  Position		  [600, 253, 605, 317]
+	  ZOrder		  8
+	  ShowName		  off
+	  Inputs		  "2"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "One"
+	  SID			  "2547"
+	  Position		  [290, 355, 320, 385]
+	  ZOrder		  5
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "PF"
+	  SID			  "2548"
+	  Position		  [110, 290, 140, 320]
+	  ZOrder		  11
+	  Value			  "0.95"
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product"
+	  SID			  "2549"
+	  Ports			  [2, 1]
+	  Position		  [510, 282, 540, 313]
+	  ZOrder		  7
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  RndMeth		  "Floor"
+	  SaturateOnIntegerOverflow off
+	  Port {
+	    PortNumber		    1
+	    Name		    "Q"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Random Delay\n(0-2 hr)"
+	  SID			  "2550"
+	  Position		  [160, 180, 190, 210]
+	  ZOrder		  334
+	  Value			  "2*3600*rand(1)"
+	}
+	Block {
+	  BlockType		  Sqrt
+	  Name			  "Sqrt"
+	  SID			  "2551"
+	  Position		  [430, 290, 460, 320]
+	  ZOrder		  4
+	}
+	Block {
+	  BlockType		  Math
+	  Name			  "Squared"
+	  SID			  "2552"
+	  Ports			  [1, 1]
+	  Position		  [260, 290, 290, 320]
+	  ZOrder		  12
+	  Operator		  "magnitude^2"
+	}
+	Block {
+	  BlockType		  VariableTransportDelay
+	  Name			  "Variable\nTime Delay"
+	  SID			  "2553"
+	  Ports			  [2, 1]
+	  Position		  [290, 102, 320, 133]
+	  ZOrder		  331
+	  VariableDelayType	  "Variable transport delay"
+	  MaximumDelay		  "6*3600"
+	  MaximumPoints		  "32768"
+	  ZeroDelay		  on
+	  Port {
+	    PortNumber		    1
+	    Name		    "P"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "PQ"
+	  SID			  "2554"
+	  Position		  [690, 278, 720, 292]
+	  ZOrder		  9
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  Name			  "P"
+	  FontName		  "Helvetica"
+	  FontSize		  9
+	  FontWeight		  "normal"
+	  FontAngle		  "normal"
+	  Labels		  [2, 0]
+	  SrcBlock		  "Variable\nTime Delay"
+	  SrcPort		  1
+	  Points		  [154, 0; 0, 150]
+	  Branch {
+	    Points		    [0, 20]
+	    DstBlock		    "Product"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Mux"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Add"
+	  SrcPort		  1
+	  DstBlock		  "Sqrt"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sqrt"
+	  SrcPort		  1
+	  DstBlock		  "Product"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  DstBlock		  "PQ"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "Q"
+	  Labels		  [1, 1]
+	  SrcBlock		  "Product"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "PF"
+	  SrcPort		  1
+	  DstBlock		  "1/PF"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "1/PF"
+	  SrcPort		  1
+	  DstBlock		  "Squared"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "One"
+	  SrcPort		  1
+	  Points		  [45, 0]
+	  DstBlock		  "Add"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Squared"
+	  SrcPort		  1
+	  DstBlock		  "Add"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "P"
+	  SrcBlock		  "Profile"
+	  SrcPort		  1
+	  DstBlock		  "Variable\nTime Delay"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Random Delay\n(0-2 hr)"
+	  SrcPort		  1
+	  Points		  [42, 0; 0, -70]
+	  DstBlock		  "Variable\nTime Delay"
+	  DstPort		  2
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "EV Charger 5"
+      SID		      "2556"
+      Ports		      [1, 1]
+      Position		      [1975, 1161, 2035, 1189]
+      ZOrder		      340
+      NamePlacement	      "alternate"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      System {
+	Name			"EV Charger 5"
+	Location		[-8, -8, 1928, 1048]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "Profile"
+	  SID			  "2557"
+	  Position		  [110, 103, 140, 117]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	  Port {
+	    PortNumber		    1
+	    Name		    "P"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Math
+	  Name			  "1/PF"
+	  SID			  "2558"
+	  Ports			  [1, 1]
+	  Position		  [180, 290, 210, 320]
+	  ZOrder		  13
+	  Operator		  "reciprocal"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Add"
+	  SID			  "2559"
+	  Ports			  [2, 1]
+	  Position		  [355, 290, 385, 320]
+	  ZOrder		  6
+	  IconShape		  "round"
+	  Inputs		  "|+-"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux"
+	  SID			  "2560"
+	  Ports			  [2, 1]
+	  Position		  [600, 253, 605, 317]
+	  ZOrder		  8
+	  ShowName		  off
+	  Inputs		  "2"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "One"
+	  SID			  "2561"
+	  Position		  [290, 355, 320, 385]
+	  ZOrder		  5
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "PF"
+	  SID			  "2562"
+	  Position		  [110, 290, 140, 320]
+	  ZOrder		  11
+	  Value			  "0.95"
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product"
+	  SID			  "2563"
+	  Ports			  [2, 1]
+	  Position		  [510, 282, 540, 313]
+	  ZOrder		  7
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  RndMeth		  "Floor"
+	  SaturateOnIntegerOverflow off
+	  Port {
+	    PortNumber		    1
+	    Name		    "Q"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Random Delay\n(0-2 hr)"
+	  SID			  "2564"
+	  Position		  [160, 180, 190, 210]
+	  ZOrder		  334
+	  Value			  "2*3600*rand(1)"
+	}
+	Block {
+	  BlockType		  Sqrt
+	  Name			  "Sqrt"
+	  SID			  "2565"
+	  Position		  [430, 290, 460, 320]
+	  ZOrder		  4
+	}
+	Block {
+	  BlockType		  Math
+	  Name			  "Squared"
+	  SID			  "2566"
+	  Ports			  [1, 1]
+	  Position		  [260, 290, 290, 320]
+	  ZOrder		  12
+	  Operator		  "magnitude^2"
+	}
+	Block {
+	  BlockType		  VariableTransportDelay
+	  Name			  "Variable\nTime Delay"
+	  SID			  "2567"
+	  Ports			  [2, 1]
+	  Position		  [290, 102, 320, 133]
+	  ZOrder		  331
+	  VariableDelayType	  "Variable transport delay"
+	  MaximumDelay		  "6*3600"
+	  MaximumPoints		  "32768"
+	  ZeroDelay		  on
+	  Port {
+	    PortNumber		    1
+	    Name		    "P"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "PQ"
+	  SID			  "2568"
+	  Position		  [690, 278, 720, 292]
+	  ZOrder		  9
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  Name			  "P"
+	  FontName		  "Helvetica"
+	  FontSize		  9
+	  FontWeight		  "normal"
+	  FontAngle		  "normal"
+	  Labels		  [2, 0]
+	  SrcBlock		  "Variable\nTime Delay"
+	  SrcPort		  1
+	  Points		  [154, 0; 0, 150]
+	  Branch {
+	    Points		    [0, 20]
+	    DstBlock		    "Product"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Mux"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Add"
+	  SrcPort		  1
+	  DstBlock		  "Sqrt"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sqrt"
+	  SrcPort		  1
+	  DstBlock		  "Product"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  DstBlock		  "PQ"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "Q"
+	  Labels		  [1, 1]
+	  SrcBlock		  "Product"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "PF"
+	  SrcPort		  1
+	  DstBlock		  "1/PF"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "1/PF"
+	  SrcPort		  1
+	  DstBlock		  "Squared"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "One"
+	  SrcPort		  1
+	  Points		  [45, 0]
+	  DstBlock		  "Add"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Squared"
+	  SrcPort		  1
+	  DstBlock		  "Add"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "P"
+	  SrcBlock		  "Profile"
+	  SrcPort		  1
+	  DstBlock		  "Variable\nTime Delay"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Random Delay\n(0-2 hr)"
+	  SrcPort		  1
+	  Points		  [42, 0; 0, -70]
+	  DstBlock		  "Variable\nTime Delay"
+	  DstPort		  2
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "EV Charger 6"
+      SID		      "2570"
+      Ports		      [1, 1]
+      Position		      [1975, 1306, 2035, 1334]
+      ZOrder		      342
+      NamePlacement	      "alternate"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      System {
+	Name			"EV Charger 6"
+	Location		[-8, -8, 1928, 1048]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "Profile"
+	  SID			  "2571"
+	  Position		  [110, 103, 140, 117]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	  Port {
+	    PortNumber		    1
+	    Name		    "P"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Math
+	  Name			  "1/PF"
+	  SID			  "2572"
+	  Ports			  [1, 1]
+	  Position		  [180, 290, 210, 320]
+	  ZOrder		  13
+	  Operator		  "reciprocal"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Add"
+	  SID			  "2573"
+	  Ports			  [2, 1]
+	  Position		  [355, 290, 385, 320]
+	  ZOrder		  6
+	  IconShape		  "round"
+	  Inputs		  "|+-"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux"
+	  SID			  "2574"
+	  Ports			  [2, 1]
+	  Position		  [600, 253, 605, 317]
+	  ZOrder		  8
+	  ShowName		  off
+	  Inputs		  "2"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "One"
+	  SID			  "2575"
+	  Position		  [290, 355, 320, 385]
+	  ZOrder		  5
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "PF"
+	  SID			  "2576"
+	  Position		  [110, 290, 140, 320]
+	  ZOrder		  11
+	  Value			  "0.95"
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product"
+	  SID			  "2577"
+	  Ports			  [2, 1]
+	  Position		  [510, 282, 540, 313]
+	  ZOrder		  7
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  RndMeth		  "Floor"
+	  SaturateOnIntegerOverflow off
+	  Port {
+	    PortNumber		    1
+	    Name		    "Q"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Random Delay\n(0-2 hr)"
+	  SID			  "2578"
+	  Position		  [160, 180, 190, 210]
+	  ZOrder		  334
+	  Value			  "2*3600*rand(1)"
+	}
+	Block {
+	  BlockType		  Sqrt
+	  Name			  "Sqrt"
+	  SID			  "2579"
+	  Position		  [430, 290, 460, 320]
+	  ZOrder		  4
+	}
+	Block {
+	  BlockType		  Math
+	  Name			  "Squared"
+	  SID			  "2580"
+	  Ports			  [1, 1]
+	  Position		  [260, 290, 290, 320]
+	  ZOrder		  12
+	  Operator		  "magnitude^2"
+	}
+	Block {
+	  BlockType		  VariableTransportDelay
+	  Name			  "Variable\nTime Delay"
+	  SID			  "2581"
+	  Ports			  [2, 1]
+	  Position		  [290, 102, 320, 133]
+	  ZOrder		  331
+	  VariableDelayType	  "Variable transport delay"
+	  MaximumDelay		  "6*3600"
+	  MaximumPoints		  "32768"
+	  ZeroDelay		  on
+	  Port {
+	    PortNumber		    1
+	    Name		    "P"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "PQ"
+	  SID			  "2582"
+	  Position		  [690, 278, 720, 292]
+	  ZOrder		  9
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  Name			  "P"
+	  FontName		  "Helvetica"
+	  FontSize		  9
+	  FontWeight		  "normal"
+	  FontAngle		  "normal"
+	  Labels		  [2, 0]
+	  SrcBlock		  "Variable\nTime Delay"
+	  SrcPort		  1
+	  Points		  [154, 0; 0, 150]
+	  Branch {
+	    Points		    [0, 20]
+	    DstBlock		    "Product"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Mux"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Add"
+	  SrcPort		  1
+	  DstBlock		  "Sqrt"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sqrt"
+	  SrcPort		  1
+	  DstBlock		  "Product"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  DstBlock		  "PQ"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "Q"
+	  Labels		  [1, 1]
+	  SrcBlock		  "Product"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "PF"
+	  SrcPort		  1
+	  DstBlock		  "1/PF"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "1/PF"
+	  SrcPort		  1
+	  DstBlock		  "Squared"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "One"
+	  SrcPort		  1
+	  Points		  [45, 0]
+	  DstBlock		  "Add"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Squared"
+	  SrcPort		  1
+	  DstBlock		  "Add"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "P"
+	  SrcBlock		  "Profile"
+	  SrcPort		  1
+	  DstBlock		  "Variable\nTime Delay"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Random Delay\n(0-2 hr)"
+	  SrcPort		  1
+	  Points		  [42, 0; 0, -70]
+	  DstBlock		  "Variable\nTime Delay"
+	  DstPort		  2
+	}
+      }
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "EV Charging "
+      SID		      "2482"
+      Position		      [2360, 811, 2435, 839]
+      ZOrder		      326
+      BackgroundColor	      "[1.000000, 0.501961, 0.000000]"
+      GotoTag		      "EV"
     }
     Block {
       BlockType		      Reference
@@ -1573,6 +3078,7 @@ Model {
       SID		      "2391"
       Position		      [1390, 246, 1465, 264]
       ZOrder		      252
+      BackgroundColor	      "orange"
       ShowName		      off
       GotoTag		      "Vabc_Load2"
       TagVisibility	      "global"
@@ -1583,6 +3089,7 @@ Model {
       SID		      "2428"
       Position		      [1390, 336, 1465, 354]
       ZOrder		      279
+      BackgroundColor	      "orange"
       ShowName		      off
       GotoTag		      "Iabc_Load2"
       TagVisibility	      "global"
@@ -1593,6 +3100,7 @@ Model {
       SID		      "2458"
       Position		      [2020, 91, 2095, 109]
       ZOrder		      309
+      BackgroundColor	      "orange"
       ShowName		      off
       GotoTag		      "Vabc_Charger2"
       TagVisibility	      "global"
@@ -1603,6 +3111,7 @@ Model {
       SID		      "2459"
       Position		      [2020, 111, 2095, 129]
       ZOrder		      310
+      BackgroundColor	      "orange"
       ShowName		      off
       GotoTag		      "Iabc_Charger2"
       TagVisibility	      "global"
@@ -1613,6 +3122,7 @@ Model {
       SID		      "2460"
       Position		      [2020, 236, 2095, 254]
       ZOrder		      313
+      BackgroundColor	      "orange"
       ShowName		      off
       GotoTag		      "Vabc_Charger4"
       TagVisibility	      "global"
@@ -1623,6 +3133,7 @@ Model {
       SID		      "2434"
       Position		      [2020, 21, 2095, 39]
       ZOrder		      287
+      BackgroundColor	      "orange"
       ShowName		      off
       GotoTag		      "Vabc_Charger1"
       TagVisibility	      "global"
@@ -1633,6 +3144,7 @@ Model {
       SID		      "2435"
       Position		      [2020, 41, 2095, 59]
       ZOrder		      288
+      BackgroundColor	      "orange"
       ShowName		      off
       GotoTag		      "Iabc_Charger1"
       TagVisibility	      "global"
@@ -1643,6 +3155,7 @@ Model {
       SID		      "2461"
       Position		      [2020, 256, 2095, 274]
       ZOrder		      314
+      BackgroundColor	      "orange"
       ShowName		      off
       GotoTag		      "Iabc_Charger4"
       TagVisibility	      "global"
@@ -1653,6 +3166,7 @@ Model {
       SID		      "2462"
       Position		      [2020, 161, 2095, 179]
       ZOrder		      311
+      BackgroundColor	      "orange"
       ShowName		      off
       GotoTag		      "Vabc_Charger3"
       TagVisibility	      "global"
@@ -1663,6 +3177,7 @@ Model {
       SID		      "2463"
       Position		      [2020, 181, 2095, 199]
       ZOrder		      312
+      BackgroundColor	      "orange"
       ShowName		      off
       GotoTag		      "Iabc_Charger3"
       TagVisibility	      "global"
@@ -1673,6 +3188,7 @@ Model {
       SID		      "2464"
       Position		      [2020, 306, 2095, 324]
       ZOrder		      315
+      BackgroundColor	      "orange"
       ShowName		      off
       GotoTag		      "Vabc_Charger5"
       TagVisibility	      "global"
@@ -1683,6 +3199,7 @@ Model {
       SID		      "2392"
       Position		      [1390, 266, 1465, 284]
       ZOrder		      253
+      BackgroundColor	      "orange"
       ShowName		      off
       GotoTag		      "Iabc_Load2"
       TagVisibility	      "global"
@@ -1693,6 +3210,7 @@ Model {
       SID		      "2465"
       Position		      [2020, 326, 2095, 344]
       ZOrder		      316
+      BackgroundColor	      "orange"
       ShowName		      off
       GotoTag		      "Iabc_Charger5"
       TagVisibility	      "global"
@@ -1703,6 +3221,7 @@ Model {
       SID		      "2466"
       Position		      [2020, 376, 2095, 394]
       ZOrder		      317
+      BackgroundColor	      "orange"
       ShowName		      off
       GotoTag		      "Vabc_Charger6"
       TagVisibility	      "global"
@@ -1713,9 +3232,80 @@ Model {
       SID		      "2467"
       Position		      [2020, 396, 2095, 414]
       ZOrder		      318
+      BackgroundColor	      "orange"
       ShowName		      off
       GotoTag		      "Iabc_Charger6"
       TagVisibility	      "global"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From23"
+      SID		      "2512"
+      Position		      [1915, 588, 1955, 612]
+      ZOrder		      332
+      BackgroundColor	      "orange"
+      ShowName		      off
+      GotoTag		      "EV"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From24"
+      SID		      "2513"
+      Position		      [2340, 513, 2415, 537]
+      ZOrder		      333
+      BackgroundColor	      "lightBlue"
+      ShowName		      off
+      GotoTag		      "Weather"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From25"
+      SID		      "2527"
+      Position		      [1910, 743, 1950, 767]
+      ZOrder		      335
+      BackgroundColor	      "orange"
+      ShowName		      off
+      GotoTag		      "EV"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From26"
+      SID		      "2541"
+      Position		      [1910, 888, 1950, 912]
+      ZOrder		      337
+      BackgroundColor	      "orange"
+      ShowName		      off
+      GotoTag		      "EV"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From27"
+      SID		      "2555"
+      Position		      [1910, 1018, 1950, 1042]
+      ZOrder		      339
+      BackgroundColor	      "orange"
+      ShowName		      off
+      GotoTag		      "EV"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From28"
+      SID		      "2569"
+      Position		      [1910, 1163, 1950, 1187]
+      ZOrder		      341
+      BackgroundColor	      "orange"
+      ShowName		      off
+      GotoTag		      "EV"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From29"
+      SID		      "2583"
+      Position		      [1910, 1308, 1950, 1332]
+      ZOrder		      343
+      BackgroundColor	      "orange"
+      ShowName		      off
+      GotoTag		      "EV"
     }
     Block {
       BlockType		      From
@@ -1723,6 +3313,7 @@ Model {
       SID		      "2408"
       Position		      [1390, 176, 1465, 194]
       ZOrder		      268
+      BackgroundColor	      "orange"
       ShowName		      off
       GotoTag		      "Vabc_Load1"
       TagVisibility	      "global"
@@ -1733,6 +3324,7 @@ Model {
       SID		      "2409"
       Position		      [1390, 196, 1465, 214]
       ZOrder		      269
+      BackgroundColor	      "orange"
       ShowName		      off
       GotoTag		      "Iabc_Load1"
       TagVisibility	      "global"
@@ -1743,6 +3335,7 @@ Model {
       SID		      "2427"
       Position		      [1390, 316, 1465, 334]
       ZOrder		      278
+      BackgroundColor	      "orange"
       ShowName		      off
       GotoTag		      "Vabc_Load2"
       TagVisibility	      "global"
@@ -1753,6 +3346,7 @@ Model {
       SID		      "1771"
       Position		      [990, 236, 1065, 254]
       ZOrder		      -9
+      BackgroundColor	      "orange"
       ShowName		      off
       GotoTag		      "Vabc_PV480"
       TagVisibility	      "global"
@@ -1763,6 +3357,7 @@ Model {
       SID		      "1772"
       Position		      [990, 256, 1065, 274]
       ZOrder		      -9
+      BackgroundColor	      "orange"
       ShowName		      off
       GotoTag		      "Iabc_PV480"
       TagVisibility	      "global"
@@ -1773,6 +3368,7 @@ Model {
       SID		      "1773"
       Position		      [990, 306, 1065, 324]
       ZOrder		      -9
+      BackgroundColor	      "orange"
       ShowName		      off
       GotoTag		      "Vabc_0"
       TagVisibility	      "global"
@@ -1783,6 +3379,7 @@ Model {
       SID		      "1774"
       Position		      [990, 326, 1065, 344]
       ZOrder		      -9
+      BackgroundColor	      "orange"
       ShowName		      off
       GotoTag		      "Iabc_0"
       TagVisibility	      "global"
@@ -2553,7 +4150,6 @@ Model {
       Port {
 	PortNumber		1
 	Name			"P,Q load 1"
-	PropagatedSignals	", "
 	RTWStorageClass		"Auto"
 	DataLoggingNameMode	"SignalName"
       }
@@ -2571,7 +4167,6 @@ Model {
       Port {
 	PortNumber		1
 	Name			"P,Q load 1"
-	PropagatedSignals	", "
 	RTWStorageClass		"Auto"
 	DataLoggingNameMode	"SignalName"
       }
@@ -2589,7 +4184,6 @@ Model {
       Port {
 	PortNumber		1
 	Name			"P,Q load 2"
-	PropagatedSignals	", "
 	RTWStorageClass		"Auto"
 	DataLoggingNameMode	"SignalName"
       }
@@ -2607,7 +4201,6 @@ Model {
       Port {
 	PortNumber		1
 	Name			"P,Q central plant"
-	PropagatedSignals	", "
 	RTWStorageClass		"Auto"
 	DataLoggingNameMode	"SignalName"
       }
@@ -2625,7 +4218,6 @@ Model {
       Port {
 	PortNumber		1
 	Name			"P,Q load 1"
-	PropagatedSignals	", "
 	RTWStorageClass		"Auto"
 	DataLoggingNameMode	"SignalName"
       }
@@ -2643,7 +4235,6 @@ Model {
       Port {
 	PortNumber		1
 	Name			"P,Q from PV"
-	PropagatedSignals	", "
 	RTWStorageClass		"Auto"
 	DataLoggingNameMode	"SignalName"
       }
@@ -2661,7 +4252,6 @@ Model {
       Port {
 	PortNumber		1
 	Name			"P,Q load 2"
-	PropagatedSignals	", "
 	RTWStorageClass		"Auto"
 	DataLoggingNameMode	"SignalName"
       }
@@ -2690,7 +4280,6 @@ Model {
       Port {
 	PortNumber		1
 	Name			"P,Q from grid"
-	PropagatedSignals	", "
 	RTWStorageClass		"Auto"
 	DataLoggingNameMode	"SignalName"
       }
@@ -2708,7 +4297,6 @@ Model {
       Port {
 	PortNumber		1
 	Name			"P,Q load 2"
-	PropagatedSignals	", "
 	RTWStorageClass		"Auto"
 	DataLoggingNameMode	"SignalName"
       }
@@ -2726,7 +4314,6 @@ Model {
       Port {
 	PortNumber		1
 	Name			"P,Q central plant"
-	PropagatedSignals	", "
 	RTWStorageClass		"Auto"
 	DataLoggingNameMode	"SignalName"
       }
@@ -2744,19 +4331,9 @@ Model {
       Port {
 	PortNumber		1
 	Name			"P,Q central plant"
-	PropagatedSignals	", "
 	RTWStorageClass		"Auto"
 	DataLoggingNameMode	"SignalName"
       }
-    }
-    Block {
-      BlockType		      Sin
-      Name		      "P"
-      SID		      "2365"
-      Ports		      [0, 1]
-      Position		      [2440, 510, 2470, 540]
-      ZOrder		      224
-      Frequency		      "2*pi/(24*60*60)"
     }
     Block {
       BlockType		      Reference
@@ -2765,8 +4342,6 @@ Model {
       Ports		      [1, 0, 0, 0, 0, 4]
       Position		      [2700, 602, 2740, 688]
       ZOrder		      164
-      ForegroundColor	      "red"
-      BackgroundColor	      "yellow"
       LibraryVersion	      "1.53"
       SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
@@ -2776,6 +4351,195 @@ Model {
       VNom		      "480"
       fNom		      "60"
       VLow		      "0.7"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "PV System"
+      SID		      "2469"
+      Ports		      [1, 1]
+      Position		      [2460, 504, 2560, 546]
+      ZOrder		      320
+      ForegroundColor	      "[0.909804, 0.819608, 0.321569]"
+      BackgroundColor	      "yellow"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      System {
+	Name			"PV System"
+	Location		[-8, -8, 1928, 1048]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "Weather"
+	  SID			  "2470"
+	  Position		  [90, 103, 120, 117]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  BusSelector
+	  Name			  "Bus\nSelector"
+	  SID			  "2479"
+	  Ports			  [1, 4]
+	  Position		  [215, 53, 220, 167]
+	  ZOrder		  325
+	  ShowName		  off
+	  OutputSignals		  "DNI,DHI,DryBulbTemp,WindSpeed"
+	  Port {
+	    PortNumber		    1
+	    Name		    "<DNI>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    2
+	    Name		    "<DHI>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    3
+	    Name		    "<DryBulbTemp>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    4
+	    Name		    "<WindSpeed>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "PV Powered\nPVP30KW-480\n30 kW inverter"
+	  SID			  "2468"
+	  Ports			  [1, 1]
+	  Position		  [650, 54, 745, 166]
+	  ZOrder		  320
+	  LibraryVersion	  "1.53"
+	  SourceBlock		  "CampusModeling/PV/Generic Inverter"
+	  SourceType		  "Generic Inverter"
+	  model_type		  "Lookup Table"
+	  fixed_eff		  "0.95"
+	  alpha			  "1"
+	  beta			  "0.01"
+	  gamma			  "0.001"
+	  lookup_pair		  "Output Power + Efficiency"
+	  lookup_in		  "[0, 10, 25, 50, 75, 100]"
+	  lookup_out		  "30e3 .* [0, 0.10 0.20, 0.30, 0.50, 0.75, 1.00]"
+	  lookup_eff		  "[90.0, 90.0, 93.6, 94.4, 94.9, 94.6, 94.1] ./ 100"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "PVWatts Cosimulation"
+	  SID			  "2472"
+	  Ports			  [4, 1]
+	  Position		  [345, 52, 555, 168]
+	  ZOrder		  321
+	  LibraryVersion	  "1.53"
+	  UserDataPersistent	  on
+	  UserData		  "DataTag0"
+	  SourceBlock		  "CampusModeling/PV/PVWatts Cosimulation"
+	  SourceType		  "PVWatts Cosimulation"
+	  lat			  "39.74"
+	  lon			  "-105.18"
+	  start_time		  "1-Jun-2012 00:00:00"
+	  tz			  "-6"
+	  time_step		  "30"
+	  system_size		  "30000"
+	  derate		  "0.95"
+	  azimuth		  "180"
+	  tilt			  "39.74"
+	  use_lat_tilt		  on
+	  track_mode		  "Fixed"
+	  rotlim		  "45"
+	  use_cell_data		  off
+	  t_ref			  "25"
+	  t_noct		  "45"
+	  gamma			  "-0.5"
+	  i_ref			  "1000"
+	  poa_cutin		  "0"
+	  init_tcell		  "25"
+	  init_poa		  "0"
+	  output_dc		  on
+	  output_celltemp	  off
+	  output_poa		  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "PV Power"
+	  SID			  "2471"
+	  Position		  [825, 103, 855, 117]
+	  ZOrder		  -2
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  SrcBlock		  "PV Powered\nPVP30KW-480\n30 kW inverter"
+	  SrcPort		  1
+	  DstBlock		  "PV Power"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "PVWatts Cosimulation"
+	  SrcPort		  1
+	  DstBlock		  "PV Powered\nPVP30KW-480\n30 kW inverter"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Weather"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nSelector"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "<DNI>"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector"
+	  SrcPort		  1
+	  DstBlock		  "PVWatts Cosimulation"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "<DHI>"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector"
+	  SrcPort		  2
+	  DstBlock		  "PVWatts Cosimulation"
+	  DstPort		  2
+	}
+	Line {
+	  Name			  "<DryBulbTemp>"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector"
+	  SrcPort		  3
+	  DstBlock		  "PVWatts Cosimulation"
+	  DstPort		  3
+	}
+	Line {
+	  Name			  "<WindSpeed>"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector"
+	  SrcPort		  4
+	  DstBlock		  "PVWatts Cosimulation"
+	  DstPort		  4
+	}
+      }
     }
     Block {
       BlockType		      Reference
@@ -2964,19 +4728,8 @@ Model {
       SourceType	      "Power (3ph, Phasor)"
     }
     Block {
-      BlockType		      Gain
-      Name		      "PpvRated"
-      SID		      "2371"
-      Position		      [2550, 510, 2580, 540]
-      ZOrder		      230
-      Gain		      "30e3"
-      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
       BlockType		      Constant
-      Name		      "Q1"
+      Name		      "Q"
       SID		      "2366"
       Position		      [2445, 563, 2465, 587]
       ZOrder		      225
@@ -2984,32 +4737,23 @@ Model {
       SampleTime	      "-1"
     }
     Block {
-      BlockType		      Saturate
-      Name		      "Saturation"
-      SID		      "2368"
-      Ports		      [1, 1]
-      Position		      [2495, 510, 2525, 540]
-      ZOrder		      227
-      InputPortMap	      "u0"
-      UpperLimit	      "inf"
-      LowerLimit	      "0"
-    }
-    Block {
       BlockType		      Scope
-      Name		      "Scope1"
-      SID		      "2401"
-      Ports		      [2]
-      Position		      [1275, 244, 1320, 331]
-      ZOrder		      261
+      Name		      "Scope:\nBuildings"
+      SID		      "2457"
+      Ports		      [3]
+      Position		      [1740, 224, 1800, 306]
+      ZOrder		      308
+      BackgroundColor	      "gray"
       Floating		      off
-      Location		      [1921, 48, 3841, 1079]
+      Location		      [5, 48, 1925, 1039]
       Open		      off
-      NumInputPorts	      "2"
+      NumInputPorts	      "3"
       ZoomMode		      "xonly"
       List {
 	ListType		AxesTitles
 	axes1			"%<SignalLabel>"
 	axes2			"%<SignalLabel>"
+	axes3			"%<SignalLabel>"
       }
       List {
 	ListType		ScopeGraphics
@@ -3023,20 +4767,21 @@ Model {
       }
       ShowLegends	      off
       TimeRange		      "10"
-      YMin		      "0~0"
-      YMax		      "14000~60000"
-      SaveName		      "ScopeData1"
+      YMin		      "-2500~-5~-5"
+      YMax		      "45000~5~5"
+      SaveName		      "ScopeData2"
       DataFormat	      "StructureWithTime"
       LimitDataPoints	      off
       SampleTime	      "0"
     }
     Block {
       BlockType		      Scope
-      Name		      "Scope2"
+      Name		      "Scope:\nEV Chargers"
       SID		      "2443"
       Ports		      [1]
       Position		      [2450, 184, 2510, 266]
       ZOrder		      282
+      BackgroundColor	      "gray"
       Floating		      off
       Location		      [5, 48, 1925, 1039]
       Open		      off
@@ -3066,21 +4811,21 @@ Model {
     }
     Block {
       BlockType		      Scope
-      Name		      "Scope3"
-      SID		      "2457"
-      Ports		      [3]
-      Position		      [1740, 179, 1800, 261]
-      ZOrder		      308
+      Name		      "Scope:\nPV and Grid"
+      SID		      "2401"
+      Ports		      [2]
+      Position		      [1275, 244, 1320, 331]
+      ZOrder		      261
+      BackgroundColor	      "gray"
       Floating		      off
-      Location		      [5, 48, 1925, 1039]
+      Location		      [5, 43, 1925, 1074]
       Open		      off
-      NumInputPorts	      "3"
+      NumInputPorts	      "2"
       ZoomMode		      "xonly"
       List {
 	ListType		AxesTitles
 	axes1			"%<SignalLabel>"
 	axes2			"%<SignalLabel>"
-	axes3			"%<SignalLabel>"
       }
       List {
 	ListType		ScopeGraphics
@@ -3094,9 +4839,9 @@ Model {
       }
       ShowLegends	      off
       TimeRange		      "10"
-      YMin		      "-2500~-5~-5"
-      YMax		      "45000~5~5"
-      SaveName		      "ScopeData2"
+      YMin		      "0~0"
+      YMax		      "14000~60000"
+      SaveName		      "ScopeData1"
       DataFormat	      "StructureWithTime"
       LimitDataPoints	      off
       SampleTime	      "0"
@@ -3441,6 +5186,28 @@ Model {
       TransfoNumber	      "1"
     }
     Block {
+      BlockType		      Goto
+      Name		      "Weather Bus"
+      SID		      "2481"
+      Position		      [680, 266, 755, 294]
+      ZOrder		      325
+      BackgroundColor	      "lightBlue"
+      GotoTag		      "Weather"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Weather Data"
+      SID		      "2476"
+      Ports		      [0, 1]
+      Position		      [515, 235, 590, 325]
+      ZOrder		      321
+      LibraryVersion	      "1.53"
+      SourceBlock	      "CampusModeling/Weather/Weather Data"
+      SourceType	      "Weather Data From File"
+      fname		      "'Weather.mat'"
+      initbus		      on
+    }
+    Block {
       BlockType		      Reference
       Name		      "charger\nmeas 1"
       SID		      "2256"
@@ -3783,7 +5550,7 @@ Model {
       Name		      "powergui"
       SID		      "400"
       Ports		      []
-      Position		      [686, 125, 775, 158]
+      Position		      [1046, 120, 1135, 153]
       ZOrder		      -198
       ForegroundColor	      "yellow"
       DropShadow	      on
@@ -3791,7 +5558,7 @@ Model {
       Priority		      "2"
       LibraryVersion	      "*1.2191"
       UserDataPersistent      on
-      UserData		      "DataTag0"
+      UserData		      "DataTag1"
       SourceBlock	      "powerlib/powergui"
       SourceType	      "PSB option menu block"
       SimulationMode	      "Phasor"
@@ -4711,7 +6478,7 @@ Model {
       SrcBlock		      "Mux3"
       SrcPort		      1
       Points		      [56, 0; 0, 10]
-      DstBlock		      "Scope1"
+      DstBlock		      "Scope:\nPV and Grid"
       DstPort		      1
     }
     Line {
@@ -5094,13 +6861,6 @@ Model {
       DstPort		      RConn3
     }
     Line {
-      SrcBlock		      "Constant4"
-      SrcPort		      1
-      Points		      [16, 0; 0, 15]
-      DstBlock		      "Charger1"
-      DstPort		      1
-    }
-    Line {
       LineType		      "Connection"
       SrcBlock		      "Ground5"
       SrcPort		      LConn1
@@ -5159,7 +6919,7 @@ Model {
       DstPort		      LConn1
     }
     Line {
-      SrcBlock		      "Constant6"
+      SrcBlock		      "EV Charger 2"
       SrcPort		      1
       Points		      [20, 0; 0, 15]
       DstBlock		      "Charger2"
@@ -5195,7 +6955,7 @@ Model {
       DstPort		      LConn3
     }
     Line {
-      SrcBlock		      "Constant7"
+      SrcBlock		      "EV Charger 3"
       SrcPort		      1
       Points		      [20, 0; 0, 15]
       DstBlock		      "Charger3"
@@ -5282,21 +7042,21 @@ Model {
       DstPort		      LConn1
     }
     Line {
-      SrcBlock		      "Constant8"
+      SrcBlock		      "EV Charger 4"
       SrcPort		      1
       Points		      [20, 0; 0, 15]
       DstBlock		      "Charger4"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "Constant9"
+      SrcBlock		      "EV Charger 5"
       SrcPort		      1
       Points		      [20, 0; 0, 15]
       DstBlock		      "Charger5"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "Constant10"
+      SrcBlock		      "EV Charger 6"
       SrcPort		      1
       Points		      [20, 0; 0, 15]
       DstBlock		      "Charger6"
@@ -5607,19 +7367,7 @@ Model {
       DstPort		      RConn3
     }
     Line {
-      SrcBlock		      "P"
-      SrcPort		      1
-      DstBlock		      "Saturation"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Saturation"
-      SrcPort		      1
-      DstBlock		      "PpvRated"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Q1"
+      SrcBlock		      "Q"
       SrcPort		      1
       Points		      [129, 0; 0, -15]
       DstBlock		      "Mux5"
@@ -5700,9 +7448,9 @@ Model {
       }
     }
     Line {
-      SrcBlock		      "PpvRated"
+      SrcBlock		      "PV System"
       SrcPort		      1
-      Points		      [13, 0; 0, 15]
+      Points		      [25, 0; 0, 15]
       DstBlock		      "Mux5"
       DstPort		      1
     }
@@ -5800,7 +7548,7 @@ Model {
       SrcBlock		      "Mux6"
       SrcPort		      1
       Points		      [57, 0; 0, -15]
-      DstBlock		      "Scope1"
+      DstBlock		      "Scope:\nPV and Grid"
       DstPort		      2
     }
     Line {
@@ -5865,19 +7613,19 @@ Model {
     }
     Line {
       Name		      "P,Q load 1"
-      Labels		      [1, 1]
+      Labels		      [2, 1]
       SrcBlock		      "Mux1"
       SrcPort		      1
-      DstBlock		      "Scope3"
+      Points		      [60, 0; 0, 45]
+      DstBlock		      "Scope:\nBuildings"
       DstPort		      1
     }
     Line {
       Name		      "P,Q load 2"
-      Labels		      [2, 0]
+      Labels		      [1, 0]
       SrcBlock		      "Mux7"
       SrcPort		      1
-      Points		      [34, 0; 0, -45]
-      DstBlock		      "Scope3"
+      DstBlock		      "Scope:\nBuildings"
       DstPort		      2
     }
     Line {
@@ -5987,8 +7735,8 @@ Model {
       Labels		      [2, 1]
       SrcBlock		      "Mux8"
       SrcPort		      1
-      Points		      [72, 0; 0, -90]
-      DstBlock		      "Scope3"
+      Points		      [60, 0; 0, -45]
+      DstBlock		      "Scope:\nBuildings"
       DstPort		      3
     }
     Line {
@@ -6188,7 +7936,68 @@ Model {
       Labels		      [1, 1]
       SrcBlock		      "Sum"
       SrcPort		      1
-      DstBlock		      "Scope2"
+      DstBlock		      "Scope:\nEV Chargers"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Weather Data"
+      SrcPort		      1
+      DstBlock		      "Weather Bus"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From24"
+      SrcPort		      1
+      DstBlock		      "PV System"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "EV Charge\nProfile"
+      SrcPort		      1
+      DstBlock		      "EV Charging "
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "EV Charger 1"
+      SrcPort		      1
+      Points		      [17, 0; 0, 25]
+      DstBlock		      "Charger1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From23"
+      SrcPort		      1
+      DstBlock		      "EV Charger 1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From25"
+      SrcPort		      1
+      DstBlock		      "EV Charger 2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From26"
+      SrcPort		      1
+      DstBlock		      "EV Charger 3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From27"
+      SrcPort		      1
+      DstBlock		      "EV Charger 4"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From28"
+      SrcPort		      1
+      DstBlock		      "EV Charger 5"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From29"
+      SrcPort		      1
+      DstBlock		      "EV Charger 6"
       DstPort		      1
     }
     Annotation {
@@ -6210,9 +8019,65 @@ Model {
   }
 }
 MatData {
-  NumRecords		  1
+  NumRecords		  2
   DataRecord {
     Tag			    DataTag0
+    Data		    "  %)30     .    (!$   8    (     @         %    \"     $    !     0         %  0 \"@    $    \\    9&EA"
+    ";&]G     &]U='!U=',   !S<V-V87(     <W-C9&%T80   '-I;7-T87)T  !S<V-M;V1U;&4       X   #8!@  !@    @    \"         "
+    " 4    (     0    $    !          4 !  0     0   % !  !L870                 ;&]N                 '-T87)T7W1I;64    "
+    "   !T>@                  =&EM95]S=&5P         '-Y<W1E;5]S:7IE      !D97)A=&4             87II;75T:            '1I;"
+    "'0               !T<F%C:U]M;V1E        <F]T;&EM             '1?<F5F              !T7VYO8W0             9V%M;6$    "
+    "          &E?<F5F              !P;V%?8W5T:6X         :6YI=%]T8V5L;        &EN:71?<&]A          !O=71P=71?9&,      "
+    "   ;W5T<'5T7V-E;&QT96UP &]U='!U=%]P;V$        .    .     8    (    !@         %    \"     $    !     0         )  "
+    "  \"    !^%ZU&XWD- #@   #@    &    \"     8         !0    @    !     0    $         \"0    @   #L4;@>A4M:P X   !( "
+    "   !@    @    $          4    (     0   !,    !         !     3    ,2U*=6XM,C Q,B P,#HP,#HP,       #@   #@    &   "
+    " \"     8         !0    @    !     0    $         \"0    @            8P X    X    !@    @    &          4    (   "
+    "  0    $    !          D    (            /D .    .     8    (    !@         %    \"     $    !     0         )    "
+    "\"           3-U #@   #@    &    \"     8         !0    @    !     0    $         \"0    @   !F9F9F9F;N/PX    X   "
+    " !@    @    &          4    (     0    $    !          D    (          \" 9D .    .     8    (    !@         %    "
+    "\"     $    !     0         )    \"    !^%ZU&XWD- #@   #@    &    \"     8         !0    @    !     0    $        "
+    " \"0    @           #P/PX    X    !@    @    &          4    (     0    $    !          D    (          \" 1D .   "
+    " .     8    (    !@         %    \"     $    !     0         )    \"            #E #@   #@    &    \"     8       "
+    "  !0    @    !     0    $         \"0    @          (!&0 X    X    !@    @    &          4    (     0    $    !   "
+    "       D    (            X+\\.    .     8    (    !@         %    \"     $    !     0         )    \"           0("
+    "] #@   #@    &    \"     8         !0    @    !     0    $         \"0    @               X    X    !@    @    &  "
+    "        4    (     0    $    !          D    (            .4 .    .     8    (    !@         %    \"     $    !   "
+    "  0         )    \"               #@   #@    &    \"     8         !0    @    !     0    $         \"0    @       "
+    "    #P/PX    X    !@    @    &          4    (     0    $    !          D    (               .    .     8    (    "
+    "!@         %    \"     $    !     0         )    \"               #@   ,@    &    \"     (         !0    @    !   "
+    "  0    $         !0 $  L    !    %@   %9A<DYA;64     3W5T<'5T4&]R=     X    P    !@    @    $          4    (     "
+    "0    (    !         !   @!D8P  #@   #@    &    \"     8         !0    @    !     0    $         \"0    @          "
+    " #P/PX   ! \"   !@    @    \"          4    (     0    $    !          4 !  ,     0   $0!  !L870           !L;VX  "
+    "         !T>@            !T:6UE7W-T97    !S>7-T96U?<VEZ90!D97)A=&4       !T<F%C:U]M;V1E  !A>FEM=71H      !T:6QT   "
+    "       !R;W1L:6T       !T7VYO8W0       !T7W)E9@        !G86UM80        !I7W)E9@        !P;V%?8W5T:6X   !T8V5L;    "
+    "     !P;V$           !Y96%R          !M;VYT:         !D87D           !H;W5R          !M:6YU=&4       !B96%M       "
+    "   !D:69F=7-E      !T86UB          !W<W!D          !D8P                  #@   #@    &    \"     8         !0    @ "
+    "   !     0    $         \"0    @    ?A>M1N-Y#0 X    X    !@    @    &          4    (     0    $    !          D  "
+    "  (    [%&X'H5+6L .    .     8    (    !@         %    \"     $    !     0         )    \"            !C #@   #@  "
+    "  &    \"     8         !0    @    !     0    $         \"0    @    1$1$1$1&!/PX    X    !@    @    &          4  "
+    "  (     0    $    !          D    (            /D .    .     8    (    !@         %    \"     $    !     0        "
+    " )    \"    &9F9F9F9NX_#@   #@    &    \"     8         !0    @    !     0    $         \"0    @               X  "
+    "  X    !@    @    &          4    (     0    $    !          D    (          \" 9D .    .     8    (    !@        "
+    " %    \"     $    !     0         )    \"    !^%ZU&XWD- #@   #@    &    \"     8         !0    @    !     0    $  "
+    "       \"0    @          (!&0 X    X    !@    @    &          4    (     0    $    !          D    (          \" 1"
+    "D .    .     8    (    !@         %    \"     $    !     0         )    \"            #E #@   #@    &    \"     8 "
+    "        !0    @    !     0    $         \"0    @           #@OPX    X    !@    @    &          4    (     0    $  "
+    "  !          D    (          ! CT .    .     8    (    !@         %    \"     $    !     0         )    \"        "
+    "       #@   #@    &    \"     8         !0    @    !     0    $         \"0    @               X    X    !@    @  "
+    "  &          4    (     0    $    !          D    (               .    .     8    (    !@         %    \"     $   "
+    " !     0         )    \"           <)] #@   #@    &    \"     8         !0    @    !     0    $         \"0    @  "
+    "          80 X    X    !@    @    &          4    (     0    $    !          D    (            \"$ .    .     8   "
+    " (    !@         %    \"     $    !     0         )    \"               #@   #@    &    \"     8         !0    @  "
+    "  !     0    $         \"0    @               X    X    !@    @    &          4    (     0    $    !          D   "
+    " (               .    .     8    (    !@         %    \"     $    !     0         )    \"               #@   #@   "
+    " &    \"     8         !0    @    !     0    $         \"0    @            S0 X    X    !@    @    &          4   "
+    " (     0    $    !          D    (    9F9F9F9F!D .    .     8    (    !@         %    \"     $    !     0         "
+    ")    \"               #@   #     &    \"     8         !0    @               $         \"0         .    .     8   "
+    " (    !@         %    \"     $    !     0         )    \"         !:;B9!#@   #     &    \"     8         !0    @  "
+    "             $         \"0         "
+  }
+  DataRecord {
+    Tag			    DataTag1
     Data		    "  %)30     .    * ,   8    (     @         %    \"     $    !     0         %  0 #     $   \"$    <&]W9"
     "7)G=6D     <W1E861Y<W1A=&4 :6YI='-T871E<P  ;&]A9&9L;W<     ;'1I=FEE=P      >FUE=&5R        9F9T=&]O;       <F5P;W)"
     "T        :'ES=&5R97-I<P  ;&EN97!A<F%M    ;&]A9&9L;W=N97<       X    P    !@    @    &          4    (             "

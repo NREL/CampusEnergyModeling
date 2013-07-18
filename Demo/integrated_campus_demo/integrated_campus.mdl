@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.742"
+    ComputedModelVersion    "1.743"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -33,7 +33,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-8.0, -8.0, 1936.0, 1056.0]
+      Location		      [-8.0, 0.0, 1936.0, 1056.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -58,8 +58,8 @@ Model {
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
 	Extents			[1886.0, 882.0]
-	ZoomFactor		[1.0]
-	Offset			[747.26639358350428, -117.78290934567625]
+	ZoomFactor		[0.6]
+	Offset			[437.36942796918976, -350.48536080726285]
       }
     }
   }
@@ -72,9 +72,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "bjohnson"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Jul 16 15:59:29 2013"
-  RTWModifiedTimeStamp	  295890941
-  ModelVersionFormat	  "1.%<AutoIncrement:742>"
+  LastModifiedDate	  "Thu Jul 18 09:46:06 2013"
+  RTWModifiedTimeStamp	  296041562
+  ModelVersionFormat	  "1.%<AutoIncrement:743>"
   ConfigurationManager	  "none"
   SampleTimeColors	  on
   SampleTimeAnnotations	  on
@@ -879,7 +879,7 @@ Model {
   }
   System {
     Name		    "integrated_campus"
-    Location		    [-8, -8, 1928, 1048]
+    Location		    [-8, 0, 1928, 1056]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -891,9 +891,9 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "100"
+    ZoomFactor		    "60"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "2467"
+    SIDHighWatermark	    "2476"
     Block {
       BlockType		      Reference
       Name		      "Building 1"
@@ -901,7 +901,7 @@ Model {
       Ports		      [1, 0, 0, 0, 0, 4]
       Position		      [1270, 612, 1310, 698]
       ZOrder		      144
-      LibraryVersion	      "1.52"
+      LibraryVersion	      "1.53"
       SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "load"
@@ -918,7 +918,7 @@ Model {
       Ports		      [1, 0, 0, 0, 0, 4]
       Position		      [1670, 612, 1710, 698]
       ZOrder		      242
-      LibraryVersion	      "1.52"
+      LibraryVersion	      "1.53"
       SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "load"
@@ -1337,7 +1337,7 @@ Model {
       Ports		      [1, 0, 0, 0, 0, 4]
       Position		      [1270, 872, 1310, 958]
       ZOrder		      275
-      LibraryVersion	      "1.52"
+      LibraryVersion	      "1.53"
       SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "load"
@@ -1354,7 +1354,7 @@ Model {
       Ports		      [1, 0, 0, 0, 0, 4]
       Position		      [2085, 612, 2125, 698]
       ZOrder		      163
-      LibraryVersion	      "1.52"
+      LibraryVersion	      "1.53"
       SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "load"
@@ -1371,7 +1371,7 @@ Model {
       Ports		      [1, 0, 0, 0, 0, 4]
       Position		      [2085, 757, 2125, 843]
       ZOrder		      244
-      LibraryVersion	      "1.52"
+      LibraryVersion	      "1.53"
       SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "load"
@@ -1388,7 +1388,7 @@ Model {
       Ports		      [1, 0, 0, 0, 0, 4]
       Position		      [2085, 902, 2125, 988]
       ZOrder		      245
-      LibraryVersion	      "1.52"
+      LibraryVersion	      "1.53"
       SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "load"
@@ -1405,7 +1405,7 @@ Model {
       Ports		      [1, 0, 0, 0, 0, 4]
       Position		      [2085, 1032, 2125, 1118]
       ZOrder		      246
-      LibraryVersion	      "1.52"
+      LibraryVersion	      "1.53"
       SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "load"
@@ -1422,7 +1422,7 @@ Model {
       Ports		      [1, 0, 0, 0, 0, 4]
       Position		      [2085, 1177, 2125, 1263]
       ZOrder		      247
-      LibraryVersion	      "1.52"
+      LibraryVersion	      "1.53"
       SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "load"
@@ -1439,7 +1439,7 @@ Model {
       Ports		      [1, 0, 0, 0, 0, 4]
       Position		      [2085, 1322, 2125, 1408]
       ZOrder		      248
-      LibraryVersion	      "1.52"
+      LibraryVersion	      "1.53"
       SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "load"
@@ -1751,7 +1751,7 @@ Model {
       BlockType		      From
       Name		      "From6"
       SID		      "1771"
-      Position		      [990, 231, 1065, 249]
+      Position		      [990, 236, 1065, 254]
       ZOrder		      -9
       ShowName		      off
       GotoTag		      "Vabc_PV480"
@@ -1761,7 +1761,7 @@ Model {
       BlockType		      From
       Name		      "From7"
       SID		      "1772"
-      Position		      [990, 261, 1065, 279]
+      Position		      [990, 256, 1065, 274]
       ZOrder		      -9
       ShowName		      off
       GotoTag		      "Iabc_PV480"
@@ -1771,7 +1771,7 @@ Model {
       BlockType		      From
       Name		      "From8"
       SID		      "1773"
-      Position		      [990, 301, 1065, 319]
+      Position		      [990, 306, 1065, 324]
       ZOrder		      -9
       ShowName		      off
       GotoTag		      "Vabc_0"
@@ -1781,7 +1781,7 @@ Model {
       BlockType		      From
       Name		      "From9"
       SID		      "1774"
-      Position		      [990, 331, 1065, 349]
+      Position		      [990, 326, 1065, 344]
       ZOrder		      -9
       ShowName		      off
       GotoTag		      "Iabc_0"
@@ -2682,7 +2682,7 @@ Model {
       Name		      "Mux6"
       SID		      "2399"
       Ports		      [2, 1]
-      Position		      [1190, 301, 1195, 339]
+      Position		      [1190, 306, 1195, 344]
       ZOrder		      260
       ShowName		      off
       Inputs		      "2"
@@ -2767,7 +2767,7 @@ Model {
       ZOrder		      164
       ForegroundColor	      "red"
       BackgroundColor	      "yellow"
-      LibraryVersion	      "1.52"
+      LibraryVersion	      "1.53"
       SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "source"
@@ -2800,7 +2800,7 @@ Model {
       Ipu		      off
       Pbase		      "1e6"
       Vbase		      "25e3"
-      OutputType	      "Magnitude"
+      OutputType	      "Complex"
       PhasorSimulation	      on
       PSBequivalent	      "0"
     }
@@ -2827,7 +2827,7 @@ Model {
       Ipu		      off
       Pbase		      "1e6"
       Vbase		      "25e3"
-      OutputType	      "Magnitude"
+      OutputType	      "Complex"
       PhasorSimulation	      on
       PSBequivalent	      "0"
     }
@@ -2848,7 +2848,7 @@ Model {
       Name		      "Power\n(3ph, Phasor)1"
       SID		      "2405"
       Ports		      [2, 2]
-      Position		      [1110, 300, 1160, 340]
+      Position		      [1110, 305, 1160, 345]
       ZOrder		      265
       LibraryVersion	      "1.31"
       FontName		      "Arial"
@@ -3002,7 +3002,7 @@ Model {
       Position		      [1275, 244, 1320, 331]
       ZOrder		      261
       Floating		      off
-      Location		      [86, 66, 1895, 1058]
+      Location		      [1921, 48, 3841, 1079]
       Open		      off
       NumInputPorts	      "2"
       ZoomMode		      "xonly"
@@ -3462,7 +3462,7 @@ Model {
       Ipu		      off
       Pbase		      "1e6"
       Vbase		      "25e3"
-      OutputType	      "Magnitude"
+      OutputType	      "Complex"
       PhasorSimulation	      on
       PSBequivalent	      "0"
     }
@@ -3488,7 +3488,7 @@ Model {
       Ipu		      off
       Pbase		      "1e6"
       Vbase		      "25e3"
-      OutputType	      "Magnitude"
+      OutputType	      "Complex"
       PhasorSimulation	      on
       PSBequivalent	      "0"
     }
@@ -3514,7 +3514,7 @@ Model {
       Ipu		      off
       Pbase		      "1e6"
       Vbase		      "25e3"
-      OutputType	      "Magnitude"
+      OutputType	      "Complex"
       PhasorSimulation	      on
       PSBequivalent	      "0"
     }
@@ -3540,7 +3540,7 @@ Model {
       Ipu		      off
       Pbase		      "1e6"
       Vbase		      "25e3"
-      OutputType	      "Magnitude"
+      OutputType	      "Complex"
       PhasorSimulation	      on
       PSBequivalent	      "0"
     }
@@ -3566,7 +3566,7 @@ Model {
       Ipu		      off
       Pbase		      "1e6"
       Vbase		      "25e3"
-      OutputType	      "Magnitude"
+      OutputType	      "Complex"
       PhasorSimulation	      on
       PSBequivalent	      "0"
     }
@@ -3592,7 +3592,7 @@ Model {
       Ipu		      off
       Pbase		      "1e6"
       Vbase		      "25e3"
-      OutputType	      "Magnitude"
+      OutputType	      "Complex"
       PhasorSimulation	      on
       PSBequivalent	      "0"
     }
@@ -3618,7 +3618,7 @@ Model {
       Ipu		      off
       Pbase		      "1e6"
       Vbase		      "25e3"
-      OutputType	      "Magnitude"
+      OutputType	      "Complex"
       PhasorSimulation	      on
       PSBequivalent	      "0"
     }
@@ -3644,7 +3644,7 @@ Model {
       Ipu		      off
       Pbase		      "1e6"
       Vbase		      "25e3"
-      OutputType	      "Magnitude"
+      OutputType	      "Complex"
       PhasorSimulation	      on
       PSBequivalent	      "0"
     }
@@ -3670,7 +3670,7 @@ Model {
       Ipu		      off
       Pbase		      "1e6"
       Vbase		      "25e3"
-      OutputType	      "Magnitude"
+      OutputType	      "Complex"
       PhasorSimulation	      on
       PSBequivalent	      "0"
     }
@@ -3679,7 +3679,7 @@ Model {
       Name		      "node 0"
       SID		      "2370"
       Ports		      [0, 0, 0, 0, 0, 3, 3]
-      Position		      [700, 465, 705, 515]
+      Position		      [715, 465, 720, 515]
       ZOrder		      229
       BackgroundColor	      "black"
       LibraryVersion	      "1.2191"
@@ -3696,7 +3696,7 @@ Model {
       Ipu		      off
       Pbase		      "1e6"
       Vbase		      "25e3"
-      OutputType	      "Magnitude"
+      OutputType	      "Complex"
       PhasorSimulation	      on
       PSBequivalent	      "0"
     }
@@ -3722,7 +3722,7 @@ Model {
       Ipu		      off
       Pbase		      "1e6"
       Vbase		      "25e3"
-      OutputType	      "Magnitude"
+      OutputType	      "Complex"
       PhasorSimulation	      on
       PSBequivalent	      "0"
     }
@@ -3748,7 +3748,7 @@ Model {
       Ipu		      off
       Pbase		      "1e6"
       Vbase		      "25e3"
-      OutputType	      "Magnitude"
+      OutputType	      "Complex"
       PhasorSimulation	      on
       PSBequivalent	      "0"
     }
@@ -3774,7 +3774,7 @@ Model {
       Ipu		      off
       Pbase		      "1e6"
       Vbase		      "25e3"
-      OutputType	      "Magnitude"
+      OutputType	      "Complex"
       PhasorSimulation	      on
       PSBequivalent	      "0"
     }
@@ -3783,7 +3783,7 @@ Model {
       Name		      "powergui"
       SID		      "400"
       Ports		      []
-      Position		      [1021, 125, 1110, 158]
+      Position		      [686, 125, 775, 158]
       ZOrder		      -198
       ForegroundColor	      "yellow"
       DropShadow	      on
@@ -4696,14 +4696,12 @@ Model {
     Line {
       SrcBlock		      "From6"
       SrcPort		      1
-      Points		      [17, 0; 0, 5]
       DstBlock		      "Power\n(3ph, Phasor)"
       DstPort		      1
     }
     Line {
       SrcBlock		      "From7"
       SrcPort		      1
-      Points		      [17, 0; 0, -5]
       DstBlock		      "Power\n(3ph, Phasor)"
       DstPort		      2
     }
@@ -5654,7 +5652,7 @@ Model {
       LineType		      "Connection"
       SrcBlock		      "node 0"
       SrcPort		      RConn3
-      Points		      [67, 0]
+      Points		      [52, 0]
       Branch {
 	ConnectType		"DEST_DEST"
 	SrcBlock		"Line Load 3"
@@ -5671,7 +5669,7 @@ Model {
       LineType		      "Connection"
       SrcBlock		      "node 0"
       SrcPort		      RConn2
-      Points		      [77, 0]
+      Points		      [62, 0]
       Branch {
 	ConnectType		"DEST_DEST"
 	SrcBlock		"Line Load 3"
@@ -5688,7 +5686,7 @@ Model {
       LineType		      "Connection"
       SrcBlock		      "node 0"
       SrcPort		      RConn1
-      Points		      [87, 0]
+      Points		      [72, 0]
       Branch {
 	ConnectType		"DEST_DEST"
 	SrcBlock		"Line Load 3"
@@ -5801,7 +5799,7 @@ Model {
       Labels		      [1, 1]
       SrcBlock		      "Mux6"
       SrcPort		      1
-      Points		      [57, 0; 0, -10]
+      Points		      [57, 0; 0, -15]
       DstBlock		      "Scope1"
       DstPort		      2
     }
@@ -5826,7 +5824,6 @@ Model {
     Line {
       SrcBlock		      "From9"
       SrcPort		      1
-      Points		      [17, 0; 0, -10]
       DstBlock		      "Power\n(3ph, Phasor)1"
       DstPort		      2
     }
@@ -6199,11 +6196,12 @@ Model {
       Name		      "Note: The PQ input on each source and load block is a vector of the format [P Q], where the \nfirst"
       " and second elements are P = real power, Q = reactive power, respectively. "
       Position		      [1442, 786]
+      ZOrder		      -1
     }
     Annotation {
       SID		      "1859"
       Name		      "Simple Demo consisting of 2 buildings, 1 campus thermal plant, 6 EV chargers, and 1 PV system"
-      Position		      [1368, 94]
+      Position		      [1503, 79]
       ZOrder		      -1
       FontName		      "Arial"
       FontSize		      20

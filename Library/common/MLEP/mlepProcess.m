@@ -10,14 +10,16 @@ classdef mlepProcess < handle
     %   See also:
     %       <a href="https://gaia.lbl.gov/bcvtb">BCVTB (hyperlink)</a>
     %
-    % (C) 2010-2011 by Truong Nghiem (nghiem@seas.upenn.edu)
+    % (C) 2010-2013 by Willy Bernal(willyg@seas.upenn.edu)
     
-    % Last update: 2011-07-13 by Truong X. Nghiem
+    % Last update: 2013-07-22 by Willy Bernal
     
     % HISTORY:
+    %   2013-07-22  Split Start and Socket Accept Functions.
     %   2011-07-13  Added global settings and execution command selection.
     %   2011-04-28  Changed to use Java process for running E+.
     %   2010-11-23  Changed to protocol version 2.
+        
     
     properties
         version;        % Current version of the protocol

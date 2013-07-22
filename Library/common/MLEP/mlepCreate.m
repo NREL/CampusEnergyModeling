@@ -80,9 +80,9 @@ function [serversock, simsock, status, msg, pid] = ...
 %       <a href="https://gaia.lbl.gov/bcvtb">BCVTB (hyperlink)</a>
 %       MLEPCLOSE
 %
-% (C) 2010-2011 by Truong Nghiem (nghiem@seas.upenn.edu)
+% (C) 2010-2013 by Willy Bernal (willyg@seas.upenn.edu)
 
-% Last update: 2011-07-13 by Truong X. Nghiem
+% Last update: 2013-07-22 by Willy Bernal
 % HISTORY:
 %   2011-07-13  Back to using system command for executing E+ by default
 %               (because Windows seems not like the Java solution).

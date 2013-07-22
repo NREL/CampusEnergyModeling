@@ -49,7 +49,7 @@ block.SetPreCompOutPortInfoToDynamic;
 block.InputPort(1).Dimensions  = -1;  % inherited size
 block.InputPort(1).DatatypeID  = 0;  % double
 block.InputPort(1).Complexity  = 'Real';
-block.InputPort(1).DirectFeedthrough = false;
+block.InputPort(1).DirectFeedthrough = true; % false
 
 % block.InputPort(2).Dimensions  = -1;  % inherited size
 % block.InputPort(2).DatatypeID  = -1;  % inherited type
@@ -120,8 +120,8 @@ block.SimStateCompliance = 'DefaultSimState';
 %% -----------------------------------------------------------------
 
 % block.RegBlockMethod('PostPropagationSetup',    @DoPostPropSetup);
-% block.RegBlockMethod('InitializeConditions', @InitializeConditions);
 block.RegBlockMethod('Start', @Start);
+block.RegBlockMethod('InitializeConditions', @InitializeConditions);
 block.RegBlockMethod('Outputs', @Outputs);     % Required
 % block.RegBlockMethod('Update', @Update);
 % block.RegBlockMethod('Derivatives', @Derivatives);
@@ -129,32 +129,7 @@ block.RegBlockMethod('Terminate', @Terminate); % Required
 block.RegBlockMethod('SetInputPortDimensions', @SetInputPortDimensions);
 block.RegBlockMethod('SetInputPortSamplingMode', @SetInputPortSamplingMode);
 
-%%=================================================
-%% Start MLE+ 
-% Create the mlepProcess object and start EnergyPlus
-processobj = mlepProcess;
-processobj.program = block.DialogPrm(1).Data;
-processobj.workDir = block.DialogPrm(4).Data;
-if ~isempty(block.DialogPrm(8).Data)
-    processobj.bcvtbDir = block.DialogPrm(8).Data;
-end
-%processobj.bcvtbDir = block.DialogPrm(8).Data;
-processobj.arguments = [block.DialogPrm(2).Data ' ' block.DialogPrm(3).Data];
-processobj.acceptTimeout = block.DialogPrm(5).Data;
-processobj.port = block.DialogPrm(6).Data;
-processobj.host= block.DialogPrm(7).Data;
 
-% Start processobj
-[status, msg] = processobj.start;
-processobj.status = status;
-processobj.msg = msg;
-
-if status ~= 0
-    error('Cannot start EnergyPlus: %s.', msg);
-end
-
-% Save processobj to UserData of the block
-set_param(block.BlockHandle, 'UserData', processobj);
 %%=================================================
 %end setup
 
@@ -187,18 +162,6 @@ block.InputPort(port).Dimensions = dimsInfo;
 % endfunction
 
 
-%%
-%% InitializeConditions:
-%%   Functionality    : Called at the start of simulation and if it is 
-%%                      present in an enabled subsystem configured to reset 
-%%                      states, it will be called when the enabled subsystem
-%%                      restarts execution to reset the states.
-%%   Required         : No
-%%   C-MEX counterpart: mdlInitializeConditions
-%%
-% function InitializeConditions(block)
-
-%end InitializeConditions
 
 
 %%
@@ -210,46 +173,64 @@ block.InputPort(port).Dimensions = dimsInfo;
 %%   C-MEX counterpart: mdlStart
 %%
 function Start(block)
-
-% block.Dwork(1).Data = 0;
-
 % Dialog parameters
 % progname, modelfile, weatherfile, workdir, timeout,
 % port, host, bcvtbdir, deltaT, noutputd,
 % noutputi, noutputb
 
+%% Start MLE+ 
 % Create the mlepProcess object and start EnergyPlus
-%% COMMENT 
-% % processobj = mlepProcess;
-% % processobj.program = block.DialogPrm(1).Data;
-% % processobj.workDir = block.DialogPrm(4).Data;
-% % processobj.bcvtbDir = block.DialogPrm(8).Data;
-% % processobj.arguments = [block.DialogPrm(2).Data ' ' block.DialogPrm(3).Data];
-% % processobj.acceptTimeout = block.DialogPrm(5).Data;
-% % processobj.port = block.DialogPrm(6).Data;
-% % processobj.host= block.DialogPrm(7).Data;
-% % 
-% % % Start processobj
-% % [status, msg] = processobj.start;
-% % if status ~= 0
-% %     error('Cannot start EnergyPlus: %s.', msg);
-% % end
-% % 
+processobj = mlepProcess;
+processobj.program = block.DialogPrm(1).Data;
+processobj.workDir = block.DialogPrm(4).Data;
+if ~isempty(block.DialogPrm(8).Data)
+    processobj.bcvtbDir = block.DialogPrm(8).Data;
+end
+%processobj.bcvtbDir = block.DialogPrm(8).Data;
+processobj.arguments = [block.DialogPrm(2).Data ' ' block.DialogPrm(3).Data];
+processobj.acceptTimeout = block.DialogPrm(5).Data;
+processobj.port = block.DialogPrm(6).Data;
+processobj.host= block.DialogPrm(7).Data;
+
+% Start processobj
+[status, msg] = processobj.start;
+processobj.status = status;
+processobj.msg = msg;
+
+if status ~= 0
+    error('Cannot start EnergyPlus: %s.', msg);
+end
+
+% Save processobj to UserData of the block
+set_param(block.BlockHandle, 'UserData', processobj);
+%endfunction
+
+
+%%
+%% InitializeConditions:
+%%   Functionality    : Called at the start of simulation and if it is 
+%%                      present in an enabled subsystem configured to reset 
+%%                      states, it will be called when the enabled subsystem
+%%                      restarts execution to reset the states.
+%%   Required         : No
+%%   C-MEX counterpart: mdlInitializeConditions
+%%
+function InitializeConditions(block)
 % Get processobj
 processobj = get_param(block.BlockHandle, 'UserData');
 if ~isa(processobj, 'mlepProcess')
     error('Internal error: Cosimulation process object is lost.');
 end
-% Accept Socket 
+
+%% Accept Socket 
 [status, msg] = processobj.acceptSocket;
 if status ~= 0
     error('Cannot start EnergyPlus: %s.', msg);
 end
-% % % Save processobj to UserData of the block
+% % Save processobj to UserData of the block
 set_param(block.BlockHandle, 'UserData', processobj);
-%% COMMENT 
+%end InitializeConditions
 
-%endfunction
 
 %%
 %% Outputs:

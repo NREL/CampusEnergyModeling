@@ -41,24 +41,22 @@ save('Weather.mat', 'ans', '-v7.3');
 useDataBus = false;
 
 % Time stamps for data to retrieve (dd-mmm-yyyy HH:MM:SS)
-start = '01-Jun-2012 00:00:00';
-stop  = '02-Jun-2012 00:00:00';
+start = '01-Jun-2013 00:00:00';
+stop  = '02-Jun-2013 00:00:00';
 
 % Run the interactive function to retrieve and use DataBus data
 if useDataBus
-    % Interactive import from databus
-    x = importDataBus('DataBus_sensors.csv', start, stop, 'timezone', -7);
-    
-    % This puts the result into 'ans'
-    x;
+    % Interactive import from databus -> result in 'ans' variable
+    importDataBus('DataBus_sensors.csv', start, stop, 'timezone', -7,...
+        'skipdownload', [1 1 1 1 1 1]);
 
     % Save resulting structures of time series to file
     % Notes:
-    %   1. The name 'ans' is required by Simulink to import data using a 'From
-    %      File' block
-    %   2. A version 7.3 .MAT file is required for Simulink to properly read
-    %      the time series object. This is NOT the default version which MATLAB
-    %      saves, so be careful.
+    %   1. The name 'ans' is required by Simulink to import data using a
+    %      'From File' block
+    %   2. A version 7.3 .MAT file is required for Simulink to properly 
+    %      read the time series object. This is NOT the default version
+    %      which MATLAB saves, so be careful.
     save('Weather2.mat', 'ans', '-v7.3');
     
     % NOTE: Remember to switch to 'Weather2.mat' in the Simulink model!
@@ -66,7 +64,7 @@ end
 
 % TEST: Plot the resulting time series
 % hold on
-% plot(x.GHI,'-b')
-% plot(x.DNI,'-r')
-% plot(x.DHI,'-g')
+% plot(ans.GHI,'-b')
+% plot(ans.DNI,'-r')
+% plot(ans.DHI,'-g')
 % hold off

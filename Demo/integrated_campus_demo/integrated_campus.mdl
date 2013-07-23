@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.755"
+    ComputedModelVersion    "1.760"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -33,7 +33,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-8.0, -8.0, 1936.0, 1056.0]
+      Location		      [-8.0, 0.0, 1936.0, 1056.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -50,16 +50,28 @@ Model {
 	$ClassName		"Simulink.ExplorerBarInfo"
 	Visible			[1]
       }
-      Object {
-	$PropName		"EditorsInfo"
-	$ObjectID		5
-	$ClassName		"Simulink.EditorInfo"
-	IsActive		[1]
-	ViewObjType		"SimulinkTopLevel"
-	LoadSaveID		"0"
-	Extents			[1886.0, 882.0]
-	ZoomFactor		[1.0]
-	Offset			[784.38306025017107, -13.216242679008928]
+      Array {
+	Type			"Simulink.EditorInfo"
+	Dimension		2
+	Object {
+	  $ObjectID		  5
+	  IsActive		  [1]
+	  ViewObjType		  "SimulinkTopLevel"
+	  LoadSaveID		  "0"
+	  Extents		  [1886.0, 879.0]
+	  ZoomFactor		  [1.0]
+	  Offset		  [496.0, 0.78375732099107154]
+	}
+	Object {
+	  $ObjectID		  6
+	  IsActive		  [0]
+	  ViewObjType		  "SimulinkSubsys"
+	  LoadSaveID		  "2469"
+	  Extents		  [1886.0, 879.0]
+	  ZoomFactor		  [1.0]
+	  Offset		  [0.0, 0.0]
+	}
+	PropName		"EditorsInfo"
       }
     }
   }
@@ -72,9 +84,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Jul 18 10:57:05 2013"
-  RTWModifiedTimeStamp	  296045818
-  ModelVersionFormat	  "1.%<AutoIncrement:755>"
+  LastModifiedDate	  "Tue Jul 23 14:23:20 2013"
+  RTWModifiedTimeStamp	  296488092
+  ModelVersionFormat	  "1.%<AutoIncrement:760>"
   ConfigurationManager	  "none"
   SampleTimeColors	  on
   SampleTimeAnnotations	  on
@@ -109,7 +121,7 @@ Model {
   TryForcingSFcnDF	  off
   Object {
     $PropName		    "DataLoggingOverride"
-    $ObjectID		    6
+    $ObjectID		    7
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "integrated_campus"
     Array {
@@ -167,13 +179,13 @@ Model {
     Type		    "Handle"
     Dimension		    1
     Simulink.ConfigSet {
-      $ObjectID		      7
+      $ObjectID		      8
       Version		      "1.13.0"
       Array {
 	Type			"Handle"
 	Dimension		9
 	Simulink.SolverCC {
-	  $ObjectID		  8
+	  $ObjectID		  9
 	  Version		  "1.13.0"
 	  StartTime		  "0.0"
 	  StopTime		  "24*3600"
@@ -208,7 +220,7 @@ Model {
 	  InsertRTBMode		  "Whenever possible"
 	}
 	Simulink.DataIOCC {
-	  $ObjectID		  9
+	  $ObjectID		  10
 	  Version		  "1.13.0"
 	  Decimation		  "1"
 	  ExternalInput		  "[t, u]"
@@ -240,7 +252,7 @@ Model {
 	  Refine		  "1"
 	}
 	Simulink.OptimizationCC {
-	  $ObjectID		  10
+	  $ObjectID		  11
 	  Version		  "1.13.0"
 	  Array {
 	    Type		    "Cell"
@@ -292,7 +304,7 @@ Model {
 	  ParallelExecutionInRapidAccelerator on
 	}
 	Simulink.DebuggingCC {
-	  $ObjectID		  11
+	  $ObjectID		  12
 	  Version		  "1.13.0"
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
@@ -382,7 +394,7 @@ Model {
 	  SFTransitionActionBeforeConditionDiag	"warning"
 	}
 	Simulink.HardwareCC {
-	  $ObjectID		  12
+	  $ObjectID		  13
 	  Version		  "1.13.0"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
@@ -423,7 +435,7 @@ Model {
 	  ProdEqTarget		  on
 	}
 	Simulink.ModelReferenceCC {
-	  $ObjectID		  13
+	  $ObjectID		  14
 	  Version		  "1.13.0"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
 	  CheckModelReferenceTargetMessage "error"
@@ -438,7 +450,7 @@ Model {
 	  SupportModelReferenceSimTargetCustomCode off
 	}
 	Simulink.SFSimCC {
-	  $ObjectID		  14
+	  $ObjectID		  15
 	  Version		  "1.13.0"
 	  SFSimEnableDebug	  on
 	  SFSimOverflowDetection  on
@@ -453,7 +465,7 @@ Model {
 	}
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
-	  $ObjectID		  15
+	  $ObjectID		  16
 	  Version		  "1.13.0"
 	  Array {
 	    Type		    "Cell"
@@ -509,7 +521,7 @@ Model {
 	    Type		    "Handle"
 	    Dimension		    2
 	    Simulink.CodeAppCC {
-	      $ObjectID		      16
+	      $ObjectID		      17
 	      Version		      "1.13.0"
 	      Array {
 		Type			"Cell"
@@ -571,7 +583,7 @@ Model {
 	    }
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
-	      $ObjectID		      17
+	      $ObjectID		      18
 	      Version		      "1.13.0"
 	      Array {
 		Type			"Cell"
@@ -652,7 +664,7 @@ Model {
 	  }
 	}
 	SSC.SimscapeCC {
-	  $ObjectID		  18
+	  $ObjectID		  19
 	  Version		  "1.11.0"
 	  Array {
 	    Type		    "Cell"
@@ -681,11 +693,11 @@ Model {
   }
   Simulink.ConfigSet {
     $PropName		    "ActiveConfigurationSet"
-    $ObjectID		    7
+    $ObjectID		    8
   }
   Object {
     $PropName		    "DataTransfer"
-    $ObjectID		    19
+    $ObjectID		    20
     $ClassName		    "Simulink.GlobalDataTransfer"
     DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
     DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
@@ -940,7 +952,7 @@ Model {
   }
   System {
     Name		    "integrated_campus"
-    Location		    [-8, -8, 1928, 1048]
+    Location		    [-8, 0, 1928, 1056]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -954,7 +966,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "2584"
+    SIDHighWatermark	    "2586"
     Block {
       BlockType		      Reference
       Name		      "Building 1"
@@ -962,7 +974,7 @@ Model {
       Ports		      [1, 0, 0, 0, 0, 4]
       Position		      [1270, 612, 1310, 698]
       ZOrder		      144
-      LibraryVersion	      "1.53"
+      LibraryVersion	      "1.54"
       SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "load"
@@ -979,7 +991,7 @@ Model {
       Ports		      [1, 0, 0, 0, 0, 4]
       Position		      [1670, 612, 1710, 698]
       ZOrder		      242
-      LibraryVersion	      "1.53"
+      LibraryVersion	      "1.54"
       SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "load"
@@ -1005,7 +1017,7 @@ Model {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		20
+	$ObjectID		21
 	$ClassName		"Simulink.Mask"
 	Type			"Short Cable"
 	Description		"This block implements a short cable using three phase mutual inductance.\nSelf impedances and mutual im"
@@ -1016,7 +1028,7 @@ Model {
 	  Type			  "Simulink.MaskParameter"
 	  Dimension		  5
 	  Object {
-	    $ObjectID		    21
+	    $ObjectID		    22
 	    Type		    "edit"
 	    Name		    "R1"
 	    Prompt		    "Positive Sequence R (ohms/1000ft)"
@@ -1024,7 +1036,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    22
+	    $ObjectID		    23
 	    Type		    "edit"
 	    Name		    "X1"
 	    Prompt		    "Positive Sequence XL (ohms/1000ft)"
@@ -1032,7 +1044,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    23
+	    $ObjectID		    24
 	    Type		    "edit"
 	    Name		    "R0"
 	    Prompt		    "Zero Sequence R (ohms/1000ft)"
@@ -1040,7 +1052,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    24
+	    $ObjectID		    25
 	    Type		    "edit"
 	    Name		    "X0"
 	    Prompt		    "Zero Sequence XL (ohms/1000ft)"
@@ -1048,7 +1060,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    25
+	    $ObjectID		    26
 	    Type		    "edit"
 	    Name		    "L"
 	    Prompt		    "Line Length (ft)"
@@ -1206,7 +1218,7 @@ Model {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		26
+	$ObjectID		27
 	$ClassName		"Simulink.Mask"
 	Type			"Short Cable"
 	Description		"This block implements a short cable using three phase mutual inductance.\nSelf impedances and mutual im"
@@ -1217,7 +1229,7 @@ Model {
 	  Type			  "Simulink.MaskParameter"
 	  Dimension		  5
 	  Object {
-	    $ObjectID		    27
+	    $ObjectID		    28
 	    Type		    "edit"
 	    Name		    "R1"
 	    Prompt		    "Positive Sequence R (ohms/1000ft)"
@@ -1225,7 +1237,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    28
+	    $ObjectID		    29
 	    Type		    "edit"
 	    Name		    "X1"
 	    Prompt		    "Positive Sequence XL (ohms/1000ft)"
@@ -1233,7 +1245,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    29
+	    $ObjectID		    30
 	    Type		    "edit"
 	    Name		    "R0"
 	    Prompt		    "Zero Sequence R (ohms/1000ft)"
@@ -1241,7 +1253,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    30
+	    $ObjectID		    31
 	    Type		    "edit"
 	    Name		    "X0"
 	    Prompt		    "Zero Sequence XL (ohms/1000ft)"
@@ -1249,7 +1261,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    31
+	    $ObjectID		    32
 	    Type		    "edit"
 	    Name		    "L"
 	    Prompt		    "Line Length (ft)"
@@ -1398,7 +1410,7 @@ Model {
       Ports		      [1, 0, 0, 0, 0, 4]
       Position		      [1270, 872, 1310, 958]
       ZOrder		      275
-      LibraryVersion	      "1.53"
+      LibraryVersion	      "1.54"
       SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "load"
@@ -1415,7 +1427,7 @@ Model {
       Ports		      [1, 0, 0, 0, 0, 4]
       Position		      [2085, 612, 2125, 698]
       ZOrder		      163
-      LibraryVersion	      "1.53"
+      LibraryVersion	      "1.54"
       SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "load"
@@ -1432,7 +1444,7 @@ Model {
       Ports		      [1, 0, 0, 0, 0, 4]
       Position		      [2085, 757, 2125, 843]
       ZOrder		      244
-      LibraryVersion	      "1.53"
+      LibraryVersion	      "1.54"
       SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "load"
@@ -1449,7 +1461,7 @@ Model {
       Ports		      [1, 0, 0, 0, 0, 4]
       Position		      [2085, 902, 2125, 988]
       ZOrder		      245
-      LibraryVersion	      "1.53"
+      LibraryVersion	      "1.54"
       SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "load"
@@ -1466,7 +1478,7 @@ Model {
       Ports		      [1, 0, 0, 0, 0, 4]
       Position		      [2085, 1032, 2125, 1118]
       ZOrder		      246
-      LibraryVersion	      "1.53"
+      LibraryVersion	      "1.54"
       SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "load"
@@ -1483,7 +1495,7 @@ Model {
       Ports		      [1, 0, 0, 0, 0, 4]
       Position		      [2085, 1177, 2125, 1263]
       ZOrder		      247
-      LibraryVersion	      "1.53"
+      LibraryVersion	      "1.54"
       SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "load"
@@ -1500,7 +1512,7 @@ Model {
       Ports		      [1, 0, 0, 0, 0, 4]
       Position		      [2085, 1322, 2125, 1408]
       ZOrder		      248
-      LibraryVersion	      "1.53"
+      LibraryVersion	      "1.54"
       SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "load"
@@ -1715,10 +1727,6 @@ Model {
 	}
 	Line {
 	  Name			  "P"
-	  FontName		  "Helvetica"
-	  FontSize		  9
-	  FontWeight		  "normal"
-	  FontAngle		  "normal"
 	  Labels		  [2, 0]
 	  SrcBlock		  "Variable\nTime Delay"
 	  SrcPort		  1
@@ -1962,10 +1970,6 @@ Model {
 	}
 	Line {
 	  Name			  "P"
-	  FontName		  "Helvetica"
-	  FontSize		  9
-	  FontWeight		  "normal"
-	  FontAngle		  "normal"
 	  Labels		  [2, 0]
 	  SrcBlock		  "Variable\nTime Delay"
 	  SrcPort		  1
@@ -2209,10 +2213,6 @@ Model {
 	}
 	Line {
 	  Name			  "P"
-	  FontName		  "Helvetica"
-	  FontSize		  9
-	  FontWeight		  "normal"
-	  FontAngle		  "normal"
 	  Labels		  [2, 0]
 	  SrcBlock		  "Variable\nTime Delay"
 	  SrcPort		  1
@@ -2456,10 +2456,6 @@ Model {
 	}
 	Line {
 	  Name			  "P"
-	  FontName		  "Helvetica"
-	  FontSize		  9
-	  FontWeight		  "normal"
-	  FontAngle		  "normal"
 	  Labels		  [2, 0]
 	  SrcBlock		  "Variable\nTime Delay"
 	  SrcPort		  1
@@ -2703,10 +2699,6 @@ Model {
 	}
 	Line {
 	  Name			  "P"
-	  FontName		  "Helvetica"
-	  FontSize		  9
-	  FontWeight		  "normal"
-	  FontAngle		  "normal"
 	  Labels		  [2, 0]
 	  SrcBlock		  "Variable\nTime Delay"
 	  SrcPort		  1
@@ -2950,10 +2942,6 @@ Model {
 	}
 	Line {
 	  Name			  "P"
-	  FontName		  "Helvetica"
-	  FontSize		  9
-	  FontWeight		  "normal"
-	  FontAngle		  "normal"
 	  Labels		  [2, 0]
 	  SrcBlock		  "Variable\nTime Delay"
 	  SrcPort		  1
@@ -3550,7 +3538,7 @@ Model {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		32
+	$ObjectID		33
 	$ClassName		"Simulink.Mask"
 	Type			"Short Cable"
 	Description		"This block implements a short cable using three phase mutual inductance.\nSelf impedances and mutual im"
@@ -3561,7 +3549,7 @@ Model {
 	  Type			  "Simulink.MaskParameter"
 	  Dimension		  5
 	  Object {
-	    $ObjectID		    33
+	    $ObjectID		    34
 	    Type		    "edit"
 	    Name		    "R1"
 	    Prompt		    "Positive Sequence R (ohms/1000ft)"
@@ -3569,7 +3557,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    34
+	    $ObjectID		    35
 	    Type		    "edit"
 	    Name		    "X1"
 	    Prompt		    "Positive Sequence XL (ohms/1000ft)"
@@ -3577,7 +3565,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    35
+	    $ObjectID		    36
 	    Type		    "edit"
 	    Name		    "R0"
 	    Prompt		    "Zero Sequence R (ohms/1000ft)"
@@ -3585,7 +3573,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    36
+	    $ObjectID		    37
 	    Type		    "edit"
 	    Name		    "X0"
 	    Prompt		    "Zero Sequence XL (ohms/1000ft)"
@@ -3593,7 +3581,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    37
+	    $ObjectID		    38
 	    Type		    "edit"
 	    Name		    "L"
 	    Prompt		    "Line Length (ft)"
@@ -3751,7 +3739,7 @@ Model {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		38
+	$ObjectID		39
 	$ClassName		"Simulink.Mask"
 	Type			"Short Cable"
 	Description		"This block implements a short cable using three phase mutual inductance.\nSelf impedances and mutual im"
@@ -3762,7 +3750,7 @@ Model {
 	  Type			  "Simulink.MaskParameter"
 	  Dimension		  5
 	  Object {
-	    $ObjectID		    39
+	    $ObjectID		    40
 	    Type		    "edit"
 	    Name		    "R1"
 	    Prompt		    "Positive Sequence R (ohms/1000ft)"
@@ -3770,7 +3758,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    40
+	    $ObjectID		    41
 	    Type		    "edit"
 	    Name		    "X1"
 	    Prompt		    "Positive Sequence XL (ohms/1000ft)"
@@ -3778,7 +3766,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    41
+	    $ObjectID		    42
 	    Type		    "edit"
 	    Name		    "R0"
 	    Prompt		    "Zero Sequence R (ohms/1000ft)"
@@ -3786,7 +3774,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    42
+	    $ObjectID		    43
 	    Type		    "edit"
 	    Name		    "X0"
 	    Prompt		    "Zero Sequence XL (ohms/1000ft)"
@@ -3794,7 +3782,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    43
+	    $ObjectID		    44
 	    Type		    "edit"
 	    Name		    "L"
 	    Prompt		    "Line Length (ft)"
@@ -3952,7 +3940,7 @@ Model {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		44
+	$ObjectID		45
 	$ClassName		"Simulink.Mask"
 	Type			"Short Cable"
 	Description		"This block implements a short cable using three phase mutual inductance.\nSelf impedances and mutual im"
@@ -3963,7 +3951,7 @@ Model {
 	  Type			  "Simulink.MaskParameter"
 	  Dimension		  5
 	  Object {
-	    $ObjectID		    45
+	    $ObjectID		    46
 	    Type		    "edit"
 	    Name		    "R1"
 	    Prompt		    "Positive Sequence R (ohms/1000ft)"
@@ -3971,7 +3959,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    46
+	    $ObjectID		    47
 	    Type		    "edit"
 	    Name		    "X1"
 	    Prompt		    "Positive Sequence XL (ohms/1000ft)"
@@ -3979,7 +3967,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    47
+	    $ObjectID		    48
 	    Type		    "edit"
 	    Name		    "R0"
 	    Prompt		    "Zero Sequence R (ohms/1000ft)"
@@ -3987,7 +3975,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    48
+	    $ObjectID		    49
 	    Type		    "edit"
 	    Name		    "X0"
 	    Prompt		    "Zero Sequence XL (ohms/1000ft)"
@@ -3995,7 +3983,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    49
+	    $ObjectID		    50
 	    Type		    "edit"
 	    Name		    "L"
 	    Prompt		    "Line Length (ft)"
@@ -4342,7 +4330,7 @@ Model {
       Ports		      [1, 0, 0, 0, 0, 4]
       Position		      [2700, 602, 2740, 688]
       ZOrder		      164
-      LibraryVersion	      "1.53"
+      LibraryVersion	      "1.54"
       SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "source"
@@ -4370,8 +4358,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"PV System"
-	Location		[-8, -8, 1928, 1048]
-	Open			off
+	Location		[-8, 0, 1928, 1056]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -4432,7 +4420,7 @@ Model {
 	  Ports			  [1, 1]
 	  Position		  [650, 54, 745, 166]
 	  ZOrder		  320
-	  LibraryVersion	  "1.53"
+	  LibraryVersion	  "1.54"
 	  SourceBlock		  "CampusModeling/PV/Generic Inverter"
 	  SourceType		  "Generic Inverter"
 	  model_type		  "Lookup Table"
@@ -4452,7 +4440,7 @@ Model {
 	  Ports			  [4, 1]
 	  Position		  [345, 52, 555, 168]
 	  ZOrder		  321
-	  LibraryVersion	  "1.53"
+	  LibraryVersion	  "1.54"
 	  UserDataPersistent	  on
 	  UserData		  "DataTag0"
 	  SourceBlock		  "CampusModeling/PV/PVWatts Cosimulation"
@@ -5201,10 +5189,10 @@ Model {
       Ports		      [0, 1]
       Position		      [515, 235, 590, 325]
       ZOrder		      321
-      LibraryVersion	      "1.53"
+      LibraryVersion	      "1.54"
       SourceBlock	      "CampusModeling/Weather/Weather Data"
       SourceType	      "Weather Data From File"
-      fname		      "'Weather.mat'"
+      fname		      "Weather.mat"
       initbus		      on
     }
     Block {
@@ -5621,7 +5609,7 @@ Model {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		50
+	$ObjectID		51
 	$ClassName		"Simulink.Mask"
 	Type			"Short Cable"
 	Description		"This block implements a short cable using three phase mutual inductance.\nSelf impedances and mutual im"
@@ -5632,7 +5620,7 @@ Model {
 	  Type			  "Simulink.MaskParameter"
 	  Dimension		  5
 	  Object {
-	    $ObjectID		    51
+	    $ObjectID		    52
 	    Type		    "edit"
 	    Name		    "R1"
 	    Prompt		    "Positive Sequence R (ohms/1000ft)"
@@ -5640,7 +5628,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    52
+	    $ObjectID		    53
 	    Type		    "edit"
 	    Name		    "X1"
 	    Prompt		    "Positive Sequence XL (ohms/1000ft)"
@@ -5648,7 +5636,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    53
+	    $ObjectID		    54
 	    Type		    "edit"
 	    Name		    "R0"
 	    Prompt		    "Zero Sequence R (ohms/1000ft)"
@@ -5656,7 +5644,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    54
+	    $ObjectID		    55
 	    Type		    "edit"
 	    Name		    "X0"
 	    Prompt		    "Zero Sequence XL (ohms/1000ft)"
@@ -5664,7 +5652,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    55
+	    $ObjectID		    56
 	    Type		    "edit"
 	    Name		    "L"
 	    Prompt		    "Line Length (ft)"
@@ -5822,7 +5810,7 @@ Model {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		56
+	$ObjectID		57
 	$ClassName		"Simulink.Mask"
 	Type			"Short Cable"
 	Description		"This block implements a short cable using three phase mutual inductance.\nSelf impedances and mutual im"
@@ -5833,7 +5821,7 @@ Model {
 	  Type			  "Simulink.MaskParameter"
 	  Dimension		  5
 	  Object {
-	    $ObjectID		    57
+	    $ObjectID		    58
 	    Type		    "edit"
 	    Name		    "R1"
 	    Prompt		    "Positive Sequence R (ohms/1000ft)"
@@ -5841,7 +5829,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    58
+	    $ObjectID		    59
 	    Type		    "edit"
 	    Name		    "X1"
 	    Prompt		    "Positive Sequence XL (ohms/1000ft)"
@@ -5849,7 +5837,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    59
+	    $ObjectID		    60
 	    Type		    "edit"
 	    Name		    "R0"
 	    Prompt		    "Zero Sequence R (ohms/1000ft)"
@@ -5857,7 +5845,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    60
+	    $ObjectID		    61
 	    Type		    "edit"
 	    Name		    "X0"
 	    Prompt		    "Zero Sequence XL (ohms/1000ft)"
@@ -5865,7 +5853,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    61
+	    $ObjectID		    62
 	    Type		    "edit"
 	    Name		    "L"
 	    Prompt		    "Line Length (ft)"
@@ -6023,7 +6011,7 @@ Model {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		62
+	$ObjectID		63
 	$ClassName		"Simulink.Mask"
 	Type			"Short Cable"
 	Description		"This block implements a short cable using three phase mutual inductance.\nSelf impedances and mutual im"
@@ -6034,7 +6022,7 @@ Model {
 	  Type			  "Simulink.MaskParameter"
 	  Dimension		  5
 	  Object {
-	    $ObjectID		    63
+	    $ObjectID		    64
 	    Type		    "edit"
 	    Name		    "R1"
 	    Prompt		    "Positive Sequence R (ohms/1000ft)"
@@ -6042,7 +6030,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    64
+	    $ObjectID		    65
 	    Type		    "edit"
 	    Name		    "X1"
 	    Prompt		    "Positive Sequence XL (ohms/1000ft)"
@@ -6050,7 +6038,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    65
+	    $ObjectID		    66
 	    Type		    "edit"
 	    Name		    "R0"
 	    Prompt		    "Zero Sequence R (ohms/1000ft)"
@@ -6058,7 +6046,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    66
+	    $ObjectID		    67
 	    Type		    "edit"
 	    Name		    "X0"
 	    Prompt		    "Zero Sequence XL (ohms/1000ft)"
@@ -6066,7 +6054,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    67
+	    $ObjectID		    68
 	    Type		    "edit"
 	    Name		    "L"
 	    Prompt		    "Line Length (ft)"
@@ -6224,7 +6212,7 @@ Model {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		68
+	$ObjectID		69
 	$ClassName		"Simulink.Mask"
 	Type			"Short Cable"
 	Description		"This block implements a short cable using three phase mutual inductance.\nSelf impedances and mutual im"
@@ -6235,7 +6223,7 @@ Model {
 	  Type			  "Simulink.MaskParameter"
 	  Dimension		  5
 	  Object {
-	    $ObjectID		    69
+	    $ObjectID		    70
 	    Type		    "edit"
 	    Name		    "R1"
 	    Prompt		    "Positive Sequence R (ohms/1000ft)"
@@ -6243,7 +6231,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    70
+	    $ObjectID		    71
 	    Type		    "edit"
 	    Name		    "X1"
 	    Prompt		    "Positive Sequence XL (ohms/1000ft)"
@@ -6251,7 +6239,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    71
+	    $ObjectID		    72
 	    Type		    "edit"
 	    Name		    "R0"
 	    Prompt		    "Zero Sequence R (ohms/1000ft)"
@@ -6259,7 +6247,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    72
+	    $ObjectID		    73
 	    Type		    "edit"
 	    Name		    "X0"
 	    Prompt		    "Zero Sequence XL (ohms/1000ft)"
@@ -6267,7 +6255,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    73
+	    $ObjectID		    74
 	    Type		    "edit"
 	    Name		    "L"
 	    Prompt		    "Line Length (ft)"
@@ -8066,15 +8054,15 @@ MatData {
     "       #@   #@    &    \"     8         !0    @    !     0    $         \"0    @               X    X    !@    @  "
     "  &          4    (     0    $    !          D    (               .    .     8    (    !@         %    \"     $   "
     " !     0         )    \"           <)] #@   #@    &    \"     8         !0    @    !     0    $         \"0    @  "
-    "          80 X    X    !@    @    &          4    (     0    $    !          D    (            \"$ .    .     8   "
-    " (    !@         %    \"     $    !     0         )    \"               #@   #@    &    \"     8         !0    @  "
-    "  !     0    $         \"0    @               X    X    !@    @    &          4    (     0    $    !          D   "
-    " (               .    .     8    (    !@         %    \"     $    !     0         )    \"               #@   #@   "
-    " &    \"     8         !0    @    !     0    $         \"0    @            S0 X    X    !@    @    &          4   "
-    " (     0    $    !          D    (    9F9F9F9F!D .    .     8    (    !@         %    \"     $    !     0         "
-    ")    \"               #@   #     &    \"     8         !0    @               $         \"0         .    .     8   "
-    " (    !@         %    \"     $    !     0         )    \"         !:;B9!#@   #     &    \"     8         !0    @  "
-    "             $         \"0         "
+    "          80 X    X    !@    @    &          4    (     0    $    !          D    (             $ .    .     8    "
+    "(    !@         %    \"     $    !     0         )    \"               #@   #@    &    \"     8         !0    @   "
+    " !     0    $         \"0    @               X    X    !@    @    &          4    (     0    $    !          D    "
+    "(               .    .     8    (    !@         %    \"     $    !     0         )    \"               #@   #@    "
+    "&    \"     8         !0    @    !     0    $         \"0    @    S,S,S,S,O0 X    X    !@    @    &          4    "
+    "(     0    $    !          D    (            !$ .    .     8    (    !@         %    \"     $    !     0         )"
+    "    \"               #@   #     &    \"     8         !0    @               $         \"0         .    .     8    "
+    "(    !@         %    \"     $    !     0         )    \"         !:;B9!#@   #     &    \"     8         !0    @   "
+    "            $         \"0         "
   }
   DataRecord {
     Tag			    DataTag1

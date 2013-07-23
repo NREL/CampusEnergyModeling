@@ -47,8 +47,7 @@ stop  = '02-Jun-2013 00:00:00';
 % Run the interactive function to retrieve and use DataBus data
 if useDataBus
     % Interactive import from databus -> result in 'ans' variable
-    importDataBus('DataBus_sensors.csv', start, stop, 'timezone', -7,...
-        'skipdownload', [1 1 1 1 1 1]);
+    importDataBus('DataBus_sensors.csv', start, stop, 'timezone', -7);
 
     % Save resulting structures of time series to file
     % Notes:

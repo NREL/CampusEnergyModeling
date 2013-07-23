@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.42"
+    ComputedModelVersion    "1.43"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -66,9 +66,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Jul 17 08:54:19 2013"
-  RTWModifiedTimeStamp	  295952041
-  ModelVersionFormat	  "1.%<AutoIncrement:42>"
+  LastModifiedDate	  "Tue Jul 23 14:14:33 2013"
+  RTWModifiedTimeStamp	  296489657
+  ModelVersionFormat	  "1.%<AutoIncrement:43>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -907,7 +907,7 @@ Model {
       Ports		      [1, 1]
       Position		      [690, 10574, 785, 10686]
       ZOrder		      64
-      LibraryVersion	      "1.52"
+      LibraryVersion	      "1.54"
       SourceBlock	      "CampusModeling/PV/Generic Inverter"
       SourceType	      "Generic Inverter"
       model_type	      "Quadratic"
@@ -1000,7 +1000,7 @@ Model {
       Ports		      [4, 3]
       Position		      [345, 10612, 555, 10728]
       ZOrder		      65
-      LibraryVersion	      "1.52"
+      LibraryVersion	      "1.54"
       UserDataPersistent      on
       UserData		      "DataTag0"
       SourceBlock	      "CampusModeling/PV/PVWatts Cosimulation"
@@ -1063,10 +1063,10 @@ Model {
       Ports		      [0, 1]
       Position		      [55, 10625, 130, 10715]
       ZOrder		      60
-      LibraryVersion	      "1.52"
+      LibraryVersion	      "1.54"
       SourceBlock	      "CampusModeling/Weather/Weather Data"
       SourceType	      "Weather Data From File"
-      fname		      "'Weather.mat'"
+      fname		      "Weather.mat"
       initbus		      on
     }
     Line {

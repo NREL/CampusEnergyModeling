@@ -353,10 +353,11 @@ function Outputs(block)
     end
     
     % Get Simulink inputs
-    d.sscvar.beam =     block.InputPort(1).Data;
-    d.sscvar.diffuse =  block.InputPort(2).Data;
-    d.sscvar.tamb =     block.InputPort(3).Data;
-    d.sscvar.wspd =     block.InputPort(4).Data;
+    % (Note data cleaning to avoid invalid inputs)
+    d.sscvar.beam =     max(block.InputPort(1).Data, 0);
+    d.sscvar.diffuse =  max(block.InputPort(2).Data, 0);
+    d.sscvar.tamb =     max(block.InputPort(3).Data, -273.15);
+    d.sscvar.wspd =     max(block.InputPort(4).Data, 0);
     
     % Store in SSC data container
     fn = {'beam','diffuse','tamb','wspd'};

@@ -38,7 +38,7 @@ save('Weather.mat', 'ans', '-v7.3');
 % to download each data stream to .CSV, then parses the result.
 
 % Change to 'true' to download and use DataBus data
-useDataBus = false;
+useDataBus = true;
 
 % Time stamps for data to retrieve (dd-mmm-yyyy HH:MM:SS)
 start = '01-Jun-2013 00:00:00';

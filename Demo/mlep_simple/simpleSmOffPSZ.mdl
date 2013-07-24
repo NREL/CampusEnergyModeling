@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.265"
+    ComputedModelVersion    "1.267"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -64,11 +64,11 @@ Model {
   Creator		  "mwetter"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "sfrank1"
+  LastModifiedBy	  "wbernal"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Jun 26 12:44:47 2013"
-  RTWModifiedTimeStamp	  294151247
-  ModelVersionFormat	  "1.%<AutoIncrement:265>"
+  LastModifiedDate	  "Mon Jul 22 17:17:13 2013"
+  RTWModifiedTimeStamp	  296413852
+  ModelVersionFormat	  "1.%<AutoIncrement:267>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -434,13 +434,13 @@ Model {
 	Simulink.SFSimCC {
 	  $ObjectID		  14
 	  Version		  "1.13.0"
-	  SFSimEnableDebug	  on
-	  SFSimOverflowDetection  on
-	  SFSimEcho		  on
+	  SFSimEnableDebug	  off
+	  SFSimOverflowDetection  off
+	  SFSimEcho		  off
 	  SimBlas		  on
-	  SimCtrlC		  on
+	  SimCtrlC		  off
 	  SimExtrinsic		  on
-	  SimIntegrity		  on
+	  SimIntegrity		  off
 	  SimUseLocalCustomCode	  off
 	  SimParseCustomCode	  off
 	  SimBuildMode		  "sf_incremental_build"
@@ -458,7 +458,7 @@ Model {
 	  SystemTargetFile	  "grt.tlc"
 	  GenCodeOnly		  off
 	  MakeCommand		  "make_rtw"
-	  GenerateMakefile	  on
+	  GenerateMakefile	  off
 	  PackageGeneratedCodeAndArtifacts off
 	  TemplateMakefile	  "grt_default_tmf"
 	  GenerateReport	  off
@@ -649,7 +649,7 @@ Model {
       }
       Name		      "Configuration"
       CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition     [ 1960, 186, 2841, 992 ] 
+      ConfigPrmDlgPosition     [ 301, 118, 1300, 977 ] 
     }
     PropName		    "ConfigurationSets"
   }
@@ -951,7 +951,7 @@ Model {
       Ports		      [1, 3]
       Position		      [335, 72, 515, 198]
       ZOrder		      -1
-      LibraryVersion	      "1.35"
+      LibraryVersion	      "1.53"
       SourceBlock	      "CampusModeling/Buildings/E+ Building"
       SourceType	      "EnergyPlus Cosimulation"
       progname		      "'C:\\EnergyPlusV8-0-0\\RunEPlus.bat'"
@@ -1139,8 +1139,8 @@ Model {
       Position		      [840, 23, 905, 127]
       ZOrder		      -6
       Floating		      off
-      Location		      [950, 470, 1792, 1008]
-      Open		      on
+      Location		      [753, 470, 1595, 1008]
+      Open		      off
       NumInputPorts	      "2"
       List {
 	ListType		AxesTitles

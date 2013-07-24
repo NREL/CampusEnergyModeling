@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.26"
+    ComputedModelVersion    "1.28"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -30,7 +30,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [96.0, 20.0, 1691.0, 971.0]
+      Location		      [32.0, 43.0, 1691.0, 971.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -47,16 +47,28 @@ Model {
 	$ClassName		"Simulink.ExplorerBarInfo"
 	Visible			[1]
       }
-      Object {
-	$PropName		"EditorsInfo"
-	$ObjectID		5
-	$ClassName		"Simulink.EditorInfo"
-	IsActive		[1]
-	ViewObjType		"SimulinkTopLevel"
-	LoadSaveID		"0"
-	Extents			[1641.0, 797.0]
-	ZoomFactor		[1.0]
-	Offset			[0.41610080961140739, 49.0]
+      Array {
+	Type			"Simulink.EditorInfo"
+	Dimension		2
+	Object {
+	  $ObjectID		  5
+	  IsActive		  [1]
+	  ViewObjType		  "SimulinkTopLevel"
+	  LoadSaveID		  "0"
+	  Extents		  [1641.0, 794.0]
+	  ZoomFactor		  [1.0]
+	  Offset		  [13.24943414294421, 21.2499999999998]
+	}
+	Object {
+	  $ObjectID		  6
+	  IsActive		  [0]
+	  ViewObjType		  "SimulinkSubsys"
+	  LoadSaveID		  "42"
+	  Extents		  [1641.0, 794.0]
+	  ZoomFactor		  [1.0]
+	  Offset		  [0.0, 0.0]
+	}
+	PropName		"EditorsInfo"
       }
     }
   }
@@ -64,11 +76,11 @@ Model {
   Creator		  "wbernal"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "sfrank1"
+  LastModifiedBy	  "wbernal"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Jun 27 11:41:56 2013"
-  RTWModifiedTimeStamp	  294154085
-  ModelVersionFormat	  "1.%<AutoIncrement:26>"
+  LastModifiedDate	  "Mon Jul 22 17:21:21 2013"
+  RTWModifiedTimeStamp	  296414478
+  ModelVersionFormat	  "1.%<AutoIncrement:28>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -103,7 +115,7 @@ Model {
   TryForcingSFcnDF	  off
   Object {
     $PropName		    "DataLoggingOverride"
-    $ObjectID		    6
+    $ObjectID		    7
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "runCampusSim"
     signals_		    []
@@ -163,13 +175,13 @@ Model {
     Type		    "Handle"
     Dimension		    1
     Simulink.ConfigSet {
-      $ObjectID		      7
+      $ObjectID		      8
       Version		      "1.13.0"
       Array {
 	Type			"Handle"
 	Dimension		8
 	Simulink.SolverCC {
-	  $ObjectID		  8
+	  $ObjectID		  9
 	  Version		  "1.13.0"
 	  StartTime		  "0.0"
 	  StopTime		  "Inf"
@@ -204,7 +216,7 @@ Model {
 	  InsertRTBMode		  "Whenever possible"
 	}
 	Simulink.DataIOCC {
-	  $ObjectID		  9
+	  $ObjectID		  10
 	  Version		  "1.13.0"
 	  Decimation		  "1"
 	  ExternalInput		  "[t, u]"
@@ -236,7 +248,7 @@ Model {
 	  Refine		  "1"
 	}
 	Simulink.OptimizationCC {
-	  $ObjectID		  10
+	  $ObjectID		  11
 	  Version		  "1.13.0"
 	  Array {
 	    Type		    "Cell"
@@ -292,7 +304,7 @@ Model {
 	  ParallelExecutionInRapidAccelerator on
 	}
 	Simulink.DebuggingCC {
-	  $ObjectID		  11
+	  $ObjectID		  12
 	  Version		  "1.13.0"
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
@@ -382,7 +394,7 @@ Model {
 	  SFTransitionActionBeforeConditionDiag	"warning"
 	}
 	Simulink.HardwareCC {
-	  $ObjectID		  12
+	  $ObjectID		  13
 	  Version		  "1.13.0"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
@@ -423,7 +435,7 @@ Model {
 	  ProdEqTarget		  on
 	}
 	Simulink.ModelReferenceCC {
-	  $ObjectID		  13
+	  $ObjectID		  14
 	  Version		  "1.13.0"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
 	  CheckModelReferenceTargetMessage "error"
@@ -438,7 +450,7 @@ Model {
 	  SupportModelReferenceSimTargetCustomCode off
 	}
 	Simulink.SFSimCC {
-	  $ObjectID		  14
+	  $ObjectID		  15
 	  Version		  "1.13.0"
 	  SFSimEnableDebug	  on
 	  SFSimOverflowDetection  on
@@ -453,7 +465,7 @@ Model {
 	}
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
-	  $ObjectID		  15
+	  $ObjectID		  16
 	  Version		  "1.13.0"
 	  Array {
 	    Type		    "Cell"
@@ -516,7 +528,7 @@ Model {
 	    Type		    "Handle"
 	    Dimension		    2
 	    Simulink.CodeAppCC {
-	      $ObjectID		      16
+	      $ObjectID		      17
 	      Version		      "1.13.0"
 	      Array {
 		Type			"Cell"
@@ -583,7 +595,7 @@ Model {
 	    }
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
-	      $ObjectID		      17
+	      $ObjectID		      18
 	      Version		      "1.13.0"
 	      Array {
 		Type			"Cell"
@@ -675,11 +687,11 @@ Model {
   }
   Simulink.ConfigSet {
     $PropName		    "ActiveConfigurationSet"
-    $ObjectID		    7
+    $ObjectID		    8
   }
   Object {
     $PropName		    "DataTransfer"
-    $ObjectID		    18
+    $ObjectID		    19
     $ClassName		    "Simulink.GlobalDataTransfer"
     DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
     DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
@@ -899,10 +911,19 @@ Model {
     Block {
       BlockType		      Terminator
     }
+    Block {
+      BlockType		      UnitDelay
+      InitialCondition	      "0"
+      InputProcessing	      "Inherited"
+      SampleTime	      "1"
+      StateMustResolveToSignalObject off
+      CodeGenStateStorageClass "Auto"
+      HasFrameUpgradeWarning  on
+    }
   }
   System {
     Name		    "runCampusSim"
-    Location		    [96, 20, 1787, 991]
+    Location		    [32, 43, 1723, 1014]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -916,7 +937,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "79"
+    SIDHighWatermark	    "80"
     Block {
       BlockType		      Constant
       Name		      "ChilledWater"
@@ -1043,7 +1064,7 @@ Model {
       Ports		      [1, 3]
       Position		      [620, 163, 815, 297]
       ZOrder		      -19
-      LibraryVersion	      "1.40"
+      LibraryVersion	      "1.53"
       SourceBlock	      "CampusModeling/Buildings/E+ Building"
       SourceType	      "EnergyPlus Cosimulation"
       progname		      "'C:\\EnergyPlusV8-0-0\\RunEPlus.bat'"
@@ -1064,7 +1085,7 @@ Model {
       Ports		      [1, 3]
       Position		      [615, 494, 805, 626]
       ZOrder		      -20
-      LibraryVersion	      "1.40"
+      LibraryVersion	      "1.53"
       SourceBlock	      "CampusModeling/Buildings/E+ Building"
       SourceType	      "EnergyPlus Cosimulation"
       progname		      "'C:\\EnergyPlusV8-0-0\\RunEPlus.bat'"
@@ -1085,7 +1106,7 @@ Model {
       Ports		      [1, 3]
       Position		      [620, 821, 810, 959]
       ZOrder		      -21
-      LibraryVersion	      "1.40"
+      LibraryVersion	      "1.53"
       SourceBlock	      "CampusModeling/Buildings/E+ Building"
       SourceType	      "EnergyPlus Cosimulation"
       progname		      "'C:\\EnergyPlusV8-0-0\\RunEPlus.bat'"
@@ -1769,7 +1790,6 @@ Model {
       SID		      "67"
       Position		      [280, 696, 360, 774]
       ZOrder		      4
-      CurrentSetting	      "0"
     }
     Block {
       BlockType		      Mux
@@ -2109,7 +2129,7 @@ Model {
       Ports		      [1, 3]
       Position		      [620, 328, 810, 462]
       ZOrder		      -35
-      LibraryVersion	      "1.40"
+      LibraryVersion	      "1.53"
       SourceBlock	      "CampusModeling/Buildings/E+ Building"
       SourceType	      "EnergyPlus Cosimulation"
       progname		      "'C:\\EnergyPlusV8-0-0\\RunEPlus.bat'"
@@ -2130,7 +2150,7 @@ Model {
       Ports		      [1, 3]
       Position		      [615, 659, 815, 791]
       ZOrder		      -36
-      LibraryVersion	      "1.40"
+      LibraryVersion	      "1.53"
       SourceBlock	      "CampusModeling/Buildings/E+ Building"
       SourceType	      "EnergyPlus Cosimulation"
       progname		      "'C:\\EnergyPlusV8-0-0\\RunEPlus.bat'"
@@ -2203,8 +2223,8 @@ Model {
       ZOrder		      -41
       BackgroundColor	      "orange"
       Floating		      off
-      Location		      [909, 200, 1762, 899]
-      Open		      off
+      Location		      [1601, 48, 3201, 1199]
+      Open		      on
       NumInputPorts	      "2"
       List {
 	ListType		AxesTitles
@@ -2223,8 +2243,8 @@ Model {
       }
       ShowLegends	      off
       TimeRange		      "3000000"
-      YMin		      "12~0"
-      YMax		      "29~425000"
+      YMin		      "5~0"
+      YMax		      "32.5~525000"
       DataFormat	      "StructureWithTime"
       LimitDataPoints	      off
       SampleTime	      "0"
@@ -2258,6 +2278,16 @@ Model {
       ZOrder		      -5
     }
     Block {
+      BlockType		      UnitDelay
+      Name		      "Unit Delay"
+      SID		      "80"
+      Position		      [830, 83, 865, 117]
+      ZOrder		      7
+      BlockMirror	      on
+      InputProcessing	      "Elements as channels (sample based)"
+      SampleTime	      "-1"
+    }
+    Block {
       BlockType		      SubSystem
       Name		      "isDay"
       SID		      "42"
@@ -2275,8 +2305,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"isDay"
-	Location		[325, 270, 875, 922]
-	Open			off
+	Location		[96, 20, 1787, 991]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -2417,7 +2447,7 @@ Model {
       SrcBlock		      "Hospital"
       SrcPort		      2
       Points		      [125, 0; 0, -130]
-      DstBlock		      "isDay"
+      DstBlock		      "Unit Delay"
       DstPort		      1
     }
     Line {
@@ -2724,6 +2754,12 @@ Model {
       SrcPort		      1
       DstBlock		      "Input4"
       DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Unit Delay"
+      SrcPort		      1
+      DstBlock		      "isDay"
+      DstPort		      1
     }
     Annotation {
       SID		      "68"

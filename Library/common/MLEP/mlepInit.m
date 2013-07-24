@@ -11,7 +11,8 @@
 
 global MLEPSETTINGS
 
-EplusDir = 'C:\EnergyPlusV8-0-0-mlep';
+% Set E+ Installation and Java Binaries Folders. 
+EplusDir = 'C:\EnergyPlusV8-0-0';
 JavaDir = 'C:\Program Files (x86)\Java\jre6\bin';
 
 % Get MLE+ Path Name

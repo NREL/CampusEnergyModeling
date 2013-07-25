@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.830"
+    ComputedModelVersion    "1.844"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -33,7 +33,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [1592.0, -8.0, 1616.0, 1216.0]
+      Location		      [8.0, 6.0, 1632.0, 1020.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -50,46 +50,16 @@ Model {
 	$ClassName		"Simulink.ExplorerBarInfo"
 	Visible			[1]
       }
-      Array {
-	Type			"Simulink.EditorInfo"
-	Dimension		4
-	Object {
-	  $ObjectID		  5
-	  IsActive		  [1]
-	  ViewObjType		  "SimulinkTopLevel"
-	  LoadSaveID		  "0"
-	  Extents		  [1566.0, 1039.0]
-	  ZoomFactor		  [1.5]
-	  Offset		  [87.9515006385733, 675.84166666666442]
-	}
-	Object {
-	  $ObjectID		  6
-	  IsActive		  [0]
-	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "2469"
-	  Extents		  [1566.0, 1039.0]
-	  ZoomFactor		  [1.0]
-	  Offset		  [0.0, 0.0]
-	}
-	Object {
-	  $ObjectID		  7
-	  IsActive		  [0]
-	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "2643"
-	  Extents		  [1566.0, 1039.0]
-	  ZoomFactor		  [1.25]
-	  Offset		  [-8.52030651340641, 249.39523809523814]
-	}
-	Object {
-	  $ObjectID		  8
-	  IsActive		  [0]
-	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "2476"
-	  Extents		  [1566.0, 1039.0]
-	  ZoomFactor		  [1.0]
-	  Offset		  [0.0, 0.0]
-	}
-	PropName		"EditorsInfo"
+      Object {
+	$PropName		"EditorsInfo"
+	$ObjectID		5
+	$ClassName		"Simulink.EditorInfo"
+	IsActive		[1]
+	ViewObjType		"SimulinkTopLevel"
+	LoadSaveID		"0"
+	Extents			[1582.0, 846.0]
+	ZoomFactor		[0.57524613220815757]
+	Offset			[187.43643031784853, -6.3374083129584342]
       }
     }
   }
@@ -100,11 +70,11 @@ Model {
   Creator		  "MathWorks"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "wbernal"
+  LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Jul 25 12:58:49 2013"
-  RTWModifiedTimeStamp	  296657927
-  ModelVersionFormat	  "1.%<AutoIncrement:830>"
+  LastModifiedDate	  "Thu Jul 25 14:52:08 2013"
+  RTWModifiedTimeStamp	  296664624
+  ModelVersionFormat	  "1.%<AutoIncrement:844>"
   ConfigurationManager	  "none"
   SampleTimeColors	  on
   SampleTimeAnnotations	  on
@@ -139,7 +109,7 @@ Model {
   TryForcingSFcnDF	  off
   Object {
     $PropName		    "DataLoggingOverride"
-    $ObjectID		    9
+    $ObjectID		    6
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "integrated_campus"
     Array {
@@ -197,18 +167,18 @@ Model {
     Type		    "Handle"
     Dimension		    1
     Simulink.ConfigSet {
-      $ObjectID		      10
+      $ObjectID		      7
       Version		      "1.13.0"
       Array {
 	Type			"Handle"
 	Dimension		9
 	Simulink.SolverCC {
-	  $ObjectID		  11
+	  $ObjectID		  8
 	  Version		  "1.13.0"
 	  StartTime		  "0.0"
 	  StopTime		  "24*3600"
 	  AbsTol		  "auto"
-	  FixedStep		  "1"
+	  FixedStep		  "5"
 	  InitialStep		  "auto"
 	  MaxNumMinSteps	  "-1"
 	  MaxOrder		  5
@@ -238,7 +208,7 @@ Model {
 	  InsertRTBMode		  "Whenever possible"
 	}
 	Simulink.DataIOCC {
-	  $ObjectID		  12
+	  $ObjectID		  9
 	  Version		  "1.13.0"
 	  Decimation		  "1"
 	  ExternalInput		  "[t, u]"
@@ -270,7 +240,7 @@ Model {
 	  Refine		  "1"
 	}
 	Simulink.OptimizationCC {
-	  $ObjectID		  13
+	  $ObjectID		  10
 	  Version		  "1.13.0"
 	  Array {
 	    Type		    "Cell"
@@ -322,7 +292,7 @@ Model {
 	  ParallelExecutionInRapidAccelerator on
 	}
 	Simulink.DebuggingCC {
-	  $ObjectID		  14
+	  $ObjectID		  11
 	  Version		  "1.13.0"
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
@@ -412,7 +382,7 @@ Model {
 	  SFTransitionActionBeforeConditionDiag	"warning"
 	}
 	Simulink.HardwareCC {
-	  $ObjectID		  15
+	  $ObjectID		  12
 	  Version		  "1.13.0"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
@@ -453,7 +423,7 @@ Model {
 	  ProdEqTarget		  on
 	}
 	Simulink.ModelReferenceCC {
-	  $ObjectID		  16
+	  $ObjectID		  13
 	  Version		  "1.13.0"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
 	  CheckModelReferenceTargetMessage "error"
@@ -468,7 +438,7 @@ Model {
 	  SupportModelReferenceSimTargetCustomCode off
 	}
 	Simulink.SFSimCC {
-	  $ObjectID		  17
+	  $ObjectID		  14
 	  Version		  "1.13.0"
 	  SFSimEnableDebug	  on
 	  SFSimOverflowDetection  on
@@ -483,7 +453,7 @@ Model {
 	}
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
-	  $ObjectID		  18
+	  $ObjectID		  15
 	  Version		  "1.13.0"
 	  Array {
 	    Type		    "Cell"
@@ -539,7 +509,7 @@ Model {
 	    Type		    "Handle"
 	    Dimension		    2
 	    Simulink.CodeAppCC {
-	      $ObjectID		      19
+	      $ObjectID		      16
 	      Version		      "1.13.0"
 	      Array {
 		Type			"Cell"
@@ -601,7 +571,7 @@ Model {
 	    }
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
-	      $ObjectID		      20
+	      $ObjectID		      17
 	      Version		      "1.13.0"
 	      Array {
 		Type			"Cell"
@@ -682,7 +652,7 @@ Model {
 	  }
 	}
 	SSC.SimscapeCC {
-	  $ObjectID		  21
+	  $ObjectID		  18
 	  Version		  "1.11.0"
 	  Array {
 	    Type		    "Cell"
@@ -705,17 +675,17 @@ Model {
       }
       Name		      "Configuration"
       CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition     [ 457, 40, 1463, 912 ] 
+      ConfigPrmDlgPosition     [ 449, 10, 1471, 920 ] 
     }
     PropName		    "ConfigurationSets"
   }
   Simulink.ConfigSet {
     $PropName		    "ActiveConfigurationSet"
-    $ObjectID		    10
+    $ObjectID		    7
   }
   Object {
     $PropName		    "DataTransfer"
-    $ObjectID		    22
+    $ObjectID		    19
     $ClassName		    "Simulink.GlobalDataTransfer"
     DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
     DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
@@ -800,16 +770,45 @@ Model {
       BusSelectionMode	      off
     }
     Block {
+      BlockType		      DiscretePulseGenerator
+      PulseType		      "Sample based"
+      TimeSource	      "Use simulation time"
+      Amplitude		      "1"
+      Period		      "2"
+      PulseWidth	      "1"
+      PhaseDelay	      "0"
+      SampleTime	      "1"
+      VectorParams1D	      on
+    }
+    Block {
       BlockType		      From
       GotoTag		      "A"
       IconDisplay	      "Tag"
       TagVisibility	      "local"
     }
     Block {
+      BlockType		      Gain
+      Gain		      "1"
+      Multiplication	      "Element-wise(K.*u)"
+      ParamMin		      "[]"
+      ParamMax		      "[]"
+      ParamDataTypeStr	      "Inherit: Same as input"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
       BlockType		      Goto
       GotoTag		      "A"
       IconDisplay	      "Tag"
       TagVisibility	      "local"
+    }
+    Block {
+      BlockType		      Ground
     }
     Block {
       BlockType		      Inport
@@ -837,21 +836,6 @@ Model {
       AllPortsSameDT	      on
       OutDataTypeStr	      "Inherit: Logical (see Configuration Parameters: Optimization)"
       SampleTime	      "-1"
-    }
-    Block {
-      BlockType		      Math
-      Operator		      "exp"
-      OutputSignalType	      "auto"
-      SampleTime	      "-1"
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: Same as first input"
-      LockScale		      off
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	on
-      IntermediateResultsDataTypeStr "Inherit: Inherit via internal rule"
-      AlgorithmType	      "Newton-Raphson"
-      Iterations	      "3"
     }
     Block {
       BlockType		      Memory
@@ -922,6 +906,21 @@ Model {
       SFunctionDeploymentMode off
     }
     Block {
+      BlockType		      Saturate
+      UpperLimitSource	      "Dialog"
+      UpperLimit	      "0.5"
+      LowerLimitSource	      "Dialog"
+      LowerLimit	      "-0.5"
+      LinearizeAsGain	      on
+      ZeroCross		      on
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as input"
+      LockScale		      off
+      RndMeth		      "Floor"
+    }
+    Block {
       BlockType		      Scope
       ModelBased	      off
       TickLabels	      "OneTimeTick"
@@ -945,21 +944,6 @@ Model {
       IndexMode		      "One-based"
       InputPortWidth	      "-1"
       SampleTime	      "-1"
-    }
-    Block {
-      BlockType		      Sqrt
-      Operator		      "sqrt"
-      OutputSignalType	      "auto"
-      SampleTime	      "-1"
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: Same as first input"
-      LockScale		      off
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	on
-      IntermediateResultsDataTypeStr "Inherit: Inherit via internal rule"
-      AlgorithmType	      "Exact"
-      Iterations	      "3"
     }
     Block {
       BlockType		      Stop
@@ -1018,22 +1002,17 @@ Model {
       NumInputs		      "1"
     }
     Block {
-      BlockType		      VariableTransportDelay
-      VariableDelayType	      "Variable time delay"
-      MaximumDelay	      "1"
-      InitialOutput	      "0"
-      MaximumPoints	      "1024"
-      FixedBuffer	      off
-      ZeroDelay		      off
-      TransDelayFeedthrough   off
-      PadeOrder		      "0"
+      BlockType		      TransferFcn
+      Numerator		      "[1]"
+      Denominator	      "[1 2 1]"
       AbsoluteTolerance	      "auto"
       ContinuousStateAttributes	"''"
+      Realization	      "auto"
     }
   }
   System {
     Name		    "integrated_campus"
-    Location		    [1592, -8, 3208, 1208]
+    Location		    [8, 6, 1640, 1026]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1045,9 +1024,18 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "150"
+    ZoomFactor		    "58"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "2724"
+    SIDHighWatermark	    "2885"
+    Block {
+      BlockType		      Goto
+      Name		      " Regulation\n(Target Correction)"
+      SID		      "2726"
+      Position		      [2605, 757, 2660, 783]
+      ZOrder		      605
+      BackgroundColor	      "orange"
+      GotoTag		      "Reg"
+    }
     Block {
       BlockType		      Reference
       Name		      "Building 1"
@@ -1055,7 +1043,8 @@ Model {
       Ports		      [1, 0, 0, 0, 0, 4]
       Position		      [1270, 612, 1310, 698]
       ZOrder		      144
-      LibraryVersion	      "1.58"
+      ForegroundColor	      "yellow"
+      LibraryVersion	      "1.69"
       SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "load"
@@ -1072,7 +1061,8 @@ Model {
       Ports		      [1, 0, 0, 0, 0, 4]
       Position		      [1670, 612, 1710, 698]
       ZOrder		      242
-      LibraryVersion	      "1.58"
+      ForegroundColor	      "yellow"
+      LibraryVersion	      "1.69"
       SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "load"
@@ -1081,6 +1071,46 @@ Model {
       VNom		      "208"
       fNom		      "60"
       VLow		      "0.7"
+    }
+    Block {
+      BlockType		      BusSelector
+      Name		      "Bus\nSelector"
+      SID		      "2855"
+      Ports		      [1, 5]
+      Position		      [670, 81, 675, 179]
+      ZOrder		      503
+      ShowName		      off
+      OutputSignals	      "DNI,DHI,DryBulbTemp,WindSpeed,RH"
+      Port {
+	PortNumber		1
+	Name			"<DNI>"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+      Port {
+	PortNumber		2
+	Name			"<DHI>"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+      Port {
+	PortNumber		3
+	Name			"<DryBulbTemp>"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+      Port {
+	PortNumber		4
+	Name			"<WindSpeed>"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+      Port {
+	PortNumber		5
+	Name			"<RH>"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
     }
     Block {
       BlockType		      SubSystem
@@ -1098,7 +1128,7 @@ Model {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		23
+	$ObjectID		20
 	$ClassName		"Simulink.Mask"
 	Type			"Short Cable"
 	Description		"This block implements a short cable using three phase mutual inductance.\nSelf impedances and mutual im"
@@ -1109,7 +1139,7 @@ Model {
 	  Type			  "Simulink.MaskParameter"
 	  Dimension		  5
 	  Object {
-	    $ObjectID		    24
+	    $ObjectID		    21
 	    Type		    "edit"
 	    Name		    "R1"
 	    Prompt		    "Positive Sequence R (ohms/1000ft)"
@@ -1117,7 +1147,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    25
+	    $ObjectID		    22
 	    Type		    "edit"
 	    Name		    "X1"
 	    Prompt		    "Positive Sequence XL (ohms/1000ft)"
@@ -1125,7 +1155,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    26
+	    $ObjectID		    23
 	    Type		    "edit"
 	    Name		    "R0"
 	    Prompt		    "Zero Sequence R (ohms/1000ft)"
@@ -1133,7 +1163,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    27
+	    $ObjectID		    24
 	    Type		    "edit"
 	    Name		    "X0"
 	    Prompt		    "Zero Sequence XL (ohms/1000ft)"
@@ -1141,7 +1171,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    28
+	    $ObjectID		    25
 	    Type		    "edit"
 	    Name		    "L"
 	    Prompt		    "Line Length (ft)"
@@ -1299,7 +1329,7 @@ Model {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		29
+	$ObjectID		26
 	$ClassName		"Simulink.Mask"
 	Type			"Short Cable"
 	Description		"This block implements a short cable using three phase mutual inductance.\nSelf impedances and mutual im"
@@ -1310,7 +1340,7 @@ Model {
 	  Type			  "Simulink.MaskParameter"
 	  Dimension		  5
 	  Object {
-	    $ObjectID		    30
+	    $ObjectID		    27
 	    Type		    "edit"
 	    Name		    "R1"
 	    Prompt		    "Positive Sequence R (ohms/1000ft)"
@@ -1318,7 +1348,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    31
+	    $ObjectID		    28
 	    Type		    "edit"
 	    Name		    "X1"
 	    Prompt		    "Positive Sequence XL (ohms/1000ft)"
@@ -1326,7 +1356,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    32
+	    $ObjectID		    29
 	    Type		    "edit"
 	    Name		    "R0"
 	    Prompt		    "Zero Sequence R (ohms/1000ft)"
@@ -1334,7 +1364,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    33
+	    $ObjectID		    30
 	    Type		    "edit"
 	    Name		    "X0"
 	    Prompt		    "Zero Sequence XL (ohms/1000ft)"
@@ -1342,7 +1372,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    34
+	    $ObjectID		    31
 	    Type		    "edit"
 	    Name		    "L"
 	    Prompt		    "Line Length (ft)"
@@ -1488,7 +1518,7 @@ Model {
       BlockType		      SubSystem
       Name		      "Campus Thermal Model"
       SID		      "2643"
-      Ports		      [2, 2]
+      Ports		      [2, 1]
       Position		      [1140, 1053, 1560, 1357]
       ZOrder		      399
       MinAlgLoopOccurrences   off
@@ -1500,16 +1530,16 @@ Model {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		35
+	$ObjectID		32
 	$ClassName		"Simulink.Mask"
-	Display			"image(imread('C:\\Users\\wbernal\\Documents\\CampusModeling\\Demo\\integrated_campus_demo\\campus.jpg'))\n"
-	"disp('Thermal Campus Model');\n\n% Inputs\nport_label('input', 1, 'Weather');\nport_label('input', 2, 'Input');\n\n% "
-	"Outputs\nport_label('output', 1, 'Outputs');\n%port_label('output', 2, 'time');\n%port_label('output', 3, 'real');\n"
+	Display			"image(imread('campus.jpg'));\ndisp('Thermal Campus Model');\n\n% Inputs\nport_label('input', 1, 'Weather')"
+	";\nport_label('input', 2, 'Input');\n\n% Outputs\nport_label('output', 1, 'Outputs');\n%port_label('output', 2, 'time"
+	"');\n%port_label('output', 3, 'real');\n"
       }
       System {
 	Name			"Campus Thermal Model"
-	Location		[1592, -8, 3208, 1208]
-	Open			on
+	Location		[8, 6, 1640, 1026]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1520,7 +1550,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"125"
+	ZoomFactor		"100"
 	Block {
 	  BlockType		  Inport
 	  Name			  "In1"
@@ -1533,7 +1563,7 @@ Model {
 	  BlockType		  Inport
 	  Name			  "In2"
 	  SID			  "2662"
-	  Position		  [565, 98, 595, 112]
+	  Position		  [660, 98, 690, 112]
 	  ZOrder		  464
 	  Port			  "2"
 	  IconDisplay		  "Port number"
@@ -1543,7 +1573,7 @@ Model {
 	  Name			  "Add"
 	  SID			  "2654"
 	  Ports			  [2, 1]
-	  Position		  [1235, 659, 1255, 706]
+	  Position		  [1215, 659, 1245, 706]
 	  ZOrder		  461
 	  InputSameDT		  off
 	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
@@ -1596,19 +1626,20 @@ Model {
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "E+ Building"
+	  Name			  "E+ Building 1"
 	  SID			  "2590"
 	  Ports			  [1, 3]
 	  Position		  [455, 534, 700, 716]
 	  ZOrder		  450
-	  LibraryVersion	  "1.58"
+	  ForegroundColor	  "blue"
+	  LibraryVersion	  "1.69"
 	  SourceBlock		  "CampusModeling/Buildings/E+ Building"
 	  SourceType		  "EnergyPlus Cosimulation"
-	  progname		  "'C:\\EnergyPlusV8-0-0\\RunEPlus.bat'"
+	  progname		  "'C:\\EnergyPlusV8-0-1\\RunEPlus.bat'"
 	  modelfile		  "[pwd '\\Building1\\5ZoneAirCool']"
 	  weatherfile		  "'USA_CO_Golden-NREL.724666_TMY3'"
 	  workdir		  "[pwd '\\Building1']"
-	  timeout		  "6000"
+	  timeout		  "15000"
 	  port			  "0"
 	  host			  "''"
 	  bcvtbdir		  "''"
@@ -1635,19 +1666,20 @@ Model {
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "E+ Building1"
+	  Name			  "E+ Building 2"
 	  SID			  "2591"
 	  Ports			  [1, 3]
 	  Position		  [460, 779, 705, 961]
 	  ZOrder		  451
-	  LibraryVersion	  "1.58"
+	  ForegroundColor	  "blue"
+	  LibraryVersion	  "1.69"
 	  SourceBlock		  "CampusModeling/Buildings/E+ Building"
 	  SourceType		  "EnergyPlus Cosimulation"
-	  progname		  "'C:\\EnergyPlusV8-0-0\\RunEPlus.bat'"
+	  progname		  "'C:\\EnergyPlusV8-0-1\\RunEPlus.bat'"
 	  modelfile		  "[pwd '\\Building2\\5ZoneAirCool']"
 	  weatherfile		  "'USA_CO_Golden-NREL.724666_TMY3'"
 	  workdir		  "[pwd '\\Building2']"
-	  timeout		  "6000"
+	  timeout		  "15000"
 	  port			  "0"
 	  host			  "''"
 	  bcvtbdir		  "''"
@@ -1679,14 +1711,15 @@ Model {
 	  Ports			  [1, 3]
 	  Position		  [435, 214, 710, 396]
 	  ZOrder		  452
-	  LibraryVersion	  "1.58"
+	  ForegroundColor	  "blue"
+	  LibraryVersion	  "1.69"
 	  SourceBlock		  "CampusModeling/Buildings/E+ Plant"
 	  SourceType		  "EnergyPlus Cosimulation"
-	  progname		  "'C:\\EnergyPlusV8-0-0\\RunEPlus.bat'"
+	  progname		  "'C:\\EnergyPlusV8-0-1\\RunEPlus.bat'"
 	  modelfile		  "[pwd '\\ElectricChiller\\ElectricChiller']"
 	  weatherfile		  "'USA_CO_Golden-NREL.724666_TMY3'"
 	  workdir		  "[pwd '\\ElectricChiller']"
-	  timeout		  "6000"
+	  timeout		  "15000"
 	  port			  "0"
 	  host			  "''"
 	  bcvtbdir		  "''"
@@ -1723,29 +1756,9 @@ Model {
 	}
 	Block {
 	  BlockType		  From
-	  Name			  "From1"
-	  SID			  "2681"
-	  Position		  [735, 95, 800, 115]
-	  ZOrder		  472
-	  BackgroundColor	  "lightBlue"
-	  ShowName		  off
-	  GotoTag		  "Inputs"
-	}
-	Block {
-	  BlockType		  From
-	  Name			  "From10"
-	  SID			  "2700"
-	  Position		  [245, 95, 310, 115]
-	  ZOrder		  487
-	  BackgroundColor	  "lightBlue"
-	  ShowName		  off
-	  GotoTag		  "Weather"
-	}
-	Block {
-	  BlockType		  From
 	  Name			  "From18"
 	  SID			  "2646"
-	  Position		  [1100, 620, 1165, 640]
+	  Position		  [1120, 620, 1185, 640]
 	  ZOrder		  454
 	  BackgroundColor	  "lightBlue"
 	  ShowName		  off
@@ -1755,7 +1768,7 @@ Model {
 	  BlockType		  From
 	  Name			  "From19"
 	  SID			  "2647"
-	  Position		  [1100, 660, 1165, 680]
+	  Position		  [1120, 660, 1185, 680]
 	  ZOrder		  455
 	  BackgroundColor	  "lightBlue"
 	  ShowName		  off
@@ -1781,7 +1794,7 @@ Model {
 	  BlockType		  From
 	  Name			  "From20"
 	  SID			  "2648"
-	  Position		  [1100, 685, 1165, 705]
+	  Position		  [1120, 685, 1185, 705]
 	  ZOrder		  456
 	  BackgroundColor	  "lightBlue"
 	  ShowName		  off
@@ -1913,7 +1926,7 @@ Model {
 	  BlockType		  From
 	  Name			  "From6"
 	  SID			  "2649"
-	  Position		  [1100, 565, 1165, 585]
+	  Position		  [1120, 565, 1185, 585]
 	  ZOrder		  457
 	  BackgroundColor	  "lightBlue"
 	  ShowName		  off
@@ -2203,15 +2216,6 @@ Model {
 	  GotoTag		  "MaxMassFlow1"
 	}
 	Block {
-	  BlockType		  Goto
-	  Name			  "Inputs"
-	  SID			  "2663"
-	  Position		  [660, 93, 720, 117]
-	  ZOrder		  465
-	  BackgroundColor	  "lightBlue"
-	  GotoTag		  "Inputs"
-	}
-	Block {
 	  BlockType		  Logic
 	  Name			  "Logical\nOperator"
 	  SID			  "2622"
@@ -2226,20 +2230,22 @@ Model {
 	Block {
 	  BlockType		  Memory
 	  Name			  "Memory"
-	  SID			  "2721"
-	  Position		  [140, 445, 170, 475]
-	  ZOrder		  500
+	  SID			  "2878"
+	  Position		  [135, 445, 165, 475]
+	  ZOrder		  501
 	  BlockMirror		  on
 	  NamePlacement		  "alternate"
+	  ShowName		  off
 	}
 	Block {
 	  BlockType		  Memory
 	  Name			  "Memory1"
-	  SID			  "2722"
-	  Position		  [205, 480, 235, 510]
-	  ZOrder		  501
+	  SID			  "2879"
+	  Position		  [210, 480, 240, 510]
+	  ZOrder		  502
 	  BlockMirror		  on
 	  NamePlacement		  "alternate"
+	  ShowName		  off
 	}
 	Block {
 	  BlockType		  Mux
@@ -2282,16 +2288,6 @@ Model {
 	  ZOrder		  405
 	  ShowName		  off
 	  Inputs		  "5"
-	  DisplayOption		  "bar"
-	}
-	Block {
-	  BlockType		  Mux
-	  Name			  "Mux2"
-	  SID			  "2716"
-	  Ports			  [4, 1]
-	  Position		  [1255, 740, 1260, 835]
-	  ZOrder		  498
-	  ShowName		  off
 	  DisplayOption		  "bar"
 	}
 	Block {
@@ -3335,7 +3331,7 @@ Model {
 	  Name			  "Sum of\nElements"
 	  SID			  "2679"
 	  Ports			  [1, 1]
-	  Position		  [1235, 567, 1255, 583]
+	  Position		  [1215, 567, 1235, 583]
 	  ZOrder		  470
 	  NamePlacement		  "alternate"
 	  Inputs		  "+"
@@ -3348,7 +3344,7 @@ Model {
 	  Name			  "Sum of\nElements1"
 	  SID			  "2680"
 	  Ports			  [1, 1]
-	  Position		  [1235, 622, 1255, 638]
+	  Position		  [1215, 622, 1235, 638]
 	  ZOrder		  471
 	  NamePlacement		  "alternate"
 	  Inputs		  "+"
@@ -3451,15 +3447,6 @@ Model {
 	}
 	Block {
 	  BlockType		  Goto
-	  Name			  "Weather Bus"
-	  SID			  "2661"
-	  Position		  [155, 96, 230, 114]
-	  ZOrder		  463
-	  BackgroundColor	  "lightBlue"
-	  GotoTag		  "Weather"
-	}
-	Block {
-	  BlockType		  Goto
 	  Name			  "Weather Bus1"
 	  SID			  "2704"
 	  Position		  [470, 96, 555, 114]
@@ -3475,15 +3462,6 @@ Model {
 	  ZOrder		  -2
 	  IconDisplay		  "Port number"
 	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "Out2"
-	  SID			  "2717"
-	  Position		  [1390, 783, 1420, 797]
-	  ZOrder		  499
-	  Port			  "2"
-	  IconDisplay		  "Port number"
-	}
 	Line {
 	  Name			  "flag"
 	  Labels		  [0, 0]
@@ -3494,7 +3472,7 @@ Model {
 	}
 	Line {
 	  Name			  "CW Setpoint"
-	  Labels		  [1, 0]
+	  Labels		  [1, 1]
 	  SrcBlock		  "From2"
 	  SrcPort		  1
 	  DstBlock		  "Mux"
@@ -3525,13 +3503,13 @@ Model {
 	Line {
 	  SrcBlock		  "Mux13"
 	  SrcPort		  1
-	  DstBlock		  "E+ Building"
+	  DstBlock		  "E+ Building 1"
 	  DstPort		  1
 	}
 	Line {
 	  Name			  "flag"
 	  Labels		  [0, 0]
-	  SrcBlock		  "E+ Building"
+	  SrcBlock		  "E+ Building 1"
 	  SrcPort		  1
 	  DstBlock		  "Goto1"
 	  DstPort		  1
@@ -3566,7 +3544,7 @@ Model {
 	Line {
 	  Name			  "time"
 	  Labels		  [0, 0]
-	  SrcBlock		  "E+ Building"
+	  SrcBlock		  "E+ Building 1"
 	  SrcPort		  2
 	  DstBlock		  "Terminator1"
 	  DstPort		  1
@@ -3590,7 +3568,7 @@ Model {
 	Line {
 	  Name			  "Outputs"
 	  Labels		  [0, 0]
-	  SrcBlock		  "E+ Building"
+	  SrcBlock		  "E+ Building 1"
 	  SrcPort		  3
 	  DstBlock		  "PrepOutputs1"
 	  DstPort		  1
@@ -3656,13 +3634,13 @@ Model {
 	Line {
 	  SrcBlock		  "Mux14"
 	  SrcPort		  1
-	  DstBlock		  "E+ Building1"
+	  DstBlock		  "E+ Building 2"
 	  DstPort		  1
 	}
 	Line {
 	  Name			  "flag"
 	  Labels		  [0, 0]
-	  SrcBlock		  "E+ Building1"
+	  SrcBlock		  "E+ Building 2"
 	  SrcPort		  1
 	  DstBlock		  "Goto11"
 	  DstPort		  1
@@ -3670,7 +3648,7 @@ Model {
 	Line {
 	  Name			  "time"
 	  Labels		  [0, 0]
-	  SrcBlock		  "E+ Building1"
+	  SrcBlock		  "E+ Building 2"
 	  SrcPort		  2
 	  DstBlock		  "Terminator3"
 	  DstPort		  1
@@ -3678,7 +3656,7 @@ Model {
 	Line {
 	  Name			  "Outputs"
 	  Labels		  [0, 0]
-	  SrcBlock		  "E+ Building1"
+	  SrcBlock		  "E+ Building 2"
 	  SrcPort		  3
 	  DstBlock		  "PrepOutputs4"
 	  DstPort		  1
@@ -3861,44 +3839,28 @@ Model {
 	Line {
 	  SrcBlock		  "Memory"
 	  SrcPort		  1
-	  Points		  [-30, 0]
+	  Points		  [-25, 0]
 	  DstBlock		  "PrepOutputs3"
 	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "Memory1"
 	  SrcPort		  1
-	  Points		  [-15, 0; 0, 130]
+	  Points		  [-33, 0; 0, 130]
 	  DstBlock		  "Selector"
 	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "From6"
 	  SrcPort		  1
-	  Points		  [44, 0]
-	  Branch {
-	    Points		    [0, 175]
-	    DstBlock		    "Mux2"
-	    DstPort		    1
-	  }
-	  Branch {
-	    DstBlock		    "Sum of\nElements"
-	    DstPort		    1
-	  }
+	  DstBlock		  "Sum of\nElements"
+	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "From18"
 	  SrcPort		  1
-	  Points		  [32, 0]
-	  Branch {
-	    Points		    [0, 145]
-	    DstBlock		    "Mux2"
-	    DstPort		    2
-	  }
-	  Branch {
-	    DstBlock		    "Sum of\nElements1"
-	    DstPort		    1
-	  }
+	  DstBlock		  "Sum of\nElements1"
+	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "Mux7"
@@ -3909,48 +3871,20 @@ Model {
 	Line {
 	  SrcBlock		  "From20"
 	  SrcPort		  1
-	  Points		  [10, 0]
-	  Branch {
-	    Points		    [0, 130]
-	    DstBlock		    "Mux2"
-	    DstPort		    4
-	  }
-	  Branch {
-	    DstBlock		    "Add"
-	    DstPort		    2
-	  }
+	  DstBlock		  "Add"
+	  DstPort		  2
 	}
 	Line {
 	  SrcBlock		  "From19"
 	  SrcPort		  1
-	  Points		  [21, 0]
-	  Branch {
-	    Points		    [0, 130]
-	    DstBlock		    "Mux2"
-	    DstPort		    3
-	  }
-	  Branch {
-	    DstBlock		    "Add"
-	    DstPort		    1
-	  }
+	  DstBlock		  "Add"
+	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "Add"
 	  SrcPort		  1
 	  DstBlock		  "Mux7"
 	  DstPort		  3
-	}
-	Line {
-	  SrcBlock		  "In1"
-	  SrcPort		  1
-	  DstBlock		  "Weather Bus"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "In2"
-	  SrcPort		  1
-	  DstBlock		  "Inputs"
-	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "Rate Transition"
@@ -3971,7 +3905,7 @@ Model {
 	  DstPort		  2
 	}
 	Line {
-	  SrcBlock		  "From1"
+	  SrcBlock		  "In2"
 	  SrcPort		  1
 	  DstBlock		  "Demux"
 	  DstPort		  1
@@ -4025,7 +3959,7 @@ Model {
 	  DstPort		  5
 	}
 	Line {
-	  SrcBlock		  "From10"
+	  SrcBlock		  "In1"
 	  SrcPort		  1
 	  DstBlock		  "Bus\nSelector"
 	  DstPort		  1
@@ -4062,12 +3996,6 @@ Model {
 	  DstBlock		  "Mux1"
 	  DstPort		  1
 	}
-	Line {
-	  SrcBlock		  "Mux2"
-	  SrcPort		  1
-	  DstBlock		  "Out2"
-	  DstPort		  1
-	}
 	Annotation {
 	  SID			  "2642"
 	  Position		  [930, 422]
@@ -4082,7 +4010,8 @@ Model {
       Ports		      [1, 0, 0, 0, 0, 4]
       Position		      [1270, 872, 1310, 958]
       ZOrder		      275
-      LibraryVersion	      "1.58"
+      ForegroundColor	      "yellow"
+      LibraryVersion	      "1.69"
       SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "load"
@@ -4099,7 +4028,8 @@ Model {
       Ports		      [1, 0, 0, 0, 0, 4]
       Position		      [2085, 612, 2125, 698]
       ZOrder		      163
-      LibraryVersion	      "1.58"
+      ForegroundColor	      "yellow"
+      LibraryVersion	      "1.69"
       SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "load"
@@ -4116,7 +4046,8 @@ Model {
       Ports		      [1, 0, 0, 0, 0, 4]
       Position		      [2085, 757, 2125, 843]
       ZOrder		      244
-      LibraryVersion	      "1.58"
+      ForegroundColor	      "yellow"
+      LibraryVersion	      "1.69"
       SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "load"
@@ -4133,7 +4064,8 @@ Model {
       Ports		      [1, 0, 0, 0, 0, 4]
       Position		      [2085, 902, 2125, 988]
       ZOrder		      245
-      LibraryVersion	      "1.58"
+      ForegroundColor	      "yellow"
+      LibraryVersion	      "1.69"
       SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "load"
@@ -4150,7 +4082,8 @@ Model {
       Ports		      [1, 0, 0, 0, 0, 4]
       Position		      [2085, 1032, 2125, 1118]
       ZOrder		      246
-      LibraryVersion	      "1.58"
+      ForegroundColor	      "yellow"
+      LibraryVersion	      "1.69"
       SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "load"
@@ -4167,7 +4100,8 @@ Model {
       Ports		      [1, 0, 0, 0, 0, 4]
       Position		      [2085, 1177, 2125, 1263]
       ZOrder		      247
-      LibraryVersion	      "1.58"
+      ForegroundColor	      "yellow"
+      LibraryVersion	      "1.69"
       SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "load"
@@ -4184,7 +4118,8 @@ Model {
       Ports		      [1, 0, 0, 0, 0, 4]
       Position		      [2085, 1322, 2125, 1408]
       ZOrder		      248
-      LibraryVersion	      "1.58"
+      ForegroundColor	      "yellow"
+      LibraryVersion	      "1.69"
       SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "load"
@@ -4195,36 +4130,12 @@ Model {
       VLow		      "0.7"
     }
     Block {
-      BlockType		      Constant
-      Name		      "Constant1"
-      SID		      "2669"
-      Position		      [1495, 597, 1525, 613]
-      ZOrder		      461
-      Value		      "5e3"
-    }
-    Block {
-      BlockType		      Constant
-      Name		      "Constant2"
-      SID		      "2672"
-      Position		      [1110, 852, 1140, 868]
-      ZOrder		      464
-      Value		      "5e3"
-    }
-    Block {
-      BlockType		      Constant
-      Name		      "Constant5"
-      SID		      "2666"
-      Position		      [1110, 592, 1140, 608]
-      ZOrder		      416
-      Value		      "5e3"
-    }
-    Block {
       BlockType		      SubSystem
       Name		      "Control Function"
-      SID		      "2691"
+      SID		      "2880"
       Ports		      [2, 1]
-      Position		      [625, 1079, 815, 1186]
-      ZOrder		      470
+      Position		      [600, 1074, 790, 1181]
+      ZOrder		      620
       LibraryVersion	      "1.32"
       ErrorFcn		      "Stateflow.Translate.translate"
       PermitHierarchicalResolution "ExplicitOnly"
@@ -4256,7 +4167,7 @@ Model {
 	Block {
 	  BlockType		  Inport
 	  Name			  "Campus_Outputs"
-	  SID			  "2691::22"
+	  SID			  "2880::22"
 	  Position		  [20, 101, 40, 119]
 	  ZOrder		  8
 	  IconDisplay		  "Port number"
@@ -4264,7 +4175,7 @@ Model {
 	Block {
 	  BlockType		  Inport
 	  Name			  "Weather"
-	  SID			  "2691::23"
+	  SID			  "2880::23"
 	  Position		  [20, 136, 40, 154]
 	  ZOrder		  9
 	  Port			  "2"
@@ -4273,7 +4184,7 @@ Model {
 	Block {
 	  BlockType		  Demux
 	  Name			  " Demux "
-	  SID			  "2691::19"
+	  SID			  "2880::19"
 	  Ports			  [1, 1]
 	  Position		  [270, 230, 320, 270]
 	  ZOrder		  5
@@ -4282,8 +4193,8 @@ Model {
 	Block {
 	  BlockType		  S-Function
 	  Name			  " SFunction "
-	  SID			  "2691::18"
-	  Tag			  "Stateflow S-Function integrated_campus 3"
+	  SID			  "2880::18"
+	  Tag			  "Stateflow S-Function integrated_campus 4"
 	  Ports			  [2, 2]
 	  Position		  [180, 100, 230, 160]
 	  ZOrder		  4
@@ -4300,14 +4211,14 @@ Model {
 	Block {
 	  BlockType		  Terminator
 	  Name			  " Terminator "
-	  SID			  "2691::20"
+	  SID			  "2880::20"
 	  Position		  [460, 241, 480, 259]
 	  ZOrder		  6
 	}
 	Block {
 	  BlockType		  Outport
 	  Name			  "Inputs"
-	  SID			  "2691::5"
+	  SID			  "2880::5"
 	  Position		  [460, 101, 480, 119]
 	  ZOrder		  -5
 	  IconDisplay		  "Port number"
@@ -4351,33 +4262,19 @@ Model {
       Name		      "Demux"
       SID		      "2655"
       Ports		      [1, 3]
-      Position		      [1610, 1083, 1615, 1177]
+      Position		      [1610, 1158, 1615, 1252]
       ZOrder		      409
       ShowName		      off
       Outputs		      "3"
       DisplayOption	      "bar"
     }
     Block {
-      BlockType		      Reference
-      Name		      "EV Charge\nProfile"
-      SID		      "2480"
-      Ports		      [0, 1]
-      Position		      [2260, 810, 2290, 840]
-      ZOrder		      324
-      LibraryVersion	      "1.274"
-      SourceBlock	      "simulink/Sources/Repeating\nSequence"
-      SourceType	      "Repeating table"
-      rep_seq_t		      "[0 6.9 7 9 10 11 12 13 14 15 24] * 3600"
-      rep_seq_y		      "[0 0 0.9 0.9 0.8 0.6 0.5 0.3 0.1 0 0] * 6.0e3"
-    }
-    Block {
       BlockType		      SubSystem
-      Name		      "EV Charger 1"
-      SID		      "2487"
-      Ports		      [1, 1]
-      Position		      [1980, 586, 2040, 614]
-      ZOrder		      331
-      NamePlacement	      "alternate"
+      Name		      "Electric Vehicles"
+      SID		      "2710"
+      Ports		      [2, 6]
+      Position		      [2385, 1084, 2600, 1311]
+      ZOrder		      471
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -4386,8 +4283,8 @@ Model {
       RequestExecContextInheritance off
       MaskHideContents	      off
       System {
-	Name			"EV Charger 1"
-	Location		[1592, -8, 3208, 1208]
+	Name			"Electric Vehicles"
+	Location		[8, 6, 1640, 1026]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -4402,1440 +4299,1654 @@ Model {
 	ZoomFactor		"100"
 	Block {
 	  BlockType		  Inport
-	  Name			  "Profile"
-	  SID			  "2488"
-	  Position		  [110, 103, 140, 117]
+	  Name			  "Reg"
+	  SID			  "2711"
+	  Position		  [50, 68, 80, 82]
 	  ZOrder		  -1
 	  IconDisplay		  "Port number"
-	  Port {
-	    PortNumber		    1
-	    Name		    "P"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
 	}
-	Block {
-	  BlockType		  Math
-	  Name			  "1/PF"
-	  SID			  "2498"
-	  Ports			  [1, 1]
-	  Position		  [180, 290, 210, 320]
-	  ZOrder		  13
-	  Operator		  "reciprocal"
-	}
-	Block {
-	  BlockType		  Sum
-	  Name			  "Add"
-	  SID			  "2495"
-	  Ports			  [2, 1]
-	  Position		  [355, 290, 385, 320]
-	  ZOrder		  6
-	  IconShape		  "round"
-	  Inputs		  "|+-"
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Mux
-	  Name			  "Mux"
-	  SID			  "2497"
-	  Ports			  [2, 1]
-	  Position		  [600, 253, 605, 317]
-	  ZOrder		  8
-	  ShowName		  off
-	  Inputs		  "2"
-	  DisplayOption		  "bar"
-	}
-	Block {
-	  BlockType		  Constant
-	  Name			  "One"
-	  SID			  "2494"
-	  Position		  [290, 355, 320, 385]
-	  ZOrder		  5
-	}
-	Block {
-	  BlockType		  Constant
-	  Name			  "PF"
-	  SID			  "2491"
-	  Position		  [110, 290, 140, 320]
-	  ZOrder		  11
-	  Value			  "0.95"
-	}
-	Block {
-	  BlockType		  Product
-	  Name			  "Product"
-	  SID			  "2496"
-	  Ports			  [2, 1]
-	  Position		  [510, 282, 540, 313]
-	  ZOrder		  7
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  RndMeth		  "Floor"
-	  SaturateOnIntegerOverflow off
-	  Port {
-	    PortNumber		    1
-	    Name		    "Q"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	}
-	Block {
-	  BlockType		  Constant
-	  Name			  "Random Delay\n(0-2 hr)"
-	  SID			  "2505"
-	  Position		  [160, 180, 190, 210]
-	  ZOrder		  334
-	  Value			  "2*3600*rand(1)"
-	}
-	Block {
-	  BlockType		  Sqrt
-	  Name			  "Sqrt"
-	  SID			  "2493"
-	  Position		  [430, 290, 460, 320]
-	  ZOrder		  4
-	}
-	Block {
-	  BlockType		  Math
-	  Name			  "Squared"
-	  SID			  "2492"
-	  Ports			  [1, 1]
-	  Position		  [260, 290, 290, 320]
-	  ZOrder		  12
-	  Operator		  "magnitude^2"
-	}
-	Block {
-	  BlockType		  VariableTransportDelay
-	  Name			  "Variable\nTime Delay"
-	  SID			  "2483"
-	  Ports			  [2, 1]
-	  Position		  [290, 102, 320, 133]
-	  ZOrder		  331
-	  VariableDelayType	  "Variable transport delay"
-	  MaximumDelay		  "6*3600"
-	  MaximumPoints		  "32768"
-	  ZeroDelay		  on
-	  Port {
-	    PortNumber		    1
-	    Name		    "P"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "PQ"
-	  SID			  "2489"
-	  Position		  [690, 278, 720, 292]
-	  ZOrder		  9
-	  IconDisplay		  "Port number"
-	}
-	Line {
-	  Name			  "P"
-	  Labels		  [2, 0]
-	  SrcBlock		  "Variable\nTime Delay"
-	  SrcPort		  1
-	  Points		  [154, 0; 0, 150]
-	  Branch {
-	    Points		    [0, 20]
-	    DstBlock		    "Product"
-	    DstPort		    1
-	  }
-	  Branch {
-	    DstBlock		    "Mux"
-	    DstPort		    1
-	  }
-	}
-	Line {
-	  SrcBlock		  "Add"
-	  SrcPort		  1
-	  DstBlock		  "Sqrt"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Sqrt"
-	  SrcPort		  1
-	  DstBlock		  "Product"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "Mux"
-	  SrcPort		  1
-	  DstBlock		  "PQ"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "Q"
-	  Labels		  [1, 1]
-	  SrcBlock		  "Product"
-	  SrcPort		  1
-	  DstBlock		  "Mux"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "PF"
-	  SrcPort		  1
-	  DstBlock		  "1/PF"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "1/PF"
-	  SrcPort		  1
-	  DstBlock		  "Squared"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "One"
-	  SrcPort		  1
-	  Points		  [45, 0]
-	  DstBlock		  "Add"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "Squared"
-	  SrcPort		  1
-	  DstBlock		  "Add"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "P"
-	  SrcBlock		  "Profile"
-	  SrcPort		  1
-	  DstBlock		  "Variable\nTime Delay"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Random Delay\n(0-2 hr)"
-	  SrcPort		  1
-	  Points		  [42, 0; 0, -70]
-	  DstBlock		  "Variable\nTime Delay"
-	  DstPort		  2
-	}
-      }
-    }
-    Block {
-      BlockType		      SubSystem
-      Name		      "EV Charger 2"
-      SID		      "2514"
-      Ports		      [1, 1]
-      Position		      [1975, 741, 2035, 769]
-      ZOrder		      334
-      NamePlacement	      "alternate"
-      MinAlgLoopOccurrences   off
-      PropExecContextOutsideSubsystem off
-      RTWSystemCode	      "Auto"
-      FunctionWithSeparateData off
-      Opaque		      off
-      RequestExecContextInheritance off
-      MaskHideContents	      off
-      System {
-	Name			"EV Charger 2"
-	Location		[-8, -8, 1928, 1048]
-	Open			off
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"usletter"
-	PaperUnits		"inches"
-	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"100"
 	Block {
 	  BlockType		  Inport
-	  Name			  "Profile"
-	  SID			  "2515"
-	  Position		  [110, 103, 140, 117]
-	  ZOrder		  -1
+	  Name			  "Enable"
+	  SID			  "2851"
+	  Position		  [50, 48, 80, 62]
+	  ZOrder		  600
+	  NamePlacement		  "alternate"
+	  Port			  "2"
 	  IconDisplay		  "Port number"
-	  Port {
-	    PortNumber		    1
-	    Name		    "P"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
 	}
 	Block {
-	  BlockType		  Math
-	  Name			  "1/PF"
-	  SID			  "2516"
+	  BlockType		  Reference
+	  Name			  "Compare\nTo Zero"
+	  SID			  "2775"
 	  Ports			  [1, 1]
-	  Position		  [180, 290, 210, 320]
-	  ZOrder		  13
-	  Operator		  "reciprocal"
-	}
-	Block {
-	  BlockType		  Sum
-	  Name			  "Add"
-	  SID			  "2517"
-	  Ports			  [2, 1]
-	  Position		  [355, 290, 385, 320]
-	  ZOrder		  6
-	  IconShape		  "round"
-	  Inputs		  "|+-"
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Mux
-	  Name			  "Mux"
-	  SID			  "2518"
-	  Ports			  [2, 1]
-	  Position		  [600, 253, 605, 317]
-	  ZOrder		  8
+	  Position		  [120, 235, 150, 265]
+	  ZOrder		  532
+	  NamePlacement		  "alternate"
 	  ShowName		  off
-	  Inputs		  "2"
-	  DisplayOption		  "bar"
+	  LibraryVersion	  "1.274"
+	  SourceBlock		  "simulink/Logic and Bit\nOperations/Compare\nTo Zero"
+	  SourceType		  "Compare To Zero"
+	  relop			  "=="
+	  OutDataTypeStr	  "boolean"
+	  ZeroCross		  on
 	}
 	Block {
-	  BlockType		  Constant
-	  Name			  "One"
-	  SID			  "2519"
-	  Position		  [290, 355, 320, 385]
-	  ZOrder		  5
+	  BlockType		  Reference
+	  Name			  "Compare\nTo Zero1"
+	  SID			  "2776"
+	  Ports			  [1, 1]
+	  Position		  [120, 280, 150, 310]
+	  ZOrder		  534
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  LibraryVersion	  "1.274"
+	  SourceBlock		  "simulink/Logic and Bit\nOperations/Compare\nTo Zero"
+	  SourceType		  "Compare To Zero"
+	  relop			  "=="
+	  OutDataTypeStr	  "boolean"
+	  ZeroCross		  on
 	}
 	Block {
-	  BlockType		  Constant
-	  Name			  "PF"
-	  SID			  "2520"
-	  Position		  [110, 290, 140, 320]
-	  ZOrder		  11
-	  Value			  "0.95"
+	  BlockType		  Reference
+	  Name			  "Compare\nTo Zero2"
+	  SID			  "2778"
+	  Ports			  [1, 1]
+	  Position		  [120, 325, 150, 355]
+	  ZOrder		  536
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  LibraryVersion	  "1.274"
+	  SourceBlock		  "simulink/Logic and Bit\nOperations/Compare\nTo Zero"
+	  SourceType		  "Compare To Zero"
+	  relop			  "=="
+	  OutDataTypeStr	  "boolean"
+	  ZeroCross		  on
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Compare\nTo Zero3"
+	  SID			  "2780"
+	  Ports			  [1, 1]
+	  Position		  [120, 370, 150, 400]
+	  ZOrder		  538
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  LibraryVersion	  "1.274"
+	  SourceBlock		  "simulink/Logic and Bit\nOperations/Compare\nTo Zero"
+	  SourceType		  "Compare To Zero"
+	  relop			  "=="
+	  OutDataTypeStr	  "boolean"
+	  ZeroCross		  on
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Compare\nTo Zero4"
+	  SID			  "2782"
+	  Ports			  [1, 1]
+	  Position		  [120, 415, 150, 445]
+	  ZOrder		  540
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  LibraryVersion	  "1.274"
+	  SourceBlock		  "simulink/Logic and Bit\nOperations/Compare\nTo Zero"
+	  SourceType		  "Compare To Zero"
+	  relop			  "=="
+	  OutDataTypeStr	  "boolean"
+	  ZeroCross		  on
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Compare\nTo Zero5"
+	  SID			  "2784"
+	  Ports			  [1, 1]
+	  Position		  [120, 460, 150, 490]
+	  ZOrder		  542
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  LibraryVersion	  "1.274"
+	  SourceBlock		  "simulink/Logic and Bit\nOperations/Compare\nTo Zero"
+	  SourceType		  "Compare To Zero"
+	  relop			  "=="
+	  OutDataTypeStr	  "boolean"
+	  ZeroCross		  on
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Compare\nTo Zero6"
+	  SID			  "2853"
+	  Ports			  [1, 1]
+	  Position		  [195, 40, 225, 70]
+	  ZOrder		  601
+	  ShowName		  off
+	  LibraryVersion	  "1.274"
+	  SourceBlock		  "simulink/Logic and Bit\nOperations/Compare\nTo Zero"
+	  SourceType		  "Compare To Zero"
+	  relop			  "~="
+	  OutDataTypeStr	  "boolean"
+	  ZeroCross		  on
+	}
+	Block {
+	  BlockType		  Scope
+	  Name			  "Control"
+	  SID			  "2844"
+	  Ports			  [1]
+	  Position		  [505, 109, 535, 141]
+	  ZOrder		  591
+	  ForegroundColor	  "[0.901961, 0.000000, 0.000000]"
+	  BackgroundColor	  "[0.501961, 0.501961, 0.501961]"
+	  Floating		  off
+	  Location		  [188, 390, 512, 629]
+	  Open			  off
+	  NumInputPorts		  "1"
+	  ZoomMode		  "xonly"
+	  List {
+	    ListType		    AxesTitles
+	    axes1		    "%<SignalLabel>"
+	  }
+	  List {
+	    ListType		    ScopeGraphics
+	    FigureColor		    "[0.5 0.5 0.5]"
+	    AxesColor		    "[0 0 0]"
+	    AxesTickColor	    "[1 1 1]"
+	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	    LineStyles		    "-|-|-|-|-|-"
+	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
+	    MarkerStyles	    "none|none|none|none|none|none"
+	  }
+	  ShowLegends		  off
+	  TimeRange		  "100000"
+	  YMin			  "-12187.5"
+	  YMax			  "12187.5"
+	  SaveName		  "ScopeData5"
+	  DataFormat		  "StructureWithTime"
+	  LimitDataPoints	  off
+	  SampleTime		  "0"
 	}
 	Block {
 	  BlockType		  Product
-	  Name			  "Product"
-	  SID			  "2521"
-	  Ports			  [2, 1]
-	  Position		  [510, 282, 540, 313]
-	  ZOrder		  7
+	  Name			  "Divide"
+	  SID			  "2786"
+	  Ports			  [3, 1]
+	  Position		  [330, 41, 360, 109]
+	  ZOrder		  543
+	  ShowName		  off
+	  Inputs		  "**/"
 	  InputSameDT		  off
 	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
 	  RndMeth		  "Floor"
 	  SaturateOnIntegerOverflow off
-	  Port {
-	    PortNumber		    1
-	    Name		    "Q"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
 	}
 	Block {
-	  BlockType		  Constant
-	  Name			  "Random Delay\n(0-2 hr)"
-	  SID			  "2522"
-	  Position		  [160, 180, 190, 210]
-	  ZOrder		  334
-	  Value			  "2*3600*rand(1)"
+	  BlockType		  Reference
+	  Name			  "EV Battery 1"
+	  SID			  "2756"
+	  Ports			  [2, 2]
+	  Position		  [905, 83, 985, 167]
+	  ZOrder		  515
+	  ForegroundColor	  "yellow"
+	  LibraryVersion	  "1.69"
+	  SourceBlock		  "CampusModeling/Electrical/EV Battery"
+	  SourceType		  "Electric Vehicle Battery"
+	  capacity		  "24000"
+	  initSOC		  "0.3"
 	}
 	Block {
-	  BlockType		  Sqrt
-	  Name			  "Sqrt"
-	  SID			  "2523"
-	  Position		  [430, 290, 460, 320]
-	  ZOrder		  4
+	  BlockType		  Reference
+	  Name			  "EV Battery 2"
+	  SID			  "2794"
+	  Ports			  [2, 2]
+	  Position		  [905, 218, 985, 302]
+	  ZOrder		  549
+	  ForegroundColor	  "yellow"
+	  LibraryVersion	  "1.69"
+	  SourceBlock		  "CampusModeling/Electrical/EV Battery"
+	  SourceType		  "Electric Vehicle Battery"
+	  capacity		  "24000"
+	  initSOC		  "0.3"
 	}
 	Block {
-	  BlockType		  Math
-	  Name			  "Squared"
-	  SID			  "2524"
-	  Ports			  [1, 1]
-	  Position		  [260, 290, 290, 320]
-	  ZOrder		  12
-	  Operator		  "magnitude^2"
+	  BlockType		  Reference
+	  Name			  "EV Battery 3"
+	  SID			  "2802"
+	  Ports			  [2, 2]
+	  Position		  [905, 353, 985, 437]
+	  ZOrder		  557
+	  ForegroundColor	  "yellow"
+	  LibraryVersion	  "1.69"
+	  SourceBlock		  "CampusModeling/Electrical/EV Battery"
+	  SourceType		  "Electric Vehicle Battery"
+	  capacity		  "24000"
+	  initSOC		  "0.3"
 	}
 	Block {
-	  BlockType		  VariableTransportDelay
-	  Name			  "Variable\nTime Delay"
-	  SID			  "2525"
-	  Ports			  [2, 1]
-	  Position		  [290, 102, 320, 133]
-	  ZOrder		  331
-	  VariableDelayType	  "Variable transport delay"
-	  MaximumDelay		  "6*3600"
-	  MaximumPoints		  "32768"
-	  ZeroDelay		  on
-	  Port {
-	    PortNumber		    1
-	    Name		    "P"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
+	  BlockType		  Reference
+	  Name			  "EV Battery 4"
+	  SID			  "2810"
+	  Ports			  [2, 2]
+	  Position		  [905, 488, 985, 572]
+	  ZOrder		  565
+	  ForegroundColor	  "yellow"
+	  LibraryVersion	  "1.69"
+	  SourceBlock		  "CampusModeling/Electrical/EV Battery"
+	  SourceType		  "Electric Vehicle Battery"
+	  capacity		  "24000"
+	  initSOC		  "0.3"
 	}
 	Block {
-	  BlockType		  Outport
-	  Name			  "PQ"
-	  SID			  "2526"
-	  Position		  [690, 278, 720, 292]
-	  ZOrder		  9
-	  IconDisplay		  "Port number"
-	}
-	Line {
-	  Name			  "P"
-	  Labels		  [2, 0]
-	  SrcBlock		  "Variable\nTime Delay"
-	  SrcPort		  1
-	  Points		  [154, 0; 0, 150]
-	  Branch {
-	    Points		    [0, 20]
-	    DstBlock		    "Product"
-	    DstPort		    1
-	  }
-	  Branch {
-	    DstBlock		    "Mux"
-	    DstPort		    1
-	  }
-	}
-	Line {
-	  SrcBlock		  "Add"
-	  SrcPort		  1
-	  DstBlock		  "Sqrt"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Sqrt"
-	  SrcPort		  1
-	  DstBlock		  "Product"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "Mux"
-	  SrcPort		  1
-	  DstBlock		  "PQ"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "Q"
-	  Labels		  [1, 1]
-	  SrcBlock		  "Product"
-	  SrcPort		  1
-	  DstBlock		  "Mux"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "PF"
-	  SrcPort		  1
-	  DstBlock		  "1/PF"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "1/PF"
-	  SrcPort		  1
-	  DstBlock		  "Squared"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "One"
-	  SrcPort		  1
-	  Points		  [45, 0]
-	  DstBlock		  "Add"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "Squared"
-	  SrcPort		  1
-	  DstBlock		  "Add"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "P"
-	  SrcBlock		  "Profile"
-	  SrcPort		  1
-	  DstBlock		  "Variable\nTime Delay"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Random Delay\n(0-2 hr)"
-	  SrcPort		  1
-	  Points		  [42, 0; 0, -70]
-	  DstBlock		  "Variable\nTime Delay"
-	  DstPort		  2
-	}
-      }
-    }
-    Block {
-      BlockType		      SubSystem
-      Name		      "EV Charger 3"
-      SID		      "2528"
-      Ports		      [1, 1]
-      Position		      [1975, 886, 2035, 914]
-      ZOrder		      336
-      NamePlacement	      "alternate"
-      MinAlgLoopOccurrences   off
-      PropExecContextOutsideSubsystem off
-      RTWSystemCode	      "Auto"
-      FunctionWithSeparateData off
-      Opaque		      off
-      RequestExecContextInheritance off
-      MaskHideContents	      off
-      System {
-	Name			"EV Charger 3"
-	Location		[-8, -8, 1928, 1048]
-	Open			off
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"usletter"
-	PaperUnits		"inches"
-	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"100"
-	Block {
-	  BlockType		  Inport
-	  Name			  "Profile"
-	  SID			  "2529"
-	  Position		  [110, 103, 140, 117]
-	  ZOrder		  -1
-	  IconDisplay		  "Port number"
-	  Port {
-	    PortNumber		    1
-	    Name		    "P"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
+	  BlockType		  Reference
+	  Name			  "EV Battery 5"
+	  SID			  "2818"
+	  Ports			  [2, 2]
+	  Position		  [905, 623, 985, 707]
+	  ZOrder		  573
+	  ForegroundColor	  "yellow"
+	  LibraryVersion	  "1.69"
+	  SourceBlock		  "CampusModeling/Electrical/EV Battery"
+	  SourceType		  "Electric Vehicle Battery"
+	  capacity		  "24000"
+	  initSOC		  "0.3"
 	}
 	Block {
-	  BlockType		  Math
-	  Name			  "1/PF"
-	  SID			  "2530"
-	  Ports			  [1, 1]
-	  Position		  [180, 290, 210, 320]
-	  ZOrder		  13
-	  Operator		  "reciprocal"
+	  BlockType		  Reference
+	  Name			  "EV Battery 6"
+	  SID			  "2826"
+	  Ports			  [2, 2]
+	  Position		  [905, 758, 985, 842]
+	  ZOrder		  581
+	  ForegroundColor	  "yellow"
+	  LibraryVersion	  "1.69"
+	  SourceBlock		  "CampusModeling/Electrical/EV Battery"
+	  SourceType		  "Electric Vehicle Battery"
+	  capacity		  "24000"
+	  initSOC		  "0.3"
 	}
 	Block {
-	  BlockType		  Sum
-	  Name			  "Add"
-	  SID			  "2531"
-	  Ports			  [2, 1]
-	  Position		  [355, 290, 385, 320]
-	  ZOrder		  6
-	  IconShape		  "round"
-	  Inputs		  "|+-"
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
+	  BlockType		  Reference
+	  Name			  "EV Charger 1"
+	  SID			  "2757"
+	  Ports			  [3, 1]
+	  Position		  [705, 62, 785, 148]
+	  ZOrder		  514
+	  ForegroundColor	  "yellow"
+	  LibraryVersion	  "1.69"
+	  SourceBlock		  "CampusModeling/Electrical/EV Charger"
+	  SourceType		  "Electric Vehicle Charging Station"
+	  rating		  "6240"
+	  capacity		  "24000"
+	  maxresponse		  "2000"
+	  ramp			  "5000"
 	}
 	Block {
-	  BlockType		  Mux
-	  Name			  "Mux"
-	  SID			  "2532"
-	  Ports			  [2, 1]
-	  Position		  [600, 253, 605, 317]
-	  ZOrder		  8
+	  BlockType		  Reference
+	  Name			  "EV Charger 2"
+	  SID			  "2795"
+	  Ports			  [3, 1]
+	  Position		  [705, 197, 785, 283]
+	  ZOrder		  548
+	  ForegroundColor	  "yellow"
+	  LibraryVersion	  "1.69"
+	  SourceBlock		  "CampusModeling/Electrical/EV Charger"
+	  SourceType		  "Electric Vehicle Charging Station"
+	  rating		  "6240"
+	  capacity		  "24000"
+	  maxresponse		  "2000"
+	  ramp			  "5000"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "EV Charger 3"
+	  SID			  "2803"
+	  Ports			  [3, 1]
+	  Position		  [705, 332, 785, 418]
+	  ZOrder		  556
+	  ForegroundColor	  "yellow"
+	  LibraryVersion	  "1.69"
+	  SourceBlock		  "CampusModeling/Electrical/EV Charger"
+	  SourceType		  "Electric Vehicle Charging Station"
+	  rating		  "6240"
+	  capacity		  "24000"
+	  maxresponse		  "2000"
+	  ramp			  "5000"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "EV Charger 4"
+	  SID			  "2811"
+	  Ports			  [3, 1]
+	  Position		  [705, 467, 785, 553]
+	  ZOrder		  564
+	  ForegroundColor	  "yellow"
+	  LibraryVersion	  "1.69"
+	  SourceBlock		  "CampusModeling/Electrical/EV Charger"
+	  SourceType		  "Electric Vehicle Charging Station"
+	  rating		  "6240"
+	  capacity		  "24000"
+	  maxresponse		  "2000"
+	  ramp			  "5000"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "EV Charger 5"
+	  SID			  "2819"
+	  Ports			  [3, 1]
+	  Position		  [705, 602, 785, 688]
+	  ZOrder		  572
+	  ForegroundColor	  "yellow"
+	  LibraryVersion	  "1.69"
+	  SourceBlock		  "CampusModeling/Electrical/EV Charger"
+	  SourceType		  "Electric Vehicle Charging Station"
+	  rating		  "6240"
+	  capacity		  "24000"
+	  maxresponse		  "2000"
+	  ramp			  "5000"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "EV Charger 6"
+	  SID			  "2827"
+	  Ports			  [3, 1]
+	  Position		  [705, 737, 785, 823]
+	  ZOrder		  580
+	  ForegroundColor	  "yellow"
+	  LibraryVersion	  "1.69"
+	  SourceBlock		  "CampusModeling/Electrical/EV Charger"
+	  SourceType		  "Electric Vehicle Charging Station"
+	  rating		  "6240"
+	  capacity		  "24000"
+	  maxresponse		  "2000"
+	  ramp			  "5000"
+	}
+	Block {
+	  BlockType		  DiscretePulseGenerator
+	  Name			  "EV Schedule 1"
+	  SID			  "2771"
+	  Ports			  [0, 1]
+	  Position		  [810, 126, 875, 164]
+	  ZOrder		  528
+	  Period		  "24*3600/5"
+	  PulseWidth		  "round((8 + 1*rand(1))*3600/5)"
+	  PhaseDelay		  "round((7 + 2*rand(1))*3600/5)"
+	  SampleTime		  "5"
+	}
+	Block {
+	  BlockType		  DiscretePulseGenerator
+	  Name			  "EV Schedule 2"
+	  SID			  "2846"
+	  Ports			  [0, 1]
+	  Position		  [810, 261, 875, 299]
+	  ZOrder		  593
+	  Period		  "24*3600/5"
+	  PulseWidth		  "round((8 + 1*rand(1))*3600/5)"
+	  PhaseDelay		  "round((7 + 2*rand(1))*3600/5)"
+	  SampleTime		  "5"
+	}
+	Block {
+	  BlockType		  DiscretePulseGenerator
+	  Name			  "EV Schedule 3"
+	  SID			  "2847"
+	  Ports			  [0, 1]
+	  Position		  [810, 396, 875, 434]
+	  ZOrder		  594
+	  Period		  "24*3600/5"
+	  PulseWidth		  "round((8 + 1*rand(1))*3600/5)"
+	  PhaseDelay		  "round((7 + 2*rand(1))*3600/5)"
+	  SampleTime		  "5"
+	}
+	Block {
+	  BlockType		  DiscretePulseGenerator
+	  Name			  "EV Schedule 4"
+	  SID			  "2848"
+	  Ports			  [0, 1]
+	  Position		  [810, 531, 875, 569]
+	  ZOrder		  595
+	  Period		  "24*3600/5"
+	  PulseWidth		  "round((8 + 1*rand(1))*3600/5)"
+	  PhaseDelay		  "round((7 + 2*rand(1))*3600/5)"
+	  SampleTime		  "5"
+	}
+	Block {
+	  BlockType		  DiscretePulseGenerator
+	  Name			  "EV Schedule 5"
+	  SID			  "2849"
+	  Ports			  [0, 1]
+	  Position		  [810, 666, 875, 704]
+	  ZOrder		  596
+	  Period		  "24*3600/5"
+	  PulseWidth		  "round((8 + 1*rand(1))*3600/5)"
+	  PhaseDelay		  "round((7 + 2*rand(1))*3600/5)"
+	  SampleTime		  "5"
+	}
+	Block {
+	  BlockType		  DiscretePulseGenerator
+	  Name			  "EV Schedule 6"
+	  SID			  "2850"
+	  Ports			  [0, 1]
+	  Position		  [810, 801, 875, 839]
+	  ZOrder		  597
+	  Period		  "24*3600/5"
+	  PulseWidth		  "round((8 + 1*rand(1))*3600/5)"
+	  PhaseDelay		  "round((7 + 2*rand(1))*3600/5)"
+	  SampleTime		  "5"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From1"
+	  SID			  "2751"
+	  Position		  [1170, 228, 1210, 252]
+	  ZOrder		  508
+	  BackgroundColor	  "orange"
 	  ShowName		  off
-	  Inputs		  "2"
-	  DisplayOption		  "bar"
+	  GotoTag		  "PF"
 	}
 	Block {
-	  BlockType		  Constant
-	  Name			  "One"
-	  SID			  "2533"
-	  Position		  [290, 355, 320, 385]
-	  ZOrder		  5
+	  BlockType		  From
+	  Name			  "From10"
+	  SID			  "2779"
+	  Position		  [30, 328, 90, 352]
+	  ZOrder		  535
+	  BackgroundColor	  "orange"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  GotoTag		  "STATUS3"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From11"
+	  SID			  "2781"
+	  Position		  [30, 373, 90, 397]
+	  ZOrder		  537
+	  BackgroundColor	  "orange"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  GotoTag		  "STATUS4"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From12"
+	  SID			  "2783"
+	  Position		  [30, 418, 90, 442]
+	  ZOrder		  539
+	  BackgroundColor	  "orange"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  GotoTag		  "STATUS5"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From13"
+	  SID			  "2785"
+	  Position		  [30, 463, 90, 487]
+	  ZOrder		  541
+	  BackgroundColor	  "orange"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  GotoTag		  "STATUS6"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From14"
+	  SID			  "2791"
+	  Position		  [610, 63, 670, 87]
+	  ZOrder		  547
+	  BackgroundColor	  "orange"
+	  ShowName		  off
+	  GotoTag		  "CONTROL"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From15"
+	  SID			  "2796"
+	  Position		  [610, 198, 670, 222]
+	  ZOrder		  555
+	  BackgroundColor	  "orange"
+	  ShowName		  off
+	  GotoTag		  "CONTROL"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From16"
+	  SID			  "2797"
+	  Position		  [610, 228, 670, 252]
+	  ZOrder		  552
+	  BackgroundColor	  "orange"
+	  ShowName		  off
+	  GotoTag		  "SOC2"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From17"
+	  SID			  "2798"
+	  Position		  [610, 258, 670, 282]
+	  ZOrder		  553
+	  BackgroundColor	  "orange"
+	  ShowName		  off
+	  GotoTag		  "STATUS2"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From18"
+	  SID			  "2804"
+	  Position		  [610, 333, 670, 357]
+	  ZOrder		  563
+	  BackgroundColor	  "orange"
+	  ShowName		  off
+	  GotoTag		  "CONTROL"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From19"
+	  SID			  "2805"
+	  Position		  [610, 363, 670, 387]
+	  ZOrder		  560
+	  BackgroundColor	  "orange"
+	  ShowName		  off
+	  GotoTag		  "SOC3"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From2"
+	  SID			  "2752"
+	  Position		  [1170, 363, 1210, 387]
+	  ZOrder		  509
+	  BackgroundColor	  "orange"
+	  ShowName		  off
+	  GotoTag		  "PF"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From20"
+	  SID			  "2806"
+	  Position		  [610, 393, 670, 417]
+	  ZOrder		  561
+	  BackgroundColor	  "orange"
+	  ShowName		  off
+	  GotoTag		  "STATUS3"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From21"
+	  SID			  "2812"
+	  Position		  [610, 468, 670, 492]
+	  ZOrder		  571
+	  BackgroundColor	  "orange"
+	  ShowName		  off
+	  GotoTag		  "CONTROL"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From22"
+	  SID			  "2813"
+	  Position		  [610, 498, 670, 522]
+	  ZOrder		  568
+	  BackgroundColor	  "orange"
+	  ShowName		  off
+	  GotoTag		  "SOC4"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From23"
+	  SID			  "2750"
+	  Position		  [1170, 93, 1210, 117]
+	  ZOrder		  507
+	  BackgroundColor	  "orange"
+	  ShowName		  off
+	  GotoTag		  "PF"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From24"
+	  SID			  "2814"
+	  Position		  [610, 528, 670, 552]
+	  ZOrder		  569
+	  BackgroundColor	  "orange"
+	  ShowName		  off
+	  GotoTag		  "STATUS4"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From25"
+	  SID			  "2820"
+	  Position		  [610, 603, 670, 627]
+	  ZOrder		  579
+	  BackgroundColor	  "orange"
+	  ShowName		  off
+	  GotoTag		  "CONTROL"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From26"
+	  SID			  "2821"
+	  Position		  [610, 633, 670, 657]
+	  ZOrder		  576
+	  BackgroundColor	  "orange"
+	  ShowName		  off
+	  GotoTag		  "SOC5"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From27"
+	  SID			  "2822"
+	  Position		  [610, 663, 670, 687]
+	  ZOrder		  577
+	  BackgroundColor	  "orange"
+	  ShowName		  off
+	  GotoTag		  "STATUS5"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From28"
+	  SID			  "2828"
+	  Position		  [610, 738, 670, 762]
+	  ZOrder		  587
+	  BackgroundColor	  "orange"
+	  ShowName		  off
+	  GotoTag		  "CONTROL"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From29"
+	  SID			  "2829"
+	  Position		  [610, 768, 670, 792]
+	  ZOrder		  584
+	  BackgroundColor	  "orange"
+	  ShowName		  off
+	  GotoTag		  "SOC6"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From3"
+	  SID			  "2753"
+	  Position		  [1170, 498, 1210, 522]
+	  ZOrder		  510
+	  BackgroundColor	  "orange"
+	  ShowName		  off
+	  GotoTag		  "PF"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From30"
+	  SID			  "2830"
+	  Position		  [610, 798, 670, 822]
+	  ZOrder		  585
+	  BackgroundColor	  "orange"
+	  ShowName		  off
+	  GotoTag		  "STATUS6"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From4"
+	  SID			  "2754"
+	  Position		  [1170, 633, 1210, 657]
+	  ZOrder		  511
+	  BackgroundColor	  "orange"
+	  ShowName		  off
+	  GotoTag		  "PF"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From5"
+	  SID			  "2755"
+	  Position		  [1170, 768, 1210, 792]
+	  ZOrder		  512
+	  BackgroundColor	  "orange"
+	  ShowName		  off
+	  GotoTag		  "PF"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From6"
+	  SID			  "2762"
+	  Position		  [610, 93, 670, 117]
+	  ZOrder		  519
+	  BackgroundColor	  "orange"
+	  ShowName		  off
+	  GotoTag		  "SOC1"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From7"
+	  SID			  "2763"
+	  Position		  [610, 123, 670, 147]
+	  ZOrder		  520
+	  BackgroundColor	  "orange"
+	  ShowName		  off
+	  GotoTag		  "STATUS1"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From8"
+	  SID			  "2773"
+	  Position		  [30, 238, 90, 262]
+	  ZOrder		  530
+	  BackgroundColor	  "orange"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  GotoTag		  "STATUS1"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From9"
+	  SID			  "2777"
+	  Position		  [30, 283, 90, 307]
+	  ZOrder		  533
+	  BackgroundColor	  "orange"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  GotoTag		  "STATUS2"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto"
+	  SID			  "2748"
+	  Position		  [130, 608, 175, 632]
+	  ZOrder		  506
+	  BackgroundColor	  "[1.000000, 0.501961, 0.000000]"
+	  ShowName		  off
+	  GotoTag		  "PF"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto1"
+	  SID			  "2760"
+	  Position		  [1025, 93, 1090, 117]
+	  ZOrder		  517
+	  BackgroundColor	  "[1.000000, 0.501961, 0.000000]"
+	  ShowName		  off
+	  GotoTag		  "SOC1"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto10"
+	  SID			  "2823"
+	  Position		  [1025, 633, 1090, 657]
+	  ZOrder		  574
+	  BackgroundColor	  "[1.000000, 0.501961, 0.000000]"
+	  ShowName		  off
+	  GotoTag		  "SOC5"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto11"
+	  SID			  "2824"
+	  Position		  [1025, 673, 1090, 697]
+	  ZOrder		  575
+	  BackgroundColor	  "[1.000000, 0.501961, 0.000000]"
+	  ShowName		  off
+	  GotoTag		  "STATUS5"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto12"
+	  SID			  "2831"
+	  Position		  [1025, 768, 1090, 792]
+	  ZOrder		  582
+	  BackgroundColor	  "[1.000000, 0.501961, 0.000000]"
+	  ShowName		  off
+	  GotoTag		  "SOC6"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto13"
+	  SID			  "2832"
+	  Position		  [1025, 808, 1090, 832]
+	  ZOrder		  583
+	  BackgroundColor	  "[1.000000, 0.501961, 0.000000]"
+	  ShowName		  off
+	  GotoTag		  "STATUS6"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto2"
+	  SID			  "2761"
+	  Position		  [1025, 133, 1090, 157]
+	  ZOrder		  518
+	  BackgroundColor	  "[1.000000, 0.501961, 0.000000]"
+	  ShowName		  off
+	  GotoTag		  "STATUS1"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto3"
+	  SID			  "2789"
+	  Position		  [490, 63, 555, 87]
+	  ZOrder		  599
+	  BackgroundColor	  "[1.000000, 0.501961, 0.000000]"
+	  ShowName		  off
+	  GotoTag		  "CONTROL"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto4"
+	  SID			  "2799"
+	  Position		  [1025, 228, 1090, 252]
+	  ZOrder		  550
+	  BackgroundColor	  "[1.000000, 0.501961, 0.000000]"
+	  ShowName		  off
+	  GotoTag		  "SOC2"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto5"
+	  SID			  "2800"
+	  Position		  [1025, 268, 1090, 292]
+	  ZOrder		  551
+	  BackgroundColor	  "[1.000000, 0.501961, 0.000000]"
+	  ShowName		  off
+	  GotoTag		  "STATUS2"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto6"
+	  SID			  "2807"
+	  Position		  [1025, 363, 1090, 387]
+	  ZOrder		  558
+	  BackgroundColor	  "[1.000000, 0.501961, 0.000000]"
+	  ShowName		  off
+	  GotoTag		  "SOC3"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto7"
+	  SID			  "2808"
+	  Position		  [1025, 403, 1090, 427]
+	  ZOrder		  559
+	  BackgroundColor	  "[1.000000, 0.501961, 0.000000]"
+	  ShowName		  off
+	  GotoTag		  "STATUS3"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto8"
+	  SID			  "2815"
+	  Position		  [1025, 498, 1090, 522]
+	  ZOrder		  566
+	  BackgroundColor	  "[1.000000, 0.501961, 0.000000]"
+	  ShowName		  off
+	  GotoTag		  "SOC4"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto9"
+	  SID			  "2816"
+	  Position		  [1025, 538, 1090, 562]
+	  ZOrder		  567
+	  BackgroundColor	  "[1.000000, 0.501961, 0.000000]"
+	  ShowName		  off
+	  GotoTag		  "STATUS4"
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Limiter"
+	  SID			  "2787"
+	  Ports			  [1, 1]
+	  Position		  [260, 110, 290, 140]
+	  ZOrder		  544
+	  BlockRotation		  270
+	  InputPortMap		  "u0"
+	  UpperLimit		  "6"
+	  LowerLimit		  "1"
 	}
 	Block {
 	  BlockType		  Constant
 	  Name			  "PF"
-	  SID			  "2534"
-	  Position		  [110, 290, 140, 320]
-	  ZOrder		  11
-	  Value			  "0.95"
+	  SID			  "2736"
+	  Position		  [30, 607, 60, 633]
+	  ZOrder		  505
+	  Value			  "0.99"
 	}
 	Block {
-	  BlockType		  Product
-	  Name			  "Product"
-	  SID			  "2535"
+	  BlockType		  Reference
+	  Name			  "PF Conversion1"
+	  SID			  "2738"
 	  Ports			  [2, 1]
-	  Position		  [510, 282, 540, 313]
-	  ZOrder		  7
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  RndMeth		  "Floor"
-	  SaturateOnIntegerOverflow off
-	  Port {
-	    PortNumber		    1
-	    Name		    "Q"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
+	  Position		  [1240, 197, 1310, 253]
+	  ZOrder		  496
+	  ForegroundColor	  "yellow"
+	  ShowName		  off
+	  LibraryVersion	  "1.69"
+	  SourceBlock		  "CampusModeling/Electrical/Power Factor\nConversion"
+	  SourceType		  "Power Factor Conversion"
+	  pfType		  "Lagging"
 	}
 	Block {
-	  BlockType		  Constant
-	  Name			  "Random Delay\n(0-2 hr)"
-	  SID			  "2536"
-	  Position		  [160, 180, 190, 210]
-	  ZOrder		  334
-	  Value			  "2*3600*rand(1)"
-	}
-	Block {
-	  BlockType		  Sqrt
-	  Name			  "Sqrt"
-	  SID			  "2537"
-	  Position		  [430, 290, 460, 320]
-	  ZOrder		  4
-	}
-	Block {
-	  BlockType		  Math
-	  Name			  "Squared"
-	  SID			  "2538"
-	  Ports			  [1, 1]
-	  Position		  [260, 290, 290, 320]
-	  ZOrder		  12
-	  Operator		  "magnitude^2"
-	}
-	Block {
-	  BlockType		  VariableTransportDelay
-	  Name			  "Variable\nTime Delay"
-	  SID			  "2539"
+	  BlockType		  Reference
+	  Name			  "PF Conversion2"
+	  SID			  "2737"
 	  Ports			  [2, 1]
-	  Position		  [290, 102, 320, 133]
-	  ZOrder		  331
-	  VariableDelayType	  "Variable transport delay"
-	  MaximumDelay		  "6*3600"
-	  MaximumPoints		  "32768"
-	  ZeroDelay		  on
-	  Port {
-	    PortNumber		    1
-	    Name		    "P"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
+	  Position		  [1240, 62, 1310, 118]
+	  ZOrder		  494
+	  ForegroundColor	  "yellow"
+	  ShowName		  off
+	  LibraryVersion	  "1.69"
+	  SourceBlock		  "CampusModeling/Electrical/Power Factor\nConversion"
+	  SourceType		  "Power Factor Conversion"
+	  pfType		  "Lagging"
 	}
 	Block {
-	  BlockType		  Outport
-	  Name			  "PQ"
-	  SID			  "2540"
-	  Position		  [690, 278, 720, 292]
-	  ZOrder		  9
-	  IconDisplay		  "Port number"
-	}
-	Line {
-	  Name			  "P"
-	  Labels		  [2, 0]
-	  SrcBlock		  "Variable\nTime Delay"
-	  SrcPort		  1
-	  Points		  [154, 0; 0, 150]
-	  Branch {
-	    Points		    [0, 20]
-	    DstBlock		    "Product"
-	    DstPort		    1
-	  }
-	  Branch {
-	    DstBlock		    "Mux"
-	    DstPort		    1
-	  }
-	}
-	Line {
-	  SrcBlock		  "Add"
-	  SrcPort		  1
-	  DstBlock		  "Sqrt"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Sqrt"
-	  SrcPort		  1
-	  DstBlock		  "Product"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "Mux"
-	  SrcPort		  1
-	  DstBlock		  "PQ"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "Q"
-	  Labels		  [1, 1]
-	  SrcBlock		  "Product"
-	  SrcPort		  1
-	  DstBlock		  "Mux"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "PF"
-	  SrcPort		  1
-	  DstBlock		  "1/PF"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "1/PF"
-	  SrcPort		  1
-	  DstBlock		  "Squared"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "One"
-	  SrcPort		  1
-	  Points		  [45, 0]
-	  DstBlock		  "Add"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "Squared"
-	  SrcPort		  1
-	  DstBlock		  "Add"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "P"
-	  SrcBlock		  "Profile"
-	  SrcPort		  1
-	  DstBlock		  "Variable\nTime Delay"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Random Delay\n(0-2 hr)"
-	  SrcPort		  1
-	  Points		  [42, 0; 0, -70]
-	  DstBlock		  "Variable\nTime Delay"
-	  DstPort		  2
-	}
-      }
-    }
-    Block {
-      BlockType		      SubSystem
-      Name		      "EV Charger 4"
-      SID		      "2542"
-      Ports		      [1, 1]
-      Position		      [1975, 1016, 2035, 1044]
-      ZOrder		      338
-      NamePlacement	      "alternate"
-      MinAlgLoopOccurrences   off
-      PropExecContextOutsideSubsystem off
-      RTWSystemCode	      "Auto"
-      FunctionWithSeparateData off
-      Opaque		      off
-      RequestExecContextInheritance off
-      MaskHideContents	      off
-      System {
-	Name			"EV Charger 4"
-	Location		[-8, -8, 1928, 1048]
-	Open			off
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"usletter"
-	PaperUnits		"inches"
-	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"100"
-	Block {
-	  BlockType		  Inport
-	  Name			  "Profile"
-	  SID			  "2543"
-	  Position		  [110, 103, 140, 117]
-	  ZOrder		  -1
-	  IconDisplay		  "Port number"
-	  Port {
-	    PortNumber		    1
-	    Name		    "P"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
+	  BlockType		  Reference
+	  Name			  "PF Conversion3"
+	  SID			  "2740"
+	  Ports			  [2, 1]
+	  Position		  [1240, 332, 1310, 388]
+	  ZOrder		  498
+	  ForegroundColor	  "yellow"
+	  ShowName		  off
+	  LibraryVersion	  "1.69"
+	  SourceBlock		  "CampusModeling/Electrical/Power Factor\nConversion"
+	  SourceType		  "Power Factor Conversion"
+	  pfType		  "Lagging"
 	}
 	Block {
-	  BlockType		  Math
-	  Name			  "1/PF"
-	  SID			  "2544"
-	  Ports			  [1, 1]
-	  Position		  [180, 290, 210, 320]
-	  ZOrder		  13
-	  Operator		  "reciprocal"
+	  BlockType		  Reference
+	  Name			  "PF Conversion4"
+	  SID			  "2742"
+	  Ports			  [2, 1]
+	  Position		  [1240, 467, 1310, 523]
+	  ZOrder		  500
+	  ForegroundColor	  "yellow"
+	  ShowName		  off
+	  LibraryVersion	  "1.69"
+	  SourceBlock		  "CampusModeling/Electrical/Power Factor\nConversion"
+	  SourceType		  "Power Factor Conversion"
+	  pfType		  "Lagging"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "PF Conversion5"
+	  SID			  "2744"
+	  Ports			  [2, 1]
+	  Position		  [1240, 602, 1310, 658]
+	  ZOrder		  502
+	  ForegroundColor	  "yellow"
+	  ShowName		  off
+	  LibraryVersion	  "1.69"
+	  SourceBlock		  "CampusModeling/Electrical/Power Factor\nConversion"
+	  SourceType		  "Power Factor Conversion"
+	  pfType		  "Lagging"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "PF Conversion6"
+	  SID			  "2746"
+	  Ports			  [2, 1]
+	  Position		  [1240, 737, 1310, 793]
+	  ZOrder		  504
+	  ForegroundColor	  "yellow"
+	  ShowName		  off
+	  LibraryVersion	  "1.69"
+	  SourceBlock		  "CampusModeling/Electrical/Power Factor\nConversion"
+	  SourceType		  "Power Factor Conversion"
+	  pfType		  "Lagging"
+	}
+	Block {
+	  BlockType		  Scope
+	  Name			  "Status\nScope"
+	  SID			  "2845"
+	  Ports			  [6]
+	  Position		  [505, 243, 535, 332]
+	  ZOrder		  598
+	  BackgroundColor	  "gray"
+	  Floating		  off
+	  Location		  [35, 77, 359, 856]
+	  Open			  off
+	  NumInputPorts		  "6"
+	  List {
+	    ListType		    AxesTitles
+	    axes1		    "%<SignalLabel>"
+	    axes2		    "%<SignalLabel>"
+	    axes3		    "%<SignalLabel>"
+	    axes4		    "%<SignalLabel>"
+	    axes5		    "%<SignalLabel>"
+	    axes6		    "%<SignalLabel>"
+	  }
+	  List {
+	    ListType		    ScopeGraphics
+	    FigureColor		    "[0.5 0.5 0.5]"
+	    AxesColor		    "[0 0 0]"
+	    AxesTickColor	    "[1 1 1]"
+	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	    LineStyles		    "-|-|-|-|-|-"
+	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
+	    MarkerStyles	    "none|none|none|none|none|none"
+	  }
+	  ShowLegends		  off
+	  TimeRange		  "100000"
+	  YMin			  "0~0~0~0~0~0"
+	  YMax			  "1~1~1~1~1~1"
+	  SaveName		  "ScopeData6"
+	  DataFormat		  "StructureWithTime"
+	  LimitDataPoints	  off
+	  SampleTime		  "0"
 	}
 	Block {
 	  BlockType		  Sum
-	  Name			  "Add"
-	  SID			  "2545"
-	  Ports			  [2, 1]
-	  Position		  [355, 290, 385, 320]
-	  ZOrder		  6
-	  IconShape		  "round"
-	  Inputs		  "|+-"
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Mux
-	  Name			  "Mux"
-	  SID			  "2546"
-	  Ports			  [2, 1]
-	  Position		  [600, 253, 605, 317]
-	  ZOrder		  8
+	  Name			  "Sum"
+	  SID			  "2774"
+	  Ports			  [6, 1]
+	  Position		  [197, 165, 348, 195]
+	  ZOrder		  531
+	  BlockRotation		  270
+	  NamePlacement		  "alternate"
 	  ShowName		  off
-	  Inputs		  "2"
-	  DisplayOption		  "bar"
-	}
-	Block {
-	  BlockType		  Constant
-	  Name			  "One"
-	  SID			  "2547"
-	  Position		  [290, 355, 320, 385]
-	  ZOrder		  5
-	}
-	Block {
-	  BlockType		  Constant
-	  Name			  "PF"
-	  SID			  "2548"
-	  Position		  [110, 290, 140, 320]
-	  ZOrder		  11
-	  Value			  "0.95"
-	}
-	Block {
-	  BlockType		  Product
-	  Name			  "Product"
-	  SID			  "2549"
-	  Ports			  [2, 1]
-	  Position		  [510, 282, 540, 313]
-	  ZOrder		  7
+	  Inputs		  "++++++"
 	  InputSameDT		  off
 	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  RndMeth		  "Floor"
 	  SaturateOnIntegerOverflow off
-	  Port {
-	    PortNumber		    1
-	    Name		    "Q"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	}
-	Block {
-	  BlockType		  Constant
-	  Name			  "Random Delay\n(0-2 hr)"
-	  SID			  "2550"
-	  Position		  [160, 180, 190, 210]
-	  ZOrder		  334
-	  Value			  "2*3600*rand(1)"
-	}
-	Block {
-	  BlockType		  Sqrt
-	  Name			  "Sqrt"
-	  SID			  "2551"
-	  Position		  [430, 290, 460, 320]
-	  ZOrder		  4
-	}
-	Block {
-	  BlockType		  Math
-	  Name			  "Squared"
-	  SID			  "2552"
-	  Ports			  [1, 1]
-	  Position		  [260, 290, 290, 320]
-	  ZOrder		  12
-	  Operator		  "magnitude^2"
-	}
-	Block {
-	  BlockType		  VariableTransportDelay
-	  Name			  "Variable\nTime Delay"
-	  SID			  "2553"
-	  Ports			  [2, 1]
-	  Position		  [290, 102, 320, 133]
-	  ZOrder		  331
-	  VariableDelayType	  "Variable transport delay"
-	  MaximumDelay		  "6*3600"
-	  MaximumPoints		  "32768"
-	  ZeroDelay		  on
-	  Port {
-	    PortNumber		    1
-	    Name		    "P"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
 	}
 	Block {
 	  BlockType		  Outport
-	  Name			  "PQ"
-	  SID			  "2554"
-	  Position		  [690, 278, 720, 292]
-	  ZOrder		  9
+	  Name			  "EV1"
+	  SID			  "2712"
+	  Position		  [1350, 83, 1380, 97]
+	  ZOrder		  -2
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "EV2"
+	  SID			  "2739"
+	  Position		  [1350, 218, 1380, 232]
+	  ZOrder		  495
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "EV3"
+	  SID			  "2741"
+	  Position		  [1350, 353, 1380, 367]
+	  ZOrder		  497
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "EV4"
+	  SID			  "2743"
+	  Position		  [1350, 488, 1380, 502]
+	  ZOrder		  499
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "EV5"
+	  SID			  "2745"
+	  Position		  [1350, 623, 1380, 637]
+	  ZOrder		  501
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "EV6"
+	  SID			  "2747"
+	  Position		  [1350, 758, 1380, 772]
+	  ZOrder		  503
+	  Port			  "6"
 	  IconDisplay		  "Port number"
 	}
 	Line {
-	  Name			  "P"
-	  Labels		  [2, 0]
-	  SrcBlock		  "Variable\nTime Delay"
+	  SrcBlock		  "PF Conversion2"
 	  SrcPort		  1
-	  Points		  [154, 0; 0, 150]
-	  Branch {
-	    Points		    [0, 20]
-	    DstBlock		    "Product"
-	    DstPort		    1
-	  }
-	  Branch {
-	    DstBlock		    "Mux"
-	    DstPort		    1
-	  }
-	}
-	Line {
-	  SrcBlock		  "Add"
-	  SrcPort		  1
-	  DstBlock		  "Sqrt"
+	  DstBlock		  "EV1"
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "Sqrt"
+	  SrcBlock		  "PF Conversion1"
 	  SrcPort		  1
-	  DstBlock		  "Product"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "Mux"
-	  SrcPort		  1
-	  DstBlock		  "PQ"
+	  DstBlock		  "EV2"
 	  DstPort		  1
 	}
 	Line {
-	  Name			  "Q"
-	  Labels		  [1, 1]
-	  SrcBlock		  "Product"
+	  SrcBlock		  "PF Conversion3"
 	  SrcPort		  1
-	  DstBlock		  "Mux"
-	  DstPort		  2
+	  DstBlock		  "EV3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "PF Conversion4"
+	  SrcPort		  1
+	  DstBlock		  "EV4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "PF Conversion5"
+	  SrcPort		  1
+	  DstBlock		  "EV5"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "PF Conversion6"
+	  SrcPort		  1
+	  DstBlock		  "EV6"
+	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "PF"
 	  SrcPort		  1
-	  DstBlock		  "1/PF"
+	  DstBlock		  "Goto"
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "1/PF"
+	  SrcBlock		  "From23"
 	  SrcPort		  1
-	  DstBlock		  "Squared"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "One"
-	  SrcPort		  1
-	  Points		  [45, 0]
-	  DstBlock		  "Add"
+	  DstBlock		  "PF Conversion2"
 	  DstPort		  2
 	}
 	Line {
-	  SrcBlock		  "Squared"
+	  SrcBlock		  "From1"
 	  SrcPort		  1
-	  DstBlock		  "Add"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "P"
-	  SrcBlock		  "Profile"
-	  SrcPort		  1
-	  DstBlock		  "Variable\nTime Delay"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Random Delay\n(0-2 hr)"
-	  SrcPort		  1
-	  Points		  [42, 0; 0, -70]
-	  DstBlock		  "Variable\nTime Delay"
+	  DstBlock		  "PF Conversion1"
 	  DstPort		  2
 	}
-      }
-    }
-    Block {
-      BlockType		      SubSystem
-      Name		      "EV Charger 5"
-      SID		      "2556"
-      Ports		      [1, 1]
-      Position		      [1975, 1161, 2035, 1189]
-      ZOrder		      340
-      NamePlacement	      "alternate"
-      MinAlgLoopOccurrences   off
-      PropExecContextOutsideSubsystem off
-      RTWSystemCode	      "Auto"
-      FunctionWithSeparateData off
-      Opaque		      off
-      RequestExecContextInheritance off
-      MaskHideContents	      off
-      System {
-	Name			"EV Charger 5"
-	Location		[-8, -8, 1928, 1048]
-	Open			off
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"usletter"
-	PaperUnits		"inches"
-	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"100"
-	Block {
-	  BlockType		  Inport
-	  Name			  "Profile"
-	  SID			  "2557"
-	  Position		  [110, 103, 140, 117]
+	Line {
+	  SrcBlock		  "From2"
+	  SrcPort		  1
+	  DstBlock		  "PF Conversion3"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From3"
+	  SrcPort		  1
+	  DstBlock		  "PF Conversion4"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From4"
+	  SrcPort		  1
+	  DstBlock		  "PF Conversion5"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From5"
+	  SrcPort		  1
+	  DstBlock		  "PF Conversion6"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "EV Charger 1"
+	  SrcPort		  1
+	  Points		  [51, 0]
+	  Branch {
+	    Points		    [0, -30]
+	    DstBlock		    "PF Conversion2"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "EV Battery 1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "EV Battery 1"
+	  SrcPort		  1
+	  DstBlock		  "Goto1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "EV Battery 1"
+	  SrcPort		  2
+	  DstBlock		  "Goto2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From6"
+	  SrcPort		  1
+	  DstBlock		  "EV Charger 1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From7"
+	  SrcPort		  1
+	  DstBlock		  "EV Charger 1"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "EV Schedule 1"
+	  SrcPort		  1
+	  DstBlock		  "EV Battery 1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From8"
+	  SrcPort		  1
+	  DstBlock		  "Compare\nTo Zero"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Compare\nTo Zero"
+	  SrcPort		  1
+	  Points		  [55, 0]
+	  Branch {
+	    DstBlock		    "Status\nScope"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Sum"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "From9"
+	  SrcPort		  1
+	  DstBlock		  "Compare\nTo Zero1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From10"
+	  SrcPort		  1
+	  DstBlock		  "Compare\nTo Zero2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From11"
+	  SrcPort		  1
+	  DstBlock		  "Compare\nTo Zero3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From12"
+	  SrcPort		  1
+	  DstBlock		  "Compare\nTo Zero4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From13"
+	  SrcPort		  1
+	  DstBlock		  "Compare\nTo Zero5"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Compare\nTo Zero1"
+	  SrcPort		  1
+	  Points		  [80, 0; 0, -30]
+	  Branch {
+	    DstBlock		    "Status\nScope"
+	    DstPort		    2
+	  }
+	  Branch {
+	    DstBlock		    "Sum"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "Compare\nTo Zero2"
+	  SrcPort		  1
+	  Points		  [105, 0; 0, -60]
+	  Branch {
+	    DstBlock		    "Status\nScope"
+	    DstPort		    3
+	  }
+	  Branch {
+	    DstBlock		    "Sum"
+	    DstPort		    3
+	  }
+	}
+	Line {
+	  SrcBlock		  "Compare\nTo Zero3"
+	  SrcPort		  1
+	  Points		  [130, 0; 0, -90]
+	  Branch {
+	    DstBlock		    "Status\nScope"
+	    DstPort		    4
+	  }
+	  Branch {
+	    DstBlock		    "Sum"
+	    DstPort		    4
+	  }
+	}
+	Line {
+	  SrcBlock		  "Compare\nTo Zero4"
+	  SrcPort		  1
+	  Points		  [155, 0; 0, -120]
+	  Branch {
+	    DstBlock		    "Status\nScope"
+	    DstPort		    5
+	  }
+	  Branch {
+	    DstBlock		    "Sum"
+	    DstPort		    5
+	  }
+	}
+	Line {
+	  SrcBlock		  "Compare\nTo Zero5"
+	  SrcPort		  1
+	  Points		  [180, 0; 0, -150]
+	  Branch {
+	    DstBlock		    "Status\nScope"
+	    DstPort		    6
+	  }
+	  Branch {
+	    DstBlock		    "Sum"
+	    DstPort		    6
+	  }
+	}
+	Line {
+	  SrcBlock		  "Sum"
+	  SrcPort		  1
+	  DstBlock		  "Limiter"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Limiter"
+	  SrcPort		  1
+	  Points		  [0, -10]
+	  DstBlock		  "Divide"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "From14"
+	  SrcPort		  1
+	  DstBlock		  "EV Charger 1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "EV Charger 2"
+	  SrcPort		  1
+	  Points		  [51, 0]
+	  Branch {
+	    Points		    [0, -30]
+	    DstBlock		    "PF Conversion1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "EV Battery 2"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "EV Battery 2"
+	  SrcPort		  1
+	  DstBlock		  "Goto4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "EV Battery 2"
+	  SrcPort		  2
+	  DstBlock		  "Goto5"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From16"
+	  SrcPort		  1
+	  DstBlock		  "EV Charger 2"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From17"
+	  SrcPort		  1
+	  DstBlock		  "EV Charger 2"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "EV Schedule 2"
+	  SrcPort		  1
+	  DstBlock		  "EV Battery 2"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From15"
+	  SrcPort		  1
+	  DstBlock		  "EV Charger 2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "EV Charger 3"
+	  SrcPort		  1
+	  Points		  [51, 0]
+	  Branch {
+	    Points		    [0, -30]
+	    DstBlock		    "PF Conversion3"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "EV Battery 3"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "EV Battery 3"
+	  SrcPort		  1
+	  DstBlock		  "Goto6"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "EV Battery 3"
+	  SrcPort		  2
+	  DstBlock		  "Goto7"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From19"
+	  SrcPort		  1
+	  DstBlock		  "EV Charger 3"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From20"
+	  SrcPort		  1
+	  DstBlock		  "EV Charger 3"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "EV Schedule 3"
+	  SrcPort		  1
+	  DstBlock		  "EV Battery 3"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From18"
+	  SrcPort		  1
+	  DstBlock		  "EV Charger 3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "EV Charger 4"
+	  SrcPort		  1
+	  Points		  [51, 0]
+	  Branch {
+	    Points		    [0, -30]
+	    DstBlock		    "PF Conversion4"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "EV Battery 4"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "EV Battery 4"
+	  SrcPort		  1
+	  DstBlock		  "Goto8"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "EV Battery 4"
+	  SrcPort		  2
+	  DstBlock		  "Goto9"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From22"
+	  SrcPort		  1
+	  DstBlock		  "EV Charger 4"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From24"
+	  SrcPort		  1
+	  DstBlock		  "EV Charger 4"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "EV Schedule 4"
+	  SrcPort		  1
+	  DstBlock		  "EV Battery 4"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From21"
+	  SrcPort		  1
+	  DstBlock		  "EV Charger 4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "EV Charger 5"
+	  SrcPort		  1
+	  Points		  [51, 0]
+	  Branch {
+	    Points		    [0, -30]
+	    DstBlock		    "PF Conversion5"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "EV Battery 5"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "EV Battery 5"
+	  SrcPort		  1
+	  DstBlock		  "Goto10"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "EV Battery 5"
+	  SrcPort		  2
+	  DstBlock		  "Goto11"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From26"
+	  SrcPort		  1
+	  DstBlock		  "EV Charger 5"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From27"
+	  SrcPort		  1
+	  DstBlock		  "EV Charger 5"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "EV Schedule 5"
+	  SrcPort		  1
+	  DstBlock		  "EV Battery 5"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From25"
+	  SrcPort		  1
+	  DstBlock		  "EV Charger 5"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "EV Charger 6"
+	  SrcPort		  1
+	  Points		  [51, 0]
+	  Branch {
+	    Points		    [0, -30]
+	    DstBlock		    "PF Conversion6"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "EV Battery 6"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "EV Battery 6"
+	  SrcPort		  1
+	  DstBlock		  "Goto12"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "EV Battery 6"
+	  SrcPort		  2
+	  DstBlock		  "Goto13"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From29"
+	  SrcPort		  1
+	  DstBlock		  "EV Charger 6"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From30"
+	  SrcPort		  1
+	  DstBlock		  "EV Charger 6"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "EV Schedule 6"
+	  SrcPort		  1
+	  DstBlock		  "EV Battery 6"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From28"
+	  SrcPort		  1
+	  DstBlock		  "EV Charger 6"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Reg"
+	  SrcPort		  1
+	  DstBlock		  "Divide"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Enable"
+	  SrcPort		  1
+	  DstBlock		  "Compare\nTo Zero6"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Compare\nTo Zero6"
+	  SrcPort		  1
+	  DstBlock		  "Divide"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Divide"
+	  SrcPort		  1
+	  Points		  [64, 0]
+	  Branch {
+	    DstBlock		    "Goto3"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 50]
+	    DstBlock		    "Control"
+	    DstPort		    1
+	  }
+	}
+	Annotation {
+	  SID			  "2788"
+	  Name			  "This arrangement divides the control among the charging stations with\nconnected EVs, to a minimum of 1."
+	  Position		  [28, 527]
+	  HorizontalAlignment	  "left"
 	  ZOrder		  -1
-	  IconDisplay		  "Port number"
-	  Port {
-	    PortNumber		    1
-	    Name		    "P"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
 	}
-	Block {
-	  BlockType		  Math
-	  Name			  "1/PF"
-	  SID			  "2558"
-	  Ports			  [1, 1]
-	  Position		  [180, 290, 210, 320]
-	  ZOrder		  13
-	  Operator		  "reciprocal"
-	}
-	Block {
-	  BlockType		  Sum
-	  Name			  "Add"
-	  SID			  "2559"
-	  Ports			  [2, 1]
-	  Position		  [355, 290, 385, 320]
-	  ZOrder		  6
-	  IconShape		  "round"
-	  Inputs		  "|+-"
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Mux
-	  Name			  "Mux"
-	  SID			  "2560"
-	  Ports			  [2, 1]
-	  Position		  [600, 253, 605, 317]
-	  ZOrder		  8
-	  ShowName		  off
-	  Inputs		  "2"
-	  DisplayOption		  "bar"
-	}
-	Block {
-	  BlockType		  Constant
-	  Name			  "One"
-	  SID			  "2561"
-	  Position		  [290, 355, 320, 385]
-	  ZOrder		  5
-	}
-	Block {
-	  BlockType		  Constant
-	  Name			  "PF"
-	  SID			  "2562"
-	  Position		  [110, 290, 140, 320]
-	  ZOrder		  11
-	  Value			  "0.95"
-	}
-	Block {
-	  BlockType		  Product
-	  Name			  "Product"
-	  SID			  "2563"
-	  Ports			  [2, 1]
-	  Position		  [510, 282, 540, 313]
-	  ZOrder		  7
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  RndMeth		  "Floor"
-	  SaturateOnIntegerOverflow off
-	  Port {
-	    PortNumber		    1
-	    Name		    "Q"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	}
-	Block {
-	  BlockType		  Constant
-	  Name			  "Random Delay\n(0-2 hr)"
-	  SID			  "2564"
-	  Position		  [160, 180, 190, 210]
-	  ZOrder		  334
-	  Value			  "2*3600*rand(1)"
-	}
-	Block {
-	  BlockType		  Sqrt
-	  Name			  "Sqrt"
-	  SID			  "2565"
-	  Position		  [430, 290, 460, 320]
-	  ZOrder		  4
-	}
-	Block {
-	  BlockType		  Math
-	  Name			  "Squared"
-	  SID			  "2566"
-	  Ports			  [1, 1]
-	  Position		  [260, 290, 290, 320]
-	  ZOrder		  12
-	  Operator		  "magnitude^2"
-	}
-	Block {
-	  BlockType		  VariableTransportDelay
-	  Name			  "Variable\nTime Delay"
-	  SID			  "2567"
-	  Ports			  [2, 1]
-	  Position		  [290, 102, 320, 133]
-	  ZOrder		  331
-	  VariableDelayType	  "Variable transport delay"
-	  MaximumDelay		  "6*3600"
-	  MaximumPoints		  "32768"
-	  ZeroDelay		  on
-	  Port {
-	    PortNumber		    1
-	    Name		    "P"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "PQ"
-	  SID			  "2568"
-	  Position		  [690, 278, 720, 292]
-	  ZOrder		  9
-	  IconDisplay		  "Port number"
-	}
-	Line {
-	  Name			  "P"
-	  Labels		  [2, 0]
-	  SrcBlock		  "Variable\nTime Delay"
-	  SrcPort		  1
-	  Points		  [154, 0; 0, 150]
-	  Branch {
-	    Points		    [0, 20]
-	    DstBlock		    "Product"
-	    DstPort		    1
-	  }
-	  Branch {
-	    DstBlock		    "Mux"
-	    DstPort		    1
-	  }
-	}
-	Line {
-	  SrcBlock		  "Add"
-	  SrcPort		  1
-	  DstBlock		  "Sqrt"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Sqrt"
-	  SrcPort		  1
-	  DstBlock		  "Product"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "Mux"
-	  SrcPort		  1
-	  DstBlock		  "PQ"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "Q"
-	  Labels		  [1, 1]
-	  SrcBlock		  "Product"
-	  SrcPort		  1
-	  DstBlock		  "Mux"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "PF"
-	  SrcPort		  1
-	  DstBlock		  "1/PF"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "1/PF"
-	  SrcPort		  1
-	  DstBlock		  "Squared"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "One"
-	  SrcPort		  1
-	  Points		  [45, 0]
-	  DstBlock		  "Add"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "Squared"
-	  SrcPort		  1
-	  DstBlock		  "Add"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "P"
-	  SrcBlock		  "Profile"
-	  SrcPort		  1
-	  DstBlock		  "Variable\nTime Delay"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Random Delay\n(0-2 hr)"
-	  SrcPort		  1
-	  Points		  [42, 0; 0, -70]
-	  DstBlock		  "Variable\nTime Delay"
-	  DstPort		  2
-	}
-      }
-    }
-    Block {
-      BlockType		      SubSystem
-      Name		      "EV Charger 6"
-      SID		      "2570"
-      Ports		      [1, 1]
-      Position		      [1975, 1306, 2035, 1334]
-      ZOrder		      342
-      NamePlacement	      "alternate"
-      MinAlgLoopOccurrences   off
-      PropExecContextOutsideSubsystem off
-      RTWSystemCode	      "Auto"
-      FunctionWithSeparateData off
-      Opaque		      off
-      RequestExecContextInheritance off
-      MaskHideContents	      off
-      System {
-	Name			"EV Charger 6"
-	Location		[-8, -8, 1928, 1048]
-	Open			off
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"usletter"
-	PaperUnits		"inches"
-	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"100"
-	Block {
-	  BlockType		  Inport
-	  Name			  "Profile"
-	  SID			  "2571"
-	  Position		  [110, 103, 140, 117]
+	Annotation {
+	  SID			  "2792"
+	  Name			  "Set the EV charger power factor here."
+	  Position		  [28, 672]
+	  HorizontalAlignment	  "left"
 	  ZOrder		  -1
-	  IconDisplay		  "Port number"
-	  Port {
-	    PortNumber		    1
-	    Name		    "P"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	}
-	Block {
-	  BlockType		  Math
-	  Name			  "1/PF"
-	  SID			  "2572"
-	  Ports			  [1, 1]
-	  Position		  [180, 290, 210, 320]
-	  ZOrder		  13
-	  Operator		  "reciprocal"
-	}
-	Block {
-	  BlockType		  Sum
-	  Name			  "Add"
-	  SID			  "2573"
-	  Ports			  [2, 1]
-	  Position		  [355, 290, 385, 320]
-	  ZOrder		  6
-	  IconShape		  "round"
-	  Inputs		  "|+-"
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Mux
-	  Name			  "Mux"
-	  SID			  "2574"
-	  Ports			  [2, 1]
-	  Position		  [600, 253, 605, 317]
-	  ZOrder		  8
-	  ShowName		  off
-	  Inputs		  "2"
-	  DisplayOption		  "bar"
-	}
-	Block {
-	  BlockType		  Constant
-	  Name			  "One"
-	  SID			  "2575"
-	  Position		  [290, 355, 320, 385]
-	  ZOrder		  5
-	}
-	Block {
-	  BlockType		  Constant
-	  Name			  "PF"
-	  SID			  "2576"
-	  Position		  [110, 290, 140, 320]
-	  ZOrder		  11
-	  Value			  "0.95"
-	}
-	Block {
-	  BlockType		  Product
-	  Name			  "Product"
-	  SID			  "2577"
-	  Ports			  [2, 1]
-	  Position		  [510, 282, 540, 313]
-	  ZOrder		  7
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  RndMeth		  "Floor"
-	  SaturateOnIntegerOverflow off
-	  Port {
-	    PortNumber		    1
-	    Name		    "Q"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	}
-	Block {
-	  BlockType		  Constant
-	  Name			  "Random Delay\n(0-2 hr)"
-	  SID			  "2578"
-	  Position		  [160, 180, 190, 210]
-	  ZOrder		  334
-	  Value			  "2*3600*rand(1)"
-	}
-	Block {
-	  BlockType		  Sqrt
-	  Name			  "Sqrt"
-	  SID			  "2579"
-	  Position		  [430, 290, 460, 320]
-	  ZOrder		  4
-	}
-	Block {
-	  BlockType		  Math
-	  Name			  "Squared"
-	  SID			  "2580"
-	  Ports			  [1, 1]
-	  Position		  [260, 290, 290, 320]
-	  ZOrder		  12
-	  Operator		  "magnitude^2"
-	}
-	Block {
-	  BlockType		  VariableTransportDelay
-	  Name			  "Variable\nTime Delay"
-	  SID			  "2581"
-	  Ports			  [2, 1]
-	  Position		  [290, 102, 320, 133]
-	  ZOrder		  331
-	  VariableDelayType	  "Variable transport delay"
-	  MaximumDelay		  "6*3600"
-	  MaximumPoints		  "32768"
-	  ZeroDelay		  on
-	  Port {
-	    PortNumber		    1
-	    Name		    "P"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "PQ"
-	  SID			  "2582"
-	  Position		  [690, 278, 720, 292]
-	  ZOrder		  9
-	  IconDisplay		  "Port number"
-	}
-	Line {
-	  Name			  "P"
-	  Labels		  [2, 0]
-	  SrcBlock		  "Variable\nTime Delay"
-	  SrcPort		  1
-	  Points		  [154, 0; 0, 150]
-	  Branch {
-	    Points		    [0, 20]
-	    DstBlock		    "Product"
-	    DstPort		    1
-	  }
-	  Branch {
-	    DstBlock		    "Mux"
-	    DstPort		    1
-	  }
-	}
-	Line {
-	  SrcBlock		  "Add"
-	  SrcPort		  1
-	  DstBlock		  "Sqrt"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Sqrt"
-	  SrcPort		  1
-	  DstBlock		  "Product"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "Mux"
-	  SrcPort		  1
-	  DstBlock		  "PQ"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "Q"
-	  Labels		  [1, 1]
-	  SrcBlock		  "Product"
-	  SrcPort		  1
-	  DstBlock		  "Mux"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "PF"
-	  SrcPort		  1
-	  DstBlock		  "1/PF"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "1/PF"
-	  SrcPort		  1
-	  DstBlock		  "Squared"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "One"
-	  SrcPort		  1
-	  Points		  [45, 0]
-	  DstBlock		  "Add"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "Squared"
-	  SrcPort		  1
-	  DstBlock		  "Add"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "P"
-	  SrcBlock		  "Profile"
-	  SrcPort		  1
-	  DstBlock		  "Variable\nTime Delay"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Random Delay\n(0-2 hr)"
-	  SrcPort		  1
-	  Points		  [42, 0; 0, -70]
-	  DstBlock		  "Variable\nTime Delay"
-	  DstPort		  2
 	}
       }
     }
     Block {
-      BlockType		      Goto
-      Name		      "EV Charging "
-      SID		      "2482"
-      Position		      [2360, 811, 2435, 839]
-      ZOrder		      326
-      BackgroundColor	      "[1.000000, 0.501961, 0.000000]"
-      GotoTag		      "EV"
+      BlockType		      Constant
+      Name		      "Enable\nEV Control"
+      SID		      "2852"
+      Position		      [2200, 1243, 2220, 1267]
+      ZOrder		      501
+      SampleTime	      "-1"
     }
     Block {
       BlockType		      Reference
@@ -5869,7 +5980,7 @@ Model {
       BlockType		      From
       Name		      "From1"
       SID		      "2391"
-      Position		      [1390, 246, 1465, 264]
+      Position		      [1435, 241, 1510, 259]
       ZOrder		      252
       BackgroundColor	      "orange"
       ShowName		      off
@@ -5880,7 +5991,7 @@ Model {
       BlockType		      From
       Name		      "From10"
       SID		      "2428"
-      Position		      [1390, 336, 1465, 354]
+      Position		      [1435, 331, 1510, 349]
       ZOrder		      279
       BackgroundColor	      "orange"
       ShowName		      off
@@ -5990,7 +6101,7 @@ Model {
       BlockType		      From
       Name		      "From2"
       SID		      "2392"
-      Position		      [1390, 266, 1465, 284]
+      Position		      [1435, 261, 1510, 279]
       ZOrder		      253
       BackgroundColor	      "orange"
       ShowName		      off
@@ -6038,7 +6149,7 @@ Model {
       ZOrder		      332
       BackgroundColor	      "orange"
       ShowName		      off
-      GotoTag		      "EV"
+      GotoTag		      "EV1"
     }
     Block {
       BlockType		      From
@@ -6058,7 +6169,7 @@ Model {
       ZOrder		      335
       BackgroundColor	      "orange"
       ShowName		      off
-      GotoTag		      "EV"
+      GotoTag		      "EV2"
     }
     Block {
       BlockType		      From
@@ -6068,7 +6179,7 @@ Model {
       ZOrder		      337
       BackgroundColor	      "orange"
       ShowName		      off
-      GotoTag		      "EV"
+      GotoTag		      "EV3"
     }
     Block {
       BlockType		      From
@@ -6078,7 +6189,7 @@ Model {
       ZOrder		      339
       BackgroundColor	      "orange"
       ShowName		      off
-      GotoTag		      "EV"
+      GotoTag		      "EV4"
     }
     Block {
       BlockType		      From
@@ -6088,7 +6199,7 @@ Model {
       ZOrder		      341
       BackgroundColor	      "orange"
       ShowName		      off
-      GotoTag		      "EV"
+      GotoTag		      "EV5"
     }
     Block {
       BlockType		      From
@@ -6098,13 +6209,13 @@ Model {
       ZOrder		      343
       BackgroundColor	      "orange"
       ShowName		      off
-      GotoTag		      "EV"
+      GotoTag		      "EV6"
     }
     Block {
       BlockType		      From
       Name		      "From3"
       SID		      "2408"
-      Position		      [1390, 176, 1465, 194]
+      Position		      [1435, 171, 1510, 189]
       ZOrder		      268
       BackgroundColor	      "orange"
       ShowName		      off
@@ -6125,7 +6236,7 @@ Model {
       BlockType		      From
       Name		      "From31"
       SID		      "2668"
-      Position		      [1110, 563, 1200, 587]
+      Position		      [1050, 553, 1140, 577]
       ZOrder		      460
       BackgroundColor	      "lightBlue"
       ShowName		      off
@@ -6134,9 +6245,9 @@ Model {
     Block {
       BlockType		      From
       Name		      "From32"
-      SID		      "2670"
-      Position		      [1495, 568, 1585, 592]
-      ZOrder		      463
+      SID		      "2729"
+      Position		      [1450, 553, 1540, 577]
+      ZOrder		      487
       BackgroundColor	      "lightBlue"
       ShowName		      off
       GotoTag		      "BuildingPower2"
@@ -6144,9 +6255,9 @@ Model {
     Block {
       BlockType		      From
       Name		      "From33"
-      SID		      "2673"
-      Position		      [1110, 823, 1200, 847]
-      ZOrder		      466
+      SID		      "2732"
+      Position		      [1050, 813, 1140, 837]
+      ZOrder		      490
       BackgroundColor	      "lightBlue"
       ShowName		      off
       GotoTag		      "PlantPower"
@@ -6154,29 +6265,55 @@ Model {
     Block {
       BlockType		      From
       Name		      "From34"
-      SID		      "2711"
-      Position		      [1005, 1270, 1110, 1290]
-      ZOrder		      472
-      BackgroundColor	      "lightBlue"
+      SID		      "2723"
+      Position		      [2200, 1128, 2255, 1152]
+      ZOrder		      477
+      BackgroundColor	      "orange"
       ShowName		      off
-      GotoTag		      "Campus_Inputs"
+      GotoTag		      "Reg"
     }
     Block {
       BlockType		      From
       Name		      "From35"
-      SID		      "2718"
-      Position		      [400, 1095, 505, 1115]
-      ZOrder		      499
+      SID		      "2869"
+      Position		      [2195, 758, 2255, 782]
+      ZOrder		      611
+      BackgroundColor	      "orange"
+      ShowName		      off
+      GotoTag		      "PVTotal"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From36"
+      SID		      "2877"
+      Position		      [995, 251, 1070, 269]
+      ZOrder		      619
+      BackgroundColor	      "orange"
+      ShowName		      off
+      GotoTag		      "EVPQ"
+      Port {
+	PortNumber		1
+	Name			"P, Q from EV"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      From
+      Name		      "From37"
+      SID		      "2881"
+      Position		      [375, 1090, 480, 1110]
+      ZOrder		      622
       BackgroundColor	      "lightBlue"
       ShowName		      off
       GotoTag		      "Campus_Outputs"
     }
     Block {
       BlockType		      From
-      Name		      "From36"
-      SID		      "2719"
-      Position		      [465, 1148, 540, 1172]
-      ZOrder		      500
+      Name		      "From38"
+      SID		      "2882"
+      Position		      [440, 1143, 515, 1167]
+      ZOrder		      623
       BackgroundColor	      "lightBlue"
       ShowName		      off
       GotoTag		      "Weather"
@@ -6185,7 +6322,7 @@ Model {
       BlockType		      From
       Name		      "From4"
       SID		      "2409"
-      Position		      [1390, 196, 1465, 214]
+      Position		      [1435, 191, 1510, 209]
       ZOrder		      269
       BackgroundColor	      "orange"
       ShowName		      off
@@ -6196,7 +6333,7 @@ Model {
       BlockType		      From
       Name		      "From5"
       SID		      "2427"
-      Position		      [1390, 316, 1465, 334]
+      Position		      [1435, 311, 1510, 329]
       ZOrder		      278
       BackgroundColor	      "orange"
       ShowName		      off
@@ -6207,7 +6344,7 @@ Model {
       BlockType		      From
       Name		      "From6"
       SID		      "1771"
-      Position		      [990, 236, 1065, 254]
+      Position		      [995, 166, 1070, 184]
       ZOrder		      -9
       BackgroundColor	      "orange"
       ShowName		      off
@@ -6218,7 +6355,7 @@ Model {
       BlockType		      From
       Name		      "From7"
       SID		      "1772"
-      Position		      [990, 256, 1065, 274]
+      Position		      [995, 186, 1070, 204]
       ZOrder		      -9
       BackgroundColor	      "orange"
       ShowName		      off
@@ -6229,7 +6366,7 @@ Model {
       BlockType		      From
       Name		      "From8"
       SID		      "1773"
-      Position		      [990, 306, 1065, 324]
+      Position		      [995, 321, 1070, 339]
       ZOrder		      -9
       BackgroundColor	      "orange"
       ShowName		      off
@@ -6240,7 +6377,7 @@ Model {
       BlockType		      From
       Name		      "From9"
       SID		      "1774"
-      Position		      [990, 326, 1065, 344]
+      Position		      [995, 341, 1070, 359]
       ZOrder		      -9
       BackgroundColor	      "orange"
       ShowName		      off
@@ -6248,48 +6385,122 @@ Model {
       TagVisibility	      "global"
     }
     Block {
+      BlockType		      Gain
+      Name		      "Gain"
+      SID		      "2872"
+      Position		      [2545, 755, 2575, 785]
+      ZOrder		      614
+      Gain		      "-1"
+      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto"
+      SID		      "2482"
+      Position		      [2680, 1098, 2725, 1122]
+      ZOrder		      326
+      BackgroundColor	      "[1.000000, 0.501961, 0.000000]"
+      ShowName		      off
+      GotoTag		      "EV1"
+    }
+    Block {
       BlockType		      Goto
       Name		      "Goto1"
       SID		      "2651"
-      Position		      [1650, 1091, 1745, 1109]
+      Position		      [1650, 1166, 1745, 1184]
       ZOrder		      408
       BackgroundColor	      "lightBlue"
+      ShowName		      off
       GotoTag		      "BuildingPower1"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto100"
+      SID		      "2876"
+      Position		      [2620, 320, 2690, 350]
+      ZOrder		      618
+      BackgroundColor	      "orange"
+      ShowName		      off
+      GotoTag		      "EVPQ"
     }
     Block {
       BlockType		      Goto
       Name		      "Goto2"
       SID		      "2656"
-      Position		      [1650, 1121, 1745, 1139]
+      Position		      [1650, 1196, 1745, 1214]
       ZOrder		      410
       BackgroundColor	      "lightBlue"
-      GotoTag		      "BuildingPower2"
-    }
-    Block {
-      BlockType		      Goto
-      Name		      "Goto25"
-      SID		      "2715"
-      Position		      [1610, 1270, 1735, 1290]
-      ZOrder		      498
-      BackgroundColor	      "lightBlue"
       ShowName		      off
-      GotoTag		      "Campus_Outputs"
+      GotoTag		      "BuildingPower2"
     }
     Block {
       BlockType		      Goto
       Name		      "Goto3"
       SID		      "2657"
-      Position		      [1650, 1151, 1745, 1169]
+      Position		      [1650, 1226, 1745, 1244]
       ZOrder		      411
       BackgroundColor	      "lightBlue"
+      ShowName		      off
       GotoTag		      "PlantPower"
     }
     Block {
       BlockType		      Goto
       Name		      "Goto4"
-      SID		      "2710"
-      Position		      [875, 1126, 970, 1144]
-      ZOrder		      471
+      SID		      "2718"
+      Position		      [2680, 1133, 2725, 1157]
+      ZOrder		      472
+      BackgroundColor	      "[1.000000, 0.501961, 0.000000]"
+      ShowName		      off
+      GotoTag		      "EV2"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto5"
+      SID		      "2719"
+      Position		      [2680, 1168, 2725, 1192]
+      ZOrder		      473
+      BackgroundColor	      "[1.000000, 0.501961, 0.000000]"
+      ShowName		      off
+      GotoTag		      "EV3"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto6"
+      SID		      "2720"
+      Position		      [2680, 1203, 2725, 1227]
+      ZOrder		      474
+      BackgroundColor	      "[1.000000, 0.501961, 0.000000]"
+      ShowName		      off
+      GotoTag		      "EV4"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto7"
+      SID		      "2721"
+      Position		      [2680, 1238, 2725, 1262]
+      ZOrder		      475
+      BackgroundColor	      "[1.000000, 0.501961, 0.000000]"
+      ShowName		      off
+      GotoTag		      "EV5"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto8"
+      SID		      "2722"
+      Position		      [2680, 1273, 2725, 1297]
+      ZOrder		      476
+      BackgroundColor	      "[1.000000, 0.501961, 0.000000]"
+      ShowName		      off
+      GotoTag		      "EV6"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto9"
+      SID		      "2883"
+      Position		      [850, 1121, 945, 1139]
+      ZOrder		      621
       BackgroundColor	      "lightBlue"
       GotoTag		      "Campus_Inputs"
     }
@@ -6444,6 +6655,14 @@ Model {
       LConnTagsString	      "a"
     }
     Block {
+      BlockType		      TransferFcn
+      Name		      "LPF\nTau = 15 min"
+      SID		      "2725"
+      Position		      [2345, 752, 2405, 788]
+      ZOrder		      597
+      Denominator	      "[900 1]"
+    }
+    Block {
       BlockType		      SubSystem
       Name		      "Line Load 1"
       SID		      "2331"
@@ -6459,7 +6678,7 @@ Model {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		36
+	$ObjectID		33
 	$ClassName		"Simulink.Mask"
 	Type			"Short Cable"
 	Description		"This block implements a short cable using three phase mutual inductance.\nSelf impedances and mutual im"
@@ -6470,7 +6689,7 @@ Model {
 	  Type			  "Simulink.MaskParameter"
 	  Dimension		  5
 	  Object {
-	    $ObjectID		    37
+	    $ObjectID		    34
 	    Type		    "edit"
 	    Name		    "R1"
 	    Prompt		    "Positive Sequence R (ohms/1000ft)"
@@ -6478,7 +6697,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    38
+	    $ObjectID		    35
 	    Type		    "edit"
 	    Name		    "X1"
 	    Prompt		    "Positive Sequence XL (ohms/1000ft)"
@@ -6486,7 +6705,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    39
+	    $ObjectID		    36
 	    Type		    "edit"
 	    Name		    "R0"
 	    Prompt		    "Zero Sequence R (ohms/1000ft)"
@@ -6494,7 +6713,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    40
+	    $ObjectID		    37
 	    Type		    "edit"
 	    Name		    "X0"
 	    Prompt		    "Zero Sequence XL (ohms/1000ft)"
@@ -6502,7 +6721,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    41
+	    $ObjectID		    38
 	    Type		    "edit"
 	    Name		    "L"
 	    Prompt		    "Line Length (ft)"
@@ -6660,7 +6879,7 @@ Model {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		42
+	$ObjectID		39
 	$ClassName		"Simulink.Mask"
 	Type			"Short Cable"
 	Description		"This block implements a short cable using three phase mutual inductance.\nSelf impedances and mutual im"
@@ -6671,7 +6890,7 @@ Model {
 	  Type			  "Simulink.MaskParameter"
 	  Dimension		  5
 	  Object {
-	    $ObjectID		    43
+	    $ObjectID		    40
 	    Type		    "edit"
 	    Name		    "R1"
 	    Prompt		    "Positive Sequence R (ohms/1000ft)"
@@ -6679,7 +6898,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    44
+	    $ObjectID		    41
 	    Type		    "edit"
 	    Name		    "X1"
 	    Prompt		    "Positive Sequence XL (ohms/1000ft)"
@@ -6687,7 +6906,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    45
+	    $ObjectID		    42
 	    Type		    "edit"
 	    Name		    "R0"
 	    Prompt		    "Zero Sequence R (ohms/1000ft)"
@@ -6695,7 +6914,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    46
+	    $ObjectID		    43
 	    Type		    "edit"
 	    Name		    "X0"
 	    Prompt		    "Zero Sequence XL (ohms/1000ft)"
@@ -6703,7 +6922,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    47
+	    $ObjectID		    44
 	    Type		    "edit"
 	    Name		    "L"
 	    Prompt		    "Line Length (ft)"
@@ -6861,7 +7080,7 @@ Model {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		48
+	$ObjectID		45
 	$ClassName		"Simulink.Mask"
 	Type			"Short Cable"
 	Description		"This block implements a short cable using three phase mutual inductance.\nSelf impedances and mutual im"
@@ -6872,7 +7091,7 @@ Model {
 	  Type			  "Simulink.MaskParameter"
 	  Dimension		  5
 	  Object {
-	    $ObjectID		    49
+	    $ObjectID		    46
 	    Type		    "edit"
 	    Name		    "R1"
 	    Prompt		    "Positive Sequence R (ohms/1000ft)"
@@ -6880,7 +7099,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    50
+	    $ObjectID		    47
 	    Type		    "edit"
 	    Name		    "X1"
 	    Prompt		    "Positive Sequence XL (ohms/1000ft)"
@@ -6888,7 +7107,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    51
+	    $ObjectID		    48
 	    Type		    "edit"
 	    Name		    "R0"
 	    Prompt		    "Zero Sequence R (ohms/1000ft)"
@@ -6896,7 +7115,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    52
+	    $ObjectID		    49
 	    Type		    "edit"
 	    Name		    "X0"
 	    Prompt		    "Zero Sequence XL (ohms/1000ft)"
@@ -6904,7 +7123,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    53
+	    $ObjectID		    50
 	    Type		    "edit"
 	    Name		    "L"
 	    Prompt		    "Line Length (ft)"
@@ -7047,18 +7266,147 @@ Model {
       }
     }
     Block {
+      BlockType		      SubSystem
+      Name		      "MATLAB Function"
+      SID		      "2691"
+      Ports		      [0, 1]
+      Position		      [995, 1257, 1065, 1303]
+      ZOrder		      470
+      LibraryVersion	      "1.32"
+      ErrorFcn		      "Stateflow.Translate.translate"
+      PermitHierarchicalResolution "ExplicitOnly"
+      TreatAsAtomicUnit	      on
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      SFBlockType	      "MATLAB Function"
+      System {
+	Name			"MATLAB Function"
+	Location		[223, 338, 826, 833]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	SIDHighWatermark	"21"
+	Block {
+	  BlockType		  Demux
+	  Name			  " Demux "
+	  SID			  "2691::19"
+	  Ports			  [1, 1]
+	  Position		  [270, 230, 320, 270]
+	  ZOrder		  5
+	  Outputs		  "1"
+	}
+	Block {
+	  BlockType		  Ground
+	  Name			  " Ground "
+	  SID			  "2691::21"
+	  Position		  [20, 121, 40, 139]
+	  ZOrder		  7
+	}
+	Block {
+	  BlockType		  S-Function
+	  Name			  " SFunction "
+	  SID			  "2691::18"
+	  Tag			  "Stateflow S-Function integrated_campus 3"
+	  Ports			  [1, 2]
+	  Position		  [180, 100, 230, 160]
+	  ZOrder		  4
+	  FunctionName		  "sf_sfun"
+	  PortCounts		  "[1 2]"
+	  EnableBusSupport	  on
+	  Port {
+	    PortNumber		    2
+	    Name		    "y"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  " Terminator "
+	  SID			  "2691::20"
+	  Position		  [460, 241, 480, 259]
+	  ZOrder		  6
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "y"
+	  SID			  "2691::5"
+	  Position		  [460, 101, 480, 119]
+	  ZOrder		  -5
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  Name			  "y"
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  2
+	  DstBlock		  "y"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  " Ground "
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  " Demux "
+	  SrcPort		  1
+	  DstBlock		  " Terminator "
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  " SFunction "
+	  SrcPort		  1
+	  DstBlock		  " Demux "
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
       BlockType		      Memory
       Name		      "Memory"
-      SID		      "2723"
-      Position		      [545, 1090, 575, 1120]
-      ZOrder		      502
+      SID		      "2884"
+      Position		      [540, 1085, 570, 1115]
+      ZOrder		      624
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux"
+      SID		      "2833"
+      Ports		      [6, 1]
+      Position		      [2425, 18, 2430, 117]
+      ZOrder		      492
+      ShowName		      off
+      Inputs		      "6"
+      DisplayOption	      "bar"
+      Port {
+	PortNumber		1
+	Name			"EV individual power"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
     }
     Block {
       BlockType		      Mux
       Name		      "Mux1"
       SID		      "2410"
       Ports		      [2, 1]
-      Position		      [1605, 176, 1610, 214]
+      Position		      [1650, 171, 1655, 209]
       ZOrder		      270
       ShowName		      off
       Inputs		      "2"
@@ -7072,101 +7420,17 @@ Model {
     }
     Block {
       BlockType		      Mux
-      Name		      "Mux10"
-      SID		      "2450"
-      Ports		      [2, 1]
-      Position		      [2235, 236, 2240, 274]
-      ZOrder		      301
-      ShowName		      off
-      Inputs		      "2"
-      DisplayOption	      "bar"
-      Port {
-	PortNumber		1
-	Name			"P,Q load 1"
-	RTWStorageClass		"Auto"
-	DataLoggingNameMode	"SignalName"
-      }
-    }
-    Block {
-      BlockType		      Mux
-      Name		      "Mux11"
-      SID		      "2451"
-      Ports		      [2, 1]
-      Position		      [2235, 306, 2240, 344]
-      ZOrder		      297
-      ShowName		      off
-      Inputs		      "2"
-      DisplayOption	      "bar"
-      Port {
-	PortNumber		1
-	Name			"P,Q load 2"
-	RTWStorageClass		"Auto"
-	DataLoggingNameMode	"SignalName"
-      }
-    }
-    Block {
-      BlockType		      Mux
-      Name		      "Mux12"
-      SID		      "2452"
-      Ports		      [2, 1]
-      Position		      [2235, 376, 2240, 414]
-      ZOrder		      305
-      ShowName		      off
-      Inputs		      "2"
-      DisplayOption	      "bar"
-      Port {
-	PortNumber		1
-	Name			"P,Q central plant"
-	RTWStorageClass		"Auto"
-	DataLoggingNameMode	"SignalName"
-      }
-    }
-    Block {
-      BlockType		      Mux
-      Name		      "Mux13"
-      SID		      "2667"
-      Ports		      [2, 1]
-      Position		      [1215, 562, 1220, 613]
-      ZOrder		      459
-      ShowName		      off
-      Inputs		      "2"
-      DisplayOption	      "bar"
-    }
-    Block {
-      BlockType		      Mux
-      Name		      "Mux14"
-      SID		      "2671"
-      Ports		      [2, 1]
-      Position		      [1600, 567, 1605, 618]
-      ZOrder		      462
-      ShowName		      off
-      Inputs		      "2"
-      DisplayOption	      "bar"
-    }
-    Block {
-      BlockType		      Mux
-      Name		      "Mux15"
-      SID		      "2674"
-      Ports		      [2, 1]
-      Position		      [1215, 822, 1220, 873]
-      ZOrder		      465
-      ShowName		      off
-      Inputs		      "2"
-      DisplayOption	      "bar"
-    }
-    Block {
-      BlockType		      Mux
       Name		      "Mux2"
-      SID		      "2437"
+      SID		      "2856"
       Ports		      [2, 1]
-      Position		      [2235, 21, 2240, 59]
-      ZOrder		      289
+      Position		      [730, 81, 735, 119]
+      ZOrder		      504
       ShowName		      off
       Inputs		      "2"
       DisplayOption	      "bar"
       Port {
 	PortNumber		1
-	Name			"P,Q load 1"
+	Name			"Direct / Diffuse Irradiance"
 	RTWStorageClass		"Auto"
 	DataLoggingNameMode	"SignalName"
       }
@@ -7176,7 +7440,7 @@ Model {
       Name		      "Mux3"
       SID		      "2397"
       Ports		      [2, 1]
-      Position		      [1190, 236, 1195, 274]
+      Position		      [1195, 166, 1200, 204]
       ZOrder		      258
       ShowName		      off
       Inputs		      "2"
@@ -7191,26 +7455,20 @@ Model {
     Block {
       BlockType		      Mux
       Name		      "Mux4"
-      SID		      "2438"
+      SID		      "2875"
       Ports		      [2, 1]
-      Position		      [2235, 91, 2240, 129]
-      ZOrder		      285
+      Position		      [2575, 314, 2580, 361]
+      ZOrder		      617
       ShowName		      off
       Inputs		      "2"
       DisplayOption	      "bar"
-      Port {
-	PortNumber		1
-	Name			"P,Q load 2"
-	RTWStorageClass		"Auto"
-	DataLoggingNameMode	"SignalName"
-      }
     }
     Block {
       BlockType		      Mux
       Name		      "Mux5"
       SID		      "2367"
       Ports		      [2, 1]
-      Position		      [2620, 531, 2625, 569]
+      Position		      [2620, 546, 2625, 584]
       ZOrder		      226
       ShowName		      off
       Inputs		      "2"
@@ -7221,7 +7479,7 @@ Model {
       Name		      "Mux6"
       SID		      "2399"
       Ports		      [2, 1]
-      Position		      [1190, 306, 1195, 344]
+      Position		      [1195, 321, 1200, 359]
       ZOrder		      260
       ShowName		      off
       Inputs		      "2"
@@ -7238,7 +7496,7 @@ Model {
       Name		      "Mux7"
       SID		      "2402"
       Ports		      [2, 1]
-      Position		      [1605, 246, 1610, 284]
+      Position		      [1650, 241, 1655, 279]
       ZOrder		      263
       ShowName		      off
       Inputs		      "2"
@@ -7255,7 +7513,7 @@ Model {
       Name		      "Mux8"
       SID		      "2429"
       Ports		      [2, 1]
-      Position		      [1605, 316, 1610, 354]
+      Position		      [1650, 311, 1655, 349]
       ZOrder		      280
       ShowName		      off
       Inputs		      "2"
@@ -7268,21 +7526,70 @@ Model {
       }
     }
     Block {
-      BlockType		      Mux
-      Name		      "Mux9"
-      SID		      "2439"
+      BlockType		      Constant
+      Name		      "PF 1"
+      SID		      "2666"
+      Position		      [1050, 587, 1080, 603]
+      ZOrder		      416
+      Value		      "0.95"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "PF 2"
+      SID		      "2730"
+      Position		      [1450, 587, 1480, 603]
+      ZOrder		      486
+      Value		      "0.95"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "PF 3"
+      SID		      "2733"
+      Position		      [1050, 847, 1080, 863]
+      ZOrder		      489
+      Value		      "0.90"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "PF Conversion"
+      SID		      "2728"
       Ports		      [2, 1]
-      Position		      [2235, 161, 2240, 199]
-      ZOrder		      293
+      Position		      [1160, 552, 1230, 608]
+      ZOrder		      485
+      ForegroundColor	      "red"
       ShowName		      off
-      Inputs		      "2"
-      DisplayOption	      "bar"
-      Port {
-	PortNumber		1
-	Name			"P,Q central plant"
-	RTWStorageClass		"Auto"
-	DataLoggingNameMode	"SignalName"
-      }
+      LibraryVersion	      "1.69"
+      SourceBlock	      "CampusModeling/Electrical/Power Factor\nConversion"
+      SourceType	      "Power Factor Conversion"
+      pfType		      "Lagging"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "PF Conversion1"
+      SID		      "2731"
+      Ports		      [2, 1]
+      Position		      [1560, 552, 1630, 608]
+      ZOrder		      488
+      ForegroundColor	      "red"
+      ShowName		      off
+      LibraryVersion	      "1.69"
+      SourceBlock	      "CampusModeling/Electrical/Power Factor\nConversion"
+      SourceType	      "Power Factor Conversion"
+      pfType		      "Lagging"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "PF Conversion2"
+      SID		      "2734"
+      Ports		      [2, 1]
+      Position		      [1160, 812, 1230, 868]
+      ZOrder		      491
+      ForegroundColor	      "red"
+      ShowName		      off
+      LibraryVersion	      "1.69"
+      SourceBlock	      "CampusModeling/Electrical/Power Factor\nConversion"
+      SourceType	      "Power Factor Conversion"
+      pfType		      "Lagging"
     }
     Block {
       BlockType		      Reference
@@ -7291,7 +7598,8 @@ Model {
       Ports		      [1, 0, 0, 0, 0, 4]
       Position		      [2700, 602, 2740, 688]
       ZOrder		      164
-      LibraryVersion	      "1.58"
+      ForegroundColor	      "yellow"
+      LibraryVersion	      "1.69"
       SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "source"
@@ -7300,6 +7608,15 @@ Model {
       VNom		      "480"
       fNom		      "60"
       VLow		      "0.7"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "PV Power"
+      SID		      "2862"
+      Position		      [2680, 510, 2750, 540]
+      ZOrder		      610
+      BackgroundColor	      "orange"
+      GotoTag		      "PVTotal"
     }
     Block {
       BlockType		      SubSystem
@@ -7319,8 +7636,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"PV System"
-	Location		[1592, -8, 3208, 1208]
-	Open			on
+	Location		[8, 6, 1640, 1026]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -7381,7 +7698,8 @@ Model {
 	  Ports			  [1, 1]
 	  Position		  [650, 54, 745, 166]
 	  ZOrder		  320
-	  LibraryVersion	  "1.58"
+	  ForegroundColor	  "yellow"
+	  LibraryVersion	  "1.69"
 	  SourceBlock		  "CampusModeling/PV/Generic Inverter"
 	  SourceType		  "Generic Inverter"
 	  model_type		  "Lookup Table"
@@ -7392,7 +7710,7 @@ Model {
 	  lookup_pair		  "Output Power + Efficiency"
 	  lookup_in		  "[0, 10, 25, 50, 75, 100]"
 	  lookup_out		  "30e3 .* [0, 0.10 0.20, 0.30, 0.50, 0.75, 1.00]"
-	  lookup_eff		  "[90.0, 90.0, 93.6, 94.4, 94.9, 94.6, 94.1] ./ 100"
+	  lookup_eff		  "[50.0, 90.0, 93.6, 94.4, 94.9, 94.6, 94.1] ./ 100"
 	}
 	Block {
 	  BlockType		  Reference
@@ -7401,7 +7719,8 @@ Model {
 	  Ports			  [4, 1]
 	  Position		  [345, 52, 555, 168]
 	  ZOrder		  321
-	  LibraryVersion	  "1.58"
+	  ForegroundColor	  "green"
+	  LibraryVersion	  "1.69"
 	  UserDataPersistent	  on
 	  UserData		  "DataTag0"
 	  SourceBlock		  "CampusModeling/PV/PVWatts Cosimulation"
@@ -7410,7 +7729,7 @@ Model {
 	  lon			  "-105.18"
 	  start_time		  "1-Jun-2012 00:00:00"
 	  tz			  "-6"
-	  time_step		  "30"
+	  time_step		  "15"
 	  system_size		  "30000"
 	  derate		  "0.95"
 	  azimuth		  "180"
@@ -7549,7 +7868,7 @@ Model {
       Name		      "Power\n(3ph, Phasor)"
       SID		      "2404"
       Ports		      [2, 2]
-      Position		      [1110, 235, 1160, 275]
+      Position		      [1115, 165, 1165, 205]
       ZOrder		      264
       LibraryVersion	      "1.31"
       FontName		      "Arial"
@@ -7561,7 +7880,7 @@ Model {
       Name		      "Power\n(3ph, Phasor)1"
       SID		      "2405"
       Ports		      [2, 2]
-      Position		      [1110, 305, 1160, 345]
+      Position		      [1115, 320, 1165, 360]
       ZOrder		      265
       LibraryVersion	      "1.31"
       FontName		      "Arial"
@@ -7597,7 +7916,7 @@ Model {
       Name		      "Power\n(3ph, Phasor)3"
       SID		      "2407"
       Ports		      [2, 2]
-      Position		      [1525, 245, 1575, 285]
+      Position		      [1570, 240, 1620, 280]
       ZOrder		      267
       LibraryVersion	      "1.31"
       FontName		      "Arial"
@@ -7609,7 +7928,7 @@ Model {
       Name		      "Power\n(3ph, Phasor)4"
       SID		      "2411"
       Ports		      [2, 2]
-      Position		      [1525, 175, 1575, 215]
+      Position		      [1570, 170, 1620, 210]
       ZOrder		      271
       LibraryVersion	      "1.31"
       FontName		      "Arial"
@@ -7621,7 +7940,7 @@ Model {
       Name		      "Power\n(3ph, Phasor)5"
       SID		      "2430"
       Ports		      [2, 2]
-      Position		      [1525, 315, 1575, 355]
+      Position		      [1570, 310, 1620, 350]
       ZOrder		      281
       LibraryVersion	      "1.31"
       FontName		      "Arial"
@@ -7680,23 +7999,60 @@ Model {
       BlockType		      Constant
       Name		      "Q"
       SID		      "2366"
-      Position		      [2445, 563, 2465, 587]
+      Position		      [2500, 563, 2520, 587]
       ZOrder		      225
       Value		      "0"
       SampleTime	      "-1"
     }
     Block {
       BlockType		      Scope
+      Name		      "Scope"
+      SID		      "2885"
+      Ports		      [1]
+      Position		      [540, 966, 605, 1024]
+      ZOrder		      625
+      BackgroundColor	      "gray"
+      Floating		      off
+      Location		      [449, 246, 1278, 964]
+      Open		      off
+      NumInputPorts	      "1"
+      ZoomMode		      "xonly"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      List {
+	ListType		ScopeGraphics
+	FigureColor		"[0.5 0.5 0.5]"
+	AxesColor		"[0 0 0]"
+	AxesTickColor		"[1 1 1]"
+	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	LineStyles		"-|-|-|-|-|-"
+	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
+	MarkerStyles		"none|none|none|none|none|none"
+      }
+      ShowLegends	      off
+      TimeRange		      "90000"
+      YMin		      "0"
+      YMax		      "14000"
+      SaveName		      "ScopeData8"
+      DataFormat	      "StructureWithTime"
+      LimitDataPoints	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Scope
       Name		      "Scope:\nBuildings"
       SID		      "2457"
       Ports		      [3]
-      Position		      [1740, 224, 1800, 306]
+      Position		      [1785, 219, 1845, 301]
       ZOrder		      308
       BackgroundColor	      "gray"
       Floating		      off
-      Location		      [1356, 151, 2956, 1262]
-      Open		      on
+      Location		      [5, 48, 1925, 1039]
+      Open		      off
       NumInputPorts	      "3"
+      ZoomMode		      "xonly"
       List {
 	ListType		AxesTitles
 	axes1			"%<SignalLabel>"
@@ -7726,50 +8082,16 @@ Model {
       BlockType		      Scope
       Name		      "Scope:\nEV Chargers"
       SID		      "2443"
-      Ports		      [1]
-      Position		      [2450, 184, 2510, 266]
-      ZOrder		      282
-      BackgroundColor	      "gray"
-      Floating		      off
-      Location		      [5, 48, 1925, 1039]
-      Open		      off
-      NumInputPorts	      "1"
-      ZoomMode		      "xonly"
-      List {
-	ListType		AxesTitles
-	axes1			"%<SignalLabel>"
-      }
-      List {
-	ListType		ScopeGraphics
-	FigureColor		"[0.5 0.5 0.5]"
-	AxesColor		"[0 0 0]"
-	AxesTickColor		"[1 1 1]"
-	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-	LineStyles		"-|-|-|-|-|-"
-	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
-	MarkerStyles		"none|none|none|none|none|none"
-      }
-      ShowLegends	      off
-      TimeRange		      "90000"
-      YMin		      "-5000"
-      YMax		      "40000"
-      DataFormat	      "StructureWithTime"
-      LimitDataPoints	      off
-      SampleTime	      "0"
-    }
-    Block {
-      BlockType		      Scope
-      Name		      "Scope:\nPV and Grid"
-      SID		      "2401"
       Ports		      [2]
-      Position		      [1275, 244, 1320, 331]
-      ZOrder		      261
-      BackgroundColor	      "gray"
+      Position		      [2640, 49, 2700, 131]
+      ZOrder		      282
+      ForegroundColor	      "[0.901961, 0.000000, 0.000000]"
+      BackgroundColor	      "[0.501961, 0.501961, 0.501961]"
       Floating		      off
-      Location		      [5, 43, 1925, 1074]
+      Location		      [952, 235, 1560, 709]
       Open		      off
       NumInputPorts	      "2"
-      ZoomMode		      "xonly"
+      ZoomMode		      "yonly"
       List {
 	ListType		AxesTitles
 	axes1			"%<SignalLabel>"
@@ -7786,10 +8108,9 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      off
-      TimeRange		      "90000"
-      YMin		      "-5000~10000"
-      YMax		      "30000~80000"
-      SaveName		      "ScopeData1"
+      TimeRange		      "86400           "
+      YMin		      "-500~-2500"
+      YMax		      "6500~35000"
       DataFormat	      "StructureWithTime"
       LimitDataPoints	      off
       SampleTime	      "0"
@@ -7799,12 +8120,12 @@ Model {
       Name		      "Scope:\nPV and Grid1"
       SID		      "2658"
       Ports		      [1]
-      Position		      [1635, 1016, 1700, 1074]
+      Position		      [1690, 1266, 1735, 1354]
       ZOrder		      412
       BackgroundColor	      "gray"
       Floating		      off
       Location		      [5, 43, 1925, 1074]
-      Open		      on
+      Open		      off
       NumInputPorts	      "1"
       ZoomMode		      "xonly"
       List {
@@ -7832,20 +8153,22 @@ Model {
     }
     Block {
       BlockType		      Scope
-      Name		      "Scope:\nPV and Grid2"
-      SID		      "2724"
-      Ports		      [1]
-      Position		      [565, 1006, 630, 1064]
-      ZOrder		      503
+      Name		      "Scope:\nPV, EV, and Grid"
+      SID		      "2401"
+      Ports		      [3]
+      Position		      [1280, 216, 1325, 304]
+      ZOrder		      261
       BackgroundColor	      "gray"
       Floating		      off
-      Location		      [5, 43, 1925, 1074]
+      Location		      [1, 48, 1921, 1039]
       Open		      off
-      NumInputPorts	      "1"
-      ZoomMode		      "xonly"
+      NumInputPorts	      "3"
+      ZoomMode		      "yonly"
       List {
 	ListType		AxesTitles
 	axes1			"%<SignalLabel>"
+	axes2			"%<SignalLabel>"
+	axes3			"%<SignalLabel>"
       }
       List {
 	ListType		ScopeGraphics
@@ -7859,9 +8182,48 @@ Model {
       }
       ShowLegends	      off
       TimeRange		      "90000"
-      YMin		      "0"
-      YMax		      "14000"
-      SaveName		      "ScopeData5"
+      YMin		      "-5000~-5000~-5000"
+      YMax		      "40000~40000~40000"
+      SaveName		      "ScopeData1"
+      DataFormat	      "StructureWithTime"
+      LimitDataPoints	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Scope:\nWeather"
+      SID		      "2854"
+      Ports		      [4]
+      Position		      [850, 97, 905, 183]
+      ZOrder		      502
+      BackgroundColor	      "gray"
+      Floating		      off
+      Location		      [378, 76, 1291, 961]
+      Open		      off
+      NumInputPorts	      "4"
+      ZoomMode		      "xonly"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+	axes2			"%<SignalLabel>"
+	axes3			"%<SignalLabel>"
+	axes4			"%<SignalLabel>"
+      }
+      List {
+	ListType		ScopeGraphics
+	FigureColor		"[0.5 0.5 0.5]"
+	AxesColor		"[0 0 0]"
+	AxesTickColor		"[1 1 1]"
+	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	LineStyles		"-|-|-|-|-|-"
+	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
+	MarkerStyles		"none|none|none|none|none|none"
+      }
+      ShowLegends	      off
+      TimeRange		      "90000"
+      YMin		      "-200~5~0~20"
+      YMax		      "1200~25~7~70"
+      SaveName		      "ScopeData7"
       DataFormat	      "StructureWithTime"
       LimitDataPoints	      off
       SampleTime	      "0"
@@ -7869,12 +8231,24 @@ Model {
     Block {
       BlockType		      Sum
       Name		      "Sum"
-      SID		      "2456"
+      SID		      "2874"
       Ports		      [6, 1]
-      Position		      [2340, 180, 2360, 265]
-      ZOrder		      307
-      ShowName		      off
+      Position		      [2460, 263, 2480, 422]
+      ZOrder		      616
       Inputs		      "++++++"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Sum of\nElements"
+      SID		      "2841"
+      Ports		      [1, 1]
+      Position		      [2470, 95, 2500, 125]
+      ZOrder		      500
+      IconShape		      "round"
+      Inputs		      "+"
       InputSameDT	      off
       OutDataTypeStr	      "Inherit: Inherit via internal rule"
       SaturateOnIntegerOverflow	off
@@ -7884,6 +8258,20 @@ Model {
 	RTWStorageClass		"Auto"
 	DataLoggingNameMode	"SignalName"
       }
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Sum1"
+      SID		      "2727"
+      Ports		      [2, 1]
+      Position		      [2450, 760, 2470, 780]
+      ZOrder		      604
+      ShowName		      off
+      IconShape		      "round"
+      Inputs		      "|+-"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
     }
     Block {
       BlockType		      Reference
@@ -8221,10 +8609,10 @@ Model {
       Ports		      [0, 1]
       Position		      [515, 235, 590, 325]
       ZOrder		      321
-      LibraryVersion	      "1.58"
+      LibraryVersion	      "1.69"
       SourceBlock	      "CampusModeling/Weather/Weather Data"
       SourceType	      "Weather Data From File"
-      fname		      "Weather.mat"
+      fname		      "Weather2.mat"
       initbus		      on
     }
     Block {
@@ -8571,7 +8959,7 @@ Model {
       Name		      "powergui"
       SID		      "400"
       Ports		      []
-      Position		      [1046, 120, 1135, 153]
+      Position		      [991, 65, 1080, 98]
       ZOrder		      -198
       ForegroundColor	      "yellow"
       DropShadow	      on
@@ -8642,7 +9030,7 @@ Model {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		54
+	$ObjectID		51
 	$ClassName		"Simulink.Mask"
 	Type			"Short Cable"
 	Description		"This block implements a short cable using three phase mutual inductance.\nSelf impedances and mutual im"
@@ -8653,7 +9041,7 @@ Model {
 	  Type			  "Simulink.MaskParameter"
 	  Dimension		  5
 	  Object {
-	    $ObjectID		    55
+	    $ObjectID		    52
 	    Type		    "edit"
 	    Name		    "R1"
 	    Prompt		    "Positive Sequence R (ohms/1000ft)"
@@ -8661,7 +9049,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    56
+	    $ObjectID		    53
 	    Type		    "edit"
 	    Name		    "X1"
 	    Prompt		    "Positive Sequence XL (ohms/1000ft)"
@@ -8669,7 +9057,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    57
+	    $ObjectID		    54
 	    Type		    "edit"
 	    Name		    "R0"
 	    Prompt		    "Zero Sequence R (ohms/1000ft)"
@@ -8677,7 +9065,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    58
+	    $ObjectID		    55
 	    Type		    "edit"
 	    Name		    "X0"
 	    Prompt		    "Zero Sequence XL (ohms/1000ft)"
@@ -8685,7 +9073,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    59
+	    $ObjectID		    56
 	    Type		    "edit"
 	    Name		    "L"
 	    Prompt		    "Line Length (ft)"
@@ -8843,7 +9231,7 @@ Model {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		60
+	$ObjectID		57
 	$ClassName		"Simulink.Mask"
 	Type			"Short Cable"
 	Description		"This block implements a short cable using three phase mutual inductance.\nSelf impedances and mutual im"
@@ -8854,7 +9242,7 @@ Model {
 	  Type			  "Simulink.MaskParameter"
 	  Dimension		  5
 	  Object {
-	    $ObjectID		    61
+	    $ObjectID		    58
 	    Type		    "edit"
 	    Name		    "R1"
 	    Prompt		    "Positive Sequence R (ohms/1000ft)"
@@ -8862,7 +9250,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    62
+	    $ObjectID		    59
 	    Type		    "edit"
 	    Name		    "X1"
 	    Prompt		    "Positive Sequence XL (ohms/1000ft)"
@@ -8870,7 +9258,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    63
+	    $ObjectID		    60
 	    Type		    "edit"
 	    Name		    "R0"
 	    Prompt		    "Zero Sequence R (ohms/1000ft)"
@@ -8878,7 +9266,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    64
+	    $ObjectID		    61
 	    Type		    "edit"
 	    Name		    "X0"
 	    Prompt		    "Zero Sequence XL (ohms/1000ft)"
@@ -8886,7 +9274,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    65
+	    $ObjectID		    62
 	    Type		    "edit"
 	    Name		    "L"
 	    Prompt		    "Line Length (ft)"
@@ -9044,7 +9432,7 @@ Model {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		66
+	$ObjectID		63
 	$ClassName		"Simulink.Mask"
 	Type			"Short Cable"
 	Description		"This block implements a short cable using three phase mutual inductance.\nSelf impedances and mutual im"
@@ -9055,7 +9443,7 @@ Model {
 	  Type			  "Simulink.MaskParameter"
 	  Dimension		  5
 	  Object {
-	    $ObjectID		    67
+	    $ObjectID		    64
 	    Type		    "edit"
 	    Name		    "R1"
 	    Prompt		    "Positive Sequence R (ohms/1000ft)"
@@ -9063,7 +9451,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    68
+	    $ObjectID		    65
 	    Type		    "edit"
 	    Name		    "X1"
 	    Prompt		    "Positive Sequence XL (ohms/1000ft)"
@@ -9071,7 +9459,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    69
+	    $ObjectID		    66
 	    Type		    "edit"
 	    Name		    "R0"
 	    Prompt		    "Zero Sequence R (ohms/1000ft)"
@@ -9079,7 +9467,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    70
+	    $ObjectID		    67
 	    Type		    "edit"
 	    Name		    "X0"
 	    Prompt		    "Zero Sequence XL (ohms/1000ft)"
@@ -9087,7 +9475,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    71
+	    $ObjectID		    68
 	    Type		    "edit"
 	    Name		    "L"
 	    Prompt		    "Line Length (ft)"
@@ -9245,7 +9633,7 @@ Model {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		72
+	$ObjectID		69
 	$ClassName		"Simulink.Mask"
 	Type			"Short Cable"
 	Description		"This block implements a short cable using three phase mutual inductance.\nSelf impedances and mutual im"
@@ -9256,7 +9644,7 @@ Model {
 	  Type			  "Simulink.MaskParameter"
 	  Dimension		  5
 	  Object {
-	    $ObjectID		    73
+	    $ObjectID		    70
 	    Type		    "edit"
 	    Name		    "R1"
 	    Prompt		    "Positive Sequence R (ohms/1000ft)"
@@ -9264,7 +9652,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    74
+	    $ObjectID		    71
 	    Type		    "edit"
 	    Name		    "X1"
 	    Prompt		    "Positive Sequence XL (ohms/1000ft)"
@@ -9272,7 +9660,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    75
+	    $ObjectID		    72
 	    Type		    "edit"
 	    Name		    "R0"
 	    Prompt		    "Zero Sequence R (ohms/1000ft)"
@@ -9280,7 +9668,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    76
+	    $ObjectID		    73
 	    Type		    "edit"
 	    Name		    "X0"
 	    Prompt		    "Zero Sequence XL (ohms/1000ft)"
@@ -9288,7 +9676,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    77
+	    $ObjectID		    74
 	    Type		    "edit"
 	    Name		    "L"
 	    Prompt		    "Line Length (ft)"
@@ -9494,15 +9882,6 @@ Model {
       DstPort		      2
     }
     Line {
-      Name		      "P,Q from PV"
-      Labels		      [1, 0]
-      SrcBlock		      "Mux3"
-      SrcPort		      1
-      Points		      [56, 0; 0, 10]
-      DstBlock		      "Scope:\nPV and Grid"
-      DstPort		      1
-    }
-    Line {
       LineType		      "Connection"
       SrcBlock		      "wire 1-2"
       SrcPort		      LConn1
@@ -9551,13 +9930,6 @@ Model {
       SrcPort		      LConn3
       DstBlock		      "load 1"
       DstPort		      RConn3
-    }
-    Line {
-      SrcBlock		      "Mux13"
-      SrcPort		      1
-      Points		      [15, 0; 0, 35]
-      DstBlock		      "Building 1"
-      DstPort		      1
     }
     Line {
       LineType		      "Connection"
@@ -9940,9 +10312,9 @@ Model {
       DstPort		      LConn1
     }
     Line {
-      SrcBlock		      "EV Charger 2"
+      SrcBlock		      "From25"
       SrcPort		      1
-      Points		      [20, 0; 0, 15]
+      Points		      [100, 0; 0, 15]
       DstBlock		      "Charger2"
       DstPort		      1
     }
@@ -9976,9 +10348,9 @@ Model {
       DstPort		      LConn3
     }
     Line {
-      SrcBlock		      "EV Charger 3"
+      SrcBlock		      "From26"
       SrcPort		      1
-      Points		      [20, 0; 0, 15]
+      Points		      [100, 0; 0, 15]
       DstBlock		      "Charger3"
       DstPort		      1
     }
@@ -10063,23 +10435,23 @@ Model {
       DstPort		      LConn1
     }
     Line {
-      SrcBlock		      "EV Charger 4"
+      SrcBlock		      "From27"
       SrcPort		      1
-      Points		      [20, 0; 0, 15]
+      Points		      [100, 0; 0, 15]
       DstBlock		      "Charger4"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "EV Charger 5"
+      SrcBlock		      "From28"
       SrcPort		      1
-      Points		      [20, 0; 0, 15]
+      Points		      [100, 0; 0, 15]
       DstBlock		      "Charger5"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "EV Charger 6"
+      SrcBlock		      "From29"
       SrcPort		      1
-      Points		      [20, 0; 0, 15]
+      Points		      [100, 0; 0, 15]
       DstBlock		      "Charger6"
       DstPort		      1
     }
@@ -10390,7 +10762,6 @@ Model {
     Line {
       SrcBlock		      "Q"
       SrcPort		      1
-      Points		      [129, 0; 0, -15]
       DstBlock		      "Mux5"
       DstPort		      2
     }
@@ -10469,13 +10840,6 @@ Model {
       }
     }
     Line {
-      SrcBlock		      "PV System"
-      SrcPort		      1
-      Points		      [25, 0; 0, 15]
-      DstBlock		      "Mux5"
-      DstPort		      1
-    }
-    Line {
       LineType		      "Connection"
       SrcBlock		      "T:Load2"
       SrcPort		      RConn1
@@ -10526,16 +10890,9 @@ Model {
       DstPort		      LConn1
     }
     Line {
-      SrcBlock		      "Mux14"
-      SrcPort		      1
-      Points		      [35, 0; 0, 30]
-      DstBlock		      "Building 2"
-      DstPort		      1
-    }
-    Line {
       SrcBlock		      "Mux5"
       SrcPort		      1
-      Points		      [33, 0; 0, 65]
+      Points		      [33, 0; 0, 50]
       DstBlock		      "PV"
       DstPort		      1
     }
@@ -10564,25 +10921,10 @@ Model {
       DstPort		      1
     }
     Line {
-      Name		      "P,Q from grid"
-      Labels		      [1, 1]
-      SrcBlock		      "Mux6"
-      SrcPort		      1
-      Points		      [57, 0; 0, -15]
-      DstBlock		      "Scope:\nPV and Grid"
-      DstPort		      2
-    }
-    Line {
       SrcBlock		      "Power\n(3ph, Phasor)1"
       SrcPort		      2
       DstBlock		      "Mux6"
       DstPort		      2
-    }
-    Line {
-      SrcBlock		      "Power\n(3ph, Phasor)1"
-      SrcPort		      1
-      DstBlock		      "Mux6"
-      DstPort		      1
     }
     Line {
       SrcBlock		      "From8"
@@ -10721,13 +11063,6 @@ Model {
       DstPort		      LConn3
     }
     Line {
-      SrcBlock		      "Mux15"
-      SrcPort		      1
-      Points		      [20, 0; 0, 35]
-      DstBlock		      "Central Plant"
-      DstPort		      1
-    }
-    Line {
       SrcBlock		      "From5"
       SrcPort		      1
       DstBlock		      "Power\n(3ph, Phasor)5"
@@ -10774,15 +11109,10 @@ Model {
     }
     Line {
       SrcBlock		      "Power\n(3ph, Phasor)2"
-      SrcPort		      2
-      DstBlock		      "Mux4"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "Power\n(3ph, Phasor)2"
       SrcPort		      1
-      DstBlock		      "Mux4"
-      DstPort		      1
+      Points		      [122, 0; 0, -55]
+      DstBlock		      "Mux"
+      DstPort		      2
     }
     Line {
       SrcBlock		      "From14"
@@ -10798,14 +11128,8 @@ Model {
     }
     Line {
       SrcBlock		      "Power\n(3ph, Phasor)6"
-      SrcPort		      2
-      DstBlock		      "Mux2"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "Power\n(3ph, Phasor)6"
       SrcPort		      1
-      DstBlock		      "Mux2"
+      DstBlock		      "Mux"
       DstPort		      1
     }
     Line {
@@ -10822,15 +11146,10 @@ Model {
     }
     Line {
       SrcBlock		      "Power\n(3ph, Phasor)7"
-      SrcPort		      2
-      DstBlock		      "Mux9"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "Power\n(3ph, Phasor)7"
       SrcPort		      1
-      DstBlock		      "Mux9"
-      DstPort		      1
+      Points		      [137, 0; 0, -110]
+      DstBlock		      "Mux"
+      DstPort		      3
     }
     Line {
       SrcBlock		      "From19"
@@ -10843,18 +11162,6 @@ Model {
       SrcPort		      1
       DstBlock		      "Power\n(3ph, Phasor)8"
       DstPort		      2
-    }
-    Line {
-      SrcBlock		      "Power\n(3ph, Phasor)8"
-      SrcPort		      2
-      DstBlock		      "Mux11"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "Power\n(3ph, Phasor)8"
-      SrcPort		      1
-      DstBlock		      "Mux11"
-      DstPort		      1
     }
     Line {
       SrcBlock		      "From13"
@@ -10870,15 +11177,10 @@ Model {
     }
     Line {
       SrcBlock		      "Power\n(3ph, Phasor)9"
-      SrcPort		      2
-      DstBlock		      "Mux10"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "Power\n(3ph, Phasor)9"
       SrcPort		      1
-      DstBlock		      "Mux10"
-      DstPort		      1
+      Points		      [153, 0; 0, -170]
+      DstBlock		      "Mux"
+      DstPort		      4
     }
     Line {
       SrcBlock		      "From21"
@@ -10894,77 +11196,40 @@ Model {
     }
     Line {
       SrcBlock		      "Power\n(3ph, Phasor)10"
-      SrcPort		      2
-      DstBlock		      "Mux12"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "Power\n(3ph, Phasor)10"
       SrcPort		      1
-      DstBlock		      "Mux12"
-      DstPort		      1
-    }
-    Line {
-      Name		      "P,Q central plant"
-      SrcBlock		      "Mux9"
-      SrcPort		      1
-      Points		      [17, 0; 0, 35]
-      DstBlock		      "Sum"
-      DstPort		      3
-    }
-    Line {
-      Name		      "P,Q load 1"
-      SrcBlock		      "Mux10"
-      SrcPort		      1
-      Points		      [17, 0; 0, -25]
-      DstBlock		      "Sum"
-      DstPort		      4
-    }
-    Line {
-      Name		      "P,Q load 2"
-      SrcBlock		      "Mux4"
-      SrcPort		      1
-      Points		      [26, 0; 0, 90]
-      DstBlock		      "Sum"
-      DstPort		      2
-    }
-    Line {
-      Name		      "P,Q load 2"
-      SrcBlock		      "Mux11"
-      SrcPort		      1
-      Points		      [27, 0; 0, -80]
-      DstBlock		      "Sum"
-      DstPort		      5
-    }
-    Line {
-      Name		      "P,Q load 1"
-      SrcBlock		      "Mux2"
-      SrcPort		      1
-      Points		      [33, 0; 0, 145]
-      DstBlock		      "Sum"
-      DstPort		      1
-    }
-    Line {
-      Name		      "P,Q central plant"
-      SrcBlock		      "Mux12"
-      SrcPort		      1
-      Points		      [33, 0; 0, -135]
-      DstBlock		      "Sum"
+      Points		      [187, 0; 0, -280]
+      DstBlock		      "Mux"
       DstPort		      6
     }
     Line {
       Name		      "EV total power"
-      Labels		      [1, 1]
-      SrcBlock		      "Sum"
+      SrcBlock		      "Sum of\nElements"
       SrcPort		      1
-      DstBlock		      "Scope:\nEV Chargers"
-      DstPort		      1
+      Points		      [21, 0]
+      Branch {
+	Points			[0, 215]
+	DstBlock		"Mux4"
+	DstPort			1
+      }
+      Branch {
+	Labels			[1, 0]
+	DstBlock		"Scope:\nEV Chargers"
+	DstPort			2
+      }
     }
     Line {
       SrcBlock		      "Weather Data"
       SrcPort		      1
-      DstBlock		      "Weather Bus"
-      DstPort		      1
+      Points		      [31, 0]
+      Branch {
+	Points			[0, -150]
+	DstBlock		"Bus\nSelector"
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"Weather Bus"
+	DstPort			1
+      }
     }
     Line {
       SrcBlock		      "From24"
@@ -10973,52 +11238,10 @@ Model {
       DstPort		      1
     }
     Line {
-      SrcBlock		      "EV Charge\nProfile"
-      SrcPort		      1
-      DstBlock		      "EV Charging "
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "EV Charger 1"
-      SrcPort		      1
-      Points		      [17, 0; 0, 25]
-      DstBlock		      "Charger1"
-      DstPort		      1
-    }
-    Line {
       SrcBlock		      "From23"
       SrcPort		      1
-      DstBlock		      "EV Charger 1"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "From25"
-      SrcPort		      1
-      DstBlock		      "EV Charger 2"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "From26"
-      SrcPort		      1
-      DstBlock		      "EV Charger 3"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "From27"
-      SrcPort		      1
-      DstBlock		      "EV Charger 4"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "From28"
-      SrcPort		      1
-      DstBlock		      "EV Charger 5"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "From29"
-      SrcPort		      1
-      DstBlock		      "EV Charger 6"
+      Points		      [95, 0; 0, 25]
+      DstBlock		      "Charger1"
       DstPort		      1
     }
     Line {
@@ -11026,7 +11249,7 @@ Model {
       SrcPort		      1
       Points		      [20, 0]
       Branch {
-	Points			[0, -85]
+	Points			[0, 105]
 	DstBlock		"Scope:\nPV and Grid1"
 	DstPort			1
       }
@@ -11060,66 +11283,338 @@ Model {
       DstPort		      1
     }
     Line {
-      SrcBlock		      "From31"
-      SrcPort		      1
-      DstBlock		      "Mux13"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Constant5"
-      SrcPort		      1
-      DstBlock		      "Mux13"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "From32"
-      SrcPort		      1
-      DstBlock		      "Mux14"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Constant1"
-      SrcPort		      1
-      DstBlock		      "Mux14"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "From33"
-      SrcPort		      1
-      DstBlock		      "Mux15"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Constant2"
-      SrcPort		      1
-      DstBlock		      "Mux15"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "Control Function"
-      SrcPort		      1
-      DstBlock		      "Goto4"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "From34"
+      SrcBlock		      "MATLAB Function"
       SrcPort		      1
       DstBlock		      "Campus Thermal Model"
       DstPort		      2
     }
     Line {
-      SrcBlock		      "Campus Thermal Model"
+      SrcBlock		      "Electric Vehicles"
+      SrcPort		      1
+      DstBlock		      "Goto"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Electric Vehicles"
       SrcPort		      2
-      DstBlock		      "Goto25"
+      DstBlock		      "Goto4"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Electric Vehicles"
+      SrcPort		      3
+      DstBlock		      "Goto5"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Electric Vehicles"
+      SrcPort		      4
+      DstBlock		      "Goto6"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Electric Vehicles"
+      SrcPort		      5
+      DstBlock		      "Goto7"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Electric Vehicles"
+      SrcPort		      6
+      DstBlock		      "Goto8"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "PV System"
+      SrcPort		      1
+      Points		      [25, 0]
+      Branch {
+	DstBlock		"PV Power"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 30]
+	DstBlock		"Mux5"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "From31"
+      SrcPort		      1
+      DstBlock		      "PF Conversion"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "PF 1"
+      SrcPort		      1
+      DstBlock		      "PF Conversion"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "PF Conversion"
+      SrcPort		      1
+      Points		      [11, 0; 0, 45]
+      DstBlock		      "Building 1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From32"
+      SrcPort		      1
+      DstBlock		      "PF Conversion1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "PF 2"
+      SrcPort		      1
+      DstBlock		      "PF Conversion1"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "PF Conversion1"
+      SrcPort		      1
+      Points		      [15, 0; 0, 45]
+      DstBlock		      "Building 2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From33"
+      SrcPort		      1
+      DstBlock		      "PF Conversion2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "PF 3"
+      SrcPort		      1
+      DstBlock		      "PF Conversion2"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "PF Conversion2"
+      SrcPort		      1
+      Points		      [15, 0; 0, 45]
+      DstBlock		      "Central Plant"
+      DstPort		      1
+    }
+    Line {
+      Name		      "EV individual power"
+      SrcBlock		      "Mux"
+      SrcPort		      1
+      Points		      [11, 0]
+      Branch {
+	Points			[0, 40]
+	DstBlock		"Sum of\nElements"
+	DstPort			1
+      }
+      Branch {
+	Labels			[1, 1]
+	DstBlock		"Scope:\nEV Chargers"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Power\n(3ph, Phasor)6"
+      SrcPort		      2
+      Points		      [113, 0; 0, 230]
+      DstBlock		      "Sum"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Power\n(3ph, Phasor)2"
+      SrcPort		      2
+      Points		      [105, 0; 0, 185]
+      DstBlock		      "Sum"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Power\n(3ph, Phasor)10"
+      SrcPort		      2
+      DstBlock		      "Sum"
+      DstPort		      6
+    }
+    Line {
+      SrcBlock		      "Power\n(3ph, Phasor)8"
+      SrcPort		      2
+      Points		      [75, 0; 0, 45]
+      DstBlock		      "Sum"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "Power\n(3ph, Phasor)9"
+      SrcPort		      2
+      Points		      [25, 0]
+      Branch {
+	Points			[60, 0; 0, 90]
+	DstBlock		"Sum"
+	DstPort			4
+      }
+      Branch {
+	Points			[0, 0]
+      }
+    }
+    Line {
+      SrcBlock		      "Power\n(3ph, Phasor)7"
+      SrcPort		      2
+      Points		      [94, 0; 0, 140]
+      DstBlock		      "Sum"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Power\n(3ph, Phasor)8"
+      SrcPort		      1
+      Points		      [171, 0; 0, -225]
+      DstBlock		      "Mux"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "Enable\nEV Control"
+      SrcPort		      1
+      DstBlock		      "Electric Vehicles"
+      DstPort		      2
+    }
+    Line {
+      Name		      "Direct / Diffuse Irradiance"
+      Labels		      [3, 1]
+      SrcBlock		      "Mux2"
+      SrcPort		      1
+      Points		      [52, 0; 0, 10]
+      DstBlock		      "Scope:\nWeather"
+      DstPort		      1
+    }
+    Line {
+      Name		      "<DNI>"
+      Labels		      [0, 0]
+      SrcBlock		      "Bus\nSelector"
+      SrcPort		      1
+      DstBlock		      "Mux2"
+      DstPort		      1
+    }
+    Line {
+      Name		      "<DHI>"
+      Labels		      [0, 0]
+      SrcBlock		      "Bus\nSelector"
+      SrcPort		      2
+      DstBlock		      "Mux2"
+      DstPort		      2
+    }
+    Line {
+      Name		      "<DryBulbTemp>"
+      Labels		      [0, 0]
+      SrcBlock		      "Bus\nSelector"
+      SrcPort		      3
+      DstBlock		      "Scope:\nWeather"
+      DstPort		      2
+    }
+    Line {
+      Name		      "<WindSpeed>"
+      Labels		      [0, 0]
+      SrcBlock		      "Bus\nSelector"
+      SrcPort		      4
+      DstBlock		      "Scope:\nWeather"
+      DstPort		      3
+    }
+    Line {
+      Name		      "<RH>"
+      Labels		      [0, 0]
+      SrcBlock		      "Bus\nSelector"
+      SrcPort		      5
+      DstBlock		      "Scope:\nWeather"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "Power\n(3ph, Phasor)1"
+      SrcPort		      1
+      DstBlock		      "Mux6"
       DstPort		      1
     }
     Line {
       SrcBlock		      "From35"
       SrcPort		      1
+      Points		      [48, 0]
+      Branch {
+	DstBlock		"LPF\nTau = 15 min"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 58; 152, 0]
+	DstBlock		"Sum1"
+	DstPort			2
+      }
+    }
+    Line {
+      SrcBlock		      "LPF\nTau = 15 min"
+      SrcPort		      1
+      DstBlock		      "Sum1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Sum1"
+      SrcPort		      1
+      DstBlock		      "Gain"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From34"
+      SrcPort		      1
+      DstBlock		      "Electric Vehicles"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Gain"
+      SrcPort		      1
+      DstBlock		      " Regulation\n(Target Correction)"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Sum"
+      SrcPort		      1
+      DstBlock		      "Mux4"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Mux4"
+      SrcPort		      1
+      DstBlock		      "Goto100"
+      DstPort		      1
+    }
+    Line {
+      Name		      "P,Q from PV"
+      Labels		      [3, 1]
+      SrcBlock		      "Mux3"
+      SrcPort		      1
+      Points		      [35, 0; 0, 45]
+      DstBlock		      "Scope:\nPV, EV, and Grid"
+      DstPort		      1
+    }
+    Line {
+      Name		      "P, Q from EV"
+      Labels		      [1, 1]
+      SrcBlock		      "From36"
+      SrcPort		      1
+      DstBlock		      "Scope:\nPV, EV, and Grid"
+      DstPort		      2
+    }
+    Line {
+      Name		      "P,Q from grid"
+      Labels		      [3, 1]
+      SrcBlock		      "Mux6"
+      SrcPort		      1
+      Points		      [29, 0; 0, -50]
+      DstBlock		      "Scope:\nPV, EV, and Grid"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Control Function"
+      SrcPort		      1
+      DstBlock		      "Goto9"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From37"
+      SrcPort		      1
       Points		      [18, 0]
       Branch {
-	Points			[0, -70]
-	DstBlock		"Scope:\nPV and Grid2"
+	Points			[0, -105]
+	DstBlock		"Scope"
 	DstPort			1
       }
       Branch {
@@ -11128,7 +11623,7 @@ Model {
       }
     }
     Line {
-      SrcBlock		      "From36"
+      SrcBlock		      "From38"
       SrcPort		      1
       DstBlock		      "Control Function"
       DstPort		      2
@@ -11143,13 +11638,13 @@ Model {
       SID		      "2426"
       Name		      "Note: The PQ input on each source and load block is a vector of the format [P Q], where the \nfirst"
       " and second elements are P = real power, Q = reactive power, respectively. "
-      Position		      [1442, 786]
+      Position		      [1447, 776]
       ZOrder		      -1
     }
     Annotation {
       SID		      "1859"
-      Name		      "Simple Demo consisting of 2 buildings, 1 campus thermal plant, 6 EV chargers, and 1 PV system"
-      Position		      [1503, 79]
+      Name		      "Campus Demo consisting of 2 buildings, 1 campus thermal plant, 6 EV chargers, and 1 PV system"
+      Position		      [1453, 34]
       ZOrder		      -1
       FontName		      "Arial"
       FontSize		      20
@@ -11171,7 +11666,7 @@ MatData {
     "  \"    !^%ZU&XWD- #@   #@    &    \"     8         !0    @    !     0    $         \"0    @   #L4;@>A4M:P X   !( "
     "   !@    @    $          4    (     0   !,    !         !     3    ,2U*=6XM,C Q,B P,#HP,#HP,       #@   #@    &   "
     " \"     8         !0    @    !     0    $         \"0    @            8P X    X    !@    @    &          4    (   "
-    "  0    $    !          D    (            /D .    .     8    (    !@         %    \"     $    !     0         )    "
+    "  0    $    !          D    (            +D .    .     8    (    !@         %    \"     $    !     0         )    "
     "\"           3-U #@   #@    &    \"     8         !0    @    !     0    $         \"0    @   !F9F9F9F;N/PX    X   "
     " !@    @    &          4    (     0    $    !          D    (          \" 9D .    .     8    (    !@         %    "
     "\"     $    !     0         )    \"    !^%ZU&XWD- #@   #@    &    \"     8         !0    @    !     0    $        "
@@ -11193,7 +11688,7 @@ MatData {
     "   !D:69F=7-E      !T86UB          !W<W!D          !D8P                  #@   #@    &    \"     8         !0    @ "
     "   !     0    $         \"0    @    ?A>M1N-Y#0 X    X    !@    @    &          4    (     0    $    !          D  "
     "  (    [%&X'H5+6L .    .     8    (    !@         %    \"     $    !     0         )    \"            !C #@   #@  "
-    "  &    \"     8         !0    @    !     0    $         \"0    @    1$1$1$1&!/PX    X    !@    @    &          4  "
+    "  &    \"     8         !0    @    !     0    $         \"0    @    1$1$1$1%Q/PX    X    !@    @    &          4  "
     "  (     0    $    !          D    (            /D .    .     8    (    !@         %    \"     $    !     0        "
     " )    \"    &9F9F9F9NX_#@   #@    &    \"     8         !0    @    !     0    $         \"0    @               X  "
     "  X    !@    @    &          4    (     0    $    !          D    (          \" 9D .    .     8    (    !@        "
@@ -11209,11 +11704,11 @@ MatData {
     "(    !@         %    \"     $    !     0         )    \"               #@   #@    &    \"     8         !0    @   "
     " !     0    $         \"0    @               X    X    !@    @    &          4    (     0    $    !          D    "
     "(               .    .     8    (    !@         %    \"     $    !     0         )    \"               #@   #@    "
-    "&    \"     8         !0    @    !     0    $         \"0    @    S,S,S,S,O0 X    X    !@    @    &          4    "
-    "(     0    $    !          D    (            !$ .    .     8    (    !@         %    \"     $    !     0         )"
-    "    \"               #@   #     &    \"     8         !0    @               $         \"0         .    .     8    "
-    "(    !@         %    \"     $    !     0         )    \"         !:;B9!#@   #     &    \"     8         !0    @   "
-    "            $         \"0         "
+    "&    \"     8         !0    @    !     0    $         \"0    @    S,S,S,S,E0 X    X    !@    @    &          4    "
+    "(     0    $    !          D    (    ,S,S,S,S_S\\.    .     8    (    !@         %    \"     $    !     0         "
+    ")    \"               #@   #     &    \"     8         !0    @               $         \"0         .    .     8   "
+    " (    !@         %    \"     $    !     0         )    \"         !:;B9!#@   #     &    \"     8         !0    @  "
+    "             $         \"0         "
   }
   DataRecord {
     Tag			    DataTag1
@@ -11241,7 +11736,7 @@ Stateflow {
     name		    "integrated_campus"
     created		    "17-Dec-2012 14:53:20"
     isLibrary		    0
-    firstTarget		    63
+    firstTarget		    69
     sfVersion		    76014001.0015
   }
   chart {
@@ -11439,10 +11934,7 @@ Stateflow {
     firstTransition	    24
     firstJunction	    23
     viewObj		    12
-    visible		    1
     machine		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    16
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -11709,19 +12201,16 @@ Stateflow {
   }
   chart {
     id			    26
-    name		    "Control Function"
+    name		    "MATLAB Function"
     windowPosition	    [357.331 483.407 167 391]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 1280 1024 1.041050272174191]
     treeNode		    [0 27 0 0]
-    firstTransition	    32
-    firstJunction	    31
+    firstTransition	    30
+    firstJunction	    29
     viewObj		    26
-    visible		    1
     machine		    1
-    subviewS {
-    }
-    ssIdHighWaterMark	    8
+    ssIdHighWaterMark	    5
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
     firstData		    28
@@ -11745,6 +12234,109 @@ Stateflow {
     decomposition	    CLUSTER_STATE
     eml {
       isEML		      1
+      script		      "function y = fcn()\nChilledWaterSetpoint = 7.22;\nRoom1CoolingSetpoint = 22;\nRoom2CoolingSetpoin"
+      "t = 22;\nRoom1HeatingSetpoint = 20;\nRoom2HeatingSetpoint = 20;\n\ny = [ChilledWaterSetpoint Room1CoolingSetpoin"
+      "t Room2CoolingSetpoint Room1HeatingSetpoint Room2HeatingSetpoint];"
+      editorLayout	      "100 M4x1[10 5 700 500]"
+    }
+  }
+  data {
+    id			    28
+    ssIdNumber		    5
+    name		    "y"
+    linkNode		    [26 0 0]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  junction {
+    id			    29
+    position		    [23.5747 49.5747 7]
+    chart		    26
+    linkNode		    [26 0 0]
+    subviewer		    26
+    ssIdNumber		    3
+    type		    CONNECTIVE_JUNCTION
+  }
+  transition {
+    id			    30
+    labelString		    "{eML_blk_kernel();}"
+    labelPosition	    [32.125 19.875 102.544 14.964]
+    fontSize		    12
+    src {
+      intersection	      [0 0 1 0 23.5747 14.625 0 0]
+    }
+    dst {
+      id		      29
+      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
+    }
+    midPoint		    [23.5747 24.9468]
+    chart		    26
+    linkNode		    [26 0 0]
+    dataLimits		    [21.175 25.975 14.625 42.575]
+    subviewer		    26
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    2
+  }
+  instance {
+    id			    31
+    name		    "MATLAB Function"
+    machine		    1
+    chart		    26
+  }
+  chart {
+    id			    32
+    name		    "Control Function"
+    windowPosition	    [357.331 483.407 167 391]
+    viewLimits		    [0 156.75 0 153.75]
+    screen		    [1 1 1280 1024 1.041050272174191]
+    treeNode		    [0 33 0 0]
+    firstTransition	    38
+    firstJunction	    37
+    viewObj		    32
+    visible		    1
+    machine		    1
+    subviewS {
+    }
+    ssIdHighWaterMark	    8
+    decomposition	    CLUSTER_CHART
+    type		    EML_CHART
+    firstData		    34
+    chartFileNumber	    4
+    disableImplicitCasting  1
+    eml {
+      name		      "fcn"
+    }
+  }
+  state {
+    id			    33
+    labelString		    "eML_blk_kernel()"
+    position		    [18 64.5 118 66]
+    fontSize		    12
+    chart		    32
+    treeNode		    [32 0 0 0]
+    superState		    SUBCHART
+    subviewer		    32
+    ssIdNumber		    1
+    type		    FUNC_STATE
+    decomposition	    CLUSTER_STATE
+    eml {
+      isEML		      1
       script		      "function Inputs = fcn(Campus_Outputs, Weather)\n%% CONTROL LOOP FOR BUILDING\n\nChilledWaterSetpo"
       "int = 7.22;\nRoom1CoolingSetpoint = 22;\nRoom2CoolingSetpoint = 22;\nRoom1HeatingSetpoint = 20;\nRoom2HeatingSet"
       "point = 20;\n\n\n\n\n\n\n\n%% SET OUTPUTS\nInputs = [ChilledWaterSetpoint Room1CoolingSetpoint Room2CoolingSetpo"
@@ -11753,10 +12345,10 @@ Stateflow {
     }
   }
   data {
-    id			    28
+    id			    34
     ssIdNumber		    5
     name		    "Inputs"
-    linkNode		    [26 0 29]
+    linkNode		    [32 0 35]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -11773,10 +12365,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    29
+    id			    35
     ssIdNumber		    6
     name		    "Campus_Outputs"
-    linkNode		    [26 28 30]
+    linkNode		    [32 34 36]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -11795,10 +12387,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    30
+    id			    36
     ssIdNumber		    7
     name		    "Weather"
-    linkNode		    [26 29 0]
+    linkNode		    [32 35 0]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -11817,16 +12409,16 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   junction {
-    id			    31
+    id			    37
     position		    [23.5747 49.5747 7]
-    chart		    26
-    linkNode		    [26 0 0]
-    subviewer		    26
+    chart		    32
+    linkNode		    [32 0 0]
+    subviewer		    32
     ssIdNumber		    3
     type		    CONNECTIVE_JUNCTION
   }
   transition {
-    id			    32
+    id			    38
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [32.125 19.875 102.544 14.964]
     fontSize		    12
@@ -11834,14 +12426,14 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      31
+      id		      37
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
-    chart		    26
-    linkNode		    [26 0 0]
+    chart		    32
+    linkNode		    [32 0 0]
     dataLimits		    [21.175 25.975 14.625 42.575]
-    subviewer		    26
+    subviewer		    32
     drawStyle		    SMART
     slide {
       sticky		      BOTH_STICK
@@ -11850,26 +12442,26 @@ Stateflow {
     ssIdNumber		    2
   }
   instance {
-    id			    33
+    id			    39
     name		    "Control Function"
     machine		    1
-    chart		    26
+    chart		    32
   }
   chart {
-    id			    34
+    id			    40
     name		    "Campus Thermal Model/PrepOutputs3"
     windowPosition	    [530 458.75 213 385]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 1600 1200 1.333333333333333]
-    treeNode		    [0 35 0 0]
-    firstTransition	    40
-    firstJunction	    39
-    viewObj		    34
+    treeNode		    [0 41 0 0]
+    firstTransition	    46
+    firstJunction	    45
+    viewObj		    40
     machine		    1
     ssIdHighWaterMark	    11
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
-    firstData		    36
+    firstData		    42
     chartFileNumber	    5
     disableImplicitCasting  1
     eml {
@@ -11877,14 +12469,14 @@ Stateflow {
     }
   }
   state {
-    id			    35
+    id			    41
     labelString		    "eML_blk_kernel()"
     position		    [18 64.5 118 66]
     fontSize		    12
-    chart		    34
-    treeNode		    [34 0 0 0]
+    chart		    40
+    treeNode		    [40 0 0 0]
     superState		    SUBCHART
-    subviewer		    34
+    subviewer		    40
     ssIdNumber		    1
     type		    FUNC_STATE
     decomposition	    CLUSTER_STATE
@@ -11897,10 +12489,10 @@ Stateflow {
     }
   }
   data {
-    id			    36
+    id			    42
     ssIdNumber		    9
     name		    "MaxMassFlow1"
-    linkNode		    [34 0 37]
+    linkNode		    [40 0 43]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -11919,10 +12511,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    37
+    id			    43
     ssIdNumber		    4
     name		    "MaxFlow"
-    linkNode		    [34 36 38]
+    linkNode		    [40 42 44]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -11938,10 +12530,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    38
+    id			    44
     ssIdNumber		    10
     name		    "MaxMassFlow2"
-    linkNode		    [34 37 0]
+    linkNode		    [40 43 0]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -11960,16 +12552,16 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   junction {
-    id			    39
+    id			    45
     position		    [23.5747 49.5747 7]
-    chart		    34
-    linkNode		    [34 0 0]
-    subviewer		    34
+    chart		    40
+    linkNode		    [40 0 0]
+    subviewer		    40
     ssIdNumber		    3
     type		    CONNECTIVE_JUNCTION
   }
   transition {
-    id			    40
+    id			    46
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [32.125 19.875 102.544 14.964]
     fontSize		    12
@@ -11977,14 +12569,14 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      39
+      id		      45
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
-    chart		    34
-    linkNode		    [34 0 0]
+    chart		    40
+    linkNode		    [40 0 0]
     dataLimits		    [21.175 25.975 14.625 42.575]
-    subviewer		    34
+    subviewer		    40
     drawStyle		    SMART
     slide {
       sticky		      BOTH_STICK
@@ -11993,26 +12585,26 @@ Stateflow {
     ssIdNumber		    2
   }
   instance {
-    id			    41
+    id			    47
     name		    "Campus Thermal Model/PrepOutputs3"
     machine		    1
-    chart		    34
+    chart		    40
   }
   chart {
-    id			    42
+    id			    48
     name		    "Campus Thermal Model/PrepOutputs4"
     windowPosition	    [530 458.75 213 385]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 1600 1200 1.333333333333333]
-    treeNode		    [0 43 0 0]
-    firstTransition	    50
-    firstJunction	    49
-    viewObj		    42
+    treeNode		    [0 49 0 0]
+    firstTransition	    56
+    firstJunction	    55
+    viewObj		    48
     machine		    1
     ssIdHighWaterMark	    9
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
-    firstData		    44
+    firstData		    50
     chartFileNumber	    6
     disableImplicitCasting  1
     eml {
@@ -12020,14 +12612,14 @@ Stateflow {
     }
   }
   state {
-    id			    43
+    id			    49
     labelString		    "eML_blk_kernel()"
     position		    [18 64.5 118 66]
     fontSize		    12
-    chart		    42
-    treeNode		    [42 0 0 0]
+    chart		    48
+    treeNode		    [48 0 0 0]
     superState		    SUBCHART
-    subviewer		    42
+    subviewer		    48
     ssIdNumber		    1
     type		    FUNC_STATE
     decomposition	    CLUSTER_STATE
@@ -12040,10 +12632,10 @@ Stateflow {
     }
   }
   data {
-    id			    44
+    id			    50
     ssIdNumber		    4
     name		    "u"
-    linkNode		    [42 0 45]
+    linkNode		    [48 0 51]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -12059,10 +12651,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    45
+    id			    51
     ssIdNumber		    5
     name		    "Temp"
-    linkNode		    [42 44 46]
+    linkNode		    [48 50 52]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -12079,10 +12671,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    46
+    id			    52
     ssIdNumber		    6
     name		    "Input"
-    linkNode		    [42 45 47]
+    linkNode		    [48 51 53]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -12101,10 +12693,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    47
+    id			    53
     ssIdNumber		    7
     name		    "InOutTemp"
-    linkNode		    [42 46 48]
+    linkNode		    [48 52 54]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -12123,10 +12715,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    48
+    id			    54
     ssIdNumber		    9
     name		    "Pow"
-    linkNode		    [42 47 0]
+    linkNode		    [48 53 0]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -12145,16 +12737,16 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   junction {
-    id			    49
+    id			    55
     position		    [23.5747 49.5747 7]
-    chart		    42
-    linkNode		    [42 0 0]
-    subviewer		    42
+    chart		    48
+    linkNode		    [48 0 0]
+    subviewer		    48
     ssIdNumber		    3
     type		    CONNECTIVE_JUNCTION
   }
   transition {
-    id			    50
+    id			    56
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [32.125 19.875 102.544 14.964]
     fontSize		    12
@@ -12162,14 +12754,14 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      49
+      id		      55
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
-    chart		    42
-    linkNode		    [42 0 0]
+    chart		    48
+    linkNode		    [48 0 0]
     dataLimits		    [21.175 25.975 14.625 42.575]
-    subviewer		    42
+    subviewer		    48
     drawStyle		    SMART
     slide {
       sticky		      BOTH_STICK
@@ -12178,26 +12770,26 @@ Stateflow {
     ssIdNumber		    2
   }
   instance {
-    id			    51
+    id			    57
     name		    "Campus Thermal Model/PrepOutputs4"
     machine		    1
-    chart		    42
+    chart		    48
   }
   chart {
-    id			    52
+    id			    58
     name		    "Campus Thermal Model/PrepOutputs6"
     windowPosition	    [550 458.75 213 385]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 1600 1200 1.333333333333333]
-    treeNode		    [0 53 0 0]
-    firstTransition	    61
-    firstJunction	    60
-    viewObj		    52
+    treeNode		    [0 59 0 0]
+    firstTransition	    67
+    firstJunction	    66
+    viewObj		    58
     machine		    1
     ssIdHighWaterMark	    13
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
-    firstData		    54
+    firstData		    60
     chartFileNumber	    8
     disableImplicitCasting  1
     eml {
@@ -12205,14 +12797,14 @@ Stateflow {
     }
   }
   state {
-    id			    53
+    id			    59
     labelString		    "eML_blk_kernel()"
     position		    [18 64.5 118 66]
     fontSize		    12
-    chart		    52
-    treeNode		    [52 0 0 0]
+    chart		    58
+    treeNode		    [58 0 0 0]
     superState		    SUBCHART
-    subviewer		    52
+    subviewer		    58
     ssIdNumber		    1
     type		    FUNC_STATE
     decomposition	    CLUSTER_STATE
@@ -12224,10 +12816,10 @@ Stateflow {
     }
   }
   data {
-    id			    54
+    id			    60
     ssIdNumber		    4
     name		    "Input1"
-    linkNode		    [52 0 55]
+    linkNode		    [58 0 61]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -12243,10 +12835,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    55
+    id			    61
     ssIdNumber		    11
     name		    "Input2"
-    linkNode		    [52 54 56]
+    linkNode		    [58 60 62]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -12265,10 +12857,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    56
+    id			    62
     ssIdNumber		    9
     name		    "mflow1"
-    linkNode		    [52 55 57]
+    linkNode		    [58 61 63]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -12287,10 +12879,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    57
+    id			    63
     ssIdNumber		    12
     name		    "pow1"
-    linkNode		    [52 56 58]
+    linkNode		    [58 62 64]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -12309,10 +12901,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    58
+    id			    64
     ssIdNumber		    10
     name		    "mflow2"
-    linkNode		    [52 57 59]
+    linkNode		    [58 63 65]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -12331,10 +12923,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    59
+    id			    65
     ssIdNumber		    13
     name		    "pow2"
-    linkNode		    [52 58 0]
+    linkNode		    [58 64 0]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -12353,16 +12945,16 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   junction {
-    id			    60
+    id			    66
     position		    [23.5747 49.5747 7]
-    chart		    52
-    linkNode		    [52 0 0]
-    subviewer		    52
+    chart		    58
+    linkNode		    [58 0 0]
+    subviewer		    58
     ssIdNumber		    3
     type		    CONNECTIVE_JUNCTION
   }
   transition {
-    id			    61
+    id			    67
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [32.125 19.875 102.544 14.964]
     fontSize		    12
@@ -12370,14 +12962,14 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      60
+      id		      66
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
-    chart		    52
-    linkNode		    [52 0 0]
+    chart		    58
+    linkNode		    [58 0 0]
     dataLimits		    [21.175 25.975 14.625 42.575]
-    subviewer		    52
+    subviewer		    58
     drawStyle		    SMART
     slide {
       sticky		      BOTH_STICK
@@ -12386,13 +12978,13 @@ Stateflow {
     ssIdNumber		    2
   }
   instance {
-    id			    62
+    id			    68
     name		    "Campus Thermal Model/PrepOutputs6"
     machine		    1
-    chart		    52
+    chart		    58
   }
   target {
-    id			    63
+    id			    69
     name		    "sfun"
     description		    "Default Simulink S-Function Target."
     machine		    1

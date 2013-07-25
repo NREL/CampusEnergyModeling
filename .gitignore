@@ -2,6 +2,10 @@
 # Compiled files
 *.mex
 *.mexw64
+*.lnk
+
+# Project directories
+slprj/
 
 # Data files
 *.mat

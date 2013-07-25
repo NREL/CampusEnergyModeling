@@ -5,14 +5,15 @@
 fileName = 'integrated_campus';
 
 %% Simulation Parameters
-set_param(fileName,'SolverType', 'Fixed-step', 'FixedStep','60')
+set_param(fileName,'SolverType', 'Fixed-step', 'FixedStep','1', 'Solver', 'ode3')
 
+subSystemName = 'Campus Thermal Model';
 
 %% MLE+ Blocks
 %% E+ PLANT
 % BLOCK progname, modelfile, weatherfile, workdir, timeout, port, host, bcvtbdir, deltaT, noutputd
 blockName = 'E+ Plant';
-objName = [fileName '/' blockName];
+objName = [fileName '/' subSystemName '/' blockName];
 
 % Set Param
 param = 'progname';
@@ -47,7 +48,7 @@ set_param(objName,param,value);
 %% E+ Building 
 % BLOCK progname, modelfile, weatherfile, workdir, timeout, port, host, bcvtbdir, deltaT, noutputd
 blockName = 'E+ Building';
-objName = [fileName '/' blockName];
+objName = [fileName '/' subSystemName '/' blockName];
 
 % Set Param
 param = 'progname';
@@ -82,7 +83,7 @@ set_param(objName,param,value);
 %% E+ Building1
 % BLOCK progname, modelfile, weatherfile, workdir, timeout, port, host, bcvtbdir, deltaT, noutputd
 blockName = 'E+ Building1';
-objName = [fileName '/' blockName];
+objName = [fileName '/' subSystemName '/' blockName];
 
 % Set Param
 param = 'progname';

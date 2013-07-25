@@ -20,7 +20,7 @@ Library {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [433.0, 219.0, 951.0, 734.0]
+      Location		      [154.0, 264.0, 951.0, 734.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -29,7 +29,7 @@ Library {
 	DockPosition		"Left"
 	Width			[50]
 	Height			[50]
-	Filter			[9]
+	Filter			[8]
       }
       Object {
 	$PropName		"ExplorerBarInfo"
@@ -37,16 +37,28 @@ Library {
 	$ClassName		"Simulink.ExplorerBarInfo"
 	Visible			[1]
       }
-      Object {
-	$PropName		"EditorsInfo"
-	$ObjectID		5
-	$ClassName		"Simulink.EditorInfo"
-	IsActive		[1]
-	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"14"
-	Extents			[901.0, 568.0]
-	ZoomFactor		[1.0]
-	Offset			[0.0, 0.0]
+      Array {
+	Type			"Simulink.EditorInfo"
+	Dimension		2
+	Object {
+	  $ObjectID		  5
+	  IsActive		  [0]
+	  ViewObjType		  "SimulinkSubsys"
+	  LoadSaveID		  "12"
+	  Extents		  [901.0, 565.0]
+	  ZoomFactor		  [1.0]
+	  Offset		  [0.0, 0.0]
+	}
+	Object {
+	  $ObjectID		  6
+	  IsActive		  [1]
+	  ViewObjType		  "SimulinkSubsys"
+	  LoadSaveID		  "216"
+	  Extents		  [901.0, 565.0]
+	  ZoomFactor		  [1.0]
+	  Offset		  [0.0, 0.0]
+	}
+	PropName		"EditorsInfo"
       }
     }
   }
@@ -54,11 +66,11 @@ Library {
   Creator		  "sfrank1"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "wbernal"
+  LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Jul 23 14:35:41 2013"
-  RTWModifiedTimeStamp	  296490930
-  ModelVersionFormat	  "1.%<AutoIncrement:58>"
+  LastModifiedDate	  "Thu Jul 25 10:44:22 2013"
+  RTWModifiedTimeStamp	  296649858
+  ModelVersionFormat	  "1.%<AutoIncrement:68>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -126,13 +138,13 @@ Library {
     Type		    "Handle"
     Dimension		    1
     Simulink.ConfigSet {
-      $ObjectID		      6
+      $ObjectID		      7
       Version		      "1.13.0"
       Array {
 	Type			"Handle"
 	Dimension		8
 	Simulink.SolverCC {
-	  $ObjectID		  7
+	  $ObjectID		  8
 	  Version		  "1.13.0"
 	  StartTime		  "0.0"
 	  StopTime		  "10.0"
@@ -167,7 +179,7 @@ Library {
 	  InsertRTBMode		  "Whenever possible"
 	}
 	Simulink.DataIOCC {
-	  $ObjectID		  8
+	  $ObjectID		  9
 	  Version		  "1.13.0"
 	  Decimation		  "1"
 	  ExternalInput		  "[t, u]"
@@ -199,7 +211,7 @@ Library {
 	  Refine		  "1"
 	}
 	Simulink.OptimizationCC {
-	  $ObjectID		  9
+	  $ObjectID		  10
 	  Version		  "1.13.0"
 	  Array {
 	    Type		    "Cell"
@@ -255,7 +267,7 @@ Library {
 	  ParallelExecutionInRapidAccelerator on
 	}
 	Simulink.DebuggingCC {
-	  $ObjectID		  10
+	  $ObjectID		  11
 	  Version		  "1.13.0"
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
@@ -345,7 +357,7 @@ Library {
 	  SFTransitionActionBeforeConditionDiag	"warning"
 	}
 	Simulink.HardwareCC {
-	  $ObjectID		  11
+	  $ObjectID		  12
 	  Version		  "1.13.0"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
@@ -386,7 +398,7 @@ Library {
 	  ProdEqTarget		  on
 	}
 	Simulink.ModelReferenceCC {
-	  $ObjectID		  12
+	  $ObjectID		  13
 	  Version		  "1.13.0"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
 	  CheckModelReferenceTargetMessage "error"
@@ -401,7 +413,7 @@ Library {
 	  SupportModelReferenceSimTargetCustomCode off
 	}
 	Simulink.SFSimCC {
-	  $ObjectID		  13
+	  $ObjectID		  14
 	  Version		  "1.13.0"
 	  SFSimEnableDebug	  on
 	  SFSimOverflowDetection  on
@@ -416,7 +428,7 @@ Library {
 	}
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
-	  $ObjectID		  14
+	  $ObjectID		  15
 	  Version		  "1.13.0"
 	  Array {
 	    Type		    "Cell"
@@ -479,7 +491,7 @@ Library {
 	    Type		    "Handle"
 	    Dimension		    2
 	    Simulink.CodeAppCC {
-	      $ObjectID		      15
+	      $ObjectID		      16
 	      Version		      "1.13.0"
 	      Array {
 		Type			"Cell"
@@ -546,7 +558,7 @@ Library {
 	    }
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
-	      $ObjectID		      16
+	      $ObjectID		      17
 	      Version		      "1.13.0"
 	      Array {
 		Type			"Cell"
@@ -781,6 +793,21 @@ Library {
       Interpolate	      on
     }
     Block {
+      BlockType		      Integrator
+      ExternalReset	      "none"
+      InitialConditionSource  "internal"
+      InitialCondition	      "0"
+      LimitOutput	      off
+      UpperSaturationLimit    "inf"
+      LowerSaturationLimit    "-inf"
+      ShowSaturationPort      off
+      ShowStatePort	      off
+      AbsoluteTolerance	      "auto"
+      IgnoreLimit	      off
+      ZeroCross		      on
+      ContinuousStateAttributes	"''"
+    }
+    Block {
       BlockType		      Logic
       Operator		      "AND"
       Inputs		      "2"
@@ -982,6 +1009,28 @@ Library {
       RTWStateStorageClass    "Auto"
     }
     Block {
+      BlockType		      MinMax
+      Function		      "min"
+      Inputs		      "1"
+      InputSameDT	      on
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      ZeroCross		      on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Mux
+      Inputs		      "4"
+      DisplayOption	      "none"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      NonVirtualBus	      off
+    }
+    Block {
       BlockType		      Outport
       Port		      "1"
       OutMin		      "[]"
@@ -1017,6 +1066,14 @@ Library {
       SampleTime	      "-1"
     }
     Block {
+      BlockType		      RateLimiter
+      RisingSlewLimit	      "1"
+      FallingSlewLimit	      "-1"
+      SampleTimeMode	      "continuous"
+      InitialCondition	      "0"
+      LinearizeAsGain	      on
+    }
+    Block {
       BlockType		      Saturate
       UpperLimitSource	      "Dialog"
       UpperLimit	      "0.5"
@@ -1030,6 +1087,21 @@ Library {
       OutDataTypeStr	      "Inherit: Same as input"
       LockScale		      off
       RndMeth		      "Floor"
+    }
+    Block {
+      BlockType		      Sqrt
+      Operator		      "sqrt"
+      OutputSignalType	      "auto"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      IntermediateResultsDataTypeStr "Inherit: Inherit via internal rule"
+      AlgorithmType	      "Exact"
+      Iterations	      "3"
     }
     Block {
       BlockType		      SubSystem
@@ -1089,7 +1161,7 @@ Library {
   }
   System {
     Name		    "CampusModeling"
-    Location		    [581, 501, 1532, 1235]
+    Location		    [154, 264, 1105, 998]
     Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1103,7 +1175,7 @@ Library {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "169"
+    SIDHighWatermark	    "232"
     Block {
       BlockType		      SubSystem
       Name		      "Buildings"
@@ -1123,14 +1195,14 @@ Library {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		17
+	$ObjectID		18
 	$ClassName		"Simulink.Mask"
 	Display			"disp('Buildings')"
       }
       System {
 	Name			"Buildings"
 	Location		[433, 219, 1384, 953]
-	Open			on
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1153,7 +1225,7 @@ Library {
 	  Parameters		  "progname, modelfile, weatherfile, workdir, timeout, port, host, bcvtbdir, deltaT, noutputd"
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    18
+	    $ObjectID		    19
 	    $ClassName		    "Simulink.Mask"
 	    Type		    "EnergyPlus Cosimulation"
 	    Description		    "This block implements cosimulation with EnergyPlus by allowing Simulink to exchange input and o"
@@ -1171,7 +1243,7 @@ Library {
 	      Type		      "Simulink.MaskParameter"
 	      Dimension		      10
 	      Object {
-		$ObjectID		19
+		$ObjectID		20
 		Type			"edit"
 		Name			"progname"
 		Prompt			"E+ Executable Path"
@@ -1179,7 +1251,7 @@ Library {
 		Tunable			"off"
 	      }
 	      Object {
-		$ObjectID		20
+		$ObjectID		21
 		Type			"edit"
 		Name			"modelfile"
 		Prompt			"IDF File (without extension)"
@@ -1187,7 +1259,7 @@ Library {
 		Tunable			"off"
 	      }
 	      Object {
-		$ObjectID		21
+		$ObjectID		22
 		Type			"edit"
 		Name			"weatherfile"
 		Prompt			"Weather Profile"
@@ -1195,7 +1267,7 @@ Library {
 		Tunable			"off"
 	      }
 	      Object {
-		$ObjectID		22
+		$ObjectID		23
 		Type			"edit"
 		Name			"workdir"
 		Prompt			"Working Directory"
@@ -1203,7 +1275,7 @@ Library {
 		Tunable			"off"
 	      }
 	      Object {
-		$ObjectID		23
+		$ObjectID		24
 		Type			"edit"
 		Name			"timeout"
 		Prompt			"Timeout (in milliseconds)"
@@ -1211,7 +1283,7 @@ Library {
 		Tunable			"off"
 	      }
 	      Object {
-		$ObjectID		24
+		$ObjectID		25
 		Type			"edit"
 		Name			"port"
 		Prompt			"Socket Port (0 = any available)"
@@ -1219,7 +1291,7 @@ Library {
 		Tunable			"off"
 	      }
 	      Object {
-		$ObjectID		25
+		$ObjectID		26
 		Type			"edit"
 		Name			"host"
 		Prompt			"Socket Host ('' = local host)"
@@ -1227,7 +1299,7 @@ Library {
 		Tunable			"off"
 	      }
 	      Object {
-		$ObjectID		26
+		$ObjectID		27
 		Type			"edit"
 		Name			"bcvtbdir"
 		Prompt			"BCVTB Directory"
@@ -1235,7 +1307,7 @@ Library {
 		Tunable			"off"
 	      }
 	      Object {
-		$ObjectID		27
+		$ObjectID		28
 		Type			"edit"
 		Name			"deltaT"
 		Prompt			"Time Step (in seconds)"
@@ -1243,7 +1315,7 @@ Library {
 		Tunable			"off"
 	      }
 	      Object {
-		$ObjectID		28
+		$ObjectID		29
 		Type			"edit"
 		Name			"noutputd"
 		Prompt			"Number of Real Outputs"
@@ -1265,7 +1337,7 @@ Library {
 	  Parameters		  "progname, modelfile, weatherfile, workdir, timeout, port, host, bcvtbdir, deltaT, noutputd"
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    29
+	    $ObjectID		    30
 	    $ClassName		    "Simulink.Mask"
 	    Type		    "EnergyPlus Cosimulation"
 	    Description		    "This block implements cosimulation with EnergyPlus by allowing Simulink to exchange input and o"
@@ -1283,7 +1355,7 @@ Library {
 	      Type		      "Simulink.MaskParameter"
 	      Dimension		      10
 	      Object {
-		$ObjectID		30
+		$ObjectID		31
 		Type			"edit"
 		Name			"progname"
 		Prompt			"E+ Executable Path"
@@ -1291,7 +1363,7 @@ Library {
 		Tunable			"off"
 	      }
 	      Object {
-		$ObjectID		31
+		$ObjectID		32
 		Type			"edit"
 		Name			"modelfile"
 		Prompt			"IDF File (without extension)"
@@ -1299,7 +1371,7 @@ Library {
 		Tunable			"off"
 	      }
 	      Object {
-		$ObjectID		32
+		$ObjectID		33
 		Type			"edit"
 		Name			"weatherfile"
 		Prompt			"Weather Profile"
@@ -1307,7 +1379,7 @@ Library {
 		Tunable			"off"
 	      }
 	      Object {
-		$ObjectID		33
+		$ObjectID		34
 		Type			"edit"
 		Name			"workdir"
 		Prompt			"Working Directory"
@@ -1315,7 +1387,7 @@ Library {
 		Tunable			"off"
 	      }
 	      Object {
-		$ObjectID		34
+		$ObjectID		35
 		Type			"edit"
 		Name			"timeout"
 		Prompt			"Timeout (in milliseconds)"
@@ -1323,7 +1395,7 @@ Library {
 		Tunable			"off"
 	      }
 	      Object {
-		$ObjectID		35
+		$ObjectID		36
 		Type			"edit"
 		Name			"port"
 		Prompt			"Socket Port (0 = any available)"
@@ -1331,7 +1403,7 @@ Library {
 		Tunable			"off"
 	      }
 	      Object {
-		$ObjectID		36
+		$ObjectID		37
 		Type			"edit"
 		Name			"host"
 		Prompt			"Socket Host ('' = local host)"
@@ -1339,7 +1411,7 @@ Library {
 		Tunable			"off"
 	      }
 	      Object {
-		$ObjectID		37
+		$ObjectID		38
 		Type			"edit"
 		Name			"bcvtbdir"
 		Prompt			"BCVTB Directory"
@@ -1347,7 +1419,7 @@ Library {
 		Tunable			"off"
 	      }
 	      Object {
-		$ObjectID		38
+		$ObjectID		39
 		Type			"edit"
 		Name			"deltaT"
 		Prompt			"Time Step (in seconds)"
@@ -1355,7 +1427,7 @@ Library {
 		Tunable			"off"
 	      }
 	      Object {
-		$ObjectID		39
+		$ObjectID		40
 		Type			"edit"
 		Name			"noutputd"
 		Prompt			"Number of Real Outputs"
@@ -1387,7 +1459,7 @@ Library {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		40
+	$ObjectID		41
 	$ClassName		"Simulink.Mask"
 	Display			"disp('Data\\nAcquisition')"
       }
@@ -1427,14 +1499,14 @@ Library {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		41
+	$ObjectID		42
 	$ClassName		"Simulink.Mask"
 	Display			"disp('Electrical')"
       }
       System {
 	Name			"Electrical"
-	Location		[828, 117, 1779, 851]
-	Open			off
+	Location		[154, 264, 1105, 998]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1462,7 +1534,7 @@ Library {
 	  MaskHideContents	  off
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    42
+	    $ObjectID		    43
 	    $ClassName		    "Simulink.Mask"
 	    Type		    "Constant Power Source/Load"
 	    Description		    "Implements a controllable three-phase, constant power source or load, where VI* = P + jQ (in pe"
@@ -1484,7 +1556,7 @@ Library {
 	      Type		      "Simulink.MaskParameter"
 	      Dimension		      6
 	      Object {
-		$ObjectID		43
+		$ObjectID		44
 		Type			"popup"
 		Array {
 		  Type			  "Cell"
@@ -1499,28 +1571,28 @@ Library {
 		Tunable			"off"
 	      }
 	      Object {
-		$ObjectID		44
+		$ObjectID		45
 		Type			"edit"
 		Name			"PNom"
 		Prompt			"Nominal three-phase real power (W)"
 		Value			"5000"
 	      }
 	      Object {
-		$ObjectID		45
+		$ObjectID		46
 		Type			"edit"
 		Name			"QNom"
 		Prompt			"Nominal three-phase reactive power (VAR)"
 		Value			"2000"
 	      }
 	      Object {
-		$ObjectID		46
+		$ObjectID		47
 		Type			"edit"
 		Name			"VNom"
 		Prompt			"Nominal line-to-line voltage (VRMS)"
 		Value			"480"
 	      }
 	      Object {
-		$ObjectID		47
+		$ObjectID		48
 		Type			"edit"
 		Name			"fNom"
 		Prompt			"Nominal frequency (Hz)"
@@ -1528,7 +1600,7 @@ Library {
 		Tunable			"off"
 	      }
 	      Object {
-		$ObjectID		48
+		$ObjectID		49
 		Type			"edit"
 		Name			"VLow"
 		Prompt			"Lower voltage limit (pu)"
@@ -1539,7 +1611,7 @@ Library {
 	  }
 	  System {
 	    Name		    "Constant Power\nSource or Load"
-	    Location		    [828, 117, 1779, 999]
+	    Location		    [154, 264, 1105, 998]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -1881,7 +1953,7 @@ Library {
 		  MaskHideContents	  off
 		  Object {
 		    $PropName		    "MaskObject"
-		    $ObjectID		    49
+		    $ObjectID		    50
 		    $ClassName		    "Simulink.Mask"
 		    Initialization	    "j=sqrt(-1);\na=exp(j*2*pi/3);\na2=exp(-j*2*pi/3);"
 		  }
@@ -1986,7 +2058,7 @@ Library {
 		  MaskHideContents	  off
 		  Object {
 		    $PropName		    "MaskObject"
-		    $ObjectID		    50
+		    $ObjectID		    51
 		    $ClassName		    "Simulink.Mask"
 		    Initialization	    "j=sqrt(-1);\na=exp(j*2*pi/3);\na2=exp(-j*2*pi/3);"
 		  }
@@ -2607,6 +2679,1203 @@ Library {
 	    }
 	  }
 	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "EV Battery"
+	  SID			  "201"
+	  Ports			  [2, 2]
+	  Position		  [420, 38, 500, 122]
+	  ZOrder		  49
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  Object {
+	    $PropName		    "MaskObject"
+	    $ObjectID		    52
+	    $ClassName		    "Simulink.Mask"
+	    Type		    "Electric Vehicle Battery"
+	    Description		    "Implements a simple, lossless model for an electric vehicle (EV) battery."
+	    Help		    "Implements a simple, lossless model for an electric vehicle (EV) battery.\n\nThe block accepts the fol"
+	    "lowing inputs:\n•	Power = The charging power for the battery (W)\n•	Schedule = 1 if the EV is connected to the ch"
+	    "arging station, 0 otherwise\n\nThe block outputs two signals:\n•	SOC = The battery state of charge (fraction)\n•	"
+	    "Status = EV status: -1 for not present, 0 for present and accepting charge, 1 for present but battery full\n\nInt"
+	    "ernally, the battery is modeled using a simple integrator for the input power, capped at 100% SOC. Battery SOC re"
+	    "sets to the specified initial value whenever the EV first connects to the charging station. The battery is lossle"
+	    "ss."
+	    Array {
+	      Type		      "Simulink.MaskParameter"
+	      Dimension		      2
+	      Object {
+		$ObjectID		53
+		Type			"edit"
+		Name			"capacity"
+		Prompt			"Battery capacity (Wh)"
+		Value			"24000"
+	      }
+	      Object {
+		$ObjectID		54
+		Type			"edit"
+		Name			"initSOC"
+		Prompt			"Initial state of charge (fraction)"
+		Value			"0.3"
+	      }
+	      PropName		      "Parameters"
+	    }
+	  }
+	  System {
+	    Name		    "EV Battery"
+	    Location		    [154, 264, 1105, 998]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Power"
+	      SID		      "202"
+	      Position		      [110, 103, 140, 117]
+	      ZOrder		      -1
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Schedule"
+	      SID		      "203"
+	      Position		      [110, 273, 140, 287]
+	      ZOrder		      16
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant"
+	      SID		      "204"
+	      Position		      [560, 135, 590, 165]
+	      ZOrder		      24
+	      BlockMirror	      on
+	      Value		      "0"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "EV Absent"
+	      SID		      "205"
+	      Position		      [505, 355, 535, 385]
+	      ZOrder		      14
+	      BlockRotation	      270
+	      Value		      "-1"
+	    }
+	    Block {
+	      BlockType		      Switch
+	      Name		      "EV Status Selector"
+	      SID		      "206"
+	      Position		      [570, 260, 620, 300]
+	      ZOrder		      22
+	      Criteria		      "u2 > Threshold"
+	      InputSameDT	      off
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Integrator
+	      Name		      "Integrator\n(Battery)"
+	      SID		      "207"
+	      Ports		      [2, 2]
+	      Position		      [390, 91, 450, 169]
+	      ZOrder		      17
+	      ExternalReset	      "rising"
+	      InitialCondition	      "initSOC"
+	      LimitOutput	      on
+	      UpperSaturationLimit    "1"
+	      LowerSaturationLimit    "0"
+	      ShowSaturationPort      on
+	      ContinuousStateAttributes	"'SOC'"
+	      Port {
+		PortNumber		1
+		Name			"SOC"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		2
+		Name			"aturation"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      MinMax
+	      Name		      "MinMax"
+	      SID		      "208"
+	      Ports		      [2, 1]
+	      Position		      [502, 190, 533, 220]
+	      ZOrder		      23
+	      BlockRotation	      270
+	      BlockMirror	      on
+	      NamePlacement	      "alternate"
+	      Function		      "max"
+	      Inputs		      "2"
+	      InputSameDT	      off
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Report SOC = 0"
+	      SID		      "209"
+	      Position		      [655, 190, 685, 220]
+	      ZOrder		      26
+	      BlockRotation	      270
+	      Value		      "0"
+	    }
+	    Block {
+	      BlockType		      Switch
+	      Name		      "SOC Selector"
+	      SID		      "210"
+	      Position		      [705, 105, 755, 145]
+	      ZOrder		      25
+	      InputSameDT	      off
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "W -> Wh/s"
+	      SID		      "211"
+	      Position		      [180, 95, 245, 125]
+	      ZOrder		      15
+	      NamePlacement	      "alternate"
+	      Gain		      "1/3600"
+	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Wh/s -> SOC fraction/s"
+	      SID		      "212"
+	      Position		      [300, 95, 330, 125]
+	      ZOrder		      21
+	      NamePlacement	      "alternate"
+	      Gain		      "1/capacity"
+	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "SOC"
+	      SID		      "213"
+	      Position		      [795, 118, 825, 132]
+	      ZOrder		      -2
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Status"
+	      SID		      "214"
+	      Position		      [795, 273, 825, 287]
+	      ZOrder		      18
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "W -> Wh/s"
+	      SrcPort		      1
+	      DstBlock		      "Wh/s -> SOC fraction/s"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Power"
+	      SrcPort		      1
+	      DstBlock		      "W -> Wh/s"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Wh/s -> SOC fraction/s"
+	      SrcPort		      1
+	      DstBlock		      "Integrator\n(Battery)"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Schedule"
+	      SrcPort		      1
+	      Points		      [120, 0]
+	      Branch {
+		DstBlock		"EV Status Selector"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[0, -130]
+		DstBlock		"Integrator\n(Battery)"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "EV Absent"
+	      SrcPort		      1
+	      Points		      [0, -55]
+	      DstBlock		      "EV Status Selector"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "EV Status Selector"
+	      SrcPort		      1
+	      Points		      [21, 0]
+	      Branch {
+		Points			[0, -155]
+		DstBlock		"SOC Selector"
+		DstPort			2
+	      }
+	      Branch {
+		DstBlock		"Status"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      Name		      "aturation"
+	      SrcBlock		      "Integrator\n(Battery)"
+	      SrcPort		      2
+	      Points		      [55, 0]
+	      DstBlock		      "MinMax"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "MinMax"
+	      SrcPort		      1
+	      Points		      [0, 40]
+	      DstBlock		      "EV Status Selector"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Constant"
+	      SrcPort		      1
+	      Points		      [-30, 0]
+	      DstBlock		      "MinMax"
+	      DstPort		      2
+	    }
+	    Line {
+	      Name		      "SOC"
+	      Labels		      [1, 1]
+	      SrcBlock		      "Integrator\n(Battery)"
+	      SrcPort		      1
+	      DstBlock		      "SOC Selector"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "SOC Selector"
+	      SrcPort		      1
+	      DstBlock		      "SOC"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Report SOC = 0"
+	      SrcPort		      1
+	      Points		      [0, -45]
+	      DstBlock		      "SOC Selector"
+	      DstPort		      3
+	    }
+	    Annotation {
+	      SID		      "215"
+	      Name		      "1 = Battery full\n0 = Battery charging\n-1 = EV absent"
+	      Position		      [846, 283]
+	      HorizontalAlignment     "left"
+	      ZOrder		      -1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "EV Charger"
+	  SID			  "170"
+	  Ports			  [3, 1]
+	  Position		  [290, 37, 370, 123]
+	  ZOrder		  48
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  Object {
+	    $PropName		    "MaskObject"
+	    $ObjectID		    55
+	    $ClassName		    "Simulink.Mask"
+	    Type		    "Electric Vehicle Charging Station"
+	    Description		    "Implements a simple model for an electric vehicle charging station. Accepts connections for the"
+	    " EV state of charge and status as well as an external control signal requesting a regulatory deviation from the c"
+	    "urrent charging setpoint. Outputs a charging power."
+	    Help		    "Implements a simple model for an electric vehicle (EV) charging station.\n\nThe block accepts the foll"
+	    "owing inputs:\n•	Control = Signal requesting regulatory control of power consumed (+/- deviation from setpoint) ("
+	    "W)\n•	SOC = EV battery state of charge (fraction)\n•	Status = EV status: -1 for not present, 0 for present and ac"
+	    "cepting charge, 1 for present but battery full\n\nThe block outputs the charging power to the EV battery.\n\nThe "
+	    "charger uses a preset charging power profile based on the EV battery state of charge (SOC). As the SOC approaches"
+	    " 100%, the charger tapers the charge rate to zero. In addition, the charger monitors the connection status of the"
+	    " EV and sets charging power to zero if the EV is disconnected or has a full battery.\n\nThe 'Control' signal requ"
+	    "ests regulatory control of the EV charging load as a deviation from the current charging setpoint. This allows th"
+	    "e EV charger to participate in demand response or regulation of distributed generation (such as smoothing output "
+	    "from a photovoltaic array). The charger attempts to maintain the active response capability specified in the bloc"
+	    "k mask by operating at less than maximum charging capacity. It can then respond to the control signal within its "
+	    "present charging limits.\n\nFor example, if, given the current battery SOC, the charging profile for the EV batte"
+	    "ry specifies 5000 W and the requested regulatory response capability is +/- 1000 W, then the EV charger will char"
+	    "ge at a setpoint of 4000 W +/- the requested control action, within the limits of the charger. If the requested c"
+	    "ontrol action is -500 W, then the EV charger will reduce output to 4000 - 500 = 3500 W.\n\nThe ability of the cha"
+	    "rger to respond to the control action is limited by several factors:\n1.	The output cannot exceed either its spec"
+	    "ified rating or the maximum charge rate given by the battery charging profile.\n2.	The output cannot be less than"
+	    " zero.\n3.	The output cannot change at a rate greater than the specified maximum ramp rate (W/s)."
+	    Array {
+	      Type		      "Simulink.MaskParameter"
+	      Dimension		      4
+	      Object {
+		$ObjectID		56
+		Type			"edit"
+		Name			"rating"
+		Prompt			"Charger rating (W)"
+		Value			"6240"
+	      }
+	      Object {
+		$ObjectID		57
+		Type			"edit"
+		Name			"capacity"
+		Prompt			"Connected EV battery capacity (Wh)"
+		Value			"24000"
+	      }
+	      Object {
+		$ObjectID		58
+		Type			"edit"
+		Name			"maxresponse"
+		Prompt			"Desired +/- regulatory response capability (W)"
+		Value			"1000"
+	      }
+	      Object {
+		$ObjectID		59
+		Type			"edit"
+		Name			"ramp"
+		Prompt			"Maximum ramp rate (W/s)"
+		Value			"1000"
+	      }
+	      PropName		      "Parameters"
+	    }
+	  }
+	  System {
+	    Name		    "EV Charger"
+	    Location		    [154, 264, 1105, 998]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Control"
+	      SID		      "171"
+	      Position		      [543, 345, 557, 375]
+	      ZOrder		      -1
+	      BlockRotation	      270
+	      BlockMirror	      on
+	      NamePlacement	      "alternate"
+	      IconDisplay	      "Port number"
+	      Port {
+		PortNumber		1
+		Name			"Deviation"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "SOC"
+	      SID		      "172"
+	      Position		      [80, 228, 110, 242]
+	      ZOrder		      54
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Status"
+	      SID		      "173"
+	      Position		      [80, 68, 110, 82]
+	      ZOrder		      55
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Charger\nRating (W)"
+	      SID		      "174"
+	      Position		      [80, 140, 110, 170]
+	      ZOrder		      59
+	      Value		      "rating"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Charging Power Limits"
+	      SID		      "175"
+	      Ports		      [3, 1]
+	      Position		      [745, 391, 830, 499]
+	      ZOrder		      47
+	      LibraryVersion	      "1.274"
+	      SourceBlock	      "simulink/Discontinuities/Saturation\nDynamic"
+	      SourceType	      "Saturation Dynamic"
+	      OutMin		      "[]"
+	      OutMax		      "[]"
+	      OutDataTypeStr	      "Inherit: Same as second input"
+	      OutputDataTypeScalingMode	"Same as second input"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^-10"
+	      LockScale		      off
+	      RndMeth		      "Floor"
+	      DoSatur		      off
+	    }
+	    Block {
+	      BlockType		      Lookup_n-D
+	      Name		      "Charging Profile"
+	      SID		      "176"
+	      Ports		      [1, 1]
+	      Position		      [165, 203, 230, 267]
+	      ZOrder		      56
+	      NumberOfTableDimensions "1"
+	      BreakpointsForDimension1 "[0.00 0.10 0.20 0.80 0.99 1.00]"
+	      IndexSearchMethod	      "Linear search"
+	      BeginIndexSearchUsingPreviousIndexResult on
+	      Table		      "[0.10 0.20 1.00 1.00 0.02 0.00]"
+	      ExtrapMethod	      "Clip"
+	      UseLastTableValue	      on
+	      RndMeth		      "Simplest"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Compare\nTo Zero"
+	      SID		      "177"
+	      Ports		      [1, 1]
+	      Position		      [165, 60, 195, 90]
+	      ZOrder		      60
+	      LibraryVersion	      "1.274"
+	      SourceBlock	      "simulink/Logic and Bit\nOperations/Compare\nTo Zero"
+	      SourceType	      "Compare To Zero"
+	      relop		      "=="
+	      OutDataTypeStr	      "boolean"
+	      ZeroCross		      on
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant"
+	      SID		      "178"
+	      Position		      [770, 70, 800, 100]
+	      ZOrder		      64
+	      Value		      "0"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Convert\nto W"
+	      SID		      "179"
+	      Position		      [265, 212, 325, 258]
+	      ZOrder		      57
+	      Gain		      "capacity"
+	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Desired Regulation\nCapability (W)"
+	      SID		      "180"
+	      Position		      [215, 350, 285, 380]
+	      ZOrder		      73
+	      Value		      "maxresponse"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Gain2"
+	      SID		      "181"
+	      Position		      [210, 485, 240, 515]
+	      ZOrder		      80
+	      BlockRotation	      270
+	      BlockMirror	      on
+	      NamePlacement	      "alternate"
+	      Gain		      "1/2"
+	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "MaxCharge1"
+	      SID		      "182"
+	      Position		      [65, 396, 140, 424]
+	      ZOrder		      70
+	      BackgroundColor	      "lightBlue"
+	      GotoTag		      "MaxCharge"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "MaxCharge2"
+	      SID		      "183"
+	      Position		      [630, 396, 705, 424]
+	      ZOrder		      66
+	      BackgroundColor	      "lightBlue"
+	      GotoTag		      "MaxCharge"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "MaxCharge3"
+	      SID		      "184"
+	      Position		      [65, 306, 140, 334]
+	      ZOrder		      74
+	      BackgroundColor	      "lightBlue"
+	      GotoTag		      "MaxCharge"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "MaxCharge4"
+	      SID		      "185"
+	      Position		      [65, 536, 140, 564]
+	      ZOrder		      78
+	      BackgroundColor	      "lightBlue"
+	      GotoTag		      "MaxCharge"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Maximum Charge Rate"
+	      SID		      "186"
+	      Position		      [590, 69, 680, 101]
+	      ZOrder		      63
+	      BackgroundColor	      "lightBlue"
+	      GotoTag		      "MaxCharge"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "MinCharge1"
+	      SID		      "187"
+	      Position		      [65, 466, 140, 494]
+	      ZOrder		      71
+	      BackgroundColor	      "lightBlue"
+	      GotoTag		      "MinCharge"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "MinCharge2"
+	      SID		      "188"
+	      Position		      [630, 466, 705, 494]
+	      ZOrder		      67
+	      BackgroundColor	      "lightBlue"
+	      GotoTag		      "MinCharge"
+	    }
+	    Block {
+	      BlockType		      MinMax
+	      Name		      "MinMax"
+	      SID		      "189"
+	      Ports		      [2, 1]
+	      Position		      [375, 177, 405, 208]
+	      ZOrder		      58
+	      Inputs		      "2"
+	      InputSameDT	      off
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Minimum Charge Rate"
+	      SID		      "190"
+	      Position		      [895, 69, 985, 101]
+	      ZOrder		      65
+	      BackgroundColor	      "lightBlue"
+	      GotoTag		      "MinCharge"
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      SID		      "191"
+	      Ports		      [2, 1]
+	      Position		      [480, 67, 510, 98]
+	      ZOrder		      62
+	      InputSameDT	      off
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      RndMeth		      "Floor"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      RateLimiter
+	      Name		      "Ramp Rate\nLimit"
+	      SID		      "192"
+	      Position		      [865, 430, 895, 460]
+	      ZOrder		      52
+	      RisingSlewLimit	      "ramp"
+	      FallingSlewLimit	      "-ramp"
+	      SampleTimeMode	      "inherited"
+	      Port {
+		PortNumber		1
+		Name			"Output"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Switch
+	      Name		      "Setpoint\nControl"
+	      SID		      "193"
+	      Position		      [405, 425, 455, 465]
+	      ZOrder		      68
+	      Threshold		      "maxresponse*2"
+	      InputSameDT	      off
+	      SaturateOnIntegerOverflow	off
+	      Port {
+		PortNumber		1
+		Name			"Setpoint"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum1"
+	      SID		      "194"
+	      Ports		      [2, 1]
+	      Position		      [540, 435, 560, 455]
+	      ZOrder		      49
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "++|"
+	      InputSameDT	      off
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	      Port {
+		PortNumber		1
+		Name			"Target"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum2"
+	      SID		      "195"
+	      Ports		      [2, 1]
+	      Position		      [170, 435, 190, 455]
+	      ZOrder		      69
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "+-"
+	      InputSameDT	      off
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	      Port {
+		PortNumber		1
+		Name			"Maximum Regulation Range"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum3"
+	      SID		      "196"
+	      Ports		      [2, 1]
+	      Position		      [345, 355, 365, 375]
+	      ZOrder		      76
+	      BlockRotation	      270
+	      BlockMirror	      on
+	      NamePlacement	      "alternate"
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "-+|"
+	      InputSameDT	      off
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum4"
+	      SID		      "197"
+	      Ports		      [2, 1]
+	      Position		      [215, 540, 235, 560]
+	      ZOrder		      79
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "-+|"
+	      InputSameDT	      off
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Power"
+	      SID		      "198"
+	      Position		      [965, 438, 995, 452]
+	      ZOrder		      53
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      Name		      "Target"
+	      Labels		      [1, 1]
+	      SrcBlock		      "Sum1"
+	      SrcPort		      1
+	      DstBlock		      "Charging Power Limits"
+	      DstPort		      2
+	    }
+	    Line {
+	      Name		      "Output"
+	      Labels		      [1, 1]
+	      SrcBlock		      "Ramp Rate\nLimit"
+	      SrcPort		      1
+	      DstBlock		      "Power"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "SOC"
+	      SrcPort		      1
+	      DstBlock		      "Charging Profile"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Charging Profile"
+	      SrcPort		      1
+	      DstBlock		      "Convert\nto W"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Charging Power Limits"
+	      SrcPort		      1
+	      DstBlock		      "Ramp Rate\nLimit"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Status"
+	      SrcPort		      1
+	      DstBlock		      "Compare\nTo Zero"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Compare\nTo Zero"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Convert\nto W"
+	      SrcPort		      1
+	      Points		      [17, 0; 0, -35]
+	      DstBlock		      "MinMax"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Charger\nRating (W)"
+	      SrcPort		      1
+	      Points		      [232, 0; 0, 30]
+	      DstBlock		      "MinMax"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "MinMax"
+	      SrcPort		      1
+	      Points		      [28, 0; 0, -105]
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      DstBlock		      "Maximum Charge Rate"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Constant"
+	      SrcPort		      1
+	      DstBlock		      "Minimum Charge Rate"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "Deviation"
+	      Labels		      [1, 1]
+	      SrcBlock		      "Control"
+	      SrcPort		      1
+	      DstBlock		      "Sum1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "MaxCharge2"
+	      SrcPort		      1
+	      DstBlock		      "Charging Power Limits"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "MinCharge2"
+	      SrcPort		      1
+	      DstBlock		      "Charging Power Limits"
+	      DstPort		      3
+	    }
+	    Line {
+	      Name		      "Maximum Regulation Range"
+	      SrcBlock		      "Sum2"
+	      SrcPort		      1
+	      Points		      [30, 0]
+	      Branch {
+		DstBlock		"Gain2"
+		DstPort			1
+	      }
+	      Branch {
+		Labels			[1, 1]
+		DstBlock		"Setpoint\nControl"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "MaxCharge1"
+	      SrcPort		      1
+	      Points		      [35, 0]
+	      DstBlock		      "Sum2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "MinCharge1"
+	      SrcPort		      1
+	      Points		      [35, 0]
+	      DstBlock		      "Sum2"
+	      DstPort		      2
+	    }
+	    Line {
+	      Name		      "Setpoint"
+	      Labels		      [1, 1]
+	      SrcBlock		      "Setpoint\nControl"
+	      SrcPort		      1
+	      DstBlock		      "Sum1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Sum3"
+	      SrcPort		      1
+	      Points		      [0, 50]
+	      DstBlock		      "Setpoint\nControl"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "MaxCharge4"
+	      SrcPort		      1
+	      DstBlock		      "Sum4"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Gain2"
+	      SrcPort		      1
+	      DstBlock		      "Sum4"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sum4"
+	      SrcPort		      1
+	      Points		      [116, 0; 0, -90]
+	      DstBlock		      "Setpoint\nControl"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "MaxCharge3"
+	      SrcPort		      1
+	      Points		      [210, 0]
+	      DstBlock		      "Sum3"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Desired Regulation\nCapability (W)"
+	      SrcPort		      1
+	      DstBlock		      "Sum3"
+	      DstPort		      1
+	    }
+	    Annotation {
+	      SID		      "200"
+	      Name		      "EV Present & Battery Not Full = TRUE"
+	      Position		      [304, 89]
+	      ZOrder		      -1
+	    }
+	    Annotation {
+	      SID		      "199"
+	      Name		      "(Requested regulation action)"
+	      Position		      [552, 328]
+	      ZOrder		      -2
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Power Factor\nConversion"
+	  SID			  "216"
+	  Ports			  [2, 1]
+	  Position		  [170, 38, 245, 122]
+	  ZOrder		  332
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  Object {
+	    $PropName		    "MaskObject"
+	    $ObjectID		    60
+	    $ClassName		    "Simulink.Mask"
+	    Type		    "Power Factor Conversion"
+	    Description		    "Converts a real input power and power factor to a vector of real and reactive power."
+	    Help		    "Converts a real input power and power factor to a vector of real and reactive power. The output is a v"
+	    "ector [P Q] computed from the input power P, input power factor PF, and whether the signal indicates leading or l"
+	    "agging power (selectable in the block mask)."
+	    Initialization	    "% Set multiplier for Q based on load type\nif pfType == 1\n    % Leading\n    leadlag = -1;\n"
+	    "else\n    % Lagging\n    leadlag = 1;\nend"
+	    Object {
+	      $PropName		      "Parameters"
+	      $ObjectID		      61
+	      $ClassName	      "Simulink.MaskParameter"
+	      Type		      "popup"
+	      Array {
+		Type			"Cell"
+		Dimension		2
+		Cell			"Leading"
+		Cell			"Lagging"
+		PropName		"TypeOptions"
+	      }
+	      Name		      "pfType"
+	      Prompt		      "Type of power factor"
+	      Value		      "Lagging"
+	    }
+	  }
+	  System {
+	    Name		    "Power Factor\nConversion"
+	    Location		    [154, 264, 1105, 998]
+	    Open		    on
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "P"
+	      SID		      "217"
+	      Position		      [110, 103, 140, 117]
+	      ZOrder		      -1
+	      IconDisplay	      "Port number"
+	      Port {
+		PortNumber		1
+		Name			"P"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "PF"
+	      SID		      "229"
+	      Position		      [110, 163, 140, 177]
+	      ZOrder		      335
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Math
+	      Name		      "1/PF"
+	      SID		      "218"
+	      Ports		      [1, 1]
+	      Position		      [245, 155, 275, 185]
+	      ZOrder		      13
+	      Operator		      "reciprocal"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Lead/Lag"
+	      SID		      "230"
+	      Position		      [580, 145, 645, 185]
+	      ZOrder		      336
+	      Gain		      "leadlag"
+	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	      Port {
+		PortNumber		1
+		Name			"Q"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux"
+	      SID		      "220"
+	      Ports		      [2, 1]
+	      Position		      [715, 82, 720, 193]
+	      ZOrder		      8
+	      ShowName		      off
+	      Inputs		      "2"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "One"
+	      SID		      "221"
+	      Position		      [370, 235, 400, 265]
+	      ZOrder		      5
+	      BlockRotation	      270
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      SID		      "223"
+	      Ports		      [2, 1]
+	      Position		      [515, 147, 545, 178]
+	      ZOrder		      7
+	      InputSameDT	      off
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      RndMeth		      "Floor"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Saturate
+	      Name		      "Saturation"
+	      SID		      "231"
+	      Ports		      [1, 1]
+	      Position		      [180, 155, 210, 185]
+	      ZOrder		      337
+	      InputPortMap	      "u0"
+	      UpperLimit	      "1"
+	      LowerLimit	      "0"
+	      ZeroCross		      off
+	    }
+	    Block {
+	      BlockType		      Sqrt
+	      Name		      "Sqrt"
+	      SID		      "225"
+	      Position		      [435, 155, 465, 185]
+	      ZOrder		      4
+	    }
+	    Block {
+	      BlockType		      Math
+	      Name		      "Squared"
+	      SID		      "226"
+	      Ports		      [1, 1]
+	      Position		      [305, 155, 335, 185]
+	      ZOrder		      12
+	      Operator		      "magnitude^2"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Subtract"
+	      SID		      "219"
+	      Ports		      [2, 1]
+	      Position		      [370, 155, 400, 185]
+	      ZOrder		      6
+	      IconShape		      "round"
+	      Inputs		      "|+-"
+	      InputSameDT	      off
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "PQ"
+	      SID		      "228"
+	      Position		      [775, 133, 805, 147]
+	      ZOrder		      9
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "Subtract"
+	      SrcPort		      1
+	      DstBlock		      "Sqrt"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sqrt"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Mux"
+	      SrcPort		      1
+	      DstBlock		      "PQ"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      DstBlock		      "Lead/Lag"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "PF"
+	      SrcPort		      1
+	      DstBlock		      "Saturation"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "1/PF"
+	      SrcPort		      1
+	      DstBlock		      "Squared"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "One"
+	      SrcPort		      1
+	      DstBlock		      "Subtract"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Squared"
+	      SrcPort		      1
+	      DstBlock		      "Subtract"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "P"
+	      SrcBlock		      "P"
+	      SrcPort		      1
+	      Points		      [348, 0]
+	      Branch {
+		Points			[0, 45]
+		DstBlock		"Product"
+		DstPort			1
+	      }
+	      Branch {
+		Labels			[1, 1]
+		DstBlock		"Mux"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      Name		      "Q"
+	      Labels		      [1, 1]
+	      SrcBlock		      "Lead/Lag"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Saturation"
+	      SrcPort		      1
+	      DstBlock		      "1/PF"
+	      DstPort		      1
+	    }
+	  }
+	}
       }
     }
     Block {
@@ -2628,7 +3897,7 @@ Library {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		51
+	$ObjectID		62
 	$ClassName		"Simulink.Mask"
 	Display			"disp('PV')"
       }
@@ -2663,7 +3932,7 @@ Library {
 	  MaskHideContents	  off
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    52
+	    $ObjectID		    63
 	    $ClassName		    "Simulink.Mask"
 	    Type		    "Generic Inverter"
 	    Description		    "Implements the efficiency characteristic for a generic PV inverter using one of three models:\n"
@@ -2683,7 +3952,7 @@ Library {
 	      Type		      "Simulink.MaskParameter"
 	      Dimension		      9
 	      Object {
-		$ObjectID		53
+		$ObjectID		64
 		Type			"popup"
 		Array {
 		  Type			  "Cell"
@@ -2700,14 +3969,14 @@ Library {
 		Callback		"% Dynamic mask callback\nGenericInverter_cb(gcb, 'model_type') "
 	      }
 	      Object {
-		$ObjectID		54
+		$ObjectID		65
 		Type			"edit"
 		Name			"fixed_eff"
 		Prompt			"Efficiency"
 		Value			"0.95"
 	      }
 	      Object {
-		$ObjectID		55
+		$ObjectID		66
 		Type			"edit"
 		Name			"alpha"
 		Prompt			"Constant loss coefficient (W)"
@@ -2716,7 +3985,7 @@ Library {
 		Visible			"off"
 	      }
 	      Object {
-		$ObjectID		56
+		$ObjectID		67
 		Type			"edit"
 		Name			"beta"
 		Prompt			"Linear loss coefficient (W/W)"
@@ -2725,7 +3994,7 @@ Library {
 		Visible			"off"
 	      }
 	      Object {
-		$ObjectID		57
+		$ObjectID		68
 		Type			"edit"
 		Name			"gamma"
 		Prompt			"Quadratic loss coefficient (W/W²)"
@@ -2734,7 +4003,7 @@ Library {
 		Visible			"off"
 	      }
 	      Object {
-		$ObjectID		58
+		$ObjectID		69
 		Type			"popup"
 		Array {
 		  Type			  "Cell"
@@ -2753,7 +4022,7 @@ Library {
 		Callback		"% Dynamic mask callback\nGenericInverter_cb(gcb, 'lookup_pair')"
 	      }
 	      Object {
-		$ObjectID		59
+		$ObjectID		70
 		Type			"edit"
 		Name			"lookup_in"
 		Prompt			"Input power (W)"
@@ -2762,7 +4031,7 @@ Library {
 		Visible			"off"
 	      }
 	      Object {
-		$ObjectID		60
+		$ObjectID		71
 		Type			"edit"
 		Name			"lookup_out"
 		Prompt			"Output power (W)"
@@ -2771,7 +4040,7 @@ Library {
 		Visible			"off"
 	      }
 	      Object {
-		$ObjectID		61
+		$ObjectID		72
 		Type			"edit"
 		Name			"lookup_eff"
 		Prompt			"Efficiency"
@@ -3218,7 +4487,7 @@ Library {
 	  "t_noct, gamma, i_ref, poa_cutin, init_tcell, init_poa, output_dc, output_celltemp, output_poa"
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    62
+	    $ObjectID		    73
 	    $ClassName		    "Simulink.Mask"
 	    Type		    "PVWatts Cosimulation"
 	    Description		    "This block implements cosimulation of a photovoltaic (PV) array using the PVWatts module of the"
@@ -3260,7 +4529,7 @@ Library {
 	      Type		      "Simulink.MaskParameter"
 	      Dimension		      23
 	      Object {
-		$ObjectID		63
+		$ObjectID		74
 		Type			"edit"
 		Name			"lat"
 		Prompt			"Latitude"
@@ -3270,7 +4539,7 @@ Library {
 		TabName			"Time and Location"
 	      }
 	      Object {
-		$ObjectID		64
+		$ObjectID		75
 		Type			"edit"
 		Name			"lon"
 		Prompt			"Longitude"
@@ -3279,7 +4548,7 @@ Library {
 		TabName			"Time and Location"
 	      }
 	      Object {
-		$ObjectID		65
+		$ObjectID		76
 		Type			"edit"
 		Name			"start_time"
 		Prompt			"Initial date/time (dd-mmm-yyyy HH:MM:SS)"
@@ -3289,7 +4558,7 @@ Library {
 		TabName			"Time and Location"
 	      }
 	      Object {
-		$ObjectID		66
+		$ObjectID		77
 		Type			"edit"
 		Name			"tz"
 		Prompt			"Time zone (offset from UTC)"
@@ -3298,7 +4567,7 @@ Library {
 		TabName			"Time and Location"
 	      }
 	      Object {
-		$ObjectID		67
+		$ObjectID		78
 		Type			"edit"
 		Name			"time_step"
 		Prompt			"Time step (s)"
@@ -3307,7 +4576,7 @@ Library {
 		TabName			"Time and Location"
 	      }
 	      Object {
-		$ObjectID		68
+		$ObjectID		79
 		Type			"edit"
 		Name			"system_size"
 		Prompt			"Array nameplate capacity (W)"
@@ -3316,7 +4585,7 @@ Library {
 		TabName			"Array"
 	      }
 	      Object {
-		$ObjectID		69
+		$ObjectID		80
 		Type			"edit"
 		Name			"derate"
 		Prompt			"System derate factor (0-1)"
@@ -3325,7 +4594,7 @@ Library {
 		TabName			"Array"
 	      }
 	      Object {
-		$ObjectID		70
+		$ObjectID		81
 		Type			"edit"
 		Name			"azimuth"
 		Prompt			"Azimuth angle (N = 0°, E = 90°, S = 180°, W = 270°)"
@@ -3334,7 +4603,7 @@ Library {
 		TabName			"Array"
 	      }
 	      Object {
-		$ObjectID		71
+		$ObjectID		82
 		Type			"edit"
 		Name			"tilt"
 		Prompt			"Tilt angle"
@@ -3344,7 +4613,7 @@ Library {
 		TabName			"Array"
 	      }
 	      Object {
-		$ObjectID		72
+		$ObjectID		83
 		Type			"checkbox"
 		Name			"use_lat_tilt"
 		Prompt			"Use latitude tilt"
@@ -3354,7 +4623,7 @@ Library {
 		TabName			"Array"
 	      }
 	      Object {
-		$ObjectID		73
+		$ObjectID		84
 		Type			"popup"
 		Array {
 		  Type			  "Cell"
@@ -3373,7 +4642,7 @@ Library {
 		TabName			"Array"
 	      }
 	      Object {
-		$ObjectID		74
+		$ObjectID		85
 		Type			"edit"
 		Name			"rotlim"
 		Prompt			"Tracker rotation limit (+/-)"
@@ -3383,7 +4652,7 @@ Library {
 		TabName			"Array"
 	      }
 	      Object {
-		$ObjectID		75
+		$ObjectID		86
 		Type			"checkbox"
 		Name			"use_cell_data"
 		Prompt			"Customize photovoltaic cell data"
@@ -3393,7 +4662,7 @@ Library {
 		TabName			"Cell"
 	      }
 	      Object {
-		$ObjectID		76
+		$ObjectID		87
 		Type			"edit"
 		Name			"t_ref"
 		Prompt			"Reference cell temperature (°C)"
@@ -3403,7 +4672,7 @@ Library {
 		TabName			"Cell"
 	      }
 	      Object {
-		$ObjectID		77
+		$ObjectID		88
 		Type			"edit"
 		Name			"t_noct"
 		Prompt			"Nominal operating cell temperature (°C)"
@@ -3413,7 +4682,7 @@ Library {
 		TabName			"Cell"
 	      }
 	      Object {
-		$ObjectID		78
+		$ObjectID		89
 		Type			"edit"
 		Name			"gamma"
 		Prompt			"Maximum power temperature coefficient (%/°C)"
@@ -3423,7 +4692,7 @@ Library {
 		TabName			"Cell"
 	      }
 	      Object {
-		$ObjectID		79
+		$ObjectID		90
 		Type			"edit"
 		Name			"i_ref"
 		Prompt			"Irradiance condition for cell rating (W/m²)"
@@ -3433,7 +4702,7 @@ Library {
 		TabName			"Cell"
 	      }
 	      Object {
-		$ObjectID		80
+		$ObjectID		91
 		Type			"edit"
 		Name			"poa_cutin"
 		Prompt			"Minimum irradiance for operation (W/m²)"
@@ -3443,7 +4712,7 @@ Library {
 		TabName			"Cell"
 	      }
 	      Object {
-		$ObjectID		81
+		$ObjectID		92
 		Type			"edit"
 		Name			"init_tcell"
 		Prompt			"Initial cell temperature (°C)"
@@ -3452,7 +4721,7 @@ Library {
 		TabName			"Simulation"
 	      }
 	      Object {
-		$ObjectID		82
+		$ObjectID		93
 		Type			"edit"
 		Name			"init_poa"
 		Prompt			"Initial plane of array irradiance (W/m²)"
@@ -3461,7 +4730,7 @@ Library {
 		TabName			"Simulation"
 	      }
 	      Object {
-		$ObjectID		83
+		$ObjectID		94
 		Type			"checkbox"
 		Name			"output_dc"
 		Prompt			"Output DC power (W)"
@@ -3470,7 +4739,7 @@ Library {
 		TabName			"Simulation"
 	      }
 	      Object {
-		$ObjectID		84
+		$ObjectID		95
 		Type			"checkbox"
 		Name			"output_celltemp"
 		Prompt			"Output cell temperature (°C)"
@@ -3479,7 +4748,7 @@ Library {
 		TabName			"Simulation"
 	      }
 	      Object {
-		$ObjectID		85
+		$ObjectID		96
 		Type			"checkbox"
 		Name			"output_poa"
 		Prompt			"Output plane of array irradiance (W/m²)"
@@ -3512,14 +4781,14 @@ Library {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		86
+	$ObjectID		97
 	$ClassName		"Simulink.Mask"
 	Display			"disp('Weather')"
       }
       System {
 	Name			"Weather"
 	Location		[828, 117, 1779, 851]
-	Open			on
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -3547,7 +4816,7 @@ Library {
 	  MaskHideContents	  off
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    87
+	    $ObjectID		    98
 	    $ClassName		    "Simulink.Mask"
 	    Type		    "Weather Data From File"
 	    Description		    "Reads weather data from the specified binary file and outputs it as a Simulink bus signal.\n\nT"
@@ -3572,7 +4841,7 @@ Library {
 	      Type		      "Simulink.MaskParameter"
 	      Dimension		      2
 	      Object {
-		$ObjectID		88
+		$ObjectID		99
 		Type			"edit"
 		Name			"fname"
 		Prompt			"Weather file"
@@ -3581,7 +4850,7 @@ Library {
 		Tunable			"off"
 	      }
 	      Object {
-		$ObjectID		89
+		$ObjectID		100
 		Type			"checkbox"
 		Name			"initbus"
 		Prompt			"Create Simulink bus definition automatically?"

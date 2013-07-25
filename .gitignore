@@ -1,0 +1,35 @@
+## MATLAB
+# Compiled files
+*.mex
+*.mexw64
+
+# Data files
+*.mat
+
+## EnergyPlus
+# Output files
+*.audit
+*.bnd
+*.dxf
+*.edd
+*.eio
+*.err
+*.eso
+*.mdd
+*.mtd
+*.mtr
+*.rdd
+*.rvaudit
+*.shd
+*.sql
+
+# Users need to manually ignore .csv, .svg, and .html outputs from EnergyPlus
+
+## Java
+# Class Files
+*.class
+
+# Package Files
+*.jar
+*.war
+*.ear

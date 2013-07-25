@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.805"
+    ComputedModelVersion    "1.825"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -59,8 +59,8 @@ Model {
 	  ViewObjType		  "SimulinkTopLevel"
 	  LoadSaveID		  "0"
 	  Extents		  [1566.0, 1039.0]
-	  ZoomFactor		  [0.5]
-	  Offset		  [391.72619047619037, -190.28095238095239]
+	  ZoomFactor		  [0.8]
+	  Offset		  [144.02173873381128, 273.25]
 	}
 	Object {
 	  $ObjectID		  6
@@ -77,8 +77,8 @@ Model {
 	  ViewObjType		  "SimulinkSubsys"
 	  LoadSaveID		  "2643"
 	  Extents		  [1566.0, 1039.0]
-	  ZoomFactor		  [0.8]
-	  Offset		  [-189.09173508483525, -33.749999999999886]
+	  ZoomFactor		  [1.5]
+	  Offset		  [27.54636015326021, 74.778571428571468]
 	}
 	Object {
 	  $ObjectID		  8
@@ -102,9 +102,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "wbernal"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Jul 24 08:53:33 2013"
-  RTWModifiedTimeStamp	  296507956
-  ModelVersionFormat	  "1.%<AutoIncrement:805>"
+  LastModifiedDate	  "Thu Jul 25 12:09:16 2013"
+  RTWModifiedTimeStamp	  296654850
+  ModelVersionFormat	  "1.%<AutoIncrement:825>"
   ConfigurationManager	  "none"
   SampleTimeColors	  on
   SampleTimeAnnotations	  on
@@ -704,7 +704,7 @@ Model {
 	PropName		"Components"
       }
       Name		      "Configuration"
-      CurrentDlgPage	      "Simscape"
+      CurrentDlgPage	      "Solver"
       ConfigPrmDlgPosition     [ 457, 40, 1463, 912 ] 
     }
     PropName		    "ConfigurationSets"
@@ -810,9 +810,6 @@ Model {
       GotoTag		      "A"
       IconDisplay	      "Tag"
       TagVisibility	      "local"
-    }
-    Block {
-      BlockType		      Ground
     }
     Block {
       BlockType		      Inport
@@ -1048,9 +1045,9 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "50"
+    ZoomFactor		    "80"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "2709"
+    SIDHighWatermark	    "2720"
     Block {
       BlockType		      Reference
       Name		      "Building 1"
@@ -1491,7 +1488,7 @@ Model {
       BlockType		      SubSystem
       Name		      "Campus Thermal Model"
       SID		      "2643"
-      Ports		      [2, 1]
+      Ports		      [2, 2]
       Position		      [1140, 1053, 1560, 1357]
       ZOrder		      399
       MinAlgLoopOccurrences   off
@@ -1511,7 +1508,7 @@ Model {
       }
       System {
 	Name			"Campus Thermal Model"
-	Location		[1536, 0, 3152, 1216]
+	Location		[1592, -8, 3208, 1208]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1523,7 +1520,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"80"
+	ZoomFactor		"150"
 	Block {
 	  BlockType		  Inport
 	  Name			  "In1"
@@ -1546,7 +1543,7 @@ Model {
 	  Name			  "Add"
 	  SID			  "2654"
 	  Ports			  [2, 1]
-	  Position		  [1215, 659, 1245, 706]
+	  Position		  [1235, 659, 1255, 706]
 	  ZOrder		  461
 	  InputSameDT		  off
 	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
@@ -1748,7 +1745,7 @@ Model {
 	  BlockType		  From
 	  Name			  "From18"
 	  SID			  "2646"
-	  Position		  [1120, 620, 1185, 640]
+	  Position		  [1100, 620, 1165, 640]
 	  ZOrder		  454
 	  BackgroundColor	  "lightBlue"
 	  ShowName		  off
@@ -1758,7 +1755,7 @@ Model {
 	  BlockType		  From
 	  Name			  "From19"
 	  SID			  "2647"
-	  Position		  [1120, 660, 1185, 680]
+	  Position		  [1100, 660, 1165, 680]
 	  ZOrder		  455
 	  BackgroundColor	  "lightBlue"
 	  ShowName		  off
@@ -1784,7 +1781,7 @@ Model {
 	  BlockType		  From
 	  Name			  "From20"
 	  SID			  "2648"
-	  Position		  [1120, 685, 1185, 705]
+	  Position		  [1100, 685, 1165, 705]
 	  ZOrder		  456
 	  BackgroundColor	  "lightBlue"
 	  ShowName		  off
@@ -1916,7 +1913,7 @@ Model {
 	  BlockType		  From
 	  Name			  "From6"
 	  SID			  "2649"
-	  Position		  [1120, 565, 1185, 585]
+	  Position		  [1100, 565, 1165, 585]
 	  ZOrder		  457
 	  BackgroundColor	  "lightBlue"
 	  ShowName		  off
@@ -2267,6 +2264,16 @@ Model {
 	  ZOrder		  405
 	  ShowName		  off
 	  Inputs		  "5"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux2"
+	  SID			  "2716"
+	  Ports			  [4, 1]
+	  Position		  [1255, 740, 1260, 835]
+	  ZOrder		  498
+	  ShowName		  off
 	  DisplayOption		  "bar"
 	}
 	Block {
@@ -3310,7 +3317,7 @@ Model {
 	  Name			  "Sum of\nElements"
 	  SID			  "2679"
 	  Ports			  [1, 1]
-	  Position		  [1215, 567, 1235, 583]
+	  Position		  [1235, 567, 1255, 583]
 	  ZOrder		  470
 	  NamePlacement		  "alternate"
 	  Inputs		  "+"
@@ -3323,7 +3330,7 @@ Model {
 	  Name			  "Sum of\nElements1"
 	  SID			  "2680"
 	  Ports			  [1, 1]
-	  Position		  [1215, 622, 1235, 638]
+	  Position		  [1235, 622, 1255, 638]
 	  ZOrder		  471
 	  NamePlacement		  "alternate"
 	  Inputs		  "+"
@@ -3472,6 +3479,15 @@ Model {
 	  ZOrder		  -2
 	  IconDisplay		  "Port number"
 	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out2"
+	  SID			  "2717"
+	  Position		  [1390, 783, 1420, 797]
+	  ZOrder		  499
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
 	Line {
 	  Name			  "flag"
 	  Labels		  [0, 0]
@@ -3482,7 +3498,7 @@ Model {
 	}
 	Line {
 	  Name			  "CW Setpoint"
-	  Labels		  [1, 1]
+	  Labels		  [1, 0]
 	  SrcBlock		  "From2"
 	  SrcPort		  1
 	  DstBlock		  "Mux"
@@ -3863,14 +3879,30 @@ Model {
 	Line {
 	  SrcBlock		  "From6"
 	  SrcPort		  1
-	  DstBlock		  "Sum of\nElements"
-	  DstPort		  1
+	  Points		  [44, 0]
+	  Branch {
+	    Points		    [0, 175]
+	    DstBlock		    "Mux2"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Sum of\nElements"
+	    DstPort		    1
+	  }
 	}
 	Line {
 	  SrcBlock		  "From18"
 	  SrcPort		  1
-	  DstBlock		  "Sum of\nElements1"
-	  DstPort		  1
+	  Points		  [32, 0]
+	  Branch {
+	    Points		    [0, 145]
+	    DstBlock		    "Mux2"
+	    DstPort		    2
+	  }
+	  Branch {
+	    DstBlock		    "Sum of\nElements1"
+	    DstPort		    1
+	  }
 	}
 	Line {
 	  SrcBlock		  "Mux7"
@@ -3881,14 +3913,30 @@ Model {
 	Line {
 	  SrcBlock		  "From20"
 	  SrcPort		  1
-	  DstBlock		  "Add"
-	  DstPort		  2
+	  Points		  [10, 0]
+	  Branch {
+	    Points		    [0, 130]
+	    DstBlock		    "Mux2"
+	    DstPort		    4
+	  }
+	  Branch {
+	    DstBlock		    "Add"
+	    DstPort		    2
+	  }
 	}
 	Line {
 	  SrcBlock		  "From19"
 	  SrcPort		  1
-	  DstBlock		  "Add"
-	  DstPort		  1
+	  Points		  [21, 0]
+	  Branch {
+	    Points		    [0, 130]
+	    DstBlock		    "Mux2"
+	    DstPort		    3
+	  }
+	  Branch {
+	    DstBlock		    "Add"
+	    DstPort		    1
+	  }
 	}
 	Line {
 	  SrcBlock		  "Add"
@@ -4016,6 +4064,12 @@ Model {
 	  SrcBlock		  "Bus\nSelector"
 	  SrcPort		  1
 	  DstBlock		  "Mux1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mux2"
+	  SrcPort		  1
+	  DstBlock		  "Out2"
 	  DstPort		  1
 	}
 	Annotation {
@@ -4169,11 +4223,139 @@ Model {
       Value		      "5e3"
     }
     Block {
+      BlockType		      SubSystem
+      Name		      "Control Function"
+      SID		      "2691"
+      Ports		      [2, 1]
+      Position		      [625, 1079, 815, 1186]
+      ZOrder		      470
+      LibraryVersion	      "1.32"
+      ErrorFcn		      "Stateflow.Translate.translate"
+      PermitHierarchicalResolution "ExplicitOnly"
+      TreatAsAtomicUnit	      on
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      SFBlockType	      "MATLAB Function"
+      System {
+	Name			"Control Function"
+	Location		[223, 338, 826, 833]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	SIDHighWatermark	"23"
+	Block {
+	  BlockType		  Inport
+	  Name			  "Campus_Outputs"
+	  SID			  "2691::22"
+	  Position		  [20, 101, 40, 119]
+	  ZOrder		  8
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Weather"
+	  SID			  "2691::23"
+	  Position		  [20, 136, 40, 154]
+	  ZOrder		  9
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  " Demux "
+	  SID			  "2691::19"
+	  Ports			  [1, 1]
+	  Position		  [270, 230, 320, 270]
+	  ZOrder		  5
+	  Outputs		  "1"
+	}
+	Block {
+	  BlockType		  S-Function
+	  Name			  " SFunction "
+	  SID			  "2691::18"
+	  Tag			  "Stateflow S-Function integrated_campus 3"
+	  Ports			  [2, 2]
+	  Position		  [180, 100, 230, 160]
+	  ZOrder		  4
+	  FunctionName		  "sf_sfun"
+	  PortCounts		  "[2 2]"
+	  EnableBusSupport	  on
+	  Port {
+	    PortNumber		    2
+	    Name		    "y"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  " Terminator "
+	  SID			  "2691::20"
+	  Position		  [460, 241, 480, 259]
+	  ZOrder		  6
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "y"
+	  SID			  "2691::5"
+	  Position		  [460, 101, 480, 119]
+	  ZOrder		  -5
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  SrcBlock		  "Campus_Outputs"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Weather"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  2
+	}
+	Line {
+	  Name			  "y"
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  2
+	  DstBlock		  "y"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  " Demux "
+	  SrcPort		  1
+	  DstBlock		  " Terminator "
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  " SFunction "
+	  SrcPort		  1
+	  DstBlock		  " Demux "
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
       BlockType		      Demux
       Name		      "Demux"
       SID		      "2655"
       Ports		      [1, 3]
-      Position		      [1610, 1158, 1615, 1252]
+      Position		      [1610, 1083, 1615, 1177]
       ZOrder		      409
       ShowName		      off
       Outputs		      "3"
@@ -4209,7 +4391,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"EV Charger 1"
-	Location		[-8, -8, 1928, 1048]
+	Location		[1592, -8, 3208, 1208]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -5975,6 +6157,36 @@ Model {
     }
     Block {
       BlockType		      From
+      Name		      "From34"
+      SID		      "2711"
+      Position		      [1005, 1270, 1110, 1290]
+      ZOrder		      472
+      BackgroundColor	      "lightBlue"
+      ShowName		      off
+      GotoTag		      "Campus_Inputs"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From35"
+      SID		      "2718"
+      Position		      [400, 1095, 505, 1115]
+      ZOrder		      499
+      BackgroundColor	      "lightBlue"
+      ShowName		      off
+      GotoTag		      "Campus_Outputs"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From36"
+      SID		      "2719"
+      Position		      [465, 1148, 540, 1172]
+      ZOrder		      500
+      BackgroundColor	      "lightBlue"
+      ShowName		      off
+      GotoTag		      "Weather"
+    }
+    Block {
+      BlockType		      From
       Name		      "From4"
       SID		      "2409"
       Position		      [1390, 196, 1465, 214]
@@ -6043,7 +6255,7 @@ Model {
       BlockType		      Goto
       Name		      "Goto1"
       SID		      "2651"
-      Position		      [1650, 1166, 1745, 1184]
+      Position		      [1650, 1091, 1745, 1109]
       ZOrder		      408
       BackgroundColor	      "lightBlue"
       GotoTag		      "BuildingPower1"
@@ -6052,19 +6264,38 @@ Model {
       BlockType		      Goto
       Name		      "Goto2"
       SID		      "2656"
-      Position		      [1650, 1196, 1745, 1214]
+      Position		      [1650, 1121, 1745, 1139]
       ZOrder		      410
       BackgroundColor	      "lightBlue"
       GotoTag		      "BuildingPower2"
     }
     Block {
       BlockType		      Goto
+      Name		      "Goto25"
+      SID		      "2715"
+      Position		      [1610, 1270, 1735, 1290]
+      ZOrder		      498
+      BackgroundColor	      "lightBlue"
+      ShowName		      off
+      GotoTag		      "Campus_Outputs"
+    }
+    Block {
+      BlockType		      Goto
       Name		      "Goto3"
       SID		      "2657"
-      Position		      [1650, 1226, 1745, 1244]
+      Position		      [1650, 1151, 1745, 1169]
       ZOrder		      411
       BackgroundColor	      "lightBlue"
       GotoTag		      "PlantPower"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto4"
+      SID		      "2710"
+      Position		      [875, 1126, 970, 1144]
+      ZOrder		      471
+      BackgroundColor	      "lightBlue"
+      GotoTag		      "Campus_Inputs"
     }
     Block {
       BlockType		      Reference
@@ -6820,118 +7051,6 @@ Model {
       }
     }
     Block {
-      BlockType		      SubSystem
-      Name		      "MATLAB Function"
-      SID		      "2691"
-      Ports		      [0, 1]
-      Position		      [995, 1257, 1065, 1303]
-      ZOrder		      470
-      LibraryVersion	      "1.32"
-      ErrorFcn		      "Stateflow.Translate.translate"
-      PermitHierarchicalResolution "ExplicitOnly"
-      TreatAsAtomicUnit	      on
-      MinAlgLoopOccurrences   off
-      PropExecContextOutsideSubsystem off
-      RTWSystemCode	      "Auto"
-      FunctionWithSeparateData off
-      Opaque		      off
-      RequestExecContextInheritance off
-      MaskHideContents	      off
-      SFBlockType	      "MATLAB Function"
-      System {
-	Name			"MATLAB Function"
-	Location		[223, 338, 826, 833]
-	Open			off
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"usletter"
-	PaperUnits		"inches"
-	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"100"
-	SIDHighWatermark	"21"
-	Block {
-	  BlockType		  Demux
-	  Name			  " Demux "
-	  SID			  "2691::19"
-	  Ports			  [1, 1]
-	  Position		  [270, 230, 320, 270]
-	  ZOrder		  5
-	  Outputs		  "1"
-	}
-	Block {
-	  BlockType		  Ground
-	  Name			  " Ground "
-	  SID			  "2691::21"
-	  Position		  [20, 121, 40, 139]
-	  ZOrder		  7
-	}
-	Block {
-	  BlockType		  S-Function
-	  Name			  " SFunction "
-	  SID			  "2691::18"
-	  Tag			  "Stateflow S-Function integrated_campus 3"
-	  Ports			  [1, 2]
-	  Position		  [180, 100, 230, 160]
-	  ZOrder		  4
-	  FunctionName		  "sf_sfun"
-	  PortCounts		  "[1 2]"
-	  EnableBusSupport	  on
-	  Port {
-	    PortNumber		    2
-	    Name		    "y"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  " Terminator "
-	  SID			  "2691::20"
-	  Position		  [460, 241, 480, 259]
-	  ZOrder		  6
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "y"
-	  SID			  "2691::5"
-	  Position		  [460, 101, 480, 119]
-	  ZOrder		  -5
-	  IconDisplay		  "Port number"
-	}
-	Line {
-	  Name			  "y"
-	  Labels		  [0, 0]
-	  SrcBlock		  " SFunction "
-	  SrcPort		  2
-	  DstBlock		  "y"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  " Ground "
-	  SrcPort		  1
-	  DstBlock		  " SFunction "
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  " Demux "
-	  SrcPort		  1
-	  DstBlock		  " Terminator "
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  " SFunction "
-	  SrcPort		  1
-	  DstBlock		  " Demux "
-	  DstPort		  1
-	}
-      }
-    }
-    Block {
       BlockType		      Mux
       Name		      "Mux1"
       SID		      "2410"
@@ -7197,7 +7316,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"PV System"
-	Location		[1536, 0, 3152, 1216]
+	Location		[1592, -8, 3208, 1208]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -7572,10 +7691,9 @@ Model {
       ZOrder		      308
       BackgroundColor	      "gray"
       Floating		      off
-      Location		      [5, 48, 1925, 1039]
-      Open		      off
+      Location		      [1356, 151, 2956, 1262]
+      Open		      on
       NumInputPorts	      "3"
-      ZoomMode		      "xonly"
       List {
 	ListType		AxesTitles
 	axes1			"%<SignalLabel>"
@@ -7678,12 +7796,12 @@ Model {
       Name		      "Scope:\nPV and Grid1"
       SID		      "2658"
       Ports		      [1]
-      Position		      [1690, 1266, 1735, 1354]
+      Position		      [1635, 1016, 1700, 1074]
       ZOrder		      412
       BackgroundColor	      "gray"
       Floating		      off
       Location		      [5, 43, 1925, 1074]
-      Open		      off
+      Open		      on
       NumInputPorts	      "1"
       ZoomMode		      "xonly"
       List {
@@ -8047,6 +8165,16 @@ Model {
       BreakLoop		      off
       DataType		      off
       TransfoNumber	      "1"
+    }
+    Block {
+      BlockType		      UnitDelay
+      Name		      "Unit Delay2"
+      SID		      "2720"
+      Position		      [540, 1083, 580, 1127]
+      ZOrder		      501
+      NamePlacement	      "alternate"
+      InputProcessing	      "Elements as channels (sample based)"
+      SampleTime	      "-1"
     }
     Block {
       BlockType		      Goto
@@ -8420,7 +8548,7 @@ Model {
       DropShadow	      on
       ShowName		      off
       Priority		      "2"
-      LibraryVersion	      "1.2191"
+      LibraryVersion	      "*1.2191"
       UserDataPersistent      on
       UserData		      "DataTag1"
       SourceBlock	      "powerlib/powergui"
@@ -10869,7 +10997,7 @@ Model {
       SrcPort		      1
       Points		      [20, 0]
       Branch {
-	Points			[0, 105]
+	Points			[0, -85]
 	DstBlock		"Scope:\nPV and Grid1"
 	DstPort			1
       }
@@ -10939,10 +11067,40 @@ Model {
       DstPort		      2
     }
     Line {
-      SrcBlock		      "MATLAB Function"
+      SrcBlock		      "Control Function"
+      SrcPort		      1
+      DstBlock		      "Goto4"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From34"
       SrcPort		      1
       DstBlock		      "Campus Thermal Model"
       DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Campus Thermal Model"
+      SrcPort		      2
+      DstBlock		      "Goto25"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From35"
+      SrcPort		      1
+      DstBlock		      "Unit Delay2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From36"
+      SrcPort		      1
+      DstBlock		      "Control Function"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Unit Delay2"
+      SrcPort		      1
+      DstBlock		      "Control Function"
+      DstPort		      1
     }
     Annotation {
       SID		      "2426"
@@ -11046,7 +11204,7 @@ Stateflow {
     name		    "integrated_campus"
     created		    "17-Dec-2012 14:53:20"
     isLibrary		    0
-    firstTarget		    61
+    firstTarget		    63
     sfVersion		    76014001.0015
   }
   chart {
@@ -11244,7 +11402,10 @@ Stateflow {
     firstTransition	    24
     firstJunction	    23
     viewObj		    12
+    visible		    1
     machine		    1
+    subviewS {
+    }
     ssIdHighWaterMark	    16
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -11511,16 +11672,19 @@ Stateflow {
   }
   chart {
     id			    26
-    name		    "MATLAB Function"
+    name		    "Control Function"
     windowPosition	    [357.331 483.407 167 391]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 1280 1024 1.041050272174191]
     treeNode		    [0 27 0 0]
-    firstTransition	    30
-    firstJunction	    29
+    firstTransition	    32
+    firstJunction	    31
     viewObj		    26
+    visible		    1
     machine		    1
-    ssIdHighWaterMark	    5
+    subviewS {
+    }
+    ssIdHighWaterMark	    7
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
     firstData		    28
@@ -11544,9 +11708,10 @@ Stateflow {
     decomposition	    CLUSTER_STATE
     eml {
       isEML		      1
-      script		      "function y = fcn()\nChilledWaterSetpoint = 7.22;\nRoom1CoolingSetpoint = 22;\nRoom2CoolingSetpoin"
-      "t = 22;\nRoom1HeatingSetpoint = 20;\nRoom2HeatingSetpoint = 20;\n\ny = [ChilledWaterSetpoint Room1CoolingSetpoin"
-      "t Room2CoolingSetpoint Room1HeatingSetpoint Room2HeatingSetpoint];"
+      script		      "function y = fcn(Campus_Outputs, Weather)\n%% CONTROL LOOP FOR BUILDING\n\nChilledWaterSetpoint ="
+      " 7.22;\nRoom1CoolingSetpoint = 22;\nRoom2CoolingSetpoint = 22;\nRoom1HeatingSetpoint = 20;\nRoom2HeatingSetpoint"
+      " = 20;\n\n\n\n\n\n\n\n%% SET OUTPUTS\ny = [ChilledWaterSetpoint Room1CoolingSetpoint Room2CoolingSetpoint Room1H"
+      "eatingSetpoint Room2HeatingSetpoint];"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
@@ -11554,7 +11719,7 @@ Stateflow {
     id			    28
     ssIdNumber		    5
     name		    "y"
-    linkNode		    [26 0 0]
+    linkNode		    [26 0 29]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -11570,437 +11735,11 @@ Stateflow {
     }
     dataType		    "Inherit: Same as Simulink"
   }
-  junction {
+  data {
     id			    29
-    position		    [23.5747 49.5747 7]
-    chart		    26
-    linkNode		    [26 0 0]
-    subviewer		    26
-    ssIdNumber		    3
-    type		    CONNECTIVE_JUNCTION
-  }
-  transition {
-    id			    30
-    labelString		    "{eML_blk_kernel();}"
-    labelPosition	    [32.125 19.875 102.544 14.964]
-    fontSize		    12
-    src {
-      intersection	      [0 0 1 0 23.5747 14.625 0 0]
-    }
-    dst {
-      id		      29
-      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
-    }
-    midPoint		    [23.5747 24.9468]
-    chart		    26
-    linkNode		    [26 0 0]
-    dataLimits		    [21.175 25.975 14.625 42.575]
-    subviewer		    26
-    drawStyle		    SMART
-    slide {
-      sticky		      BOTH_STICK
-    }
-    executionOrder	    1
-    ssIdNumber		    2
-  }
-  instance {
-    id			    31
-    name		    "MATLAB Function"
-    machine		    1
-    chart		    26
-  }
-  chart {
-    id			    32
-    name		    "Campus Thermal Model/PrepOutputs3"
-    windowPosition	    [530 458.75 213 385]
-    viewLimits		    [0 156.75 0 153.75]
-    screen		    [1 1 1600 1200 1.333333333333333]
-    treeNode		    [0 33 0 0]
-    firstTransition	    38
-    firstJunction	    37
-    viewObj		    32
-    machine		    1
-    ssIdHighWaterMark	    11
-    decomposition	    CLUSTER_CHART
-    type		    EML_CHART
-    firstData		    34
-    chartFileNumber	    5
-    disableImplicitCasting  1
-    eml {
-      name		      "fcn"
-    }
-  }
-  state {
-    id			    33
-    labelString		    "eML_blk_kernel()"
-    position		    [18 64.5 118 66]
-    fontSize		    12
-    chart		    32
-    treeNode		    [32 0 0 0]
-    superState		    SUBCHART
-    subviewer		    32
-    ssIdNumber		    1
-    type		    FUNC_STATE
-    decomposition	    CLUSTER_STATE
-    eml {
-      isEML		      1
-      script		      "function [MaxMassFlow1, MaxMassFlow2] = fcn(MaxFlow)\n% Transform into [Kg/s] Split Evenly\nMaxFl"
-      "ow = MaxFlow*1000;\n%if Input1+Input2 > MaxFlow\nMaxMassFlow1 = MaxFlow/2;\nMaxMassFlow2 = MaxFlow/2;\n%else\n% "
-      "   MaxMassFlow1 =  \n%    MaxMassFlow2 = MaxFlow - Input;\n%end"
-      editorLayout	      "100 M4x1[10 5 700 500]"
-    }
-  }
-  data {
-    id			    34
-    ssIdNumber		    9
-    name		    "MaxMassFlow1"
-    linkNode		    [32 0 35]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    35
-    ssIdNumber		    4
-    name		    "MaxFlow"
-    linkNode		    [32 34 36]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-      }
-      complexity	      SF_COMPLEX_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    36
-    ssIdNumber		    10
-    name		    "MaxMassFlow2"
-    linkNode		    [32 35 0]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  junction {
-    id			    37
-    position		    [23.5747 49.5747 7]
-    chart		    32
-    linkNode		    [32 0 0]
-    subviewer		    32
-    ssIdNumber		    3
-    type		    CONNECTIVE_JUNCTION
-  }
-  transition {
-    id			    38
-    labelString		    "{eML_blk_kernel();}"
-    labelPosition	    [32.125 19.875 102.544 14.964]
-    fontSize		    12
-    src {
-      intersection	      [0 0 1 0 23.5747 14.625 0 0]
-    }
-    dst {
-      id		      37
-      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
-    }
-    midPoint		    [23.5747 24.9468]
-    chart		    32
-    linkNode		    [32 0 0]
-    dataLimits		    [21.175 25.975 14.625 42.575]
-    subviewer		    32
-    drawStyle		    SMART
-    slide {
-      sticky		      BOTH_STICK
-    }
-    executionOrder	    1
-    ssIdNumber		    2
-  }
-  instance {
-    id			    39
-    name		    "Campus Thermal Model/PrepOutputs3"
-    machine		    1
-    chart		    32
-  }
-  chart {
-    id			    40
-    name		    "Campus Thermal Model/PrepOutputs4"
-    windowPosition	    [530 458.75 213 385]
-    viewLimits		    [0 156.75 0 153.75]
-    screen		    [1 1 1600 1200 1.333333333333333]
-    treeNode		    [0 41 0 0]
-    firstTransition	    48
-    firstJunction	    47
-    viewObj		    40
-    machine		    1
-    ssIdHighWaterMark	    9
-    decomposition	    CLUSTER_CHART
-    type		    EML_CHART
-    firstData		    42
-    chartFileNumber	    6
-    disableImplicitCasting  1
-    eml {
-      name		      "fcn"
-    }
-  }
-  state {
-    id			    41
-    labelString		    "eML_blk_kernel()"
-    position		    [18 64.5 118 66]
-    fontSize		    12
-    chart		    40
-    treeNode		    [40 0 0 0]
-    superState		    SUBCHART
-    subviewer		    40
-    ssIdNumber		    1
-    type		    FUNC_STATE
-    decomposition	    CLUSTER_STATE
-    eml {
-      isEML		      1
-      script		      "function [Temp,Input,InOutTemp,Pow] = fcn(u)\n\nTemp = u(1:7);          % Out, Room Temp\nInput ="
-      " u(8:9);         % Flow Rate, Load \nInOutTemp = u(10:11);   % Inlet/Outlet Water Temperature\nPow = u(12:13);  "
-      "       % Total Power"
-      editorLayout	      "100 M4x1[10 5 700 500]"
-    }
-  }
-  data {
-    id			    42
-    ssIdNumber		    4
-    name		    "u"
-    linkNode		    [40 0 43]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-      }
-      complexity	      SF_COMPLEX_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    43
-    ssIdNumber		    5
-    name		    "Temp"
-    linkNode		    [40 42 44]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    44
     ssIdNumber		    6
-    name		    "Input"
-    linkNode		    [40 43 45]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    45
-    ssIdNumber		    7
-    name		    "InOutTemp"
-    linkNode		    [40 44 46]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    46
-    ssIdNumber		    9
-    name		    "Pow"
-    linkNode		    [40 45 0]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  junction {
-    id			    47
-    position		    [23.5747 49.5747 7]
-    chart		    40
-    linkNode		    [40 0 0]
-    subviewer		    40
-    ssIdNumber		    3
-    type		    CONNECTIVE_JUNCTION
-  }
-  transition {
-    id			    48
-    labelString		    "{eML_blk_kernel();}"
-    labelPosition	    [32.125 19.875 102.544 14.964]
-    fontSize		    12
-    src {
-      intersection	      [0 0 1 0 23.5747 14.625 0 0]
-    }
-    dst {
-      id		      47
-      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
-    }
-    midPoint		    [23.5747 24.9468]
-    chart		    40
-    linkNode		    [40 0 0]
-    dataLimits		    [21.175 25.975 14.625 42.575]
-    subviewer		    40
-    drawStyle		    SMART
-    slide {
-      sticky		      BOTH_STICK
-    }
-    executionOrder	    1
-    ssIdNumber		    2
-  }
-  instance {
-    id			    49
-    name		    "Campus Thermal Model/PrepOutputs4"
-    machine		    1
-    chart		    40
-  }
-  chart {
-    id			    50
-    name		    "Campus Thermal Model/PrepOutputs6"
-    windowPosition	    [550 458.75 213 385]
-    viewLimits		    [0 156.75 0 153.75]
-    screen		    [1 1 1600 1200 1.333333333333333]
-    treeNode		    [0 51 0 0]
-    firstTransition	    59
-    firstJunction	    58
-    viewObj		    50
-    machine		    1
-    ssIdHighWaterMark	    13
-    decomposition	    CLUSTER_CHART
-    type		    EML_CHART
-    firstData		    52
-    chartFileNumber	    8
-    disableImplicitCasting  1
-    eml {
-      name		      "fcn"
-    }
-  }
-  state {
-    id			    51
-    labelString		    "eML_blk_kernel()"
-    position		    [18 64.5 118 66]
-    fontSize		    12
-    chart		    50
-    treeNode		    [50 0 0 0]
-    superState		    SUBCHART
-    subviewer		    50
-    ssIdNumber		    1
-    type		    FUNC_STATE
-    decomposition	    CLUSTER_STATE
-    eml {
-      isEML		      1
-      script		      "function [mflow1, pow1, mflow2, pow2] = fcn(Input1, Input2)\nratio = 0.005;\nmflow1 = Input1(1)/r"
-      "atio/1000;\npow1 = Input1(2);\nmflow2 = Input2(1)/ratio/1000; \npow2 = Input2(2);\n\n\n\n"
-      editorLayout	      "100 M4x1[1706 439 1080 733]"
-    }
-  }
-  data {
-    id			    52
-    ssIdNumber		    4
-    name		    "Input1"
-    linkNode		    [50 0 53]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-      }
-      complexity	      SF_COMPLEX_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    53
-    ssIdNumber		    11
-    name		    "Input2"
-    linkNode		    [50 52 54]
+    name		    "Campus_Outputs"
+    linkNode		    [26 28 30]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -12019,10 +11758,112 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    54
+    id			    30
+    ssIdNumber		    7
+    name		    "Weather"
+    linkNode		    [26 29 0]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  junction {
+    id			    31
+    position		    [23.5747 49.5747 7]
+    chart		    26
+    linkNode		    [26 0 0]
+    subviewer		    26
+    ssIdNumber		    3
+    type		    CONNECTIVE_JUNCTION
+  }
+  transition {
+    id			    32
+    labelString		    "{eML_blk_kernel();}"
+    labelPosition	    [32.125 19.875 102.544 14.964]
+    fontSize		    12
+    src {
+      intersection	      [0 0 1 0 23.5747 14.625 0 0]
+    }
+    dst {
+      id		      31
+      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
+    }
+    midPoint		    [23.5747 24.9468]
+    chart		    26
+    linkNode		    [26 0 0]
+    dataLimits		    [21.175 25.975 14.625 42.575]
+    subviewer		    26
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    2
+  }
+  instance {
+    id			    33
+    name		    "Control Function"
+    machine		    1
+    chart		    26
+  }
+  chart {
+    id			    34
+    name		    "Campus Thermal Model/PrepOutputs3"
+    windowPosition	    [530 458.75 213 385]
+    viewLimits		    [0 156.75 0 153.75]
+    screen		    [1 1 1600 1200 1.333333333333333]
+    treeNode		    [0 35 0 0]
+    firstTransition	    40
+    firstJunction	    39
+    viewObj		    34
+    machine		    1
+    ssIdHighWaterMark	    11
+    decomposition	    CLUSTER_CHART
+    type		    EML_CHART
+    firstData		    36
+    chartFileNumber	    5
+    disableImplicitCasting  1
+    eml {
+      name		      "fcn"
+    }
+  }
+  state {
+    id			    35
+    labelString		    "eML_blk_kernel()"
+    position		    [18 64.5 118 66]
+    fontSize		    12
+    chart		    34
+    treeNode		    [34 0 0 0]
+    superState		    SUBCHART
+    subviewer		    34
+    ssIdNumber		    1
+    type		    FUNC_STATE
+    decomposition	    CLUSTER_STATE
+    eml {
+      isEML		      1
+      script		      "function [MaxMassFlow1, MaxMassFlow2] = fcn(MaxFlow)\n% Transform into [Kg/s] Split Evenly\nMaxFl"
+      "ow = MaxFlow*1000;\n%if Input1+Input2 > MaxFlow\nMaxMassFlow1 = MaxFlow/2;\nMaxMassFlow2 = MaxFlow/2;\n%else\n% "
+      "   MaxMassFlow1 =  \n%    MaxMassFlow2 = MaxFlow - Input;\n%end"
+      editorLayout	      "100 M4x1[10 5 700 500]"
+    }
+  }
+  data {
+    id			    36
     ssIdNumber		    9
-    name		    "mflow1"
-    linkNode		    [50 53 55]
+    name		    "MaxMassFlow1"
+    linkNode		    [34 0 37]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -12037,15 +11878,339 @@ Stateflow {
       }
       complexity	      SF_COMPLEX_INHERITED
       frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    37
+    ssIdNumber		    4
+    name		    "MaxFlow"
+    linkNode		    [34 36 38]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    38
+    ssIdNumber		    10
+    name		    "MaxMassFlow2"
+    linkNode		    [34 37 0]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  junction {
+    id			    39
+    position		    [23.5747 49.5747 7]
+    chart		    34
+    linkNode		    [34 0 0]
+    subviewer		    34
+    ssIdNumber		    3
+    type		    CONNECTIVE_JUNCTION
+  }
+  transition {
+    id			    40
+    labelString		    "{eML_blk_kernel();}"
+    labelPosition	    [32.125 19.875 102.544 14.964]
+    fontSize		    12
+    src {
+      intersection	      [0 0 1 0 23.5747 14.625 0 0]
+    }
+    dst {
+      id		      39
+      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
+    }
+    midPoint		    [23.5747 24.9468]
+    chart		    34
+    linkNode		    [34 0 0]
+    dataLimits		    [21.175 25.975 14.625 42.575]
+    subviewer		    34
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    2
+  }
+  instance {
+    id			    41
+    name		    "Campus Thermal Model/PrepOutputs3"
+    machine		    1
+    chart		    34
+  }
+  chart {
+    id			    42
+    name		    "Campus Thermal Model/PrepOutputs4"
+    windowPosition	    [530 458.75 213 385]
+    viewLimits		    [0 156.75 0 153.75]
+    screen		    [1 1 1600 1200 1.333333333333333]
+    treeNode		    [0 43 0 0]
+    firstTransition	    50
+    firstJunction	    49
+    viewObj		    42
+    machine		    1
+    ssIdHighWaterMark	    9
+    decomposition	    CLUSTER_CHART
+    type		    EML_CHART
+    firstData		    44
+    chartFileNumber	    6
+    disableImplicitCasting  1
+    eml {
+      name		      "fcn"
+    }
+  }
+  state {
+    id			    43
+    labelString		    "eML_blk_kernel()"
+    position		    [18 64.5 118 66]
+    fontSize		    12
+    chart		    42
+    treeNode		    [42 0 0 0]
+    superState		    SUBCHART
+    subviewer		    42
+    ssIdNumber		    1
+    type		    FUNC_STATE
+    decomposition	    CLUSTER_STATE
+    eml {
+      isEML		      1
+      script		      "function [Temp,Input,InOutTemp,Pow] = fcn(u)\n\nTemp = u(1:7);          % Out, Room Temp\nInput ="
+      " u(8:9);         % Flow Rate, Load \nInOutTemp = u(10:11);   % Inlet/Outlet Water Temperature\nPow = u(12:13);  "
+      "       % Total Power"
+      editorLayout	      "100 M4x1[10 5 700 500]"
+    }
+  }
+  data {
+    id			    44
+    ssIdNumber		    4
+    name		    "u"
+    linkNode		    [42 0 45]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    45
+    ssIdNumber		    5
+    name		    "Temp"
+    linkNode		    [42 44 46]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    46
+    ssIdNumber		    6
+    name		    "Input"
+    linkNode		    [42 45 47]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    47
+    ssIdNumber		    7
+    name		    "InOutTemp"
+    linkNode		    [42 46 48]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    48
+    ssIdNumber		    9
+    name		    "Pow"
+    linkNode		    [42 47 0]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  junction {
+    id			    49
+    position		    [23.5747 49.5747 7]
+    chart		    42
+    linkNode		    [42 0 0]
+    subviewer		    42
+    ssIdNumber		    3
+    type		    CONNECTIVE_JUNCTION
+  }
+  transition {
+    id			    50
+    labelString		    "{eML_blk_kernel();}"
+    labelPosition	    [32.125 19.875 102.544 14.964]
+    fontSize		    12
+    src {
+      intersection	      [0 0 1 0 23.5747 14.625 0 0]
+    }
+    dst {
+      id		      49
+      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
+    }
+    midPoint		    [23.5747 24.9468]
+    chart		    42
+    linkNode		    [42 0 0]
+    dataLimits		    [21.175 25.975 14.625 42.575]
+    subviewer		    42
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    2
+  }
+  instance {
+    id			    51
+    name		    "Campus Thermal Model/PrepOutputs4"
+    machine		    1
+    chart		    42
+  }
+  chart {
+    id			    52
+    name		    "Campus Thermal Model/PrepOutputs6"
+    windowPosition	    [550 458.75 213 385]
+    viewLimits		    [0 156.75 0 153.75]
+    screen		    [1 1 1600 1200 1.333333333333333]
+    treeNode		    [0 53 0 0]
+    firstTransition	    61
+    firstJunction	    60
+    viewObj		    52
+    machine		    1
+    ssIdHighWaterMark	    13
+    decomposition	    CLUSTER_CHART
+    type		    EML_CHART
+    firstData		    54
+    chartFileNumber	    8
+    disableImplicitCasting  1
+    eml {
+      name		      "fcn"
+    }
+  }
+  state {
+    id			    53
+    labelString		    "eML_blk_kernel()"
+    position		    [18 64.5 118 66]
+    fontSize		    12
+    chart		    52
+    treeNode		    [52 0 0 0]
+    superState		    SUBCHART
+    subviewer		    52
+    ssIdNumber		    1
+    type		    FUNC_STATE
+    decomposition	    CLUSTER_STATE
+    eml {
+      isEML		      1
+      script		      "function [mflow1, pow1, mflow2, pow2] = fcn(Input1, Input2)\nratio = 0.005;\nmflow1 = Input1(1)/r"
+      "atio/1000;\npow1 = Input1(2);\nmflow2 = Input2(1)/ratio/1000; \npow2 = Input2(2);\n\n\n\n"
+      editorLayout	      "100 M4x1[1706 439 1080 733]"
+    }
+  }
+  data {
+    id			    54
+    ssIdNumber		    4
+    name		    "Input1"
+    linkNode		    [52 0 55]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
     }
     dataType		    "Inherit: Same as Simulink"
   }
   data {
     id			    55
-    ssIdNumber		    12
-    name		    "pow1"
-    linkNode		    [50 54 56]
-    scope		    OUTPUT_DATA
+    ssIdNumber		    11
+    name		    "Input2"
+    linkNode		    [52 54 56]
+    scope		    INPUT_DATA
     machine		    1
     props {
       array {
@@ -12058,15 +12223,15 @@ Stateflow {
 	wordLength		"16"
       }
       complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
+      frame		      SF_FRAME_INHERITED
     }
     dataType		    "Inherit: Same as Simulink"
   }
   data {
     id			    56
-    ssIdNumber		    10
-    name		    "mflow2"
-    linkNode		    [50 55 57]
+    ssIdNumber		    9
+    name		    "mflow1"
+    linkNode		    [52 55 57]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -12086,9 +12251,53 @@ Stateflow {
   }
   data {
     id			    57
+    ssIdNumber		    12
+    name		    "pow1"
+    linkNode		    [52 56 58]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    58
+    ssIdNumber		    10
+    name		    "mflow2"
+    linkNode		    [52 57 59]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    59
     ssIdNumber		    13
     name		    "pow2"
-    linkNode		    [50 56 0]
+    linkNode		    [52 58 0]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -12107,16 +12316,16 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   junction {
-    id			    58
+    id			    60
     position		    [23.5747 49.5747 7]
-    chart		    50
-    linkNode		    [50 0 0]
-    subviewer		    50
+    chart		    52
+    linkNode		    [52 0 0]
+    subviewer		    52
     ssIdNumber		    3
     type		    CONNECTIVE_JUNCTION
   }
   transition {
-    id			    59
+    id			    61
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [32.125 19.875 102.544 14.964]
     fontSize		    12
@@ -12124,14 +12333,14 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      58
+      id		      60
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
-    chart		    50
-    linkNode		    [50 0 0]
+    chart		    52
+    linkNode		    [52 0 0]
     dataLimits		    [21.175 25.975 14.625 42.575]
-    subviewer		    50
+    subviewer		    52
     drawStyle		    SMART
     slide {
       sticky		      BOTH_STICK
@@ -12140,13 +12349,13 @@ Stateflow {
     ssIdNumber		    2
   }
   instance {
-    id			    60
+    id			    62
     name		    "Campus Thermal Model/PrepOutputs6"
     machine		    1
-    chart		    50
+    chart		    52
   }
   target {
-    id			    61
+    id			    63
     name		    "sfun"
     description		    "Default Simulink S-Function Target."
     machine		    1

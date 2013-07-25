@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.19"
+    ComputedModelVersion    "1.22"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -66,9 +66,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Jul 24 16:51:25 2013"
-  RTWModifiedTimeStamp	  296585472
-  ModelVersionFormat	  "1.%<AutoIncrement:19>"
+  LastModifiedDate	  "Thu Jul 25 09:50:42 2013"
+  RTWModifiedTimeStamp	  296646594
+  ModelVersionFormat	  "1.%<AutoIncrement:22>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -765,226 +765,10 @@ Model {
       TagVisibility	      "local"
     }
     Block {
-      BlockType		      Gain
-      Gain		      "1"
-      Multiplication	      "Element-wise(K.*u)"
-      ParamMin		      "[]"
-      ParamMax		      "[]"
-      ParamDataTypeStr	      "Inherit: Same as input"
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: Same as input"
-      LockScale		      off
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	on
-      SampleTime	      "-1"
-    }
-    Block {
       BlockType		      Goto
       GotoTag		      "A"
       IconDisplay	      "Tag"
       TagVisibility	      "local"
-    }
-    Block {
-      BlockType		      Inport
-      Port		      "1"
-      OutputFunctionCall      off
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: auto"
-      LockScale		      off
-      BusOutputAsStruct	      off
-      PortDimensions	      "-1"
-      VarSizeSig	      "Inherit"
-      SampleTime	      "-1"
-      SignalType	      "auto"
-      SamplingMode	      "auto"
-      LatchByDelayingOutsideSignal off
-      LatchInputForFeedbackSignals off
-      Interpolate	      on
-    }
-    Block {
-      BlockType		      Integrator
-      ExternalReset	      "none"
-      InitialConditionSource  "internal"
-      InitialCondition	      "0"
-      LimitOutput	      off
-      UpperSaturationLimit    "inf"
-      LowerSaturationLimit    "-inf"
-      ShowSaturationPort      off
-      ShowStatePort	      off
-      AbsoluteTolerance	      "auto"
-      IgnoreLimit	      off
-      ZeroCross		      on
-      ContinuousStateAttributes	"''"
-    }
-    Block {
-      BlockType		      Lookup_n-D
-      NumberOfTableDimensions "2"
-      BreakpointsForDimension1 "[10,22,31]"
-      BreakpointsForDimension2 "[10,22,31]"
-      BreakpointsForDimension3 "[1:3]"
-      BreakpointsForDimension4 "[1:3]"
-      BreakpointsForDimension5 "[1:3]"
-      BreakpointsForDimension6 "[1:3]"
-      BreakpointsForDimension7 "[1:3]"
-      BreakpointsForDimension8 "[1:3]"
-      BreakpointsForDimension9 "[1:3]"
-      BreakpointsForDimension10	"[1:3]"
-      BreakpointsForDimension11	"[1:3]"
-      BreakpointsForDimension12	"[1:3]"
-      BreakpointsForDimension13	"[1:3]"
-      BreakpointsForDimension14	"[1:3]"
-      BreakpointsForDimension15	"[1:3]"
-      BreakpointsForDimension16	"[1:3]"
-      BreakpointsForDimension17	"[1:3]"
-      BreakpointsForDimension18	"[1:3]"
-      BreakpointsForDimension19	"[1:3]"
-      BreakpointsForDimension20	"[1:3]"
-      BreakpointsForDimension21	"[1:3]"
-      BreakpointsForDimension22	"[1:3]"
-      BreakpointsForDimension23	"[1:3]"
-      BreakpointsForDimension24	"[1:3]"
-      BreakpointsForDimension25	"[1:3]"
-      BreakpointsForDimension26	"[1:3]"
-      BreakpointsForDimension27	"[1:3]"
-      BreakpointsForDimension28	"[1:3]"
-      BreakpointsForDimension29	"[1:3]"
-      BreakpointsForDimension30	"[1:3]"
-      BreakpointsForDimension1Min "[]"
-      BreakpointsForDimension2Min "[]"
-      BreakpointsForDimension3Min "[]"
-      BreakpointsForDimension4Min "[]"
-      BreakpointsForDimension5Min "[]"
-      BreakpointsForDimension6Min "[]"
-      BreakpointsForDimension7Min "[]"
-      BreakpointsForDimension8Min "[]"
-      BreakpointsForDimension9Min "[]"
-      BreakpointsForDimension10Min "[]"
-      BreakpointsForDimension11Min "[]"
-      BreakpointsForDimension12Min "[]"
-      BreakpointsForDimension13Min "[]"
-      BreakpointsForDimension14Min "[]"
-      BreakpointsForDimension15Min "[]"
-      BreakpointsForDimension16Min "[]"
-      BreakpointsForDimension17Min "[]"
-      BreakpointsForDimension18Min "[]"
-      BreakpointsForDimension19Min "[]"
-      BreakpointsForDimension20Min "[]"
-      BreakpointsForDimension21Min "[]"
-      BreakpointsForDimension22Min "[]"
-      BreakpointsForDimension23Min "[]"
-      BreakpointsForDimension24Min "[]"
-      BreakpointsForDimension25Min "[]"
-      BreakpointsForDimension26Min "[]"
-      BreakpointsForDimension27Min "[]"
-      BreakpointsForDimension28Min "[]"
-      BreakpointsForDimension29Min "[]"
-      BreakpointsForDimension30Min "[]"
-      BreakpointsForDimension1Max "[]"
-      BreakpointsForDimension2Max "[]"
-      BreakpointsForDimension3Max "[]"
-      BreakpointsForDimension4Max "[]"
-      BreakpointsForDimension5Max "[]"
-      BreakpointsForDimension6Max "[]"
-      BreakpointsForDimension7Max "[]"
-      BreakpointsForDimension8Max "[]"
-      BreakpointsForDimension9Max "[]"
-      BreakpointsForDimension10Max "[]"
-      BreakpointsForDimension11Max "[]"
-      BreakpointsForDimension12Max "[]"
-      BreakpointsForDimension13Max "[]"
-      BreakpointsForDimension14Max "[]"
-      BreakpointsForDimension15Max "[]"
-      BreakpointsForDimension16Max "[]"
-      BreakpointsForDimension17Max "[]"
-      BreakpointsForDimension18Max "[]"
-      BreakpointsForDimension19Max "[]"
-      BreakpointsForDimension20Max "[]"
-      BreakpointsForDimension21Max "[]"
-      BreakpointsForDimension22Max "[]"
-      BreakpointsForDimension23Max "[]"
-      BreakpointsForDimension24Max "[]"
-      BreakpointsForDimension25Max "[]"
-      BreakpointsForDimension26Max "[]"
-      BreakpointsForDimension27Max "[]"
-      BreakpointsForDimension28Max "[]"
-      BreakpointsForDimension29Max "[]"
-      BreakpointsForDimension30Max "[]"
-      BreakpointsForDimension1DataTypeStr "Inherit: Same as corresponding input"
-      BreakpointsForDimension2DataTypeStr "Inherit: Same as corresponding input"
-      BreakpointsForDimension3DataTypeStr "Inherit: Same as corresponding input"
-      BreakpointsForDimension4DataTypeStr "Inherit: Same as corresponding input"
-      BreakpointsForDimension5DataTypeStr "Inherit: Same as corresponding input"
-      BreakpointsForDimension6DataTypeStr "Inherit: Same as corresponding input"
-      BreakpointsForDimension7DataTypeStr "Inherit: Same as corresponding input"
-      BreakpointsForDimension8DataTypeStr "Inherit: Same as corresponding input"
-      BreakpointsForDimension9DataTypeStr "Inherit: Same as corresponding input"
-      BreakpointsForDimension10DataTypeStr "Inherit: Same as corresponding input"
-      BreakpointsForDimension11DataTypeStr "Inherit: Same as corresponding input"
-      BreakpointsForDimension12DataTypeStr "Inherit: Same as corresponding input"
-      BreakpointsForDimension13DataTypeStr "Inherit: Same as corresponding input"
-      BreakpointsForDimension14DataTypeStr "Inherit: Same as corresponding input"
-      BreakpointsForDimension15DataTypeStr "Inherit: Same as corresponding input"
-      BreakpointsForDimension16DataTypeStr "Inherit: Same as corresponding input"
-      BreakpointsForDimension17DataTypeStr "Inherit: Same as corresponding input"
-      BreakpointsForDimension18DataTypeStr "Inherit: Same as corresponding input"
-      BreakpointsForDimension19DataTypeStr "Inherit: Same as corresponding input"
-      BreakpointsForDimension20DataTypeStr "Inherit: Same as corresponding input"
-      BreakpointsForDimension21DataTypeStr "Inherit: Same as corresponding input"
-      BreakpointsForDimension22DataTypeStr "Inherit: Same as corresponding input"
-      BreakpointsForDimension23DataTypeStr "Inherit: Same as corresponding input"
-      BreakpointsForDimension24DataTypeStr "Inherit: Same as corresponding input"
-      BreakpointsForDimension25DataTypeStr "Inherit: Same as corresponding input"
-      BreakpointsForDimension26DataTypeStr "Inherit: Same as corresponding input"
-      BreakpointsForDimension27DataTypeStr "Inherit: Same as corresponding input"
-      BreakpointsForDimension28DataTypeStr "Inherit: Same as corresponding input"
-      BreakpointsForDimension29DataTypeStr "Inherit: Same as corresponding input"
-      BreakpointsForDimension30DataTypeStr "Inherit: Same as corresponding input"
-      IndexSearchMethod	      "Binary search"
-      BeginIndexSearchUsingPreviousIndexResult off
-      UseOneInputPortForAllInputData off
-      Table		      "[4 5 6;16 19 20;10 18 23]"
-      TableMin		      "[]"
-      TableMax		      "[]"
-      TableDataTypeStr	      "Inherit: Same as output"
-      IntermediateResultsDataTypeStr "Inherit: Same as output"
-      InterpMethod	      "Linear"
-      ExtrapMethod	      "Linear"
-      DiagnosticForOutOfRangeInput "None"
-      RemoveProtectionInput   off
-      UseLastTableValue	      off
-      SampleTime	      "-1"
-      InputSameDT	      on
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: Same as first input"
-      LockScale		      off
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	off
-      FractionDataTypeStr     "Inherit: Inherit via internal rule"
-      SupportTunableTableSize off
-      MaximumIndicesForEachDimension "[]"
-      LUTDesignTableMode      "Redesign Table"
-      LUTDesignDataSource     "Block Dialog"
-      LUTDesignFunctionName   "sqrt(x)"
-      LUTDesignUseExistingBP  on
-      LUTDesignRelError	      "0.01"
-      LUTDesignAbsError	      "1e-6"
-    }
-    Block {
-      BlockType		      MinMax
-      Function		      "min"
-      Inputs		      "1"
-      InputSameDT	      on
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      LockScale		      off
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	on
-      ZeroCross		      on
-      SampleTime	      "-1"
     }
     Block {
       BlockType		      Mux
@@ -993,23 +777,6 @@ Model {
       UseBusObject	      off
       BusObject		      "BusObject"
       NonVirtualBus	      off
-    }
-    Block {
-      BlockType		      Outport
-      Port		      "1"
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: auto"
-      LockScale		      off
-      BusOutputAsStruct	      off
-      PortDimensions	      "-1"
-      VarSizeSig	      "Inherit"
-      SampleTime	      "-1"
-      SignalType	      "auto"
-      SamplingMode	      "auto"
-      SourceOfInitialOutputValue "Dialog"
-      OutputWhenDisabled      "held"
-      InitialOutput	      "[]"
     }
     Block {
       BlockType		      Product
@@ -1025,14 +792,6 @@ Model {
       RndMeth		      "Zero"
       SaturateOnIntegerOverflow	on
       SampleTime	      "-1"
-    }
-    Block {
-      BlockType		      RateLimiter
-      RisingSlewLimit	      "1"
-      FallingSlewLimit	      "-1"
-      SampleTimeMode	      "continuous"
-      InitialCondition	      "0"
-      LinearizeAsGain	      on
     }
     Block {
       BlockType		      RateTransition
@@ -1084,30 +843,6 @@ Model {
       ZeroCross		      on
     }
     Block {
-      BlockType		      SubSystem
-      ShowPortLabels	      "FromPortIcon"
-      Permissions	      "ReadWrite"
-      PermitHierarchicalResolution "All"
-      TreatAsAtomicUnit	      off
-      CheckFcnCallInpInsideContextMsg off
-      SystemSampleTime	      "-1"
-      RTWFcnNameOpts	      "Auto"
-      RTWFileNameOpts	      "Auto"
-      FunctionInterfaceSpec   "void_void"
-      RTWMemSecFuncInitTerm   "Inherit from model"
-      RTWMemSecFuncExecute    "Inherit from model"
-      RTWMemSecDataConstants  "Inherit from model"
-      RTWMemSecDataInternal   "Inherit from model"
-      RTWMemSecDataParameters "Inherit from model"
-      SimViewingDevice	      off
-      DataTypeOverride	      "UseLocalSettings"
-      DataTypeOverrideAppliesTo	"AllNumericTypes"
-      MinMaxOverflowLogging   "UseLocalSettings"
-      SFBlockType	      "NONE"
-      Variant		      off
-      GeneratePreprocessorConditionals off
-    }
-    Block {
       BlockType		      Sum
       IconShape		      "rectangular"
       Inputs		      "++"
@@ -1122,21 +857,6 @@ Model {
       RndMeth		      "Floor"
       SaturateOnIntegerOverflow	on
       SampleTime	      "-1"
-    }
-    Block {
-      BlockType		      Switch
-      Criteria		      "u2 >= Threshold"
-      Threshold		      "0"
-      InputSameDT	      on
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      LockScale		      off
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	on
-      ZeroCross		      on
-      SampleTime	      "-1"
-      AllowDiffInputSizes     off
     }
     Block {
       BlockType		      TransferFcn
@@ -1171,7 +891,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "177"
+    SIDHighWatermark	    "182"
     Block {
       BlockType		      Goto
       Name		      "Actual PV Output"
@@ -1192,1803 +912,60 @@ Model {
       SampleTime	      "0"
     }
     Block {
-      BlockType		      SubSystem
+      BlockType		      Reference
       Name		      "EV Battery 1"
-      SID		      "38"
+      SID		      "181"
       Ports		      [2, 2]
-      Position		      [375, 331, 475, 409]
-      ZOrder		      40
-      MinAlgLoopOccurrences   off
-      PropExecContextOutsideSubsystem off
-      RTWSystemCode	      "Auto"
-      FunctionWithSeparateData off
-      Opaque		      off
-      RequestExecContextInheritance off
-      MaskHideContents	      off
-      Object {
-	$PropName		"MaskObject"
-	$ObjectID		19
-	$ClassName		"Simulink.Mask"
-	Type			"Electric Vehicle Battery"
-	Array {
-	  Type			  "Simulink.MaskParameter"
-	  Dimension		  2
-	  Object {
-	    $ObjectID		    20
-	    Type		    "edit"
-	    Name		    "capacity"
-	    Prompt		    "Battery capacity (Wh)"
-	    Value		    "24000"
-	  }
-	  Object {
-	    $ObjectID		    21
-	    Type		    "edit"
-	    Name		    "initSOC"
-	    Prompt		    "Initial state of charge (fraction)"
-	    Value		    "0.4"
-	  }
-	  PropName		  "Parameters"
-	}
-      }
-      System {
-	Name			"EV Battery 1"
-	Location		[12, 31, 1224, 1008]
-	Open			off
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"usletter"
-	PaperUnits		"inches"
-	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"100"
-	Block {
-	  BlockType		  Inport
-	  Name			  "Power"
-	  SID			  "39"
-	  Position		  [110, 103, 140, 117]
-	  ZOrder		  -1
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "Schedule"
-	  SID			  "41"
-	  Position		  [110, 273, 140, 287]
-	  ZOrder		  16
-	  Port			  "2"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Constant
-	  Name			  "Constant"
-	  SID			  "47"
-	  Position		  [560, 135, 590, 165]
-	  ZOrder		  24
-	  BlockMirror		  on
-	  Value			  "0"
-	}
-	Block {
-	  BlockType		  Constant
-	  Name			  "EV Absent"
-	  SID			  "5"
-	  Position		  [505, 355, 535, 385]
-	  ZOrder		  14
-	  BlockRotation		  270
-	  Value			  "-1"
-	}
-	Block {
-	  BlockType		  Switch
-	  Name			  "EV Status Selector"
-	  SID			  "45"
-	  Position		  [570, 260, 620, 300]
-	  ZOrder		  22
-	  Criteria		  "u2 > Threshold"
-	  InputSameDT		  off
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Integrator
-	  Name			  "Integrator\n(Battery)"
-	  SID			  "2"
-	  Ports			  [2, 2]
-	  Position		  [390, 91, 450, 169]
-	  ZOrder		  17
-	  ExternalReset		  "rising"
-	  InitialCondition	  "initSOC"
-	  LimitOutput		  on
-	  UpperSaturationLimit	  "1"
-	  LowerSaturationLimit	  "0"
-	  ShowSaturationPort	  on
-	  ContinuousStateAttributes "'SOC'"
-	  Port {
-	    PortNumber		    1
-	    Name		    "SOC"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    2
-	    Name		    "aturation"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	}
-	Block {
-	  BlockType		  MinMax
-	  Name			  "MinMax"
-	  SID			  "46"
-	  Ports			  [2, 1]
-	  Position		  [502, 190, 533, 220]
-	  ZOrder		  23
-	  BlockRotation		  270
-	  BlockMirror		  on
-	  NamePlacement		  "alternate"
-	  Function		  "max"
-	  Inputs		  "2"
-	  InputSameDT		  off
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Constant
-	  Name			  "Report SOC = 0"
-	  SID			  "50"
-	  Position		  [655, 190, 685, 220]
-	  ZOrder		  26
-	  BlockRotation		  270
-	  Value			  "0"
-	}
-	Block {
-	  BlockType		  Switch
-	  Name			  "SOC Selector"
-	  SID			  "48"
-	  Position		  [705, 105, 755, 145]
-	  ZOrder		  25
-	  InputSameDT		  off
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Gain
-	  Name			  "W -> Wh/s"
-	  SID			  "8"
-	  Position		  [180, 95, 245, 125]
-	  ZOrder		  15
-	  NamePlacement		  "alternate"
-	  Gain			  "1/3600"
-	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Gain
-	  Name			  "Wh/s -> SOC fraction/s"
-	  SID			  "44"
-	  Position		  [300, 95, 330, 125]
-	  ZOrder		  21
-	  NamePlacement		  "alternate"
-	  Gain			  "1/capacity"
-	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "SOC"
-	  SID			  "40"
-	  Position		  [795, 118, 825, 132]
-	  ZOrder		  -2
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "Status"
-	  SID			  "42"
-	  Position		  [795, 273, 825, 287]
-	  ZOrder		  18
-	  Port			  "2"
-	  IconDisplay		  "Port number"
-	}
-	Line {
-	  SrcBlock		  "W -> Wh/s"
-	  SrcPort		  1
-	  DstBlock		  "Wh/s -> SOC fraction/s"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Power"
-	  SrcPort		  1
-	  DstBlock		  "W -> Wh/s"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Wh/s -> SOC fraction/s"
-	  SrcPort		  1
-	  DstBlock		  "Integrator\n(Battery)"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Schedule"
-	  SrcPort		  1
-	  Points		  [120, 0]
-	  Branch {
-	    DstBlock		    "EV Status Selector"
-	    DstPort		    2
-	  }
-	  Branch {
-	    Points		    [0, -130]
-	    DstBlock		    "Integrator\n(Battery)"
-	    DstPort		    2
-	  }
-	}
-	Line {
-	  SrcBlock		  "EV Absent"
-	  SrcPort		  1
-	  Points		  [0, -55]
-	  DstBlock		  "EV Status Selector"
-	  DstPort		  3
-	}
-	Line {
-	  SrcBlock		  "EV Status Selector"
-	  SrcPort		  1
-	  Points		  [21, 0]
-	  Branch {
-	    Points		    [0, -155]
-	    DstBlock		    "SOC Selector"
-	    DstPort		    2
-	  }
-	  Branch {
-	    DstBlock		    "Status"
-	    DstPort		    1
-	  }
-	}
-	Line {
-	  Name			  "aturation"
-	  SrcBlock		  "Integrator\n(Battery)"
-	  SrcPort		  2
-	  Points		  [55, 0]
-	  DstBlock		  "MinMax"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "MinMax"
-	  SrcPort		  1
-	  Points		  [0, 40]
-	  DstBlock		  "EV Status Selector"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Constant"
-	  SrcPort		  1
-	  Points		  [-30, 0]
-	  DstBlock		  "MinMax"
-	  DstPort		  2
-	}
-	Line {
-	  Name			  "SOC"
-	  Labels		  [1, 1]
-	  SrcBlock		  "Integrator\n(Battery)"
-	  SrcPort		  1
-	  DstBlock		  "SOC Selector"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "SOC Selector"
-	  SrcPort		  1
-	  DstBlock		  "SOC"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Report SOC = 0"
-	  SrcPort		  1
-	  Points		  [0, -45]
-	  DstBlock		  "SOC Selector"
-	  DstPort		  3
-	}
-	Annotation {
-	  SID			  "49"
-	  Name			  "1 = Battery full\n0 = Battery charging\n-1 = EV absent"
-	  Position		  [846, 283]
-	  HorizontalAlignment	  "left"
-	}
-      }
+      Position		      [375, 328, 455, 412]
+      ZOrder		      106
+      LibraryVersion	      "1.64"
+      SourceBlock	      "CampusModeling/Electrical/EV Battery"
+      SourceType	      "Electric Vehicle Battery"
+      capacity		      "24000"
+      initSOC		      "0.3"
     }
     Block {
-      BlockType		      SubSystem
+      BlockType		      Reference
       Name		      "EV Battery 2"
-      SID		      "153"
+      SID		      "182"
       Ports		      [2, 2]
-      Position		      [375, 566, 475, 644]
-      ZOrder		      95
-      MinAlgLoopOccurrences   off
-      PropExecContextOutsideSubsystem off
-      RTWSystemCode	      "Auto"
-      FunctionWithSeparateData off
-      Opaque		      off
-      RequestExecContextInheritance off
-      MaskHideContents	      off
-      Object {
-	$PropName		"MaskObject"
-	$ObjectID		22
-	$ClassName		"Simulink.Mask"
-	Type			"Electric Vehicle Battery"
-	Array {
-	  Type			  "Simulink.MaskParameter"
-	  Dimension		  2
-	  Object {
-	    $ObjectID		    23
-	    Type		    "edit"
-	    Name		    "capacity"
-	    Prompt		    "Battery capacity (Wh)"
-	    Value		    "24000"
-	  }
-	  Object {
-	    $ObjectID		    24
-	    Type		    "edit"
-	    Name		    "initSOC"
-	    Prompt		    "Initial state of charge (fraction)"
-	    Value		    "0.4"
-	  }
-	  PropName		  "Parameters"
-	}
-      }
-      System {
-	Name			"EV Battery 2"
-	Location		[12, 31, 1224, 1008]
-	Open			off
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"usletter"
-	PaperUnits		"inches"
-	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"100"
-	Block {
-	  BlockType		  Inport
-	  Name			  "Power"
-	  SID			  "154"
-	  Position		  [110, 103, 140, 117]
-	  ZOrder		  -1
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "Schedule"
-	  SID			  "155"
-	  Position		  [110, 273, 140, 287]
-	  ZOrder		  16
-	  Port			  "2"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Constant
-	  Name			  "Constant"
-	  SID			  "156"
-	  Position		  [560, 135, 590, 165]
-	  ZOrder		  24
-	  BlockMirror		  on
-	  Value			  "0"
-	}
-	Block {
-	  BlockType		  Constant
-	  Name			  "EV Absent"
-	  SID			  "157"
-	  Position		  [505, 355, 535, 385]
-	  ZOrder		  14
-	  BlockRotation		  270
-	  Value			  "-1"
-	}
-	Block {
-	  BlockType		  Switch
-	  Name			  "EV Status Selector"
-	  SID			  "158"
-	  Position		  [570, 260, 620, 300]
-	  ZOrder		  22
-	  Criteria		  "u2 > Threshold"
-	  InputSameDT		  off
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Integrator
-	  Name			  "Integrator\n(Battery)"
-	  SID			  "159"
-	  Ports			  [2, 2]
-	  Position		  [390, 91, 450, 169]
-	  ZOrder		  17
-	  ExternalReset		  "rising"
-	  InitialCondition	  "initSOC"
-	  LimitOutput		  on
-	  UpperSaturationLimit	  "1"
-	  LowerSaturationLimit	  "0"
-	  ShowSaturationPort	  on
-	  ContinuousStateAttributes "'SOC'"
-	  Port {
-	    PortNumber		    1
-	    Name		    "SOC"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    2
-	    Name		    "aturation"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	}
-	Block {
-	  BlockType		  MinMax
-	  Name			  "MinMax"
-	  SID			  "160"
-	  Ports			  [2, 1]
-	  Position		  [502, 190, 533, 220]
-	  ZOrder		  23
-	  BlockRotation		  270
-	  BlockMirror		  on
-	  NamePlacement		  "alternate"
-	  Function		  "max"
-	  Inputs		  "2"
-	  InputSameDT		  off
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Constant
-	  Name			  "Report SOC = 0"
-	  SID			  "161"
-	  Position		  [655, 190, 685, 220]
-	  ZOrder		  26
-	  BlockRotation		  270
-	  Value			  "0"
-	}
-	Block {
-	  BlockType		  Switch
-	  Name			  "SOC Selector"
-	  SID			  "162"
-	  Position		  [705, 105, 755, 145]
-	  ZOrder		  25
-	  InputSameDT		  off
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Gain
-	  Name			  "W -> Wh/s"
-	  SID			  "163"
-	  Position		  [180, 95, 245, 125]
-	  ZOrder		  15
-	  NamePlacement		  "alternate"
-	  Gain			  "1/3600"
-	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Gain
-	  Name			  "Wh/s -> SOC fraction/s"
-	  SID			  "164"
-	  Position		  [300, 95, 330, 125]
-	  ZOrder		  21
-	  NamePlacement		  "alternate"
-	  Gain			  "1/capacity"
-	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "SOC"
-	  SID			  "165"
-	  Position		  [795, 118, 825, 132]
-	  ZOrder		  -2
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "Status"
-	  SID			  "166"
-	  Position		  [795, 273, 825, 287]
-	  ZOrder		  18
-	  Port			  "2"
-	  IconDisplay		  "Port number"
-	}
-	Line {
-	  SrcBlock		  "W -> Wh/s"
-	  SrcPort		  1
-	  DstBlock		  "Wh/s -> SOC fraction/s"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Power"
-	  SrcPort		  1
-	  DstBlock		  "W -> Wh/s"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Wh/s -> SOC fraction/s"
-	  SrcPort		  1
-	  DstBlock		  "Integrator\n(Battery)"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Schedule"
-	  SrcPort		  1
-	  Points		  [120, 0]
-	  Branch {
-	    DstBlock		    "EV Status Selector"
-	    DstPort		    2
-	  }
-	  Branch {
-	    Points		    [0, -130]
-	    DstBlock		    "Integrator\n(Battery)"
-	    DstPort		    2
-	  }
-	}
-	Line {
-	  SrcBlock		  "EV Absent"
-	  SrcPort		  1
-	  Points		  [0, -55]
-	  DstBlock		  "EV Status Selector"
-	  DstPort		  3
-	}
-	Line {
-	  SrcBlock		  "EV Status Selector"
-	  SrcPort		  1
-	  Points		  [21, 0]
-	  Branch {
-	    Points		    [0, -155]
-	    DstBlock		    "SOC Selector"
-	    DstPort		    2
-	  }
-	  Branch {
-	    DstBlock		    "Status"
-	    DstPort		    1
-	  }
-	}
-	Line {
-	  Name			  "aturation"
-	  SrcBlock		  "Integrator\n(Battery)"
-	  SrcPort		  2
-	  Points		  [55, 0]
-	  DstBlock		  "MinMax"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "MinMax"
-	  SrcPort		  1
-	  Points		  [0, 40]
-	  DstBlock		  "EV Status Selector"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Constant"
-	  SrcPort		  1
-	  Points		  [-30, 0]
-	  DstBlock		  "MinMax"
-	  DstPort		  2
-	}
-	Line {
-	  Name			  "SOC"
-	  Labels		  [1, 1]
-	  SrcBlock		  "Integrator\n(Battery)"
-	  SrcPort		  1
-	  DstBlock		  "SOC Selector"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "SOC Selector"
-	  SrcPort		  1
-	  DstBlock		  "SOC"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Report SOC = 0"
-	  SrcPort		  1
-	  Points		  [0, -45]
-	  DstBlock		  "SOC Selector"
-	  DstPort		  3
-	}
-	Annotation {
-	  SID			  "167"
-	  Name			  "1 = Battery full\n0 = Battery charging\n-1 = EV absent"
-	  Position		  [846, 283]
-	  HorizontalAlignment	  "left"
-	  ZOrder		  -1
-	}
-      }
+      Position		      [375, 563, 455, 647]
+      ZOrder		      107
+      LibraryVersion	      "1.64"
+      SourceBlock	      "CampusModeling/Electrical/EV Battery"
+      SourceType	      "Electric Vehicle Battery"
+      capacity		      "24000"
+      initSOC		      "0.3"
     }
     Block {
-      BlockType		      SubSystem
+      BlockType		      Reference
       Name		      "EV Charger 1"
-      SID		      "55"
+      SID		      "178"
       Ports		      [3, 1]
-      Position		      [165, 311, 265, 389]
-      ZOrder		      47
-      MinAlgLoopOccurrences   off
-      PropExecContextOutsideSubsystem off
-      RTWSystemCode	      "Auto"
-      FunctionWithSeparateData off
-      Opaque		      off
-      RequestExecContextInheritance off
-      MaskHideContents	      off
-      Object {
-	$PropName		"MaskObject"
-	$ObjectID		25
-	$ClassName		"Simulink.Mask"
-	Array {
-	  Type			  "Simulink.MaskParameter"
-	  Dimension		  4
-	  Object {
-	    $ObjectID		    26
-	    Type		    "edit"
-	    Name		    "rating"
-	    Prompt		    "Charger rating (W)"
-	    Value		    "6240"
-	  }
-	  Object {
-	    $ObjectID		    27
-	    Type		    "edit"
-	    Name		    "capacity"
-	    Prompt		    "Connected EV battery capacity (Wh)"
-	    Value		    "24000"
-	  }
-	  Object {
-	    $ObjectID		    28
-	    Type		    "edit"
-	    Name		    "maxresponse"
-	    Prompt		    "Desired response capability (W)"
-	    Value		    "0"
-	  }
-	  Object {
-	    $ObjectID		    29
-	    Type		    "edit"
-	    Name		    "ramp"
-	    Prompt		    "Maximum ramp rate (W/s)"
-	    Value		    "1000"
-	  }
-	  PropName		  "Parameters"
-	}
-      }
-      System {
-	Name			"EV Charger 1"
-	Location		[12, 273, 1224, 1008]
-	Open			off
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"usletter"
-	PaperUnits		"inches"
-	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"100"
-	Block {
-	  BlockType		  Inport
-	  Name			  "Signal"
-	  SID			  "56"
-	  Position		  [543, 345, 557, 375]
-	  ZOrder		  -1
-	  BlockRotation		  270
-	  BlockMirror		  on
-	  NamePlacement		  "alternate"
-	  IconDisplay		  "Port number"
-	  Port {
-	    PortNumber		    1
-	    Name		    "Deviation"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "SOC"
-	  SID			  "59"
-	  Position		  [80, 228, 110, 242]
-	  ZOrder		  54
-	  Port			  "2"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "Status"
-	  SID			  "60"
-	  Position		  [80, 68, 110, 82]
-	  ZOrder		  55
-	  Port			  "3"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Constant
-	  Name			  "Charger\nRating (W)"
-	  SID			  "63"
-	  Position		  [80, 140, 110, 170]
-	  ZOrder		  59
-	  Value			  "rating"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Charging Power Limits"
-	  SID			  "13"
-	  Ports			  [3, 1]
-	  Position		  [745, 391, 830, 499]
-	  ZOrder		  47
-	  LibraryVersion	  "1.274"
-	  SourceBlock		  "simulink/Discontinuities/Saturation\nDynamic"
-	  SourceType		  "Saturation Dynamic"
-	  OutMin		  "[]"
-	  OutMax		  "[]"
-	  OutDataTypeStr	  "Inherit: Same as second input"
-	  OutputDataTypeScalingMode "Same as second input"
-	  OutDataType		  "fixdt(1, 16)"
-	  OutScaling		  "2^-10"
-	  LockScale		  off
-	  RndMeth		  "Floor"
-	  DoSatur		  off
-	}
-	Block {
-	  BlockType		  Lookup_n-D
-	  Name			  "Charging Profile"
-	  SID			  "11"
-	  Ports			  [1, 1]
-	  Position		  [165, 203, 230, 267]
-	  ZOrder		  56
-	  NumberOfTableDimensions "1"
-	  BreakpointsForDimension1 "[0.00 0.10 0.20 0.80 0.99 1.00]"
-	  IndexSearchMethod	  "Linear search"
-	  BeginIndexSearchUsingPreviousIndexResult on
-	  Table			  "[0.10 0.20 1.00 1.00 0.02 0.00]"
-	  ExtrapMethod		  "Clip"
-	  UseLastTableValue	  on
-	  RndMeth		  "Simplest"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Compare\nTo Zero"
-	  SID			  "64"
-	  Ports			  [1, 1]
-	  Position		  [165, 60, 195, 90]
-	  ZOrder		  60
-	  LibraryVersion	  "1.274"
-	  SourceBlock		  "simulink/Logic and Bit\nOperations/Compare\nTo Zero"
-	  SourceType		  "Compare To Zero"
-	  relop			  "=="
-	  OutDataTypeStr	  "boolean"
-	  ZeroCross		  on
-	}
-	Block {
-	  BlockType		  Constant
-	  Name			  "Constant"
-	  SID			  "14"
-	  Position		  [770, 70, 800, 100]
-	  ZOrder		  64
-	  Value			  "0"
-	}
-	Block {
-	  BlockType		  Gain
-	  Name			  "Convert\nto W"
-	  SID			  "61"
-	  Position		  [265, 212, 325, 258]
-	  ZOrder		  57
-	  Gain			  "capacity"
-	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Constant
-	  Name			  "Desired Regulation\nCapability (W)"
-	  SID			  "76"
-	  Position		  [215, 350, 285, 380]
-	  ZOrder		  73
-	  Value			  "maxresponse"
-	}
-	Block {
-	  BlockType		  Gain
-	  Name			  "Gain2"
-	  SID			  "83"
-	  Position		  [210, 485, 240, 515]
-	  ZOrder		  80
-	  BlockRotation		  270
-	  BlockMirror		  on
-	  NamePlacement		  "alternate"
-	  Gain			  "1/2"
-	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  From
-	  Name			  "MaxCharge1"
-	  SID			  "73"
-	  Position		  [65, 396, 140, 424]
-	  ZOrder		  70
-	  BackgroundColor	  "lightBlue"
-	  GotoTag		  "MaxCharge"
-	}
-	Block {
-	  BlockType		  From
-	  Name			  "MaxCharge2"
-	  SID			  "69"
-	  Position		  [630, 396, 705, 424]
-	  ZOrder		  66
-	  BackgroundColor	  "lightBlue"
-	  GotoTag		  "MaxCharge"
-	}
-	Block {
-	  BlockType		  From
-	  Name			  "MaxCharge3"
-	  SID			  "77"
-	  Position		  [65, 306, 140, 334]
-	  ZOrder		  74
-	  BackgroundColor	  "lightBlue"
-	  GotoTag		  "MaxCharge"
-	}
-	Block {
-	  BlockType		  From
-	  Name			  "MaxCharge4"
-	  SID			  "81"
-	  Position		  [65, 536, 140, 564]
-	  ZOrder		  78
-	  BackgroundColor	  "lightBlue"
-	  GotoTag		  "MaxCharge"
-	}
-	Block {
-	  BlockType		  Goto
-	  Name			  "Maximum Charge Rate"
-	  SID			  "66"
-	  Position		  [590, 69, 680, 101]
-	  ZOrder		  63
-	  BackgroundColor	  "lightBlue"
-	  GotoTag		  "MaxCharge"
-	}
-	Block {
-	  BlockType		  From
-	  Name			  "MinCharge1"
-	  SID			  "74"
-	  Position		  [65, 466, 140, 494]
-	  ZOrder		  71
-	  BackgroundColor	  "lightBlue"
-	  GotoTag		  "MinCharge"
-	}
-	Block {
-	  BlockType		  From
-	  Name			  "MinCharge2"
-	  SID			  "70"
-	  Position		  [630, 466, 705, 494]
-	  ZOrder		  67
-	  BackgroundColor	  "lightBlue"
-	  GotoTag		  "MinCharge"
-	}
-	Block {
-	  BlockType		  MinMax
-	  Name			  "MinMax"
-	  SID			  "62"
-	  Ports			  [2, 1]
-	  Position		  [375, 177, 405, 208]
-	  ZOrder		  58
-	  Inputs		  "2"
-	  InputSameDT		  off
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Goto
-	  Name			  "Minimum Charge Rate"
-	  SID			  "67"
-	  Position		  [895, 69, 985, 101]
-	  ZOrder		  65
-	  BackgroundColor	  "lightBlue"
-	  GotoTag		  "MinCharge"
-	}
-	Block {
-	  BlockType		  Product
-	  Name			  "Product"
-	  SID			  "65"
-	  Ports			  [2, 1]
-	  Position		  [480, 67, 510, 98]
-	  ZOrder		  62
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  RndMeth		  "Floor"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  RateLimiter
-	  Name			  "Ramp Rate\nLimit"
-	  SID			  "58"
-	  Position		  [865, 430, 895, 460]
-	  ZOrder		  52
-	  RisingSlewLimit	  "ramp"
-	  FallingSlewLimit	  "-ramp"
-	  SampleTimeMode	  "inherited"
-	  Port {
-	    PortNumber		    1
-	    Name		    "Output"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	}
-	Block {
-	  BlockType		  Switch
-	  Name			  "Setpoint\nControl"
-	  SID			  "71"
-	  Position		  [405, 425, 455, 465]
-	  ZOrder		  68
-	  Threshold		  "range*2*1000"
-	  InputSameDT		  off
-	  SaturateOnIntegerOverflow off
-	  Port {
-	    PortNumber		    1
-	    Name		    "Setpoint"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	}
-	Block {
-	  BlockType		  Sum
-	  Name			  "Sum1"
-	  SID			  "21"
-	  Ports			  [2, 1]
-	  Position		  [540, 435, 560, 455]
-	  ZOrder		  49
-	  ShowName		  off
-	  IconShape		  "round"
-	  Inputs		  "++|"
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	  Port {
-	    PortNumber		    1
-	    Name		    "Target"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	}
-	Block {
-	  BlockType		  Sum
-	  Name			  "Sum2"
-	  SID			  "72"
-	  Ports			  [2, 1]
-	  Position		  [170, 435, 190, 455]
-	  ZOrder		  69
-	  ShowName		  off
-	  IconShape		  "round"
-	  Inputs		  "+-"
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	  Port {
-	    PortNumber		    1
-	    Name		    "Maximum Regulation Range"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	}
-	Block {
-	  BlockType		  Sum
-	  Name			  "Sum3"
-	  SID			  "79"
-	  Ports			  [2, 1]
-	  Position		  [345, 355, 365, 375]
-	  ZOrder		  76
-	  BlockRotation		  270
-	  BlockMirror		  on
-	  NamePlacement		  "alternate"
-	  ShowName		  off
-	  IconShape		  "round"
-	  Inputs		  "-+|"
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Sum
-	  Name			  "Sum4"
-	  SID			  "82"
-	  Ports			  [2, 1]
-	  Position		  [215, 540, 235, 560]
-	  ZOrder		  79
-	  ShowName		  off
-	  IconShape		  "round"
-	  Inputs		  "-+|"
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "Power"
-	  SID			  "57"
-	  Position		  [965, 438, 995, 452]
-	  ZOrder		  53
-	  IconDisplay		  "Port number"
-	}
-	Line {
-	  Name			  "Target"
-	  Labels		  [1, 1]
-	  SrcBlock		  "Sum1"
-	  SrcPort		  1
-	  DstBlock		  "Charging Power Limits"
-	  DstPort		  2
-	}
-	Line {
-	  Name			  "Output"
-	  Labels		  [1, 1]
-	  SrcBlock		  "Ramp Rate\nLimit"
-	  SrcPort		  1
-	  DstBlock		  "Power"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "SOC"
-	  SrcPort		  1
-	  DstBlock		  "Charging Profile"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Charging Profile"
-	  SrcPort		  1
-	  DstBlock		  "Convert\nto W"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Charging Power Limits"
-	  SrcPort		  1
-	  DstBlock		  "Ramp Rate\nLimit"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Status"
-	  SrcPort		  1
-	  DstBlock		  "Compare\nTo Zero"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Compare\nTo Zero"
-	  SrcPort		  1
-	  DstBlock		  "Product"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Convert\nto W"
-	  SrcPort		  1
-	  Points		  [17, 0; 0, -35]
-	  DstBlock		  "MinMax"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "Charger\nRating (W)"
-	  SrcPort		  1
-	  Points		  [232, 0; 0, 30]
-	  DstBlock		  "MinMax"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "MinMax"
-	  SrcPort		  1
-	  Points		  [28, 0; 0, -105]
-	  DstBlock		  "Product"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "Product"
-	  SrcPort		  1
-	  DstBlock		  "Maximum Charge Rate"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Constant"
-	  SrcPort		  1
-	  DstBlock		  "Minimum Charge Rate"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "Deviation"
-	  Labels		  [1, 1]
-	  SrcBlock		  "Signal"
-	  SrcPort		  1
-	  DstBlock		  "Sum1"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "MaxCharge2"
-	  SrcPort		  1
-	  DstBlock		  "Charging Power Limits"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "MinCharge2"
-	  SrcPort		  1
-	  DstBlock		  "Charging Power Limits"
-	  DstPort		  3
-	}
-	Line {
-	  Name			  "Maximum Regulation Range"
-	  SrcBlock		  "Sum2"
-	  SrcPort		  1
-	  Points		  [30, 0]
-	  Branch {
-	    DstBlock		    "Gain2"
-	    DstPort		    1
-	  }
-	  Branch {
-	    Labels		    [1, 1]
-	    DstBlock		    "Setpoint\nControl"
-	    DstPort		    2
-	  }
-	}
-	Line {
-	  SrcBlock		  "MaxCharge1"
-	  SrcPort		  1
-	  Points		  [35, 0]
-	  DstBlock		  "Sum2"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "MinCharge1"
-	  SrcPort		  1
-	  Points		  [35, 0]
-	  DstBlock		  "Sum2"
-	  DstPort		  2
-	}
-	Line {
-	  Name			  "Setpoint"
-	  Labels		  [1, 1]
-	  SrcBlock		  "Setpoint\nControl"
-	  SrcPort		  1
-	  DstBlock		  "Sum1"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "Sum3"
-	  SrcPort		  1
-	  Points		  [0, 50]
-	  DstBlock		  "Setpoint\nControl"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "MaxCharge4"
-	  SrcPort		  1
-	  DstBlock		  "Sum4"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "Gain2"
-	  SrcPort		  1
-	  DstBlock		  "Sum4"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Sum4"
-	  SrcPort		  1
-	  Points		  [116, 0; 0, -90]
-	  DstBlock		  "Setpoint\nControl"
-	  DstPort		  3
-	}
-	Line {
-	  SrcBlock		  "MaxCharge3"
-	  SrcPort		  1
-	  Points		  [210, 0]
-	  DstBlock		  "Sum3"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "Desired Regulation\nCapability (W)"
-	  SrcPort		  1
-	  DstBlock		  "Sum3"
-	  DstPort		  1
-	}
-	Annotation {
-	  SID			  "85"
-	  Name			  "EV Present & Battery Not Full = TRUE"
-	  Position		  [304, 89]
-	}
-	Annotation {
-	  SID			  "68"
-	  Name			  "(Requested regulation action)"
-	  Position		  [552, 328]
-	}
-      }
+      Position		      [175, 307, 255, 393]
+      ZOrder		      103
+      LibraryVersion	      "1.64"
+      SourceBlock	      "CampusModeling/Electrical/EV Charger"
+      SourceType	      "Electric Vehicle Charging Station"
+      rating		      "6240"
+      capacity		      "24000"
+      maxresponse	      "0"
+      ramp		      "1000"
     }
     Block {
-      BlockType		      SubSystem
+      BlockType		      Reference
       Name		      "EV Charger 2"
-      SID		      "119"
+      SID		      "179"
       Ports		      [3, 1]
-      Position		      [165, 546, 265, 624]
-      ZOrder		      91
-      MinAlgLoopOccurrences   off
-      PropExecContextOutsideSubsystem off
-      RTWSystemCode	      "Auto"
-      FunctionWithSeparateData off
-      Opaque		      off
-      RequestExecContextInheritance off
-      MaskHideContents	      off
-      Object {
-	$PropName		"MaskObject"
-	$ObjectID		30
-	$ClassName		"Simulink.Mask"
-	Array {
-	  Type			  "Simulink.MaskParameter"
-	  Dimension		  4
-	  Object {
-	    $ObjectID		    31
-	    Type		    "edit"
-	    Name		    "rating"
-	    Prompt		    "Charger rating (W)"
-	    Value		    "6240"
-	  }
-	  Object {
-	    $ObjectID		    32
-	    Type		    "edit"
-	    Name		    "capacity"
-	    Prompt		    "Connected EV battery capacity (Wh)"
-	    Value		    "24000"
-	  }
-	  Object {
-	    $ObjectID		    33
-	    Type		    "edit"
-	    Name		    "maxresponse"
-	    Prompt		    "Desired response capability (W)"
-	    Value		    "1000"
-	  }
-	  Object {
-	    $ObjectID		    34
-	    Type		    "edit"
-	    Name		    "ramp"
-	    Prompt		    "Maximum ramp rate (W/s)"
-	    Value		    "1000"
-	  }
-	  PropName		  "Parameters"
-	}
-      }
-      System {
-	Name			"EV Charger 2"
-	Location		[12, 273, 1224, 1008]
-	Open			off
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"usletter"
-	PaperUnits		"inches"
-	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"100"
-	Block {
-	  BlockType		  Inport
-	  Name			  "Signal"
-	  SID			  "120"
-	  Position		  [543, 345, 557, 375]
-	  ZOrder		  -1
-	  BlockRotation		  270
-	  BlockMirror		  on
-	  NamePlacement		  "alternate"
-	  IconDisplay		  "Port number"
-	  Port {
-	    PortNumber		    1
-	    Name		    "Deviation"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "SOC"
-	  SID			  "121"
-	  Position		  [80, 228, 110, 242]
-	  ZOrder		  54
-	  Port			  "2"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "Status"
-	  SID			  "122"
-	  Position		  [80, 68, 110, 82]
-	  ZOrder		  55
-	  Port			  "3"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Constant
-	  Name			  "Charger\nRating (W)"
-	  SID			  "123"
-	  Position		  [80, 140, 110, 170]
-	  ZOrder		  59
-	  Value			  "rating"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Charging Power Limits"
-	  SID			  "124"
-	  Ports			  [3, 1]
-	  Position		  [745, 391, 830, 499]
-	  ZOrder		  47
-	  LibraryVersion	  "1.274"
-	  SourceBlock		  "simulink/Discontinuities/Saturation\nDynamic"
-	  SourceType		  "Saturation Dynamic"
-	  OutMin		  "[]"
-	  OutMax		  "[]"
-	  OutDataTypeStr	  "Inherit: Same as second input"
-	  OutputDataTypeScalingMode "Same as second input"
-	  OutDataType		  "fixdt(1, 16)"
-	  OutScaling		  "2^-10"
-	  LockScale		  off
-	  RndMeth		  "Floor"
-	  DoSatur		  off
-	}
-	Block {
-	  BlockType		  Lookup_n-D
-	  Name			  "Charging Profile"
-	  SID			  "125"
-	  Ports			  [1, 1]
-	  Position		  [165, 203, 230, 267]
-	  ZOrder		  56
-	  NumberOfTableDimensions "1"
-	  BreakpointsForDimension1 "[0.00 0.10 0.20 0.80 0.99 1.00]"
-	  IndexSearchMethod	  "Linear search"
-	  BeginIndexSearchUsingPreviousIndexResult on
-	  Table			  "[0.10 0.20 1.00 1.00 0.02 0.00]"
-	  ExtrapMethod		  "Clip"
-	  UseLastTableValue	  on
-	  RndMeth		  "Simplest"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Compare\nTo Zero"
-	  SID			  "126"
-	  Ports			  [1, 1]
-	  Position		  [165, 60, 195, 90]
-	  ZOrder		  60
-	  LibraryVersion	  "1.274"
-	  SourceBlock		  "simulink/Logic and Bit\nOperations/Compare\nTo Zero"
-	  SourceType		  "Compare To Zero"
-	  relop			  "=="
-	  OutDataTypeStr	  "boolean"
-	  ZeroCross		  on
-	}
-	Block {
-	  BlockType		  Constant
-	  Name			  "Constant"
-	  SID			  "127"
-	  Position		  [770, 70, 800, 100]
-	  ZOrder		  64
-	  Value			  "0"
-	}
-	Block {
-	  BlockType		  Gain
-	  Name			  "Convert\nto W"
-	  SID			  "128"
-	  Position		  [265, 212, 325, 258]
-	  ZOrder		  57
-	  Gain			  "capacity"
-	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Constant
-	  Name			  "Desired Regulation\nCapability (W)"
-	  SID			  "129"
-	  Position		  [215, 350, 285, 380]
-	  ZOrder		  73
-	  Value			  "maxresponse"
-	}
-	Block {
-	  BlockType		  Gain
-	  Name			  "Gain2"
-	  SID			  "130"
-	  Position		  [210, 485, 240, 515]
-	  ZOrder		  80
-	  BlockRotation		  270
-	  BlockMirror		  on
-	  NamePlacement		  "alternate"
-	  Gain			  "1/2"
-	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  From
-	  Name			  "MaxCharge1"
-	  SID			  "131"
-	  Position		  [65, 396, 140, 424]
-	  ZOrder		  70
-	  BackgroundColor	  "lightBlue"
-	  GotoTag		  "MaxCharge"
-	}
-	Block {
-	  BlockType		  From
-	  Name			  "MaxCharge2"
-	  SID			  "132"
-	  Position		  [630, 396, 705, 424]
-	  ZOrder		  66
-	  BackgroundColor	  "lightBlue"
-	  GotoTag		  "MaxCharge"
-	}
-	Block {
-	  BlockType		  From
-	  Name			  "MaxCharge3"
-	  SID			  "133"
-	  Position		  [65, 306, 140, 334]
-	  ZOrder		  74
-	  BackgroundColor	  "lightBlue"
-	  GotoTag		  "MaxCharge"
-	}
-	Block {
-	  BlockType		  From
-	  Name			  "MaxCharge4"
-	  SID			  "134"
-	  Position		  [65, 536, 140, 564]
-	  ZOrder		  78
-	  BackgroundColor	  "lightBlue"
-	  GotoTag		  "MaxCharge"
-	}
-	Block {
-	  BlockType		  Goto
-	  Name			  "Maximum Charge Rate"
-	  SID			  "135"
-	  Position		  [590, 69, 680, 101]
-	  ZOrder		  63
-	  BackgroundColor	  "lightBlue"
-	  GotoTag		  "MaxCharge"
-	}
-	Block {
-	  BlockType		  From
-	  Name			  "MinCharge1"
-	  SID			  "136"
-	  Position		  [65, 466, 140, 494]
-	  ZOrder		  71
-	  BackgroundColor	  "lightBlue"
-	  GotoTag		  "MinCharge"
-	}
-	Block {
-	  BlockType		  From
-	  Name			  "MinCharge2"
-	  SID			  "137"
-	  Position		  [630, 466, 705, 494]
-	  ZOrder		  67
-	  BackgroundColor	  "lightBlue"
-	  GotoTag		  "MinCharge"
-	}
-	Block {
-	  BlockType		  MinMax
-	  Name			  "MinMax"
-	  SID			  "138"
-	  Ports			  [2, 1]
-	  Position		  [375, 177, 405, 208]
-	  ZOrder		  58
-	  Inputs		  "2"
-	  InputSameDT		  off
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Goto
-	  Name			  "Minimum Charge Rate"
-	  SID			  "139"
-	  Position		  [895, 69, 985, 101]
-	  ZOrder		  65
-	  BackgroundColor	  "lightBlue"
-	  GotoTag		  "MinCharge"
-	}
-	Block {
-	  BlockType		  Product
-	  Name			  "Product"
-	  SID			  "140"
-	  Ports			  [2, 1]
-	  Position		  [480, 67, 510, 98]
-	  ZOrder		  62
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  RndMeth		  "Floor"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  RateLimiter
-	  Name			  "Ramp Rate\nLimit"
-	  SID			  "141"
-	  Position		  [865, 430, 895, 460]
-	  ZOrder		  52
-	  RisingSlewLimit	  "ramp"
-	  FallingSlewLimit	  "-ramp"
-	  SampleTimeMode	  "inherited"
-	  Port {
-	    PortNumber		    1
-	    Name		    "Output"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	}
-	Block {
-	  BlockType		  Switch
-	  Name			  "Setpoint\nControl"
-	  SID			  "142"
-	  Position		  [405, 425, 455, 465]
-	  ZOrder		  68
-	  Threshold		  "range*2*1000"
-	  InputSameDT		  off
-	  SaturateOnIntegerOverflow off
-	  Port {
-	    PortNumber		    1
-	    Name		    "Setpoint"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	}
-	Block {
-	  BlockType		  Sum
-	  Name			  "Sum1"
-	  SID			  "143"
-	  Ports			  [2, 1]
-	  Position		  [540, 435, 560, 455]
-	  ZOrder		  49
-	  ShowName		  off
-	  IconShape		  "round"
-	  Inputs		  "++|"
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	  Port {
-	    PortNumber		    1
-	    Name		    "Target"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	}
-	Block {
-	  BlockType		  Sum
-	  Name			  "Sum2"
-	  SID			  "144"
-	  Ports			  [2, 1]
-	  Position		  [170, 435, 190, 455]
-	  ZOrder		  69
-	  ShowName		  off
-	  IconShape		  "round"
-	  Inputs		  "+-"
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	  Port {
-	    PortNumber		    1
-	    Name		    "Maximum Regulation Range"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	}
-	Block {
-	  BlockType		  Sum
-	  Name			  "Sum3"
-	  SID			  "145"
-	  Ports			  [2, 1]
-	  Position		  [345, 355, 365, 375]
-	  ZOrder		  76
-	  BlockRotation		  270
-	  BlockMirror		  on
-	  NamePlacement		  "alternate"
-	  ShowName		  off
-	  IconShape		  "round"
-	  Inputs		  "-+|"
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Sum
-	  Name			  "Sum4"
-	  SID			  "146"
-	  Ports			  [2, 1]
-	  Position		  [215, 540, 235, 560]
-	  ZOrder		  79
-	  ShowName		  off
-	  IconShape		  "round"
-	  Inputs		  "-+|"
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "Power"
-	  SID			  "147"
-	  Position		  [965, 438, 995, 452]
-	  ZOrder		  53
-	  IconDisplay		  "Port number"
-	}
-	Line {
-	  SrcBlock		  "Desired Regulation\nCapability (W)"
-	  SrcPort		  1
-	  DstBlock		  "Sum3"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "MaxCharge3"
-	  SrcPort		  1
-	  Points		  [210, 0]
-	  DstBlock		  "Sum3"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "Sum4"
-	  SrcPort		  1
-	  Points		  [116, 0; 0, -90]
-	  DstBlock		  "Setpoint\nControl"
-	  DstPort		  3
-	}
-	Line {
-	  SrcBlock		  "Gain2"
-	  SrcPort		  1
-	  DstBlock		  "Sum4"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "MaxCharge4"
-	  SrcPort		  1
-	  DstBlock		  "Sum4"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "Sum3"
-	  SrcPort		  1
-	  Points		  [0, 50]
-	  DstBlock		  "Setpoint\nControl"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "Setpoint"
-	  Labels		  [1, 1]
-	  SrcBlock		  "Setpoint\nControl"
-	  SrcPort		  1
-	  DstBlock		  "Sum1"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "MinCharge1"
-	  SrcPort		  1
-	  Points		  [35, 0]
-	  DstBlock		  "Sum2"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "MaxCharge1"
-	  SrcPort		  1
-	  Points		  [35, 0]
-	  DstBlock		  "Sum2"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "Maximum Regulation Range"
-	  SrcBlock		  "Sum2"
-	  SrcPort		  1
-	  Points		  [30, 0]
-	  Branch {
-	    Labels		    [1, 1]
-	    DstBlock		    "Setpoint\nControl"
-	    DstPort		    2
-	  }
-	  Branch {
-	    DstBlock		    "Gain2"
-	    DstPort		    1
-	  }
-	}
-	Line {
-	  SrcBlock		  "MinCharge2"
-	  SrcPort		  1
-	  DstBlock		  "Charging Power Limits"
-	  DstPort		  3
-	}
-	Line {
-	  SrcBlock		  "MaxCharge2"
-	  SrcPort		  1
-	  DstBlock		  "Charging Power Limits"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "Deviation"
-	  Labels		  [1, 1]
-	  SrcBlock		  "Signal"
-	  SrcPort		  1
-	  DstBlock		  "Sum1"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Constant"
-	  SrcPort		  1
-	  DstBlock		  "Minimum Charge Rate"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Product"
-	  SrcPort		  1
-	  DstBlock		  "Maximum Charge Rate"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "MinMax"
-	  SrcPort		  1
-	  Points		  [28, 0; 0, -105]
-	  DstBlock		  "Product"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "Charger\nRating (W)"
-	  SrcPort		  1
-	  Points		  [232, 0; 0, 30]
-	  DstBlock		  "MinMax"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Convert\nto W"
-	  SrcPort		  1
-	  Points		  [17, 0; 0, -35]
-	  DstBlock		  "MinMax"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "Compare\nTo Zero"
-	  SrcPort		  1
-	  DstBlock		  "Product"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Status"
-	  SrcPort		  1
-	  DstBlock		  "Compare\nTo Zero"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Charging Power Limits"
-	  SrcPort		  1
-	  DstBlock		  "Ramp Rate\nLimit"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Charging Profile"
-	  SrcPort		  1
-	  DstBlock		  "Convert\nto W"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "SOC"
-	  SrcPort		  1
-	  DstBlock		  "Charging Profile"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "Output"
-	  Labels		  [1, 1]
-	  SrcBlock		  "Ramp Rate\nLimit"
-	  SrcPort		  1
-	  DstBlock		  "Power"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "Target"
-	  Labels		  [1, 1]
-	  SrcBlock		  "Sum1"
-	  SrcPort		  1
-	  DstBlock		  "Charging Power Limits"
-	  DstPort		  2
-	}
-	Annotation {
-	  SID			  "149"
-	  Name			  "(Requested regulation action)"
-	  Position		  [552, 328]
-	  ZOrder		  -1
-	}
-	Annotation {
-	  SID			  "148"
-	  Name			  "EV Present & Battery Not Full = TRUE"
-	  Position		  [304, 89]
-	  ZOrder		  -2
-	}
-      }
+      Position		      [175, 542, 255, 628]
+      ZOrder		      104
+      LibraryVersion	      "1.64"
+      SourceBlock	      "CampusModeling/Electrical/EV Charger"
+      SourceType	      "Electric Vehicle Charging Station"
+      rating		      "6240"
+      capacity		      "24000"
+      maxresponse	      "1000"
+      ramp		      "1000"
     }
     Block {
       BlockType		      Step
@@ -3028,7 +1005,7 @@ Model {
       BlockType		      From
       Name		      "From PVDiff"
       SID		      "151"
-      Position		      [20, 546, 80, 574]
+      Position		      [25, 541, 85, 569]
       ZOrder		      93
       BackgroundColor	      "lightBlue"
       GotoTag		      "PVDiff"
@@ -3220,7 +1197,7 @@ Model {
       BlockType		      Constant
       Name		      "Regulation\nSignal"
       SID		      "103"
-      Position		      [20, 310, 50, 340]
+      Position		      [25, 305, 55, 335]
       ZOrder		      89
       Value		      "0"
     }
@@ -3255,6 +1232,42 @@ Model {
       TimeRange		      "25000"
       YMin		      "0"
       YMax		      "1"
+      DataFormat	      "StructureWithTime"
+      LimitDataPoints	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Scope"
+      SID		      "180"
+      Ports		      [1]
+      Position		      [130, 488, 160, 522]
+      ZOrder		      105
+      BackgroundColor	      "orange"
+      Floating		      off
+      Location		      [1228, 85, 1552, 396]
+      Open		      off
+      NumInputPorts	      "1"
+      ZoomMode		      "xonly"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      List {
+	ListType		ScopeGraphics
+	FigureColor		"[0.5 0.5 0.5]"
+	AxesColor		"[0 0 0]"
+	AxesTickColor		"[1 1 1]"
+	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	LineStyles		"-|-|-|-|-|-"
+	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
+	MarkerStyles		"none|none|none|none|none|none"
+      }
+      ShowLegends	      off
+      TimeRange		      "25000"
+      YMin		      "0"
+      YMax		      "1500"
+      SaveName		      "ScopeData2"
       DataFormat	      "StructureWithTime"
       LimitDataPoints	      off
       SampleTime	      "0"
@@ -3321,7 +1334,11 @@ Model {
     Line {
       SrcBlock		      "EV Charger 1"
       SrcPort		      1
-      Points		      [47, 0]
+      Points		      [57, 0]
+      Branch {
+	DstBlock		"EV Battery 1"
+	DstPort			1
+      }
       Branch {
 	Points			[0, -45; 377, 0]
 	Branch {
@@ -3333,10 +1350,6 @@ Model {
 	  DstBlock		  "Mux1"
 	  DstPort		  1
 	}
-      }
-      Branch {
-	DstBlock		"EV Battery 1"
-	DstPort			1
       }
     }
     Line {
@@ -3423,29 +1436,33 @@ Model {
     Line {
       SrcBlock		      "EV Battery 1"
       SrcPort		      1
-      Points		      [21, 0; 0, 115]
+      Points		      [41, 0; 0, 115]
+      Branch {
+	Points			[-365, 0; 0, -115]
+	DstBlock		"EV Charger 1"
+	DstPort			2
+      }
       Branch {
 	Points			[0, 100]
 	DstBlock		"Mux"
 	DstPort			1
       }
-      Branch {
-	Points			[-367, 0; 0, -115]
-	DstBlock		"EV Charger 1"
-	DstPort			2
-      }
     }
     Line {
       SrcBlock		      "EV Battery 1"
       SrcPort		      2
-      Points		      [8, 0; 0, 60; -338, 0]
+      Points		      [17, 0; 0, 50; -317, 0]
       DstBlock		      "EV Charger 1"
       DstPort		      3
     }
     Line {
       SrcBlock		      "EV Charger 2"
       SrcPort		      1
-      Points		      [46, 0]
+      Points		      [56, 0]
+      Branch {
+	DstBlock		"EV Battery 2"
+	DstPort			1
+      }
       Branch {
 	Points			[0, -54; 221, 0; 0, -206; 174, 0]
 	Branch {
@@ -3458,10 +1475,6 @@ Model {
 	  DstPort		  2
 	}
       }
-      Branch {
-	DstBlock		"EV Battery 2"
-	DstPort			1
-      }
     }
     Line {
       SrcBlock		      "EV Present 2"
@@ -3472,9 +1485,9 @@ Model {
     Line {
       SrcBlock		      "EV Battery 2"
       SrcPort		      1
-      Points		      [22, 0]
+      Points		      [42, 0]
       Branch {
-	Points			[0, 114; -370, 0; 0, -114]
+	Points			[0, 114; -365, 0; 0, -114]
 	DstBlock		"EV Charger 2"
 	DstPort			2
       }
@@ -3486,15 +1499,23 @@ Model {
     Line {
       SrcBlock		      "EV Battery 2"
       SrcPort		      2
-      Points		      [9, 0; 0, 60; -342, 0; 0, -75]
+      Points		      [19, 0; 0, 49; -318, 0; 0, -59]
       DstBlock		      "EV Charger 2"
       DstPort		      3
     }
     Line {
       SrcBlock		      "From PVDiff"
       SrcPort		      1
-      DstBlock		      "EV Charger 2"
-      DstPort		      1
+      Points		      [18, 0]
+      Branch {
+	Points			[0, -50]
+	DstBlock		"Scope"
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"EV Charger 2"
+	DstPort			1
+      }
     }
     Line {
       Name		      "State of Charge"
@@ -3567,11 +1588,13 @@ Model {
       "ximum ramp rate of 400 W/s, for instance.)"
       Position		      [534, 698]
       HorizontalAlignment     "left"
+      ZOrder		      -1
     }
     Annotation {
       SID		      "101"
       Name		      "Typical EV Charger"
       Position		      [311, 493]
+      ZOrder		      -2
     }
     Annotation {
       SID		      "102"

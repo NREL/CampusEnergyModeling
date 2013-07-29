@@ -1729,7 +1729,7 @@
   Lights,
     SPACE1-1 Lights 1,       !- Name
     SPACE1-1,                !- Zone or ZoneList Name
-    LIGHTS-1,                !- Schedule Name
+    LightsSch,                !- Schedule Name
     LightingLevel,           !- Design Level Calculation Method
     1584,                    !- Lighting Level {W}
     ,                        !- Watts per Zone Floor Area {W/m2}
@@ -1743,7 +1743,7 @@
   Lights,
     SPACE2-1 Lights 1,       !- Name
     SPACE2-1,                !- Zone or ZoneList Name
-    LIGHTS-1,                !- Schedule Name
+    LightsSch,                !- Schedule Name
     LightingLevel,           !- Design Level Calculation Method
     684,                     !- Lighting Level {W}
     ,                        !- Watts per Zone Floor Area {W/m2}
@@ -1757,7 +1757,7 @@
   Lights,
     SPACE3-1 Lights 1,       !- Name
     SPACE3-1,                !- Zone or ZoneList Name
-    LIGHTS-1,                !- Schedule Name
+    LightsSch,                !- Schedule Name
     LightingLevel,           !- Design Level Calculation Method
     1584,                    !- Lighting Level {W}
     ,                        !- Watts per Zone Floor Area {W/m2}
@@ -1771,7 +1771,7 @@
   Lights,
     SPACE4-1 Lights 1,       !- Name
     SPACE4-1,                !- Zone or ZoneList Name
-    LIGHTS-1,                !- Schedule Name
+    LightsSch,                !- Schedule Name
     LightingLevel,           !- Design Level Calculation Method
     684,                     !- Lighting Level {W}
     ,                        !- Watts per Zone Floor Area {W/m2}
@@ -1785,7 +1785,7 @@
   Lights,
     SPACE5-1 Lights 1,       !- Name
     SPACE5-1,                !- Zone or ZoneList Name
-    LIGHTS-1,                !- Schedule Name
+    LightsSch,                !- Schedule Name
     LightingLevel,           !- Design Level Calculation Method
     2964,                    !- Lighting Level {W}
     ,                        !- Watts per Zone Floor Area {W/m2}
@@ -3357,6 +3357,11 @@
     SourceCoolSch,                         !- Name
     Temperature,                    !- ScheduleType
     7;                 !- Initial value, used during warm-up
+
+  ExternalInterface:Schedule,
+    LightsSch,                         !- Name
+    Fraction,                    !- ScheduleType
+    0;                 !- Initial value, used during warm-up
 
   ExternalInterface:Actuator,
     SourceMaxAct, !- Name

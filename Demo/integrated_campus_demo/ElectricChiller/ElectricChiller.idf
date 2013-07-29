@@ -1273,7 +1273,14 @@
     OutputEMSvariables, !- Name
     SET MaxChilledWaterFlow = ChilledWaterTotal; !- Program Line 2
     
-!======================END:INPUTS=============================================
+!======================END:ACTUATOR=============================================
+
+  ExternalInterface:Actuator,
+    PlantAct, !- Name
+    CHILLED WATER LOOP, !- Actuated Component Unique Name
+    Plant Loop Overall, !- Actuated Component Type
+    On/Off Supervisory, !- Actuated Component Control Type 
+    1; ! initial value [0-1]
 
 !======================START:OUTPUTS=============================================
   ! TEMPERATURE ZONES

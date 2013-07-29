@@ -1729,7 +1729,7 @@
   Lights,
     SPACE1-1 Lights 1,       !- Name
     SPACE1-1,                !- Zone or ZoneList Name
-    LIGHTS-1,                !- Schedule Name
+    LightsSch,                !- Schedule Name
     LightingLevel,           !- Design Level Calculation Method
     1584,                    !- Lighting Level {W}
     ,                        !- Watts per Zone Floor Area {W/m2}
@@ -1743,7 +1743,7 @@
   Lights,
     SPACE2-1 Lights 1,       !- Name
     SPACE2-1,                !- Zone or ZoneList Name
-    LIGHTS-1,                !- Schedule Name
+    LightsSch,                !- Schedule Name
     LightingLevel,           !- Design Level Calculation Method
     684,                     !- Lighting Level {W}
     ,                        !- Watts per Zone Floor Area {W/m2}
@@ -1757,7 +1757,7 @@
   Lights,
     SPACE3-1 Lights 1,       !- Name
     SPACE3-1,                !- Zone or ZoneList Name
-    LIGHTS-1,                !- Schedule Name
+    LightsSch,                !- Schedule Name
     LightingLevel,           !- Design Level Calculation Method
     1584,                    !- Lighting Level {W}
     ,                        !- Watts per Zone Floor Area {W/m2}
@@ -1771,7 +1771,7 @@
   Lights,
     SPACE4-1 Lights 1,       !- Name
     SPACE4-1,                !- Zone or ZoneList Name
-    LIGHTS-1,                !- Schedule Name
+    LightsSch,                !- Schedule Name
     LightingLevel,           !- Design Level Calculation Method
     684,                     !- Lighting Level {W}
     ,                        !- Watts per Zone Floor Area {W/m2}
@@ -1785,7 +1785,7 @@
   Lights,
     SPACE5-1 Lights 1,       !- Name
     SPACE5-1,                !- Zone or ZoneList Name
-    LIGHTS-1,                !- Schedule Name
+    LightsSch,                !- Schedule Name
     LightingLevel,           !- Design Level Calculation Method
     2964,                    !- Lighting Level {W}
     ,                        !- Watts per Zone Floor Area {W/m2}
@@ -2716,7 +2716,7 @@
     CW Supply Outlet Node,   !- Loop Temperature Setpoint Node Name
     98,                      !- Maximum Loop Temperature {C}
     1,                       !- Minimum Loop Temperature {C}
-    0.002,                   !- Maximum Loop Flow Rate {m3/s} 0.0011
+    0.002,                  !- Maximum Loop Flow Rate {m3/s} 0.0011
     0,                       !- Minimum Loop Flow Rate {m3/s}
     autocalculate,           !- Plant Loop Volume {m3}
     CW Supply Inlet Node,    !- Plant Side Inlet Node Name
@@ -3000,7 +3000,7 @@
     Circ Pump,               !- Name
     CW Supply Inlet Node,    !- Inlet Node Name
     CW Pump Outlet Node,     !- Outlet Node Name
-    0.002,                   !- Rated Flow Rate {m3/s} 0.002
+    0.002,                   !- Rated Flow Rate {m3/s} 0.0011
     300000,                  !- Rated Pump Head {Pa}
     0,                    !- Rated Power Consumption {W} 1000
     0.87,                    !- Motor Efficiency
@@ -3331,6 +3331,46 @@
     Purchased Heat Inlet Node,  !- Hot Water Inlet Node Name
     Purchased Heat Outlet Node,  !- Hot Water Outlet Node Name
     1000000;                 !- Nominal Capacity {W}
+
+!======================START:INPUTS=============================================
+  Output:EnergyManagementSystem,
+    Verbose, ! Actuator Availability Dictionary Reporting
+    Verbose, ! Internal Variable Availability Dictionary Reporting
+    ErrorsOnly; ! EnergyPlus Runtime Language Debug Output Level
+  
+  EnergyManagementSystem:Sensor,
+    SENSOR1,                !Name
+    SPACE1-1,                ! Output:Variable or Output:Meter Index Key Name
+    Zone Air Temperature;    ! Output:Variable or Output:Meter Name
+  
+  ExternalInterface:Schedule,
+    CoolTempSch,                         !- Name
+    Temperature,                    !- ScheduleType
+    23.4;                 !- Initial value, used during warm-up
+
+  ExternalInterface:Schedule,
+    HeatTempSch,                         !- Name
+    Temperature,                    !- ScheduleType
+    20;                 !- Initial value, used during warm-up
+
+  ExternalInterface:Schedule,
+    SourceCoolSch,                         !- Name
+    Temperature,                    !- ScheduleType
+    7;                 !- Initial value, used during warm-up
+
+  ExternalInterface:Schedule,
+    LightsSch,                         !- Name
+    Fraction,                    !- ScheduleType
+    0;                 !- Initial value, used during warm-up
+
+  ExternalInterface:Actuator,
+    SourceMaxAct, !- Name
+    FLUIDSOURCE COOLING, !- Actuated Component Unique Name
+    PlantComponent:TemperatureSource, !- Actuated Component Type
+    Maximum Mass Flow Rate, !- Actuated Component Control Type 
+    2; ! initial value [kg/s]
+
+
 !======================END:INPUTS=============================================
 
   ExternalInterface:Actuator,
@@ -3360,39 +3400,6 @@
     Weather Data, !- Actuated Component Type
     Diffuse Solar, !- Actuated Component Control Type 
     0; ! initial value [C]
-
-!======================START:INPUTS=============================================
-  Output:EnergyManagementSystem,
-    Verbose, ! Actuator Availability Dictionary Reporting
-    Verbose, ! Internal Variable Availability Dictionary Reporting
-    ErrorsOnly; ! EnergyPlus Runtime Language Debug Output Level
-  
-  EnergyManagementSystem:Sensor,
-    SENSOR1,                !Name
-    SPACE1-1,                ! Output:Variable or Output:Meter Index Key Name
-    Zone Air Temperature;    ! Output:Variable or Output:Meter Name
-  
-  ExternalInterface:Schedule,
-    CoolTempSch,                         !- Name
-    Temperature,                    !- ScheduleType
-    23.4;                 !- Initial value, used during warm-up
-
-  ExternalInterface:Schedule,
-    HeatTempSch,                         !- Name
-    Temperature,                    !- ScheduleType
-    20;                 !- Initial value, used during warm-up
-
-  ExternalInterface:Schedule,
-    SourceCoolSch,                         !- Name
-    Temperature,                    !- ScheduleType
-    7;                 !- Initial value, used during warm-up
-
-  ExternalInterface:Actuator,
-    SourceMaxAct, !- Name
-    FLUIDSOURCE COOLING, !- Actuated Component Unique Name
-    PlantComponent:TemperatureSource, !- Actuated Component Type
-    Maximum Mass Flow Rate, !- Actuated Component Control Type 
-    2; ! initial value [kg/s]
 
 !======================END:INPUTS=============================================
 !  SetpointManager:Scheduled,

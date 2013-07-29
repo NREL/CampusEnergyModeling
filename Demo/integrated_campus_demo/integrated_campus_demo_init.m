@@ -18,7 +18,7 @@
 
 % Change to 'true' to download and use DataBus data
 % NOTE: Also remember to switch to 'Weather2.mat' in the Simulink model!
-useDataBus = false;
+useDataBus = true;
 
 % Set EnergyPlus path
 % NOTE: This needs to be Brent's customized 8.0.1 build or greater to work!
@@ -45,7 +45,7 @@ save('Weather.mat', 'ans', '-v7.3');
 %   urlread()       SSL errors and authentication errors (even w/ correct
 %                   credentials)
 %   web()           Locks up MATLAB when using MATLAB's internal browser
-%   
+%
 % Instead, this script uses an interactive approach which prompts the user
 % to download each data stream to .CSV, then parses the result.
 % Run the interactive function to retrieve and use DataBus data
@@ -54,16 +54,17 @@ if useDataBus
     % Time stamps for data to retrieve (dd-mmm-yyyy HH:MM:SS)
     start = '01-Jun-2013 00:00:00';
     stop  = '02-Jun-2013 00:00:00';
-
-
+    
+    
     % Interactive import from databus -> result in 'ans' variable
-    importDataBus('DataBus_sensors.csv', start, stop, 'timezone', -7);
-
+    importDataBus('DataBus_sensors.csv', start, stop, 'timezone', -7, ...
+        'skipdownload', [1 1 1 1 1 1]);
+    
     % Save resulting structures of time series to file
     % Notes:
     %   1. The name 'ans' is required by Simulink to import data using a
     %      'From File' block
-    %   2. A version 7.3 .MAT file is required for Simulink to properly 
+    %   2. A version 7.3 .MAT file is required for Simulink to properly
     %      read the time series object. This is NOT the default version
     %      which MATLAB saves, so be careful.
     save('Weather2.mat', 'ans', '-v7.3');
@@ -71,49 +72,7 @@ if useDataBus
 end
 
 %% Initialize Pricing Data
-% Loads Day-Ahead Pricing from June, 2013 from PJM.
-
-% Load Array from CSV File
-day = 1;
-M = csvread('201306-da.csv',5+day,1,[5+day 1 5+day 24])/1000';
-% Price is for $/KWh
-x = M;
-t = [0:23]*60*60;
-priceDA = timeseries(x, t);
-
-% Assign time series time properties
-priceDA.TimeInfo.Units = 'seconds';
-% priceDA.TimeInfo.StartDate = start;
-% priceDA.TimeInfo.Format = tFormat;
-
-% Assign time series data properties
-priceDA.Name = 'priceDA';
-priceDA.DataInfo.Units = '$/KWh';
-priceDA.DataInfo.UserData = 'Total LMP ($/KWh)';
-
-% % Create Bus
-% 
-% % Create the bus
-% BusDef_Price = Simulink.Bus;
-% BusDef_Price.Description = 'LMP DAY-AHEAD';
-% 
-% % Populate the bus
-% % Create bus element w/ proper names, etc
-% x = Simulink.BusElement;
-% x.Name = 'priceDA';
-% x.DocUnits = out.priceDA.DataInfo.Units;
-% x.Description = out.priceDA.DataInfo.UserData;
-% 
-% % Store in bus
-% BusDef_Price.Elements = x;
-% 
-% % Place in base workspace
-% assignin('base', 'BusDef_Price', BusDef_Price);
-
-% % Clear local copy
-% clear('BusDef_Price');
-
-save('PriceDA.mat', 'priceDA', '-v7.3');
+initPricingData;
 
 % TEST: Plot the resulting time series
 % hold on
@@ -126,7 +85,7 @@ save('PriceDA.mat', 'priceDA', '-v7.3');
 % Setup
 fileName = 'integrated_campus';
 blkList = {'E+ Plant','E+ Building 1','E+ Building 2'};
-
+numOut = [13 14 13];
 % Loop through blocks to set common elements
 for n = blkList
     % Simulink object name
@@ -136,55 +95,66 @@ for n = blkList
     param = 'progname';
     value = ['''' ePlusPath ''''];
     set_param(objName,param,value);
-
+    
     % Set Param - Time step
     param = 'deltaT';
     value = '60';
     set_param(objName,param,value);
-
+    
     % Set Param - Baseline weather file
     param = 'weatherfile';
     value = '''USA_CO_Golden-NREL.724666_TMY3''';
     set_param(objName,param,value);
-
-    % Set Param - Number EnergyPlus outputs
-    param = 'noutputd';
-    value = '13';
-    set_param(objName,param,value);
+    
 end
 
-% Set Chiller-specific parameters
+%% Set Chiller-specific parameters
 objName = [fileName '/Campus Thermal Model/E+ Plant'];
-    % Set Param - EnergyPlus model file
-    param = 'modelfile';
-    value = '[pwd ''\ElectricChiller\ElectricChiller'']';
-    set_param(objName,param,value);
+% Set Param - EnergyPlus model file
+param = 'modelfile';
+value = '[pwd ''\ElectricChiller\ElectricChiller'']';
+set_param(objName,param,value);
 
-    % Set Param - EnergyPlus working directory
-    param = 'workdir';
-    value = '[pwd ''\ElectricChiller'']';
-    set_param(objName,param,value);
+% Set Param - EnergyPlus working directory
+param = 'workdir';
+value = '[pwd ''\ElectricChiller'']';
+set_param(objName,param,value);
 
-% Set Building 1-specific parameters
+% Set Param - Number EnergyPlus outputs
+param = 'noutputd';
+value = '13';
+set_param(objName,param,value);
+
+%% Set Building 1-specific parameters
 objName = [fileName '/Campus Thermal Model/E+ Building 1'];
-    % Set Param - EnergyPlus model file
-    param = 'modelfile';
-    value = '[pwd ''\Building1\5ZoneAirCool'']';
-    set_param(objName,param,value);
+% Set Param - EnergyPlus model file
+param = 'modelfile';
+value = '[pwd ''\Building1\5ZoneAirCool'']';
+set_param(objName,param,value);
 
-    % Set Param - EnergyPlus working directory
-    param = 'workdir';
-    value = '[pwd ''\Building1'']';
-    set_param(objName,param,value);
+% Set Param - EnergyPlus working directory
+param = 'workdir';
+value = '[pwd ''\Building1'']';
+set_param(objName,param,value);
 
-% Set Building 2-specific parameters
+% Set Param - Number EnergyPlus outputs
+param = 'noutputd';
+value = '14';
+set_param(objName,param,value);
+
+%% Set Building 2-specific parameters
 objName = [fileName '/Campus Thermal Model/E+ Building 2'];
-    % Set Param - EnergyPlus model file
-    param = 'modelfile';
-    value = '[pwd ''\Building2\5ZoneAirCool'']';
-    set_param(objName,param,value);
+% Set Param - EnergyPlus model file
+param = 'modelfile';
+value = '[pwd ''\Building2\5ZoneAirCool'']';
+set_param(objName,param,value);
 
-    % Set Param - EnergyPlus working directory
-    param = 'workdir';
-    value = '[pwd ''\Building2'']';
-    set_param(objName,param,value);
+% Set Param - EnergyPlus working directory
+param = 'workdir';
+value = '[pwd ''\Building2'']';
+set_param(objName,param,value);
+
+% Set Param - Number EnergyPlus outputs
+param = 'noutputd';
+value = '13';
+set_param(objName,param,value);

@@ -145,7 +145,7 @@
     1,                       !- Begin Day of Month
     6,                       !- End Month
     1,                       !- End Day of Month
-    Tuesday,                 !- Day of Week for Start Day
+    Monday,                 !- Day of Week for Start Day
     Yes,                     !- Use Weather File Holidays and Special Days
     Yes,                     !- Use Weather File Daylight Saving Period
     No,                      !- Apply Weekend Holiday Rule
@@ -1464,13 +1464,32 @@
     Until: 24:00,1.0;        !- Field 11
 
   Schedule:Compact,
+    WORK_EFF_SCH,            !- Name
+    ANY NUMBER,              !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: Alldays,            !- Field 2
+    Until: 24:00,0.00;       !- Field 3
+
+  Schedule:Compact,
+    CLOTHING_SCH,            !- Name
+    ANY NUMBER,              !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: Alldays,            !- Field 2
+    Until: 24:00,1.00;       !- Field 3
+
+  Schedule:Compact,
+    AIR_VELO_SCH,            !- Name
+    ANY NUMBER,              !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: Alldays,            !- Field 2
+    Until: 24:00,0.137;      !- Field 3
+
+  Schedule:Compact,
     ActSchd,                 !- Name
     Any Number,              !- Schedule Type Limits Name
     Through: 12/31,          !- Field 1
     For: AllDays,            !- Field 2
     Until: 24:00,117.239997864; !- Field 3
-
-                             !- Field 4
 
   Schedule:Compact,
     ShadeTransSch,           !- Name
@@ -1676,7 +1695,15 @@
     ,                        !- Zone Floor Area per Person {m2/person}
     0.3,                     !- Fraction Radiant
     ,                        !- Sensible Heat Fraction
-    ActSchd;                 !- Activity Level Schedule Name
+    ActSchd,                 !- Activity Level Schedule Name
+    3.82E-8,                 !- Carbon Dioxide Generation Rate {m3/s-W}
+    No,                      !- Enable ASHRAE 55 Comfort Warnings
+    ZoneAveraged,            !- Mean Radiant Temperature Calculation Type
+    ,                        !- Surface Name/Angle Factor List Name
+    WORK_EFF_SCH,            !- Work Efficiency Schedule Name
+    CLOTHING_SCH,            !- Clothing Insulation Schedule Name
+    AIR_VELO_SCH,            !- Air Velocity Schedule Name
+    Fanger;                  !- Thermal Comfort Model 1 Type
 
   People,
     SPACE2-1 People 1,       !- Name
@@ -1688,7 +1715,15 @@
     ,                        !- Zone Floor Area per Person {m2/person}
     0.3,                     !- Fraction Radiant
     ,                        !- Sensible Heat Fraction
-    ActSchd;                 !- Activity Level Schedule Name
+    ActSchd,                 !- Activity Level Schedule Name
+    3.82E-8,                 !- Carbon Dioxide Generation Rate {m3/s-W}
+    No,                      !- Enable ASHRAE 55 Comfort Warnings
+    ZoneAveraged,            !- Mean Radiant Temperature Calculation Type
+    ,                        !- Surface Name/Angle Factor List Name
+    WORK_EFF_SCH,            !- Work Efficiency Schedule Name
+    CLOTHING_SCH,            !- Clothing Insulation Schedule Name
+    AIR_VELO_SCH,            !- Air Velocity Schedule Name
+    Fanger;                  !- Thermal Comfort Model 1 Type
 
   People,
     SPACE3-1 People 1,       !- Name
@@ -1700,7 +1735,15 @@
     ,                        !- Zone Floor Area per Person {m2/person}
     0.3,                     !- Fraction Radiant
     ,                        !- Sensible Heat Fraction
-    ActSchd;                 !- Activity Level Schedule Name
+    ActSchd,                 !- Activity Level Schedule Name
+    3.82E-8,                 !- Carbon Dioxide Generation Rate {m3/s-W}
+    No,                      !- Enable ASHRAE 55 Comfort Warnings
+    ZoneAveraged,            !- Mean Radiant Temperature Calculation Type
+    ,                        !- Surface Name/Angle Factor List Name
+    WORK_EFF_SCH,            !- Work Efficiency Schedule Name
+    CLOTHING_SCH,            !- Clothing Insulation Schedule Name
+    AIR_VELO_SCH,            !- Air Velocity Schedule Name
+    Fanger;                  !- Thermal Comfort Model 1 Type
 
   People,
     SPACE4-1 People 1,       !- Name
@@ -1712,7 +1755,15 @@
     ,                        !- Zone Floor Area per Person {m2/person}
     0.3,                     !- Fraction Radiant
     ,                        !- Sensible Heat Fraction
-    ActSchd;                 !- Activity Level Schedule Name
+    ActSchd,                 !- Activity Level Schedule Name
+    3.82E-8,                 !- Carbon Dioxide Generation Rate {m3/s-W}
+    No,                      !- Enable ASHRAE 55 Comfort Warnings
+    ZoneAveraged,            !- Mean Radiant Temperature Calculation Type
+    ,                        !- Surface Name/Angle Factor List Name
+    WORK_EFF_SCH,            !- Work Efficiency Schedule Name
+    CLOTHING_SCH,            !- Clothing Insulation Schedule Name
+    AIR_VELO_SCH,            !- Air Velocity Schedule Name
+    Fanger;                  !- Thermal Comfort Model 1 Type
 
   People,
     SPACE5-1 People 1,       !- Name
@@ -1724,7 +1775,15 @@
     ,                        !- Zone Floor Area per Person {m2/person}
     0.3,                     !- Fraction Radiant
     ,                        !- Sensible Heat Fraction
-    ActSchd;                 !- Activity Level Schedule Name
+    ActSchd,                 !- Activity Level Schedule Name
+    3.82E-8,                 !- Carbon Dioxide Generation Rate {m3/s-W}
+    No,                      !- Enable ASHRAE 55 Comfort Warnings
+    ZoneAveraged,            !- Mean Radiant Temperature Calculation Type
+    ,                        !- Surface Name/Angle Factor List Name
+    WORK_EFF_SCH,            !- Work Efficiency Schedule Name
+    CLOTHING_SCH,            !- Clothing Insulation Schedule Name
+    AIR_VELO_SCH,            !- Air Velocity Schedule Name
+    Fanger;                  !- Thermal Comfort Model 1 Type
 
   Lights,
     SPACE1-1 Lights 1,       !- Name
@@ -3408,6 +3467,10 @@
 !    PurchCoolSch,   !- Schedule Name
 !    Purchased Cooling Outlet Node; !- Setpoint Node or NodeList Name
 
+!======================START:COMFORT=============================================
+
+  Output:Variable,SPACE3-1 PEOPLE 1,Zone Thermal Comfort Fanger Model PMV,timestep;
+  Output:Variable,SPACE3-1 PEOPLE 1,Zone Thermal Comfort Fanger Model PPD,timestep;
 
 !======================START:OUTPUTS=============================================
   ! TEMPERATURE ZONES

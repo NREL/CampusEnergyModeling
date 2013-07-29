@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.935"
+    ComputedModelVersion    "1.941"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -33,7 +33,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [1592.0, -8.0, 1616.0, 1216.0]
+      Location		      [-8.0, -8.0, 1936.0, 1056.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -50,28 +50,16 @@ Model {
 	$ClassName		"Simulink.ExplorerBarInfo"
 	Visible			[1]
       }
-      Array {
-	Type			"Simulink.EditorInfo"
-	Dimension		2
-	Object {
-	  $ObjectID		  5
-	  IsActive		  [1]
-	  ViewObjType		  "SimulinkTopLevel"
-	  LoadSaveID		  "0"
-	  Extents		  [1566.0, 1039.0]
-	  ZoomFactor		  [1.25]
-	  Offset		  [-59.2880952380888, 936.4428571428549]
-	}
-	Object {
-	  $ObjectID		  6
-	  IsActive		  [0]
-	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "2913"
-	  Extents		  [1566.0, 1039.0]
-	  ZoomFactor		  [0.6]
-	  Offset		  [-123.19999999999919, -212.18095238095316]
-	}
-	PropName		"EditorsInfo"
+      Object {
+	$PropName		"EditorsInfo"
+	$ObjectID		5
+	$ClassName		"Simulink.EditorInfo"
+	IsActive		[1]
+	ViewObjType		"SimulinkTopLevel"
+	LoadSaveID		"0"
+	Extents			[1886.0, 879.0]
+	ZoomFactor		[0.6]
+	Offset			[393.33333333333331, -49.333333333333265]
       }
     }
   }
@@ -82,11 +70,11 @@ Model {
   Creator		  "MathWorks"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "wbernal"
+  LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Jul 29 17:10:48 2013"
-  RTWModifiedTimeStamp	  297018644
-  ModelVersionFormat	  "1.%<AutoIncrement:935>"
+  LastModifiedDate	  "Mon Jul 29 17:53:54 2013"
+  RTWModifiedTimeStamp	  297021229
+  ModelVersionFormat	  "1.%<AutoIncrement:941>"
   ConfigurationManager	  "none"
   SampleTimeColors	  on
   SampleTimeAnnotations	  on
@@ -121,7 +109,7 @@ Model {
   TryForcingSFcnDF	  off
   Object {
     $PropName		    "DataLoggingOverride"
-    $ObjectID		    7
+    $ObjectID		    6
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "integrated_campus"
     Array {
@@ -179,13 +167,13 @@ Model {
     Type		    "Handle"
     Dimension		    1
     Simulink.ConfigSet {
-      $ObjectID		      8
+      $ObjectID		      7
       Version		      "1.13.0"
       Array {
 	Type			"Handle"
 	Dimension		9
 	Simulink.SolverCC {
-	  $ObjectID		  9
+	  $ObjectID		  8
 	  Version		  "1.13.0"
 	  StartTime		  "0.0"
 	  StopTime		  "24*3600"
@@ -220,7 +208,7 @@ Model {
 	  InsertRTBMode		  "Whenever possible"
 	}
 	Simulink.DataIOCC {
-	  $ObjectID		  10
+	  $ObjectID		  9
 	  Version		  "1.13.0"
 	  Decimation		  "1"
 	  ExternalInput		  "[t, u]"
@@ -252,7 +240,7 @@ Model {
 	  Refine		  "1"
 	}
 	Simulink.OptimizationCC {
-	  $ObjectID		  11
+	  $ObjectID		  10
 	  Version		  "1.13.0"
 	  Array {
 	    Type		    "Cell"
@@ -304,7 +292,7 @@ Model {
 	  ParallelExecutionInRapidAccelerator on
 	}
 	Simulink.DebuggingCC {
-	  $ObjectID		  12
+	  $ObjectID		  11
 	  Version		  "1.13.0"
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
@@ -394,7 +382,7 @@ Model {
 	  SFTransitionActionBeforeConditionDiag	"warning"
 	}
 	Simulink.HardwareCC {
-	  $ObjectID		  13
+	  $ObjectID		  12
 	  Version		  "1.13.0"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
@@ -435,7 +423,7 @@ Model {
 	  ProdEqTarget		  on
 	}
 	Simulink.ModelReferenceCC {
-	  $ObjectID		  14
+	  $ObjectID		  13
 	  Version		  "1.13.0"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
 	  CheckModelReferenceTargetMessage "error"
@@ -450,7 +438,7 @@ Model {
 	  SupportModelReferenceSimTargetCustomCode off
 	}
 	Simulink.SFSimCC {
-	  $ObjectID		  15
+	  $ObjectID		  14
 	  Version		  "1.13.0"
 	  SFSimEnableDebug	  on
 	  SFSimOverflowDetection  on
@@ -465,7 +453,7 @@ Model {
 	}
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
-	  $ObjectID		  16
+	  $ObjectID		  15
 	  Version		  "1.13.0"
 	  Array {
 	    Type		    "Cell"
@@ -521,7 +509,7 @@ Model {
 	    Type		    "Handle"
 	    Dimension		    2
 	    Simulink.CodeAppCC {
-	      $ObjectID		      17
+	      $ObjectID		      16
 	      Version		      "1.13.0"
 	      Array {
 		Type			"Cell"
@@ -583,7 +571,7 @@ Model {
 	    }
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
-	      $ObjectID		      18
+	      $ObjectID		      17
 	      Version		      "1.13.0"
 	      Array {
 		Type			"Cell"
@@ -664,7 +652,7 @@ Model {
 	  }
 	}
 	SSC.SimscapeCC {
-	  $ObjectID		  19
+	  $ObjectID		  18
 	  Version		  "1.11.0"
 	  Array {
 	    Type		    "Cell"
@@ -693,11 +681,11 @@ Model {
   }
   Simulink.ConfigSet {
     $PropName		    "ActiveConfigurationSet"
-    $ObjectID		    8
+    $ObjectID		    7
   }
   Object {
     $PropName		    "DataTransfer"
-    $ObjectID		    20
+    $ObjectID		    19
     $ClassName		    "Simulink.GlobalDataTransfer"
     DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
     DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
@@ -757,6 +745,13 @@ Model {
     ToolTip		    "on"
   }
   BlockParameterDefaults {
+    Block {
+      BlockType		      BusCreator
+      Inputs		      "4"
+      DisplayOption	      "none"
+      OutDataTypeStr	      "Inherit: auto"
+      NonVirtualBus	      off
+    }
     Block {
       BlockType		      BusSelector
       OutputSignals	      "signal1,signal2,signal3"
@@ -1058,7 +1053,7 @@ Model {
   }
   System {
     Name		    "integrated_campus"
-    Location		    [1592, -8, 3208, 1208]
+    Location		    [-8, -8, 1928, 1048]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1070,9 +1065,9 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "125"
+    ZoomFactor		    "60"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "3013"
+    SIDHighWatermark	    "3017"
     Block {
       BlockType		      Goto
       Name		      " Regulation\n(Target Correction)"
@@ -1117,6 +1112,17 @@ Model {
       VNom		      "208"
       fNom		      "60"
       VLow		      "0.7"
+    }
+    Block {
+      BlockType		      BusCreator
+      Name		      "Bus\nCreator"
+      SID		      "3014"
+      Ports		      [2, 1]
+      Position		      [1795, 936, 1800, 974]
+      ZOrder		      742
+      ShowName		      off
+      Inputs		      "2"
+      DisplayOption	      "bar"
     }
     Block {
       BlockType		      BusSelector
@@ -1174,7 +1180,7 @@ Model {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		21
+	$ObjectID		20
 	$ClassName		"Simulink.Mask"
 	Type			"Short Cable"
 	Description		"This block implements a short cable using three phase mutual inductance.\nSelf impedances and mutual im"
@@ -1185,7 +1191,7 @@ Model {
 	  Type			  "Simulink.MaskParameter"
 	  Dimension		  5
 	  Object {
-	    $ObjectID		    22
+	    $ObjectID		    21
 	    Type		    "edit"
 	    Name		    "R1"
 	    Prompt		    "Positive Sequence R (ohms/1000ft)"
@@ -1193,7 +1199,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    23
+	    $ObjectID		    22
 	    Type		    "edit"
 	    Name		    "X1"
 	    Prompt		    "Positive Sequence XL (ohms/1000ft)"
@@ -1201,7 +1207,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    24
+	    $ObjectID		    23
 	    Type		    "edit"
 	    Name		    "R0"
 	    Prompt		    "Zero Sequence R (ohms/1000ft)"
@@ -1209,7 +1215,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    25
+	    $ObjectID		    24
 	    Type		    "edit"
 	    Name		    "X0"
 	    Prompt		    "Zero Sequence XL (ohms/1000ft)"
@@ -1217,7 +1223,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    26
+	    $ObjectID		    25
 	    Type		    "edit"
 	    Name		    "L"
 	    Prompt		    "Line Length (ft)"
@@ -1375,7 +1381,7 @@ Model {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		27
+	$ObjectID		26
 	$ClassName		"Simulink.Mask"
 	Type			"Short Cable"
 	Description		"This block implements a short cable using three phase mutual inductance.\nSelf impedances and mutual im"
@@ -1386,7 +1392,7 @@ Model {
 	  Type			  "Simulink.MaskParameter"
 	  Dimension		  5
 	  Object {
-	    $ObjectID		    28
+	    $ObjectID		    27
 	    Type		    "edit"
 	    Name		    "R1"
 	    Prompt		    "Positive Sequence R (ohms/1000ft)"
@@ -1394,7 +1400,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    29
+	    $ObjectID		    28
 	    Type		    "edit"
 	    Name		    "X1"
 	    Prompt		    "Positive Sequence XL (ohms/1000ft)"
@@ -1402,7 +1408,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    30
+	    $ObjectID		    29
 	    Type		    "edit"
 	    Name		    "R0"
 	    Prompt		    "Zero Sequence R (ohms/1000ft)"
@@ -1410,7 +1416,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    31
+	    $ObjectID		    30
 	    Type		    "edit"
 	    Name		    "X0"
 	    Prompt		    "Zero Sequence XL (ohms/1000ft)"
@@ -1418,7 +1424,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    32
+	    $ObjectID		    31
 	    Type		    "edit"
 	    Name		    "L"
 	    Prompt		    "Line Length (ft)"
@@ -1576,13 +1582,12 @@ Model {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		33
+	$ObjectID		32
 	$ClassName		"Simulink.Mask"
-	Display			"% path = which('integrated_campus.mdl');\n% disp(path);\n% % % Remove/Last Part\n% idx = strfind(path,file"
-	"sep);\n% path = path(1:idx(end));\npath = 'C:\\Users\\wbernal\\Documents\\Git\\CampusModeling\\Demo\\integrated_campu"
-	"s_demo';\nimage(imread([path filesep 'campus.jpg']));\ndisp('Thermal Campus Model');\n\n% Inputs\nport_label('input',"
-	" 1, 'Weather');\nport_label('input', 2, 'Input');\n\n% Outputs\nport_label('output', 1, 'Outputs');\n%port_label('out"
-	"put', 2, 'time');\n%port_label('output', 3, 'real');\n"
+	Display			"path = 'U:\\Git\\CampusModeling\\Demo\\integrated_campus_demo';\nimage(imread([path filesep 'campus.jpg'])"
+	");\ndisp('Thermal Campus Model');\n\n% Inputs\nport_label('input', 1, 'Weather');\nport_label('input', 2, 'Input');\n"
+	"\n% Outputs\nport_label('output', 1, 'Outputs');\n%port_label('output', 2, 'time');\n%port_label('output', 3, 'real')"
+	";\n"
       }
       Port {
 	PortNumber		1
@@ -1592,8 +1597,8 @@ Model {
       }
       System {
 	Name			"Campus Thermal Model"
-	Location		[1592, -8, 3208, 1208]
-	Open			on
+	Location		[-8, -8, 1928, 1048]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -3551,8 +3556,8 @@ Model {
 	  Position		  [1390, 859, 1445, 911]
 	  ZOrder		  512
 	  Floating		  off
-	  Location		  [9, 55, 1593, 1151]
-	  Open			  on
+	  Location		  [9, 103, 1593, 1130]
+	  Open			  off
 	  NumInputPorts		  "1"
 	  List {
 	    ListType		    AxesTitles
@@ -3569,7 +3574,6 @@ Model {
 	    MarkerStyles	    "none|none|none|none|none|none"
 	  }
 	  ShowLegends		  on
-	  LegendLocations	  "0.84396     0.86177     0.13699     0.10432"
 	  TimeRange		  "90000"
 	  YMin			  "0"
 	  YMax			  "12000"
@@ -4523,6 +4527,32 @@ Model {
       Position		      [20, 1410, 50, 1440]
       ZOrder		      718
       Value		      "0"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant2"
+      SID		      "3016"
+      Position		      [1565, 920, 1595, 950]
+      ZOrder		      744
+      Port {
+	PortNumber		1
+	Name			"Probe 1"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant3"
+      SID		      "3017"
+      Position		      [1565, 960, 1595, 990]
+      ZOrder		      745
+      Port {
+	PortNumber		1
+	Name			"Other Probe"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
     }
     Block {
       BlockType		      Constant
@@ -6694,7 +6724,7 @@ Model {
       SID		      "2898"
       Position		      [420, 1005, 510, 1025]
       ZOrder		      729
-      FileName		      "Baseline-3s.mat"
+      FileName		      "Baseline-1h.mat"
       SampleTime	      "0"
     }
     Block {
@@ -7042,7 +7072,7 @@ Model {
       SID		      "2869"
       Position		      [2310, 758, 2370, 782]
       ZOrder		      611
-      BackgroundColor	      "orange"
+      BackgroundColor	      "yellow"
       ShowName		      off
       GotoTag		      "PVTotal"
     }
@@ -7482,7 +7512,7 @@ Model {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		34
+	$ObjectID		33
 	$ClassName		"Simulink.Mask"
 	Type			"Short Cable"
 	Description		"This block implements a short cable using three phase mutual inductance.\nSelf impedances and mutual im"
@@ -7493,7 +7523,7 @@ Model {
 	  Type			  "Simulink.MaskParameter"
 	  Dimension		  5
 	  Object {
-	    $ObjectID		    35
+	    $ObjectID		    34
 	    Type		    "edit"
 	    Name		    "R1"
 	    Prompt		    "Positive Sequence R (ohms/1000ft)"
@@ -7501,7 +7531,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    36
+	    $ObjectID		    35
 	    Type		    "edit"
 	    Name		    "X1"
 	    Prompt		    "Positive Sequence XL (ohms/1000ft)"
@@ -7509,7 +7539,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    37
+	    $ObjectID		    36
 	    Type		    "edit"
 	    Name		    "R0"
 	    Prompt		    "Zero Sequence R (ohms/1000ft)"
@@ -7517,7 +7547,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    38
+	    $ObjectID		    37
 	    Type		    "edit"
 	    Name		    "X0"
 	    Prompt		    "Zero Sequence XL (ohms/1000ft)"
@@ -7525,7 +7555,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    39
+	    $ObjectID		    38
 	    Type		    "edit"
 	    Name		    "L"
 	    Prompt		    "Line Length (ft)"
@@ -7683,7 +7713,7 @@ Model {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		40
+	$ObjectID		39
 	$ClassName		"Simulink.Mask"
 	Type			"Short Cable"
 	Description		"This block implements a short cable using three phase mutual inductance.\nSelf impedances and mutual im"
@@ -7694,7 +7724,7 @@ Model {
 	  Type			  "Simulink.MaskParameter"
 	  Dimension		  5
 	  Object {
-	    $ObjectID		    41
+	    $ObjectID		    40
 	    Type		    "edit"
 	    Name		    "R1"
 	    Prompt		    "Positive Sequence R (ohms/1000ft)"
@@ -7702,7 +7732,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    42
+	    $ObjectID		    41
 	    Type		    "edit"
 	    Name		    "X1"
 	    Prompt		    "Positive Sequence XL (ohms/1000ft)"
@@ -7710,7 +7740,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    43
+	    $ObjectID		    42
 	    Type		    "edit"
 	    Name		    "R0"
 	    Prompt		    "Zero Sequence R (ohms/1000ft)"
@@ -7718,7 +7748,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    44
+	    $ObjectID		    43
 	    Type		    "edit"
 	    Name		    "X0"
 	    Prompt		    "Zero Sequence XL (ohms/1000ft)"
@@ -7726,7 +7756,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    45
+	    $ObjectID		    44
 	    Type		    "edit"
 	    Name		    "L"
 	    Prompt		    "Line Length (ft)"
@@ -7884,7 +7914,7 @@ Model {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		46
+	$ObjectID		45
 	$ClassName		"Simulink.Mask"
 	Type			"Short Cable"
 	Description		"This block implements a short cable using three phase mutual inductance.\nSelf impedances and mutual im"
@@ -7895,7 +7925,7 @@ Model {
 	  Type			  "Simulink.MaskParameter"
 	  Dimension		  5
 	  Object {
-	    $ObjectID		    47
+	    $ObjectID		    46
 	    Type		    "edit"
 	    Name		    "R1"
 	    Prompt		    "Positive Sequence R (ohms/1000ft)"
@@ -7903,7 +7933,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    48
+	    $ObjectID		    47
 	    Type		    "edit"
 	    Name		    "X1"
 	    Prompt		    "Positive Sequence XL (ohms/1000ft)"
@@ -7911,7 +7941,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    49
+	    $ObjectID		    48
 	    Type		    "edit"
 	    Name		    "R0"
 	    Prompt		    "Zero Sequence R (ohms/1000ft)"
@@ -7919,7 +7949,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    50
+	    $ObjectID		    49
 	    Type		    "edit"
 	    Name		    "X0"
 	    Prompt		    "Zero Sequence XL (ohms/1000ft)"
@@ -7927,7 +7957,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    51
+	    $ObjectID		    50
 	    Type		    "edit"
 	    Name		    "L"
 	    Prompt		    "Line Length (ft)"
@@ -8159,7 +8189,7 @@ Model {
       Name		      "Mux4"
       SID		      "2875"
       Ports		      [2, 1]
-      Position		      [2690, 314, 2695, 361]
+      Position		      [2690, 316, 2695, 354]
       ZOrder		      617
       ShowName		      off
       Inputs		      "2"
@@ -8327,7 +8357,7 @@ Model {
       SID		      "2862"
       Position		      [2795, 510, 2865, 540]
       ZOrder		      610
-      BackgroundColor	      "orange"
+      BackgroundColor	      "yellow"
       GotoTag		      "PVTotal"
     }
     Block {
@@ -8746,15 +8776,14 @@ Model {
     }
     Block {
       BlockType		      Scope
-      Name		      "Scope:\nAggregated Building Power"
-      SID		      "3009"
+      Name		      "Scope"
+      SID		      "3015"
       Ports		      [1]
-      Position		      [1830, 1096, 1875, 1184]
-      ZOrder		      737
-      BackgroundColor	      "gray"
+      Position		      [1860, 939, 1890, 971]
+      ZOrder		      743
       Floating		      off
-      Location		      [5, 43, 1605, 1194]
-      Open		      on
+      Location		      [1, 48, 1921, 1039]
+      Open		      off
       NumInputPorts	      "1"
       List {
 	ListType		AxesTitles
@@ -8771,7 +8800,38 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
-      LegendLocations	      "0.88271     0.92326    0.098125    0.044889"
+      LegendLocations	      "0.92439     0.92617    0.059896    0.036327"
+      SaveName		      "ScopeData10"
+      DataFormat	      "StructureWithTime"
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Scope:\nAggregated Building Power"
+      SID		      "3009"
+      Ports		      [1]
+      Position		      [1830, 1096, 1875, 1184]
+      ZOrder		      737
+      BackgroundColor	      "gray"
+      Floating		      off
+      Location		      [6, 158, 1606, 1185]
+      Open		      off
+      NumInputPorts	      "1"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      List {
+	ListType		ScopeGraphics
+	FigureColor		"[0.5 0.5 0.5]"
+	AxesColor		"[0 0 0]"
+	AxesTickColor		"[1 1 1]"
+	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	LineStyles		"-|-|-|-|-|-"
+	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
+	MarkerStyles		"none|none|none|none|none|none"
+      }
+      ShowLegends	      on
       TimeRange		      "90000"
       YMin		      "0"
       YMax		      "14000"
@@ -8827,8 +8887,8 @@ Model {
       ZOrder		      710
       BackgroundColor	      "gray"
       Floating		      off
-      Location		      [1, 48, 1601, 1159]
-      Open		      on
+      Location		      [1, 48, 1921, 1039]
+      Open		      off
       NumInputPorts	      "7"
       List {
 	ListType		AxesTitles
@@ -8851,12 +8911,12 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
-      LegendLocations	      "0.89083     0.93459        0.09    0.032403\n0.86146     0.79778     0.11938    0.032403\n"
-      "0.89083     0.66097        0.09    0.032403\n0.87896     0.52415     0.10188    0.032403\n0.87896     0.38734   "
-      "  0.10188    0.032403\n0.84021     0.25143     0.14063    0.032403\n0.90208     0.12871     0.07875    0.018302"
-      TimeRange		      "90000"
-      YMin		      "0~0~0~0~0~0~0.02"
-      YMax		      "40000~2~8000~15000~15000~20~0.06"
+      LegendLocations	      "0.89865     0.92812       0.075    0.036327\n0.87172      0.7918    0.099479    0.036327\n"
+      "0.89865     0.65548       0.075    0.036327\n0.88776     0.51916    0.084896    0.036327\n0.88776     0.38284   "
+      " 0.084896    0.036327\n0.85224      0.2475     0.11719    0.036327\n0.90896     0.12671    0.065625    0.020518"
+      TimeRange		      "86400           "
+      YMin		      "5000~0.2~-1~3000~3000~6~0.048"
+      YMax		      "20000~1.1~1~10000~10000~19~0.055"
       SaveName		      "ScopeData8"
       DataFormat	      "StructureWithTime"
       LimitDataPoints	      off
@@ -8872,7 +8932,7 @@ Model {
       ForegroundColor	      "[0.901961, 0.000000, 0.000000]"
       BackgroundColor	      "[0.501961, 0.501961, 0.501961]"
       Floating		      off
-      Location		      [5, 43, 1605, 1194]
+      Location		      [6, 158, 1606, 1185]
       Open		      off
       NumInputPorts	      "2"
       ZoomMode		      "yonly"
@@ -8908,7 +8968,7 @@ Model {
       ZOrder		      261
       BackgroundColor	      "gray"
       Floating		      off
-      Location		      [1, 48, 1601, 1159]
+      Location		      [24, 68, 602, 747]
       Open		      off
       NumInputPorts	      "3"
       ZoomMode		      "xonly"
@@ -8928,7 +8988,7 @@ Model {
 	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
 	MarkerStyles		"none|none|none|none|none|none"
       }
-      ShowLegends	      off
+      ShowLegends	      on
       TimeRange		      "90000"
       YMin		      "-5000~-5000~-5000"
       YMax		      "40000~40000~40000"
@@ -8947,7 +9007,7 @@ Model {
       BackgroundColor	      "gray"
       Floating		      off
       Location		      [766, 275, 1595, 993]
-      Open		      on
+      Open		      off
       NumInputPorts	      "1"
       List {
 	ListType		AxesTitles
@@ -8982,8 +9042,8 @@ Model {
       ZOrder		      502
       BackgroundColor	      "gray"
       Floating		      off
-      Location		      [5, 43, 1605, 1194]
-      Open		      on
+      Location		      [6, 158, 1606, 1185]
+      Open		      off
       NumInputPorts	      "4"
       ZoomMode		      "xonly"
       List {
@@ -8995,7 +9055,7 @@ Model {
       }
       List {
 	ListType		ScopeGraphics
-	FigureColor		"[0.5 0.5 0.5]"
+	FigureColor		"[0.501960784313725 0.501960784313725 0.501960784313725]"
 	AxesColor		"[0 0 0]"
 	AxesTickColor		"[1 1 1]"
 	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
@@ -9406,7 +9466,7 @@ Model {
       LibraryVersion	      "1.69"
       SourceBlock	      "CampusModeling/Weather/Weather Data"
       SourceType	      "Weather Data From File"
-      fname		      "Weather2.mat"
+      fname		      "Weather.mat"
       initbus		      on
     }
     Block {
@@ -9839,7 +9899,7 @@ Model {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		52
+	$ObjectID		51
 	$ClassName		"Simulink.Mask"
 	Type			"Short Cable"
 	Description		"This block implements a short cable using three phase mutual inductance.\nSelf impedances and mutual im"
@@ -9850,7 +9910,7 @@ Model {
 	  Type			  "Simulink.MaskParameter"
 	  Dimension		  5
 	  Object {
-	    $ObjectID		    53
+	    $ObjectID		    52
 	    Type		    "edit"
 	    Name		    "R1"
 	    Prompt		    "Positive Sequence R (ohms/1000ft)"
@@ -9858,7 +9918,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    54
+	    $ObjectID		    53
 	    Type		    "edit"
 	    Name		    "X1"
 	    Prompt		    "Positive Sequence XL (ohms/1000ft)"
@@ -9866,7 +9926,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    55
+	    $ObjectID		    54
 	    Type		    "edit"
 	    Name		    "R0"
 	    Prompt		    "Zero Sequence R (ohms/1000ft)"
@@ -9874,7 +9934,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    56
+	    $ObjectID		    55
 	    Type		    "edit"
 	    Name		    "X0"
 	    Prompt		    "Zero Sequence XL (ohms/1000ft)"
@@ -9882,7 +9942,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    57
+	    $ObjectID		    56
 	    Type		    "edit"
 	    Name		    "L"
 	    Prompt		    "Line Length (ft)"
@@ -10040,7 +10100,7 @@ Model {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		58
+	$ObjectID		57
 	$ClassName		"Simulink.Mask"
 	Type			"Short Cable"
 	Description		"This block implements a short cable using three phase mutual inductance.\nSelf impedances and mutual im"
@@ -10051,7 +10111,7 @@ Model {
 	  Type			  "Simulink.MaskParameter"
 	  Dimension		  5
 	  Object {
-	    $ObjectID		    59
+	    $ObjectID		    58
 	    Type		    "edit"
 	    Name		    "R1"
 	    Prompt		    "Positive Sequence R (ohms/1000ft)"
@@ -10059,7 +10119,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    60
+	    $ObjectID		    59
 	    Type		    "edit"
 	    Name		    "X1"
 	    Prompt		    "Positive Sequence XL (ohms/1000ft)"
@@ -10067,7 +10127,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    61
+	    $ObjectID		    60
 	    Type		    "edit"
 	    Name		    "R0"
 	    Prompt		    "Zero Sequence R (ohms/1000ft)"
@@ -10075,7 +10135,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    62
+	    $ObjectID		    61
 	    Type		    "edit"
 	    Name		    "X0"
 	    Prompt		    "Zero Sequence XL (ohms/1000ft)"
@@ -10083,7 +10143,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    63
+	    $ObjectID		    62
 	    Type		    "edit"
 	    Name		    "L"
 	    Prompt		    "Line Length (ft)"
@@ -10241,7 +10301,7 @@ Model {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		64
+	$ObjectID		63
 	$ClassName		"Simulink.Mask"
 	Type			"Short Cable"
 	Description		"This block implements a short cable using three phase mutual inductance.\nSelf impedances and mutual im"
@@ -10252,7 +10312,7 @@ Model {
 	  Type			  "Simulink.MaskParameter"
 	  Dimension		  5
 	  Object {
-	    $ObjectID		    65
+	    $ObjectID		    64
 	    Type		    "edit"
 	    Name		    "R1"
 	    Prompt		    "Positive Sequence R (ohms/1000ft)"
@@ -10260,7 +10320,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    66
+	    $ObjectID		    65
 	    Type		    "edit"
 	    Name		    "X1"
 	    Prompt		    "Positive Sequence XL (ohms/1000ft)"
@@ -10268,7 +10328,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    67
+	    $ObjectID		    66
 	    Type		    "edit"
 	    Name		    "R0"
 	    Prompt		    "Zero Sequence R (ohms/1000ft)"
@@ -10276,7 +10336,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    68
+	    $ObjectID		    67
 	    Type		    "edit"
 	    Name		    "X0"
 	    Prompt		    "Zero Sequence XL (ohms/1000ft)"
@@ -10284,7 +10344,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    69
+	    $ObjectID		    68
 	    Type		    "edit"
 	    Name		    "L"
 	    Prompt		    "Line Length (ft)"
@@ -10442,7 +10502,7 @@ Model {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		70
+	$ObjectID		69
 	$ClassName		"Simulink.Mask"
 	Type			"Short Cable"
 	Description		"This block implements a short cable using three phase mutual inductance.\nSelf impedances and mutual im"
@@ -10453,7 +10513,7 @@ Model {
 	  Type			  "Simulink.MaskParameter"
 	  Dimension		  5
 	  Object {
-	    $ObjectID		    71
+	    $ObjectID		    70
 	    Type		    "edit"
 	    Name		    "R1"
 	    Prompt		    "Positive Sequence R (ohms/1000ft)"
@@ -10461,7 +10521,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    72
+	    $ObjectID		    71
 	    Type		    "edit"
 	    Name		    "X1"
 	    Prompt		    "Positive Sequence XL (ohms/1000ft)"
@@ -10469,7 +10529,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    73
+	    $ObjectID		    72
 	    Type		    "edit"
 	    Name		    "R0"
 	    Prompt		    "Zero Sequence R (ohms/1000ft)"
@@ -10477,7 +10537,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    74
+	    $ObjectID		    73
 	    Type		    "edit"
 	    Name		    "X0"
 	    Prompt		    "Zero Sequence XL (ohms/1000ft)"
@@ -10485,7 +10545,7 @@ Model {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    75
+	    $ObjectID		    74
 	    Type		    "edit"
 	    Name		    "L"
 	    Prompt		    "Line Length (ft)"
@@ -12694,6 +12754,30 @@ Model {
       DstBlock		      "To File"
       DstPort		      1
     }
+    Line {
+      SrcBlock		      "Bus\nCreator"
+      SrcPort		      1
+      DstBlock		      "Scope"
+      DstPort		      1
+    }
+    Line {
+      Name		      "Probe 1"
+      Labels		      [3, 1]
+      SrcBlock		      "Constant2"
+      SrcPort		      1
+      Points		      [95, 0; 0, 10]
+      DstBlock		      "Bus\nCreator"
+      DstPort		      1
+    }
+    Line {
+      Name		      "Other Probe"
+      Labels		      [3, 1]
+      SrcBlock		      "Constant3"
+      SrcPort		      1
+      Points		      [14, 0; 0, -10]
+      DstBlock		      "Bus\nCreator"
+      DstPort		      2
+    }
     Annotation {
       SID		      "2426"
       Name		      "Note: The PQ input on each source and load block is a vector of the format [P Q], where the \nfirst"
@@ -12797,8 +12881,6 @@ Stateflow {
     created		    "17-Dec-2012 14:53:20"
     isLibrary		    0
     firstTarget		    78
-    debug {
-    }
     sfVersion		    76014001.0015
   }
   chart {
@@ -12811,10 +12893,7 @@ Stateflow {
     firstTransition	    11
     firstJunction	    10
     viewObj		    2
-    visible		    1
     machine		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    10
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -13021,10 +13100,7 @@ Stateflow {
     firstTransition	    25
     firstJunction	    24
     viewObj		    13
-    visible		    1
     machine		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    16
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -13299,10 +13375,7 @@ Stateflow {
     firstTransition	    37
     firstJunction	    36
     viewObj		    27
-    visible		    1
     machine		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    12
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -13550,10 +13623,7 @@ Stateflow {
     firstTransition	    45
     firstJunction	    44
     viewObj		    39
-    visible		    1
     machine		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    11
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -13696,10 +13766,7 @@ Stateflow {
     firstTransition	    55
     firstJunction	    54
     viewObj		    47
-    visible		    1
     machine		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    9
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -13884,10 +13951,7 @@ Stateflow {
     firstTransition	    65
     firstJunction	    64
     viewObj		    57
-    visible		    1
     machine		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    9
     decomposition	    CLUSTER_CHART
     type		    EML_CHART

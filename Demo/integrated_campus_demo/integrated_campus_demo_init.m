@@ -18,7 +18,7 @@
 
 % Change to 'true' to download and use DataBus data
 % NOTE: Also remember to switch to 'Weather2.mat' in the Simulink model!
-useDataBus = true;
+useDataBus = false;
 
 % Set EnergyPlus path
 % NOTE: This needs to be Brent's customized 8.0.1 build or greater to work!

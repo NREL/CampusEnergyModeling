@@ -20,7 +20,7 @@ Library {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [828.0, 117.0, 951.0, 734.0]
+      Location		      [433.0, 219.0, 951.0, 734.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -43,7 +43,7 @@ Library {
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
 	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"126"
+	LoadSaveID		"13"
 	Extents			[901.0, 568.0]
 	ZoomFactor		[1.0]
 	Offset			[0.0, 0.0]
@@ -56,9 +56,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Jul 25 13:18:58 2013"
-  RTWModifiedTimeStamp	  296659136
-  ModelVersionFormat	  "1.%<AutoIncrement:69>"
+  LastModifiedDate	  "Mon Aug 05 17:27:27 2013"
+  RTWModifiedTimeStamp	  297624445
+  ModelVersionFormat	  "1.%<AutoIncrement:71>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1146,10 +1146,18 @@ Library {
       SampleTime	      "-1"
       AllowDiffInputSizes     off
     }
+    Block {
+      BlockType		      TransferFcn
+      Numerator		      "[1]"
+      Denominator	      "[1 2 1]"
+      AbsoluteTolerance	      "auto"
+      ContinuousStateAttributes	"''"
+      Realization	      "auto"
+    }
   }
   System {
     Name		    "CampusModeling"
-    Location		    [154, 264, 1105, 998]
+    Location		    [433, 219, 1384, 953]
     Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1163,7 +1171,7 @@ Library {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "232"
+    SIDHighWatermark	    "233"
     Block {
       BlockType		      SubSystem
       Name		      "Buildings"
@@ -3891,8 +3899,8 @@ Library {
       }
       System {
 	Name			"PV"
-	Location		[828, 117, 1779, 851]
-	Open			off
+	Location		[433, 219, 1384, 953]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -4095,7 +4103,7 @@ Library {
 	      System {
 		Name			"Lookup Table"
 		Location		[828, 117, 1779, 851]
-		Open			on
+		Open			off
 		ModelBrowserVisibility	off
 		ModelBrowserWidth	200
 		ScreenColor		"white"
@@ -4461,6 +4469,95 @@ Library {
 	  }
 	}
 	Block {
+	  BlockType		  TransferFcn
+	  Name			  "PV Smoothing"
+	  SID			  "233"
+	  Position		  [490, 46, 585, 154]
+	  ZOrder		  70
+	  Denominator		  "[tau 1]"
+	  Object {
+	    $PropName		    "MaskObject"
+	    $ObjectID		    72
+	    $ClassName		    "Simulink.Mask"
+	    Type		    "Photovoltaic Array Smoothing"
+	    Description		    "Implements a low pass filter to model the smoothing effect of a utility-scale PV array."
+	    Help		    "This block implements a low pass filter to model the smoothing effect of a utility-scale PV array per "
+	    "the empirical model presented in Marcos et al. (2011) (see References). The smoothing is done by a unity-gain low"
+	    " pass filter with transfer function\n\nOutput / Input = 1 / (tau*s + 1)\n\nin which time constant tau may either "
+	    "be defined directly or estimated from the array area. The empirical formula of Marcos et al. estimates tau as\n\n"
+	    "tau = sqrt(A) / (2*pi*0.020)\n\nin which A is the physical array area in hectares (1 Ha = 10000 m²). Array area A"
+	    " may be specified directly or calculated from the array size, panel power density, and ground coverage ratio (def"
+	    "ined as the fraction of ground area occupied by the actual PV panels).\n\nNotes:\n1. This block includes a contin"
+	    "uous time low pass filter. Use caution when attempting to use this block within models with fixed time larger tha"
+	    "n the smoothing time constant; the Simulink solver may generate an error.\n\nReferences:\nJ. Marcos et al., \"Fro"
+	    "m irradiance to output power fluctuations: the PV plant as a low pass filter\", Progress In Photovoltaics: Resear"
+	    "ch And Applications, 2011, 19, 505-510."
+	    Initialization	    "% Call initialization to calculate block variables\ntau = PVSmoothing_cb(gcb, 'init', ...\n  "
+	    "  sel, tc, area, size, density, coverage);"
+	    Display		    "plot([1 2 3],[1 1 0])"
+	    Array {
+	      Type		      "Simulink.MaskParameter"
+	      Dimension		      6
+	      Object {
+		$ObjectID		73
+		Type			"popup"
+		Array {
+		  Type			  "Cell"
+		  Dimension		  3
+		  Cell			  "Time Constant"
+		  Cell			  "Array Area"
+		  Cell			  "Array Size and Power Density"
+		  PropName		  "TypeOptions"
+		}
+		Name			"sel"
+		Prompt			"Specify..."
+		Value			"Array Size and Power Density"
+		Callback		"PVSmoothing_cb(gcb, 'dynamic_mask')"
+	      }
+	      Object {
+		$ObjectID		74
+		Type			"edit"
+		Name			"tc"
+		Prompt			"Time constant (s)"
+		Value			"15"
+		Enabled			"off"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		75
+		Type			"edit"
+		Name			"area"
+		Prompt			"Array area (m²)"
+		Value			"33000"
+		Enabled			"off"
+		Visible			"off"
+	      }
+	      Object {
+		$ObjectID		76
+		Type			"edit"
+		Name			"size"
+		Prompt			"Array size (W)"
+		Value			"1e6"
+	      }
+	      Object {
+		$ObjectID		77
+		Type			"edit"
+		Name			"density"
+		Prompt			"Panel nominal power density (W/m²)"
+		Value			"150"
+	      }
+	      Object {
+		$ObjectID		78
+		Type			"edit"
+		Name			"coverage"
+		Prompt			"Panel ground coverage ratio (fraction)"
+		Value			"0.2"
+	      }
+	      PropName		      "Parameters"
+	    }
+	  }
+	}
+	Block {
 	  BlockType		  M-S-Function
 	  Name			  "PVWatts Cosimulation"
 	  SID			  "168"
@@ -4474,7 +4571,7 @@ Library {
 	  "t_noct, gamma, i_ref, poa_cutin, init_tcell, init_poa, output_dc, output_celltemp, output_poa"
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    72
+	    $ObjectID		    79
 	    $ClassName		    "Simulink.Mask"
 	    Type		    "PVWatts Cosimulation"
 	    Description		    "This block implements cosimulation of a photovoltaic (PV) array using the PVWatts module of the"
@@ -4516,7 +4613,7 @@ Library {
 	      Type		      "Simulink.MaskParameter"
 	      Dimension		      23
 	      Object {
-		$ObjectID		73
+		$ObjectID		80
 		Type			"edit"
 		Name			"lat"
 		Prompt			"Latitude"
@@ -4526,7 +4623,7 @@ Library {
 		TabName			"Time and Location"
 	      }
 	      Object {
-		$ObjectID		74
+		$ObjectID		81
 		Type			"edit"
 		Name			"lon"
 		Prompt			"Longitude"
@@ -4535,7 +4632,7 @@ Library {
 		TabName			"Time and Location"
 	      }
 	      Object {
-		$ObjectID		75
+		$ObjectID		82
 		Type			"edit"
 		Name			"start_time"
 		Prompt			"Initial date/time (dd-mmm-yyyy HH:MM:SS)"
@@ -4545,7 +4642,7 @@ Library {
 		TabName			"Time and Location"
 	      }
 	      Object {
-		$ObjectID		76
+		$ObjectID		83
 		Type			"edit"
 		Name			"tz"
 		Prompt			"Time zone (offset from UTC)"
@@ -4554,7 +4651,7 @@ Library {
 		TabName			"Time and Location"
 	      }
 	      Object {
-		$ObjectID		77
+		$ObjectID		84
 		Type			"edit"
 		Name			"time_step"
 		Prompt			"Time step (s)"
@@ -4563,7 +4660,7 @@ Library {
 		TabName			"Time and Location"
 	      }
 	      Object {
-		$ObjectID		78
+		$ObjectID		85
 		Type			"edit"
 		Name			"system_size"
 		Prompt			"Array nameplate capacity (W)"
@@ -4572,7 +4669,7 @@ Library {
 		TabName			"Array"
 	      }
 	      Object {
-		$ObjectID		79
+		$ObjectID		86
 		Type			"edit"
 		Name			"derate"
 		Prompt			"System derate factor (0-1)"
@@ -4581,7 +4678,7 @@ Library {
 		TabName			"Array"
 	      }
 	      Object {
-		$ObjectID		80
+		$ObjectID		87
 		Type			"edit"
 		Name			"azimuth"
 		Prompt			"Azimuth angle (N = 0°, E = 90°, S = 180°, W = 270°)"
@@ -4590,7 +4687,7 @@ Library {
 		TabName			"Array"
 	      }
 	      Object {
-		$ObjectID		81
+		$ObjectID		88
 		Type			"edit"
 		Name			"tilt"
 		Prompt			"Tilt angle"
@@ -4600,7 +4697,7 @@ Library {
 		TabName			"Array"
 	      }
 	      Object {
-		$ObjectID		82
+		$ObjectID		89
 		Type			"checkbox"
 		Name			"use_lat_tilt"
 		Prompt			"Use latitude tilt"
@@ -4610,7 +4707,7 @@ Library {
 		TabName			"Array"
 	      }
 	      Object {
-		$ObjectID		83
+		$ObjectID		90
 		Type			"popup"
 		Array {
 		  Type			  "Cell"
@@ -4629,7 +4726,7 @@ Library {
 		TabName			"Array"
 	      }
 	      Object {
-		$ObjectID		84
+		$ObjectID		91
 		Type			"edit"
 		Name			"rotlim"
 		Prompt			"Tracker rotation limit (+/-)"
@@ -4639,7 +4736,7 @@ Library {
 		TabName			"Array"
 	      }
 	      Object {
-		$ObjectID		85
+		$ObjectID		92
 		Type			"checkbox"
 		Name			"use_cell_data"
 		Prompt			"Customize photovoltaic cell data"
@@ -4649,7 +4746,7 @@ Library {
 		TabName			"Cell"
 	      }
 	      Object {
-		$ObjectID		86
+		$ObjectID		93
 		Type			"edit"
 		Name			"t_ref"
 		Prompt			"Reference cell temperature (°C)"
@@ -4659,7 +4756,7 @@ Library {
 		TabName			"Cell"
 	      }
 	      Object {
-		$ObjectID		87
+		$ObjectID		94
 		Type			"edit"
 		Name			"t_noct"
 		Prompt			"Nominal operating cell temperature (°C)"
@@ -4669,7 +4766,7 @@ Library {
 		TabName			"Cell"
 	      }
 	      Object {
-		$ObjectID		88
+		$ObjectID		95
 		Type			"edit"
 		Name			"gamma"
 		Prompt			"Maximum power temperature coefficient (%/°C)"
@@ -4679,7 +4776,7 @@ Library {
 		TabName			"Cell"
 	      }
 	      Object {
-		$ObjectID		89
+		$ObjectID		96
 		Type			"edit"
 		Name			"i_ref"
 		Prompt			"Irradiance condition for cell rating (W/m²)"
@@ -4689,7 +4786,7 @@ Library {
 		TabName			"Cell"
 	      }
 	      Object {
-		$ObjectID		90
+		$ObjectID		97
 		Type			"edit"
 		Name			"poa_cutin"
 		Prompt			"Minimum irradiance for operation (W/m²)"
@@ -4699,7 +4796,7 @@ Library {
 		TabName			"Cell"
 	      }
 	      Object {
-		$ObjectID		91
+		$ObjectID		98
 		Type			"edit"
 		Name			"init_tcell"
 		Prompt			"Initial cell temperature (°C)"
@@ -4708,7 +4805,7 @@ Library {
 		TabName			"Simulation"
 	      }
 	      Object {
-		$ObjectID		92
+		$ObjectID		99
 		Type			"edit"
 		Name			"init_poa"
 		Prompt			"Initial plane of array irradiance (W/m²)"
@@ -4717,7 +4814,7 @@ Library {
 		TabName			"Simulation"
 	      }
 	      Object {
-		$ObjectID		93
+		$ObjectID		100
 		Type			"checkbox"
 		Name			"output_dc"
 		Prompt			"Output DC power (W)"
@@ -4726,7 +4823,7 @@ Library {
 		TabName			"Simulation"
 	      }
 	      Object {
-		$ObjectID		94
+		$ObjectID		101
 		Type			"checkbox"
 		Name			"output_celltemp"
 		Prompt			"Output cell temperature (°C)"
@@ -4735,7 +4832,7 @@ Library {
 		TabName			"Simulation"
 	      }
 	      Object {
-		$ObjectID		95
+		$ObjectID		102
 		Type			"checkbox"
 		Name			"output_poa"
 		Prompt			"Output plane of array irradiance (W/m²)"
@@ -4768,7 +4865,7 @@ Library {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		96
+	$ObjectID		103
 	$ClassName		"Simulink.Mask"
 	Display			"disp('Weather')"
       }
@@ -4803,7 +4900,7 @@ Library {
 	  MaskHideContents	  off
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    97
+	    $ObjectID		    104
 	    $ClassName		    "Simulink.Mask"
 	    Type		    "Weather Data From File"
 	    Description		    "Reads weather data from the specified binary file and outputs it as a Simulink bus signal.\n\nT"
@@ -4828,7 +4925,7 @@ Library {
 	      Type		      "Simulink.MaskParameter"
 	      Dimension		      2
 	      Object {
-		$ObjectID		98
+		$ObjectID		105
 		Type			"edit"
 		Name			"fname"
 		Prompt			"Weather file"
@@ -4837,7 +4934,7 @@ Library {
 		Tunable			"off"
 	      }
 	      Object {
-		$ObjectID		99
+		$ObjectID		106
 		Type			"checkbox"
 		Name			"initbus"
 		Prompt			"Create Simulink bus definition automatically?"
@@ -4862,7 +4959,7 @@ Library {
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
 	    ZoomFactor		    "100"
-	    SIDHighWatermark	    "34"
+	    SIDHighWatermark	    "36"
 	    Block {
 	      BlockType		      FromFile
 	      Name		      "From File"

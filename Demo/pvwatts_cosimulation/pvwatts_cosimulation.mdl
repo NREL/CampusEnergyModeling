@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.43"
+    ComputedModelVersion    "1.67"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -66,9 +66,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Jul 23 14:14:33 2013"
-  RTWModifiedTimeStamp	  296489657
-  ModelVersionFormat	  "1.%<AutoIncrement:43>"
+  LastModifiedDate	  "Mon Aug 05 17:27:32 2013"
+  RTWModifiedTimeStamp	  297624308
+  ModelVersionFormat	  "1.%<AutoIncrement:67>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -170,10 +170,10 @@ Model {
 	Simulink.SolverCC {
 	  $ObjectID		  8
 	  Version		  "1.13.0"
-	  StartTime		  "0.0"
-	  StopTime		  "30*24*3600"
+	  StartTime		  "0"
+	  StopTime		  "2592000"
 	  AbsTol		  "auto"
-	  FixedStep		  "60"
+	  FixedStep		  "15"
 	  InitialStep		  "auto"
 	  MaxNumMinSteps	  "-1"
 	  MaxOrder		  5
@@ -189,8 +189,8 @@ Model {
 	  SolverMode		  "Auto"
 	  EnableConcurrentExecution off
 	  ConcurrentTasks	  off
-	  Solver		  "FixedStepDiscrete"
-	  SolverName		  "FixedStepDiscrete"
+	  Solver		  "ode3"
+	  SolverName		  "ode3"
 	  SolverJacobianMethodControl "auto"
 	  ShapePreserveControl	  "DisableAll"
 	  ZeroCrossControl	  "UseLocalSettings"
@@ -695,7 +695,7 @@ Model {
       }
       Name		      "Configuration"
       CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition     [ 382, 45, 1538, 903 ] 
+      ConfigPrmDlgPosition     [ 445, 10, 1476, 920 ] 
     }
     PropName		    "ConfigurationSets"
   }
@@ -766,24 +766,28 @@ Model {
   }
   BlockParameterDefaults {
     Block {
+      BlockType		      BusCreator
+      Inputs		      "4"
+      DisplayOption	      "none"
+      OutDataTypeStr	      "Inherit: auto"
+      NonVirtualBus	      off
+    }
+    Block {
       BlockType		      BusSelector
       OutputSignals	      "signal1,signal2,signal3"
       OutputAsBus	      off
     }
     Block {
-      BlockType		      Product
-      Inputs		      "2"
-      Multiplication	      "Element-wise(.*)"
-      CollapseMode	      "All dimensions"
-      CollapseDim	      "1"
-      InputSameDT	      on
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: Same as first input"
-      LockScale		      off
-      RndMeth		      "Zero"
-      SaturateOnIntegerOverflow	on
-      SampleTime	      "-1"
+      BlockType		      From
+      GotoTag		      "A"
+      IconDisplay	      "Tag"
+      TagVisibility	      "local"
+    }
+    Block {
+      BlockType		      Goto
+      GotoTag		      "A"
+      IconDisplay	      "Tag"
+      TagVisibility	      "local"
     }
     Block {
       BlockType		      RateTransition
@@ -812,6 +816,16 @@ Model {
       SampleInput	      off
       SampleTime	      "-1"
     }
+    Block {
+      BlockType		      ToWorkspace
+      VariableName	      "simulink_output"
+      MaxDataPoints	      "1000"
+      Decimation	      "1"
+      SampleTime	      "0"
+      SaveFormat	      "Array"
+      FixptAsFi		      off
+      NumInputs		      "1"
+    }
   }
   System {
     Name		    "pvwatts_cosimulation"
@@ -829,13 +843,26 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "70"
+    SIDHighWatermark	    "89"
+    Block {
+      BlockType		      BusCreator
+      Name		      "Bus\nCreator"
+      SID		      "76"
+      Ports		      [2, 1]
+      Position		      [656, 10880, 694, 10885]
+      ZOrder		      84
+      BlockRotation	      270
+      BlockMirror	      on
+      ShowName		      off
+      Inputs		      "2"
+      DisplayOption	      "bar"
+    }
     Block {
       BlockType		      BusSelector
       Name		      "Bus\nSelector"
       SID		      "67"
       Ports		      [1, 4]
-      Position		      [255, 10612, 260, 10728]
+      Position		      [170, 10772, 175, 10888]
       ZOrder		      62
       ShowName		      off
       OutputSignals	      "DNI,DHI,DryBulbTemp,WindSpeed"
@@ -865,56 +892,30 @@ Model {
       }
     }
     Block {
-      BlockType		      Product
-      Name		      "Divide"
-      SID		      "32"
-      Ports		      [2, 1]
-      Position		      [830, 10702, 860, 10733]
-      ZOrder		      38
-      Inputs		      "*/"
-      InputSameDT	      off
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	off
-      Port {
-	PortNumber		1
-	Name			"Efficiency"
-	RTWStorageClass		"Auto"
-	DataLoggingNameMode	"SignalName"
-      }
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Efficiency Curve:\nEfficiency vs. AC Power"
-      SID		      "36"
-      Ports		      [2]
-      Position		      [1015, 10695, 1045, 10730]
-      ZOrder		      40
-      BackgroundColor	      "lightBlue"
-      LibraryVersion	      "1.274"
-      SourceBlock	      "simulink/Sinks/XY Graph"
-      SourceType	      "XY scope."
-      xmin		      "0"
-      xmax		      "1000"
-      ymin		      "0"
-      ymax		      "1"
-      st		      "-1"
+      BlockType		      From
+      Name		      "From"
+      SID		      "71"
+      Position		      [60, 10816, 130, 10844]
+      ZOrder		      66
+      ShowName		      off
+      GotoTag		      "Weather"
+      TagVisibility	      "global"
     }
     Block {
       BlockType		      Reference
       Name		      "Generic Inverter"
       SID		      "69"
       Ports		      [1, 1]
-      Position		      [690, 10574, 785, 10686]
+      Position		      [750, 10769, 820, 10811]
       ZOrder		      64
-      LibraryVersion	      "1.54"
+      LibraryVersion	      "1.71"
       SourceBlock	      "CampusModeling/PV/Generic Inverter"
       SourceType	      "Generic Inverter"
       model_type	      "Quadratic"
       fixed_eff		      "0.95"
-      alpha		      "10"
-      beta		      "0.001"
-      gamma		      "0.0001"
+      alpha		      "1e4"
+      beta		      "1e-5"
+      gamma		      "1e-7"
       lookup_pair	      "Input Power + Output Power"
       lookup_in		      "[0, 10, 25, 50, 75, 100]"
       lookup_out	      "[0, 9, 24, 49, 73, 97]"
@@ -927,15 +928,25 @@ Model {
       }
     }
     Block {
+      BlockType		      Goto
+      Name		      "Goto"
+      SID		      "72"
+      Position		      [310, 10655, 380, 10685]
+      ZOrder		      67
+      ShowName		      off
+      GotoTag		      "Weather"
+      TagVisibility	      "global"
+    }
+    Block {
       BlockType		      Scope
       Name		      "Inverter\nOutput"
       SID		      "31"
       Ports		      [1]
-      Position		      [1015, 10613, 1045, 10647]
+      Position		      [990, 10773, 1020, 10807]
       ZOrder		      37
       BackgroundColor	      "lightBlue"
       Floating		      off
-      Location		      [880, 738, 1204, 968]
+      Location		      [937, 279, 1261, 509]
       Open		      off
       NumInputPorts	      "1"
       ZoomMode		      "xonly"
@@ -953,8 +964,12 @@ Model {
 	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
 	MarkerStyles		"none|none|none|none|none|none"
       }
-      ShowLegends	      off
+      ShowLegends	      on
+      LegendLocations	      "0.58128     0.75217     0.32407    0.088406"
+      YMin		      "0"
+      YMax		      "1e+06"
       DataFormat	      "StructureWithTime"
+      LimitDataPoints	      off
       SampleTime	      "0"
     }
     Block {
@@ -962,11 +977,11 @@ Model {
       Name		      "PV Array\nOutput"
       SID		      "60"
       Ports		      [3]
-      Position		      [675, 10788, 705, 10822]
+      Position		      [990, 10913, 1020, 10947]
       ZOrder		      55
       BackgroundColor	      "lightBlue"
       Floating		      off
-      Location		      [592, 278, 916, 815]
+      Location		      [592, 278, 1071, 931]
       Open		      off
       NumInputPorts	      "3"
       ZoomMode		      "xonly"
@@ -986,21 +1001,48 @@ Model {
 	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
 	MarkerStyles		"none|none|none|none|none|none"
       }
-      ShowLegends	      off
-      YMin		      "-5~-5~-5"
-      YMax		      "5~5~5"
+      ShowLegends	      on
+      LegendLocations	      " 0.5842     0.88795     0.35282     0.05513\n0.64892      0.6026      0.2881    0.031138\n"
+      "0.57585     0.29479     0.36117    0.031138"
+      TimeRange		      "86400"
+      YMin		      "0~0~0"
+      YMax		      "1300000~65~1500"
       SaveName		      "ScopeData1"
       DataFormat	      "StructureWithTime"
+      LimitDataPoints	      off
       SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "PV Smoothing"
+      SID		      "83"
+      Ports		      [1, 1]
+      Position		      [605, 10770, 675, 10810]
+      ZOrder		      78
+      LibraryVersion	      "1.71"
+      SourceBlock	      "CampusModeling/PV/PV Smoothing"
+      SourceType	      "Photovoltaic Array Smoothing"
+      sel		      "Array Size and Power Density"
+      tc		      "15"
+      area		      "33000"
+      size		      "1e6"
+      density		      "120"
+      coverage		      "0.15"
+      Port {
+	PortNumber		1
+	Name			"DC Power"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
     }
     Block {
       BlockType		      Reference
       Name		      "PVWatts Cosimulation"
       SID		      "70"
       Ports		      [4, 3]
-      Position		      [345, 10612, 555, 10728]
+      Position		      [250, 10772, 460, 10888]
       ZOrder		      65
-      LibraryVersion	      "1.54"
+      LibraryVersion	      "1.71"
       UserDataPersistent      on
       UserData		      "DataTag0"
       SourceBlock	      "CampusModeling/PV/PVWatts Cosimulation"
@@ -1010,7 +1052,7 @@ Model {
       start_time	      "1-Jun-2012 00:00:00"
       tz		      "-6"
       time_step		      "600"
-      system_size	      "1000"
+      system_size	      "1e6"
       derate		      "0.95"
       azimuth		      "180"
       tilt		      "39.74"
@@ -1030,7 +1072,7 @@ Model {
       output_poa	      on
       Port {
 	PortNumber		1
-	Name			"DC Power"
+	Name			"Unsmoothed DC Power"
 	RTWStorageClass		"Auto"
 	DataLoggingNameMode	"SignalName"
       }
@@ -1057,41 +1099,96 @@ Model {
       OutPortSampleTime	      "600"
     }
     Block {
+      BlockType		      RateTransition
+      Name		      "Rate Transition1"
+      SID		      "78"
+      Position		      [485, 10774, 515, 10806]
+      ZOrder		      73
+      ShowName		      off
+      OutPortSampleTimeOpt    "Inherit"
+      OutPortSampleTime	      "600"
+      Port {
+	PortNumber		1
+	Name			"Unsmoothed DC Power"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      RateTransition
+      Name		      "Rate Transition2"
+      SID		      "80"
+      Position		      [485, 10814, 515, 10846]
+      ZOrder		      75
+      ShowName		      off
+      OutPortSampleTimeOpt    "Inherit"
+      OutPortSampleTime	      "600"
+      Port {
+	PortNumber		1
+	Name			"Cell Temperature"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      RateTransition
+      Name		      "Rate Transition3"
+      SID		      "81"
+      Position		      [485, 10854, 515, 10886]
+      ZOrder		      76
+      ShowName		      off
+      OutPortSampleTimeOpt    "Inherit"
+      OutPortSampleTime	      "600"
+      Port {
+	PortNumber		1
+	Name			"Plane-of-array Irradiance"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace"
+      SID		      "87"
+      Ports		      [1]
+      Position		      [975, 10655, 1035, 10685]
+      ZOrder		      82
+      ShowName		      off
+      VariableName	      "dc_power"
+      MaxDataPoints	      "inf"
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace1"
+      SID		      "88"
+      Ports		      [1]
+      Position		      [975, 10700, 1035, 10730]
+      ZOrder		      83
+      ShowName		      off
+      VariableName	      "ac_power"
+      MaxDataPoints	      "inf"
+      SampleTime	      "-1"
+    }
+    Block {
       BlockType		      Reference
       Name		      "Weather"
       SID		      "65"
       Ports		      [0, 1]
       Position		      [55, 10625, 130, 10715]
       ZOrder		      60
-      LibraryVersion	      "1.54"
+      LibraryVersion	      "1.71"
       SourceBlock	      "CampusModeling/Weather/Weather Data"
       SourceType	      "Weather Data From File"
       fname		      "Weather.mat"
       initbus		      on
     }
     Line {
-      Name		      "DC Power"
-      Labels		      [1, 1]
+      Name		      "Unsmoothed DC Power"
       SrcBlock		      "PVWatts Cosimulation"
       SrcPort		      1
-      Points		      [78, 0]
-      Branch {
-	Points			[0, 165]
-	DstBlock		"PV Array\nOutput"
-	DstPort			1
-      }
-      Branch {
-	Points			[17, 0]
-	Branch {
-	  Points		  [0, 95]
-	  DstBlock		  "Divide"
-	  DstPort		  2
-	}
-	Branch {
-	  DstBlock		  "Generic Inverter"
-	  DstPort		  1
-	}
-      }
+      DstBlock		      "Rate Transition1"
+      DstPort		      1
     }
     Line {
       SrcBlock		      "Weather"
@@ -1132,60 +1229,116 @@ Model {
       DstPort		      4
     }
     Line {
-      Name		      "Efficiency"
-      Labels		      [1, 1]
-      SrcBlock		      "Divide"
-      SrcPort		      1
-      DstBlock		      "Efficiency Curve:\nEfficiency vs. AC Power"
-      DstPort		      2
-    }
-    Line {
-      Name		      "Cell Temperature"
-      Labels		      [-1, 0]
-      SrcBlock		      "PVWatts Cosimulation"
-      SrcPort		      2
-      Points		      [52, 0; 0, 135]
-      DstBlock		      "PV Array\nOutput"
-      DstPort		      2
-    }
-    Line {
-      Name		      "Plane-of-array Irradiance"
-      Labels		      [-1, 0]
-      SrcBlock		      "PVWatts Cosimulation"
-      SrcPort		      3
-      Points		      [26, 0; 0, 105]
-      DstBlock		      "PV Array\nOutput"
-      DstPort		      3
-    }
-    Line {
       SrcBlock		      "Rate Transition"
       SrcPort		      1
-      DstBlock		      "Bus\nSelector"
+      DstBlock		      "Goto"
       DstPort		      1
     }
     Line {
       Name		      "AC Power"
       SrcBlock		      "Generic Inverter"
       SrcPort		      1
-      Points		      [20, 0]
+      Points		      [18, 0]
       Branch {
-	Points			[0, 80]
-	DstBlock		"Divide"
+	Points			[0, -75]
+	DstBlock		"To Workspace1"
 	DstPort			1
       }
       Branch {
-	Labels			[1, 1]
-	Points			[173, 0]
+	Labels			[-1, 0]
+	DstBlock		"Inverter\nOutput"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "From"
+      SrcPort		      1
+      DstBlock		      "Bus\nSelector"
+      DstPort		      1
+    }
+    Line {
+      Name		      "DC Power"
+      SrcBlock		      "PV Smoothing"
+      SrcPort		      1
+      Points		      [5, 0]
+      Branch {
+	Points			[1, 0]
 	Branch {
-	  Points		  [0, 75]
-	  DstBlock		  "Efficiency Curve:\nEfficiency vs. AC Power"
+	  Points		  [0, -120]
+	  DstBlock		  "To Workspace"
 	  DstPort		  1
 	}
 	Branch {
-	  DstBlock		  "Inverter\nOutput"
+	  Labels		  [-1, 0]
+	  DstBlock		  "Generic Inverter"
 	  DstPort		  1
 	}
       }
+      Branch {
+	Labels			[1, 1]
+	DstBlock		"Bus\nCreator"
+	DstPort			2
+      }
+    }
+    Line {
+      SrcBlock		      "Bus\nCreator"
+      SrcPort		      1
+      Points		      [0, 30]
+      DstBlock		      "PV Array\nOutput"
+      DstPort		      1
+    }
+    Line {
+      Name		      "Unsmoothed DC Power"
+      SrcBlock		      "Rate Transition1"
+      SrcPort		      1
+      Points		      [64, 0]
+      Branch {
+	DstBlock		"PV Smoothing"
+	DstPort			1
+      }
+      Branch {
+	Labels			[2, 1]
+	Points			[0, 53; 81, 0]
+	DstBlock		"Bus\nCreator"
+	DstPort			1
+      }
+    }
+    Line {
+      Name		      "Cell Temperature"
+      SrcBlock		      "PVWatts Cosimulation"
+      SrcPort		      2
+      DstBlock		      "Rate Transition2"
+      DstPort		      1
+    }
+    Line {
+      Name		      "Cell Temperature"
+      Labels		      [2, 1]
+      SrcBlock		      "Rate Transition2"
+      SrcPort		      1
+      Points		      [18, 0; 0, 100]
+      DstBlock		      "PV Array\nOutput"
+      DstPort		      2
+    }
+    Line {
+      Name		      "Plane-of-array Irradiance"
+      SrcBlock		      "PVWatts Cosimulation"
+      SrcPort		      3
+      DstBlock		      "Rate Transition3"
+      DstPort		      1
+    }
+    Line {
+      Name		      "Plane-of-array Irradiance"
+      Labels		      [2, 1]
+      SrcBlock		      "Rate Transition3"
+      SrcPort		      1
+      Points		      [12, 0; 0, 70]
+      DstBlock		      "PV Array\nOutput"
+      DstPort		      3
+    }
+    Annotation {
+      SID		      "89"
+      Name		      "Output to workspace"
+      Position		      [1001, 10620]
     }
   }
 }
@@ -1204,51 +1357,51 @@ MatData {
     "   !@    @    $          4    (     0   !,    !         !     3    ,2U*=6XM,C Q,B P,#HP,#HP,       #@   #@    &   "
     " \"     8         !0    @    !     0    $         \"0    @            8P X    X    !@    @    &          4    (   "
     "  0    $    !          D    (          # @D .    .     8    (    !@         %    \"     $    !     0         )    "
-    "\"           0(] #@   #@    &    \"     8         !0    @    !     0    $         \"0    @   !F9F9F9F;N/PX    X   "
-    " !@    @    &          4    (     0    $    !          D    (          \" 9D .    .     8    (    !@         %    "
-    "\"     $    !     0         )    \"    !^%ZU&XWD- #@   #@    &    \"     8         !0    @    !     0    $        "
-    " \"0    @           #P/PX    X    !@    @    &          4    (     0    $    !          D    (          \" 1D .   "
-    " .     8    (    !@         %    \"     $    !     0         )    \"            #E #@   #@    &    \"     8       "
-    "  !0    @    !     0    $         \"0    @          (!&0 X    X    !@    @    &          4    (     0    $    !   "
-    "       D    (            X+\\.    .     8    (    !@         %    \"     $    !     0         )    \"           0("
-    "] #@   #@    &    \"     8         !0    @    !     0    $         \"0    @               X    X    !@    @    &  "
-    "        4    (     0    $    !          D    (    9F9F9F9F*D .    .     8    (    !@         %    \"     $    !   "
-    "  0         )    \"               #@   #@    &    \"     8         !0    @    !     0    $         \"0    @       "
-    "    #P/PX    X    !@    @    &          4    (     0    $    !          D    (            \\#\\.    .     8    (  "
-    "  !@         %    \"     $    !     0         )    \"            / _#@   , !   &    \"     (         !0    @    ! "
-    "    P    $         !0 $  L    !    %@   %9A<DYA;64     3W5T<'5T4&]R=     X    P    !@    @    $          4    (   "
-    "  0    (    !         !   @!D8P  #@   #@    &    \"     8         !0    @    !     0    $         \"0    @        "
-    "   #P/PX    X    !@    @    $          4    (     0    4    !         !     %    =&-E;&P    .    .     8    (    !"
-    "@         %    \"     $    !     0         )    \"             ! #@   #     &    \"     0         !0    @    !    "
-    " P    $         $  # '!O80 .    .     8    (    !@         %    \"     $    !     0         )    \"             A "
-    "#@   $ (   &    \"     (         !0    @    !     0    $         !0 $  P    !    1 $  &QA=            &QO;@       "
-    "    '1Z             '1I;65?<W1E<    '-Y<W1E;5]S:7IE &1E<F%T90       '1R86-K7VUO9&4  &%Z:6UU=&@      '1I;'0        "
-    "  ')O=&QI;0       '1?;F]C=        '1?<F5F         &=A;6UA         &E?<F5F         '!O85]C=71I;@   '1C96QL         "
-    "'!O80           'EE87(          &UO;G1H         &1A>0           &AO=7(          &UI;G5T90       &)E86T          &1"
-    "I9F9U<V4      '1A;6(          '=S<&0          &1C                   .    .     8    (    !@         %    \"     $ "
-    "   !     0         )    \"    !^%ZU&XWD- #@   #@    &    \"     8         !0    @    !     0    $         \"0    @"
-    "   #L4;@>A4M:P X    X    !@    @    &          4    (     0    $    !          D    (            &, .    .     8  "
-    "  (    !@         %    \"     $    !     0         )    \"    %5555555<4_#@   #@    &    \"     8         !0    @ "
-    "   !     0    $         \"0    @           #P/PX    X    !@    @    &          4    (     0    $    !          D  "
-    "  (    9F9F9F9F[C\\.    .     8    (    !@         %    \"     $    !     0         )    \"               #@   #@ "
-    "   &    \"     8         !0    @    !     0    $         \"0    @          (!F0 X    X    !@    @    &          4 "
-    "   (     0    $    !          D    (    'X7K4;C>0T .    .     8    (    !@         %    \"     $    !     0       "
-    "  )    \"           @$9 #@   #@    &    \"     8         !0    @    !     0    $         \"0    @          (!&0 X "
-    "   X    !@    @    &          4    (     0    $    !          D    (            .4 .    .     8    (    !@        "
-    " %    \"     $    !     0         )    \"            .\"_#@   #@    &    \"     8         !0    @    !     0    $ "
-    "        \"0    @          $\"/0 X    X    !@    @    &          4    (     0    $    !          D    (            "
-    "   .    .     8    (    !@         %    \"     $    !     0         )    \"               #@   #@    &    \"     8"
-    "         !0    @    !     0    $         \"0    @               X    X    !@    @    &          4    (     0    $ "
-    "   !          D    (          !PGT .    .     8    (    !@         %    \"     $    !     0         )    \"       "
-    "     !Q #@   #@    &    \"     8         !0    @    !     0    $         \"0    @           #P/PX    X    !@    @ "
-    "   &          4    (     0    $    !          D    (               .    .     8    (    !@         %    \"     $  "
-    "  !     0         )    \"               #@   #@    &    \"     8         !0    @    !     0    $         \"0    @ "
-    "              X    X    !@    @    &          4    (     0    $    !          D    (               .    .     8   "
-    " (    !@         %    \"     $    !     0         )    \"    ,W,S,S,3#A #@   #@    &    \"     8         !0    @  "
-    "  !     0    $         \"0    @   \":F9F9F9D50 X    X    !@    @    &          4    (     0    $    !          D  "
-    "  (               .    ,     8    (    !@         %    \"                0         )          X    X    !@    @   "
-    " &          4    (     0    $    !          D    (         %IN)D$.    ,     8    (    !@         %    \"          "
-    "      0         )          "
+    "\"         \" A\"Y!#@   #@    &    \"     8         !0    @    !     0    $         \"0    @   !F9F9F9F;N/PX    X "
+    "   !@    @    &          4    (     0    $    !          D    (          \" 9D .    .     8    (    !@         %  "
+    "  \"     $    !     0         )    \"    !^%ZU&XWD- #@   #@    &    \"     8         !0    @    !     0    $      "
+    "   \"0    @           #P/PX    X    !@    @    &          4    (     0    $    !          D    (          \" 1D . "
+    "   .     8    (    !@         %    \"     $    !     0         )    \"            #E #@   #@    &    \"     8     "
+    "    !0    @    !     0    $         \"0    @          (!&0 X    X    !@    @    &          4    (     0    $    ! "
+    "         D    (            X+\\.    .     8    (    !@         %    \"     $    !     0         )    \"           "
+    "0(] #@   #@    &    \"     8         !0    @    !     0    $         \"0    @               X    X    !@    @    &"
+    "          4    (     0    $    !          D    (    9F9F9F9F*D .    .     8    (    !@         %    \"     $    ! "
+    "    0         )    \"               #@   #@    &    \"     8         !0    @    !     0    $         \"0    @     "
+    "      #P/PX    X    !@    @    &          4    (     0    $    !          D    (            \\#\\.    .     8    ("
+    "    !@         %    \"     $    !     0         )    \"            / _#@   , !   &    \"     (         !0    @    "
+    "!     P    $         !0 $  L    !    %@   %9A<DYA;64     3W5T<'5T4&]R=     X    P    !@    @    $          4    ( "
+    "    0    (    !         !   @!D8P  #@   #@    &    \"     8         !0    @    !     0    $         \"0    @      "
+    "     #P/PX    X    !@    @    $          4    (     0    4    !         !     %    =&-E;&P    .    .     8    (   "
+    " !@         %    \"     $    !     0         )    \"             ! #@   #     &    \"     0         !0    @    !  "
+    "   P    $         $  # '!O80 .    .     8    (    !@         %    \"     $    !     0         )    \"             "
+    "A #@   $ (   &    \"     (         !0    @    !     0    $         !0 $  P    !    1 $  &QA=            &QO;@     "
+    "      '1Z             '1I;65?<W1E<    '-Y<W1E;5]S:7IE &1E<F%T90       '1R86-K7VUO9&4  &%Z:6UU=&@      '1I;'0      "
+    "    ')O=&QI;0       '1?;F]C=        '1?<F5F         &=A;6UA         &E?<F5F         '!O85]C=71I;@   '1C96QL       "
+    "  '!O80           'EE87(          &UO;G1H         &1A>0           &AO=7(          &UI;G5T90       &)E86T          "
+    "&1I9F9U<V4      '1A;6(          '=S<&0          &1C                   .    .     8    (    !@         %    \"     "
+    "$    !     0         )    \"    !^%ZU&XWD- #@   #@    &    \"     8         !0    @    !     0    $         \"0   "
+    " @   #L4;@>A4M:P X    X    !@    @    &          4    (     0    $    !          D    (            &, .    .     8"
+    "    (    !@         %    \"     $    !     0         )    \"    %5555555<4_#@   #@    &    \"     8         !0    "
+    "@    !     0    $         \"0    @          $\"/0 X    X    !@    @    &          4    (     0    $    !          "
+    "D    (    9F9F9F9F[C\\.    .     8    (    !@         %    \"     $    !     0         )    \"               #@   "
+    "#@    &    \"     8         !0    @    !     0    $         \"0    @          (!F0 X    X    !@    @    &         "
+    " 4    (     0    $    !          D    (    'X7K4;C>0T .    .     8    (    !@         %    \"     $    !     0    "
+    "     )    \"           @$9 #@   #@    &    \"     8         !0    @    !     0    $         \"0    @          (!&0"
+    " X    X    !@    @    &          4    (     0    $    !          D    (            .4 .    .     8    (    !@     "
+    "    %    \"     $    !     0         )    \"            .\"_#@   #@    &    \"     8         !0    @    !     0   "
+    " $         \"0    @          $\"/0 X    X    !@    @    &          4    (     0    $    !          D    (         "
+    "      .    .     8    (    !@         %    \"     $    !     0         )    \"               #@   #@    &    \"   "
+    "  8         !0    @    !     0    $         \"0    @               X    X    !@    @    &          4    (     0   "
+    " $    !          D    (          !PGT .    .     8    (    !@         %    \"     $    !     0         )    \"    "
+    "        !Q #@   #@    &    \"     8         !0    @    !     0    $         \"0    @           #P/PX    X    !@   "
+    " @    &          4    (     0    $    !          D    (               .    .     8    (    !@         %    \"     "
+    "$    !     0         )    \"               #@   #@    &    \"     8         !0    @    !     0    $         \"0   "
+    " @               X    X    !@    @    &          4    (     0    $    !          D    (               .    .     8"
+    "    (    !@         %    \"     $    !     0         )    \"    ,W,S,S,3#A #@   #@    &    \"     8         !0    "
+    "@    !     0    $         \"0    @   \":F9F9F9D50 X    X    !@    @    &          4    (     0    $    !          "
+    "D    (               .    ,     8    (    !@         %    \"                0         )          X    X    !@    @"
+    "    &          4    (     0    $    !          D    (         %IN)D$.    ,     8    (    !@         %    \"       "
+    "         0         )          "
   }
 }
 # Finite State Machines

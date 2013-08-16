@@ -4,9 +4,9 @@ function [result] = prepIDF(filename)
 % The program checks for ExternalInterface Object and creates it if absent.
 % 
 % The output result is a flag to check whether the file was properly setup.
-% result = 1, The EnergyPlus Files is properly setup. 
+% result = 1, The EnergyPlus Files is already properly setup. 
 % result = 2, The EnergyPlus Files was successfully setup. 
-% result = 0, The EnergyPlus Files failed to properly setup.
+% result = -1, The EnergyPlus Files failed to properly setup.
 %
 % (C) 2013 by Willy Bernal (willyg@seas.upenn.edu)
 
@@ -40,7 +40,7 @@ else
     if n
         result = 2;
     else
-        result = 0;
+        result = -1;
     end
 end
 end

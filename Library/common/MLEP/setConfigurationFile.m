@@ -22,7 +22,7 @@ function varargout = setConfigurationFile(varargin)
 
 % Edit the above text to modify the response to help setConfigurationFile
 
-% Last Modified by GUIDE v2.5 07-Aug-2013 16:37:36
+% Last Modified by GUIDE v2.5 16-Aug-2013 09:01:49
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -92,6 +92,11 @@ if ~isempty(handles.OutputMlep)
     set(handles.OutputVariableListbox, 'Value', 1);
     handles.OutputVariableListbox_value = get(handles.OutputVariableListbox, 'Value');
 end
+
+% Get to Project Directory
+[dirPath, filename, ext] = fileparts(handles.fullfilename);
+handles.projectPath = dirPath;
+cd(handles.projectPath);
 
 % Update handles structure
 guidata(hObject, handles);
@@ -359,6 +364,19 @@ handles.OutputTable = get(handles.Variable_OutputTable, 'Data');
 if isfield(handles, 'mainHandles')
     updateMainHandles(handles.mainHandles, handles.InputTable, handles.OutputTable);
 end
+
+% Update handles structure
+guidata(hObject, handles);
+
+
+% --- Executes on button press in Variable_saveInputOutput.
+function Variable_saveInputOutput_Callback(hObject, eventdata, handles)
+% hObject    handle to Variable_saveInputOutput (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+inputTable = handles.InputTable;
+outputTable = handles.OutputTable;
+save('InOutMlep.mat', 'inputTable', 'outputTable');
 
 % Update handles structure
 guidata(hObject, handles);

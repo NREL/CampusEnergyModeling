@@ -11,7 +11,10 @@ function [result] = setConfig(filename)
 %
 % Outputs:
 % result - Contains a flag to indicate whether the function was successfull
-% or not.
+% or not. 
+% result = 1, The EnergyPlus Files is already properly setup. 
+% result = 2, The EnergyPlus Files was successfully setup. 
+% result = -1, The EnergyPlus Files failed to properly setup.
 %
 % (C) 2013 by Willy Bernal (willyg@seas.upenn.edu)
 
@@ -25,11 +28,10 @@ if ischar(filename)
         [~, ~, ext] = fileparts(filename);
         if strcmpi(ext, '.IDF')
             disp(['Filename: ' filename]);
-            result = prepIDF(filename)
+            result = prepIDF(filename);
             if result
                 % Launch GUI    
                 setConfigurationFile('filename',filename);
-                result = 0;
             else
                 MSG = 'Faulty IDF: Please check manually IDF file';
                 error(MSG);

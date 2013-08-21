@@ -69,7 +69,7 @@
 *.out
 *.synctex.gz
 
-## MATLAB
+## MATLAB / Simulink
 # Compiled files
 *.mex
 *.mexw64

@@ -1,4 +1,5 @@
-%% Function: Import SSC input variables from text
+%% IMPORTSSC - Import SSC input variables from text
+%
 % Imports a SAM model from SAM's automatically generated SSC run file and
 % parses the result into a structure. These run files may be found under
 %   [HOME]\.SAM\ssc\
@@ -12,7 +13,7 @@
 %   filename =  The name of the SSC input variable text file to import
 %
 % OUTPUTS:
-%   x           A MATLAB structure array with entries for all data
+%   x =         A MATLAB structure array with entries for all data
 %               imported from the SAM text file
 %
 % COMMENTS:
@@ -62,7 +63,7 @@ function x = importSSC(filename)
                 len = sVals(1);
                 sVals = sVals(2:end);
                 if length(sVals) ~= len
-                    warning('import_SAM:dataMismatch', ...
+                    warning('importSSC:dataMismatch', ...
                         ['Array input variable ''' sName ''' does not ' ...
                          'contain the reported number of elements; ' ...
                          'imported data may be incorrect.']);
@@ -73,7 +74,7 @@ function x = importSSC(filename)
                 
             otherwise
                 % Unsupported data type
-                warning('import_SAM:unsupportedDataType', ...
+                warning('importSSC:unsupportedDataType', ...
                     ['Array input variable ''' sName ''' has the ' ...
                      'unsupported data type ''' sType ''' ' ...
                      'and cannot be imported.']);

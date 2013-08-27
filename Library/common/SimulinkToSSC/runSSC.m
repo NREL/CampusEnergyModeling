@@ -1,5 +1,7 @@
-%% Function: Run SSC Module
-% Runs an SSC module using the specified data and returns the result.
+%% RUNSSC - Run SSC Module
+%
+% Runs a Sam Simulation Core (SSC) module using the specified data and
+% returns the result.
 %
 % SYNTAX:
 %   output = runSSC(module, input, output, varargin)

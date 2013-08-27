@@ -1,4 +1,5 @@
-%% Determine the equivalent circuit parameters of a transformer
+%% FITTRANSFORMERPARAM - Fit transformer equivalent circuit parameters
+%
 % This function finds the approximate equivalent circuit parameters of a
 % transformer parameters based on a set of known characteristics about
 % the transformer (those commonly available in manufacturers' data sheets)
@@ -7,12 +8,12 @@
 % This function was originally developed by Stephen Frank at the National
 % Renewable Energy Laboratory in connection with Project No. 192, under
 % constract from the Bonneville Power Administration, Contract No. 51353 
-% and Interagency Agreement No. IAG-11-1801. Permission has been granted to
-% reuse this material in connection with Stephen Frank's dissertation
-% research.
+% and Interagency Agreement No. IAG-11-1801. It was later reused and
+% updated, with permission, by Stephen Frank for his dissertation research
+% (see REFERENCES). 
 %
 % SYNTAX:
-%   [XSeries RSeries XMag RCore] = fitTransformerParam( ...
+%   [XSeries, RSeries, XMag, RCore] = fitTransformerParam( ...
 %       Z, XRRatio, INL, IMaxEff, varargin)
 %
 % INPUTS:
@@ -67,6 +68,7 @@
 %   http://www.stevefrank.info/publications.html
 
 %% License %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This MATLAB function is reused with permission from:                    %
 % Optimization of Mixed AC-DC Building Electrical Distribution Systems    %
 % Copyright (C) 2013  Stephen M. Frank (stephen.frank@ieee.org)           %
 %                                                                         %
@@ -84,7 +86,7 @@
 % along with this program.  If not, see <http://www.gnu.org/licenses/>.   %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-function [XSeries RSeries XMag RCore] = fitTransformerParam( ...
+function [XSeries, RSeries, XMag, RCore] = fitTransformerParam( ...
 	Z, XRRatio, INL, IMaxEff, varargin)
     %% Process Input Arguments / Set Default Values
     % Argument check required inputs

@@ -1,4 +1,5 @@
-%% Function: Convert TMY3 data to useable MATLAB time series objects
+%% CONVERTTMY3 - Convert TMY3 data to useable MATLAB time series objects
+%
 % Converts typical meteorological year (TMY) version 3 weather data into a
 % set of MATLAB time series objects. Each time series object corresponds to
 % one data field from the TMY3 data specification.
@@ -10,7 +11,7 @@
 %
 % To use the output of convertTMY3() in Simulink, save the result to a .MAT
 % file in the variable 'ans' and load it into Simulink using a 'From File'
-% block (or the 'Weather Data' block in the campus modeling Simulink
+% block (or the 'Weather Data' block in the Campus Energy Modeling Simulink
 % library).
 %
 % SYNTAX:
@@ -52,7 +53,7 @@
 %                               than create a synthesized time vector.
 %
 % OUTPUTS:
-%   x           A MATLAB structure containing time series corresponding to
+%   x =         A MATLAB structure containing time series corresponding to
 %               the TMY3 data, in time units of seconds.
 %
 % COMMENTS:

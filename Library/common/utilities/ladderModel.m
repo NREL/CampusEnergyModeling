@@ -1,4 +1,5 @@
-%% parladder: Compute the impedance of a parallel RL ladder
+%% LADDERMODEL - Compute the impedance of a parallel RL ladder
+%
 % This function computes the impedance of a parallel ladder circuit of
 % the following form:
 % 
@@ -11,14 +12,14 @@
 % and returned as a complex vector.
 % 
 % SYNTAX:
-%   Z = parladder(RDC, LInt, LExt, w, varargin)
+%   Z = ladderModel(RDC, LInt, LExt, w, varargin)
 %
 % INPUTS:
-%   RDC             DC resistance of conductor
-%   LInt            Low frequency internal inductance of conductor
-%   LExt            External inductance of conductor
-%   w               Vector of radian frequencies at which to compute the
-%                   ladder impedance
+%   RDC = 	DC resistance of conductor
+%   LInt =	Low frequency internal inductance of conductor
+%   LExt =	External inductance of conductor
+%   w =    	Vector of radian frequencies at which to compute the
+%          	ladder impedance
 %
 % OPTIONAL INPUTS:
 %   The following optional inputs may be passed as name-value pairs
@@ -32,12 +33,12 @@
 %                   (Default = 3.27)
 %
 % OUTPUTS:
-%   Z = complex impedance of the ladder at each radian frequency in 'w'
+%   Z =     Complex impedance of the ladder at each radian frequency in 'w'
 %
 % NOTES:
 % 1. Default values for N, kR, and kL are set to provide an optimal
 %    response from DC through 1 decade above the skin effect corner
-%    frequency. (See Skin Effect paper.)
+%    frequency.
 %
 % REFERENCE:
 %   S. Frank, "Optimal Design of Mixed AC-DC Distribution Systems for
@@ -46,6 +47,7 @@
 %   http://www.stevefrank.info/publications.html
 
 %% License %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This MATLAB function is reused with permission from:                    %
 % Optimization of Mixed AC-DC Building Electrical Distribution Systems    %
 % Copyright (C) 2013  Stephen M. Frank (stephen.frank@ieee.org)           %
 %                                                                         %

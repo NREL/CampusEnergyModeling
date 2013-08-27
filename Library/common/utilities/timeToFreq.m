@@ -1,4 +1,5 @@
-%% Convert TD waveform to FD spectrum
+%% TIMETOFREQ - Convert time domain waveform to frequency domain spectrum
+%
 % This function extracts and returns the harmonic spectrum for a
 % time series given the data values and the sampling interval.
 % Results are reported with respect to the fundamental frequency,
@@ -11,22 +12,24 @@
 % This function was originally developed by Stephen Frank at the National
 % Renewable Energy Laboratory in connection with Project No. 192, under
 % constract from the Bonneville Power Administration, Contract No. 51353 
-% and Interagency Agreement No. IAG-11-1801. Permission has been granted to
-% reuse this material in connection with Stephen Frank's dissertation
-% research.
+% and Interagency Agreement No. IAG-11-1801. It was later reused and
+% updated, with permission, by Stephen Frank for his dissertation research
+% (see REFERENCES).
+%
+% For the inverse function, see freqToTime()
 %
 % SYNTAX:
 %   [f h Y] = timeToFreq(x, dt)
 %
 % INPUTS:
-%   x = Vector of time series data
-%   dt = Sampling interval (assumed to be uniform)
+%   x =     Vector of time series data
+%   dt =    Sampling interval (assumed to be uniform)
 %
 % OUTPUTS:
-%   f = Fundamental frequency
-%   h = Vector of harmonic order (0 = DC component)
-%   Y = Complex representation of harmonic spectrum
-%       (sine referenced)
+%   f =     Fundamental frequency
+%   h =     Vector of harmonic order (0 = DC component)
+%   Y =     Complex representation of harmonic spectrum
+%           (sine referenced)
 %
 % COMMENTS:
 %   Note that 'Y' has a DC term in the first position and that Y(2)
@@ -51,6 +54,7 @@
 %   http://www.stevefrank.info/publications.html
 
 %% License %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This MATLAB function is reused with permission from:                    %
 % Optimization of Mixed AC-DC Building Electrical Distribution Systems    %
 % Copyright (C) 2013  Stephen M. Frank (stephen.frank@ieee.org)           %
 %                                                                         %
@@ -68,7 +72,7 @@
 % along with this program.  If not, see <http://www.gnu.org/licenses/>.   %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-function [f h Y] = timeToFreq(x, dt)
+function [f, h, Y] = timeToFreq(x, dt)
     %% Setup
     N = length(x);      % Number of data points
     T = N*dt;           % Fundamental period

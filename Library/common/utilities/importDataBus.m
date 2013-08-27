@@ -1,4 +1,5 @@
-%% Function: Semi-automated Import of Data from DataBus
+%% IMPORTDATABUS - Semi-automated import of data from DataBus
+%
 % This is a user-interactive function to import sensor data from NREL's
 % DataBus database. After import, the time series sensor data is converted
 % to a structure MATLAB time series objects compatible with the Simulink
@@ -52,7 +53,7 @@
 %                               launch the DataBus url.
 %
 % OUTPUTS:
-%   out         A MATLAB structure containing time series corresponding to
+%   out =       A MATLAB structure containing time series corresponding to
 %               the DataBus data, in time units of seconds.
 %
 % DETAILS:

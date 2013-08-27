@@ -1,4 +1,5 @@
-%% Function: Fit a quadratic loss model for a power electronics converter
+%% FITLOSSMODEL - Fit a quadratic loss model for a power elec. converter
+%
 % Fits a quadratic loss model for a power electronics converter given a set
 % of input/output power data (in one of several possible formats) using
 % linear least squares.
@@ -44,6 +45,7 @@
 %   http://www.stevefrank.info/publications.html
 
 %% License %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This MATLAB function is reused with permission from:                    %
 % Optimization of Mixed AC-DC Building Electrical Distribution Systems    %
 % Copyright (C) 2013  Stephen M. Frank (stephen.frank@ieee.org)           %
 %                                                                         %

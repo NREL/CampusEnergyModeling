@@ -1,4 +1,5 @@
-%% Determine the equivalent circuit parameters of an induction motor
+%% FITINDUCTIONMOTORPARAM - Fit an induction motor equivalent circuit
+%
 % This function finds the approximate equivalent circuit parameters of an
 % induction motor based on the nameplate data. The parameters are returned
 % in per-unit relative to the motor's full load output power rating.
@@ -6,12 +7,12 @@
 % This function was originally developed by Keun Lee at the National
 % Renewable Energy Laboratory in connection with Project No. 192, under
 % constract from the Bonneville Power Administration, Contract No. 51353 
-% and Interagency Agreement No. IAG-11-1801. Permission has been granted to
-% reuse this material in connection with Stephen Frank's dissertation
-% research.
+% and Interagency Agreement No. IAG-11-1801. It was later reused and
+% updated, with permission, by Stephen Frank for his dissertation research
+% (see REFERENCES). 
 %
 % SYNTAX:
-%   [R1 R2 RC RStray X1 X2 XM] = fitInductionMotorParam( ...
+%   [R1, R2, RC, RStray, X1, X2, XM] = fitInductionMotorParam( ...
 %       VRated, PRated, Eff, PF, s, Design, Code, varargin)
 %
 % INPUTS:
@@ -41,13 +42,13 @@
 %                   (Default = sqrt(eps))
 %
 % OUTPUTS:
-%   R1 = Stator resistance
-%   R2 = Rotor resistance
-%   RC = Core loss equivalent resistance
-%   RStray = Stray load loss equivalent resistance
-%   X1 = Stator reactance
-%   X2 = Rotor reactance
-%   XM = Magnetizing reactance
+%   R1 =        Stator resistance
+%   R2 =        Rotor resistance
+%   RC =        Core loss equivalent resistance
+%   RStray =    Stray load loss equivalent resistance
+%   X1 =        Stator reactance
+%   X2 =        Rotor reactance
+%   XM =        Magnetizing reactance
 %
 % All outputs are in per-unit with VBase = VRated and SBase = POut
 %
@@ -64,6 +65,7 @@
 %   http://www.stevefrank.info/publications.html
 
 %% License %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This MATLAB function is reused with permission from:                    %
 % Optimization of Mixed AC-DC Building Electrical Distribution Systems    %
 % Copyright (C) 2013  Stephen M. Frank (stephen.frank@ieee.org)           %
 %                                                                         %
@@ -81,7 +83,7 @@
 % along with this program.  If not, see <http://www.gnu.org/licenses/>.   %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-function [R1 R2 RC RStray X1 X2 XM] = fitInductionMotorParam( ...
+function [R1, R2, RC, RStray, X1, X2, XM] = fitInductionMotorParam( ...
 	VRated, PRated, Eff, PF, s, Design, Code, varargin)
     %% Process Input Arguments / Set Default Values
     % Argument check required inputs

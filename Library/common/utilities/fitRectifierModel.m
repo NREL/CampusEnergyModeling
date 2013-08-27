@@ -1,4 +1,5 @@
-%% Function: Fit an injection current model for a passive rectifier
+%% FITRECTIFIERMODEL - Fit injection current model for a passive rectifier
+%
 % Fits an interpolation-based model for a passive rectifier based on
 % multiple sets of time-domain simulation data. The interpolation models
 % injection currents as a piecewise linear function of total harmonic
@@ -83,6 +84,7 @@
 %   http://www.stevefrank.info/publications.html
 
 %% License %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This MATLAB function is reused with permission from:                    %
 % Optimization of Mixed AC-DC Building Electrical Distribution Systems    %
 % Copyright (C) 2013  Stephen M. Frank (stephen.frank@ieee.org)           %
 %                                                                         %

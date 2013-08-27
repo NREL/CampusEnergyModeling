@@ -1,4 +1,5 @@
-%% Convert FD spectrum to TD waveform
+%% FREQTOTIME - Convert frequency domain spectrum to time domain waveform
+%
 % This function sythesizes a single period of a time-domain
 % waveform given the supplied (one-sided) complex harmonic
 % spectrum. The harmonic spectrum is assumed to be _sine_
@@ -14,22 +15,24 @@
 % This function was originally developed by Stephen Frank at the National
 % Renewable Energy Laboratory in connection with Project No. 192, under
 % constract from the Bonneville Power Administration, Contract No. 51353 
-% and Interagency Agreement No. IAG-11-1801. Permission has been granted to
-% reuse this material in connection with Stephen Frank's dissertation
-% research.
+% and Interagency Agreement No. IAG-11-1801. It was later reused and
+% updated, with permission, by Stephen Frank for his dissertation research
+% (see REFERENCES).
+%
+% For the inverse function, see timeToFreq()
 %
 % SYNTAX:
-%   [x t] = freqToTime(f, Y, dt)
+%   [x, t] = freqToTime(f, Y, dt)
 %
 % INPUTS:
-%   f = Fundamental frequency
-%   Y = Complex representation of harmonic spectrum
-%       (sine referenced)
-%   dt = desired maximum sampling interval of 'x'
+%   f =     Fundamental frequency
+%   Y =     Complex representation of harmonic spectrum
+%           (sine referenced)
+%   dt =    desired maximum sampling interval of 'x'
 %
 % OUTPUTS:
-%   x = data values of synthesized time domain waveform
-%   t = time values of synthesized time domain waveform
+%   x =     Data values of synthesized time domain waveform
+%   t =     Time values of synthesized time domain waveform
 %
 % COMMENTS:
 %   This function is the equivalent of performing the time domain
@@ -47,6 +50,7 @@
 %   http://www.stevefrank.info/publications.html
 
 %% License %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This MATLAB function is reused with permission from:                    %
 % Optimization of Mixed AC-DC Building Electrical Distribution Systems    %
 % Copyright (C) 2013  Stephen M. Frank (stephen.frank@ieee.org)           %
 %                                                                         %
@@ -64,14 +68,14 @@
 % along with this program.  If not, see <http://www.gnu.org/licenses/>.   %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-function [x t] = freqToTime(f, Y, dt)
+function [x, t] = freqToTime(f, Y, dt)
     %% Setup
     T = 1/f;                    % Fundamental period
     n = length(Y);              % Number of samples in input vector
     N = max(ceil(T/dt), 2*n);   % Required number of samples
 
     % Ensure 'Y' is a row vector
-    [row col] = size(Y);
+    [row, col] = size(Y);
     if row < col,
         Y = transpose(Y);
     end

@@ -47,10 +47,10 @@ function blkStruct = slblocks
 
     % The function that will be called when the user double-clicks on
     % this icon.
-    blkStruct.OpenFcn = 'open(''CampusModeling.mdl'')';
+    blkStruct.OpenFcn = 'open(''CampusModeling.mdl'');';
 
     % The argument to be set as the Mask Display for the subsystem.
-    blkStruct.MaskDisplay = 'disp(''Campus\nEnergy\nModeling'')';
+    blkStruct.MaskDisplay = 'disp(''Campus\nEnergy\nModeling'');';
 
     % Library information for Simulink library browser
     blkStruct.Browser = struct();

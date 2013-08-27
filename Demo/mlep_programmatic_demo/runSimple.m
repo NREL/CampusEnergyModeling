@@ -3,7 +3,9 @@
 % MLE+.
 %
 % Example:
-%   Run every section of the script (CRTL+ENTER) in order. 
+%   Run every section of the script (CRTL+ENTER) in order.
+%   0. Configure the IDF file to include inputs/outputs for the External
+%   Interface (Refer to Starting Guide MLE+).
 %   1. Variable Configuration - Sets the variables.cfg configuration. 
 %   2. Control Loop - Create a Control Loop Template. Then modify the file
 %   to implement your control strategy.
@@ -30,14 +32,14 @@
 %------------- BEGIN CODE --------------
 %% 1. VARIABLE CONFIGURATION 
 % Define EnergyPlus File
-idfFilePath = 'C:\Users\wbernal\Documents\Git\CampusModeling\Demo\mlep_programmatic_demo\SmOffPSZ.idf';
+idfFilePath = 'C:\Users\sfrank1\Git\CampusModeling\Demo\mlep_programmatic_demo\SmOffPSZ.idf';
 % Create variables.cfg
 setConfig(idfFilePath);
 
 %% 2. CONTROL LOOP
 % Create Control Loop
 load('InOutMlep.mat')
-dirPath = 'C:\Users\wbernal\Documents\Git\CampusModeling\Demo\mlep_programmatic_demo\';
+dirPath = 'C:\Users\sfrank1\Git\CampusModeling\Demo\mlep_programmatic_demo\';
 ControlFilename = 'controlFile.m';
 % Create Control Loop
 mlepCreateControlFile(dirPath, ControlFilename, inputTable, outputTable);

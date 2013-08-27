@@ -870,7 +870,7 @@ Model {
       Position		      [470, 442, 550, 528]
       ZOrder		      5
       LibraryVersion	      "1.42"
-      SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
+      SourceBlock	      "CampusEnergyModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "load"
       PNom		      "10000"

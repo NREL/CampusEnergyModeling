@@ -952,7 +952,7 @@ Model {
       Position		      [335, 72, 515, 198]
       ZOrder		      -1
       LibraryVersion	      "1.53"
-      SourceBlock	      "CampusModeling/Buildings/E+ Building"
+      SourceBlock	      "CampusEnergyModeling/Buildings/E+ Building"
       SourceType	      "EnergyPlus Cosimulation"
       progname		      "'C:\\EnergyPlusV8-0-0\\RunEPlus.bat'"
       modelfile		      "[pwd '\\SmOffPSZ\\SmOffPSZ']"

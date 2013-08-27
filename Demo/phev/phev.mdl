@@ -919,7 +919,7 @@ Model {
       Position		      [375, 328, 455, 412]
       ZOrder		      106
       LibraryVersion	      "1.64"
-      SourceBlock	      "CampusModeling/Electrical/EV Battery"
+      SourceBlock	      "CampusEnergyModeling/Electrical/EV Battery"
       SourceType	      "Electric Vehicle Battery"
       capacity		      "24000"
       initSOC		      "0.3"
@@ -932,7 +932,7 @@ Model {
       Position		      [375, 563, 455, 647]
       ZOrder		      107
       LibraryVersion	      "1.64"
-      SourceBlock	      "CampusModeling/Electrical/EV Battery"
+      SourceBlock	      "CampusEnergyModeling/Electrical/EV Battery"
       SourceType	      "Electric Vehicle Battery"
       capacity		      "24000"
       initSOC		      "0.3"
@@ -945,7 +945,7 @@ Model {
       Position		      [175, 307, 255, 393]
       ZOrder		      103
       LibraryVersion	      "1.64"
-      SourceBlock	      "CampusModeling/Electrical/EV Charger"
+      SourceBlock	      "CampusEnergyModeling/Electrical/EV Charger"
       SourceType	      "Electric Vehicle Charging Station"
       rating		      "6240"
       capacity		      "24000"
@@ -960,7 +960,7 @@ Model {
       Position		      [175, 542, 255, 628]
       ZOrder		      104
       LibraryVersion	      "1.64"
-      SourceBlock	      "CampusModeling/Electrical/EV Charger"
+      SourceBlock	      "CampusEnergyModeling/Electrical/EV Charger"
       SourceType	      "Electric Vehicle Charging Station"
       rating		      "6240"
       capacity		      "24000"

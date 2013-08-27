@@ -1116,7 +1116,7 @@ Model {
       Position		      [1785, 2132, 1825, 2218]
       ZOrder		      144
       LibraryVersion	      "1.69"
-      SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
+      SourceBlock	      "CampusEnergyModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "load"
       PNom		      "15e3"
@@ -1133,7 +1133,7 @@ Model {
       Position		      [1995, 1922, 2035, 2008]
       ZOrder		      242
       LibraryVersion	      "1.69"
-      SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
+      SourceBlock	      "CampusEnergyModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "load"
       PNom		      "15e3"
@@ -3216,7 +3216,7 @@ Model {
 	  ZOrder		  450
 	  ForegroundColor	  "blue"
 	  LibraryVersion	  "1.69"
-	  SourceBlock		  "CampusModeling/Buildings/E+ Building"
+	  SourceBlock		  "CampusEnergyModeling/Buildings/E+ Building"
 	  SourceType		  "EnergyPlus Cosimulation"
 	  progname		  "'C:\\EnergyPlusV8-0-1\\RunEPlus.bat'"
 	  modelfile		  "[pwd '\\Building1\\5ZoneAirCool']"
@@ -3256,7 +3256,7 @@ Model {
 	  ZOrder		  451
 	  ForegroundColor	  "blue"
 	  LibraryVersion	  "1.69"
-	  SourceBlock		  "CampusModeling/Buildings/E+ Building"
+	  SourceBlock		  "CampusEnergyModeling/Buildings/E+ Building"
 	  SourceType		  "EnergyPlus Cosimulation"
 	  progname		  "'C:\\EnergyPlusV8-0-1\\RunEPlus.bat'"
 	  modelfile		  "[pwd '\\Building2\\5ZoneAirCool']"
@@ -3296,7 +3296,7 @@ Model {
 	  ZOrder		  452
 	  ForegroundColor	  "blue"
 	  LibraryVersion	  "1.69"
-	  SourceBlock		  "CampusModeling/Buildings/E+ Plant"
+	  SourceBlock		  "CampusEnergyModeling/Buildings/E+ Plant"
 	  SourceType		  "EnergyPlus Cosimulation"
 	  progname		  "'C:\\EnergyPlusV8-0-1\\RunEPlus.bat'"
 	  modelfile		  "[pwd '\\ElectricChiller\\ElectricChiller']"
@@ -5898,7 +5898,7 @@ Model {
       Position		      [1570, 2367, 1610, 2453]
       ZOrder		      752
       LibraryVersion	      "1.69"
-      SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
+      SourceBlock	      "CampusEnergyModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "load"
       PNom		      "12e3"
@@ -5915,7 +5915,7 @@ Model {
       Position		      [2365, 1807, 2405, 1893]
       ZOrder		      163
       LibraryVersion	      "1.69"
-      SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
+      SourceBlock	      "CampusEnergyModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "load"
       PNom		      "6e3"
@@ -5932,7 +5932,7 @@ Model {
       Position		      [2365, 1952, 2405, 2038]
       ZOrder		      244
       LibraryVersion	      "1.69"
-      SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
+      SourceBlock	      "CampusEnergyModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "load"
       PNom		      "6e3"
@@ -5949,7 +5949,7 @@ Model {
       Position		      [2365, 2097, 2405, 2183]
       ZOrder		      245
       LibraryVersion	      "1.69"
-      SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
+      SourceBlock	      "CampusEnergyModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "load"
       PNom		      "6e3"
@@ -5966,7 +5966,7 @@ Model {
       Position		      [2365, 2227, 2405, 2313]
       ZOrder		      246
       LibraryVersion	      "1.69"
-      SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
+      SourceBlock	      "CampusEnergyModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "load"
       PNom		      "6e3"
@@ -5983,7 +5983,7 @@ Model {
       Position		      [2365, 2372, 2405, 2458]
       ZOrder		      247
       LibraryVersion	      "1.69"
-      SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
+      SourceBlock	      "CampusEnergyModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "load"
       PNom		      "6e3"
@@ -6000,7 +6000,7 @@ Model {
       Position		      [2365, 2517, 2405, 2603]
       ZOrder		      248
       LibraryVersion	      "1.69"
-      SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
+      SourceBlock	      "CampusEnergyModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "load"
       PNom		      "6e3"
@@ -6278,7 +6278,7 @@ Model {
 	  Position		  [905, 83, 985, 167]
 	  ZOrder		  515
 	  LibraryVersion	  "1.69"
-	  SourceBlock		  "CampusModeling/Electrical/EV Battery"
+	  SourceBlock		  "CampusEnergyModeling/Electrical/EV Battery"
 	  SourceType		  "Electric Vehicle Battery"
 	  capacity		  "24000"
 	  initSOC		  "0.3"
@@ -6291,7 +6291,7 @@ Model {
 	  Position		  [905, 218, 985, 302]
 	  ZOrder		  549
 	  LibraryVersion	  "1.69"
-	  SourceBlock		  "CampusModeling/Electrical/EV Battery"
+	  SourceBlock		  "CampusEnergyModeling/Electrical/EV Battery"
 	  SourceType		  "Electric Vehicle Battery"
 	  capacity		  "24000"
 	  initSOC		  "0.3"
@@ -6304,7 +6304,7 @@ Model {
 	  Position		  [905, 353, 985, 437]
 	  ZOrder		  557
 	  LibraryVersion	  "1.69"
-	  SourceBlock		  "CampusModeling/Electrical/EV Battery"
+	  SourceBlock		  "CampusEnergyModeling/Electrical/EV Battery"
 	  SourceType		  "Electric Vehicle Battery"
 	  capacity		  "24000"
 	  initSOC		  "0.3"
@@ -6317,7 +6317,7 @@ Model {
 	  Position		  [905, 488, 985, 572]
 	  ZOrder		  565
 	  LibraryVersion	  "1.69"
-	  SourceBlock		  "CampusModeling/Electrical/EV Battery"
+	  SourceBlock		  "CampusEnergyModeling/Electrical/EV Battery"
 	  SourceType		  "Electric Vehicle Battery"
 	  capacity		  "24000"
 	  initSOC		  "0.3"
@@ -6330,7 +6330,7 @@ Model {
 	  Position		  [905, 623, 985, 707]
 	  ZOrder		  573
 	  LibraryVersion	  "1.69"
-	  SourceBlock		  "CampusModeling/Electrical/EV Battery"
+	  SourceBlock		  "CampusEnergyModeling/Electrical/EV Battery"
 	  SourceType		  "Electric Vehicle Battery"
 	  capacity		  "24000"
 	  initSOC		  "0.3"
@@ -6343,7 +6343,7 @@ Model {
 	  Position		  [905, 758, 985, 842]
 	  ZOrder		  581
 	  LibraryVersion	  "1.69"
-	  SourceBlock		  "CampusModeling/Electrical/EV Battery"
+	  SourceBlock		  "CampusEnergyModeling/Electrical/EV Battery"
 	  SourceType		  "Electric Vehicle Battery"
 	  capacity		  "24000"
 	  initSOC		  "0.3"
@@ -6356,7 +6356,7 @@ Model {
 	  Position		  [705, 62, 785, 148]
 	  ZOrder		  514
 	  LibraryVersion	  "1.69"
-	  SourceBlock		  "CampusModeling/Electrical/EV Charger"
+	  SourceBlock		  "CampusEnergyModeling/Electrical/EV Charger"
 	  SourceType		  "Electric Vehicle Charging Station"
 	  rating		  "6240"
 	  capacity		  "24000"
@@ -6371,7 +6371,7 @@ Model {
 	  Position		  [705, 197, 785, 283]
 	  ZOrder		  548
 	  LibraryVersion	  "1.69"
-	  SourceBlock		  "CampusModeling/Electrical/EV Charger"
+	  SourceBlock		  "CampusEnergyModeling/Electrical/EV Charger"
 	  SourceType		  "Electric Vehicle Charging Station"
 	  rating		  "6240"
 	  capacity		  "24000"
@@ -6386,7 +6386,7 @@ Model {
 	  Position		  [705, 332, 785, 418]
 	  ZOrder		  556
 	  LibraryVersion	  "1.69"
-	  SourceBlock		  "CampusModeling/Electrical/EV Charger"
+	  SourceBlock		  "CampusEnergyModeling/Electrical/EV Charger"
 	  SourceType		  "Electric Vehicle Charging Station"
 	  rating		  "6240"
 	  capacity		  "24000"
@@ -6401,7 +6401,7 @@ Model {
 	  Position		  [705, 467, 785, 553]
 	  ZOrder		  564
 	  LibraryVersion	  "1.69"
-	  SourceBlock		  "CampusModeling/Electrical/EV Charger"
+	  SourceBlock		  "CampusEnergyModeling/Electrical/EV Charger"
 	  SourceType		  "Electric Vehicle Charging Station"
 	  rating		  "6240"
 	  capacity		  "24000"
@@ -6416,7 +6416,7 @@ Model {
 	  Position		  [705, 602, 785, 688]
 	  ZOrder		  572
 	  LibraryVersion	  "1.69"
-	  SourceBlock		  "CampusModeling/Electrical/EV Charger"
+	  SourceBlock		  "CampusEnergyModeling/Electrical/EV Charger"
 	  SourceType		  "Electric Vehicle Charging Station"
 	  rating		  "6240"
 	  capacity		  "24000"
@@ -6431,7 +6431,7 @@ Model {
 	  Position		  [705, 737, 785, 823]
 	  ZOrder		  580
 	  LibraryVersion	  "1.69"
-	  SourceBlock		  "CampusModeling/Electrical/EV Charger"
+	  SourceBlock		  "CampusEnergyModeling/Electrical/EV Charger"
 	  SourceType		  "Electric Vehicle Charging Station"
 	  rating		  "6240"
 	  capacity		  "24000"
@@ -6985,7 +6985,7 @@ Model {
 	  ZOrder		  496
 	  ShowName		  off
 	  LibraryVersion	  "1.69"
-	  SourceBlock		  "CampusModeling/Electrical/Power Factor\nConversion"
+	  SourceBlock		  "CampusEnergyModeling/Electrical/Power Factor\nConversion"
 	  SourceType		  "Power Factor Conversion"
 	  pfType		  "Lagging"
 	}
@@ -6998,7 +6998,7 @@ Model {
 	  ZOrder		  494
 	  ShowName		  off
 	  LibraryVersion	  "1.69"
-	  SourceBlock		  "CampusModeling/Electrical/Power Factor\nConversion"
+	  SourceBlock		  "CampusEnergyModeling/Electrical/Power Factor\nConversion"
 	  SourceType		  "Power Factor Conversion"
 	  pfType		  "Lagging"
 	}
@@ -7011,7 +7011,7 @@ Model {
 	  ZOrder		  498
 	  ShowName		  off
 	  LibraryVersion	  "1.69"
-	  SourceBlock		  "CampusModeling/Electrical/Power Factor\nConversion"
+	  SourceBlock		  "CampusEnergyModeling/Electrical/Power Factor\nConversion"
 	  SourceType		  "Power Factor Conversion"
 	  pfType		  "Lagging"
 	}
@@ -7024,7 +7024,7 @@ Model {
 	  ZOrder		  500
 	  ShowName		  off
 	  LibraryVersion	  "1.69"
-	  SourceBlock		  "CampusModeling/Electrical/Power Factor\nConversion"
+	  SourceBlock		  "CampusEnergyModeling/Electrical/Power Factor\nConversion"
 	  SourceType		  "Power Factor Conversion"
 	  pfType		  "Lagging"
 	}
@@ -7037,7 +7037,7 @@ Model {
 	  ZOrder		  502
 	  ShowName		  off
 	  LibraryVersion	  "1.69"
-	  SourceBlock		  "CampusModeling/Electrical/Power Factor\nConversion"
+	  SourceBlock		  "CampusEnergyModeling/Electrical/Power Factor\nConversion"
 	  SourceType		  "Power Factor Conversion"
 	  pfType		  "Lagging"
 	}
@@ -7050,7 +7050,7 @@ Model {
 	  ZOrder		  504
 	  ShowName		  off
 	  LibraryVersion	  "1.69"
-	  SourceBlock		  "CampusModeling/Electrical/Power Factor\nConversion"
+	  SourceBlock		  "CampusEnergyModeling/Electrical/Power Factor\nConversion"
 	  SourceType		  "Power Factor Conversion"
 	  pfType		  "Lagging"
 	}
@@ -9245,7 +9245,7 @@ Model {
       ZOrder		      485
       ShowName		      off
       LibraryVersion	      "1.69"
-      SourceBlock	      "CampusModeling/Electrical/Power Factor\nConversion"
+      SourceBlock	      "CampusEnergyModeling/Electrical/Power Factor\nConversion"
       SourceType	      "Power Factor Conversion"
       pfType		      "Lagging"
     }
@@ -9258,7 +9258,7 @@ Model {
       ZOrder		      488
       ShowName		      off
       LibraryVersion	      "1.69"
-      SourceBlock	      "CampusModeling/Electrical/Power Factor\nConversion"
+      SourceBlock	      "CampusEnergyModeling/Electrical/Power Factor\nConversion"
       SourceType	      "Power Factor Conversion"
       pfType		      "Lagging"
     }
@@ -9271,7 +9271,7 @@ Model {
       ZOrder		      491
       ShowName		      off
       LibraryVersion	      "1.69"
-      SourceBlock	      "CampusModeling/Electrical/Power Factor\nConversion"
+      SourceBlock	      "CampusEnergyModeling/Electrical/Power Factor\nConversion"
       SourceType	      "Power Factor Conversion"
       pfType		      "Lagging"
     }
@@ -9283,7 +9283,7 @@ Model {
       Position		      [3020, 1647, 3060, 1733]
       ZOrder		      164
       LibraryVersion	      "1.69"
-      SourceBlock	      "CampusModeling/Electrical/Constant Power\nSource or Load"
+      SourceBlock	      "CampusEnergyModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "source"
       PNom		      "30e3"
@@ -9388,7 +9388,7 @@ Model {
 	  Position		  [650, 54, 745, 166]
 	  ZOrder		  320
 	  LibraryVersion	  "1.69"
-	  SourceBlock		  "CampusModeling/PV/Generic Inverter"
+	  SourceBlock		  "CampusEnergyModeling/PV/Generic Inverter"
 	  SourceType		  "Generic Inverter"
 	  model_type		  "Lookup Table"
 	  fixed_eff		  "0.95"
@@ -9410,7 +9410,7 @@ Model {
 	  LibraryVersion	  "1.69"
 	  UserDataPersistent	  on
 	  UserData		  "DataTag0"
-	  SourceBlock		  "CampusModeling/PV/PVWatts Cosimulation"
+	  SourceBlock		  "CampusEnergyModeling/PV/PVWatts Cosimulation"
 	  SourceType		  "PVWatts Cosimulation"
 	  lat			  "39.74"
 	  lon			  "-105.18"
@@ -10408,7 +10408,7 @@ Model {
       Position		      [965, 495, 1040, 585]
       ZOrder		      321
       LibraryVersion	      "1.69"
-      SourceBlock	      "CampusModeling/Weather/Weather Data"
+      SourceBlock	      "CampusEnergyModeling/Weather/Weather Data"
       SourceType	      "Weather Data From File"
       fname		      "Weather2.mat"
       initbus		      on

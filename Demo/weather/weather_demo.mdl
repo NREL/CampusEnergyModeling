@@ -877,7 +877,7 @@ Model {
       Position		      [45, 60, 120, 150]
       ZOrder		      28
       LibraryVersion	      "1.54"
-      SourceBlock	      "CampusModeling/Weather/Weather Data"
+      SourceBlock	      "CampusEnergyModeling/Weather/Weather Data"
       SourceType	      "Weather Data From File"
       fname		      "TMY3.mat"
       initbus		      on

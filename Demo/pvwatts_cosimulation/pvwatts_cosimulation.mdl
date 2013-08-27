@@ -909,7 +909,7 @@ Model {
       Position		      [750, 10769, 820, 10811]
       ZOrder		      64
       LibraryVersion	      "1.71"
-      SourceBlock	      "CampusModeling/PV/Generic Inverter"
+      SourceBlock	      "CampusEnergyModeling/PV/Generic Inverter"
       SourceType	      "Generic Inverter"
       model_type	      "Quadratic"
       fixed_eff		      "0.95"
@@ -1020,7 +1020,7 @@ Model {
       Position		      [605, 10770, 675, 10810]
       ZOrder		      78
       LibraryVersion	      "1.71"
-      SourceBlock	      "CampusModeling/PV/PV Smoothing"
+      SourceBlock	      "CampusEnergyModeling/PV/PV Smoothing"
       SourceType	      "Photovoltaic Array Smoothing"
       sel		      "Array Size and Power Density"
       tc		      "15"
@@ -1045,7 +1045,7 @@ Model {
       LibraryVersion	      "1.71"
       UserDataPersistent      on
       UserData		      "DataTag0"
-      SourceBlock	      "CampusModeling/PV/PVWatts Cosimulation"
+      SourceBlock	      "CampusEnergyModeling/PV/PVWatts Cosimulation"
       SourceType	      "PVWatts Cosimulation"
       lat		      "39.74"
       lon		      "-105.18"
@@ -1178,7 +1178,7 @@ Model {
       Position		      [55, 10625, 130, 10715]
       ZOrder		      60
       LibraryVersion	      "1.71"
-      SourceBlock	      "CampusModeling/Weather/Weather Data"
+      SourceBlock	      "CampusEnergyModeling/Weather/Weather Data"
       SourceType	      "Weather Data From File"
       fname		      "Weather.mat"
       initbus		      on

@@ -1,7 +1,7 @@
 %% install.m - Campus Energy Modeling Installation Script
 %
 % This script installs the Campus Energy Modeling MATLAB functions and 
-% Simulink libraries to the MATLAB path. To perform the installation:
+% Simulink library to the MATLAB path. To perform the installation:
 %   1. Download the Campus Modeling repository to the desired location on
 %      your network or local hard drive.
 %   2. Set the MATLAB working directory to the location of this script.
@@ -16,10 +16,10 @@
 %    prompt.
 %
 % 2. This installation script does not install all dependecies required to
-%    use the Campus Modeling libraries and models; it only installs the
-%    functions and library blocks developed by the Campus Modeling team.
-%    To run the models, you will need a variety of other software packages;
-%    see the Campus Modeling manual for details.
+%    use the Campus Energy Modeling libraries and models; it only installs
+%    the functions and library blocks developed by the Campus Energy
+%    Modeling team. To run the models, you will need a variety of other
+%    software packages; see the Campus Energy Modeling manual for details.
 %
 % 3. The exception to comment #2 is that this script can, at the user's
 %    option, install the MLE+ version presently included with the Campus
@@ -54,7 +54,7 @@ localPath = strjoin( localPath(1:(length(localPath)-1)), filesep);
 
 % Check that the local path came out correctly
 assert( ~isempty(localPath), ...
-    'CampusModeling:install:invalidInstallationPath', ...
+    'CampusEnergyModeling:install:invalidInstallationPath', ...
     ['Empty installation path detected; installation failed. ' ...
      'To avoid this error, run the entire script directly from the ' ...
      'MATLAB command line or by using the Run button in the editor.'] ...
@@ -97,8 +97,8 @@ else
     % Other versions unsupported
     libPath = 'R2011b';
     disp( ['Found MATLAB release ' rel ' (version ' v.Version ').']);
-    warning( 'CampusModeling:installation:incompatibleVersion', ...
-        ['Your MATLAB release is %s, but the CampusModeling ' ...
+    warning( 'CampusEnergyModeling:installation:incompatibleVersion', ...
+        ['Your MATLAB release is %s, but the Campus Energy Modeling ' ...
          'library requires 2013a or newer (for offline simulation) ' ...
          'or 2011b (for hardware-in-loop simulation with Opal-RT ' ...
          'version 10.5).\nThe R2011b Simulink library will be ' ...

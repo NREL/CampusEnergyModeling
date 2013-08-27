@@ -1,8 +1,8 @@
 %% PVWATTS_CB - Implements callbacks for 'PVWatts' block
 %
 % This function implements the mask callbacks for the 'PVWatts' block in
-% the NREL Campus Modeling Simulink block library. It is designed to be
-% called from the block mask.
+% the NREL Campus Energy Modeling Simulink block library. It is designed to
+% be called from the block mask.
 %
 % SYNTAX:
 %   varargout = PVWatts_cb(block, callback, varargin)
@@ -17,7 +17,7 @@
 %
 % COMMENTS:
 % 1. This function is not intended for use outside of the NREL Campus
-%    Modeling Simulink library; therefore the error checking and
+%    Energy Modeling Simulink library; therefore the error checking and
 %    documentation are minimal. View the code to see what is going on.
 
 function varargout = PVWatts_cb(block, callback, varargin)

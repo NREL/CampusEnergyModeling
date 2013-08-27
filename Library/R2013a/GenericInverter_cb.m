@@ -1,4 +1,5 @@
-%% Function: Implements callbacks for 'Generic Inverter' block
+%% GENERICINVERTER_CB - Implements callbacks for 'Generic Inverter' block
+%
 % This function implements the mask callbacks for the 'Generic Inverter'
 % block in the NREL Campus Modeling Simulink block library. It is designed
 % to be called from the block mask.
@@ -20,6 +21,7 @@
 %    documentation are minimal. View the code to see what is going on.
 
 function varargout = GenericInverter_cb(block, callback, varargin)
+
     %% Setup
     % Default output = none
     varargout = {};

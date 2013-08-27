@@ -1,8 +1,10 @@
-%% Function: Implements callbacks for 'Constant Power Source or Load' block
+%% CONSTANTPOWERSOURCELOAD_CB - Implements callbacks for 'Constant Power
+% Source or Load' block
+%
 % This function implements the mask callbacks for the 'Constant Power
 % Source or Load' block in the NREL Campus Modeling Simulink block library.
 % It is designed to be called from the block mask.
-%
+% 
 % SYNTAX:
 %   varargout = ConstantPowerSourceLoad_cb(block, callback, varargin)
 %
@@ -20,6 +22,7 @@
 %    documentation are minimal. View the code to see what is going on.
 
 function varargout = ConstantPowerSourceLoad_cb(block, callback, varargin)
+
     %% Setup
     % Default output = none
     varargout = {};

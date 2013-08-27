@@ -1,10 +1,11 @@
-%% Function: Implements callbacks for 'PV Smoothing' block
+%% PVSMOOTHING_CB - Implements callbacks for 'PV Smoothing' block
+%
 % This function implements the mask callbacks for the 'PV Smoothing' block
 % in the NREL Campus Modeling Simulink block library. It is designed to be
 % called from the block mask.
 %
 % SYNTAX:
-%   varargout = ConstantPowerSourceLoad_cb(block, callback, varargin)
+%   varargout = PVSmoothing_cb(block, callback, varargin)
 %
 % INPUTS:
 %   block =     Simulink block path

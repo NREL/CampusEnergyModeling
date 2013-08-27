@@ -1,4 +1,5 @@
-%% Function: Implements callbacks for 'Weather' block
+%% WEATHER_CB - Implements callbacks for 'Weather' block
+%
 % This function implements the mask callbacks for the 'Weather' block in
 % the NREL Campus Modeling Simulink block library. It is designed to be
 % called from the block mask.

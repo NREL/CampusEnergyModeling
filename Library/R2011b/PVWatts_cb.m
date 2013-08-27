@@ -1,4 +1,5 @@
-%% Function: Implements callbacks for 'PVWatts' block
+%% PVWATTS_CB - Implements callbacks for 'PVWatts' block
+%
 % This function implements the mask callbacks for the 'PVWatts' block in
 % the NREL Campus Modeling Simulink block library. It is designed to be
 % called from the block mask.

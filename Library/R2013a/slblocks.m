@@ -1,9 +1,9 @@
 function blkStruct = slblocks
-% SLBLOCKS - Defines the NREL Campus Modeling Simulink block library
+% SLBLOCKS - Defines the NREL Campus Energy Modeling Simulink block library
 %
 % Predefined function which returns information about a blockset to
 % Simulink. In this case, it defines the blockset for the NREL Campus
-% Modeling Simulink library.
+% Energy Modeling Simulink library.
 % 
 % The information returned is in the form of a BlocksetStruct with the
 % following fields:
@@ -47,14 +47,14 @@ function blkStruct = slblocks
 
     % The function that will be called when the user double-clicks on
     % this icon.
-    blkStruct.OpenFcn = 'open(''CampusModeling.mdl'');';
+    blkStruct.OpenFcn = 'open(''CampusEnergyModeling.mdl'');';
 
     % The argument to be set as the Mask Display for the subsystem.
     blkStruct.MaskDisplay = 'disp(''Campus\nEnergy\nModeling'');';
 
     % Library information for Simulink library browser
     blkStruct.Browser = struct();
-    blkStruct.Browser.Library = 'CampusModeling';
+    blkStruct.Browser.Library = 'CampusEnergyModeling';
     blkStruct.Browser.Name    = 'NREL - Campus Energy Modeling';
 
 % No end keyword for this function

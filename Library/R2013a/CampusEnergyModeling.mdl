@@ -1,5 +1,5 @@
 Library {
-  Name			  "CampusModeling"
+  Name			  "CampusEnergyModeling"
   Version		  8.1
   MdlSubVersion		  0
   SavedCharacterEncoding  "windows-1252"
@@ -1156,7 +1156,7 @@ Library {
     }
   }
   System {
-    Name		    "CampusModeling"
+    Name		    "CampusEnergyModeling"
     Location		    [433, 219, 1384, 953]
     Open		    off
     ModelBrowserVisibility  off

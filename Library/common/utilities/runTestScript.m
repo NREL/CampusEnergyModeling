@@ -50,7 +50,7 @@ function ok = runTestScript(scriptfile, logfile, ext)
     logfilename = [logfile '.' ext];
     
     % Open log file
-    fid = fopen(logfilename, 'a');
+    fid = fopen(logfilename, 'a+t');
     assert( fid >= 0, ...
         'runTestScript:cannotOpenLogFile', ...
         ['Cannot open log file "%s.%s" for test script "%s" under ' ...
@@ -59,7 +59,7 @@ function ok = runTestScript(scriptfile, logfile, ext)
     
     % Log start of test
     dateAndTime = datestr(now, 'yyyy-mm-dd HH:MM:SS');
-    fprintf(fid, '[%s] Begin test of script ''%s.m''\n', ...
+    fprintf(fid, '[%s] Begin test of script "%s.m"\n', ...
         dateAndTime, scriptfile );
     
     % Close log file (so we can use diary instead)
@@ -84,9 +84,9 @@ function ok = runTestScript(scriptfile, logfile, ext)
         diary off
         
         % Write error message to log
-        fid = fopen(logfilename, 'a');
+        fid = fopen(logfilename, 'a+t');
         dateAndTime = datestr(now, 'yyyy-mm-dd HH:MM:SS');
-        fprintf(fid, '[%s] Exception in ''%s.m'' at line %d:\n', ...
+        fprintf(fid, '[%s] Exception in "%s.m" at line %d:\n', ...
             dateAndTime, ...
             exception.stack(length(exception.stack)-1).name, ...
             exception.stack(length(exception.stack)-1).line);
@@ -99,7 +99,7 @@ function ok = runTestScript(scriptfile, logfile, ext)
     
     %% Close Log
     % Reopen log file
-    fid = fopen(logfilename, 'a');
+    fid = fopen(logfilename, 'a+t');
     
     % Log end of test
     dateAndTime = datestr(now, 'yyyy-mm-dd HH:MM:SS');

@@ -4,12 +4,12 @@
 % 'varargin' function option) and creates a structure out of the results.
 %
 % SYNTAX:
-%   out = toStruct(x,varargin)
+%   out = toStruct(x, ...)
 %
 % INPUTS:
 %   x =         A cell array of name-value pairs of arguments to convert to
 %               a structure
-%   varargin =  (Optional) Additional control arguments passed as
+%   ... =       (Optional) Additional control arguments passed as
 %                name-value pairs (see OPTIONAL INPUTS below)
 %
 % OPTIONAL INPUTS:
@@ -58,7 +58,7 @@
 % along with this program.  If not, see <http://www.gnu.org/licenses/>.   %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-function out = toStruct(x,varargin)
+function out = toStruct(x, varargin)
     %% Set Some Defaults   
     % Optional arguments
     cName = 'general';

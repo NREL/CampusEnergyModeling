@@ -4,7 +4,7 @@
 % returns the result.
 %
 % SYNTAX:
-%   output = runSSC(module, input, output, varargin)
+%   output = runSSC(module, input, output, ...)
 %
 % INPUTS:
 %   module =	The name of the SSC module to run
@@ -12,7 +12,7 @@
 %               SSC module; see comments
 %   output =    A structure array containing information on the output 
 %               variables to return from the SSC module; see comments
-%   varargin =  (Optional) Additional arguments passed as name-value pairs
+%   ... =       (Optional) Additional arguments passed as name-value pairs
 %               (see OPTIONAL INPUTS below)
 %
 % OUTPUTS:

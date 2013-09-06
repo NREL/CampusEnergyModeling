@@ -12,8 +12,8 @@
 % (see REFERENCES). 
 %
 % SYNTAX:
-%   [R1, R2, RC, RStray, X1, X2, XM] = fitInductionMotorParam( ...
-%       VRated, PRated, Eff, PF, s, Design, Code, varargin)
+%   [R1, R2, RC, RStray, X1, X2, XM] = 
+%     fitInductionMotorParam(VRated, PRated, Eff, PF, s, Design, Code, ...)
 %
 % INPUTS:
 %   VRated =  	Rated motor terminal voltage (line-to-line) [V]
@@ -25,7 +25,7 @@
 %   s =       	Motor slip at full load [pu]
 %   Design =  	NEMA design class: A, B, C, D, or W (Wound rotor)
 %   Code =      NEMA code letter (gives kVA/HP)
-%   varargin =  (Optional) Additional arguments passed as name-value pairs
+%   ... =       (Optional) Additional arguments passed as name-value pairs
 %               (see OPTIONAL INPUTS below)
 %
 % OPTIONAL INPUTS:

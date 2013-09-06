@@ -4,11 +4,11 @@
 % echos the message to the standard output.
 %
 % SYNTAX:
-%   fprintf_echo(fid, varargin)
+%   fprintf_echo(fid, ...)
 %
 % INPUTS:
-%   fid =           Vector of file identifiers for log output
-%   varargin =      All other arguments typically passed to fprintf
+%   fid =       Vector of file identifiers for log output
+%   ... =       All other arguments typically passed to fprintf
 %
 % EXAMPLES:
 %   % Writes 'test message 1' to files test1.log and test2.log

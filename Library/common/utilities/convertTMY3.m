@@ -15,11 +15,11 @@
 % library).
 %
 % SYNTAX:
-%   x = convertTMY3(filename,varargin)
+%   x = convertTMY3(filename, ...)
 %
 % INPUTS:
 %   filename =  The name of the TMY3 data file to convert
-%   varargin =  (Optional) Additional arguments passed as name-value pairs
+%   ... =       (Optional) Additional arguments passed as name-value pairs
 %               (see OPTIONAL INPUTS below)
 %
 % OPTIONAL INPUTS:

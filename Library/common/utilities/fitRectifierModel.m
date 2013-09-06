@@ -21,7 +21,7 @@
 % These may be in any order and other fields may be present.
 %
 % SYNTAX:
-%   model = fitRectifierModel(files,f,tStart,dt,varargin)
+%   model = fitRectifierModel(files, f, tStart, dt, ...)
 %
 % INPUTS:
 %   files =     Cell array of files names containing the data
@@ -30,7 +30,7 @@
 %   f =         Fundamental frequency [Hz]
 %   tStart =    Start time to use for FFT [s] (same for all files)
 %   dt =        Time step between consecutive data points [s]
-%   varargin =  (Optional) Additional arguments passed as name-value pairs
+%   ... =       (Optional) Additional arguments passed as name-value pairs
 %               (see OPTIONAL INPUTS below) 
 %   
 % OPTIONAL INPUTS:

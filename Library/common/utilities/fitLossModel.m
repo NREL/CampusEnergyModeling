@@ -5,17 +5,17 @@
 % linear least squares.
 %
 % SYNTAX:
-%   [alpha, beta, gamma] = fitLossModel(convention,varargin)
+%   [alpha, beta, gamma] = fitLossModel(convention, ...)
 %
 % INPUTS:
 %   convention =	Specify either 'source' or 'load'; see comments.
-%   varargin =      A set of exactly two of the following possible 
+%   ... =           A set of exactly two of the following possible 
 %                   name-value pairs of data vectors for the converter:
 %                       'Pin', [val]    Per-unit input power
 %                       'Pout', [val]   Per-unit output power
 %                       'Ploss', [val]  Per-unit converter loss
 %                       'Eff', [val]    Efficiency (as a fraction)
-%                   See comments.
+%                   See COMMENTS.
 %
 % OUTPUTS:
 %   alpha =         Constant loss term for converter loss model

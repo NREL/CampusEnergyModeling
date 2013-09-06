@@ -13,15 +13,15 @@
 % (see REFERENCES). 
 %
 % SYNTAX:
-%   [XSeries, RSeries, XMag, RCore] = fitTransformerParam( ...
-%       Z, XRRatio, INL, IMaxEff, varargin)
+%   [XSeries, RSeries, XMag, RCore] = 
+%       fitTransformerParam(Z, XRRatio, INL, IMaxEff, ...)
 %
 % INPUTS:
 %   Z =         Transformer series impedance magnitude at full load [pu]
 %   XRRatio =   X/R ratio at full load
 %   INL =       No load current (magnitude)                         [pu]
 %   IMaxEff =   Load current at which maximum efficiency occurs     [pu]
-%   varargin =  (Optional) Additional arguments passed as name-value pairs
+%   ... =       (Optional) Additional arguments passed as name-value pairs
 %               (see OPTIONAL INPUTS below)
 %
 % OPTIONAL INPUTS:

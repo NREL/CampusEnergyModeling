@@ -12,14 +12,16 @@
 % and returned as a complex vector.
 % 
 % SYNTAX:
-%   Z = ladderModel(RDC, LInt, LExt, w, varargin)
+%   Z = ladderModel(RDC, LInt, LExt, w, ...)
 %
 % INPUTS:
-%   RDC = 	DC resistance of conductor
-%   LInt =	Low frequency internal inductance of conductor
-%   LExt =	External inductance of conductor
-%   w =    	Vector of radian frequencies at which to compute the
-%          	ladder impedance
+%   RDC =       DC resistance of conductor
+%   LInt =      Low frequency internal inductance of conductor
+%   LExt =      External inductance of conductor
+%   w =         Vector of radian frequencies at which to compute the
+%               ladder impedance
+%   ... =       (Optional) Additional arguments passed as name-value pairs
+%               (see OPTIONAL INPUTS below)
 %
 % OPTIONAL INPUTS:
 %   The following optional inputs may be passed as name-value pairs

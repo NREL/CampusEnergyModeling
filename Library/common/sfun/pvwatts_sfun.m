@@ -140,11 +140,11 @@ function CheckParameters(block)
     % 3. 'start_time' - Simulation starting timestamp
     start_time = block.DialogPrm(3).Data;
     try
-        datenum(start_time, 'dd-mmm-yyyy HH:MM:SS');
+        datenum(start_time, 'yyyy-mm-dd HH:MM:SS');
     catch err
         error('CampusEnergyModeling:PVWatts:invalidMaskParameter', ...
             ['Starting timestamp must be given in the form ' ...
-             'dd-mmm-yyyy HH:MM:SS'] );
+             'yyyy-mm-dd HH:MM:SS'] );
     end
     
     % 4. 'tz' - Time zone (offset from UTC)
@@ -294,7 +294,7 @@ function Start(block)
     d = get_param(block.BlockHandle, 'UserData');
     
     % Compute simulation start time as a date number
-    d.simstart = datenum(d.dialog.start_time, 'dd-mmm-yyyy HH:MM:SS');
+    d.simstart = datenum(d.dialog.start_time, 'yyyy-mm-dd HH:MM:SS');
 
     % Convert dialog parameters to values useable by pvwattsfunc (SSC)
     d.sscvar = struct();

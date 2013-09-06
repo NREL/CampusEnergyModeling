@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.67"
+    ComputedModelVersion    "1.69"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -66,9 +66,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Aug 05 17:27:32 2013"
-  RTWModifiedTimeStamp	  297624308
-  ModelVersionFormat	  "1.%<AutoIncrement:67>"
+  LastModifiedDate	  "Fri Sep 06 09:37:29 2013"
+  RTWModifiedTimeStamp	  300361007
+  ModelVersionFormat	  "1.%<AutoIncrement:69>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -908,7 +908,7 @@ Model {
       Ports		      [1, 1]
       Position		      [750, 10769, 820, 10811]
       ZOrder		      64
-      LibraryVersion	      "1.71"
+      LibraryVersion	      "1.72"
       SourceBlock	      "CampusEnergyModeling/PV/Generic Inverter"
       SourceType	      "Generic Inverter"
       model_type	      "Quadratic"
@@ -965,7 +965,6 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
-      LegendLocations	      "0.58128     0.75217     0.32407    0.088406"
       YMin		      "0"
       YMax		      "1e+06"
       DataFormat	      "StructureWithTime"
@@ -1002,8 +1001,6 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
-      LegendLocations	      " 0.5842     0.88795     0.35282     0.05513\n0.64892      0.6026      0.2881    0.031138\n"
-      "0.57585     0.29479     0.36117    0.031138"
       TimeRange		      "86400"
       YMin		      "0~0~0"
       YMax		      "1300000~65~1500"
@@ -1019,7 +1016,7 @@ Model {
       Ports		      [1, 1]
       Position		      [605, 10770, 675, 10810]
       ZOrder		      78
-      LibraryVersion	      "1.71"
+      LibraryVersion	      "1.72"
       SourceBlock	      "CampusEnergyModeling/PV/PV Smoothing"
       SourceType	      "Photovoltaic Array Smoothing"
       sel		      "Array Size and Power Density"
@@ -1042,14 +1039,14 @@ Model {
       Ports		      [4, 3]
       Position		      [250, 10772, 460, 10888]
       ZOrder		      65
-      LibraryVersion	      "1.71"
+      LibraryVersion	      "1.72"
       UserDataPersistent      on
       UserData		      "DataTag0"
       SourceBlock	      "CampusEnergyModeling/PV/PVWatts Cosimulation"
       SourceType	      "PVWatts Cosimulation"
       lat		      "39.74"
       lon		      "-105.18"
-      start_time	      "1-Jun-2012 00:00:00"
+      start_time	      "2012-06-01 00:00:00"
       tz		      "-6"
       time_step		      "600"
       system_size	      "1e6"
@@ -1177,7 +1174,7 @@ Model {
       Ports		      [0, 1]
       Position		      [55, 10625, 130, 10715]
       ZOrder		      60
-      LibraryVersion	      "1.71"
+      LibraryVersion	      "1.72"
       SourceBlock	      "CampusEnergyModeling/Weather/Weather Data"
       SourceType	      "Weather Data From File"
       fname		      "Weather.mat"
@@ -1339,6 +1336,7 @@ Model {
       SID		      "89"
       Name		      "Output to workspace"
       Position		      [1001, 10620]
+      ZOrder		      -1
     }
   }
 }
@@ -1354,7 +1352,7 @@ MatData {
     "          &E?<F5F              !P;V%?8W5T:6X         :6YI=%]T8V5L;        &EN:71?<&]A          !O=71P=71?9&,      "
     "   ;W5T<'5T7V-E;&QT96UP &]U='!U=%]P;V$        .    .     8    (    !@         %    \"     $    !     0         )  "
     "  \"    !^%ZU&XWD- #@   #@    &    \"     8         !0    @    !     0    $         \"0    @   #L4;@>A4M:P X   !( "
-    "   !@    @    $          4    (     0   !,    !         !     3    ,2U*=6XM,C Q,B P,#HP,#HP,       #@   #@    &   "
+    "   !@    @    $          4    (     0   !,    !         !     3    ,C Q,BTP-BTP,2 P,#HP,#HP,       #@   #@    &   "
     " \"     8         !0    @    !     0    $         \"0    @            8P X    X    !@    @    &          4    (   "
     "  0    $    !          D    (          # @D .    .     8    (    !@         %    \"     $    !     0         )    "
     "\"         \" A\"Y!#@   #@    &    \"     8         !0    @    !     0    $         \"0    @   !F9F9F9F;N/PX    X "

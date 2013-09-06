@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.969"
+    ComputedModelVersion    "1.970"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -33,7 +33,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-8.0, -8.0, 1936.0, 1056.0]
+      Location		      [-8.0, 0.0, 1936.0, 1056.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -59,11 +59,11 @@ Model {
 	LoadSaveID		"0"
 	Extents			[1886.0, 882.0]
 	ZoomFactor		[1.0]
-	Offset			[901.470405999089, 301.22546505193759]
+	Offset			[6.4704059990890528, 1033.0]
       }
     }
   }
-  PhysicalModelingChecksum "2176141336"
+  PhysicalModelingChecksum "2178970188"
   PhysicalModelingParameterChecksum "1237486061"
   PhysicalModelingProducts "Power_System_Blocks"
   Created		  "Thu Sep 30 16:43:56 1999"
@@ -72,9 +72,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Aug 07 12:35:27 2013"
-  RTWModifiedTimeStamp	  297779597
-  ModelVersionFormat	  "1.%<AutoIncrement:969>"
+  LastModifiedDate	  "Fri Sep 06 09:38:34 2013"
+  RTWModifiedTimeStamp	  300361109
+  ModelVersionFormat	  "1.%<AutoIncrement:970>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1075,7 +1075,7 @@ Model {
   }
   System {
     Name		    "integrated_campus"
-    Location		    [-8, -8, 1928, 1048]
+    Location		    [-8, 0, 1928, 1056]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1115,7 +1115,7 @@ Model {
       Ports		      [1, 0, 0, 0, 0, 4]
       Position		      [1785, 2132, 1825, 2218]
       ZOrder		      144
-      LibraryVersion	      "1.69"
+      LibraryVersion	      "1.72"
       SourceBlock	      "CampusEnergyModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "load"
@@ -1132,7 +1132,7 @@ Model {
       Ports		      [1, 0, 0, 0, 0, 4]
       Position		      [1995, 1922, 2035, 2008]
       ZOrder		      242
-      LibraryVersion	      "1.69"
+      LibraryVersion	      "1.72"
       SourceBlock	      "CampusEnergyModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "load"
@@ -2769,10 +2769,6 @@ Model {
 	}
 	Line {
 	  Name			  "Time of Day"
-	  FontName		  "Helvetica"
-	  FontSize		  9
-	  FontWeight		  "normal"
-	  FontAngle		  "normal"
 	  Labels		  [1, 1]
 	  SrcBlock		  "modulus"
 	  SrcPort		  1
@@ -2815,10 +2811,6 @@ Model {
 	}
 	Line {
 	  Name			  "Chiller"
-	  FontName		  "Helvetica"
-	  FontSize		  9
-	  FontWeight		  "normal"
-	  FontAngle		  "normal"
 	  Labels		  [1, 1]
 	  SrcBlock		  "Chiller"
 	  SrcPort		  1
@@ -2828,10 +2820,6 @@ Model {
 	}
 	Line {
 	  Name			  "Room"
-	  FontName		  "Helvetica"
-	  FontSize		  9
-	  FontWeight		  "normal"
-	  FontAngle		  "normal"
 	  Labels		  [1, 1]
 	  SrcBlock		  "Room"
 	  SrcPort		  1
@@ -2841,10 +2829,6 @@ Model {
 	}
 	Line {
 	  Name			  "Lights"
-	  FontName		  "Helvetica"
-	  FontSize		  9
-	  FontWeight		  "normal"
-	  FontAngle		  "normal"
 	  Labels		  [1, 1]
 	  SrcBlock		  "Lights"
 	  SrcPort		  1
@@ -2854,10 +2838,6 @@ Model {
 	}
 	Line {
 	  Name			  "Plant"
-	  FontName		  "Helvetica"
-	  FontSize		  9
-	  FontWeight		  "normal"
-	  FontAngle		  "normal"
 	  Labels		  [1, 1]
 	  SrcBlock		  "Plant"
 	  SrcPort		  1
@@ -2902,10 +2882,6 @@ Model {
 	}
 	Line {
 	  Name			  "Lights"
-	  FontName		  "Helvetica"
-	  FontSize		  9
-	  FontWeight		  "normal"
-	  FontAngle		  "normal"
 	  Labels		  [1, 0]
 	  SrcBlock		  "Price Threshold 1"
 	  SrcPort		  1
@@ -2914,10 +2890,6 @@ Model {
 	}
 	Line {
 	  Name			  "Chiller"
-	  FontName		  "Helvetica"
-	  FontSize		  9
-	  FontWeight		  "normal"
-	  FontAngle		  "normal"
 	  Labels		  [1, 0]
 	  SrcBlock		  "Price Threshold 2"
 	  SrcPort		  1
@@ -2926,10 +2898,6 @@ Model {
 	}
 	Line {
 	  Name			  "Room"
-	  FontName		  "Helvetica"
-	  FontSize		  9
-	  FontWeight		  "normal"
-	  FontAngle		  "normal"
 	  Labels		  [1, 0]
 	  SrcBlock		  "Price Threshold 3"
 	  SrcPort		  1
@@ -2938,10 +2906,6 @@ Model {
 	}
 	Line {
 	  Name			  "Plant"
-	  FontName		  "Helvetica"
-	  FontSize		  9
-	  FontWeight		  "normal"
-	  FontAngle		  "normal"
 	  Labels		  [1, 0]
 	  SrcBlock		  "Price Threshold 4"
 	  SrcPort		  1
@@ -3215,7 +3179,7 @@ Model {
 	  Position		  [455, 539, 700, 721]
 	  ZOrder		  450
 	  ForegroundColor	  "blue"
-	  LibraryVersion	  "1.69"
+	  LibraryVersion	  "1.72"
 	  SourceBlock		  "CampusEnergyModeling/Buildings/E+ Building"
 	  SourceType		  "EnergyPlus Cosimulation"
 	  progname		  "'C:\\EnergyPlusV8-0-1\\RunEPlus.bat'"
@@ -3255,7 +3219,7 @@ Model {
 	  Position		  [460, 779, 705, 961]
 	  ZOrder		  451
 	  ForegroundColor	  "blue"
-	  LibraryVersion	  "1.69"
+	  LibraryVersion	  "1.72"
 	  SourceBlock		  "CampusEnergyModeling/Buildings/E+ Building"
 	  SourceType		  "EnergyPlus Cosimulation"
 	  progname		  "'C:\\EnergyPlusV8-0-1\\RunEPlus.bat'"
@@ -3295,7 +3259,7 @@ Model {
 	  Position		  [435, 214, 710, 396]
 	  ZOrder		  452
 	  ForegroundColor	  "blue"
-	  LibraryVersion	  "1.69"
+	  LibraryVersion	  "1.72"
 	  SourceBlock		  "CampusEnergyModeling/Buildings/E+ Plant"
 	  SourceType		  "EnergyPlus Cosimulation"
 	  progname		  "'C:\\EnergyPlusV8-0-1\\RunEPlus.bat'"
@@ -5897,7 +5861,7 @@ Model {
       Ports		      [1, 0, 0, 0, 0, 4]
       Position		      [1570, 2367, 1610, 2453]
       ZOrder		      752
-      LibraryVersion	      "1.69"
+      LibraryVersion	      "1.72"
       SourceBlock	      "CampusEnergyModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "load"
@@ -5914,7 +5878,7 @@ Model {
       Ports		      [1, 0, 0, 0, 0, 4]
       Position		      [2365, 1807, 2405, 1893]
       ZOrder		      163
-      LibraryVersion	      "1.69"
+      LibraryVersion	      "1.72"
       SourceBlock	      "CampusEnergyModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "load"
@@ -5931,7 +5895,7 @@ Model {
       Ports		      [1, 0, 0, 0, 0, 4]
       Position		      [2365, 1952, 2405, 2038]
       ZOrder		      244
-      LibraryVersion	      "1.69"
+      LibraryVersion	      "1.72"
       SourceBlock	      "CampusEnergyModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "load"
@@ -5948,7 +5912,7 @@ Model {
       Ports		      [1, 0, 0, 0, 0, 4]
       Position		      [2365, 2097, 2405, 2183]
       ZOrder		      245
-      LibraryVersion	      "1.69"
+      LibraryVersion	      "1.72"
       SourceBlock	      "CampusEnergyModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "load"
@@ -5965,7 +5929,7 @@ Model {
       Ports		      [1, 0, 0, 0, 0, 4]
       Position		      [2365, 2227, 2405, 2313]
       ZOrder		      246
-      LibraryVersion	      "1.69"
+      LibraryVersion	      "1.72"
       SourceBlock	      "CampusEnergyModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "load"
@@ -5982,7 +5946,7 @@ Model {
       Ports		      [1, 0, 0, 0, 0, 4]
       Position		      [2365, 2372, 2405, 2458]
       ZOrder		      247
-      LibraryVersion	      "1.69"
+      LibraryVersion	      "1.72"
       SourceBlock	      "CampusEnergyModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "load"
@@ -5999,7 +5963,7 @@ Model {
       Ports		      [1, 0, 0, 0, 0, 4]
       Position		      [2365, 2517, 2405, 2603]
       ZOrder		      248
-      LibraryVersion	      "1.69"
+      LibraryVersion	      "1.72"
       SourceBlock	      "CampusEnergyModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "load"
@@ -6277,7 +6241,7 @@ Model {
 	  Ports			  [2, 2]
 	  Position		  [905, 83, 985, 167]
 	  ZOrder		  515
-	  LibraryVersion	  "1.69"
+	  LibraryVersion	  "1.72"
 	  SourceBlock		  "CampusEnergyModeling/Electrical/EV Battery"
 	  SourceType		  "Electric Vehicle Battery"
 	  capacity		  "24000"
@@ -6290,7 +6254,7 @@ Model {
 	  Ports			  [2, 2]
 	  Position		  [905, 218, 985, 302]
 	  ZOrder		  549
-	  LibraryVersion	  "1.69"
+	  LibraryVersion	  "1.72"
 	  SourceBlock		  "CampusEnergyModeling/Electrical/EV Battery"
 	  SourceType		  "Electric Vehicle Battery"
 	  capacity		  "24000"
@@ -6303,7 +6267,7 @@ Model {
 	  Ports			  [2, 2]
 	  Position		  [905, 353, 985, 437]
 	  ZOrder		  557
-	  LibraryVersion	  "1.69"
+	  LibraryVersion	  "1.72"
 	  SourceBlock		  "CampusEnergyModeling/Electrical/EV Battery"
 	  SourceType		  "Electric Vehicle Battery"
 	  capacity		  "24000"
@@ -6316,7 +6280,7 @@ Model {
 	  Ports			  [2, 2]
 	  Position		  [905, 488, 985, 572]
 	  ZOrder		  565
-	  LibraryVersion	  "1.69"
+	  LibraryVersion	  "1.72"
 	  SourceBlock		  "CampusEnergyModeling/Electrical/EV Battery"
 	  SourceType		  "Electric Vehicle Battery"
 	  capacity		  "24000"
@@ -6329,7 +6293,7 @@ Model {
 	  Ports			  [2, 2]
 	  Position		  [905, 623, 985, 707]
 	  ZOrder		  573
-	  LibraryVersion	  "1.69"
+	  LibraryVersion	  "1.72"
 	  SourceBlock		  "CampusEnergyModeling/Electrical/EV Battery"
 	  SourceType		  "Electric Vehicle Battery"
 	  capacity		  "24000"
@@ -6342,7 +6306,7 @@ Model {
 	  Ports			  [2, 2]
 	  Position		  [905, 758, 985, 842]
 	  ZOrder		  581
-	  LibraryVersion	  "1.69"
+	  LibraryVersion	  "1.72"
 	  SourceBlock		  "CampusEnergyModeling/Electrical/EV Battery"
 	  SourceType		  "Electric Vehicle Battery"
 	  capacity		  "24000"
@@ -6355,7 +6319,7 @@ Model {
 	  Ports			  [3, 1]
 	  Position		  [705, 62, 785, 148]
 	  ZOrder		  514
-	  LibraryVersion	  "1.69"
+	  LibraryVersion	  "1.72"
 	  SourceBlock		  "CampusEnergyModeling/Electrical/EV Charger"
 	  SourceType		  "Electric Vehicle Charging Station"
 	  rating		  "6240"
@@ -6370,7 +6334,7 @@ Model {
 	  Ports			  [3, 1]
 	  Position		  [705, 197, 785, 283]
 	  ZOrder		  548
-	  LibraryVersion	  "1.69"
+	  LibraryVersion	  "1.72"
 	  SourceBlock		  "CampusEnergyModeling/Electrical/EV Charger"
 	  SourceType		  "Electric Vehicle Charging Station"
 	  rating		  "6240"
@@ -6385,7 +6349,7 @@ Model {
 	  Ports			  [3, 1]
 	  Position		  [705, 332, 785, 418]
 	  ZOrder		  556
-	  LibraryVersion	  "1.69"
+	  LibraryVersion	  "1.72"
 	  SourceBlock		  "CampusEnergyModeling/Electrical/EV Charger"
 	  SourceType		  "Electric Vehicle Charging Station"
 	  rating		  "6240"
@@ -6400,7 +6364,7 @@ Model {
 	  Ports			  [3, 1]
 	  Position		  [705, 467, 785, 553]
 	  ZOrder		  564
-	  LibraryVersion	  "1.69"
+	  LibraryVersion	  "1.72"
 	  SourceBlock		  "CampusEnergyModeling/Electrical/EV Charger"
 	  SourceType		  "Electric Vehicle Charging Station"
 	  rating		  "6240"
@@ -6415,7 +6379,7 @@ Model {
 	  Ports			  [3, 1]
 	  Position		  [705, 602, 785, 688]
 	  ZOrder		  572
-	  LibraryVersion	  "1.69"
+	  LibraryVersion	  "1.72"
 	  SourceBlock		  "CampusEnergyModeling/Electrical/EV Charger"
 	  SourceType		  "Electric Vehicle Charging Station"
 	  rating		  "6240"
@@ -6430,7 +6394,7 @@ Model {
 	  Ports			  [3, 1]
 	  Position		  [705, 737, 785, 823]
 	  ZOrder		  580
-	  LibraryVersion	  "1.69"
+	  LibraryVersion	  "1.72"
 	  SourceBlock		  "CampusEnergyModeling/Electrical/EV Charger"
 	  SourceType		  "Electric Vehicle Charging Station"
 	  rating		  "6240"
@@ -6984,7 +6948,7 @@ Model {
 	  Position		  [1240, 197, 1310, 253]
 	  ZOrder		  496
 	  ShowName		  off
-	  LibraryVersion	  "1.69"
+	  LibraryVersion	  "1.72"
 	  SourceBlock		  "CampusEnergyModeling/Electrical/Power Factor\nConversion"
 	  SourceType		  "Power Factor Conversion"
 	  pfType		  "Lagging"
@@ -6997,7 +6961,7 @@ Model {
 	  Position		  [1240, 62, 1310, 118]
 	  ZOrder		  494
 	  ShowName		  off
-	  LibraryVersion	  "1.69"
+	  LibraryVersion	  "1.72"
 	  SourceBlock		  "CampusEnergyModeling/Electrical/Power Factor\nConversion"
 	  SourceType		  "Power Factor Conversion"
 	  pfType		  "Lagging"
@@ -7010,7 +6974,7 @@ Model {
 	  Position		  [1240, 332, 1310, 388]
 	  ZOrder		  498
 	  ShowName		  off
-	  LibraryVersion	  "1.69"
+	  LibraryVersion	  "1.72"
 	  SourceBlock		  "CampusEnergyModeling/Electrical/Power Factor\nConversion"
 	  SourceType		  "Power Factor Conversion"
 	  pfType		  "Lagging"
@@ -7023,7 +6987,7 @@ Model {
 	  Position		  [1240, 467, 1310, 523]
 	  ZOrder		  500
 	  ShowName		  off
-	  LibraryVersion	  "1.69"
+	  LibraryVersion	  "1.72"
 	  SourceBlock		  "CampusEnergyModeling/Electrical/Power Factor\nConversion"
 	  SourceType		  "Power Factor Conversion"
 	  pfType		  "Lagging"
@@ -7036,7 +7000,7 @@ Model {
 	  Position		  [1240, 602, 1310, 658]
 	  ZOrder		  502
 	  ShowName		  off
-	  LibraryVersion	  "1.69"
+	  LibraryVersion	  "1.72"
 	  SourceBlock		  "CampusEnergyModeling/Electrical/Power Factor\nConversion"
 	  SourceType		  "Power Factor Conversion"
 	  pfType		  "Lagging"
@@ -7049,7 +7013,7 @@ Model {
 	  Position		  [1240, 737, 1310, 793]
 	  ZOrder		  504
 	  ShowName		  off
-	  LibraryVersion	  "1.69"
+	  LibraryVersion	  "1.72"
 	  SourceBlock		  "CampusEnergyModeling/Electrical/Power Factor\nConversion"
 	  SourceType		  "Power Factor Conversion"
 	  pfType		  "Lagging"
@@ -9244,7 +9208,7 @@ Model {
       Position		      [1675, 2072, 1745, 2128]
       ZOrder		      485
       ShowName		      off
-      LibraryVersion	      "1.69"
+      LibraryVersion	      "1.72"
       SourceBlock	      "CampusEnergyModeling/Electrical/Power Factor\nConversion"
       SourceType	      "Power Factor Conversion"
       pfType		      "Lagging"
@@ -9257,7 +9221,7 @@ Model {
       Position		      [1885, 1862, 1955, 1918]
       ZOrder		      488
       ShowName		      off
-      LibraryVersion	      "1.69"
+      LibraryVersion	      "1.72"
       SourceBlock	      "CampusEnergyModeling/Electrical/Power Factor\nConversion"
       SourceType	      "Power Factor Conversion"
       pfType		      "Lagging"
@@ -9270,7 +9234,7 @@ Model {
       Position		      [1450, 2307, 1520, 2363]
       ZOrder		      491
       ShowName		      off
-      LibraryVersion	      "1.69"
+      LibraryVersion	      "1.72"
       SourceBlock	      "CampusEnergyModeling/Electrical/Power Factor\nConversion"
       SourceType	      "Power Factor Conversion"
       pfType		      "Lagging"
@@ -9282,7 +9246,7 @@ Model {
       Ports		      [1, 0, 0, 0, 0, 4]
       Position		      [3020, 1647, 3060, 1733]
       ZOrder		      164
-      LibraryVersion	      "1.69"
+      LibraryVersion	      "1.72"
       SourceBlock	      "CampusEnergyModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "source"
@@ -9325,7 +9289,7 @@ Model {
       }
       System {
 	Name			"PV System"
-	Location		[-8, -8, 1928, 1048]
+	Location		[-8, 0, 1928, 1056]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -9387,7 +9351,7 @@ Model {
 	  Ports			  [1, 1]
 	  Position		  [650, 54, 745, 166]
 	  ZOrder		  320
-	  LibraryVersion	  "1.69"
+	  LibraryVersion	  "1.72"
 	  SourceBlock		  "CampusEnergyModeling/PV/Generic Inverter"
 	  SourceType		  "Generic Inverter"
 	  model_type		  "Lookup Table"
@@ -9407,14 +9371,14 @@ Model {
 	  Ports			  [4, 1]
 	  Position		  [345, 52, 555, 168]
 	  ZOrder		  321
-	  LibraryVersion	  "1.69"
+	  LibraryVersion	  "1.72"
 	  UserDataPersistent	  on
 	  UserData		  "DataTag0"
 	  SourceBlock		  "CampusEnergyModeling/PV/PVWatts Cosimulation"
 	  SourceType		  "PVWatts Cosimulation"
 	  lat			  "39.74"
 	  lon			  "-105.18"
-	  start_time		  "1-Jun-2012 00:00:00"
+	  start_time		  "2012-01-01 00:00:00"
 	  tz			  "-6"
 	  time_step		  "15"
 	  system_size		  "30000"
@@ -10407,7 +10371,7 @@ Model {
       Ports		      [0, 1]
       Position		      [965, 495, 1040, 585]
       ZOrder		      321
-      LibraryVersion	      "1.69"
+      LibraryVersion	      "1.72"
       SourceBlock	      "CampusEnergyModeling/Weather/Weather Data"
       SourceType	      "Weather Data From File"
       fname		      "Weather2.mat"
@@ -10760,7 +10724,7 @@ Model {
       ZOrder		      -198
       DropShadow	      on
       Priority		      "2"
-      LibraryVersion	      "*1.2191"
+      LibraryVersion	      "1.2191"
       UserDataPersistent      on
       UserData		      "DataTag1"
       SourceBlock	      "powerlib/powergui"
@@ -13637,7 +13601,7 @@ MatData {
     "          &E?<F5F              !P;V%?8W5T:6X         :6YI=%]T8V5L;        &EN:71?<&]A          !O=71P=71?9&,      "
     "   ;W5T<'5T7V-E;&QT96UP &]U='!U=%]P;V$        .    .     8    (    !@         %    \"     $    !     0         )  "
     "  \"    !^%ZU&XWD- #@   #@    &    \"     8         !0    @    !     0    $         \"0    @   #L4;@>A4M:P X   !( "
-    "   !@    @    $          4    (     0   !,    !         !     3    ,2U*=6XM,C Q,B P,#HP,#HP,       #@   #@    &   "
+    "   !@    @    $          4    (     0   !,    !         !     3    ,C Q,BTP,2TP,2 P,#HP,#HP,       #@   #@    &   "
     " \"     8         !0    @    !     0    $         \"0    @            8P X    X    !@    @    &          4    (   "
     "  0    $    !          D    (            +D .    .     8    (    !@         %    \"     $    !     0         )    "
     "\"           3-U #@   #@    &    \"     8         !0    @    !     0    $         \"0    @   !F9F9F9F;N/PX    X   "
@@ -14205,8 +14169,6 @@ Stateflow {
     firstJunction	    36
     viewObj		    27
     machine		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    12
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -14782,10 +14744,7 @@ Stateflow {
     firstTransition	    65
     firstJunction	    64
     viewObj		    57
-    visible		    1
     machine		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    9
     decomposition	    CLUSTER_CHART
     type		    EML_CHART

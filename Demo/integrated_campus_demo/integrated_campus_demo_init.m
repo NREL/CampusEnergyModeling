@@ -51,9 +51,9 @@ save('Weather.mat', 'ans', '-v7.3');
 % Run the interactive function to retrieve and use DataBus data
 
 if useDataBus
-    % Time stamps for data to retrieve (dd-mmm-yyyy HH:MM:SS)
-    start = '01-Jun-2013 00:00:00';
-    stop  = '02-Jun-2013 00:00:00';
+    % Time stamps for data to retrieve (yyyy-mm-dd HH:MM:SS)
+    start = '2013-06-01 00:00:00';
+    stop  = '2013-06-02 00:00:00';
     
     
     % Interactive import from databus -> result in 'ans' variable

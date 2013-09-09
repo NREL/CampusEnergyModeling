@@ -33,9 +33,10 @@ runMatlab = true;
 runSimulink = true;
 
 % Omit tests that require any of the following dependencies:
-omitDeps = {'EnergyPlus','MLEPlus'};
+omitDeps = {'databus'};
 
 % Valid dependency names are:
+%	databus
 %   energyplus
 %   mleplus
 %   simpowersystems

@@ -12,7 +12,7 @@ The Campus Energy Modeling library provides an interface between Simulink and se
 * [EnergyPlus][2] (via [MLE+][3]) for building and thermal equipment models
 * [PVWatts][4] (via [SSC][5]) for photovoltaic arrays
 * [Opal-RT][6] hardware using [RT-LAB][7] for hardware-in-loop (HIL) simulation
-* NREL's [Databus][8] project for data acquisition (NREL internal use only)
+* NREL's [DataBus][8] project for data acquisition (NREL internal use only)
 
 [1]: http://www.mathworks.com/products/simpower/ "SimPowerSystems"
 [2]: http://apps1.eere.energy.gov/buildings/energyplus/ "EnergyPlus"
@@ -21,7 +21,7 @@ The Campus Energy Modeling library provides an interface between Simulink and se
 [5]: https://sam.nrel.gov/content/sam-simulation-core-sdk "SAM Simulation Core SDK"
 [6]: http://www.opal-rt.com/ "Opal-RT Technologies"
 [7]: http://www.opal-rt.com/product/rt-lab-professional-real-time-digital-simulation-software "RT-LAB"
-[8]: https://databus.nrel.gov/ "Databus"
+[8]: https://databus.nrel.gov/ "DataBus"
 
 Documentation
 -------------

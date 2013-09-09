@@ -33,7 +33,18 @@
 *.shd
 *.sql
 
-# Users need to manually ignore .csv, .svg, and .html outputs from EnergyPlus
+# Users need to manually ignore .csv and .html outputs from EnergyPlus
+
+## Graphics
+# Ignore graphics files
+*.jpg
+*.jpeg
+*.png
+*.tif
+*.tiff
+*.svg
+
+# (Overriden by indivudal .gitignores in certain subfolders, e.g. 'Graphics')
 
 ## Java
 # Class Files

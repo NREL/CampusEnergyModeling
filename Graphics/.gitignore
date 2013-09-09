@@ -1,0 +1,8 @@
+## Graphics
+# Don't ignore graphics files here
+!*.jpg
+!*.jpeg
+!*.png
+!*.tif
+!*.tiff
+!*.svg

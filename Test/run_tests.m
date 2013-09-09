@@ -12,9 +12,9 @@
 % 2. For all tests to run successfully, all the software dependencies for
 %    the Campus Energy Modeling library must be installed. Otherwise, some
 %    tests will fail when they attempt to call external commands that are
-%    not available. You can omit tests for specific dependencies in the
+%    not available. You can exclude tests for specific dependencies in the
 %    configuration by specifying dependency names in the cell array
-%    'omitDeps'.
+%    'excludeDeps'.
 %
 % 3. Set
 %       clearOldLogs = true
@@ -32,8 +32,8 @@ runMatlab = true;
 % Run Simulink tests?
 runSimulink = true;
 
-% Omit tests that require any of the following dependencies:
-omitDeps = {'databus'};
+% Exclude tests that require any of the following dependencies:
+excludeDeps = {'databus'};
 
 % Valid dependency names are:
 %	databus
@@ -76,7 +76,7 @@ else
     fprintf_echo(flog, 'no\n');
 end
 fprintf_echo(flog, '\tSkipping tests with dependencies: %s\n', ...
-    strjoin(omitDeps,', ') );
+    strjoin(excludeDeps,', ') );
 fprintf_echo(flog, '\tClearing old log files: ');
 if clearOldLogs
     fprintf_echo(flog, 'yes\n');
@@ -99,7 +99,7 @@ root = pwd;
 % Run MATLAB tests
 if runMatlab
     % Log message
-    fprintf_echo(flog, '[%s] %s\n', ...
+    fprintf_echo(flog, '[%s] %s', ...
         datestr(now, 'yyyy-mm-dd HH:MM:SS'), ...
         'Running MATLAB tests:' );
     
@@ -112,6 +112,13 @@ if runMatlab
     
     % ...with names that aren't . or ..
     testSet = setdiff(testSet(1,:), {'.','..'});
+    
+    % If empty, record that information; otherwise record a newline
+    if isempty(testSet)
+        fprintf_echo(flog, ' %s\n', 'No tests found');
+    else
+        fprintf_echo(flog, '\n');
+    end
     
     % Run each test
 	for i = 1:length(testSet)
@@ -145,7 +152,7 @@ if runMatlab
         else
             deps = {};
         end
-        deps = intersect(lower(deps), lower(omitDeps));
+        deps = intersect(lower(deps), lower(excludeDeps));
         
         % Run...
         if isempty(deps)
@@ -197,7 +204,7 @@ end
 % Run Simulink tests
 if runSimulink
     % Log message
-    fprintf_echo(flog, '[%s] %s\n', ...
+    fprintf_echo(flog, '[%s] %s', ...
         datestr(now, 'yyyy-mm-dd HH:MM:SS'), ...
         'Running Simulink tests:' );
     
@@ -210,6 +217,13 @@ if runSimulink
     
     % ...with names that aren't . or ..
     testSet = setdiff(testSet(1,:), {'.','..'});
+    
+    % If empty, record that information; otherwise record a newline
+    if isempty(testSet)
+        fprintf_echo(flog, ' %s\n', 'No tests found');
+    else
+        fprintf_echo(flog, '\n');
+    end
     
     % Run each test
 	for i = 1:length(testSet)
@@ -243,7 +257,7 @@ if runSimulink
         else
             deps = {};
         end
-        deps = intersect(lower(deps), lower(omitDeps));
+        deps = intersect(lower(deps), lower(excludeDeps));
         
         % Run...
         if isempty(deps)

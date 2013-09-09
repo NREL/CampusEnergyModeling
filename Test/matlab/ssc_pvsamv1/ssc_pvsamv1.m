@@ -1,4 +1,4 @@
-%% test_ssc_pvsamv1.m - Test the SSC-MATLAB interface and utility scripts
+%% ssc_pvsamv1.m - Test the SSC-MATLAB interface and utility scripts
 %
 % This test script executes a full-year SAM PV model in SSC using the
 % MATLAB interface. It calls the SSC pvsamv1 module via the SSC-MATLAB

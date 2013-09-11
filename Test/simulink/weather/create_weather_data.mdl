@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.13"
+    ComputedModelVersion    "1.15"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -66,9 +66,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Jun 26 11:04:35 2013"
-  RTWModifiedTimeStamp	  294145472
-  ModelVersionFormat	  "1.%<AutoIncrement:13>"
+  LastModifiedDate	  "Wed Sep 11 13:53:56 2013"
+  RTWModifiedTimeStamp	  300808433
+  ModelVersionFormat	  "1.%<AutoIncrement:15>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -171,9 +171,9 @@ Model {
 	  $ObjectID		  8
 	  Version		  "1.13.0"
 	  StartTime		  "0.0"
-	  StopTime		  "10*24*3600"
+	  StopTime		  "31*24*3600"
 	  AbsTol		  "auto"
-	  FixedStep		  "3600"
+	  FixedStep		  "600"
 	  InitialStep		  "auto"
 	  MaxNumMinSteps	  "-1"
 	  MaxOrder		  5
@@ -675,7 +675,7 @@ Model {
       }
       Name		      "Configuration"
       CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition     [ 414, 165, 1506, 871 ] 
+      ConfigPrmDlgPosition     [ 398, 105, 1522, 887 ] 
     }
     PropName		    "ConfigurationSets"
   }
@@ -857,7 +857,7 @@ Model {
       Name		      "Bus\nSelector"
       SID		      "39"
       Ports		      [1, 2]
-      Position		      [285, 146, 290, 184]
+      Position		      [265, 96, 270, 129]
       ZOrder		      35
       ShowName		      off
       OutputSignals	      "DryBulbTemp,GHI"
@@ -937,7 +937,7 @@ Model {
       Name		      "Scope"
       SID		      "38"
       Ports		      [2]
-      Position		      [365, 151, 395, 184]
+      Position		      [350, 96, 380, 129]
       ZOrder		      34
       Floating		      off
       Location		      [1386, 351, 1710, 590]
@@ -971,7 +971,7 @@ Model {
       Ports		      [1]
       Position		      [335, 40, 395, 70]
       ZOrder		      28
-      Filename		      "test.mat"
+      Filename		      "weatherData.mat"
       SaveFormat	      "Timeseries"
     }
     Line {
@@ -1010,7 +1010,7 @@ Model {
       SrcPort		      1
       Points		      [12, 0]
       Branch {
-	Points			[0, 110]
+	Points			[0, 60]
 	DstBlock		"Bus\nSelector"
 	DstPort			1
       }
@@ -1024,7 +1024,6 @@ Model {
       Labels		      [0, 0]
       SrcBlock		      "Bus\nSelector"
       SrcPort		      1
-      Points		      [2, 0; 0, 5]
       DstBlock		      "Scope"
       DstPort		      1
     }

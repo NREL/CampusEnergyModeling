@@ -1,12 +1,12 @@
 Model {
-  Name			  "weather_demo"
+  Name			  "read_weather_data"
   Version		  8.1
   MdlSubVersion		  0
   GraphicalInterface {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.34"
+    ComputedModelVersion    "1.38"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -30,7 +30,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [822.0, 52.0, 867.0, 908.0]
+      Location		      [99.0, 31.0, 867.0, 908.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -66,9 +66,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Jul 23 14:17:11 2013"
-  RTWModifiedTimeStamp	  296489816
-  ModelVersionFormat	  "1.%<AutoIncrement:34>"
+  LastModifiedDate	  "Wed Sep 11 14:01:22 2013"
+  RTWModifiedTimeStamp	  300808669
+  ModelVersionFormat	  "1.%<AutoIncrement:38>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -170,8 +170,8 @@ Model {
 	Simulink.SolverCC {
 	  $ObjectID		  8
 	  Version		  "1.13.0"
-	  StartTime		  "0.0"
-	  StopTime		  "8760*3600"
+	  StartTime		  "0"
+	  StopTime		  "8759*3600"
 	  AbsTol		  "auto"
 	  FixedStep		  "3600"
 	  InitialStep		  "auto"
@@ -751,13 +751,6 @@ Model {
       OutputAsBus	      off
     }
     Block {
-      BlockType		      Display
-      Format		      "short"
-      Decimation	      "10"
-      Floating		      off
-      SampleTime	      "-1"
-    }
-    Block {
       BlockType		      Scope
       ModelBased	      off
       TickLabels	      "OneTimeTick"
@@ -775,10 +768,20 @@ Model {
       SampleInput	      off
       SampleTime	      "-1"
     }
+    Block {
+      BlockType		      ToWorkspace
+      VariableName	      "simulink_output"
+      MaxDataPoints	      "1000"
+      Decimation	      "1"
+      SampleTime	      "0"
+      SaveFormat	      "Array"
+      FixptAsFi		      off
+      NumInputs		      "1"
+    }
   }
   System {
-    Name		    "weather_demo"
-    Location		    [822, 52, 1689, 960]
+    Name		    "read_weather_data"
+    Location		    [99, 31, 966, 939]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -792,7 +795,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "41"
+    SIDHighWatermark	    "44"
     Block {
       BlockType		      BusSelector
       Name		      "Bus\nSelector"
@@ -816,37 +819,40 @@ Model {
       }
     }
     Block {
-      BlockType		      Display
-      Name		      "Dry-Bulb Temperature"
-      SID		      "23"
+      BlockType		      ToWorkspace
+      Name		      "Dry Bulb\nTemperature"
+      SID		      "42"
       Ports		      [1]
-      Position		      [270, 55, 360, 85]
-      ZOrder		      24
-      Decimation	      "1"
-      Lockdown		      off
+      Position		      [310, 55, 370, 85]
+      ZOrder		      29
+      VariableName	      "dryBulb"
+      MaxDataPoints	      "inf"
+      SampleTime	      "-1"
+      SaveFormat	      "Timeseries"
     }
     Block {
-      BlockType		      Display
-      Name		      "GHI"
-      SID		      "24"
+      BlockType		      ToWorkspace
+      Name		      "Global Horizontal\nIrradiance"
+      SID		      "43"
       Ports		      [1]
-      Position		      [270, 120, 360, 150]
-      ZOrder		      25
-      Decimation	      "1"
-      Lockdown		      off
+      Position		      [310, 120, 370, 150]
+      ZOrder		      30
+      VariableName	      "ghi"
+      MaxDataPoints	      "inf"
+      SampleTime	      "-1"
+      SaveFormat	      "Timeseries"
     }
     Block {
       BlockType		      Scope
       Name		      "Scope"
-      SID		      "25"
+      SID		      "44"
       Ports		      [2]
-      Position		      [300, 221, 330, 254]
-      ZOrder		      26
+      Position		      [325, 211, 355, 244]
+      ZOrder		      31
       Floating		      off
-      Location		      [1320, 287, 1644, 640]
+      Location		      [551, 272, 875, 761]
       Open		      off
       NumInputPorts	      "2"
-      ZoomMode		      "xonly"
       List {
 	ListType		AxesTitles
 	axes1			"%<SignalLabel>"
@@ -862,7 +868,8 @@ Model {
 	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
 	MarkerStyles		"none|none|none|none|none|none"
       }
-      ShowLegends	      off
+      ShowLegends	      on
+      LegendLocations	      "0.49177     0.88344     0.41358    0.041581\n0.63066     0.43149     0.27469    0.041581"
       YMin		      "-5~-5"
       YMax		      "5~5"
       DataFormat	      "StructureWithTime"
@@ -876,10 +883,10 @@ Model {
       Ports		      [0, 1]
       Position		      [45, 60, 120, 150]
       ZOrder		      28
-      LibraryVersion	      "1.54"
+      LibraryVersion	      "1.72"
       SourceBlock	      "CampusEnergyModeling/Weather/Weather Data"
       SourceType	      "Weather Data From File"
-      fname		      "TMY3.mat"
+      fname		      "weatherData.mat"
       initbus		      on
     }
     Line {
@@ -887,14 +894,14 @@ Model {
       Labels		      [0, 0]
       SrcBlock		      "Bus\nSelector"
       SrcPort		      1
-      Points		      [67, 0]
+      Points		      [101, 0]
       Branch {
-	Points			[0, 160]
+	Points			[0, 150]
 	DstBlock		"Scope"
 	DstPort			1
       }
       Branch {
-	DstBlock		"Dry-Bulb Temperature"
+	DstBlock		"Dry Bulb\nTemperature"
 	DstPort			1
       }
     }
@@ -903,14 +910,14 @@ Model {
       Labels		      [0, 0]
       SrcBlock		      "Bus\nSelector"
       SrcPort		      2
-      Points		      [59, 0]
+      Points		      [94, 0]
       Branch {
-	Points			[0, 110]
+	Points			[0, 100]
 	DstBlock		"Scope"
 	DstPort			2
       }
       Branch {
-	DstBlock		"GHI"
+	DstBlock		"Global Horizontal\nIrradiance"
 	DstPort			1
       }
     }

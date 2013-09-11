@@ -198,7 +198,7 @@ function x = convertTMY3(filename,varargin)
         t = datenum( datetime, [dFormat ' ' tFormat] ) + offset/24;
         
         % Determine the start date and adjust the time vector accordingly
-        startDate = datestr(min(t));
+        startDate = datestr(min(t), 'yyyy-mm-dd HH:MM:SS');
         t = t - min(t);
         
         % Now, change time unit to seconds
@@ -236,7 +236,7 @@ function x = convertTMY3(filename,varargin)
         % Assign time series time properties
         x.(columnSpec.name{i}).TimeInfo.Units = 'seconds';
         x.(columnSpec.name{i}).TimeInfo.StartDate = startDate;
-        x.(columnSpec.name{i}).TimeInfo.Format = 0;
+        x.(columnSpec.name{i}).TimeInfo.Format = 'yyyy-mm-dd HH:MM:SS';
         
         % Assign time series data properties
         x.(columnSpec.name{i}).Name = columnSpec.name{i};

@@ -75,7 +75,7 @@ function ok = runTestScript(scriptfile, logfile, ext)
         diary(logfilename)
         
         % Run script; pipe output to log file
-        eval(scriptfile)
+        run(scriptfile)
         
         % Turn diary off
         diary off

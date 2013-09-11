@@ -25,6 +25,8 @@
 % 4. Hardware-in-loop tests using RT-LAB cannot be run automatically and
 %    are not included in this script.
 
+clear all; close all; clc
+
 %% Configuration
 % Run MATLAB tests?
 runMatlab = true;
@@ -228,7 +230,7 @@ if runSimulink
     % Run each test
 	for i = 1:length(testSet)
         % Change working directory
-        cd( [root filesep 'matlab' filesep testSet{i}] );
+        cd( [root filesep 'simulink' filesep testSet{i}] );
         
         % Test script name
         n = testSet{i};

@@ -1,4 +1,4 @@
-%% IMPORTDATABUS - Import Raw Data From DataBus
+%% IMPORTDATABUS - Import time series data from DataBus database
 %
 % Imports a raw data stream from NREL's DataBus time series database using
 % an HTTP request. Options are available to return the data as a pair of
@@ -174,8 +174,8 @@ function [x, varargout] = importDataBus(sensor, start, stop, varargin)
                     ['Optional argument ''' argName ''' is not ' ...
                      'recognized and has therefore been ignored.']);
         end
-	end
-
+    end
+    
     %% Setup
     % Initialize varargout w/ empty output
     varargout = {};
@@ -218,6 +218,13 @@ function [x, varargout] = importDataBus(sensor, start, stop, varargin)
         me2 = addCause(me2, me1);
         throw(me2);
     end
+    
+    % Assert non-empty result
+    assert( ~isempty(raw), ...
+        'importDataBus:noData', ...
+        ['DataBus returned no data for sensor ''%s'' for the ' ...
+         'specified time range'], ...
+        sensor);
     
     %% Convert Data
     % Parse data, if required

@@ -167,8 +167,15 @@ function x = convertTMY3(filename,varargin)
     formatSpec = [formatSpec{:}];
     
     %% Read Data
-    % Read TMY3 data (starts on line 3)
+    % Open TMY3 data
     fid = fopen(filename,'r');
+    assert(fid >= 0, ...
+        'convertTMY3:fileNotFound', ...
+        ['TMY weather data file ''%s'' ' ...
+         'is not present in the current MATLAB path.'], ...
+        filename);
+    
+    % Read TMY3 data (starts on line 3)
     C = textscan(fid, formatSpec, ...
         'Delimiter', delim, 'EmptyValue', NaN, 'HeaderLines', 2);
     fclose(fid);

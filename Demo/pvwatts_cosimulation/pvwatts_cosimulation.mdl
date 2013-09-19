@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.69"
+    ComputedModelVersion    "1.80"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -21,6 +21,7 @@ Model {
   MinMaxOverflowArchiveMode "Overwrite"
   FPTRunName		  "Run 1"
   MaxMDLFileLineLength	  120
+  UserBdParams		  "PhysicalModelingChecksum;PhysicalModelingParameterChecksum;PhysicalModelingProducts"
   Object {
     $PropName		    "BdWindowsInfo"
     $ObjectID		    1
@@ -30,7 +31,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [92.0, 289.0, 1148.0, 732.0]
+      Location		      [91.0, 25.0, 1377.0, 905.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -54,21 +55,24 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1098.0, 558.0]
+	Extents			[1327.0, 731.0]
 	ZoomFactor		[1.0]
-	Offset			[22.580486966968692, 10554.612501233816]
+	Offset			[-46.587493509054184, 10576.41250026226]
       }
     }
   }
+  PhysicalModelingChecksum "4094026836"
+  PhysicalModelingParameterChecksum "2551881806"
+  PhysicalModelingProducts "Power_System_Blocks"
   Created		  "Fri Jun 28 13:18:54 2013"
   Creator		  "sfrank1"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Sep 06 09:37:29 2013"
-  RTWModifiedTimeStamp	  300361007
-  ModelVersionFormat	  "1.%<AutoIncrement:69>"
+  LastModifiedDate	  "Thu Sep 19 11:07:07 2013"
+  RTWModifiedTimeStamp	  301489130
+  ModelVersionFormat	  "1.%<AutoIncrement:80>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -171,9 +175,9 @@ Model {
 	  $ObjectID		  8
 	  Version		  "1.13.0"
 	  StartTime		  "0"
-	  StopTime		  "2592000"
+	  StopTime		  "86400"
 	  AbsTol		  "auto"
-	  FixedStep		  "15"
+	  FixedStep		  "1"
 	  InitialStep		  "auto"
 	  MaxNumMinSteps	  "-1"
 	  MaxOrder		  5
@@ -695,7 +699,7 @@ Model {
       }
       Name		      "Configuration"
       CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition     [ 445, 10, 1476, 920 ] 
+      ConfigPrmDlgPosition     [ 477, 130, 1444, 888 ] 
     }
     PropName		    "ConfigurationSets"
   }
@@ -778,6 +782,19 @@ Model {
       OutputAsBus	      off
     }
     Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      SamplingMode	      "Sample based"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Inherit from 'Constant value'"
+      LockScale		      off
+      SampleTime	      "inf"
+      FramePeriod	      "inf"
+      PreserveConstantTs      off
+    }
+    Block {
       BlockType		      From
       GotoTag		      "A"
       IconDisplay	      "Tag"
@@ -788,6 +805,9 @@ Model {
       GotoTag		      "A"
       IconDisplay	      "Tag"
       TagVisibility	      "local"
+    }
+    Block {
+      BlockType		      PMIOPort
     }
     Block {
       BlockType		      RateTransition
@@ -817,6 +837,30 @@ Model {
       SampleTime	      "-1"
     }
     Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      CheckFcnCallInpInsideContextMsg off
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      FunctionInterfaceSpec   "void_void"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      DataTypeOverrideAppliesTo	"AllNumericTypes"
+      MinMaxOverflowLogging   "UseLocalSettings"
+      SFBlockType	      "NONE"
+      Variant		      off
+      GeneratePreprocessorConditionals off
+    }
+    Block {
       BlockType		      ToWorkspace
       VariableName	      "simulink_output"
       MaxDataPoints	      "1000"
@@ -829,7 +873,7 @@ Model {
   }
   System {
     Name		    "pvwatts_cosimulation"
-    Location		    [92, 289, 1240, 1021]
+    Location		    [91, 25, 1468, 930]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -843,19 +887,24 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "89"
+    SIDHighWatermark	    "113"
     Block {
       BlockType		      BusCreator
       Name		      "Bus\nCreator"
       SID		      "76"
       Ports		      [2, 1]
-      Position		      [656, 10880, 694, 10885]
+      Position		      [730, 10686, 735, 10724]
       ZOrder		      84
-      BlockRotation	      270
-      BlockMirror	      on
+      NamePlacement	      "alternate"
       ShowName		      off
       Inputs		      "2"
       DisplayOption	      "bar"
+      Port {
+	PortNumber		1
+	Name			"DC Power"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
     }
     Block {
       BlockType		      BusSelector
@@ -892,30 +941,322 @@ Model {
       }
     }
     Block {
+      BlockType		      SubSystem
+      Name		      "Cable"
+      SID		      "93"
+      Ports		      [0, 0, 0, 0, 0, 3, 3]
+      Position		      [435, 11050, 495, 11100]
+      ZOrder		      757
+      BlockMirror	      on
+      NamePlacement	      "alternate"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		20
+	$ClassName		"Simulink.Mask"
+	Type			"Short Cable"
+	Description		"This block implements a short cable using three phase mutual inductance.\nSelf impedances and mutual im"
+	"pedances are set by entering positive and zero sequences parameters."
+	Display			"plot(0,0,100,100,[20,20,80,80,90,80,80,20,20,10],[50,40,40,50,50,50,61,61,50,50])"
+	IconOpaque		"off"
+	Array {
+	  Type			  "Simulink.MaskParameter"
+	  Dimension		  5
+	  Object {
+	    $ObjectID		    21
+	    Type		    "edit"
+	    Name		    "R1"
+	    Prompt		    "Positive Sequence R (ohms/1000ft)"
+	    Value		    "0.010"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    22
+	    Type		    "edit"
+	    Name		    "X1"
+	    Prompt		    "Positive Sequence XL (ohms/1000ft)"
+	    Value		    "0.043"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    23
+	    Type		    "edit"
+	    Name		    "R0"
+	    Prompt		    "Zero Sequence R (ohms/1000ft)"
+	    Value		    "0.030"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    24
+	    Type		    "edit"
+	    Name		    "X0"
+	    Prompt		    "Zero Sequence XL (ohms/1000ft)"
+	    Value		    "0.129"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    25
+	    Type		    "edit"
+	    Name		    "L"
+	    Prompt		    "Line Length (ft)"
+	    Value		    "500"
+	    Tunable		    "off"
+	  }
+	  PropName		  "Parameters"
+	}
+      }
+      System {
+	Name			"Cable"
+	Location		[905, 107, 1434, 679]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Reference
+	  Name			  "Three-Phase\nMutual Inductance\nZ1-Z0"
+	  SID			  "94"
+	  Ports			  [0, 0, 0, 0, 0, 3, 3]
+	  Position		  [130, 21, 200, 119]
+	  ZOrder		  -1
+	  AttributesFormatString  "\\n"
+	  LibraryVersion	  "1.2191"
+	  SourceBlock		  "powerlib/Elements/Three-Phase\nMutual Inductance\nZ1-Z0"
+	  SourceType		  "Three-Phase Mutual Inductance Z1-Z0"
+	  LConnTagsString	  "a|b|c"
+	  RConnTagsString	  "A|B|C"
+	  PositiveSequence	  "[R1 X1/376.9911]*L/1000"
+	  ZeroSequence		  "[R0 X0/376.9911]*L/1000"
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  "A"
+	  SID			  "95"
+	  Position		  [40, 33, 70, 47]
+	  ZOrder		  -2
+	  Port			  "1"
+	  Side			  "Left"
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  "B"
+	  SID			  "96"
+	  Position		  [40, 63, 70, 77]
+	  ZOrder		  -3
+	  Port			  "2"
+	  Side			  "Left"
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  "C "
+	  SID			  "97"
+	  Position		  [40, 93, 70, 107]
+	  ZOrder		  -4
+	  Port			  "3"
+	  Side			  "Left"
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  "a"
+	  SID			  "98"
+	  Position		  [245, 33, 275, 47]
+	  ZOrder		  -5
+	  BlockMirror		  on
+	  Port			  "4"
+	  Side			  "Right"
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  "b"
+	  SID			  "99"
+	  Position		  [245, 63, 275, 77]
+	  ZOrder		  -6
+	  BlockMirror		  on
+	  Port			  "5"
+	  Side			  "Right"
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  "c"
+	  SID			  "100"
+	  Position		  [245, 93, 275, 107]
+	  ZOrder		  -7
+	  BlockMirror		  on
+	  Port			  "6"
+	  Side			  "Right"
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "A"
+	  SrcPort		  RConn1
+	  DstBlock		  "Three-Phase\nMutual Inductance\nZ1-Z0"
+	  DstPort		  LConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "B"
+	  SrcPort		  RConn1
+	  DstBlock		  "Three-Phase\nMutual Inductance\nZ1-Z0"
+	  DstPort		  LConn2
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "C "
+	  SrcPort		  RConn1
+	  DstBlock		  "Three-Phase\nMutual Inductance\nZ1-Z0"
+	  DstPort		  LConn3
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Three-Phase\nMutual Inductance\nZ1-Z0"
+	  SrcPort		  RConn1
+	  DstBlock		  "a"
+	  DstPort		  RConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Three-Phase\nMutual Inductance\nZ1-Z0"
+	  SrcPort		  RConn2
+	  DstBlock		  "b"
+	  DstPort		  RConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Three-Phase\nMutual Inductance\nZ1-Z0"
+	  SrcPort		  RConn3
+	  DstBlock		  "c"
+	  DstPort		  RConn1
+	}
+      }
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant"
+      SID		      "103"
+      Position		      [80, 11085, 110, 11115]
+      ZOrder		      762
+      ShowName		      off
+      Value		      "1.0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Distribution\nTransformer"
+      SID		      "91"
+      Ports		      [0, 0, 0, 0, 0, 3, 3]
+      Position		      [565, 11050, 620, 11100]
+      ZOrder		      763
+      BlockMirror	      on
+      NamePlacement	      "alternate"
+      LibraryVersion	      "1.2191"
+      FontName		      "Verdana"
+      FontSize		      11
+      SourceBlock	      "powerlib/Elements/Three-Phase\nTransformer\n(Two Windings)"
+      SourceType	      "Three-Phase Transformer (Two Windings)"
+      Winding1Connection      "Delta (D1)"
+      UNITS		      "pu"
+      NominalPower	      "[100e3 , 60]"
+      Winding1		      "[13.2e3 , 0.02/2 , 0.05/(120*pi)/2]"
+      Winding2Connection      "Yg"
+      Winding2		      "[480 , 0.02/2 , 0.05/(120*pi)/2]"
+      SetSaturation	      off
+      Rm		      "500"
+      Lm		      "200"
+      Saturation	      "[ 0,0 ; 0.0024,1.2 ; 1.0,1.52 ]"
+      Hysteresis	      off
+      DataFile		      "'hysteresis'"
+      SetInitialFlux	      off
+      InitialFluxes	      "[ 0.8 , -0.8 , 0.7 ]"
+      Measurements	      "None"
+      MoreParameters	      off
+      BreakLoop		      off
+      DataType		      off
+      TransfoNumber	      "1"
+    }
+    Block {
       BlockType		      From
       Name		      "From"
       SID		      "71"
-      Position		      [60, 10816, 130, 10844]
+      Position		      [60, 10818, 130, 10842]
       ZOrder		      66
+      BackgroundColor	      "lightBlue"
       ShowName		      off
       GotoTag		      "Weather"
       TagVisibility	      "global"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From1"
+      SID		      "107"
+      Position		      [885, 11078, 960, 11102]
+      ZOrder		      836
+      BackgroundColor	      "orange"
+      ShowName		      off
+      GotoTag		      "Iabc_Utility"
+      TagVisibility	      "global"
+      Port {
+	PortNumber		1
+	Name			"I"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      From
+      Name		      "From2"
+      SID		      "109"
+      Position		      [60, 11053, 130, 11077]
+      ZOrder		      838
+      BackgroundColor	      "yellow"
+      ShowName		      off
+      GotoTag		      "PVOutput"
+      TagVisibility	      "global"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From5"
+      SID		      "106"
+      Position		      [885, 11043, 960, 11067]
+      ZOrder		      835
+      BackgroundColor	      "orange"
+      ShowName		      off
+      GotoTag		      "Vabc_Utility"
+      TagVisibility	      "global"
+      Port {
+	PortNumber		1
+	Name			"V"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
     }
     Block {
       BlockType		      Reference
       Name		      "Generic Inverter"
       SID		      "69"
       Ports		      [1, 1]
-      Position		      [750, 10769, 820, 10811]
+      Position		      [780, 10769, 850, 10811]
       ZOrder		      64
-      LibraryVersion	      "1.72"
+      LibraryVersion	      "1.74"
       SourceBlock	      "CampusEnergyModeling/PV/Generic Inverter"
       SourceType	      "Generic Inverter"
       model_type	      "Quadratic"
       fixed_eff		      "0.95"
-      alpha		      "1e4"
-      beta		      "1e-5"
-      gamma		      "1e-7"
+      alpha		      "500"
+      beta		      "4e-3"
+      gamma		      "3e-7"
       lookup_pair	      "Input Power + Output Power"
       lookup_in		      "[0, 10, 25, 50, 75, 100]"
       lookup_out	      "[0, 9, 24, 49, 73, 97]"
@@ -931,28 +1272,101 @@ Model {
       BlockType		      Goto
       Name		      "Goto"
       SID		      "72"
-      Position		      [310, 10655, 380, 10685]
+      Position		      [310, 10622, 380, 10648]
       ZOrder		      67
+      BackgroundColor	      "lightBlue"
       ShowName		      off
       GotoTag		      "Weather"
       TagVisibility	      "global"
     }
     Block {
+      BlockType		      Goto
+      Name		      "Goto1"
+      SID		      "108"
+      Position		      [910, 10777, 980, 10803]
+      ZOrder		      837
+      BackgroundColor	      "yellow"
+      ShowName		      off
+      GotoTag		      "PVOutput"
+      TagVisibility	      "global"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Ground4"
+      SID		      "102"
+      Ports		      [0, 0, 0, 0, 0, 1]
+      Position		      [369, 11135, 391, 11160]
+      ZOrder		      761
+      BlockRotation	      270
+      BlockMirror	      on
+      ShowName		      off
+      LibraryVersion	      "1.2191"
+      SourceBlock	      "powerlib/Elements/Ground"
+      SourceType	      "Ground"
+      LConnTagsString	      "a"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Measurement"
+      SID		      "104"
+      Ports		      [0, 0, 0, 0, 0, 3, 3]
+      Position		      [680, 11052, 685, 11098]
+      ZOrder		      765
+      BlockMirror	      on
+      BackgroundColor	      "black"
+      NamePlacement	      "alternate"
+      LibraryVersion	      "1.2191"
+      SourceBlock	      "powerlib/Measurements/Three-Phase\nV-I Measurement"
+      SourceType	      "Three-Phase VI Measurement"
+      VoltageMeasurement      "phase-to-ground"
+      SetLabelV		      on
+      LabelV		      "Vabc_Utility"
+      Vpu		      on
+      VpuLL		      off
+      CurrentMeasurement      "yes"
+      SetLabelI		      on
+      LabelI		      "Iabc_Utility"
+      Ipu		      on
+      Pbase		      "100e3"
+      Vbase		      "13.2e3"
+      OutputType	      "Magnitude"
+      PhasorSimulation	      on
+      PSBequivalent	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "PV\nInterconnection"
+      SID		      "90"
+      Ports		      [1, 0, 0, 0, 0, 0, 4]
+      Position		      [280, 11050, 345, 11115]
+      ZOrder		      758
+      LibraryVersion	      "1.74"
+      SourceBlock	      "CampusEnergyModeling/Electrical/Constant Power\nSource or Load"
+      SourceType	      "Constant Power Source/Load"
+      Conven		      "source"
+      PNom		      "100e3"
+      QNom		      "0"
+      VNom		      "480"
+      fNom		      "60"
+      VLow		      "0.7"
+    }
+    Block {
       BlockType		      Scope
-      Name		      "Inverter\nOutput"
+      Name		      "PV Array\nOutput"
       SID		      "31"
-      Ports		      [1]
-      Position		      [990, 10773, 1020, 10807]
+      Ports		      [2]
+      Position		      [1015, 10695, 1045, 10730]
       ZOrder		      37
-      BackgroundColor	      "lightBlue"
+      BackgroundColor	      "gray"
       Floating		      off
-      Location		      [937, 279, 1261, 509]
+      Location		      [872, 235, 1441, 882]
       Open		      off
-      NumInputPorts	      "1"
+      NumInputPorts	      "2"
       ZoomMode		      "xonly"
       List {
 	ListType		AxesTitles
 	axes1			"%<SignalLabel>"
+	axes2			"%<SignalLabel>"
       }
       List {
 	ListType		ScopeGraphics
@@ -965,30 +1379,30 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
-      YMin		      "0"
-      YMax		      "1e+06"
+      LegendLocations	      "0.63403     0.87615     0.29701    0.055641\n0.75276     0.43867     0.18453    0.031427"
+      YMin		      "0~-10000"
+      YMax		      "100000~90000"
       DataFormat	      "StructureWithTime"
       LimitDataPoints	      off
       SampleTime	      "0"
     }
     Block {
       BlockType		      Scope
-      Name		      "PV Array\nOutput"
+      Name		      "PV Array\nStatus"
       SID		      "60"
-      Ports		      [3]
-      Position		      [990, 10913, 1020, 10947]
+      Ports		      [2]
+      Position		      [1015, 10845, 1045, 10880]
       ZOrder		      55
-      BackgroundColor	      "lightBlue"
+      BackgroundColor	      "gray"
       Floating		      off
-      Location		      [592, 278, 1071, 931]
+      Location		      [151, 231, 712, 884]
       Open		      off
-      NumInputPorts	      "3"
+      NumInputPorts	      "2"
       ZoomMode		      "xonly"
       List {
 	ListType		AxesTitles
 	axes1			"%<SignalLabel>"
 	axes2			"%<SignalLabel>"
-	axes3			"%<SignalLabel>"
       }
       List {
 	ListType		ScopeGraphics
@@ -1001,9 +1415,10 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
+      LegendLocations	      "0.66893     0.91271     0.24599    0.031138\n 0.6012      0.4487     0.30838    0.031138"
       TimeRange		      "86400"
-      YMin		      "0~0~0"
-      YMax		      "1300000~65~1500"
+      YMin		      "0~0"
+      YMax		      "1.3e+06~65"
       SaveName		      "ScopeData1"
       DataFormat	      "StructureWithTime"
       LimitDataPoints	      off
@@ -1014,20 +1429,20 @@ Model {
       Name		      "PV Smoothing"
       SID		      "83"
       Ports		      [1, 1]
-      Position		      [605, 10770, 675, 10810]
+      Position		      [595, 10770, 665, 10810]
       ZOrder		      78
-      LibraryVersion	      "1.72"
+      LibraryVersion	      "1.74"
       SourceBlock	      "CampusEnergyModeling/PV/PV Smoothing"
       SourceType	      "Photovoltaic Array Smoothing"
       sel		      "Array Size and Power Density"
       tc		      "15"
       area		      "33000"
-      size		      "1e6"
+      size		      "100e4"
       density		      "120"
       coverage		      "0.15"
       Port {
 	PortNumber		1
-	Name			"DC Power"
+	Name			"Smoothed"
 	RTWStorageClass		"Auto"
 	DataLoggingNameMode	"SignalName"
       }
@@ -1039,7 +1454,7 @@ Model {
       Ports		      [4, 3]
       Position		      [250, 10772, 460, 10888]
       ZOrder		      65
-      LibraryVersion	      "1.72"
+      LibraryVersion	      "1.74"
       UserDataPersistent      on
       UserData		      "DataTag0"
       SourceBlock	      "CampusEnergyModeling/PV/PVWatts Cosimulation"
@@ -1048,8 +1463,8 @@ Model {
       lon		      "-105.18"
       start_time	      "2012-06-01 00:00:00"
       tz		      "-6"
-      time_step		      "600"
-      system_size	      "1e6"
+      time_step		      "10"
+      system_size	      "100e3"
       derate		      "0.95"
       azimuth		      "180"
       tilt		      "39.74"
@@ -1087,10 +1502,22 @@ Model {
       }
     }
     Block {
+      BlockType		      Reference
+      Name		      "Power Factor\nConversion"
+      SID		      "101"
+      Ports		      [2, 1]
+      Position		      [165, 11049, 230, 11116]
+      ZOrder		      760
+      LibraryVersion	      "1.74"
+      SourceBlock	      "CampusEnergyModeling/Electrical/Power Factor\nConversion"
+      SourceType	      "Power Factor Conversion"
+      pfType		      "Lagging"
+    }
+    Block {
       BlockType		      RateTransition
       Name		      "Rate Transition"
       SID		      "68"
-      Position		      [170, 10649, 210, 10691]
+      Position		      [170, 10614, 210, 10656]
       ZOrder		      63
       OutPortSampleTimeOpt    "Inherit"
       OutPortSampleTime	      "600"
@@ -1099,14 +1526,14 @@ Model {
       BlockType		      RateTransition
       Name		      "Rate Transition1"
       SID		      "78"
-      Position		      [485, 10774, 515, 10806]
+      Position		      [495, 10774, 525, 10806]
       ZOrder		      73
       ShowName		      off
       OutPortSampleTimeOpt    "Inherit"
       OutPortSampleTime	      "600"
       Port {
 	PortNumber		1
-	Name			"Unsmoothed DC Power"
+	Name			"Unsmoothed"
 	RTWStorageClass		"Auto"
 	DataLoggingNameMode	"SignalName"
       }
@@ -1115,7 +1542,7 @@ Model {
       BlockType		      RateTransition
       Name		      "Rate Transition2"
       SID		      "80"
-      Position		      [485, 10814, 515, 10846]
+      Position		      [495, 10814, 525, 10846]
       ZOrder		      75
       ShowName		      off
       OutPortSampleTimeOpt    "Inherit"
@@ -1131,7 +1558,7 @@ Model {
       BlockType		      RateTransition
       Name		      "Rate Transition3"
       SID		      "81"
-      Position		      [485, 10854, 515, 10886]
+      Position		      [495, 10854, 525, 10886]
       ZOrder		      76
       ShowName		      off
       OutPortSampleTimeOpt    "Inherit"
@@ -1146,39 +1573,166 @@ Model {
     Block {
       BlockType		      ToWorkspace
       Name		      "To Workspace"
-      SID		      "87"
+      SID		      "111"
       Ports		      [1]
-      Position		      [975, 10655, 1035, 10685]
-      ZOrder		      82
-      ShowName		      off
-      VariableName	      "dc_power"
+      Position		      [1000, 10640, 1060, 10670]
+      ZOrder		      840
+      BackgroundColor	      "gray"
+      VariableName	      "ac_power"
       MaxDataPoints	      "inf"
       SampleTime	      "-1"
     }
     Block {
       BlockType		      ToWorkspace
       Name		      "To Workspace1"
-      SID		      "88"
+      SID		      "112"
       Ports		      [1]
-      Position		      [975, 10700, 1035, 10730]
-      ZOrder		      83
+      Position		      [1000, 10600, 1060, 10630]
+      ZOrder		      841
+      BackgroundColor	      "gray"
       ShowName		      off
-      VariableName	      "ac_power"
+      VariableName	      "dc_power"
       MaxDataPoints	      "inf"
       SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Utility\nInterconnection"
+      SID		      "92"
+      Ports		      [0, 0, 0, 0, 0, 0, 3]
+      Position		      [745, 11050, 825, 11100]
+      ZOrder		      756
+      BlockMirror	      on
+      NamePlacement	      "alternate"
+      LibraryVersion	      "1.2191"
+      FontName		      "Verdana"
+      FontSize		      11
+      SourceBlock	      "powerlib/Electrical\nSources/Three-Phase Source"
+      SourceType	      "Three-Phase Source"
+      Voltage		      "13.2e3"
+      PhaseAngle	      "0"
+      Frequency		      "60"
+      InternalConnection      "Yg"
+      SpecifyImpedance	      on
+      Resistance	      "0.8929"
+      Inductance	      "16.58e-3"
+      ShortCircuitLevel	      "1e6"
+      BaseVoltage	      "13.2e3"
+      XRratio		      "8"
+      BusType		      "swing"
+      Pref		      "0"
+      Qref		      "0"
+      Qmin		      "-inf"
+      Qmax		      "inf"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "VI"
+      SID		      "105"
+      Ports		      [2]
+      Position		      [1015, 11055, 1045, 11090]
+      ZOrder		      766
+      BackgroundColor	      "gray"
+      Floating		      off
+      Location		      [959, 234, 1438, 887]
+      Open		      off
+      NumInputPorts	      "2"
+      ZoomMode		      "xonly"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+	axes2			"%<SignalLabel>"
+      }
+      List {
+	ListType		ScopeGraphics
+	FigureColor		"[0.5 0.5 0.5]"
+	AxesColor		"[0 0 0]"
+	AxesTickColor		"[1 1 1]"
+	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	LineStyles		"-|-|-|-|-|-"
+	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
+	MarkerStyles		"none|none|none|none|none|none"
+      }
+      ShowLegends	      on
+      LegendLocations	      "0.7366     0.86396     0.15449    0.079122\n0.7366     0.39995     0.14614    0.079122"
+      TimeRange		      "86400"
+      YMin		      "0~0"
+      YMax		      "1.3e+06~65"
+      SaveName		      "ScopeData2"
+      DataFormat	      "StructureWithTime"
+      LimitDataPoints	      off
+      SampleTime	      "0"
     }
     Block {
       BlockType		      Reference
       Name		      "Weather"
       SID		      "65"
       Ports		      [0, 1]
-      Position		      [55, 10625, 130, 10715]
+      Position		      [55, 10590, 130, 10680]
       ZOrder		      60
-      LibraryVersion	      "1.72"
+      LibraryVersion	      "1.74"
       SourceBlock	      "CampusEnergyModeling/Weather/Weather Data"
       SourceType	      "Weather Data From File"
-      fname		      "Weather.mat"
+      fname		      "Weather-short.mat"
       initbus		      on
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "powergui"
+      SID		      "110"
+      Ports		      []
+      Position		      [151, 10965, 240, 10998]
+      ZOrder		      839
+      DropShadow	      on
+      Priority		      "2"
+      LibraryVersion	      "*1.2191"
+      UserDataPersistent      on
+      UserData		      "DataTag1"
+      SourceBlock	      "powerlib/powergui"
+      SourceType	      "PSB option menu block"
+      SimulationMode	      "Phasor"
+      SolverType	      "Tustin"
+      SampleTime	      "Ts"
+      frequency		      "60"
+      SPID		      off
+      DisableSnubberDevices   off
+      DisableRonSwitches      off
+      DisableVfSwitches	      off
+      SwTol		      "0"
+      Interpol		      off
+      DisplayEquations	      off
+      frequencyindice	      "60"
+      Pbase		      "100e6"
+      ErrMax		      "1e-4"
+      Iterations	      "50"
+      UnitsV		      "kV"
+      UnitsW		      "kW"
+      FunctionMessages	      off
+      echomessages	      off
+      HookPort		      off
+      EnableUseOfTLC	      off
+      x0status		      "blocks"
+      RestoreLinks	      "warning"
+      ResistiveCurrentMeasurement off
+      Frange		      "[0:2:500]"
+      Ylog		      off
+      Xlog		      on
+      ShowGrid		      off
+      save		      off
+      variable		      "ZData"
+      structure		      "Sig1"
+      ZoomFFT		      on
+      StartTime		      "0.26"
+      cycles		      "2"
+      DisplayStyle	      "1"
+      fundamental	      "60"
+      FreqAxis		      off
+      MaxFrequency	      "5000"
+      frequencyindicesteady   "1"
+      RmsSteady		      "1"
+      display		      off
+      Ts		      "0"
+      methode		      off
     }
     Line {
       Name		      "Unsmoothed DC Power"
@@ -1235,16 +1789,23 @@ Model {
       Name		      "AC Power"
       SrcBlock		      "Generic Inverter"
       SrcPort		      1
-      Points		      [18, 0]
+      Points		      [25, 0]
       Branch {
-	Points			[0, -75]
-	DstBlock		"To Workspace1"
+	DstBlock		"Goto1"
 	DstPort			1
       }
       Branch {
-	Labels			[-1, 0]
-	DstBlock		"Inverter\nOutput"
-	DstPort			1
+	Points			[0, -70; 1, 0]
+	Branch {
+	  Points		  [0, -65]
+	  DstBlock		  "To Workspace"
+	  DstPort		  1
+	}
+	Branch {
+	  Labels		  [2, 0]
+	  DstBlock		  "PV Array\nOutput"
+	  DstPort		  2
+	}
       }
     }
     Line {
@@ -1254,48 +1815,40 @@ Model {
       DstPort		      1
     }
     Line {
-      Name		      "DC Power"
+      Name		      "Smoothed"
       SrcBlock		      "PV Smoothing"
       SrcPort		      1
-      Points		      [5, 0]
-      Branch {
-	Points			[1, 0]
-	Branch {
-	  Points		  [0, -120]
-	  DstBlock		  "To Workspace"
-	  DstPort		  1
-	}
-	Branch {
-	  Labels		  [-1, 0]
-	  DstBlock		  "Generic Inverter"
-	  DstPort		  1
-	}
-      }
+      Points		      [25, 0]
       Branch {
 	Labels			[1, 1]
-	DstBlock		"Bus\nCreator"
-	DstPort			2
+	DstBlock		"Generic Inverter"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -75; 1, 0]
+	Branch {
+	  Points		  [0, -100]
+	  DstBlock		  "To Workspace1"
+	  DstPort		  1
+	}
+	Branch {
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  2
+	}
       }
     }
     Line {
-      SrcBlock		      "Bus\nCreator"
-      SrcPort		      1
-      Points		      [0, 30]
-      DstBlock		      "PV Array\nOutput"
-      DstPort		      1
-    }
-    Line {
-      Name		      "Unsmoothed DC Power"
+      Name		      "Unsmoothed"
       SrcBlock		      "Rate Transition1"
       SrcPort		      1
-      Points		      [64, 0]
+      Points		      [32, 0]
       Branch {
 	DstBlock		"PV Smoothing"
 	DstPort			1
       }
       Branch {
-	Labels			[2, 1]
-	Points			[0, 53; 81, 0]
+	Labels			[1, 1]
+	Points			[0, -95]
 	DstBlock		"Bus\nCreator"
 	DstPort			1
       }
@@ -1308,15 +1861,6 @@ Model {
       DstPort		      1
     }
     Line {
-      Name		      "Cell Temperature"
-      Labels		      [2, 1]
-      SrcBlock		      "Rate Transition2"
-      SrcPort		      1
-      Points		      [18, 0; 0, 100]
-      DstBlock		      "PV Array\nOutput"
-      DstPort		      2
-    }
-    Line {
       Name		      "Plane-of-array Irradiance"
       SrcBlock		      "PVWatts Cosimulation"
       SrcPort		      3
@@ -1324,24 +1868,168 @@ Model {
       DstPort		      1
     }
     Line {
-      Name		      "Plane-of-array Irradiance"
+      SrcBlock		      "Constant"
+      SrcPort		      1
+      DstBlock		      "Power Factor\nConversion"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Power Factor\nConversion"
+      SrcPort		      1
+      DstBlock		      "PV\nInterconnection"
+      DstPort		      1
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "PV\nInterconnection"
+      SrcPort		      RConn4
+      Points		      [20, 0]
+      DstBlock		      "Ground4"
+      DstPort		      LConn1
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Cable"
+      SrcPort		      RConn1
+      DstBlock		      "PV\nInterconnection"
+      DstPort		      RConn1
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Cable"
+      SrcPort		      RConn2
+      DstBlock		      "PV\nInterconnection"
+      DstPort		      RConn2
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Cable"
+      SrcPort		      RConn3
+      DstBlock		      "PV\nInterconnection"
+      DstPort		      RConn3
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Cable"
+      SrcPort		      LConn1
+      DstBlock		      "Distribution\nTransformer"
+      DstPort		      RConn1
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Cable"
+      SrcPort		      LConn2
+      DstBlock		      "Distribution\nTransformer"
+      DstPort		      RConn2
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Cable"
+      SrcPort		      LConn3
+      DstBlock		      "Distribution\nTransformer"
+      DstPort		      RConn3
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Measurement"
+      SrcPort		      RConn1
+      DstBlock		      "Distribution\nTransformer"
+      DstPort		      LConn1
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Measurement"
+      SrcPort		      RConn2
+      DstBlock		      "Distribution\nTransformer"
+      DstPort		      LConn2
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Measurement"
+      SrcPort		      RConn3
+      DstBlock		      "Distribution\nTransformer"
+      DstPort		      LConn3
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Measurement"
+      SrcPort		      LConn1
+      DstBlock		      "Utility\nInterconnection"
+      DstPort		      RConn1
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Measurement"
+      SrcPort		      LConn2
+      DstBlock		      "Utility\nInterconnection"
+      DstPort		      RConn2
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Measurement"
+      SrcPort		      LConn3
+      DstBlock		      "Utility\nInterconnection"
+      DstPort		      RConn3
+    }
+    Line {
+      Name		      "V"
+      Labels		      [1, 1]
+      SrcBlock		      "From5"
+      SrcPort		      1
+      Points		      [22, 0; 0, 10]
+      DstBlock		      "VI"
+      DstPort		      1
+    }
+    Line {
+      Name		      "I"
+      Labels		      [1, 1]
+      SrcBlock		      "From1"
+      SrcPort		      1
+      Points		      [22, 0; 0, -10]
+      DstBlock		      "VI"
+      DstPort		      2
+    }
+    Line {
+      Name		      "DC Power"
+      Labels		      [1, 1]
+      SrcBlock		      "Bus\nCreator"
+      SrcPort		      1
+      DstBlock		      "PV Array\nOutput"
+      DstPort		      1
+    }
+    Line {
+      Name		      "Cell Temperature"
       Labels		      [2, 1]
+      SrcBlock		      "Rate Transition2"
+      SrcPort		      1
+      Points		      [222, 0; 0, 25]
+      DstBlock		      "PV Array\nStatus"
+      DstPort		      1
+    }
+    Line {
+      Name		      "Plane-of-array Irradiance"
+      Labels		      [1, 1]
       SrcBlock		      "Rate Transition3"
       SrcPort		      1
-      Points		      [12, 0; 0, 70]
-      DstBlock		      "PV Array\nOutput"
-      DstPort		      3
+      DstBlock		      "PV Array\nStatus"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "From2"
+      SrcPort		      1
+      DstBlock		      "Power Factor\nConversion"
+      DstPort		      1
     }
     Annotation {
-      SID		      "89"
-      Name		      "Output to workspace"
-      Position		      [1001, 10620]
-      ZOrder		      -1
+      SID		      "113"
+      Name		      "Voltage and current are displayed in per-unit:\nSBase = 100 kVA\nVBase = 13.2 kV"
+      Position		      [883, 11150]
+      HorizontalAlignment     "left"
     }
   }
 }
 MatData {
-  NumRecords		  1
+  NumRecords		  2
   DataRecord {
     Tag			    DataTag0
     Data		    "  %)30     .    &!(   8    (     @         %    \"     $    !     0         %  0 \"@    $    \\    9&EA"
@@ -1354,52 +2042,65 @@ MatData {
     "  \"    !^%ZU&XWD- #@   #@    &    \"     8         !0    @    !     0    $         \"0    @   #L4;@>A4M:P X   !( "
     "   !@    @    $          4    (     0   !,    !         !     3    ,C Q,BTP-BTP,2 P,#HP,#HP,       #@   #@    &   "
     " \"     8         !0    @    !     0    $         \"0    @            8P X    X    !@    @    &          4    (   "
-    "  0    $    !          D    (          # @D .    .     8    (    !@         %    \"     $    !     0         )    "
-    "\"         \" A\"Y!#@   #@    &    \"     8         !0    @    !     0    $         \"0    @   !F9F9F9F;N/PX    X "
-    "   !@    @    &          4    (     0    $    !          D    (          \" 9D .    .     8    (    !@         %  "
-    "  \"     $    !     0         )    \"    !^%ZU&XWD- #@   #@    &    \"     8         !0    @    !     0    $      "
-    "   \"0    @           #P/PX    X    !@    @    &          4    (     0    $    !          D    (          \" 1D . "
-    "   .     8    (    !@         %    \"     $    !     0         )    \"            #E #@   #@    &    \"     8     "
-    "    !0    @    !     0    $         \"0    @          (!&0 X    X    !@    @    &          4    (     0    $    ! "
-    "         D    (            X+\\.    .     8    (    !@         %    \"     $    !     0         )    \"           "
-    "0(] #@   #@    &    \"     8         !0    @    !     0    $         \"0    @               X    X    !@    @    &"
-    "          4    (     0    $    !          D    (    9F9F9F9F*D .    .     8    (    !@         %    \"     $    ! "
-    "    0         )    \"               #@   #@    &    \"     8         !0    @    !     0    $         \"0    @     "
-    "      #P/PX    X    !@    @    &          4    (     0    $    !          D    (            \\#\\.    .     8    ("
-    "    !@         %    \"     $    !     0         )    \"            / _#@   , !   &    \"     (         !0    @    "
-    "!     P    $         !0 $  L    !    %@   %9A<DYA;64     3W5T<'5T4&]R=     X    P    !@    @    $          4    ( "
-    "    0    (    !         !   @!D8P  #@   #@    &    \"     8         !0    @    !     0    $         \"0    @      "
-    "     #P/PX    X    !@    @    $          4    (     0    4    !         !     %    =&-E;&P    .    .     8    (   "
-    " !@         %    \"     $    !     0         )    \"             ! #@   #     &    \"     0         !0    @    !  "
-    "   P    $         $  # '!O80 .    .     8    (    !@         %    \"     $    !     0         )    \"             "
-    "A #@   $ (   &    \"     (         !0    @    !     0    $         !0 $  P    !    1 $  &QA=            &QO;@     "
-    "      '1Z             '1I;65?<W1E<    '-Y<W1E;5]S:7IE &1E<F%T90       '1R86-K7VUO9&4  &%Z:6UU=&@      '1I;'0      "
-    "    ')O=&QI;0       '1?;F]C=        '1?<F5F         &=A;6UA         &E?<F5F         '!O85]C=71I;@   '1C96QL       "
-    "  '!O80           'EE87(          &UO;G1H         &1A>0           &AO=7(          &UI;G5T90       &)E86T          "
-    "&1I9F9U<V4      '1A;6(          '=S<&0          &1C                   .    .     8    (    !@         %    \"     "
-    "$    !     0         )    \"    !^%ZU&XWD- #@   #@    &    \"     8         !0    @    !     0    $         \"0   "
-    " @   #L4;@>A4M:P X    X    !@    @    &          4    (     0    $    !          D    (            &, .    .     8"
-    "    (    !@         %    \"     $    !     0         )    \"    %5555555<4_#@   #@    &    \"     8         !0    "
-    "@    !     0    $         \"0    @          $\"/0 X    X    !@    @    &          4    (     0    $    !          "
-    "D    (    9F9F9F9F[C\\.    .     8    (    !@         %    \"     $    !     0         )    \"               #@   "
-    "#@    &    \"     8         !0    @    !     0    $         \"0    @          (!F0 X    X    !@    @    &         "
-    " 4    (     0    $    !          D    (    'X7K4;C>0T .    .     8    (    !@         %    \"     $    !     0    "
-    "     )    \"           @$9 #@   #@    &    \"     8         !0    @    !     0    $         \"0    @          (!&0"
-    " X    X    !@    @    &          4    (     0    $    !          D    (            .4 .    .     8    (    !@     "
-    "    %    \"     $    !     0         )    \"            .\"_#@   #@    &    \"     8         !0    @    !     0   "
-    " $         \"0    @          $\"/0 X    X    !@    @    &          4    (     0    $    !          D    (         "
-    "      .    .     8    (    !@         %    \"     $    !     0         )    \"               #@   #@    &    \"   "
-    "  8         !0    @    !     0    $         \"0    @               X    X    !@    @    &          4    (     0   "
-    " $    !          D    (          !PGT .    .     8    (    !@         %    \"     $    !     0         )    \"    "
-    "        !Q #@   #@    &    \"     8         !0    @    !     0    $         \"0    @           #P/PX    X    !@   "
-    " @    &          4    (     0    $    !          D    (               .    .     8    (    !@         %    \"     "
-    "$    !     0         )    \"               #@   #@    &    \"     8         !0    @    !     0    $         \"0   "
-    " @               X    X    !@    @    &          4    (     0    $    !          D    (               .    .     8"
-    "    (    !@         %    \"     $    !     0         )    \"    ,W,S,S,3#A #@   #@    &    \"     8         !0    "
-    "@    !     0    $         \"0    @   \":F9F9F9D50 X    X    !@    @    &          4    (     0    $    !          "
-    "D    (               .    ,     8    (    !@         %    \"                0         )          X    X    !@    @"
-    "    &          4    (     0    $    !          D    (         %IN)D$.    ,     8    (    !@         %    \"       "
-    "         0         )          "
+    "  0    $    !          D    (            )$ .    .     8    (    !@         %    \"     $    !     0         )    "
+    "\"           :OA #@   #@    &    \"     8         !0    @    !     0    $         \"0    @   !F9F9F9F;N/PX    X   "
+    " !@    @    &          4    (     0    $    !          D    (          \" 9D .    .     8    (    !@         %    "
+    "\"     $    !     0         )    \"    !^%ZU&XWD- #@   #@    &    \"     8         !0    @    !     0    $        "
+    " \"0    @           #P/PX    X    !@    @    &          4    (     0    $    !          D    (          \" 1D .   "
+    " .     8    (    !@         %    \"     $    !     0         )    \"            #E #@   #@    &    \"     8       "
+    "  !0    @    !     0    $         \"0    @          (!&0 X    X    !@    @    &          4    (     0    $    !   "
+    "       D    (            X+\\.    .     8    (    !@         %    \"     $    !     0         )    \"           0("
+    "] #@   #@    &    \"     8         !0    @    !     0    $         \"0    @               X    X    !@    @    &  "
+    "        4    (     0    $    !          D    (    9F9F9F9F*D .    .     8    (    !@         %    \"     $    !   "
+    "  0         )    \"               #@   #@    &    \"     8         !0    @    !     0    $         \"0    @       "
+    "    #P/PX    X    !@    @    &          4    (     0    $    !          D    (            \\#\\.    .     8    (  "
+    "  !@         %    \"     $    !     0         )    \"            / _#@   , !   &    \"     (         !0    @    ! "
+    "    P    $         !0 $  L    !    %@   %9A<DYA;64     3W5T<'5T4&]R=     X    P    !@    @    $          4    (   "
+    "  0    (    !         !   @!D8P  #@   #@    &    \"     8         !0    @    !     0    $         \"0    @        "
+    "   #P/PX    X    !@    @    $          4    (     0    4    !         !     %    =&-E;&P    .    .     8    (    !"
+    "@         %    \"     $    !     0         )    \"             ! #@   #     &    \"     0         !0    @    !    "
+    " P    $         $  # '!O80 .    .     8    (    !@         %    \"     $    !     0         )    \"             A "
+    "#@   $ (   &    \"     (         !0    @    !     0    $         !0 $  P    !    1 $  &QA=            &QO;@       "
+    "    '1Z             '1I;65?<W1E<    '-Y<W1E;5]S:7IE &1E<F%T90       '1R86-K7VUO9&4  &%Z:6UU=&@      '1I;'0        "
+    "  ')O=&QI;0       '1?;F]C=        '1?<F5F         &=A;6UA         &E?<F5F         '!O85]C=71I;@   '1C96QL         "
+    "'!O80           'EE87(          &UO;G1H         &1A>0           &AO=7(          &UI;G5T90       &)E86T          &1"
+    "I9F9U<V4      '1A;6(          '=S<&0          &1C                   .    .     8    (    !@         %    \"     $ "
+    "   !     0         )    \"    !^%ZU&XWD- #@   #@    &    \"     8         !0    @    !     0    $         \"0    @"
+    "   #L4;@>A4M:P X    X    !@    @    &          4    (     0    $    !          D    (            &, .    .     8  "
+    "  (    !@         %    \"     $    !     0         )    \"    !=LP19LP68_#@   #@    &    \"     8         !0    @ "
+    "   !     0    $         \"0    @           !90 X    X    !@    @    &          4    (     0    $    !          D  "
+    "  (    9F9F9F9F[C\\.    .     8    (    !@         %    \"     $    !     0         )    \"               #@   #@ "
+    "   &    \"     8         !0    @    !     0    $         \"0    @          (!F0 X    X    !@    @    &          4 "
+    "   (     0    $    !          D    (    'X7K4;C>0T .    .     8    (    !@         %    \"     $    !     0       "
+    "  )    \"           @$9 #@   #@    &    \"     8         !0    @    !     0    $         \"0    @          (!&0 X "
+    "   X    !@    @    &          4    (     0    $    !          D    (            .4 .    .     8    (    !@        "
+    " %    \"     $    !     0         )    \"            .\"_#@   #@    &    \"     8         !0    @    !     0    $ "
+    "        \"0    @          $\"/0 X    X    !@    @    &          4    (     0    $    !          D    (            "
+    "   .    .     8    (    !@         %    \"     $    !     0         )    \"               #@   #@    &    \"     8"
+    "         !0    @    !     0    $         \"0    @               X    X    !@    @    &          4    (     0    $ "
+    "   !          D    (          !PGT .    .     8    (    !@         %    \"     $    !     0         )    \"       "
+    "     !A #@   #@    &    \"     8         !0    @    !     0    $         \"0    @             0 X    X    !@    @ "
+    "   &          4    (     0    $    !          D    (               .    .     8    (    !@         %    \"     $  "
+    "  !     0         )    \"               #@   #@    &    \"     8         !0    @    !     0    $         \"0    @ "
+    "              X    X    !@    @    &          4    (     0    $    !          D    (               .    .     8   "
+    " (    !@         %    \"     $    !     0         )    \"    *Y'X7H4KB9 #@   #@    &    \"     8         !0    @  "
+    "  !     0    $         \"0    @   \":F9F9F9D%0 X    X    !@    @    &          4    (     0    $    !          D  "
+    "  (               .    ,     8    (    !@         %    \"                0         )          X    X    !@    @   "
+    " &          4    (     0    $    !          D    (         %IN)D$.    ,     8    (    !@         %    \"          "
+    "      0         )          "
+  }
+  DataRecord {
+    Tag			    DataTag1
+    Data		    "  %)30     .    * ,   8    (     @         %    \"     $    !     0         %  0 #     $   \"$    <&]W9"
+    "7)G=6D     <W1E861Y<W1A=&4 :6YI='-T871E<P  ;&]A9&9L;W<     ;'1I=FEE=P      >FUE=&5R        9F9T=&]O;       <F5P;W)"
+    "T        :'ES=&5R97-I<P  ;&EN97!A<F%M    ;&]A9&9L;W=N97<       X    P    !@    @    &          4    (             "
+    "  !          D         #@   #     &    \"     8         !0    @               $         \"0         .    ,     8  "
+    "  (    !@         %    \"                0         )          X    P    !@    @    &          4    (              "
+    " !          D         #@   #     &    \"     8         !0    @               $         \"0         .    ,     8   "
+    " (    !@         %    \"                0         )          X    P    !@    @    &          4    (               "
+    "!          D         #@   #     &    \"     8         !0    @               $         \"0         .    ,     8    "
+    "(    !@         %    \"                0         )          X    P    !@    @    &          4    (               !"
+    "          D         #@   #     &    \"     8         !0    @               $         \"0         "
   }
 }
 # Finite State Machines

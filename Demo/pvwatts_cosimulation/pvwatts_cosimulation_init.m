@@ -39,7 +39,12 @@
 %    block (in the Simulink core library) for documentation regarding the
 %    time series structure required for the weather data.
 %
-%  3. After changing scenarios, you may need to use the Autoscale feature
+% 3. If you open the model prior to running this initialization script, you
+%    may see a warning that the model is unable to automatically create the
+%    bus definition for the weather data block. To correct, run this
+%    script, then reopen the model.
+%
+% 4.  After changing scenarios, you may need to use the Autoscale feature
 %     in the Simulink oscilloscopes to resize the scope view to fit the
 %     data.
 
@@ -116,4 +121,6 @@ set_param('pvwatts_cosimulation/PVWatts Cosimulation', ...
     'time_step', num2str(PVtimestep) );
 set_param('pvwatts_cosimulation/Weather', ...
     'fname', weatherFile );
-save_system;
+
+% Save result
+save_system('pvwatts_cosimulation');

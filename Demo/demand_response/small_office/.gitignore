@@ -1,0 +1,2 @@
+# Ignore EnergyPlus CSV output in this folder
+*.csv

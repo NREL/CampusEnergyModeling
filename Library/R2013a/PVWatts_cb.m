@@ -79,7 +79,7 @@ function PVWatts_cb_redraw_mask(block)
     i = 1;
     if strcmp( get_param(block, 'output_dc'), 'on' )
         port = sprintf('%i', i);
-        lab = 'DC power';
+        lab = 'DC Power';
         desc = 'DC output power (W)';
         maskdisplay = [ maskdisplay ...
             'port_label(''output'', ' port ', ''' lab '''); % ' desc lf ...
@@ -89,7 +89,7 @@ function PVWatts_cb_redraw_mask(block)
     if strcmp( get_param(block, 'output_celltemp'), 'on' )
         port = sprintf('%i', i);
         lab = 'Cell Temp';
-        desc = 'Cell Temperature (deg C)';
+        desc = 'Cell temperature (deg C)';
         maskdisplay = [ maskdisplay ...
             'port_label(''output'', ' port ', ''' lab '''); % ' desc lf ...
             ];

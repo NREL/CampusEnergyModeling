@@ -20,7 +20,7 @@ Library {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [828.0, 117.0, 951.0, 734.0]
+      Location		      [45.0, 29.0, 952.0, 734.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -42,9 +42,9 @@ Library {
 	$ObjectID		5
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"9"
-	Extents			[901.0, 568.0]
+	ViewObjType		"SimulinkTopLevel"
+	LoadSaveID		"0"
+	Extents			[902.0, 568.0]
 	ZoomFactor		[1.0]
 	Offset			[0.0, 0.0]
       }
@@ -56,9 +56,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Sep 19 15:31:51 2013"
-  RTWModifiedTimeStamp	  301501074
-  ModelVersionFormat	  "1.%<AutoIncrement:77>"
+  LastModifiedDate	  "Tue Oct 08 16:30:45 2013"
+  RTWModifiedTimeStamp	  303150637
+  ModelVersionFormat	  "1.%<AutoIncrement:91>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1157,8 +1157,8 @@ Library {
   }
   System {
     Name		    "CampusEnergyModeling"
-    Location		    [154, 264, 1105, 998]
-    Open		    off
+    Location		    [45, 29, 997, 763]
+    Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -1197,7 +1197,7 @@ Library {
       }
       System {
 	Name			"Buildings"
-	Location		[433, 219, 1384, 953]
+	Location		[45, 29, 997, 763]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1461,7 +1461,7 @@ Library {
       }
       System {
 	Name			"Data Acquisition"
-	Location		[828, 117, 1779, 851]
+	Location		[45, 29, 997, 763]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1501,7 +1501,7 @@ Library {
       }
       System {
 	Name			"Electrical"
-	Location		[154, 264, 1105, 998]
+	Location		[45, 29, 997, 763]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1535,17 +1535,32 @@ Library {
 	    Type		    "Constant Power Source/Load"
 	    Description		    "Implements a controllable three-phase, constant power source or load, where VI* = P + jQ (in pe"
 	    "r-unit)."
-	    Help		    "Implements a controllable three-phase, constant power source or load in SimPowerSystems (phasor mode)."
-	    " The load characteristic is given by P + jQ = sqrt(3)VI*, in which\n    V = Positive sequence line-to-line voltag"
-	    "e (V)\n    I = Positive sequence phase current (A)\n    P = Positive sequence real power (from PQ input)\n    Q ="
-	    " Positive sequence reactive power (from PQ input)\n\nThe block supplies P + jQ if the source convention is specif"
-	    "ied and consumes P + jQ if the load convention is specified.\n\nThe nominal input fields in the mask are used to "
-	    "initialize the block parameters. If the nominal values are close to the actual values during simulation, then the"
-	    " block will converge more rapidly.\n\nIf the positive sequence voltage falls below the per-unit lower voltage lim"
-	    "it (on the base specified by the nominal line-to-line voltage), then the block will behave as a constant current "
-	    "source rather than a constant power source, with the current magnitude capped at the level required to supply ful"
-	    "l power at V = 0.7 pu. This feature avoids current runaway that would otherwise occur during voltage collapes.\n\n"
-	    "NOTE: This block is compatible only with SimPowerSystems' phasor simulation mode."
+	    Help		    "Supply or consume constant power\n\n<h2>Description</h2>\nThis block implements a controllable three-p"
+	    "hase, constant power source or load in SimPowerSystems (phasor mode). The load characteristic is given by\n<block"
+	    "quote>\n  <i>P</i> + <i>jQ</i> = sqrt(3) · <i>VI</i><sup>*</sup>,\n</blockquote>\nin which\n<blockquote>\n  <i>V<"
+	    "/i> = Positive sequence line-to-line voltage (V)<br/>\n  <i>I</i> = Positive sequence phase current (A)<br/>\n  <"
+	    "i>P</i> = Positive sequence real power (from PQ input)<br/>\n  <i>Q</i> = Positive sequence reactive power (from "
+	    "PQ input)\n</blockquote>\n\nThe block supplies <i>P</i> + <i>jQ</i> if the source convention is specified and con"
+	    "sumes <i>P</i> + <i>jQ</i> if the load convention is specified.\n\n<h2>Input</h2>\nInput <b>PQ</b> is a two dimen"
+	    "sional vector [<i>P</i>, <i>Q</i>] specifying the real and reactive power consumption (for a load) or generation "
+	    "(for a source).\n\n<h2>Physical Ports</h2>\n<p>The block has a three-phase, four-wire physical representation in "
+	    "SimPowerSystems. The physical ports are:\n<dl>\n  <dt><b>A</b></dt><dd>Phase A electrical connection</dd>\n  <dt>"
+	    "<b>B</b></dt><dd>Phase B electrical connection</dd>\n  <dt><b>C</b></dt><dd>Phase C electrical connection</dd>\n "
+	    " <dt><b>N</b></dt><dd>Neutral electrical connection</dd>\n</dl>\n</p>\n\n<h2>Parameters</h2>\n<dl>\n  <dt><b>Elec"
+	    "trical convention</b></dt>\n    <dd>Specifies whether the block is a source or a load</dd>\n  <dt><b>Nominal thre"
+	    "e-phase real power</b></dt>\n    <dd>The nominal real power production (consumption) for the source (load), in W<"
+	    "/dd>\n  <dt><b>Nominal three-phase reactive power</b></dt>\n    <dd>The nominal reactive power production (consum"
+	    "ption) for the source (load), in W</dd>\n  <dt><b>Nominal line-to-line voltage</b></dt>\n    <dd>The nominal line"
+	    "-to-line voltage, in V</dd>\n  <dt><b>Nominal frequency</b></dt>\n    <dd>The nominal frequency of the device, in"
+	    " Hz</dd>\n  <dt><b>Lower voltage limit</b></dt>\n    <dd>The voltage below which the block converts to a constant"
+	    " current device; see Comments</dd>\n</dl>\n\n<h2>Comments</h2>\n<ol>\n  <li>This block is compatible with SimPowe"
+	    "rSystems' <b>phasor simulation mode only.</b></li>\n  <li>The nominal input fields in the mask are used to initia"
+	    "lize the block parameters. If the nominal values are close to the actual values during simulation, then the block"
+	    " will converge more rapidly.</li>\n  <li>If the positive sequence voltage falls below the per-unit lower voltage "
+	    "limit (on the base specified by the nominal line-to-line voltage), then the block will behave as a constant curre"
+	    "nt source rather than a constant power source, with the current magnitude capped at the level required to supply "
+	    "full power at the lower voltage limit. This feature avoids current runaway that would otherwise occur during volt"
+	    "age collapes. By default, the lower voltage limit is <i>V</i> = 0.7 pu.\n</ol>"
 	    Initialization	    "% Call initialization to calculate block variables\nInputGain = ...\n    ConstantPowerSourceL"
 	    "oad_cb(gcb, 'init', ...\n    Conven, PNom, QNom, VNom, fNom, VLow);"
 	    Array {
@@ -1607,7 +1622,7 @@ Library {
 	  }
 	  System {
 	    Name		    "Constant Power\nSource or Load"
-	    Location		    [154, 264, 1105, 998]
+	    Location		    [45, 29, 997, 763]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -2724,7 +2739,7 @@ Library {
 	  }
 	  System {
 	    Name		    "EV Battery"
-	    Location		    [154, 264, 1105, 998]
+	    Location		    [45, 29, 997, 763]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -3064,7 +3079,7 @@ Library {
 	  }
 	  System {
 	    Name		    "EV Charger"
-	    Location		    [154, 264, 1105, 998]
+	    Location		    [45, 29, 997, 763]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -3610,7 +3625,7 @@ Library {
 	  BlockType		  Reference
 	  Name			  "Measurement"
 	  SID			  "234"
-	  Ports			  [0, 0, 0, 0, 0, 3, 3]
+	  Ports			  [0, 2, 0, 0, 0, 3, 3]
 	  Position		  [555, 42, 560, 118]
 	  ZOrder		  333
 	  BackgroundColor	  "black"
@@ -3652,9 +3667,15 @@ Library {
 	    $ClassName		    "Simulink.Mask"
 	    Type		    "Power Factor Conversion"
 	    Description		    "Converts a real input power and power factor to a vector of real and reactive power."
-	    Help		    "Converts a real input power and power factor to a vector of real and reactive power. The output is a v"
-	    "ector [P Q] computed from the input power P, input power factor PF, and whether the signal indicates leading or l"
-	    "agging power (selectable in the block mask)."
+	    Help		    "Convert from real power and power factor to real and reactive power\n\n<h2>Description</h2>\n\nGiven a"
+	    " real input power and power factor, this block computes a vector of real and reactive power (compatible with the "
+	    "<i>Constant Power Source/Load</i> block). Reactive power <i>Q</i> in output vector [<i>P</i>, <i>Q</i>] is given "
+	    "by\n<blockquote>\n  <i>Q</i> = &plusmn;<i>P</i> · sqrt( 1 + 1 / PF&sup2; ),\n</blockquote>\nwith the sign determi"
+	    "ned by whether the power factor is assumed to be lagging (+) or leading (&minus;) (selectable in the block mask)."
+	    "\n\n<h2>Input</h2>\nInput <b>P</b> is the real power and input <b>PF</b> is the power factor.\n\n<h2>Output</h2>\n"
+	    "Output <b>PQ</b> is a two dimensional vector [<i>P</i>, <i>Q</i>] of the computed real and reactive power.\n\n<h2"
+	    ">Parameters</h2>\nThe <b>type of power factor</b> parameter is a drop-down list which specifies whether the power"
+	    " factor is leading or lagging."
 	    Initialization	    "% Set multiplier for Q based on load type\nif pfType == 1\n    % Leading\n    leadlag = -1;\n"
 	    "else\n    % Lagging\n    leadlag = 1;\nend"
 	    Object {
@@ -3676,7 +3697,7 @@ Library {
 	  }
 	  System {
 	    Name		    "Power Factor\nConversion"
-	    Location		    [154, 264, 1105, 998]
+	    Location		    [45, 29, 997, 763]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -3925,7 +3946,7 @@ Library {
       }
       System {
 	Name			"PV"
-	Location		[433, 219, 1384, 953]
+	Location		[45, 29, 997, 763]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -3959,14 +3980,33 @@ Library {
 	    Type		    "Generic Inverter"
 	    Description		    "Implements the efficiency characteristic for a generic PV inverter using one of three models:\n"
 	    "- Fixed efficiency\n- Quadratic loss model\n- Lookup table\n\nSee the help for details for each of these models."
-	    Help		    "This block implements the efficiency characteristic for a generic PV inverter using one of three model"
-	    "s:\n- Fixed efficiency\n- Quadratic loss model\n- Lookup table\n\nFixed Efficiency:\nSpecify the fixed inverter e"
-	    "fficiency as a fraction.\n\nQuadratic Loss Model:\nSpecify the loss model coefficients such that\nPout = Pin - (a"
-	    "lpha + beta*Pin + gamma*Pin²).\n\nLookup Table:\nSpecify two of the following three vectors: input power, output "
-	    "power, and efficiency. Efficiencies must be entered as fractions and vector lengths must match. The block automat"
-	    "ically calculates the appropriate input-output power characteristic from the inputs provided according to the rel"
-	    "ationship Efficiency = Pout / Pin.\n\nCAUTION: When using the lookup table, do not include zeros in the efficienc"
-	    "y vector. Otherwise, a divide by zero error may result."
+	    Help		    "Simulate a generic PV inverter\n\n<h2>Description</h2>\nThe block simulates the efficiency characteris"
+	    "tic of a generic photovoltaic (PV) inverter using one of three models:\n<ul>\n  <li>Fixed efficiency</li>\n  <li>"
+	    "Quadratic loss model</li>\n  <li>Lookup table</li>\n</ul>\n\n<h3>Fixed Efficiency Model</h3>\nUnder the fixed eff"
+	    "iciency model, the inverter power output is a fixed fraction of the input: <i>P<sub>out</sub></i> = <i>&eta;</i><"
+	    "i>P<sub>in</sub></i>. Efficiency <i>&eta;</i> is a mask parameter.\n\n<h3>Quadratic Loss Model</h3>\nUnder the qu"
+	    "adratic loss model, inverter losses are a quadratic function of the inverter input power. The power relationship "
+	    "is <i>P<sub>out</sub></i> = <i>P<sub>in</sub></i> - ( <i>&alpha;</i> + <i>&beta;</i><i>P<sub>in</sub></i> + <i>&g"
+	    "amma;</i><i>P<sub>in</sub></i>²). <i>&alpha;</i>, <i>&beta;</i>, and <i>&gamma;</i> are the constant, linear, and"
+	    " quadratic loss coefficients, respectively, and are mask parameters.\n\n<h3>Lookup Table</h3>\nInverter output po"
+	    "wer is computed as a function of the input power using interpolation from a preset lookup table.\n\n<h2>Input</h2"
+	    ">\nBlock input <b>Pin</b> is the inverter input power.\n\n<h2>Output</h2>\nBlock output <b>Pout</b> is the invert"
+	    "er output power.\n\n<h2>Parameters</h2>\nThe parameters available in the block mask depend on which <b>inverter m"
+	    "odel</b> is selected in the mask dialog.\n\n<h3>Fixed Efficiency Model</h3>\nSpecify the fixed inverter <b>effici"
+	    "ency</b> <i>&eta;</i> as a fraction.\n\n<h3>Quadratic Loss Model</h3>\nSpecify <i>&alpha;</i>, <i>&beta;</i>, and"
+	    " <i>&gamma;</i> in the inverter loss equation:\n<dl>\n  <dt><b>Constant loss coefficient</b></dt><dd>Specify the "
+	    "constant inverter loss <i>&alpha;</i> (W).</dd>\n  <dt><b>Linear loss coefficient</b></dt><dd>Specify the linear "
+	    "inverter loss coefficient <i>&beta;</i> (W/W).</dd>\n  <dt><b>Quadratic loss coefficient</b></dt><dd>Specify the "
+	    "quadratic inverter loss coefficient <i>&gamma;</i> W/W²).</dd>\n</dl>\n\n<h3>Lookup Table</h3>\nSpecify two of th"
+	    "e following three vectors: <b>input power</b>, <b>output power</b>, and <b>efficiency</b>. Vector dimensions must"
+	    " match and efficiencies must be entered as fractions. The block automatically calculates the appropriate input-ou"
+	    "tput power characteristic from the inputs provided according to the relationship <i>&eta;</i> = <i>P<sub>out</sub"
+	    "></i> / <i>P<sub>in</sub></i>.\n\n<h2>Comments</h2>\n<ol>\n  <li><i>Caution:</i> If using the lookup table model,"
+	    " do not include zeros in the efficiency vector. Otherwise, a divide by zero error may result.</li>\n</ol>\n\n<h2>"
+	    "References</h2>\nFor discussion of the quadratic inverter loss model, see section 3.4.4 of:\n<ol>\n  <li>S. Frank"
+	    ", \"Optimal Design of Mixed AC-DC Distribution Systems for Commercial Buildings,\" Dissertation, Colorado School "
+	    "of Mines, Golden, CO, 2013. Available: <a href=\"http://gradworks.umi.com/3558161.pdf\">http://gradworks.umi.com/"
+	    "3558161.pdf</a></li>\n</ol>"
 	    Initialization	    "% Call initialization to calculate block variables\n[a, b, c, look_Pin, look_Pout] = ...\n   "
 	    " GenericInverter_cb(gcb, 'init', model_type, ...\n	fixed_eff, alpha, beta, gamma, ...\n    lookup_pair, lookup_in"
 	    ", lookup_out, lookup_eff);"
@@ -4507,17 +4547,27 @@ Library {
 	    $ClassName		    "Simulink.Mask"
 	    Type		    "Photovoltaic Array Smoothing"
 	    Description		    "Implements a low pass filter to model the smoothing effect of a utility-scale PV array."
-	    Help		    "This block implements a low pass filter to model the smoothing effect of a utility-scale PV array per "
-	    "the empirical model presented in Marcos et al. (2011) (see References). The smoothing is done by a unity-gain low"
-	    " pass filter with transfer function\n\nOutput / Input = 1 / (tau*s + 1)\n\nin which time constant tau may either "
-	    "be defined directly or estimated from the array area. The empirical formula of Marcos et al. estimates tau as\n\n"
-	    "tau = sqrt(A) / (2*pi*0.020)\n\nin which A is the physical array area in hectares (1 Ha = 10000 m²). Array area A"
-	    " may be specified directly or calculated from the array size, panel power density, and ground coverage ratio (def"
-	    "ined as the fraction of ground area occupied by the actual PV panels).\n\nNotes:\n1. This block includes a contin"
-	    "uous time low pass filter. Use caution when attempting to use this block within models with fixed time larger tha"
-	    "n the smoothing time constant; the Simulink solver may generate an error.\n\nReferences:\nJ. Marcos et al., \"Fro"
-	    "m irradiance to output power fluctuations: the PV plant as a low pass filter\", Progress In Photovoltaics: Resear"
-	    "ch And Applications, 2011, 19, 505-510."
+	    Help		    "Model the smoothing effect of a utility-scale PV array\n\n<h2>Description</h2>\nThis block implements "
+	    "a low pass filter to model the smoothing effect of a utility-scale PV array per the empirical model presented in "
+	    "Marcos et al. (2011) (see References). The smoothing is done by a unity-gain low pass filter with transfer functi"
+	    "on\n<blockquote>\n  Output / Input = 1 / (<i>&tau;</i><i>s</i> + 1),\n</blockquote>\nin which time constant <i>&t"
+	    "au;</i> may either be defined directly or estimated from the array area. The empirical formula of Marcos et al. e"
+	    "stimates <i>&tau;</i> as\n<blockquote>\n  <i>&tau;</i> = sqrt(<i>A</i>) / (2·&pi;·0.020)\n</blockquote>\nin which"
+	    " <i>A</i> is the physical array area in hectares (1 Ha = 10000 m&sup2;). Array area <i>A</i> may be specified dir"
+	    "ectly or calculated from the array size, panel power density, and ground coverage ratio (defined as the fraction "
+	    "of ground area occupied by the actual PV panels).\n\n<h2>Input</h2>\nBlock input <b>Pin</b> is the unsmoothed PV "
+	    "array power.\n\n<h2>Output</h2>\nBlock output <b>Pout</b> is the smoothed PV array power.\n\n<h2>Parameters</h2>\n"
+	    "In the mask dialog, the user elects to specify the time constant, the array area, or the array size and power den"
+	    "sity.\n\n<h3>Time Constant</h3>\nSpecify the <b>time constant</b> (s) for the low pass filter directly.\n\n<h3>Ar"
+	    "ray Area</h3>\nSpecify the <b>array area</b> (m&sup2;) and compute the time constant from the equation of Marcos "
+	    "et al. (2011).\n\n<h3>Time Constant</h3>\nSpecify the <b>array size</b> (W), <b>nominal power density</b> (W/m&su"
+	    "p2;), and <b>ground coverage ratio</b> (fraction). From this, the block computes the approximate array area and t"
+	    "he time constant from the equation of Marcos et al. (2011).\n\n<h2>Comments</h2>\n<ol>\n  <li>This block includes"
+	    " a continuous time low pass filter. Therefore, the block may not be used with a discrete solver. Also, use cautio"
+	    "n when attempting to use this block within models with fixed time larger than the smoothing time constant; the Si"
+	    "mulink solver may generate an error.</li>\n</ol>\n\n<h2>References</h2>\n<ol>\n  <li>J. Marcos et al., \"From irr"
+	    "adiance to output power fluctuations: the PV plant as a low pass filter\", <i>Progress In Photovoltaics: Research"
+	    " And Applications</i>, 2011, 19, 505-510.</li>\n</ol>"
 	    Initialization	    "% Call initialization to calculate block variables\ntau = PVSmoothing_cb(gcb, 'init', ...\n  "
 	    "  sel, tc, area, size, density, coverage);"
 	    Display		    "plot([1 2 3],[1 1 0])"
@@ -4605,35 +4655,49 @@ Library {
 	    "ocated and when the simulation occurs.\n2. Array: PV array nameplate rating and physical characteristics.\n3. Cel"
 	    "l: Customized model parameters for the PV cells (optional).\n4. Simulation: Initial conditions and simulation opt"
 	    "ions.\n\nSee the block help for more information."
-	    Help		    "This block implements cosimulation of a photovoltaic (PV) array using the PVWatts (pvwattsfunc) module"
-	    " of the SAM Simulation Code (SSC) SDK. The cosimulation runs in SSC at the time step specified in the 'Time and L"
-	    "ocation' tab (which need not be identical to the Simulink time step).\n\nThe block inputs accept weather data syn"
-	    "ced to the simulation time stamp:\n1. Beam irradiance (W/m²) - Also known as \"direct normal irradiance\"\n2. Dif"
-	    "fuse irradiance (W/m²) - Also known as \"diffuse horizontal irradiance\"\n3. Ambient temperature (°C)\n4. Wind sp"
-	    "eed (m/s)\n\nThe block mask provides inputs for most (although not all) of the remaining PV array model parameter"
-	    "s available for PVWatts in SSC, such as the array ratings, physical location and orientation, PV cell characteris"
-	    "tics, etc. The four input tabs in the block mask are:\n1. Time and Location: where the array is located and when "
-	    "the simulation occurs.\n2. Array: PV array nameplate rating and physical characteristics.\n3. Cell: Customized mo"
-	    "del parameters for the PV cells (optional).\n4. Simulation: Initial conditions and simulation options.\n\nThe blo"
-	    "ck outputs are, in order:\n1. Array DC output power (W)\n2. Array cell temperature (°C)\n3. Plane of array irradi"
-	    "ance (W/m²)\nEach output may be individually enabled or disabled on the 'Simulation' tab. Please note that enabli"
-	    "ng or disabling outputs will change the number of output ports on the block, possibly disrupting existing signal "
-	    "connections in Simulink.\n\nNotes:\n1. CAUTION: Checking 'Use latitude tile' will discard the existing tilt angle"
-	    " and replace it with the absolute value of the latitude.\n2. CAUTION: Unchecking 'Customize photovoltaic cell dat"
-	    "a' will discard any existing customizations in the PV cell data fields.\n3. The block is designed to model the DC"
-	    " operation of a PV array only. Therefore, no inverter efficiency mask parameter or AC power output are provided. "
-	    "To model inverter losses, apply an external inverter model to the DC power output, such as the 'Generic Inverter'"
-	    " model available in the Campus Modeling Simulink library.\n\n\nDetailed documentation for the SSC SDK is availabl"
-	    "e for download at:\nhttps://sam.nrel.gov/content/sam-simulation-core-sdk\nAdditional description for the SSC modu"
-	    "le input and output variables may be obtained using the SSCdev application distributed with SSC SDK; see the SSC "
-	    "SDK documentation for usage instructions."
+	    Help		    "Simulate a photovoltaic array using PVWatts\n\n<h2>Description</h2>\nThis block implements cosimulatio"
+	    "n of a photovoltaic (PV) array using the PVWatts (<code>pvwattsfunc</code>) module of the SAM Simulation Core (SS"
+	    "C) SDK. The cosimulation runs in SSC at the time step specified in the <i>Time and Location</i> parameter tab (wh"
+	    "ich need not be identical to the Simulink time step).\n\nDetailed documentation for the SSC SDK is available for "
+	    "download from the <a href=\"https://sam.nrel.gov/content/sam-simulation-core-sdk\">SAM website<a/>; see Reference"
+	    "s.\n\n\n<h2>Input</h2>\nThe block inputs accept weather data synced to the simulation time stamp:\n<dl>\n  <dt><b"
+	    ">Beam</b></dt><dd>Beam irradiance (W/m&sup2;)—Also known as \"direct normal irradiance\"</dd>\n  <dt><b>Diffuse</"
+	    "b></dt><dd>Diffuse irradiance (W/m&sup2;)—Also known as \"diffuse horizontal irradiance\"</dd>\n  <dt><b>Temp</b>"
+	    "</dt><dd>Ambient temperature (&deg;C)</dd>\n  <dt><b>Wind</b></dt><dd>Wind speed (m/s)</dd>\n</dl>\n\n<h2>Output<"
+	    "/h2>\nThe block outputs are, in order:\n<dl>\n  <dt><b>DC Power</b></dt><dd>Array DC output power (W)</dd>\n  <dt"
+	    "><b>Cell Temp</b></dt><dd>Array PV cell temperature (&deg;C)</dd>\n  <dt><b>POA Irradiance</b></dt><dd>Plane of a"
+	    "rray incident irradiance (W/m&sup2;)</dd>\n</dl>\n\nEach output may be individually enabled or disabled on the <i"
+	    ">Simulation</i> tab. Enabling or disabling outputs will change the number of output ports on the block, possibly "
+	    "disrupting existing signal connections in Simulink.\n\n<h2>Parameters</h2>\nThe block mask provides inputs for mo"
+	    "st (although not all) of the PV array model parameters available for PVWatts in SSC. The four input tabs in the b"
+	    "lock mask are\n<ol>\n  <li><i>Time and Location:</i> Specify where the array is located and when the simulation o"
+	    "ccurs. Includes fields for array <b>latitude</b> and <b>longitude</b>, the <b>initial date and time</b> (correspo"
+	    "nding to simulation time <i>t</i> = 0), <b>time zone</b>, and PVWatts simulation <b>time step.</b></li>\n  <li><i"
+	    ">Array:</i> Specify the PV array <b>nameplate capacity</b>, <b>derate factor</b>, and physical characteristics (<"
+	    "b>azimuth angle</b>, <b>tilt angle</b>, and <b>tracking mode</b>).</li>\n  <li><i>Cell:</i> Allows customization "
+	    "of the photovoltaic cell data—<b>reference cell temperature</b>, <b>nominal operating cell temperature</b>, <b>ma"
+	    "ximum power temprature coefficient</b>, <b>irradiance condition</b> for cell rating, and <b>minimum irradiance</b"
+	    "> for cell operation.</li>\n  <li><i>Simulation:</i> Specify the array initial conditions (<b>cell temperature</b"
+	    "> and <b>plane of array irradiance)</b> and select the desired block outputs.</li>\n</ol>\n\nFor a detailed descr"
+	    "iption of these parameters, see the SSC SDK documentation.\n\n<h2>Comments</h2>\n<ol>\n  <li>The block is designe"
+	    "d to model the DC operation of a PV array only. Therefore, no inverter efficiency mask parameter or AC power outp"
+	    "ut are provided. To model inverter losses, apply an external inverter model to the DC power output, such as the G"
+	    "eneric Inverter model available in the Campus Energy Modeling Simulink library.</li>\n  <li><i>Caution:</i> Check"
+	    "ing <b>Use latitude tilt</b> in the <i>Array</i> tab will discard the existing tilt angle and replace it with the"
+	    " absolute value of the latitude.</li>\n  <li><i>Caution:</i> Unchecking <b>Customize photovoltaic cell data</b> i"
+	    "n the <i>Cell</i> tab will discard any existing customizations in the PV cell data fields and replace them with d"
+	    "efault values.</li>\n  <li>Additional description for the SSC module input and output variables may be obtained u"
+	    "sing the SSCdev application distributed with SSC SDK; see the SSC SDK documentation for usage instructions.</li>\n"
+	    "</ol>\n\n<h2>References</h2>\n<ol>\n  <li>National Renewable Energy Laboratory, \"SAM Simulation Core SDK.\" Avai"
+	    "lable: <a href=\"https://sam.nrel.gov/content/sam-simulation-core-sdk\">https://sam.nrel.gov/content/sam-simulati"
+	    "on-core-sdk</a></li>\n</ol>"
 	    Initialization	    "PVWatts_cb(gcb, 'redraw_mask');"
 	    SelfModifiable	    "on"
 	    Display		    "% This mask display is automatically generated by PVWatts_cb()\nimage('pvwatts_light.png')\ndisp('P"
 	    "VWatts\\nCosimulation')\n\n% Label input ports\nport_label('input', 1, 'Beam'); % Beam irradiance (W/m^2)\nport_l"
 	    "abel('input', 2, 'Diffuse'); % Diffuse irradiance (W/m^2)\nport_label('input', 3, 'Temp'); % Ambient temperature "
 	    "(deg C)\nport_label('input', 4, 'Wind'); % Wind speed (m/s)\n\n% Label output ports\nport_label('output', 1, 'DC "
-	    "power'); % DC output power (W)\nport_label('output', 2, 'Cell Temp'); % Cell Temperature (deg C)\nport_label('out"
+	    "Power'); % DC output power (W)\nport_label('output', 2, 'Cell Temp'); % Cell temperature (deg C)\nport_label('out"
 	    "put', 3, 'POA Irradiance'); % % Point of array irradiance\n"
 	    Array {
 	      Type		      "Simulink.MaskParameter"
@@ -4897,8 +4961,8 @@ Library {
       }
       System {
 	Name			"Weather"
-	Location		[828, 117, 1779, 851]
-	Open			on
+	Location		[45, 29, 997, 763]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -4933,17 +4997,32 @@ Library {
 	    "he utility function convertTMY3() to creates a .MAT file compatible with this block. Use of this block requires t"
 	    "hat a Simulink bus object named 'BusDef_Weather' be defined in the base workspace. See the block help for details"
 	    "."
-	    Help		    "This block reads weather data from a binary (.MAT) file and outputs it as a Simulink bus signal. Becau"
-	    "se the block uses Simulink's 'From File' block internally for file I/O, there are several requirements for it to "
-	    "function correctly:\n1. The user must create a bus definition named 'BusDef_Weather' for the weather data and sav"
-	    "e it to the base MATLAB workspace. This bus definition will be automatically generated from the weather file if t"
-	    "he 'Create Simulink bus definition automatically' checkbox is checked.\n2. The .MAT file must contain time series"
-	    " objects organized within a structure (struct) object called 'ans'.\n3. The structure must match the bus definiti"
-	    "on. (If the block is allowed to automatically generate the Simulink bus definition, this requirement will be sati"
-	    "sfied.)\n3. The .MAT file must be version 7.3 or higher.\n4. All time series in the .MAT file must have units of "
-	    "seconds; otherwise Simulink will interpret them incorrectly.\n\nThe utility script convertTMY3() is available to "
-	    "convert TMY3-formatted weather data into MATLAB time series objects compatible with these requirements. See the c"
-	    "onvertTMY3() function documentation for details."
+	    Help		    "Import weather data from file\n\n<h2>Description</h2>\nThis block reads weather data from a binary (.M"
+	    "AT) file and outputs it as a Simulink bus signal. Because the block uses Simulink's 'From File' block internally "
+	    "for file I/O, there are several requirements for it to function correctly; see Comments. The utility script <code"
+	    ">convertTMY3()</code> is available to convert TMY3-formatted weather data into a structure of MATLAB time series "
+	    "objects compatible with these requirements. See the <code>convertTMY3()</code> function documentation for details"
+	    ".\n\n<h2>Output</h2>\nBlock output <b>data</b> is a Simulink bus containing weather data. The channels in the bus"
+	    " depend on the content of the weather file.\n\n<h2>Parameters</h2>\nThe <b>weather file</b> parameter specifies t"
+	    "he name of the weather file to load. This file must be in the MATLAB path.\n\nIf <b>Create Simulink bus definitio"
+	    "n automatically</b> is checked, then the block automatically creates the bus definition <code>BusDef_Weather</cod"
+	    "e> in the MATLAB workspace each time the block is initialized.\n\n<h2>Comments</h2>\n<ol>\n  <li>The following re"
+	    "quirements must be met for Simulink's <i>From File</i> block to function properly:\n  <ol type=\"a\">\n    <li>Th"
+	    "e .MAT file of weather data must contain time series objects organized within a structure (struct) object called "
+	    "<code>ans</code>.</li>\n    <li>The user must create a bus definition for the weather data named <code>BusDef_Wea"
+	    "ther</code> and save it to the base MATLAB workspace. (This bus definition will be automatically generated from t"
+	    "he weather file if the <b>Create Simulink bus definition automatically</b> checkbox is checked.)</li>\n    <li>Th"
+	    "e structure in the .MAT file must match the Simulink bus definition. (If the block is allowed to automatically ge"
+	    "nerate the bus definition, this requirement will be satisfied.)</li>\n    <li>The .MAT file must be version 7.3 o"
+	    "r higher. Note that this is <i>not</i> the default .MAT file version for MATLAB R2013a.</li>\n    <li>All time se"
+	    "ries in the .MAT file must have units of seconds; otherwise Simulink will interpret the time series incorrectly.<"
+	    "/li>\n   </ol>\n   <li>If the .MAT file changes, the bus definition <code>BusDef_Weather</code> must be reinitial"
+	    "ized.</li>\n   <li>In some instances, Simulink will not reinitialize the <i>Weather Data</i> block when a model f"
+	    "irst loads, possibly leading to an error message that <code>BusDef_Weather</code> is missing. To force Simulink t"
+	    "o reinitialize the block (and regenerate the bus definition), use the command\n  <blockquote>\n    <code>set_para"
+	    "m(<i>blk</i>,'initbus',get_param(<i>blk</i>,'initbus'));</code>\n  </blockquote>\n  within the <i>PostLoadFcn</i>"
+	    " callback for the model, in which <code><i>blk</i></code> is the local path to the <i>Weather Data</i> block, for"
+	    " instance, <code>[gcs '/Weather Data']</code>.</li>\n</ol>"
 	    Initialization	    "% Run initialization callback\nWeather_cb(gcb, 'init', fname, initbus);"
 	    SelfModifiable	    "on"
 	    Display		    "image(imread('SkyImage.png'))\nport_label('output', 1, 'data');"
@@ -4963,7 +5042,7 @@ Library {
 		$ObjectID		106
 		Type			"checkbox"
 		Name			"initbus"
-		Prompt			"Create Simulink bus definition automatically?"
+		Prompt			"Create Simulink bus definition automatically"
 		Value			"off"
 		Tunable			"off"
 	      }

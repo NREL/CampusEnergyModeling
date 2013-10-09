@@ -19,7 +19,7 @@
 %    use the Campus Energy Modeling libraries and models; it only installs
 %    the functions and library blocks developed by the Campus Energy
 %    Modeling team. To run the models, you will need a variety of other
-%    software packages; see the Campus Energy Modeling manual for details.
+%    software packages; see the Campus Energy Modeling wiki for details.
 %
 % 3. The exception to comment #2 is that this script can, at the user's
 %    option, install the MLE+ version presently included with the Campus

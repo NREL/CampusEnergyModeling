@@ -20,7 +20,7 @@ Library {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [45.0, 29.0, 952.0, 734.0]
+      Location		      [713.0, 204.0, 952.0, 734.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -56,9 +56,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Oct 08 16:30:45 2013"
-  RTWModifiedTimeStamp	  303150637
-  ModelVersionFormat	  "1.%<AutoIncrement:91>"
+  LastModifiedDate	  "Wed Oct 09 17:20:17 2013"
+  RTWModifiedTimeStamp	  303239139
+  ModelVersionFormat	  "1.%<AutoIncrement:93>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1157,7 +1157,7 @@ Library {
   }
   System {
     Name		    "CampusEnergyModeling"
-    Location		    [45, 29, 997, 763]
+    Location		    [713, 204, 1665, 938]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1197,7 +1197,7 @@ Library {
       }
       System {
 	Name			"Buildings"
-	Location		[45, 29, 997, 763]
+	Location		[713, 204, 1665, 938]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1501,7 +1501,7 @@ Library {
       }
       System {
 	Name			"Electrical"
-	Location		[45, 29, 997, 763]
+	Location		[713, 204, 1665, 938]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1541,26 +1541,27 @@ Library {
 	    "/i> = Positive sequence line-to-line voltage (V)<br/>\n  <i>I</i> = Positive sequence phase current (A)<br/>\n  <"
 	    "i>P</i> = Positive sequence real power (from PQ input)<br/>\n  <i>Q</i> = Positive sequence reactive power (from "
 	    "PQ input)\n</blockquote>\n\nThe block supplies <i>P</i> + <i>jQ</i> if the source convention is specified and con"
-	    "sumes <i>P</i> + <i>jQ</i> if the load convention is specified.\n\n<h2>Input</h2>\nInput <b>PQ</b> is a two dimen"
-	    "sional vector [<i>P</i>, <i>Q</i>] specifying the real and reactive power consumption (for a load) or generation "
-	    "(for a source).\n\n<h2>Physical Ports</h2>\n<p>The block has a three-phase, four-wire physical representation in "
-	    "SimPowerSystems. The physical ports are:\n<dl>\n  <dt><b>A</b></dt><dd>Phase A electrical connection</dd>\n  <dt>"
-	    "<b>B</b></dt><dd>Phase B electrical connection</dd>\n  <dt><b>C</b></dt><dd>Phase C electrical connection</dd>\n "
-	    " <dt><b>N</b></dt><dd>Neutral electrical connection</dd>\n</dl>\n</p>\n\n<h2>Parameters</h2>\n<dl>\n  <dt><b>Elec"
-	    "trical convention</b></dt>\n    <dd>Specifies whether the block is a source or a load</dd>\n  <dt><b>Nominal thre"
-	    "e-phase real power</b></dt>\n    <dd>The nominal real power production (consumption) for the source (load), in W<"
-	    "/dd>\n  <dt><b>Nominal three-phase reactive power</b></dt>\n    <dd>The nominal reactive power production (consum"
-	    "ption) for the source (load), in W</dd>\n  <dt><b>Nominal line-to-line voltage</b></dt>\n    <dd>The nominal line"
-	    "-to-line voltage, in V</dd>\n  <dt><b>Nominal frequency</b></dt>\n    <dd>The nominal frequency of the device, in"
-	    " Hz</dd>\n  <dt><b>Lower voltage limit</b></dt>\n    <dd>The voltage below which the block converts to a constant"
-	    " current device; see Comments</dd>\n</dl>\n\n<h2>Comments</h2>\n<ol>\n  <li>This block is compatible with SimPowe"
-	    "rSystems' <b>phasor simulation mode only.</b></li>\n  <li>The nominal input fields in the mask are used to initia"
-	    "lize the block parameters. If the nominal values are close to the actual values during simulation, then the block"
-	    " will converge more rapidly.</li>\n  <li>If the positive sequence voltage falls below the per-unit lower voltage "
-	    "limit (on the base specified by the nominal line-to-line voltage), then the block will behave as a constant curre"
-	    "nt source rather than a constant power source, with the current magnitude capped at the level required to supply "
-	    "full power at the lower voltage limit. This feature avoids current runaway that would otherwise occur during volt"
-	    "age collapes. By default, the lower voltage limit is <i>V</i> = 0.7 pu.\n</ol>"
+	    "sumes <i>P</i> + <i>jQ</i> if the load convention is specified.\n\n<h2>Requirements</h2>\nRequires SimPowerSystem"
+	    "s.\n\n<h2>Input</h2>\nInput <b>PQ</b> is a two dimensional vector [<i>P</i>, <i>Q</i>] specifying the real and re"
+	    "active power consumption (for a load) or generation (for a source).\n\n<h2>Physical Ports</h2>\n<p>The block has "
+	    "a three-phase, four-wire physical representation in SimPowerSystems. The physical ports are:\n<dl>\n  <dt><b>A</b"
+	    "></dt><dd>Phase A electrical connection</dd>\n  <dt><b>B</b></dt><dd>Phase B electrical connection</dd>\n  <dt><b"
+	    ">C</b></dt><dd>Phase C electrical connection</dd>\n  <dt><b>N</b></dt><dd>Neutral electrical connection</dd>\n</d"
+	    "l>\n</p>\n\n<h2>Parameters</h2>\n<dl>\n  <dt><b>Electrical convention</b></dt>\n    <dd>Specifies whether the blo"
+	    "ck is a source or a load</dd>\n  <dt><b>Nominal three-phase real power</b></dt>\n    <dd>The nominal real power p"
+	    "roduction (consumption) for the source (load), in W</dd>\n  <dt><b>Nominal three-phase reactive power</b></dt>\n "
+	    "   <dd>The nominal reactive power production (consumption) for the source (load), in W</dd>\n  <dt><b>Nominal lin"
+	    "e-to-line voltage</b></dt>\n    <dd>The nominal line-to-line voltage, in V</dd>\n  <dt><b>Nominal frequency</b></"
+	    "dt>\n    <dd>The nominal frequency of the device, in Hz</dd>\n  <dt><b>Lower voltage limit</b></dt>\n    <dd>The "
+	    "voltage below which the block converts to a constant current device; see Comments</dd>\n</dl>\n\n<h2>Comments</h2"
+	    ">\n<ol>\n  <li>This block is compatible with SimPowerSystems' <b>phasor simulation mode only.</b></li>\n  <li>The"
+	    " nominal input fields in the mask are used to initialize the block parameters. If the nominal values are close to"
+	    " the actual values during simulation, then the block will converge more rapidly.</li>\n  <li>If the positive sequ"
+	    "ence voltage falls below the per-unit lower voltage limit (on the base specified by the nominal line-to-line volt"
+	    "age), then the block will behave as a constant current source rather than a constant power source, with the curre"
+	    "nt magnitude capped at the level required to supply full power at the lower voltage limit. This feature avoids cu"
+	    "rrent runaway that would otherwise occur during voltage collapes. By default, the lower voltage limit is <i>V</i>"
+	    " = 0.7 pu.\n</ol>"
 	    Initialization	    "% Call initialization to calculate block variables\nInputGain = ...\n    ConstantPowerSourceL"
 	    "oad_cb(gcb, 'init', ...\n    Conven, PNom, QNom, VNom, fNom, VLow);"
 	    Array {
@@ -3697,7 +3698,7 @@ Library {
 	  }
 	  System {
 	    Name		    "Power Factor\nConversion"
-	    Location		    [45, 29, 997, 763]
+	    Location		    [713, 204, 1665, 938]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -3946,7 +3947,7 @@ Library {
       }
       System {
 	Name			"PV"
-	Location		[45, 29, 997, 763]
+	Location		[713, 204, 1665, 938]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -4115,7 +4116,7 @@ Library {
 	  }
 	  System {
 	    Name		    "Generic Inverter"
-	    Location		    [828, 117, 1779, 851]
+	    Location		    [713, 204, 1665, 938]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -4168,7 +4169,7 @@ Library {
 	      MaskHideContents	      off
 	      System {
 		Name			"Lookup Table"
-		Location		[828, 117, 1779, 851]
+		Location		[713, 204, 1665, 938]
 		Open			off
 		ModelBrowserVisibility	off
 		ModelBrowserWidth	200
@@ -4260,7 +4261,7 @@ Library {
 	      MaskHideContents	      off
 	      System {
 		Name			"Quadratic Model"
-		Location		[88, 287, 1236, 1019]
+		Location		[713, 204, 1665, 938]
 		Open			off
 		ModelBrowserVisibility	off
 		ModelBrowserWidth	200
@@ -4660,37 +4661,38 @@ Library {
 	    "C) SDK. The cosimulation runs in SSC at the time step specified in the <i>Time and Location</i> parameter tab (wh"
 	    "ich need not be identical to the Simulink time step).\n\nDetailed documentation for the SSC SDK is available for "
 	    "download from the <a href=\"https://sam.nrel.gov/content/sam-simulation-core-sdk\">SAM website<a/>; see Reference"
-	    "s.\n\n\n<h2>Input</h2>\nThe block inputs accept weather data synced to the simulation time stamp:\n<dl>\n  <dt><b"
-	    ">Beam</b></dt><dd>Beam irradiance (W/m&sup2;)—Also known as \"direct normal irradiance\"</dd>\n  <dt><b>Diffuse</"
-	    "b></dt><dd>Diffuse irradiance (W/m&sup2;)—Also known as \"diffuse horizontal irradiance\"</dd>\n  <dt><b>Temp</b>"
-	    "</dt><dd>Ambient temperature (&deg;C)</dd>\n  <dt><b>Wind</b></dt><dd>Wind speed (m/s)</dd>\n</dl>\n\n<h2>Output<"
-	    "/h2>\nThe block outputs are, in order:\n<dl>\n  <dt><b>DC Power</b></dt><dd>Array DC output power (W)</dd>\n  <dt"
-	    "><b>Cell Temp</b></dt><dd>Array PV cell temperature (&deg;C)</dd>\n  <dt><b>POA Irradiance</b></dt><dd>Plane of a"
-	    "rray incident irradiance (W/m&sup2;)</dd>\n</dl>\n\nEach output may be individually enabled or disabled on the <i"
-	    ">Simulation</i> tab. Enabling or disabling outputs will change the number of output ports on the block, possibly "
-	    "disrupting existing signal connections in Simulink.\n\n<h2>Parameters</h2>\nThe block mask provides inputs for mo"
-	    "st (although not all) of the PV array model parameters available for PVWatts in SSC. The four input tabs in the b"
-	    "lock mask are\n<ol>\n  <li><i>Time and Location:</i> Specify where the array is located and when the simulation o"
-	    "ccurs. Includes fields for array <b>latitude</b> and <b>longitude</b>, the <b>initial date and time</b> (correspo"
-	    "nding to simulation time <i>t</i> = 0), <b>time zone</b>, and PVWatts simulation <b>time step.</b></li>\n  <li><i"
-	    ">Array:</i> Specify the PV array <b>nameplate capacity</b>, <b>derate factor</b>, and physical characteristics (<"
-	    "b>azimuth angle</b>, <b>tilt angle</b>, and <b>tracking mode</b>).</li>\n  <li><i>Cell:</i> Allows customization "
-	    "of the photovoltaic cell data—<b>reference cell temperature</b>, <b>nominal operating cell temperature</b>, <b>ma"
-	    "ximum power temprature coefficient</b>, <b>irradiance condition</b> for cell rating, and <b>minimum irradiance</b"
-	    "> for cell operation.</li>\n  <li><i>Simulation:</i> Specify the array initial conditions (<b>cell temperature</b"
-	    "> and <b>plane of array irradiance)</b> and select the desired block outputs.</li>\n</ol>\n\nFor a detailed descr"
-	    "iption of these parameters, see the SSC SDK documentation.\n\n<h2>Comments</h2>\n<ol>\n  <li>The block is designe"
-	    "d to model the DC operation of a PV array only. Therefore, no inverter efficiency mask parameter or AC power outp"
-	    "ut are provided. To model inverter losses, apply an external inverter model to the DC power output, such as the G"
-	    "eneric Inverter model available in the Campus Energy Modeling Simulink library.</li>\n  <li><i>Caution:</i> Check"
-	    "ing <b>Use latitude tilt</b> in the <i>Array</i> tab will discard the existing tilt angle and replace it with the"
-	    " absolute value of the latitude.</li>\n  <li><i>Caution:</i> Unchecking <b>Customize photovoltaic cell data</b> i"
-	    "n the <i>Cell</i> tab will discard any existing customizations in the PV cell data fields and replace them with d"
-	    "efault values.</li>\n  <li>Additional description for the SSC module input and output variables may be obtained u"
-	    "sing the SSCdev application distributed with SSC SDK; see the SSC SDK documentation for usage instructions.</li>\n"
-	    "</ol>\n\n<h2>References</h2>\n<ol>\n  <li>National Renewable Energy Laboratory, \"SAM Simulation Core SDK.\" Avai"
-	    "lable: <a href=\"https://sam.nrel.gov/content/sam-simulation-core-sdk\">https://sam.nrel.gov/content/sam-simulati"
-	    "on-core-sdk</a></li>\n</ol>"
+	    "s.\n\n<h2>Requirements</h2>\nRequires <a href=\"https://sam.nrel.gov/content/sam-simulation-core-sdk\">SSC</a>.\n"
+	    "\n<h2>Input</h2>\nThe block inputs accept weather data synced to the simulation time stamp:\n<dl>\n  <dt><b>Beam<"
+	    "/b></dt><dd>Beam irradiance (W/m&sup2;)—Also known as \"direct normal irradiance\"</dd>\n  <dt><b>Diffuse</b></dt"
+	    "><dd>Diffuse irradiance (W/m&sup2;)—Also known as \"diffuse horizontal irradiance\"</dd>\n  <dt><b>Temp</b></dt><"
+	    "dd>Ambient temperature (&deg;C)</dd>\n  <dt><b>Wind</b></dt><dd>Wind speed (m/s)</dd>\n</dl>\n\n<h2>Output</h2>\n"
+	    "The block outputs are, in order:\n<dl>\n  <dt><b>DC Power</b></dt><dd>Array DC output power (W)</dd>\n  <dt><b>Ce"
+	    "ll Temp</b></dt><dd>Array PV cell temperature (&deg;C)</dd>\n  <dt><b>POA Irradiance</b></dt><dd>Plane of array i"
+	    "ncident irradiance (W/m&sup2;)</dd>\n</dl>\n\nEach output may be individually enabled or disabled on the <i>Simul"
+	    "ation</i> tab. Enabling or disabling outputs will change the number of output ports on the block, possibly disrup"
+	    "ting existing signal connections in Simulink.\n\n<h2>Parameters</h2>\nThe block mask provides inputs for most (al"
+	    "though not all) of the PV array model parameters available for PVWatts in SSC. The four input tabs in the block m"
+	    "ask are\n<ol>\n  <li><i>Time and Location:</i> Specify where the array is located and when the simulation occurs."
+	    " Includes fields for array <b>latitude</b> and <b>longitude</b>, the <b>initial date and time</b> (corresponding "
+	    "to simulation time <i>t</i> = 0), <b>time zone</b>, and PVWatts simulation <b>time step.</b></li>\n  <li><i>Array"
+	    ":</i> Specify the PV array <b>nameplate capacity</b>, <b>derate factor</b>, and physical characteristics (<b>azim"
+	    "uth angle</b>, <b>tilt angle</b>, and <b>tracking mode</b>).</li>\n  <li><i>Cell:</i> Allows customization of the"
+	    " photovoltaic cell data—<b>reference cell temperature</b>, <b>nominal operating cell temperature</b>, <b>maximum "
+	    "power temprature coefficient</b>, <b>irradiance condition</b> for cell rating, and <b>minimum irradiance</b> for "
+	    "cell operation.</li>\n  <li><i>Simulation:</i> Specify the array initial conditions (<b>cell temperature</b> and "
+	    "<b>plane of array irradiance)</b> and select the desired block outputs.</li>\n</ol>\n\nFor a detailed description"
+	    " of these parameters, see the SSC SDK documentation.\n\n<h2>Comments</h2>\n<ol>\n  <li>The block is designed to m"
+	    "odel the DC operation of a PV array only. Therefore, no inverter efficiency mask parameter or AC power output are"
+	    " provided. To model inverter losses, apply an external inverter model to the DC power output, such as the Generic"
+	    " Inverter model available in the Campus Energy Modeling Simulink library.</li>\n  <li><i>Caution:</i> Checking <b"
+	    ">Use latitude tilt</b> in the <i>Array</i> tab will discard the existing tilt angle and replace it with the absol"
+	    "ute value of the latitude.</li>\n  <li><i>Caution:</i> Unchecking <b>Customize photovoltaic cell data</b> in the "
+	    "<i>Cell</i> tab will discard any existing customizations in the PV cell data fields and replace them with default"
+	    " values.</li>\n  <li>Additional description for the SSC module input and output variables may be obtained using t"
+	    "he SSCdev application distributed with SSC SDK; see the SSC SDK documentation for usage instructions.</li>\n</ol>"
+	    "\n\n<h2>References</h2>\n<ol>\n  <li>National Renewable Energy Laboratory, \"SAM Simulation Core SDK.\" Available"
+	    ": <a href=\"https://sam.nrel.gov/content/sam-simulation-core-sdk\">https://sam.nrel.gov/content/sam-simulation-co"
+	    "re-sdk</a></li>\n</ol>"
 	    Initialization	    "PVWatts_cb(gcb, 'redraw_mask');"
 	    SelfModifiable	    "on"
 	    Display		    "% This mask display is automatically generated by PVWatts_cb()\nimage('pvwatts_light.png')\ndisp('P"
@@ -4961,7 +4963,7 @@ Library {
       }
       System {
 	Name			"Weather"
-	Location		[45, 29, 997, 763]
+	Location		[713, 204, 1665, 938]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200

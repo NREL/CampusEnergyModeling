@@ -28,9 +28,9 @@ Documentation
 
 Please see the [Campus Energy Modeling Wiki][9] for complete documentation, including [installation instructions][10] and a [getting started guide][11].
 
-[9]: https://github.nrel.gov/Buildings/CampusModeling/wiki "Campus Energy Modeling Wiki"
-[10]: https://github.nrel.gov/Buildings/CampusModeling/wiki/Installation "Installation"
-[11]: https://github.nrel.gov/Buildings/CampusModeling/wiki/Getting-Started "Getting Started"
+[9]: https://github.com/NREL/CampusEnergyModeling/wiki "Campus Energy Modeling Wiki"
+[10]: https://github.com/NREL/CampusEnergyModeling/wiki/Installation "Installation"
+[11]: https://github.com/NREL/CampusEnergyModeling/wiki/Getting-Started "Getting Started"
 
 License
 -------

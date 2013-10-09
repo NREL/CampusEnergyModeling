@@ -142,6 +142,7 @@ if runMatlab
                 datestr(now, 'yyyy-mm-dd HH:MM:SS'), ...
                 'Warning: Skipping test directory', n, ...
                 'test script not found' );
+            nSkip = nSkip + 1;
             continue    
         end
         
@@ -247,6 +248,7 @@ if runSimulink
                 datestr(now, 'yyyy-mm-dd HH:MM:SS'), ...
                 'Warning: Skipping test directory', n, ...
                 'test script not found' );
+            nSkip = nSkip + 1;
             continue    
         end
         

@@ -20,7 +20,7 @@ Library {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [713.0, 204.0, 952.0, 734.0]
+      Location		      [39.0, 256.0, 952.0, 734.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -56,9 +56,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Oct 09 17:20:17 2013"
-  RTWModifiedTimeStamp	  303239139
-  ModelVersionFormat	  "1.%<AutoIncrement:93>"
+  LastModifiedDate	  "Thu Oct 10 12:12:19 2013"
+  RTWModifiedTimeStamp	  303307899
+  ModelVersionFormat	  "1.%<AutoIncrement:98>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1157,7 +1157,7 @@ Library {
   }
   System {
     Name		    "CampusEnergyModeling"
-    Location		    [713, 204, 1665, 938]
+    Location		    [39, 256, 991, 990]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1197,7 +1197,7 @@ Library {
       }
       System {
 	Name			"Buildings"
-	Location		[713, 204, 1665, 938]
+	Location		[39, 256, 991, 990]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1226,12 +1226,41 @@ Library {
 	    Type		    "EnergyPlus Cosimulation"
 	    Description		    "This block implements cosimulation with EnergyPlus by allowing Simulink to exchange input and o"
 	    "utput data with it. Currently, EnergyPlus only supports real data."
-	    Help		    "This block implements cosimulation with EnergyPlus by allowing Simulink to exchange input and output d"
-	    "ata with it.\n\nWhen a simulation starts, EnergyPlus is also started. It will then run in parallel with Simulink."
-	    " They exchange input and output data via socket communication. When the simulation terminates, EnergyPlus will ex"
-	    "it.\n\nRefer to the manuals of MLE+ and/or BCVTB/EnergyPlus for details.\n\nINPUTS:\n- real: real vector input to"
-	    " EnergyPlus.\n\nOUTPUTS:\n- flag: status of EnergyPlus (0 if OK, if flag is non-zero, the simulation should stop)"
-	    ".\n- time: current simulation time of EnergyPlus, in seconds.\n- real: real vector output from EnergyPlus."
+	    Help		    "Simulate a building model using EnergyPlus\n\n<h2>Description</h2>\nThis block implements <a href=\"ht"
+	    "tp://apps1.eere.energy.gov/buildings/energyplus/\">EnergyPlus</a> cosimulation by allowing Simulink to exchange i"
+	    "nput and output data with EnergyPlus at each time step.\n\nWhen a simulation starts, this block starts EnergyPlus"
+	    " in parallel. During simulation, EnergyPlus exchanges data with Simulink using the <a href=\"http://simulationres"
+	    "earch.lbl.gov/bcvtb\">Building Controls Virtual Test Bed</a> (BCVTB) interface via <a href=\"http://mlab.seas.upe"
+	    "nn.edu/mlep/\">MLE+</a>.\n\nDetailed information about the interface is available in the MLE+ manual.\n\n<h2>Requ"
+	    "irements</h2>\nRequires <a href=\"http://apps1.eere.energy.gov/buildings/energyplus/\">EnergyPlus</a> and <a href"
+	    "=\"http://mlab.seas.upenn.edu/mlep/\">MLE+</a>.\n\n<h2>Input</h2>\nBlock input <b>real</b> is a real vector of En"
+	    "ergyPlus inputs corresponding to the inputs listed in the BCVTB config file <code>variables.cfg</code> (in order)"
+	    ".\n\n<h2>Output</h2>\nThe block outputs are, in order:\n<dl>\n  <dt><b>flag</b></dt><dd>Status flag for EnergyPlu"
+	    "s: 0 if OK, non-zero for error</dd>\n  <dt><b>time</b></dt><dd>Current simulation time of EnergyPlus (s)</dd>\n  "
+	    "<dt><b>real</b></dt><dd>Real vector of EnergyPlus outputs corresponding to the outputs listed in the BCVTB config"
+	    " file <code>variables.cfg</code> (in order).</dd>\n</dl>\n\n<h2>Parameters</h2>\nThe block mask provides inputs f"
+	    "or all required MLE+ configuration parameters:\n<dl>\n  <dt><b>E+ Executable Path</b></dt><dd>Specify the locatio"
+	    "n of the EnergyPlus executable</dd>\n  <dt><b>IDF File</b></dt><dd>Specify the EnergyPlus Input Description File "
+	    "(IDF), without extension</dd>\n  <dt><b>Weather Profile</b></dt><dd>Specify the name of the EnergyPlus weather pr"
+	    "ofile file to use for the model</dd>\n  <dt><b>Working Directory</b></dt><dd>Specify the EnergyPlus working direc"
+	    "tory</dd>\n  <dt><b>Timeout</b></dt><dd>Time delay (ms) before communication between MLE+ and EnergyPlus times ou"
+	    "t.</dd>\n  <dt><b>Socket Port</b></dt><dd>Specify the port to use for communicating with EnergyPlus; enter <code>"
+	    "0</code> to use MLE+ default settings.</dd>\n  <dt><b>Socket Host</b></dt><dd>Specifiy the IP address of the host"
+	    " where EnergyPlus runs; enter <code>''</code> to use localhost (the local computer).</dd>\n  <dt><b>BCVTB Directo"
+	    "ry</b></dt><dd>Specify the directory where the BCVTB files reside; enter <code>''</code> to use MLE+ default sett"
+	    "ings.</dd>\n  <dt><b>Time Step</b></dt><dd>Enter the EnergyPlus time step (s). This need not be the same as the S"
+	    "imulink time step.</dd>\n  <dt><b>Number of Real Outputs</b></dt><dd>Specify the number of real outputs from Ener"
+	    "gyPlus. This number should match the number of output variables in <code>variables.cfg</code>.</dd>\n</dl>\n\nAll"
+	    " string inputs in the block mask must be passed either as MATLAB strings (that is, surrounded by single quotes <c"
+	    "ode>'</code>) or as MATLAB expressions which evaluate to strings (for example, <code>[pwd '/somedir']</code>).\n\n"
+	    "<h2>Comments</h2>\n<ol>\n  <li>The BCVTB config file <code>variables.cfg</code> must be in the EnergyPlus working"
+	    " directory specified in the block mask.</li>\n  <li>For fixed time step simulation in Simulink, the EnergyPlus ti"
+	    "me step should be an exact multiple of the Simulink time step.</li>\n  <li>For details regarding the implementati"
+	    "on of MLE+ and the meaning of the parameters, see the MLE+ <a href=\"http://mlab.seas.upenn.edu/mlep/\">documenta"
+	    "tion</a>.</li>\n</ol>\n\n<h2>References</h2>\n<ol>\n  <li>W. Bernal, M. Behl, T. X. Nghiem, and R. Mangharam, \"M"
+	    "LE+: A Tool for Integrated Design and Deployment of Energy Efficient Building Controls,\" 4th ACM Workshop On Emb"
+	    "edded Sensing Systems For Energy-Efficiency In Buildings, (BuildSys '12), Toronto, Canada, 2012. Available: <a hr"
+	    "ef=\"http://repository.upenn.edu/mlab_papers/51/\">http://repository.upenn.edu/mlab_papers/51/</a></li>\n</ol>"
 	    Display		    "image(imread('building.png'))\ndisp('E+\\nCosimulation');\n\n% Inputs\nport_label('input', 1, 'real"
 	    "');\n\n% Outputs\nport_label('output', 1, 'flag');\nport_label('output', 2, 'time');\nport_label('output', 3, 're"
 	    "al');\n"
@@ -1461,7 +1490,7 @@ Library {
       }
       System {
 	Name			"Data Acquisition"
-	Location		[45, 29, 997, 763]
+	Location		[39, 256, 991, 990]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1501,7 +1530,7 @@ Library {
       }
       System {
 	Name			"Electrical"
-	Location		[713, 204, 1665, 938]
+	Location		[39, 256, 991, 990]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1535,33 +1564,33 @@ Library {
 	    Type		    "Constant Power Source/Load"
 	    Description		    "Implements a controllable three-phase, constant power source or load, where VI* = P + jQ (in pe"
 	    "r-unit)."
-	    Help		    "Supply or consume constant power\n\n<h2>Description</h2>\nThis block implements a controllable three-p"
-	    "hase, constant power source or load in SimPowerSystems (phasor mode). The load characteristic is given by\n<block"
-	    "quote>\n  <i>P</i> + <i>jQ</i> = sqrt(3) · <i>VI</i><sup>*</sup>,\n</blockquote>\nin which\n<blockquote>\n  <i>V<"
-	    "/i> = Positive sequence line-to-line voltage (V)<br/>\n  <i>I</i> = Positive sequence phase current (A)<br/>\n  <"
-	    "i>P</i> = Positive sequence real power (from PQ input)<br/>\n  <i>Q</i> = Positive sequence reactive power (from "
-	    "PQ input)\n</blockquote>\n\nThe block supplies <i>P</i> + <i>jQ</i> if the source convention is specified and con"
-	    "sumes <i>P</i> + <i>jQ</i> if the load convention is specified.\n\n<h2>Requirements</h2>\nRequires SimPowerSystem"
-	    "s.\n\n<h2>Input</h2>\nInput <b>PQ</b> is a two dimensional vector [<i>P</i>, <i>Q</i>] specifying the real and re"
-	    "active power consumption (for a load) or generation (for a source).\n\n<h2>Physical Ports</h2>\n<p>The block has "
-	    "a three-phase, four-wire physical representation in SimPowerSystems. The physical ports are:\n<dl>\n  <dt><b>A</b"
-	    "></dt><dd>Phase A electrical connection</dd>\n  <dt><b>B</b></dt><dd>Phase B electrical connection</dd>\n  <dt><b"
-	    ">C</b></dt><dd>Phase C electrical connection</dd>\n  <dt><b>N</b></dt><dd>Neutral electrical connection</dd>\n</d"
-	    "l>\n</p>\n\n<h2>Parameters</h2>\n<dl>\n  <dt><b>Electrical convention</b></dt>\n    <dd>Specifies whether the blo"
-	    "ck is a source or a load</dd>\n  <dt><b>Nominal three-phase real power</b></dt>\n    <dd>The nominal real power p"
-	    "roduction (consumption) for the source (load), in W</dd>\n  <dt><b>Nominal three-phase reactive power</b></dt>\n "
-	    "   <dd>The nominal reactive power production (consumption) for the source (load), in W</dd>\n  <dt><b>Nominal lin"
-	    "e-to-line voltage</b></dt>\n    <dd>The nominal line-to-line voltage, in V</dd>\n  <dt><b>Nominal frequency</b></"
-	    "dt>\n    <dd>The nominal frequency of the device, in Hz</dd>\n  <dt><b>Lower voltage limit</b></dt>\n    <dd>The "
-	    "voltage below which the block converts to a constant current device; see Comments</dd>\n</dl>\n\n<h2>Comments</h2"
-	    ">\n<ol>\n  <li>This block is compatible with SimPowerSystems' <b>phasor simulation mode only.</b></li>\n  <li>The"
-	    " nominal input fields in the mask are used to initialize the block parameters. If the nominal values are close to"
-	    " the actual values during simulation, then the block will converge more rapidly.</li>\n  <li>If the positive sequ"
-	    "ence voltage falls below the per-unit lower voltage limit (on the base specified by the nominal line-to-line volt"
-	    "age), then the block will behave as a constant current source rather than a constant power source, with the curre"
-	    "nt magnitude capped at the level required to supply full power at the lower voltage limit. This feature avoids cu"
-	    "rrent runaway that would otherwise occur during voltage collapes. By default, the lower voltage limit is <i>V</i>"
-	    " = 0.7 pu.\n</ol>"
+	    Help		    "Supply or consume constant three-phase power\n\n<h2>Description</h2>\nThis block implements a controll"
+	    "able three-phase, constant power source or load in SimPowerSystems (phasor mode). The load characteristic is give"
+	    "n by\n<blockquote>\n  <i>P</i> + <i>jQ</i> = sqrt(3) · <i>VI</i><sup>*</sup>,\n</blockquote>\nin which\n<blockquo"
+	    "te>\n  <i>V</i> = Positive sequence line-to-line voltage (V)<br/>\n  <i>I</i> = Positive sequence phase current ("
+	    "A)<br/>\n  <i>P</i> = Positive sequence real power (from PQ input)<br/>\n  <i>Q</i> = Positive sequence reactive "
+	    "power (from PQ input)\n</blockquote>\n\nThe block supplies <i>P</i> + <i>jQ</i> if the source convention is speci"
+	    "fied and consumes <i>P</i> + <i>jQ</i> if the load convention is specified.\n\n<h2>Requirements</h2>\nRequires Si"
+	    "mPowerSystems.\n\n<h2>Input</h2>\nInput <b>PQ</b> is a two dimensional vector [<i>P</i>, <i>Q</i>] specifying the"
+	    " real and reactive power consumption (for a load) or generation (for a source).\n\n<h2>Physical Ports</h2>\n<p>Th"
+	    "e block has a three-phase, four-wire physical representation in SimPowerSystems. The physical ports are:\n<dl>\n "
+	    " <dt><b>A</b></dt><dd>Phase A electrical connection</dd>\n  <dt><b>B</b></dt><dd>Phase B electrical connection</d"
+	    "d>\n  <dt><b>C</b></dt><dd>Phase C electrical connection</dd>\n  <dt><b>N</b></dt><dd>Neutral electrical connecti"
+	    "on</dd>\n</dl>\n</p>\n\n<h2>Parameters</h2>\n<dl>\n  <dt><b>Electrical convention</b></dt>\n    <dd>Specifies whe"
+	    "ther the block is a source or a load</dd>\n  <dt><b>Nominal three-phase real power</b></dt>\n    <dd>The nominal "
+	    "real power production (consumption) for the source (load), in W</dd>\n  <dt><b>Nominal three-phase reactive power"
+	    "</b></dt>\n    <dd>The nominal reactive power production (consumption) for the source (load), in W</dd>\n  <dt><b"
+	    ">Nominal line-to-line voltage</b></dt>\n    <dd>The nominal line-to-line voltage, in V</dd>\n  <dt><b>Nominal fre"
+	    "quency</b></dt>\n    <dd>The nominal frequency of the device, in Hz</dd>\n  <dt><b>Lower voltage limit</b></dt>\n"
+	    "    <dd>The voltage below which the block converts to a constant current device; see Comments</dd>\n</dl>\n\n<h2>"
+	    "Comments</h2>\n<ol>\n  <li>This block is compatible with SimPowerSystems' <b>phasor simulation mode only.</b></li"
+	    ">\n  <li>The nominal input fields in the mask are used to initialize the block parameters. If the nominal values "
+	    "are close to the actual values during simulation, then the block will converge more rapidly.</li>\n  <li>If the p"
+	    "ositive sequence voltage falls below the per-unit lower voltage limit (on the base specified by the nominal line-"
+	    "to-line voltage), then the block will behave as a constant current source rather than a constant power source, wi"
+	    "th the current magnitude capped at the level required to supply full power at the lower voltage limit. This featu"
+	    "re avoids current runaway that would otherwise occur during voltage collapes. By default, the lower voltage limit"
+	    " is <i>V</i> = 0.7 pu.\n</ol>"
 	    Initialization	    "% Call initialization to calculate block variables\nInputGain = ...\n    ConstantPowerSourceL"
 	    "oad_cb(gcb, 'init', ...\n    Conven, PNom, QNom, VNom, fNom, VLow);"
 	    Array {
@@ -3947,7 +3976,7 @@ Library {
       }
       System {
 	Name			"PV"
-	Location		[713, 204, 1665, 938]
+	Location		[39, 256, 991, 990]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -3981,33 +4010,33 @@ Library {
 	    Type		    "Generic Inverter"
 	    Description		    "Implements the efficiency characteristic for a generic PV inverter using one of three models:\n"
 	    "- Fixed efficiency\n- Quadratic loss model\n- Lookup table\n\nSee the help for details for each of these models."
-	    Help		    "Simulate a generic PV inverter\n\n<h2>Description</h2>\nThe block simulates the efficiency characteris"
-	    "tic of a generic photovoltaic (PV) inverter using one of three models:\n<ul>\n  <li>Fixed efficiency</li>\n  <li>"
-	    "Quadratic loss model</li>\n  <li>Lookup table</li>\n</ul>\n\n<h3>Fixed Efficiency Model</h3>\nUnder the fixed eff"
-	    "iciency model, the inverter power output is a fixed fraction of the input: <i>P<sub>out</sub></i> = <i>&eta;</i><"
-	    "i>P<sub>in</sub></i>. Efficiency <i>&eta;</i> is a mask parameter.\n\n<h3>Quadratic Loss Model</h3>\nUnder the qu"
-	    "adratic loss model, inverter losses are a quadratic function of the inverter input power. The power relationship "
-	    "is <i>P<sub>out</sub></i> = <i>P<sub>in</sub></i> - ( <i>&alpha;</i> + <i>&beta;</i><i>P<sub>in</sub></i> + <i>&g"
-	    "amma;</i><i>P<sub>in</sub></i>²). <i>&alpha;</i>, <i>&beta;</i>, and <i>&gamma;</i> are the constant, linear, and"
-	    " quadratic loss coefficients, respectively, and are mask parameters.\n\n<h3>Lookup Table</h3>\nInverter output po"
-	    "wer is computed as a function of the input power using interpolation from a preset lookup table.\n\n<h2>Input</h2"
-	    ">\nBlock input <b>Pin</b> is the inverter input power.\n\n<h2>Output</h2>\nBlock output <b>Pout</b> is the invert"
-	    "er output power.\n\n<h2>Parameters</h2>\nThe parameters available in the block mask depend on which <b>inverter m"
-	    "odel</b> is selected in the mask dialog.\n\n<h3>Fixed Efficiency Model</h3>\nSpecify the fixed inverter <b>effici"
-	    "ency</b> <i>&eta;</i> as a fraction.\n\n<h3>Quadratic Loss Model</h3>\nSpecify <i>&alpha;</i>, <i>&beta;</i>, and"
-	    " <i>&gamma;</i> in the inverter loss equation:\n<dl>\n  <dt><b>Constant loss coefficient</b></dt><dd>Specify the "
-	    "constant inverter loss <i>&alpha;</i> (W).</dd>\n  <dt><b>Linear loss coefficient</b></dt><dd>Specify the linear "
-	    "inverter loss coefficient <i>&beta;</i> (W/W).</dd>\n  <dt><b>Quadratic loss coefficient</b></dt><dd>Specify the "
-	    "quadratic inverter loss coefficient <i>&gamma;</i> W/W²).</dd>\n</dl>\n\n<h3>Lookup Table</h3>\nSpecify two of th"
-	    "e following three vectors: <b>input power</b>, <b>output power</b>, and <b>efficiency</b>. Vector dimensions must"
-	    " match and efficiencies must be entered as fractions. The block automatically calculates the appropriate input-ou"
-	    "tput power characteristic from the inputs provided according to the relationship <i>&eta;</i> = <i>P<sub>out</sub"
-	    "></i> / <i>P<sub>in</sub></i>.\n\n<h2>Comments</h2>\n<ol>\n  <li><i>Caution:</i> If using the lookup table model,"
-	    " do not include zeros in the efficiency vector. Otherwise, a divide by zero error may result.</li>\n</ol>\n\n<h2>"
-	    "References</h2>\nFor discussion of the quadratic inverter loss model, see section 3.4.4 of:\n<ol>\n  <li>S. Frank"
-	    ", \"Optimal Design of Mixed AC-DC Distribution Systems for Commercial Buildings,\" Dissertation, Colorado School "
-	    "of Mines, Golden, CO, 2013. Available: <a href=\"http://gradworks.umi.com/3558161.pdf\">http://gradworks.umi.com/"
-	    "3558161.pdf</a></li>\n</ol>"
+	    Help		    "Simulate the efficiency characteristic of a generic PV inverter\n\n<h2>Description</h2>\nThe block sim"
+	    "ulates the efficiency characteristic of a generic photovoltaic (PV) inverter using one of three models:\n<ul>\n  "
+	    "<li>Fixed efficiency</li>\n  <li>Quadratic loss model</li>\n  <li>Lookup table</li>\n</ul>\n\n<h3>Fixed Efficienc"
+	    "y Model</h3>\nUnder the fixed efficiency model, the inverter power output is a fixed fraction of the input: <i>P<"
+	    "sub>out</sub></i> = <i>&eta;</i><i>P<sub>in</sub></i>. Efficiency <i>&eta;</i> is a mask parameter.\n\n<h3>Quadra"
+	    "tic Loss Model</h3>\nUnder the quadratic loss model, inverter losses are a quadratic function of the inverter inp"
+	    "ut power. The power relationship is <i>P<sub>out</sub></i> = <i>P<sub>in</sub></i> - ( <i>&alpha;</i> + <i>&beta;"
+	    "</i><i>P<sub>in</sub></i> + <i>&gamma;</i><i>P<sub>in</sub></i>²). <i>&alpha;</i>, <i>&beta;</i>, and <i>&gamma;<"
+	    "/i> are the constant, linear, and quadratic loss coefficients, respectively, and are mask parameters.\n\n<h3>Look"
+	    "up Table</h3>\nInverter output power is computed as a function of the input power using interpolation from a pres"
+	    "et lookup table.\n\n<h2>Input</h2>\nBlock input <b>Pin</b> is the inverter input power.\n\n<h2>Output</h2>\nBlock"
+	    " output <b>Pout</b> is the inverter output power.\n\n<h2>Parameters</h2>\nThe parameters available in the block m"
+	    "ask depend on which <b>inverter model</b> is selected in the mask dialog.\n\n<h3>Fixed Efficiency Model</h3>\nSpe"
+	    "cify the fixed inverter <b>efficiency</b> <i>&eta;</i> as a fraction.\n\n<h3>Quadratic Loss Model</h3>\nSpecify <"
+	    "i>&alpha;</i>, <i>&beta;</i>, and <i>&gamma;</i> in the inverter loss equation:\n<dl>\n  <dt><b>Constant loss coe"
+	    "fficient</b></dt><dd>Specify the constant inverter loss <i>&alpha;</i> (W).</dd>\n  <dt><b>Linear loss coefficien"
+	    "t</b></dt><dd>Specify the linear inverter loss coefficient <i>&beta;</i> (W/W).</dd>\n  <dt><b>Quadratic loss coe"
+	    "fficient</b></dt><dd>Specify the quadratic inverter loss coefficient <i>&gamma;</i> W/W²).</dd>\n</dl>\n\n<h3>Loo"
+	    "kup Table</h3>\nSpecify two of the following three vectors: <b>input power</b>, <b>output power</b>, and <b>effic"
+	    "iency</b>. Vector dimensions must match and efficiencies must be entered as fractions. The block automatically ca"
+	    "lculates the appropriate input-output power characteristic from the inputs provided according to the relationship"
+	    " <i>&eta;</i> = <i>P<sub>out</sub></i> / <i>P<sub>in</sub></i>.\n\n<h2>Comments</h2>\n<ol>\n  <li><i>Caution:</i>"
+	    " If using the lookup table model, do not include zeros in the efficiency vector. Otherwise, a divide by zero erro"
+	    "r may result.</li>\n</ol>\n\n<h2>References</h2>\nFor discussion of the quadratic inverter loss model, see sectio"
+	    "n 3.4.4 of:\n<ol>\n  <li>S. Frank, \"Optimal Design of Mixed AC-DC Distribution Systems for Commercial Buildings,"
+	    "\" Dissertation, Colorado School of Mines, Golden, CO, 2013. Available: <a href=\"http://gradworks.umi.com/355816"
+	    "1.pdf\">http://gradworks.umi.com/3558161.pdf</a></li>\n</ol>"
 	    Initialization	    "% Call initialization to calculate block variables\n[a, b, c, look_Pin, look_Pout] = ...\n   "
 	    " GenericInverter_cb(gcb, 'init', model_type, ...\n	fixed_eff, alpha, beta, gamma, ...\n    lookup_pair, lookup_in"
 	    ", lookup_out, lookup_eff);"
@@ -4963,7 +4992,7 @@ Library {
       }
       System {
 	Name			"Weather"
-	Location		[713, 204, 1665, 938]
+	Location		[39, 256, 991, 990]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200

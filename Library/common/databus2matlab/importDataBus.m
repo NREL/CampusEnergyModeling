@@ -88,7 +88,7 @@
 %    certificate for databus.nrel.gov to Java's list of trusted SSL
 %    certificates. For more information and solution instructions, see
 %    the following MathWorks support solution:
-%       http://www.mathworks.com/support/solutions/en/data/1-3SMHXD/index.html?product=SL&solution=1-3SMHXD
+%       http://www.mathworks.com/support/solutions/en/data/1-3SMHXD/
 %
 % 2. If you use a time format other than the ISO standard, yyyy-mm-dd
 %    HH:MM:SS, then you must specify the format used in the optional
@@ -104,7 +104,7 @@
 %    2013a, the built-in urlread() command did not support basic
 %    authentication. Workarounds (hacks) do exist; see for example:
 %       * http://stackoverflow.com/questions/1317931
-%       * http://www.mathworks.com/support/solutions/en/data/1-4EO8VK/?solution=1-4EO8VK
+%       * http://www.mathworks.com/support/solutions/en/data/1-4EO8VK/
 %
 %    If you are using MATLAB 2012b or earlier, you may choose to write your
 %    own replacement function for urlread() (or to use a version downloaded

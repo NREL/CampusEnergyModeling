@@ -1,4 +1,4 @@
-varname,tablename,unit,description
+varname,dbname,unit,description
 GHI,wind103W_GloCM22,W/m²,Global horizontal irradiance
 DNI,wind103W_DirCH1,W/m²,Direct normal irradiance
 DHI,wind103W_Dif848,W/m²,Diffuse horizontal irradiance

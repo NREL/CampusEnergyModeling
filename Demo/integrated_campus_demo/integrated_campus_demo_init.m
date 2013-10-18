@@ -1,73 +1,79 @@
-%% Integrated Campus Demo Initialization Script
+%% Integrated Campus Demo - Initialization Script
+%
 % This script initializes the demo by creating required input files for the
-% weather data. And configuring the parameters for the MLE+ blocks. Note
-% that downloading DataBus data is an interactive process requiring the
-% user to save files from a web browser to .CSV and pass the resulting file
-% name back to MATLAB.
+% weather data and configuring the parameters for the MLE+ blocks. Two
+% different weather sources are available:
+% 
+% 1. SRRL: Weather data is drawn from a TMY3-formatted file of Solar
+%    Radiation Research Laboratory (SRRL) weather data for Golden, CO
+%    (included with the Campus Energy Modeling library test data).
 %
-% Run this script prior to running the Simulink simulation. (You only need
-% to run it once; the necessary files and settings will persist afterwards.)
+% 2. DataBus: Weather data downloaded from NREL's DataBus database using
+%    the batchDataBus() utility function.
 %
-% To switch to DataBus data instead of the included TMY3 data, modify the
-% variables as needed under the 'Retrieve DataBus Weather Data' section and
-% re-run the script. Also, remember to change the weather block in Simulink
-% to point to 'Weather2.mat'.
+% Modify the user settings below to select a data source, then run this
+% script prior to running the Simulink simulation. (You only need to run it
+% once; the necessary files and settings will persist afterwards.) Note
+% that users external to NREL do not have access to NREL's DataBus
+% database. 
+%
+% COMMENTS:
+% 1. This initialization script stores weather data in the file
+%    'Weather.mat'. If this file already exists, the script will not
+%    recreate it. Therefore, you can easily override the weather data by
+%    creating your own custom version of the file.
+%
+%    If you choose to do this, consult the block help for the 'Weather'
+%    block (in the Campus Energy Modeling library) and the 'From File'
+%    block (in the Simulink core library) for documentation regarding the
+%    time series structure required for the weather data.
+%
+%    Also note that switching from one data source to the other requires
+%    manual deletion of any existing version of 'Weather.mat'.
+%
+% 2. If you open the model prior to running this initialization script, you
+%    may see a warning that the model is unable to automatically create the
+%    bus definition for the weather data block. To correct, run this
+%    script, then reopen the model.
 
 %% User Settings
 % Please modify these as needed to match your local configuration...
 
-% Change to 'true' to download and use DataBus data
-% NOTE: Also remember to switch to 'Weather2.mat' in the Simulink model!
-useDataBus = false;
+% Data source: please specify either 'SRRL' or 'DataBus'
+dSource = 'DataBus';
 
-% Set EnergyPlus path
+% Path to EnergyPlus batch file
 % NOTE: This needs to be Brent's customized 8.0.1 build or greater to work!
 ePlusPath = 'C:\EnergyPlusV8-0-1\RunEPlus.bat';
 
 %% Initialize Weather Data
-% Pulls in TMY3-formatted weather file for June 2012 in Golden, CO
+% Output
+fname = 'Weather.mat';
 
-% Use convertTMY3() conversion utility -> result in 'ans' variable
-convertTMY3('201206ty.csv', 'offset', 0);
-
-% Save resulting structures of time series to file
-% Notes:
-%   1. The name 'ans' is required by Simulink to import data using a 'From
-%      File' block
-%   2. A version 7.3 .MAT file is required for Simulink to properly read
-%      the time series object. This is NOT the default version which MATLAB
-%      saves, so be careful.
-save('Weather.mat', 'ans', '-v7.3');
-
-%% Retrieve DataBus Weather Data
-% Pulling data from DataBus into MATLAB is tricky; direct methods fail for
-% cryptic and unsolveable reasons:
-%   urlread()       SSL errors and authentication errors (even w/ correct
-%                   credentials)
-%   web()           Locks up MATLAB when using MATLAB's internal browser
-%
-% Instead, this script uses an interactive approach which prompts the user
-% to download each data stream to .CSV, then parses the result.
-% Run the interactive function to retrieve and use DataBus data
-
-if useDataBus
-    % Time stamps for data to retrieve (yyyy-mm-dd HH:MM:SS)
-    start = '2013-06-01 00:00:00';
-    stop  = '2013-06-02 00:00:00';
+% Select by data source
+switch lower(dSource)
+    % SRRL
+    case 'srrl'
+        if ~exist(fname, 'file')
+            % Use convertTMY3() conversion utility -> result in 'ans'
+            dataFile = strjoin( ...
+                {'..','..','Test','data','201206ty.csv'}, filesep );
+            convertTMY3(dataFile);
+            save(fname, 'ans', '-v7.3'); 
+        end
     
-    
-    % Interactive import from databus -> result in 'ans' variable
-    importDataBus('DataBus_sensors.csv', start, stop, 'timezone', -7, ...
-        'skipdownload', [1 1 1 1 1 1]);
-    
-    % Save resulting structures of time series to file
-    % Notes:
-    %   1. The name 'ans' is required by Simulink to import data using a
-    %      'From File' block
-    %   2. A version 7.3 .MAT file is required for Simulink to properly
-    %      read the time series object. This is NOT the default version
-    %      which MATLAB saves, so be careful.
-    save('Weather2.mat', 'ans', '-v7.3');
+    % DataBus
+    case 'databus'
+        if ~exist(fname, 'file')
+            % Time stamps for data to retrieve (yyyy-mm-dd HH:MM:SS)
+            start = '2013-06-01 00:00:00';
+            stop  = '2013-06-02 00:00:00';
+
+            % Batch import from databus -> result in 'ans'
+            sensorFile = 'DataBus_sensors.csv';
+            batchDataBus(sensorFile, start, stop, 'timezone', -6);
+            save(fname, 'ans', '-v7.3');
+        end
     
 end
 
@@ -82,42 +88,50 @@ initPricingData;
 % hold off
 
 %% Set MLE+ Block Parameters
+% Model name
+sys = 'integrated_campus_demo';
+
+% Open model if not open
+open_system(sys);
+
 % Setup
-fileName = 'integrated_campus';
 blkList = {'E+ Plant','E+ Building 1','E+ Building 2'};
-numOut = [13 14 13];
+
 % Loop through blocks to set common elements
 for n = blkList
     % Simulink object name
-    objName = [fileName '/Campus Thermal Model/' n{:}];
+    objName = [sys '/Campus Thermal Model/' n{:}];
     
     % Set Param - EnergyPlus batch file (modify as needed)
     param = 'progname';
     value = ['''' ePlusPath ''''];
-    set_param(objName,param,value);
+    set_param(objName, param, value);
     
     % Set Param - Time step
     param = 'deltaT';
     value = '60';
-    set_param(objName,param,value);
+    set_param(objName, param, value);
     
     % Set Param - Baseline weather file
     param = 'weatherfile';
     value = '''USA_CO_Golden-NREL.724666_TMY3''';
-    set_param(objName,param,value);
+    set_param(objName, param, value);
     
 end
 
 %% Set Chiller-specific parameters
-objName = [fileName '/Campus Thermal Model/E+ Plant'];
+% Get block
+objName = [sys '/Campus Thermal Model/E+ Plant'];
+
 % Set Param - EnergyPlus model file
 param = 'modelfile';
-value = '[pwd ''\ElectricChiller\ElectricChiller'']';
+value = [ '[pwd ''' filesep ...
+    strjoin({'ElectricChiller','ElectricChiller'}, filesep) ''']' ];
 set_param(objName,param,value);
 
 % Set Param - EnergyPlus working directory
 param = 'workdir';
-value = '[pwd ''\ElectricChiller'']';
+value = [ '[pwd ''' filesep 'ElectricChiller'']' ];
 set_param(objName,param,value);
 
 % Set Param - Number EnergyPlus outputs
@@ -126,15 +140,18 @@ value = '13';
 set_param(objName,param,value);
 
 %% Set Building 1-specific parameters
-objName = [fileName '/Campus Thermal Model/E+ Building 1'];
+% Get block
+objName = [sys '/Campus Thermal Model/E+ Building 1'];
+
 % Set Param - EnergyPlus model file
 param = 'modelfile';
-value = '[pwd ''\Building1\5ZoneAirCool'']';
+value = [ '[pwd ''' filesep ...
+    strjoin({'Building1','5ZoneAirCool'}, filesep) ''']' ];
 set_param(objName,param,value);
 
 % Set Param - EnergyPlus working directory
 param = 'workdir';
-value = '[pwd ''\Building1'']';
+value = [ '[pwd ''' filesep 'Building1'']' ];
 set_param(objName,param,value);
 
 % Set Param - Number EnergyPlus outputs
@@ -143,18 +160,25 @@ value = '14';
 set_param(objName,param,value);
 
 %% Set Building 2-specific parameters
-objName = [fileName '/Campus Thermal Model/E+ Building 2'];
+% Get block
+objName = [sys '/Campus Thermal Model/E+ Building 2'];
+
 % Set Param - EnergyPlus model file
 param = 'modelfile';
-value = '[pwd ''\Building2\5ZoneAirCool'']';
+value = [ '[pwd ''' filesep ...
+    strjoin({'Building2','5ZoneAirCool'}, filesep) ''']' ];
 set_param(objName,param,value);
 
 % Set Param - EnergyPlus working directory
 param = 'workdir';
-value = '[pwd ''\Building2'']';
+value = [ '[pwd ''' filesep 'Building2'']' ];
 set_param(objName,param,value);
 
 % Set Param - Number EnergyPlus outputs
 param = 'noutputd';
 value = '13';
 set_param(objName,param,value);
+
+%% Save System
+% Save result
+save_system(sys);

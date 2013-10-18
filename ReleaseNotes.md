@@ -1,9 +1,7 @@
-# Release Notes: vX.Y
+# Release Notes: v0.1
 
-This is a template for creating release notes. Release notes should be created for each major or minor release (X.0 or X.Y).
+This is the initial release of the Campus Energy Modeling project!
 
-## Highlight 1
-Description of highlight 1
+For complete documentation, please see the [Campus Energy Modeling wiki].
 
-## Highlight 2
-Description of highlight 2
+[Campus Energy Modeling wiki]: https://github.com/NREL/CampusEnergyModeling/wiki "Campus Energy Modeling"

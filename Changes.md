@@ -1,6 +1,4 @@
 # Change Log
 
-# Development
-* Added template for release notes
-* Added a change log
+# v0.1-rc1
 * Initial release

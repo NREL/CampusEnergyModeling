@@ -11,8 +11,9 @@
 %
 % 2. Long-term: This scenario models 1 month of PV operation at a 10 minute
 %    time step. By default, the weather data is drawn from a TMY3-formatted
-%    file of NREL weather data (included with the Campus Energy Modeling
-%    library test data).
+%    file of Solar Radiation Research Laboratory (SRRL) weather data for
+%    Golden, CO (included with the Campus Energy Modeling library test
+%    data).
 %
 % Modify the user settings below to select a scenario, then run this script
 % prior to running the Simulink simulation. (You only need to run it once; 

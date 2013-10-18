@@ -19,6 +19,7 @@
 # Output files
 *.audit
 *.bnd
+*.dbg
 *.dxf
 *.edd
 *.eio
@@ -32,6 +33,7 @@
 *.rvaudit
 *.shd
 *.sql
+*.wrl
 
 # Users need to manually ignore .csv and .html outputs from EnergyPlus
 

@@ -1,6 +1,0 @@
-# Ignore EnergyPlus CSV and HTML output in this folder
-*.csv
-*.html
-
-# Ignore BCVTB socket.cfg file (automatically generated)
-socket.cfg

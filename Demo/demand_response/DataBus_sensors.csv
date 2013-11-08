@@ -1,5 +1,0 @@
-varname,dbname,unit,description
-DryBulbTemp,wind303W_Temp,°C,Dry-bulb temperature
-RH,bacnet5000AnalogInput8,%RH,Relative humidity
-DNI,wind103W_DirCH1,W/m²,Direct normal irradiance
-DHI,wind103W_Dif848,W/m²,Diffuse horizontal irradiance

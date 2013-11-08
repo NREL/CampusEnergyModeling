@@ -21,10 +21,10 @@
 % to match your local configuration.
 
 % Location of EnergyPlus installation
-myEplusDir = 'C:\EnergyPlusV8-0-0\';
+myEplusDir = 'C:\EnergyPlusV8-1-0\';
 
 % Location of Java installation
-myJavaDir = 'C:\Program Files (x86)\Java\jre6\bin';
+myJavaDir = 'C:\Program Files (x86)\Java\jre7\bin\';
 
 % Location of MLE+ installation
 %   Leave blank or comment out to automatically set the MLE+ directory to

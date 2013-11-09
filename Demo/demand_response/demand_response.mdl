@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.311"
+    ComputedModelVersion    "1.312"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -68,9 +68,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Sep 26 11:42:34 2013"
-  RTWModifiedTimeStamp	  302096144
-  ModelVersionFormat	  "1.%<AutoIncrement:311>"
+  LastModifiedDate	  "Fri Nov 08 17:03:01 2013"
+  RTWModifiedTimeStamp	  305830969
+  ModelVersionFormat	  "1.%<AutoIncrement:312>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -987,7 +987,7 @@ Model {
 	  SourceBlock		  "simulink/Logic and Bit\nOperations/Compare\nTo Constant"
 	  SourceType		  "Compare To Constant"
 	  relop			  "<="
-	  const			  "-1e3"
+	  const			  "-500"
 	  OutDataTypeStr	  "boolean"
 	  ZeroCross		  on
 	}
@@ -1225,6 +1225,7 @@ Model {
 	  " setbacks are avoided."
 	  Position		  [141, 246]
 	  HorizontalAlignment	  "left"
+	  ZOrder		  -1
 	}
       }
     }
@@ -1514,7 +1515,6 @@ Model {
 	Line {
 	  SrcBlock		  "Cooling Target"
 	  SrcPort		  1
-	  Points		  [100, 0]
 	  DstBlock		  "Add1"
 	  DstPort		  1
 	}
@@ -1731,7 +1731,7 @@ Model {
       Ports		      [1, 3]
       Position		      [520, 192, 700, 318]
       ZOrder		      -1
-      LibraryVersion	      "1.77"
+      LibraryVersion	      "1.100"
       SourceBlock	      "CampusEnergyModeling/Buildings/E+ Building"
       SourceType	      "EnergyPlus Cosimulation"
       progname		      "'C:\\EnergyPlusV8-0-0\\RunEPlus.bat'"
@@ -1778,7 +1778,7 @@ Model {
       Ports		      [0, 1]
       Position		      [60, 10, 135, 100]
       ZOrder		      68
-      LibraryVersion	      "1.77"
+      LibraryVersion	      "1.100"
       SourceBlock	      "CampusEnergyModeling/Weather/Weather Data"
       SourceType	      "Weather Data From File"
       fname		      "Weather.mat"
@@ -2046,6 +2046,7 @@ Model {
       Name		      "DR Control"
       Position		      [482, 399]
       ForegroundColor	      "red"
+      ZOrder		      -1
       FontSize		      14
       FontWeight	      "bold"
     }

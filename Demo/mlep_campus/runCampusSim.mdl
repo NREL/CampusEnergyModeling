@@ -1065,7 +1065,7 @@ Model {
       Position		      [620, 163, 815, 297]
       ZOrder		      -19
       LibraryVersion	      "1.53"
-      SourceBlock	      "CampusEnergyModeling/Buildings/E+ Building"
+      SourceBlock	      "CampusEnergyModeling/Buildings/E+ Model"
       SourceType	      "EnergyPlus Cosimulation"
       progname		      "'C:\\EnergyPlusV8-0-0\\RunEPlus.bat'"
       modelfile		      "[pwd '\\Hospital\\RefBldgHospitalNew2004_Chicago']"
@@ -1086,7 +1086,7 @@ Model {
       Position		      [615, 494, 805, 626]
       ZOrder		      -20
       LibraryVersion	      "1.53"
-      SourceBlock	      "CampusEnergyModeling/Buildings/E+ Building"
+      SourceBlock	      "CampusEnergyModeling/Buildings/E+ Model"
       SourceType	      "EnergyPlus Cosimulation"
       progname		      "'C:\\EnergyPlusV8-0-0\\RunEPlus.bat'"
       modelfile		      "[pwd '\\Hospital1\\RefBldgHospitalNew2004_Chicago']"
@@ -1107,7 +1107,7 @@ Model {
       Position		      [620, 821, 810, 959]
       ZOrder		      -21
       LibraryVersion	      "1.53"
-      SourceBlock	      "CampusEnergyModeling/Buildings/E+ Building"
+      SourceBlock	      "CampusEnergyModeling/Buildings/E+ Model"
       SourceType	      "EnergyPlus Cosimulation"
       progname		      "'C:\\EnergyPlusV8-0-0\\RunEPlus.bat'"
       modelfile		      "[pwd '\\Hospital2\\RefBldgHospitalNew2004_Chicago']"
@@ -2130,7 +2130,7 @@ Model {
       Position		      [620, 328, 810, 462]
       ZOrder		      -35
       LibraryVersion	      "1.53"
-      SourceBlock	      "CampusEnergyModeling/Buildings/E+ Building"
+      SourceBlock	      "CampusEnergyModeling/Buildings/E+ Model"
       SourceType	      "EnergyPlus Cosimulation"
       progname		      "'C:\\EnergyPlusV8-0-0\\RunEPlus.bat'"
       modelfile		      "[pwd '\\SecondarySchool\\RefBldgSecondarySchoolNew2004_Chicago']"
@@ -2151,7 +2151,7 @@ Model {
       Position		      [615, 659, 815, 791]
       ZOrder		      -36
       LibraryVersion	      "1.53"
-      SourceBlock	      "CampusEnergyModeling/Buildings/E+ Building"
+      SourceBlock	      "CampusEnergyModeling/Buildings/E+ Model"
       SourceType	      "EnergyPlus Cosimulation"
       progname		      "'C:\\EnergyPlusV8-0-0\\RunEPlus.bat'"
       modelfile		      "[pwd '\\SecondarySchool1\\RefBldgSecondarySchoolNew2004_Chicago']"

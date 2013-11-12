@@ -1732,7 +1732,7 @@ Model {
       Position		      [520, 192, 700, 318]
       ZOrder		      -1
       LibraryVersion	      "1.100"
-      SourceBlock	      "CampusEnergyModeling/Buildings/E+ Building"
+      SourceBlock	      "CampusEnergyModeling/Buildings/E+ Model"
       SourceType	      "EnergyPlus Cosimulation"
       progname		      "'C:\\EnergyPlusV8-0-0\\RunEPlus.bat'"
       modelfile		      "[pwd '\\small_office\\small_office']"

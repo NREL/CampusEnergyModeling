@@ -1,13 +1,13 @@
-%% PVWATTS_SFUN - Implements the 'PVWatts' S-function Simulink block
+%% PVWATTS_SFUN - Implements the 'PVWatts' Simulink block
 %
-% This function implements the 'PVWatts' block in the NREL Campus Modeling
-% Simulink block library as an S-function.
+% This function implements the 'PVWatts' block in the NREL Campus Energy
+% Modeling Simulink block library as an S-function.
 %
 % SYNTAX:
 %   pvwatts_sfun(block)
 %
 % INPUTS:
-%   block =     Simulink block which uses the S function
+%   block =     Simulink block which uses the S-function
 %
 % COMMENTS:
 % 1. This is a Simulink S-function. Its structure and conventions conform

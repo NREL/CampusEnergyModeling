@@ -1007,7 +1007,7 @@ Model {
       Position		      [375, 314, 620, 496]
       ZOrder		      3
       LibraryVersion	      "1.58"
-      SourceBlock	      "CampusEnergyModeling/Buildings/E+ Model"
+      SourceBlock	      "CampusEnergyModeling/Buildings/EnergyPlus"
       SourceType	      "EnergyPlus Cosimulation"
       progname		      "'C:\\EnergyPlusV8-0-0\\RunEPlus.bat'"
       modelfile		      "[pwd '\\Building1\\5ZoneAirCool']"
@@ -1046,7 +1046,7 @@ Model {
       Position		      [380, 559, 625, 741]
       ZOrder		      4
       LibraryVersion	      "1.58"
-      SourceBlock	      "CampusEnergyModeling/Buildings/E+ Model"
+      SourceBlock	      "CampusEnergyModeling/Buildings/EnergyPlus"
       SourceType	      "EnergyPlus Cosimulation"
       progname		      "'C:\\EnergyPlusV8-0-0\\RunEPlus.bat'"
       modelfile		      "[pwd '\\Building2\\5ZoneAirCool']"
@@ -1085,7 +1085,7 @@ Model {
       Position		      [355, 14, 630, 196]
       ZOrder		      6
       LibraryVersion	      "1.58"
-      SourceBlock	      "CampusEnergyModeling/Buildings/E+ Model"
+      SourceBlock	      "CampusEnergyModeling/Buildings/EnergyPlus"
       SourceType	      "EnergyPlus Cosimulation"
       progname		      "'C:\\EnergyPlusV8-0-0\\RunEPlus.bat'"
       modelfile		      "[pwd '\\ElectricChiller\\ElectricChiller']"

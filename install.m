@@ -37,7 +37,7 @@ installMLEP = true;
 
 % If installing MLE+, set the following paths correctly:
      % Location of EnergyPlus installation
-     EplusDir = 'C:\EnergyPlusV8-0-1\';
+     EplusDir = 'C:\EnergyPlusV8-1-0\';
  
      % Location of Java installation
      JavaDir = 'C:\Program Files (x86)\Java\jre6\bin';
@@ -55,7 +55,9 @@ localPath = strjoin( localPath(1:(length(localPath)-1)), filesep);
 % Check that the local path came out correctly
 assert( ~isempty(localPath), ...
     'CampusEnergyModeling:install:invalidInstallationPath', ...
-    ['Empty installation path detected; installation failed. ' ...
+    ['Empty installation path detected; installation failed! ' ...
+     '(Probably, MATLAB was unable to automatically determine the ' ...
+     'location of this installation script.)\n\n' ...
      'To avoid this error, run the entire script directly from the ' ...
      'MATLAB command line or by using the Run button in the editor.'] ...
     );
@@ -71,67 +73,43 @@ if installMLEP
     disp(' ');
 end
 
-%% Set Path
-% Get MATLAB version; set Simulink library path accordingly
+%% Check MATLAB version
+% Get MATLAB version
 v = ver('MATLAB');
 vNum = str2double( v.Version );
 rel = strrep( strrep(v.Release, '(', ''), ')', '');
-if strcmpi(rel,'R2013a') || vNum >= 8.1
-    % MATLAB 2013a or newer
-    libPath = 'R2013a';
-    disp( ['Found MATLAB release ' rel ' (version ' v.Version ').']);
-    disp( 'Installing Simulink library version R2013a.' );
-    disp( 'This library version is intended for offline simulation.' );
-    
-elseif strcmpi(rel,'R2011b')
-    % MATLAB 2011b or newer
-    libPath = 'R2011b';
-    disp( ['Found MATLAB release ' rel ' (version ' v.Version ').']);
-    disp( 'Installing Simulink library version R2011b.' );
-    disp( ['This library version is intended for real time ' ...
-        'simulation using Optal-RT version 10.5.']);
-    disp( ['NOTE: Not all blocks from the R2013a library are present ' ...
-        'in this library version!']);
 
-else
-    % Other versions unsupported
-    libPath = 'R2011b';
-    disp( ['Found MATLAB release ' rel ' (version ' v.Version ').']);
-    warning( 'CampusEnergyModeling:installation:incompatibleVersion', ...
+% Display MATLAB version
+disp( ['Found MATLAB release ' rel ' (version ' v.Version ').']);
+
+% Warn if prior to R2013a
+if vNum < 8.1
+	warning( 'CampusEnergyModeling:installation:incompatibleVersion', ...
         ['Your MATLAB release is %s, but the Campus Energy Modeling ' ...
-         'library requires 2013a or newer (for offline simulation) ' ...
-         'or 2011b (for hardware-in-loop simulation with Opal-RT ' ...
-         'version 10.5).\nThe R2011b Simulink library will be ' ...
-         'installed, but is not guaranteed to work properly!'], rel );
-    disp( 'Installing Simulink library version R2011b.' );
-    disp( ['This library version is intended for hardware-in-loop ' ...
-        'simulation using Optal-RT version 10.5.']);
-    disp( ['NOTE: Not all blocks from the R2013a library are present ' ...
-        'in this library version!']);
+         'library requires 2013a or newer. The Campus Energy Modeling ' ...
+		 'library will be installed, but is not guaranteed to work ' ...
+         'properly!'], rel );
 end
 
-% Directories to add to path (relative to root)
-dirs = { ...
-    strjoin({localPath,'Library','common'},filesep), ...
-    strjoin({localPath,'Library','common','databus2matlab'},filesep), ...
-	strjoin({localPath,'Library','common','graphics'},filesep), ...
-    strjoin({localPath,'Library','common','sfun'},filesep), ...
-    strjoin({localPath,'Library','common','ssc2matlab'},filesep), ...
-    strjoin({localPath,'Library','common','utilities'},filesep), ...
-    strjoin({localPath,'Library',libPath},filesep), ...
-    };
+%% Set Path
+% Installation message
+disp('Installing Campus Energy Modeling Library...');
 
-% NOTE: You can also use genpath() to add all subdirectories, but we
-% actually don't need all the subdirectories in this case. (For instance,
-% we don't want to add paths to both the 2011b and 2013a Simulink libraries
-% simultaneously.)
+% Generate path (everything under ./Library)
+dirs = genpath( strjoin({localPath,'Library'},filesep) );
 
 % Set path
-addpath(dirs{:});
+addpath(dirs);
+
+% Remove the ./Library folder (but keep subdirectories)
+rmpath(strjoin({localPath,'Library'},filesep));
 
 % Save for all users
 savepath
 
 %% Clean Up
+% Done!
+disp('Finished.')
+
 % Switch back to original path
 cd(oldPath);

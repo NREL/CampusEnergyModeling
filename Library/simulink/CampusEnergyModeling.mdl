@@ -42,8 +42,8 @@ Library {
 	$ObjectID		5
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkTopLevel"
-	LoadSaveID		"0"
+	ViewObjType		"SimulinkSubsys"
+	LoadSaveID		"14"
 	Extents			[902.0, 568.0]
 	ZoomFactor		[1.0]
 	Offset			[0.0, 0.0]
@@ -56,9 +56,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Nov 13 16:29:40 2013"
-  RTWModifiedTimeStamp	  306260025
-  ModelVersionFormat	  "1.%<AutoIncrement:103>"
+  LastModifiedDate	  "Wed Nov 13 17:25:34 2013"
+  RTWModifiedTimeStamp	  306263909
+  ModelVersionFormat	  "1.%<AutoIncrement:104>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1158,7 +1158,7 @@ Library {
   System {
     Name		    "CampusEnergyModeling"
     Location		    [39, 256, 991, 990]
-    Open		    on
+    Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -1198,7 +1198,7 @@ Library {
       System {
 	Name			"Buildings"
 	Location		[39, 256, 991, 990]
-	Open			off
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1217,7 +1217,9 @@ Library {
 	  Ports			  [1, 3]
 	  Position		  [45, 37, 225, 163]
 	  ZOrder		  2
-	  FunctionName		  "mlepSimulinkBlk"
+	  UserDataPersistent	  on
+	  UserData		  "DataTag0"
+	  FunctionName		  "mlep_sfun"
 	  Parameters		  "progname, modelfile, weatherfile, workdir, timeout, port, host, bcvtbdir, deltaT, noutputd"
 	  Object {
 	    $PropName		    "MaskObject"
@@ -1263,7 +1265,7 @@ Library {
 	    "ef=\"http://repository.upenn.edu/mlab_papers/51/\">http://repository.upenn.edu/mlab_papers/51/</a></li>\n</ol>"
 	    Display		    "image(imread('building.png'))\ndisp('EnergyPlus\\nCosimulation');\n\n% Inputs\nport_label('input', "
 	    "1, 'input');\n\n% Outputs\nport_label('output', 1, 'flag');\nport_label('output', 2, 'time');\nport_label('output"
-	    "', 3, 'val');\n"
+	    "', 3, 'output');\n"
 	    Array {
 	      Type		      "Simulink.MaskParameter"
 	      Dimension		      11
@@ -1272,7 +1274,8 @@ Library {
 		Type			"edit"
 		Name			"workdir"
 		Prompt			"MLE+ working directory"
-		Value			"'\\path\\to\\dir'"
+		Value			"\\path\\to\\dir"
+		Evaluate		"off"
 		Tunable			"off"
 		TabName			"Model"
 	      }
@@ -1281,7 +1284,8 @@ Library {
 		Type			"edit"
 		Name			"modelfile"
 		Prompt			"IDF file name"
-		Value			"'\\path\\to\\dir\\idf_file'"
+		Value			"idf_file"
+		Evaluate		"off"
 		Tunable			"off"
 		TabName			"Model"
 	      }
@@ -1290,7 +1294,8 @@ Library {
 		Type			"edit"
 		Name			"weatherfile"
 		Prompt			"EnergyPlus weather profile"
-		Value			"'USA_IL_Chicago-OHare.Intl.AP.725300_TMY3'"
+		Value			"USA_IL_Chicago-OHare.Intl.AP.725300_TMY3"
+		Evaluate		"off"
 		Tunable			"off"
 		TabName			"Model"
 	      }
@@ -1335,8 +1340,9 @@ Library {
 		$ObjectID		26
 		Type			"edit"
 		Name			"progname"
-		Prompt			"E+ Executable Path"
-		Value			"'C:\\EnergyPlusV8-1-0\\RunEplus'"
+		Prompt			"EnergyPlus Executable Path"
+		Value			"C:\\EnergyPlusV8-1-0\\RunEplus"
+		Evaluate		"off"
 		Tunable			"off"
 		Enabled			"off"
 		TabName			"MLE+"
@@ -1346,7 +1352,8 @@ Library {
 		Type			"edit"
 		Name			"bcvtbdir"
 		Prompt			"BCVTB Directory"
-		Value			"'C:\\Users\\sfrank1\\Git\\CampusEnergyModeling\\MLEP\\bcvtb'"
+		Value			"C:\\Users\\sfrank1\\Git\\CampusEnergyModeling\\MLEP\\bcvtb"
+		Evaluate		"off"
 		Tunable			"off"
 		Enabled			"off"
 		TabName			"MLE+"
@@ -1365,8 +1372,9 @@ Library {
 		$ObjectID		29
 		Type			"edit"
 		Name			"host"
-		Prompt			"Socket Host ('' = local host)"
-		Value			"''"
+		Prompt			"Socket Host (empty = localhost)"
+		Value			""
+		Evaluate		"off"
 		Tunable			"off"
 		Enabled			"off"
 		TabName			"MLE+"
@@ -4604,7 +4612,7 @@ Library {
 	  Position		  [45, 42, 255, 158]
 	  ZOrder		  48
 	  UserDataPersistent	  on
-	  UserData		  "DataTag0"
+	  UserData		  "DataTag1"
 	  FunctionName		  "pvwatts_sfun"
 	  Parameters		  "lat, lon, start_time, tz, time_step, system_size, derate, azimuth, tilt, track_mode, rotlim, t_ref, "
 	  "t_noct, gamma, i_ref, poa_cutin, init_tcell, init_poa, output_dc, output_celltemp, output_poa"
@@ -5063,9 +5071,24 @@ Library {
   }
 }
 MatData {
-  NumRecords		  1
+  NumRecords		  2
   DataRecord {
     Tag			    DataTag0
+    Data		    "  %)30     .    X ,   8    (     @         %    \"     $    !     0         %  0 !P    $    '    9&EA;&"
+    "]G   .    F ,   8    (     @         %    \"     $    !     0         %  0 #     $   !X    <')O9VYA;64     ;6]D96Q"
+    "F:6QE    =V5A=&AE<F9I;&4 =V]R:V1I<@      =&EM96]U=       <&]R=           :&]S=           8F-V=&)D:7(     =&EM95]S="
+    "&5P    ;F]U='!U=&0     #@   %     &    \"     0         !0    @    !    '     $         $    !P   !#.EQ%;F5R9WE0;'"
+    "5S5C@M,2TP7%)U;D5P;'5S      X    X    !@    @    $          4    (     0    @    !         !     (    :61F7V9I;&4."
+    "    6     8    (    !          %    \"     $    H     0         0    *    %5305])3%]#:&EC86=O+4](87)E+DEN=&PN05 N-"
+    "S(U,S P7U1-63,.    0     8    (    !          %    \"     $    ,     0         0    #    %QP871H7'1O7&1I<@     .  "
+    "  .     8    (    !@         %    \"     $    !     0         )    \"           B/- #@   #@    &    \"     8      "
+    "   !0    @    !     0    $         \"0    @               X    P    !@    @    $          4    (               !  "
+    "       !          #@   &@    &    \"     0         !0    @    !    -     $         $    #0   !#.EQ5<V5R<UQS9G)A;FL"
+    "Q7$=I=%Q#86UP=7-%;F5R9WE-;V1E;&EN9UQ-3$507&)C=G1B      X    X    !@    @    &          4    (     0    $    !     "
+    "     D    (           @C$ .    .     8    (    !@         %    \"     $    !     0         )    \"             ! "
+  }
+  DataRecord {
+    Tag			    DataTag1
     Data		    "  %)30     .    &!(   8    (     @         %    \"     $    !     0         %  0 \"@    $    \\    9&EA"
     ";&]G     &]U='!U=',   !S<V-V87(     <W-C9&%T80   '-I;7-T87)T  !S<V-M;V1U;&4       X   #8!@  !@    @    \"         "
     " 4    (     0    $    !          4 !  0     0   % !  !L870                 ;&]N                 '-T87)T7W1I;64    "

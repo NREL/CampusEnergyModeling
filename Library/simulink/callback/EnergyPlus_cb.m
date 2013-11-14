@@ -68,11 +68,10 @@ function EnergyPlus_cb_mlep_config(block)
         mlepInit();
         
         % Values
-        q = '''';
-        set_param(block, 'progname', [q MLEPSETTINGS.program q]);
-        set_param(block, 'bcvtbdir', [q MLEPSETTINGS.bcvtbDir q]);
+        set_param(block, 'progname', MLEPSETTINGS.program);
+        set_param(block, 'bcvtbdir', MLEPSETTINGS.bcvtbDir);
         set_param(block, 'port', '0');
-        set_param(block, 'host', [q q]);
+        set_param(block, 'host', '');
         
         % Enables
         enab{xPROGNAME} =	'off';

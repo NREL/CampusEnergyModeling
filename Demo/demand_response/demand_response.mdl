@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.311"
+    ComputedModelVersion    "1.322"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -68,9 +68,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Sep 26 11:42:34 2013"
-  RTWModifiedTimeStamp	  302096144
-  ModelVersionFormat	  "1.%<AutoIncrement:311>"
+  LastModifiedDate	  "Thu Nov 14 21:01:52 2013"
+  RTWModifiedTimeStamp	  306363702
+  ModelVersionFormat	  "1.%<AutoIncrement:322>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -987,7 +987,7 @@ Model {
 	  SourceBlock		  "simulink/Logic and Bit\nOperations/Compare\nTo Constant"
 	  SourceType		  "Compare To Constant"
 	  relop			  "<="
-	  const			  "-1e3"
+	  const			  "-500"
 	  OutDataTypeStr	  "boolean"
 	  ZeroCross		  on
 	}
@@ -1225,6 +1225,7 @@ Model {
 	  " setbacks are avoided."
 	  Position		  [141, 246]
 	  HorizontalAlignment	  "left"
+	  ZOrder		  -1
 	}
       }
     }
@@ -1514,7 +1515,6 @@ Model {
 	Line {
 	  SrcBlock		  "Cooling Target"
 	  SrcPort		  1
-	  Points		  [100, 0]
 	  DstBlock		  "Add1"
 	  DstPort		  1
 	}
@@ -1677,7 +1677,7 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
-      LegendLocations	      "0.7654     0.84868     0.17714    0.053509"
+      LegendLocations	      "0.76444        0.85     0.17714    0.053509"
       TimeRange		      "90000"
       YMin		      "22"
       YMax		      "26"
@@ -1731,19 +1731,20 @@ Model {
       Ports		      [1, 3]
       Position		      [520, 192, 700, 318]
       ZOrder		      -1
-      LibraryVersion	      "1.77"
-      SourceBlock	      "CampusEnergyModeling/Buildings/E+ Building"
+      LibraryVersion	      "1.108"
+      UserDataPersistent      on
+      UserData		      "DataTag0"
+      SourceBlock	      "CampusEnergyModeling/Buildings/EnergyPlus"
       SourceType	      "EnergyPlus Cosimulation"
-      progname		      "'C:\\EnergyPlusV8-0-0\\RunEPlus.bat'"
-      modelfile		      "[pwd '\\small_office\\small_office']"
-      weatherfile	      "'USA_CO_Golden-NREL.724666_TMY3'"
-      workdir		      "[pwd '\\small_office']"
-      timeout		      "10000"
+      work_dir		      "small_office"
+      rel_path		      on
+      fname		      "small_office"
+      weather_profile	      "USA_IL_Chicago-OHare.Intl.AP.725300_TMY3"
+      time_step		      "60"
+      nout		      "5"
+      timeout		      "10"
+      mlep_defaults	      on
       port		      "0"
-      host		      "''"
-      bcvtbdir		      "''"
-      deltaT		      "60"
-      noutputd		      "5"
     }
     Block {
       BlockType		      Constant
@@ -1778,7 +1779,7 @@ Model {
       Ports		      [0, 1]
       Position		      [60, 10, 135, 100]
       ZOrder		      68
-      LibraryVersion	      "1.77"
+      LibraryVersion	      "1.108"
       SourceBlock	      "CampusEnergyModeling/Weather/Weather Data"
       SourceType	      "Weather Data From File"
       fname		      "Weather.mat"
@@ -2046,6 +2047,7 @@ Model {
       Name		      "DR Control"
       Position		      [482, 399]
       ForegroundColor	      "red"
+      ZOrder		      -1
       FontSize		      14
       FontWeight	      "bold"
     }
@@ -2082,6 +2084,70 @@ Model {
       FontSize		      14
       FontWeight	      "bold"
     }
+  }
+}
+MatData {
+  NumRecords		  1
+  DataRecord {
+    Tag			    DataTag0
+    Data		    "  %)30     .    J 0   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    9&EA;"
+    "&]G      !P<F]C97-S;V)J    #@   , #   &    \"     (         !0    @    !     0    $         !0 $ !     !    L    '"
+    "=O<FM?9&ER          !R96Q?<&%T:           9FYA;64              '=E871H97)?<')O9FEL90!T:6UE7W-T97          ;F]U=   "
+    "             '1I;65O=70           !E<&QU<U]P871H        8F-V=&)?9&ER         '!O<G0               !H;W-T          "
+    "      #@   $     &    \"     0         !0    @    !    #     $         $     P   !S;6%L;%]O9F9I8V4     #@   #@    "
+    "&    \"     8         !0    @    !     0    $         \"0    @           #P/PX   !     !@    @    $          4    "
+    "(     0    P    !         !     ,    <VUA;&Q?;V9F:6-E      X   !8    !@    @    $          4    (     0   \"@    !"
+    "         !     H    55-!7TE,7T-H:6-A9V\\M3TAA<F4N26YT;\"Y!4\"XW,C4S,#!?5$U9,PX    X    !@    @    &          4    "
+    "(     0    $    !          D    (            3D .    .     8    (    !@         %    \"     $    !     0         )"
+    "    \"            !1 #@   #@    &    \"     8         !0    @    !     0    $         \"0    @            D0 X    "
+    "P    !@    @    $          4    (               !         !          #@   #     &    \"     0         !0    @     "
+    "          $         $          .    .     8    (    !@         %    \"     $    !     0         )    \"           "
+    "    #@   #     &    \"     0         !0    @               $         $          .    B     8    (    $0         ! "
+    "         $ ! !-0T]3 0    L   !M;&5P4')O8V5S<P      #@   $@    &    \"     T         !0    @    &     0    $       "
+    "  !@   !@       #= @    $    !     0    $    .    . X   8    (    \"0         %    \"     $    (#@   0         \" "
+    "   \" X    !24T     #@   &@-   &    \"     (         !0    @    !     0    $         !0 $  4    !    !0   $U#3U,  "
+    "   #@   \" -   &    \"    !$          0         !  0 34-/4P$    -    1FEL95=R87!P97)?7P    X   #@#   !@    @    ! "
+    "         4    (    #P    $    !          X    @ @  !@    @    )          4    (    \\ $   $    !          (   #P 0"
+    "   @   !8   #P    $ $  ! !  !  0  X $  / !             '9E<G-I;VX <')O9W)A;0!E;G8 87)G=6UE;G1S '=O<FM$:7( 8F-V=&)$"
+    ":7( 86-C97!T5&EM96]U= !E>&5C8VUD '-E<G9E<E-O8VME= !W<FET97( <F5A9&5R '!I9 !M;&5P4')O8V5S<P!P;W)T &AO<W0 8V]N9FEG1F"
+    "EL90!C;VYF:6=&:6QE5W)I=&5/;F-E '-T871U<P!M<V< <G=4:6UE;W5T &ES4G5N;FEN9P!C;VUM4V]C:V5T                            "
+    "       -                                               !                     0    $               P    !     0    "
+    "     \"     0    $    #     0    (    $     0    ,    %     0    0    &     0    4    '     0    8    (     0    <"
+    "    )     0    @    *     0    D    +     0    H    ,     0    L                               X         #@   #@  "
+    "  &    \"     8         !0    @    !     0    $         \"0    @             0 X   !0    !@    @    $          4  "
+    "  (     0   !P    !         !     <    0SI<16YE<F=Y4&QU<U8X+3$M,%Q2=6Y%<&QU<P     .    R $   8    (     0         "
+    "%    \"     $    \"     0         .    P     8    (     0         %    \"     $    \"     0         .    0     8  "
+    "  (    !          %    \"     $    .     0         0    #@   $5.15)'65!,55-?1$E2   .    2     8    (    !         "
+    " %    \"     $    3     0         0    $P   $,Z7$5N97)G>5!L=7-6.\"TQ+3        X   #0    !@    @    !          4   "
+    " (     0    (    !          X    P    !@    @    $          4    (     0    0    !         !  ! !0051(#@   &@    &"
+    "    \"     0         !0    @    !    .     $         $    #@   !#.EQ0<F]G<F%M($9I;&5S(\"AX.#8I7$IA=F%<:G)E-UQB:6X["
+    "0SI<16YE<F=Y4&QU<U8X+3$M, X   \"X    !@    @    $          4    (     0   ($    !         !    \"!    0SI<57-E<G-<"
+    "<V9R86YK,5Q':71<0V%M<'5S16YE<F=Y36]D96QI;F=<1&5M;UQD96UA;F1?<F5S<&]N<V5<<VUA;&Q?;V9F:6-E7'-M86QL7V]F9FEC92!54T%?24"
+    "Q?0VAI8V%G;RU/2&%R92Y);G1L+D%0+C<R-3,P,%]435DS          X   \"     !@    @    $          4    (     0   $L    !   "
+    "      !    !+    0SI<57-E<G-<<V9R86YK,5Q':71<0V%M<'5S16YE<F=Y36]D96QI;F=<1&5M;UQD96UA;F1?<F5S<&]N<V5<<VUA;&Q?;V9F:"
+    "6-E       .    :     8    (    !          %    \"     $    T     0         0    -    $,Z7%5S97)S7'-F<F%N:S%<1VET7$"
+    "-A;7!U<T5N97)G>4UO9&5L:6YG7$U,15!<8F-V=&(     #@   #@    &    \"     8         !0    @    !     0    $         \"0"
+    "    @          (C#0 X    X    !@    @    $          4    (     0    8    !         !     &    <WES=&5M   .    ,   "
+    "  8    (    !@         %    \"                0         )          X    P    !@    @    &          4    (         "
+    "      !          D         #@   #     &    \"     8         !0    @               $         \"0         .    .    "
+    " 8    (    !@         %    \"     $    !     0         )    \"               #@   /@$   &    \"     $         !0  "
+    "  @    \"     0    $         #@   #@    &    \"     (         !0    @    !          $         !0 $  $    !        "
+    "  X   \"(!   !@    @    \"          4    (     0    $    !          4 !  4     0   !@!  !A<F=U;65N=',             "
+    " '=O<FM$:7(                 <&]R=                     !H;W-T                     &-O;F9I9T9I;&4             8V]N9F"
+    "EG1FEL95=R:71E3VYC90!A8V-E<'14:6UE;W5T         '-T871U<P                  ;7-G                      !R=U1I;65O=70 "
+    "             &ES4G5N;FEN9P              <V5R=F5R4V]C:V5T          !C;VUM4V]C:V5T             '!I9                 "
+    "      #@   \"@    &    \"     $         !0    @               $         #@   #     &    \"     0         !0    @  "
+    "             $         $          .    .     8    (    !@         %    \"     $    !     0         )    \"        "
+    "       #@   #     &    \"     0         !0    @               $         $          .    0     8    (    !         "
+    " %    \"     $    *     0         0    \"@   '-O8VME=\"YC9F<        .    ,     8    (    \"0(        %    \"     $"
+    "    !     0         \"  $       X    X    !@    @    &          4    (     0    $    !          D    (          \""
+    "(TT .    .     8    (    !@         %    \"     $    !     0         )    \"               #@   #     &    \"     "
+    "0         !0    @               $         $          .    .     8    (    !@         %    \"     $    !     0     "
+    "    )    \"               #@   #     &    \"     D\"        !0    @    !     0    $          @ !       .    ,     "
+    "8    (    !@         %    \"                0         )          X    P    !@    @    &          4    (           "
+    "    !          D         #@   #     &    \"     8         !0    @               $         \"0         .    B     8"
+    "    (    \"0         %    \"     $   !8     0         \"    6      !24T     #@   $@    &    \"     (         !0   "
+    " @    !     0    $         !0 $  4    !    !0   $U#3U,     #@         "
   }
 }
 # Finite State Machines

@@ -7,9 +7,9 @@
 % The weather data is drawn from NREL Solar Radiation Research Laboratory
 % data for August 3, 2012 - a particularly warm day.
 % 
-% Edit the path to the EnergyPlus run file, then run this script prior to
-% executing the Simulink simulation. (You only need to run it once; the
-% necessary files and settings will persist afterwards.)
+% Run this script prior to executing the Simulink simulation. (You only
+% need to run it once; the necessary files and settings will persist
+% afterwards.)
 %
 % COMMENTS:
 % 1. This initialization script stores weather data in the file
@@ -30,10 +30,11 @@
 %    may see a warning that the model is unable to automatically create the
 %    bus definition for the weather data block. To correct, run this
 %    script, then reopen the model.
-
-%% User Settings
-% Path to EnergyPlus batch file
-ePlusPath = 'C:\EnergyPlusV8-0-0\RunEPlus.bat';
+% 
+% 4. If you wish to override the MLE+ settings, uncheck 'Use default MLE+
+%    settings' in the 'MLE+' tab of the 'Small Office Building' block mask,
+%    then enter the settings relevant to your local EnergyPlus
+%    configuration.
 
 %% Initialize Weather Data
 % Output file
@@ -51,10 +52,13 @@ end
 %% Initialize Simulink Model
 % Open it if not open
 open_system('demand_response');
+% Set MLE+ working directory
+set_param('demand_response/Small Office Building', 'work_dir', ...
+    [pwd filesep 'small_office']);
 
-% Set EnergyPlus path
-set_param('demand_response/Small Office Building', ...
-    'progname', sprintf('''%s''', ePlusPath) );
+% Set EnergyPlus model file
+set_param('demand_response/Small Office Building', 'fname', ...
+    [pwd filesep 'small_office' filesep 'small_office']);
 
 % Save result
 save_system('demand_response');

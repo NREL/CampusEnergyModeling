@@ -236,8 +236,16 @@ function Start(block)
     % For EnergyPlus call, strip extensions
     fname = fname(1:end-4);
     
+    % Parse weather file name
+    if strcmpi(d.dialog.weather_profile(end-3:end), '.epw')
+        % Strip extension
+        weather_profile = d.dialog.weather_profile(1:end-4);
+    else
+        weather_profile = d.dialog.weather_profile;
+    end
+    
     % Parse arguments
-    arg = [fname ' ' d.dialog.weather_profile];
+    arg = [fname ' ' weather_profile];
     
     % Setup up MLE+
     processobj.workDir =        work_dir;

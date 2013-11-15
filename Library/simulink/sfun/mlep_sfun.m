@@ -34,7 +34,8 @@
 %   Aug. 2013       Modified by Willy Bernal (willyg@seas.upenn.edu) for
 %                   use with the NREL Campus Energy Modeling project
 %
-%   Nov. 2013       Modified by Stephen Frank for ease of use
+%   Nov. 2013       Modified by Stephen Frank for readability and ease of
+%                   use
 %
 
 function mlep_sfun(block)
@@ -48,7 +49,7 @@ end
 function setup(block)
     %% Parameters
     % Register the number of parameters
-    block.NumDialogPrms = 10;
+    block.NumDialogPrms = 11;
     
     % TO DO: Implement CheckParameters()
     
@@ -97,7 +98,7 @@ function setup(block)
     block.OutputPort(2).Complexity  = 'Real';
     block.OutputPort(2).SamplingMode = 'sample';
 
-    nDim = max(block.DialogPrm(10).Data, 1);
+    nDim = d.dialog.nout;
     block.OutputPort(3).Dimensions  = nDim;         % output vector
     block.OutputPort(3).DatatypeID  = 0;            % double
     block.OutputPort(3).Complexity  = 'Real';
@@ -144,8 +145,17 @@ function ParseParameters(block)
     
     % Define names of dialog parameters (in order)
     dialogNames = { ...
-        'progname', 'modelfile', 'weatherfile', 'workdir', 'timeout', ...
-        'port', 'host', 'bcvtbdir', 'time_step', 'noutputd' };
+        'work_dir', ...         % Working directory
+        'rel_path', ...         % Working directory is relative path (T/F)
+        'fname', ...            % Name of IDF file
+        'weather_profile', ...  % Name of weather profile file
+        'time_step', ...        % Model time step
+        'nout', ...             % Number of real outputs
+        'timeout', ...          % Communication timeout
+        'eplus_path', ...       % Path to EnergyPlus executable
+        'bcvtb_dir', ...        % Path to BCVTB library
+        'port', ...             % Socket port
+        'host' };               % Host machine
     
     % Put dialog parameters into data structure
     d.dialog = struct();
@@ -158,54 +168,101 @@ function ParseParameters(block)
     set_param(block.BlockHandle, 'UserDataPersistent', 'on');
 end
 
+
 %% Set sampling mode for input ports
+% Not sure if really needed?
 function SetInputPortSamplingMode(block, port, mode)
     block.InputPort(port).SamplingMode = mode;
 end
 
-% endfunction
 
 %% Set dimension for input ports
+% Not sure if really needed?
 function SetInputPortDimensions(block, port, dimsInfo)
     block.InputPort(port).Dimensions = dimsInfo;
 end
-% endfunction
-
-
 
 
 %% Start
 function Start(block)
-    % Dialog parameters
-    % progname, modelfile, weatherfile, workdir, timeout,
-    % port, host, bcvtbdir, deltaT, noutputd,
-    % noutputi, noutputb
-
-    %% Start MLE+ 
-    % Create the mlepProcess object and start EnergyPlus
+    %% Setup
+    % Load user data (includes parsed dialog parameters)
+    d = get_param(block.BlockHandle, 'UserData');
+    
+    %% Start MLE+
+    % Create the mlepProcess object
     processobj = mlepProcess;
-    processobj.program = block.DialogPrm(1).Data;
-    processobj.workDir = block.DialogPrm(4).Data;
-    if ~isempty(block.DialogPrm(8).Data)
-        processobj.bcvtbDir = block.DialogPrm(8).Data;
+    
+    % Parse working directory path
+    if isempty(d.dialog.work_dir)
+        % Empty = use current working directory
+        work_dir = [pwd];
+        
+    elseif d.dialog.rel_path
+        % Parse relative path
+        if strcmp(d.dialog.work_dir(1), filesep)
+            work_dir = [pwd d.dialog.work_dir];
+        else
+            work_dir = [pwd filesep d.dialog.work_dir];
+        end
+    else
+        % Use absolute path
+        work_dir = d.dialog.work_dir;
     end
-    %processobj.bcvtbDir = block.DialogPrm(8).Data;
-    processobj.arguments = [block.DialogPrm(2).Data ' ' block.DialogPrm(3).Data];
-    processobj.acceptTimeout = block.DialogPrm(5).Data;
-    processobj.port = block.DialogPrm(6).Data;
-    processobj.host = block.DialogPrm(7).Data;
+    if strcmp(work_dir(end), filesep)
+        % Strip trailing file sep
+        work_dir = work_dir(1:end-1);
+    end
+    
+    % Parse model file location
+    fname = [work_dir filesep d.dialog.fname];
+    if ~strcmpi(d.dialog.fname(end-3:end), '.idf')
+        % Strip extension
+        fname = [fname '.idf'];
+    end
+    
+    % Check paths
+    assert( ...
+        exist(work_dir, 'dir') > 0, ...
+        'EnergyPlusCosim:invalidWorkingDirectory', ...
+        'Specified working directory %s does not exist.', ...
+        work_dir );
+    assert( ...
+        exist(fname, 'file') > 0, ...
+        'EnergyPlusCosim:invalidModelFile', ...
+        'Specified IDF file %s does not exist.', ...
+        fname );
+    
+    % For EnergyPlus call, strip extensions
+    fname = fname(1:end-4);
+    
+    % Parse arguments
+    arg = [fname ' ' d.dialog.weather_profile];
+    
+    % Setup up MLE+
+    processobj.workDir =        work_dir;
+    processobj.arguments =      arg;
+    processobj.acceptTimeout =  d.dialog.timeout*1000; % s -> ms
+    processobj.port =           d.dialog.port;
+    processobj.host =           d.dialog.host;
+    if ~isempty(d.dialog.eplus_path)
+        processobj.program =    d.dialog.eplus_path;
+    end
+    if ~isempty(d.dialog.bcvtb_dir)
+        processobj.bcvtbDir =   d.dialog.bcvtb_dir;
+    end
 
-    % Start processobj
+    % Start MLE+ process
     [status, msg] = processobj.start;
     processobj.status = status;
     processobj.msg = msg;
 
-    if status ~= 0
-        error('Cannot start EnergyPlus: %s.', msg);
-    end
+    assert( ...
+        status == 0, ...
+        'EnergyPlusCosim:startupError', ...
+        'Cannot start EnergyPlus: %s.', msg );
 
     % Save processobj to UserData of the block
-    d = get_param(block.BlockHandle, 'UserData');
     d.processobj = processobj;
     set_param(block.BlockHandle, 'UserData', d);
 
@@ -215,17 +272,20 @@ end
 function InitializeConditions(block)
     % Get processobj
     d = get_param(block.BlockHandle, 'UserData');
-    if ~isa(d.processobj, 'mlepProcess')
-        error('Internal error: Cosimulation process object is lost.');
-    end
+    processobj = d.processobj;
+    assert( ...
+        isa(processobj, 'mlepProcess'), ...
+        'EnergyPlusCosim:lostCosimulationProcess', ...
+        'Internal error: Cosimulation process object is lost.' );
 
     %% Accept Socket 
-    [status, msg] = d.processobj.acceptSocket;
-    if status ~= 0
-        error('Cannot start EnergyPlus: %s.', msg);
-    end
-    
-    % Save processobj to UserData of the block
+    [status, msg] = processobj.acceptSocket;
+        assert( ...
+        status == 0, ...
+        'EnergyPlusCosim:startupError', ...
+        'Cannot start EnergyPlus: %s.', msg );
+
+    % Save processobj back to UserData of the block
     set_param(block.BlockHandle, 'UserData', d);
 
 end
@@ -235,44 +295,46 @@ end
 function Outputs(block)
     % Get processobj
     d = get_param(block.BlockHandle, 'UserData');
-    if ~isa(d.processobj, 'mlepProcess')
-        error('Internal error: Cosimulation process object is lost.');
-    end
+    processobj = d.processobj;
+    assert( ...
+        isa(processobj, 'mlepProcess'), ...
+        'EnergyPlusCosim:lostCosimulationProcess', ...
+        'Internal error: Cosimulation process object is lost.' );
 
-
-    if d.processobj.isRunning
-
+    % Step EnergyPlus and get outputs
+    if processobj.isRunning
+        % MLE+ version number
         VERNUMBER = 2;
 
-        % Send signals to E+
+        % Write data to E+
         rvalues = block.InputPort(1).Data;
-    %     ivalues = block.InputPort(2).Data;
-    %     bvalues = block.InputPort(3).Data;
+        processobj.write( ...
+            mlepEncodeRealData(VERNUMBER, 0, block.CurrentTime, rvalues));
+        
+        % Read data from E+
+        readpacket = processobj.read;
+        assert( ...
+            ~isempty(readpacket), ...
+            'EnergyPlusCosim:readError', ...
+            'Could not read data from EnergyPlus.' );
 
-        d.processobj.write(mlepEncodeRealData(VERNUMBER, 0, block.CurrentTime, rvalues));
-        % Read from E+
-        readpacket = d.processobj.read;
-
-        if isempty(readpacket)
-            error('Cannot read from EnergyPlus.');
-        end
-
-        % Currently, ivalues and bvalues are not used
+        % Decode data
+        % (Currently, ivalues and bvalues are not used)
         [flag, timevalue, rvalues] = mlepDecodePacket(readpacket);
+        
+        % Process output
         if flag ~= 0
-            d.processobj.stop(false);
+            processobj.stop(false);
             block.OutputPort(1).Data = flag;
+            
         else
+            % Case where no data is returned
             if isempty(rvalues), rvalues = 0; end
-    %         if isempty(ivalues), ivalues = 0; end
-    %         if isempty(bvalues), bvalues = 0; end
 
             % Set outputs of block
             block.OutputPort(1).Data = flag;
             block.OutputPort(2).Data = timevalue;
             block.OutputPort(3).Data = rvalues(:);
-    %         block.OutputPort(4).Data = ivalues(:);
-    %         block.OutputPort(5).Data = bvalues(:);
         end
     end
 
@@ -280,15 +342,17 @@ end
 
 %% Terminate
 function Terminate(block)
-
     % Get processobj
     d = get_param(block.BlockHandle, 'UserData');
-    if ~isa(d.processobj, 'mlepProcess')
-        error('Internal error: Cosimulation process object is lost.');
+    processobj = d.processobj;
+    assert( ...
+        isa(processobj, 'mlepProcess'), ...
+        'EnergyPlusCosim:lostCosimulationProcess', ...
+        'Internal error: Cosimulation process object is lost.' );
+    
+    % Stop the running process
+    if processobj.isRunning
+        processobj.stop(true);
     end
-
-    if d.processobj.isRunning
-        d.processobj.stop(true);
-    end
-
+    
 end

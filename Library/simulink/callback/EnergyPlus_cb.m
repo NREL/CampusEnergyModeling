@@ -57,24 +57,21 @@ function EnergyPlus_cb_mlep_config(block)
     enab = get_param(block, 'MaskEnables');
     
     % Define the indices for parameters in the mask
-    xPROGNAME = 8;
-    xBCVTBDIR = 9;
-    xPORT =    	10;
-    xHOST =     11;
+    xEPLUSPATH = 9;
+    xBCVTBDIR =  10;
+    xPORT =    	 11;
+    xHOST =      12;
     
     % MLE+ defaults
     if strcmp( get_param(block, 'mlep_defaults'), 'on' )
-        % Run MLE+ init to get MLE+ settings
-        mlepInit();
-        
         % Values
-        set_param(block, 'progname', MLEPSETTINGS.program);
-        set_param(block, 'bcvtbdir', MLEPSETTINGS.bcvtbDir);
+        set_param(block, 'eplus_path', '');
+        set_param(block, 'bcvtb_dir', '');
         set_param(block, 'port', '0');
         set_param(block, 'host', '');
         
         % Enables
-        enab{xPROGNAME} =	'off';
+        enab{xEPLUSPATH} =	'off';
         enab{xBCVTBDIR} =	'off';
         enab{xPORT} =       'off';
         enab{xHOST} =       'off';
@@ -82,11 +79,13 @@ function EnergyPlus_cb_mlep_config(block)
     % MLE+ user settings
     else
         % Enables
-        enab{xPROGNAME} =	'on';
+        enab{xEPLUSPATH} =	'on';
         enab{xBCVTBDIR} =	'on';
         enab{xPORT} =       'on';
         enab{xHOST} =       'on';
     end
     
+    % Set enables and aslo visibilities
     set_param(block, 'MaskEnables', enab);
+    set_param(block, 'MaskVisibilities', enab);
 end

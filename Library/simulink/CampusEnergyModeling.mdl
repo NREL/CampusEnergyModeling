@@ -56,9 +56,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Nov 13 17:25:34 2013"
-  RTWModifiedTimeStamp	  306263909
-  ModelVersionFormat	  "1.%<AutoIncrement:104>"
+  LastModifiedDate	  "Thu Nov 14 20:29:57 2013"
+  RTWModifiedTimeStamp	  306360955
+  ModelVersionFormat	  "1.%<AutoIncrement:108>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1220,7 +1220,8 @@ Library {
 	  UserDataPersistent	  on
 	  UserData		  "DataTag0"
 	  FunctionName		  "mlep_sfun"
-	  Parameters		  "progname, modelfile, weatherfile, workdir, timeout, port, host, bcvtbdir, deltaT, noutputd"
+	  Parameters		  "work_dir, rel_path, fname, weather_profile, time_step, nout, timeout, eplus_path, bcvtb_dir, port, h"
+	  "ost"
 	  Object {
 	    $PropName		    "MaskObject"
 	    $ObjectID		    18
@@ -1268,21 +1269,30 @@ Library {
 	    "', 3, 'output');\n"
 	    Array {
 	      Type		      "Simulink.MaskParameter"
-	      Dimension		      11
+	      Dimension		      12
 	      Object {
 		$ObjectID		19
 		Type			"edit"
-		Name			"workdir"
-		Prompt			"MLE+ working directory"
-		Value			"\\path\\to\\dir"
+		Name			"work_dir"
+		Prompt			"MLE+ working directory (empty = current directory)"
+		Value			""
 		Evaluate		"off"
 		Tunable			"off"
 		TabName			"Model"
 	      }
 	      Object {
 		$ObjectID		20
+		Type			"checkbox"
+		Name			"rel_path"
+		Prompt			"Relative path"
+		Value			"on"
+		Tunable			"off"
+		TabName			"Model"
+	      }
+	      Object {
+		$ObjectID		21
 		Type			"edit"
-		Name			"modelfile"
+		Name			"fname"
 		Prompt			"IDF file name"
 		Value			"idf_file"
 		Evaluate		"off"
@@ -1290,9 +1300,9 @@ Library {
 		TabName			"Model"
 	      }
 	      Object {
-		$ObjectID		21
+		$ObjectID		22
 		Type			"edit"
-		Name			"weatherfile"
+		Name			"weather_profile"
 		Prompt			"EnergyPlus weather profile"
 		Value			"USA_IL_Chicago-OHare.Intl.AP.725300_TMY3"
 		Evaluate		"off"
@@ -1300,34 +1310,34 @@ Library {
 		TabName			"Model"
 	      }
 	      Object {
-		$ObjectID		22
+		$ObjectID		23
 		Type			"edit"
-		Name			"deltaT"
+		Name			"time_step"
 		Prompt			"Time step (s)"
 		Value			"900"
 		Tunable			"off"
 		TabName			"Model"
 	      }
 	      Object {
-		$ObjectID		23
+		$ObjectID		24
 		Type			"edit"
-		Name			"noutputd"
+		Name			"nout"
 		Prompt			"Number of real outputs"
 		Value			"2"
 		Tunable			"off"
 		TabName			"Model"
 	      }
 	      Object {
-		$ObjectID		24
+		$ObjectID		25
 		Type			"edit"
 		Name			"timeout"
-		Prompt			"Communication timeout (ms)"
-		Value			"80000"
+		Prompt			"Communication timeout (s)"
+		Value			"10"
 		Tunable			"off"
 		TabName			"MLE+"
 	      }
 	      Object {
-		$ObjectID		25
+		$ObjectID		26
 		Type			"checkbox"
 		Name			"mlep_defaults"
 		Prompt			"Use default MLE+ settings"
@@ -1337,39 +1347,42 @@ Library {
 		TabName			"MLE+"
 	      }
 	      Object {
-		$ObjectID		26
-		Type			"edit"
-		Name			"progname"
-		Prompt			"EnergyPlus Executable Path"
-		Value			"C:\\EnergyPlusV8-1-0\\RunEplus"
-		Evaluate		"off"
-		Tunable			"off"
-		Enabled			"off"
-		TabName			"MLE+"
-	      }
-	      Object {
 		$ObjectID		27
 		Type			"edit"
-		Name			"bcvtbdir"
-		Prompt			"BCVTB Directory"
-		Value			"C:\\Users\\sfrank1\\Git\\CampusEnergyModeling\\MLEP\\bcvtb"
+		Name			"eplus_path"
+		Prompt			"EnergyPlus Executable Path (empty = default)"
+		Value			""
 		Evaluate		"off"
 		Tunable			"off"
 		Enabled			"off"
+		Visible			"off"
 		TabName			"MLE+"
 	      }
 	      Object {
 		$ObjectID		28
+		Type			"edit"
+		Name			"bcvtb_dir"
+		Prompt			"BCVTB Directory (empty = default)"
+		Value			""
+		Evaluate		"off"
+		Tunable			"off"
+		Enabled			"off"
+		Visible			"off"
+		TabName			"MLE+"
+	      }
+	      Object {
+		$ObjectID		29
 		Type			"edit"
 		Name			"port"
 		Prompt			"Socket Port (0 = auto)"
 		Value			"0"
 		Tunable			"off"
 		Enabled			"off"
+		Visible			"off"
 		TabName			"MLE+"
 	      }
 	      Object {
-		$ObjectID		29
+		$ObjectID		30
 		Type			"edit"
 		Name			"host"
 		Prompt			"Socket Host (empty = localhost)"
@@ -1377,6 +1390,7 @@ Library {
 		Evaluate		"off"
 		Tunable			"off"
 		Enabled			"off"
+		Visible			"off"
 		TabName			"MLE+"
 	      }
 	      PropName		      "Parameters"
@@ -1404,7 +1418,7 @@ Library {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		30
+	$ObjectID		31
 	$ClassName		"Simulink.Mask"
 	Display			"disp('Data\\nAcquisition')"
       }
@@ -1444,7 +1458,7 @@ Library {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		31
+	$ObjectID		32
 	$ClassName		"Simulink.Mask"
 	Display			"disp('Electrical')"
       }
@@ -1479,7 +1493,7 @@ Library {
 	  MaskHideContents	  off
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    32
+	    $ObjectID		    33
 	    $ClassName		    "Simulink.Mask"
 	    Type		    "Constant Power Source/Load"
 	    Description		    "Implements a controllable three-phase, constant power source or load, where VI* = P + jQ (in pe"
@@ -1517,7 +1531,7 @@ Library {
 	      Type		      "Simulink.MaskParameter"
 	      Dimension		      6
 	      Object {
-		$ObjectID		33
+		$ObjectID		34
 		Type			"popup"
 		Array {
 		  Type			  "Cell"
@@ -1532,28 +1546,28 @@ Library {
 		Tunable			"off"
 	      }
 	      Object {
-		$ObjectID		34
+		$ObjectID		35
 		Type			"edit"
 		Name			"PNom"
 		Prompt			"Nominal three-phase real power (W)"
 		Value			"5000"
 	      }
 	      Object {
-		$ObjectID		35
+		$ObjectID		36
 		Type			"edit"
 		Name			"QNom"
 		Prompt			"Nominal three-phase reactive power (VAR)"
 		Value			"2000"
 	      }
 	      Object {
-		$ObjectID		36
+		$ObjectID		37
 		Type			"edit"
 		Name			"VNom"
 		Prompt			"Nominal line-to-line voltage (VRMS)"
 		Value			"480"
 	      }
 	      Object {
-		$ObjectID		37
+		$ObjectID		38
 		Type			"edit"
 		Name			"fNom"
 		Prompt			"Nominal frequency (Hz)"
@@ -1561,7 +1575,7 @@ Library {
 		Tunable			"off"
 	      }
 	      Object {
-		$ObjectID		38
+		$ObjectID		39
 		Type			"edit"
 		Name			"VLow"
 		Prompt			"Lower voltage limit (pu)"
@@ -1914,7 +1928,7 @@ Library {
 		  MaskHideContents	  off
 		  Object {
 		    $PropName		    "MaskObject"
-		    $ObjectID		    39
+		    $ObjectID		    40
 		    $ClassName		    "Simulink.Mask"
 		    Initialization	    "j=sqrt(-1);\na=exp(j*2*pi/3);\na2=exp(-j*2*pi/3);"
 		  }
@@ -2019,7 +2033,7 @@ Library {
 		  MaskHideContents	  off
 		  Object {
 		    $PropName		    "MaskObject"
-		    $ObjectID		    40
+		    $ObjectID		    41
 		    $ClassName		    "Simulink.Mask"
 		    Initialization	    "j=sqrt(-1);\na=exp(j*2*pi/3);\na2=exp(-j*2*pi/3);"
 		  }
@@ -2656,7 +2670,7 @@ Library {
 	  MaskHideContents	  off
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    41
+	    $ObjectID		    42
 	    $ClassName		    "Simulink.Mask"
 	    Type		    "Electric Vehicle Battery"
 	    Description		    "Implements an idealized (lossless) model for an electric vehicle (EV) battery."
@@ -2678,14 +2692,14 @@ Library {
 	      Type		      "Simulink.MaskParameter"
 	      Dimension		      2
 	      Object {
-		$ObjectID		42
+		$ObjectID		43
 		Type			"edit"
 		Name			"capacity"
 		Prompt			"Battery capacity (Wh)"
 		Value			"24000"
 	      }
 	      Object {
-		$ObjectID		43
+		$ObjectID		44
 		Type			"edit"
 		Name			"initSOC"
 		Prompt			"Initial state of charge (fraction)"
@@ -2976,7 +2990,7 @@ Library {
 	  MaskHideContents	  off
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    44
+	    $ObjectID		    45
 	    $ClassName		    "Simulink.Mask"
 	    Type		    "Electric Vehicle Charging Station"
 	    Description		    "Implements a simple model for an electric vehicle charging station. Accepts connections for the"
@@ -3018,28 +3032,28 @@ Library {
 	      Type		      "Simulink.MaskParameter"
 	      Dimension		      4
 	      Object {
-		$ObjectID		45
+		$ObjectID		46
 		Type			"edit"
 		Name			"rating"
 		Prompt			"Charger rating (W)"
 		Value			"6240"
 	      }
 	      Object {
-		$ObjectID		46
+		$ObjectID		47
 		Type			"edit"
 		Name			"capacity"
 		Prompt			"Connected EV battery capacity (Wh)"
 		Value			"24000"
 	      }
 	      Object {
-		$ObjectID		47
+		$ObjectID		48
 		Type			"edit"
 		Name			"maxresponse"
 		Prompt			"Desired +/- regulatory response capability (W)"
 		Value			"1000"
 	      }
 	      Object {
-		$ObjectID		48
+		$ObjectID		49
 		Type			"edit"
 		Name			"ramp"
 		Prompt			"Maximum ramp rate (W/s)"
@@ -3634,7 +3648,7 @@ Library {
 	  MaskHideContents	  off
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    49
+	    $ObjectID		    50
 	    $ClassName		    "Simulink.Mask"
 	    Type		    "Power Factor Conversion"
 	    Description		    "Converts a real input power and power factor to a vector of real and reactive power."
@@ -3651,7 +3665,7 @@ Library {
 	    "else\n    % Lagging\n    leadlag = 1;\nend"
 	    Object {
 	      $PropName		      "Parameters"
-	      $ObjectID		      50
+	      $ObjectID		      51
 	      $ClassName	      "Simulink.MaskParameter"
 	      Type		      "popup"
 	      Array {
@@ -3911,7 +3925,7 @@ Library {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		51
+	$ObjectID		52
 	$ClassName		"Simulink.Mask"
 	Display			"disp('PV')"
       }
@@ -3946,7 +3960,7 @@ Library {
 	  MaskHideContents	  off
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    52
+	    $ObjectID		    53
 	    $ClassName		    "Simulink.Mask"
 	    Type		    "Generic Inverter"
 	    Description		    "Implements the efficiency characteristic for a generic PV inverter using one of three models:\n"
@@ -3985,7 +3999,7 @@ Library {
 	      Type		      "Simulink.MaskParameter"
 	      Dimension		      9
 	      Object {
-		$ObjectID		53
+		$ObjectID		54
 		Type			"popup"
 		Array {
 		  Type			  "Cell"
@@ -4002,14 +4016,14 @@ Library {
 		Callback		"% Dynamic mask callback\nGenericInverter_cb(gcb, 'model_type') "
 	      }
 	      Object {
-		$ObjectID		54
+		$ObjectID		55
 		Type			"edit"
 		Name			"fixed_eff"
 		Prompt			"Efficiency"
 		Value			"0.95"
 	      }
 	      Object {
-		$ObjectID		55
+		$ObjectID		56
 		Type			"edit"
 		Name			"alpha"
 		Prompt			"Constant loss coefficient (W)"
@@ -4018,7 +4032,7 @@ Library {
 		Visible			"off"
 	      }
 	      Object {
-		$ObjectID		56
+		$ObjectID		57
 		Type			"edit"
 		Name			"beta"
 		Prompt			"Linear loss coefficient (W/W)"
@@ -4027,7 +4041,7 @@ Library {
 		Visible			"off"
 	      }
 	      Object {
-		$ObjectID		57
+		$ObjectID		58
 		Type			"edit"
 		Name			"gamma"
 		Prompt			"Quadratic loss coefficient (W/W²)"
@@ -4036,7 +4050,7 @@ Library {
 		Visible			"off"
 	      }
 	      Object {
-		$ObjectID		58
+		$ObjectID		59
 		Type			"popup"
 		Array {
 		  Type			  "Cell"
@@ -4055,7 +4069,7 @@ Library {
 		Callback		"% Dynamic mask callback\nGenericInverter_cb(gcb, 'lookup_pair')"
 	      }
 	      Object {
-		$ObjectID		59
+		$ObjectID		60
 		Type			"edit"
 		Name			"lookup_in"
 		Prompt			"Input power (W)"
@@ -4064,7 +4078,7 @@ Library {
 		Visible			"off"
 	      }
 	      Object {
-		$ObjectID		60
+		$ObjectID		61
 		Type			"edit"
 		Name			"lookup_out"
 		Prompt			"Output power (W)"
@@ -4073,7 +4087,7 @@ Library {
 		Visible			"off"
 	      }
 	      Object {
-		$ObjectID		61
+		$ObjectID		62
 		Type			"edit"
 		Name			"lookup_eff"
 		Prompt			"Efficiency"
@@ -4514,7 +4528,7 @@ Library {
 	  Denominator		  "[tau 1]"
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    62
+	    $ObjectID		    63
 	    $ClassName		    "Simulink.Mask"
 	    Type		    "Photovoltaic Array Smoothing"
 	    Description		    "Implements a low pass filter to model the smoothing effect of a utility-scale PV array."
@@ -4546,7 +4560,7 @@ Library {
 	      Type		      "Simulink.MaskParameter"
 	      Dimension		      6
 	      Object {
-		$ObjectID		63
+		$ObjectID		64
 		Type			"popup"
 		Array {
 		  Type			  "Cell"
@@ -4562,7 +4576,7 @@ Library {
 		Callback		"PVSmoothing_cb(gcb, 'dynamic_mask')"
 	      }
 	      Object {
-		$ObjectID		64
+		$ObjectID		65
 		Type			"edit"
 		Name			"tc"
 		Prompt			"Time constant (s)"
@@ -4571,7 +4585,7 @@ Library {
 		Visible			"off"
 	      }
 	      Object {
-		$ObjectID		65
+		$ObjectID		66
 		Type			"edit"
 		Name			"area"
 		Prompt			"Array area (m²)"
@@ -4580,21 +4594,21 @@ Library {
 		Visible			"off"
 	      }
 	      Object {
-		$ObjectID		66
+		$ObjectID		67
 		Type			"edit"
 		Name			"size"
 		Prompt			"Array size (W)"
 		Value			"1e6"
 	      }
 	      Object {
-		$ObjectID		67
+		$ObjectID		68
 		Type			"edit"
 		Name			"density"
 		Prompt			"Panel nominal power density (W/m²)"
 		Value			"150"
 	      }
 	      Object {
-		$ObjectID		68
+		$ObjectID		69
 		Type			"edit"
 		Name			"coverage"
 		Prompt			"Panel ground coverage ratio (fraction)"
@@ -4618,7 +4632,7 @@ Library {
 	  "t_noct, gamma, i_ref, poa_cutin, init_tcell, init_poa, output_dc, output_celltemp, output_poa"
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    69
+	    $ObjectID		    70
 	    $ClassName		    "Simulink.Mask"
 	    Type		    "PVWatts Cosimulation"
 	    Description		    "This block implements cosimulation of a photovoltaic (PV) array using the PVWatts module of the"
@@ -4675,7 +4689,7 @@ Library {
 	      Type		      "Simulink.MaskParameter"
 	      Dimension		      23
 	      Object {
-		$ObjectID		70
+		$ObjectID		71
 		Type			"edit"
 		Name			"lat"
 		Prompt			"Latitude"
@@ -4685,7 +4699,7 @@ Library {
 		TabName			"Time and Location"
 	      }
 	      Object {
-		$ObjectID		71
+		$ObjectID		72
 		Type			"edit"
 		Name			"lon"
 		Prompt			"Longitude"
@@ -4694,7 +4708,7 @@ Library {
 		TabName			"Time and Location"
 	      }
 	      Object {
-		$ObjectID		72
+		$ObjectID		73
 		Type			"edit"
 		Name			"start_time"
 		Prompt			"Initial date/time (yyyy-mm-dd HH:MM:SS)"
@@ -4704,7 +4718,7 @@ Library {
 		TabName			"Time and Location"
 	      }
 	      Object {
-		$ObjectID		73
+		$ObjectID		74
 		Type			"edit"
 		Name			"tz"
 		Prompt			"Time zone (offset from UTC)"
@@ -4713,7 +4727,7 @@ Library {
 		TabName			"Time and Location"
 	      }
 	      Object {
-		$ObjectID		74
+		$ObjectID		75
 		Type			"edit"
 		Name			"time_step"
 		Prompt			"Time step (s)"
@@ -4722,7 +4736,7 @@ Library {
 		TabName			"Time and Location"
 	      }
 	      Object {
-		$ObjectID		75
+		$ObjectID		76
 		Type			"edit"
 		Name			"system_size"
 		Prompt			"Array nameplate capacity (W)"
@@ -4731,7 +4745,7 @@ Library {
 		TabName			"Array"
 	      }
 	      Object {
-		$ObjectID		76
+		$ObjectID		77
 		Type			"edit"
 		Name			"derate"
 		Prompt			"System derate factor (0-1)"
@@ -4740,7 +4754,7 @@ Library {
 		TabName			"Array"
 	      }
 	      Object {
-		$ObjectID		77
+		$ObjectID		78
 		Type			"edit"
 		Name			"azimuth"
 		Prompt			"Azimuth angle (N = 0°, E = 90°, S = 180°, W = 270°)"
@@ -4749,7 +4763,7 @@ Library {
 		TabName			"Array"
 	      }
 	      Object {
-		$ObjectID		78
+		$ObjectID		79
 		Type			"edit"
 		Name			"tilt"
 		Prompt			"Tilt angle"
@@ -4759,7 +4773,7 @@ Library {
 		TabName			"Array"
 	      }
 	      Object {
-		$ObjectID		79
+		$ObjectID		80
 		Type			"checkbox"
 		Name			"use_lat_tilt"
 		Prompt			"Use latitude tilt"
@@ -4769,7 +4783,7 @@ Library {
 		TabName			"Array"
 	      }
 	      Object {
-		$ObjectID		80
+		$ObjectID		81
 		Type			"popup"
 		Array {
 		  Type			  "Cell"
@@ -4788,7 +4802,7 @@ Library {
 		TabName			"Array"
 	      }
 	      Object {
-		$ObjectID		81
+		$ObjectID		82
 		Type			"edit"
 		Name			"rotlim"
 		Prompt			"Tracker rotation limit (+/-)"
@@ -4798,7 +4812,7 @@ Library {
 		TabName			"Array"
 	      }
 	      Object {
-		$ObjectID		82
+		$ObjectID		83
 		Type			"checkbox"
 		Name			"use_cell_data"
 		Prompt			"Customize photovoltaic cell data"
@@ -4808,7 +4822,7 @@ Library {
 		TabName			"Cell"
 	      }
 	      Object {
-		$ObjectID		83
+		$ObjectID		84
 		Type			"edit"
 		Name			"t_ref"
 		Prompt			"Reference cell temperature (°C)"
@@ -4818,7 +4832,7 @@ Library {
 		TabName			"Cell"
 	      }
 	      Object {
-		$ObjectID		84
+		$ObjectID		85
 		Type			"edit"
 		Name			"t_noct"
 		Prompt			"Nominal operating cell temperature (°C)"
@@ -4828,7 +4842,7 @@ Library {
 		TabName			"Cell"
 	      }
 	      Object {
-		$ObjectID		85
+		$ObjectID		86
 		Type			"edit"
 		Name			"gamma"
 		Prompt			"Maximum power temperature coefficient (%/°C)"
@@ -4838,7 +4852,7 @@ Library {
 		TabName			"Cell"
 	      }
 	      Object {
-		$ObjectID		86
+		$ObjectID		87
 		Type			"edit"
 		Name			"i_ref"
 		Prompt			"Irradiance condition for cell rating (W/m²)"
@@ -4848,7 +4862,7 @@ Library {
 		TabName			"Cell"
 	      }
 	      Object {
-		$ObjectID		87
+		$ObjectID		88
 		Type			"edit"
 		Name			"poa_cutin"
 		Prompt			"Minimum irradiance for operation (W/m²)"
@@ -4858,7 +4872,7 @@ Library {
 		TabName			"Cell"
 	      }
 	      Object {
-		$ObjectID		88
+		$ObjectID		89
 		Type			"edit"
 		Name			"init_tcell"
 		Prompt			"Initial cell temperature (°C)"
@@ -4867,7 +4881,7 @@ Library {
 		TabName			"Simulation"
 	      }
 	      Object {
-		$ObjectID		89
+		$ObjectID		90
 		Type			"edit"
 		Name			"init_poa"
 		Prompt			"Initial plane of array irradiance (W/m²)"
@@ -4876,7 +4890,7 @@ Library {
 		TabName			"Simulation"
 	      }
 	      Object {
-		$ObjectID		90
+		$ObjectID		91
 		Type			"checkbox"
 		Name			"output_dc"
 		Prompt			"Output DC power (W)"
@@ -4885,7 +4899,7 @@ Library {
 		TabName			"Simulation"
 	      }
 	      Object {
-		$ObjectID		91
+		$ObjectID		92
 		Type			"checkbox"
 		Name			"output_celltemp"
 		Prompt			"Output cell temperature (°C)"
@@ -4894,7 +4908,7 @@ Library {
 		TabName			"Simulation"
 	      }
 	      Object {
-		$ObjectID		92
+		$ObjectID		93
 		Type			"checkbox"
 		Name			"output_poa"
 		Prompt			"Output plane of array irradiance (W/m²)"
@@ -4927,7 +4941,7 @@ Library {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		93
+	$ObjectID		94
 	$ClassName		"Simulink.Mask"
 	Display			"disp('Weather')"
       }
@@ -4962,7 +4976,7 @@ Library {
 	  MaskHideContents	  off
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    94
+	    $ObjectID		    95
 	    $ClassName		    "Simulink.Mask"
 	    Type		    "Weather Data From File"
 	    Description		    "Reads weather data from the specified binary file and outputs it as a Simulink bus signal.\n\nT"
@@ -5002,7 +5016,7 @@ Library {
 	      Type		      "Simulink.MaskParameter"
 	      Dimension		      2
 	      Object {
-		$ObjectID		95
+		$ObjectID		96
 		Type			"edit"
 		Name			"fname"
 		Prompt			"Weather file"
@@ -5011,7 +5025,7 @@ Library {
 		Tunable			"off"
 	      }
 	      Object {
-		$ObjectID		96
+		$ObjectID		97
 		Type			"checkbox"
 		Name			"initbus"
 		Prompt			"Create Simulink bus definition automatically"
@@ -5036,7 +5050,7 @@ Library {
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
 	    ZoomFactor		    "100"
-	    SIDHighWatermark	    "42"
+	    SIDHighWatermark	    "44"
 	    Block {
 	      BlockType		      FromFile
 	      Name		      "From File"
@@ -5074,18 +5088,19 @@ MatData {
   NumRecords		  2
   DataRecord {
     Tag			    DataTag0
-    Data		    "  %)30     .    X ,   8    (     @         %    \"     $    !     0         %  0 !P    $    '    9&EA;&"
-    "]G   .    F ,   8    (     @         %    \"     $    !     0         %  0 #     $   !X    <')O9VYA;64     ;6]D96Q"
-    "F:6QE    =V5A=&AE<F9I;&4 =V]R:V1I<@      =&EM96]U=       <&]R=           :&]S=           8F-V=&)D:7(     =&EM95]S="
-    "&5P    ;F]U='!U=&0     #@   %     &    \"     0         !0    @    !    '     $         $    !P   !#.EQ%;F5R9WE0;'"
-    "5S5C@M,2TP7%)U;D5P;'5S      X    X    !@    @    $          4    (     0    @    !         !     (    :61F7V9I;&4."
-    "    6     8    (    !          %    \"     $    H     0         0    *    %5305])3%]#:&EC86=O+4](87)E+DEN=&PN05 N-"
-    "S(U,S P7U1-63,.    0     8    (    !          %    \"     $    ,     0         0    #    %QP871H7'1O7&1I<@     .  "
-    "  .     8    (    !@         %    \"     $    !     0         )    \"           B/- #@   #@    &    \"     8      "
-    "   !0    @    !     0    $         \"0    @               X    P    !@    @    $          4    (               !  "
-    "       !          #@   &@    &    \"     0         !0    @    !    -     $         $    #0   !#.EQ5<V5R<UQS9G)A;FL"
-    "Q7$=I=%Q#86UP=7-%;F5R9WE-;V1E;&EN9UQ-3$507&)C=G1B      X    X    !@    @    &          4    (     0    $    !     "
-    "     D    (           @C$ .    .     8    (    !@         %    \"     $    !     0         )    \"             ! "
+    Data		    "  %)30     .    \\ ,   8    (     @         %    \"     $    !     0         %  0 !P    $    '    9&EA;"
+    "&]G   .    J ,   8    (     @         %    \"     $    !     0         %  0 $     $   \"P    =V]R:U]D:7(          "
+    "')E;%]P871H          !F;F%M90              =V5A=&AE<E]P<F]F:6QE '1I;65?<W1E<         !N;W5T                =&EM96]"
+    "U=            &5P;'5S7W!A=&@       !B8W9T8E]D:7(         <&]R=                &AO<W0                .    ,     8  "
+    "  (    !          %    \"                0         0          X    X    !@    @    &          4    (     0    $   "
+    " !          D    (            \\#\\.    .     8    (    !          %    \"     $    (     0         0    \"    &ED"
+    "9E]F:6QE#@   %@    &    \"     0         !0    @    !    *     $         $    \"@   !54T%?24Q?0VAI8V%G;RU/2&%R92Y)"
+    ";G1L+D%0+C<R-3,P,%]435DS#@   #@    &    \"     8         !0    @    !     0    $         \"0    @          \"\",0 "
+    "X    X    !@    @    &          4    (     0    $    !          D    (             $ .    .     8    (    !@      "
+    "   %    \"     $    !     0         )    \"            \"1 #@   #     &    \"     0         !0    @               "
+    "$         $          .    ,     8    (    !          %    \"                0         0          X    X    !@    @"
+    "    &          4    (     0    $    !          D    (               .    ,     8    (    !          %    \"       "
+    "         0         0          "
   }
   DataRecord {
     Tag			    DataTag1

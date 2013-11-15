@@ -88,10 +88,10 @@ function setup(block)
         block.OutputPort(i).SamplingMode  = 'Sample';
     end
     
+    %% Options
     % Register the sample times: Discrete; no offset
     block.SampleTimes = [time_step 0];
     
-    %% Options
     % Set the block simStateCompliance to default
     % (i.e., same as a built-in block)
     block.SimStateCompliance = 'DefaultSimState';

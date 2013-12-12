@@ -1,8 +1,10 @@
 
+
+
 var tab pvsamv1
-string	weather_file	C:/Users/sfrank1/AppData/Local/SAMEXE/SAMEXE-sfrank1-INST1-2013.1.15/RSF Wing C.zsam/climate_files/SAM Golden TMY3.csv	Weather file in TMY2, TMY3, EPW, or SMW.	
+string	weather_file	C:/Users/sfrank1/AppData/Local/SAMEXE/SAMEXE-sfrank1-INST1-2013.9.20/RSF_wing_C.zsam/climate_files/SAM Golden TMY3.csv	Weather file in TMY2, TMY3, EPW, or SMW.	
 number	use_wf_albedo	1	Use albedo in weather file if provided	0/1
-number	albedo	0.2	User specified ground albedo	0..1
+array	albedo	12	0.2	0.2	0.2	0.2	0.2	0.2	0.2	0.2	0.2	0.2	0.2	0.2	User specified ground albedo	0..1
 number	irrad_mode	0	Irradiance input translation mode	
 number	sky_model	2	Diffuse sky model	
 number	ac_derate	0.99	Interconnection AC derate	0..1
@@ -15,9 +17,8 @@ number	subarray1_tilt_eq_lat	0	Sub-array 1 Tilt=latitude override	0/1
 number	subarray1_azimuth	180	Sub-array 1 Azimuth	deg
 number	subarray1_track_mode	0	Sub-array 1 Tracking mode	
 number	subarray1_rotlim	45	Sub-array 1 Tracker rotation limit	deg
-number	subarray1_enable_backtracking	0	Sub-array 1 Enable backtracking for 1 axis trackers	0/1
-number	subarray1_btwidth	2	Sub-array 1 Width of backtracking row	m
-number	subarray1_btspacing	1	Sub-array 1 Spacing between edges of backtracking rows	m
+number	subarray1_shade_mode_1x	2	Sub-array 1 Tracker self-shading mode	0/1/2
+number	subarray1_gcr	0.666667	Sub-array 1 Ground coverage ratio	0..1
 array	subarray1_soiling	12	0.95	0.95	0.95	0.95	0.95	0.95	0.95	0.95	0.95	0.95	0.95	0.95	Sub-array 1 Monthly soiling derate	0..1
 number	subarray1_derate	0.955598	Sub-array 1 DC power derate	0..1
 number	subarray2_enable	0	Sub-array 2 Enable	0/1
@@ -27,9 +28,8 @@ number	subarray2_tilt_eq_lat	0	Sub-array 2 Tilt=latitude override	0/1
 number	subarray2_azimuth	180	Sub-array 2 Azimuth	deg
 number	subarray2_track_mode	0	Sub-array 2 Tracking mode	
 number	subarray2_rotlim	45	Sub-array 2 Tracker rotation limit	deg
-number	subarray2_enable_backtracking	0	Sub-array 2 Enable backtracking for 1 axis trackers	0/1
-number	subarray2_btwidth	2	Sub-array 2 Width of backtracking row	m
-number	subarray2_btspacing	1	Sub-array 2 Spacing between edges of backtracking rows	m
+number	subarray2_shade_mode_1x	2	Sub-array 2 Tracker self-shading mode	0/1/2
+number	subarray2_gcr	0.666667	Sub-array 2 Ground coverage ratio	0..1
 array	subarray2_soiling	12	0.95	0.95	0.95	0.95	0.95	0.95	0.95	0.95	0.95	0.95	0.95	0.95	Sub-array 2 Monthly soiling derate	0..1
 number	subarray2_derate	0.955598	Sub-array 2 DC power derate	0..1
 number	subarray3_enable	0	Sub-array 3 Enable	0/1
@@ -39,9 +39,8 @@ number	subarray3_tilt_eq_lat	0	Sub-array 3 Tilt=latitude override	0/1
 number	subarray3_azimuth	180	Sub-array 3 Azimuth	deg
 number	subarray3_track_mode	0	Sub-array 3 Tracking mode	
 number	subarray3_rotlim	45	Sub-array 3 Tracker rotation limit	deg
-number	subarray3_enable_backtracking	0	Sub-array 3 Enable backtracking for 1 axis trackers	0/1
-number	subarray3_btwidth	2	Sub-array 3 Width of backtracking row	m
-number	subarray3_btspacing	1	Sub-array 3 Spacing between edges of backtracking rows	m
+number	subarray3_shade_mode_1x	2	Sub-array 3 Tracker self-shading mode	0/1/2
+number	subarray3_gcr	0.666667	Sub-array 3 Ground coverage ratio	0..1
 array	subarray3_soiling	12	0.95	0.95	0.95	0.95	0.95	0.95	0.95	0.95	0.95	0.95	0.95	0.95	Sub-array 3 Monthly soiling derate	0..1
 number	subarray3_derate	0.955598	Sub-array 3 DC power derate	0..1
 number	subarray4_enable	0	Sub-array 4 Enable	0/1
@@ -51,9 +50,8 @@ number	subarray4_tilt_eq_lat	0	Sub-array 4 Tilt=latitude override	0/1
 number	subarray4_azimuth	180	Sub-array 4 Azimuth	deg
 number	subarray4_track_mode	0	Sub-array 4 Tracking mode	
 number	subarray4_rotlim	45	Sub-array 4 Tracker rotation limit	deg
-number	subarray4_enable_backtracking	0	Sub-array 4 Enable backtracking for 1 axis trackers	0/1
-number	subarray4_btwidth	2	Sub-array 4 Width of backtracking row	m
-number	subarray4_btspacing	1	Sub-array 4 Spacing between edges of backtracking rows	m
+number	subarray4_shade_mode_1x	2	Sub-array 4 Tracker self-shading mode	0/1/2
+number	subarray4_gcr	0.666667	Sub-array 4 Ground coverage ratio	0..1
 array	subarray4_soiling	12	0.95	0.95	0.95	0.95	0.95	0.95	0.95	0.95	0.95	0.95	0.95	0.95	Sub-array 4 Monthly soiling derate	0..1
 number	subarray4_derate	0.955598	Sub-array 4 DC power derate	0..1
 number	module_model	1	Photovoltaic module model specifier	
@@ -158,9 +156,7 @@ number	snl_n	1.221	Diode factor
 number	snl_series_cells	72	Number of cells in series	
 number	snl_vmpo	40	Max power point voltage	
 number	snl_voco	47.7	Open circuit voltage	
-number	inverter_model	1	Inverter model specifier	
-number	inv_spe_efficiency	95	Single point inverter efficiency	%
-number	inv_spe_power_ac	4000	Rated inverter power	Wac
+number	inverter_model	0	Inverter model specifier	
 number	inv_snl_c0	-1.39056e-007	Curvature between ac-power and dc-power at ref	1/W
 number	inv_snl_c1	3.1628e-005	Coefficient of Pdco variation with dc input voltage	1/V
 number	inv_snl_c2	0.0021492	Coefficient of Pso variation with dc input voltage	1/V
@@ -171,6 +167,17 @@ number	inv_snl_pnt	63.12	AC power consumed by inverter at night	Wac
 number	inv_snl_pso	755.818	DC power required to enable the inversion process	Wdc
 number	inv_snl_vdco	357.298	DC input voltage for the rated ac-power rating	Vdc
 number	inv_snl_vdcmax	600	Maximum dc input operating voltage	Vdc
+number	inv_ds_paco	4000	AC maximum power rating	Wac
+number	inv_ds_eff	96	Weighted or Peak or Nominal Efficiency	Wdc
+number	inv_ds_pnt	1	AC power consumed by inverter at night	Wac
+number	inv_ds_pso	0	DC power required to enable the inversion process	Wdc
+number	inv_ds_vdco	310	DC input voltage for the rated ac-power rating	Vdc
+number	inv_ds_vdcmax	600	Maximum dc input operating voltage	Vdc
+number	inv_pd_paco	4000	AC maximum power rating	Wac
+number	inv_pd_pdco	4172.84	DC input power at which ac-power rating is achieved	Wdc
+number	inv_pd_pnt	0	AC power consumed by inverter at night	Wac
+number	inv_pd_vdco	310	DC input voltage for the rated ac-power rating	Vdc
+number	inv_pd_vdcmax	600	Maximum dc input operating voltage	Vdc
 number	self_shading_enabled	0	Enable self-shading calculator	
 number	self_shading_length	2.23031	Module length	m
 number	self_shading_width	0.673	Module width	m
@@ -184,3 +191,4 @@ number	self_shading_nstrx	1	Number of strings along bottom
 number	self_shading_nmody	3	Number of modules along side	
 number	self_shading_nrows	4	Number of rows	
 number	self_shading_rowspace	5	Row spacing	m
+number	self_shading_mask_angle_calc_method	0	Mask angle calculation method	

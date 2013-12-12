@@ -35,7 +35,7 @@ runMatlab = true;
 runSimulink = true;
 
 % Exclude tests that require any of the following dependencies:
-excludeDeps = {'databus'};
+excludeDeps = {};
 
 % Valid dependency names are:
 %	databus
@@ -77,8 +77,10 @@ if runSimulink
 else
     fprintf_echo(flog, 'no\n');
 end
-fprintf_echo(flog, '\tSkipping tests with dependencies: %s\n', ...
-    strjoin(excludeDeps,', ') );
+if ~isempty(excludeDeps)
+    fprintf_echo(flog, '\tSkipping tests with dependencies: %s\n', ...
+        strjoin(excludeDeps,', ') );
+end
 fprintf_echo(flog, '\tClearing old log files: ');
 if clearOldLogs
     fprintf_echo(flog, 'yes\n');

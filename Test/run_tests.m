@@ -21,9 +21,6 @@
 %    to remove old test logs prior to executing the tests. Note that this
 %    does not clear the main log file but only the logs for each individual
 %    test.
-%
-% 4. Hardware-in-loop tests using RT-LAB cannot be run automatically and
-%    are not included in this script.
 
 clear all; close all; clc
 

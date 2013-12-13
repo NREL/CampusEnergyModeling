@@ -32,4 +32,8 @@ Please see the [Campus Energy Modeling Wiki][7] for complete documentation, incl
 License
 -------
 
-_To Do: Figure out license and appropriate copyright info._
+Campus Energy Modeling
+Copyright (c) 2013, Alliance for Sustainable Energy
+All Rights Reserved.
+
+Campus Energy Modeling is currently available for use for internal NREL projects only. We anticipate a broader release under an open source license in the future.

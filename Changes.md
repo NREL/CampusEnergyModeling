@@ -1,5 +1,9 @@
 # Change Log
 
+## v0.1-rc3
+* Removed references to HIL in READMEs and some documentation
+* Updated SAM/SSC support to 2013-09-20
+
 ## v0.1-rc2
 * Reworked MLE+ Simulink block for useability
 * Reorganized structure of MATLAB library

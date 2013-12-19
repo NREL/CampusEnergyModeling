@@ -38,40 +38,39 @@ myMlepDir = '';
 % this script.
 
 % EnergyPlus directory
-if exist('EplusDir', 'var')
-    % Parse to remove any trailing file seperator
-    if strcmp(EplusDir(length(EplusDir)), filesep)
-        EplusDir = EplusDir(1:(length(EplusDir)-1));
-    end
-else
+if ~exist('EplusDir', 'var')
     % Use user-specified directory
     EplusDir = myEplusDir;
 end
+if strcmp(EplusDir(end), filesep)
+    % Parse to remove any trailing file seperator
+    EplusDir = EplusDir(1:(end-1));
+end
 
 % Java directory
-if exist('JavaDir', 'var')
-    % Parse to remove any trailing file seperator
-    if strcmp(JavaDir(length(JavaDir)), filesep)
-        JavaDir = JavaDir(1:(length(JavaDir)-1));
-    end
-else
+if ~exist('JavaDir', 'var')
     % Use user-specified directory
     JavaDir = myJavaDir;
 end
+if strcmp(JavaDir(end), filesep)
+    % Parse to remove any trailing file seperator
+    JavaDir = JavaDir(1:(end-1));
+end
 
 % MLE+ directory
-if exist('MlepDir', 'var')
-    % Parse to remove any trailing file seperator
-    if strcmp(MlepDir(length(MlepDir)), filesep)
-        MlepDir = MlepDir(1:(length(MlepDir)-1));
+if ~exist('MlepDir', 'var')
+    if exist('myMlepDir', 'var') && ~isempty(myMlepDir)
+        % Use user-specified directory
+        MlepDir = myMlepDir;
+    else
+        % Determine directory from file path
+        lpath = strsplit( mfilename('fullpath'), filesep );
+        MlepDir = strjoin( lpath(1:(length(lpath)-1)), filesep);
     end
-elseif exist('myMlepDir', 'var') && ~isempty(myMlepDir)
-    % Use user-specified directory
-    MlepDir = myMlepDir;
-else
-    % Determine directory from file path
-    lpath = strsplit( mfilename('fullpath'), filesep );
-    MlepDir = strjoin( lpath(1:(length(lpath)-1)), filesep);
+end
+if strcmp(MlepDir(end), filesep)
+    % Parse to remove any trailing file seperator
+    MlepDir = MlepDir(1:(end-1));
 end
 
 %% Store Path
@@ -111,7 +110,7 @@ else
     MLEPSETTINGS.env = {};
     MLEPSETTINGS.path = {    ...
         {'ENERGYPLUS_DIR', EplusDir},...                % Path to the EnergyPlus
-        {'PATH', ['usr/bin/java' ';' EplusDir]}...      % System path, should include E+ and JRE
+        {'PATH', [JavaDir ';' EplusDir]}...             % System path, should include E+ and JRE
         };
 end
 

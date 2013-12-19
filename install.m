@@ -40,7 +40,7 @@ installMLEP = true;
      EplusDir = 'C:\EnergyPlusV8-1-0';
  
      % Location of Java installation
-     JavaDir = 'C:\Program Files (x86)\Java\jre7\bin';
+     JavaDir = 'C:\Program Files (x86)\Java\jre6\bin';
      
 % NOTE: The MLE+ paths are ignored if installMLEP == false
 

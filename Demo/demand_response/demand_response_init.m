@@ -29,7 +29,7 @@
 % 3. If you open the model prior to running this initialization script, you
 %    may see a warning that the model is unable to automatically create the
 %    bus definition for the weather data block. To correct, run this
-%    script, then reopen the model.
+%    script, which will automatically the model.
 % 
 % 4. If you wish to override the MLE+ settings, uncheck 'Use default MLE+
 %    settings' in the 'MLE+' tab of the 'Small Office Building' block mask,
@@ -52,13 +52,3 @@ end
 %% Initialize Simulink Model
 % Open it if not open
 open_system('demand_response');
-% Set MLE+ working directory
-set_param('demand_response/Small Office Building', 'work_dir', ...
-    [pwd filesep 'small_office']);
-
-% Set EnergyPlus model file
-set_param('demand_response/Small Office Building', 'fname', ...
-    [pwd filesep 'small_office' filesep 'small_office']);
-
-% Save result
-save_system('demand_response');

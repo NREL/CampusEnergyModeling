@@ -42,8 +42,8 @@ Library {
 	$ObjectID		5
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"14"
+	ViewObjType		"SimulinkTopLevel"
+	LoadSaveID		"0"
 	Extents			[902.0, 568.0]
 	ZoomFactor		[1.0]
 	Offset			[0.0, 0.0]
@@ -56,9 +56,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Nov 15 11:16:07 2013"
-  RTWModifiedTimeStamp	  306414962
-  ModelVersionFormat	  "1.%<AutoIncrement:110>"
+  LastModifiedDate	  "Thu Dec 19 11:07:24 2013"
+  RTWModifiedTimeStamp	  309352041
+  ModelVersionFormat	  "1.%<AutoIncrement:111>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1158,7 +1158,7 @@ Library {
   System {
     Name		    "CampusEnergyModeling"
     Location		    [39, 256, 991, 990]
-    Open		    off
+    Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -1198,7 +1198,7 @@ Library {
       System {
 	Name			"Buildings"
 	Location		[39, 256, 991, 990]
-	Open			on
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1254,40 +1254,40 @@ Library {
 	    "t>\n    <dd>Check this box if <b>MLE+ working directory</b> is specified relative to the current MATLAB working d"
 	    "irectory. <i>Otherwise, the block will treat <b>MLE+ working directory</b> as an absolute path.</i></dd>\n  <dt><"
 	    "b>IDF file name</b></dt>\n    <dd>The EnergyPlus model file (IDF), with or without the <code>.idf</code> extensio"
-	    "n. <i>This file must be included in the <b>MLE+ working directory</b>.</i></dd>\n  <dt><b>EnergyPlus weather prof"
-	    "ile</b></dt>\n    <dd>The EnergyPlus weather file (EPW), with or without the <code>.epw</code> extension. <i>A ma"
-	    "tching weather file must be included in your EnergyPlus installation's <code>WeatherData</code> directory.</i></d"
-	    "d>\n  <dt><b>Time Step</b></dt>\n    <dd>The EnergyPlus time step (s). <i>This need not be the same as the Simuli"
-	    "nk time step.</i></dd>\n  <dt><b>Number of Real Outputs</b></dt>\n    <dd>The number of real outputs from EnergyP"
-	    "lus. <i>This number must match the number of output variables in <code>variables.cfg</code>.</i></dd>\n</dl>\n\n<"
-	    "h3>MLE+ Tab</h3>\nThe <i>MLE+</i> tab provides inputs for the following parameters:\n<dl>\n  <dt><b>Communication"
-	    " timeout</b></dt>\n    <dd>Time delay (s) before communication between MLE+ and EnergyPlus times out.</dd>\n  <dt"
-	    "><b>Use default MLE+ settings</b></dt>\n    <dd>Uncheck this box to gain access to the remaining settings in the "
-	    "<i>MLE+</i> tab.</dd>\n  <dt><b>EnergyPlus executable path</b></dt>\n    <dd>The full path to the EnergyPlus exec"
-	    "utable (e.g. <code>C:\\EnergyPlusV8-1-0\\RunEPlus.bat</code>); leave blank to use default MLE+ setting.</dd>\n  <"
-	    "dt><b>BCVTB directory</b></dt>\n    <dd>The full path to the directory where the BCVTB library resides; leave bla"
-	    "nk to use default MLE+ setting.</dd>\n  <dt><b>Socket port</b></dt>\n    <dd>The port to use for communication wi"
-	    "th EnergyPlus; enter <code>0</code> to allow MLE+ to automatically select a port.</dd>\n  <dt><b>Socket host</b><"
-	    "/dt>\n    <dd>The IP address of the host machine where EnergyPlus runs; leave blank to use localhost (the local c"
-	    "omputer).</dd>\n</dl>\n\n<h2>Comments</h2>\n<ol>\n  <li>For fixed time step simulation in Simulink, the EnergyPlu"
-	    "s time step must be an exact multiple of the Simulink time step.</li>\n  <li>Summary of requirements for EnergyPl"
-	    "us model file (<code>*.idf</code>):\n    <ol type=\"a\">\n	  <li>The EnergyPlus time step specified in the file m"
-	    "ust match the value specified in the block mask.</li>\n	  <li>The start date and time in EnergyPlus must correspo"
-	    "nd to the start time of the Simulink simulation (usually <i>t</i> = 0 s).</li>\n	  <li>The <i>ExternalInterface</"
-	    "i> object must be defined and assigned the name  <code>PtolemyServer</code>.</li>\n	  <li>The file must include <"
-	    "i>ExternalInterface</i> definitions all inputs specified in the BCVTB config file, and the names must match.</li>"
-	    "\n	  <li>The file must include <i>Output</i> definitions all outputs specified in the BCVTB config file, and the "
-	    "names must match.</li>\n	</ol>\n  </li>\n  <li>Summary of requirements for BCVTB config file (<code>variables.cfg"
-	    "</code>):\n    <ol type=\"a\">\n	  <li>The file be located in the MLE+ working directory specified in the block m"
-	    "ask.</li>\n	  <li>Number of output variables must match the value specified in the block mask.</li>\n	  <li>Order"
-	    " of input variables must match the order of elements in the input vector in Simulink.</li>\n	  <li>Order of outpu"
-	    "t variables must match the order of elements in the output vector in Simulink.</li>\n	</ol>\n  <li>For more detai"
-	    "ls regarding the implementation of MLE+, the meaning of the parameters, and creating the BCVTB configuration file"
-	    ", see the MLE+ <a href=\"http://mlab.seas.upenn.edu/mlep/\">documentation</a>.</li>\n</ol>\n\n<h2>References</h2>"
-	    "\n<ol>\n  <li>W. Bernal, M. Behl, T. X. Nghiem, and R. Mangharam, \"MLE+: A Tool for Integrated Design and Deploy"
-	    "ment of Energy Efficient Building Controls,\" 4th ACM Workshop On Embedded Sensing Systems For Energy-Efficiency "
-	    "In Buildings, (BuildSys '12), Toronto, Canada, 2012. Available: <a href=\"http://repository.upenn.edu/mlab_papers"
-	    "/51/\">http://repository.upenn.edu/mlab_papers/51/</a></li>\n</ol>"
+	    "n. <i>This file must be included in the <b>MLE+ working directory</b>. Do not specify an absolute path for this f"
+	    "ile!</i></dd>\n  <dt><b>EnergyPlus weather profile</b></dt>\n    <dd>The EnergyPlus weather file (EPW), with or w"
+	    "ithout the <code>.epw</code> extension. <i>A matching weather file must be included in your EnergyPlus installati"
+	    "on's <code>WeatherData</code> directory.</i></dd>\n  <dt><b>Time Step</b></dt>\n    <dd>The EnergyPlus time step "
+	    "(s). <i>This need not be the same as the Simulink time step.</i></dd>\n  <dt><b>Number of Real Outputs</b></dt>\n"
+	    "    <dd>The number of real outputs from EnergyPlus. <i>This number must match the number of output variables in <"
+	    "code>variables.cfg</code>.</i></dd>\n</dl>\n\n<h3>MLE+ Tab</h3>\nThe <i>MLE+</i> tab provides inputs for the foll"
+	    "owing parameters:\n<dl>\n  <dt><b>Communication timeout</b></dt>\n    <dd>Time delay (s) before communication bet"
+	    "ween MLE+ and EnergyPlus times out.</dd>\n  <dt><b>Use default MLE+ settings</b></dt>\n    <dd>Uncheck this box t"
+	    "o gain access to the remaining settings in the <i>MLE+</i> tab.</dd>\n  <dt><b>EnergyPlus executable path</b></dt"
+	    ">\n    <dd>The full path to the EnergyPlus executable (e.g. <code>C:\\EnergyPlusV8-1-0\\RunEPlus.bat</code>); lea"
+	    "ve blank to use default MLE+ setting.</dd>\n  <dt><b>BCVTB directory</b></dt>\n    <dd>The full path to the direc"
+	    "tory where the BCVTB library resides; leave blank to use default MLE+ setting.</dd>\n  <dt><b>Socket port</b></dt"
+	    ">\n    <dd>The port to use for communication with EnergyPlus; enter <code>0</code> to allow MLE+ to automatically"
+	    " select a port.</dd>\n  <dt><b>Socket host</b></dt>\n    <dd>The IP address of the host machine where EnergyPlus "
+	    "runs; leave blank to use localhost (the local computer).</dd>\n</dl>\n\n<h2>Comments</h2>\n<ol>\n  <li>For fixed "
+	    "time step simulation in Simulink, the EnergyPlus time step must be an exact multiple of the Simulink time step.</"
+	    "li>\n  <li>Summary of requirements for EnergyPlus model file (<code>*.idf</code>):\n    <ol type=\"a\">\n	  <li>T"
+	    "he EnergyPlus time step specified in the file must match the value specified in the block mask.</li>\n	  <li>The "
+	    "start date and time in EnergyPlus must correspond to the start time of the Simulink simulation (usually <i>t</i> "
+	    "= 0 s).</li>\n	  <li>The <i>ExternalInterface</i> object must be defined and assigned the name  <code>PtolemyServ"
+	    "er</code>.</li>\n	  <li>The file must include <i>ExternalInterface</i> definitions all inputs specified in the BC"
+	    "VTB config file, and the names must match.</li>\n	  <li>The file must include <i>Output</i> definitions all outpu"
+	    "ts specified in the BCVTB config file, and the names must match.</li>\n	</ol>\n  </li>\n  <li>Summary of requirem"
+	    "ents for BCVTB config file (<code>variables.cfg</code>):\n    <ol type=\"a\">\n	  <li>The file be located in the "
+	    "MLE+ working directory specified in the block mask.</li>\n	  <li>Number of output variables must match the value "
+	    "specified in the block mask.</li>\n	  <li>Order of input variables must match the order of elements in the input "
+	    "vector in Simulink.</li>\n	  <li>Order of output variables must match the order of elements in the output vector "
+	    "in Simulink.</li>\n	</ol>\n  <li>For more details regarding the implementation of MLE+, the meaning of the parame"
+	    "ters, and creating the BCVTB configuration file, see the MLE+ <a href=\"http://mlab.seas.upenn.edu/mlep/\">docume"
+	    "ntation</a>.</li>\n</ol>\n\n<h2>References</h2>\n<ol>\n  <li>W. Bernal, M. Behl, T. X. Nghiem, and R. Mangharam, "
+	    "\"MLE+: A Tool for Integrated Design and Deployment of Energy Efficient Building Controls,\" 4th ACM Workshop On "
+	    "Embedded Sensing Systems For Energy-Efficiency In Buildings, (BuildSys '12), Toronto, Canada, 2012. Available: <a"
+	    " href=\"http://repository.upenn.edu/mlab_papers/51/\">http://repository.upenn.edu/mlab_papers/51/</a></li>\n</ol>"
 	    Display		    "image(imread('building.png'))\ndisp('EnergyPlus\\nCosimulation');\n\n% Inputs\nport_label('input', "
 	    "1, 'input');\n\n% Outputs\nport_label('output', 1, 'flag');\nport_label('output', 2, 'time');\nport_label('output"
 	    "', 3, 'output');\n"

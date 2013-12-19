@@ -37,7 +37,7 @@ installMLEP = true;
 
 % If installing MLE+, set the following paths correctly:
      % Location of EnergyPlus installation
-     EplusDir = 'C:\EnergyPlusV8-1-0\';
+     EplusDir = 'C:\EnergyPlusV8-1-0';
  
      % Location of Java installation
      JavaDir = 'C:\Program Files (x86)\Java\jre7\bin';

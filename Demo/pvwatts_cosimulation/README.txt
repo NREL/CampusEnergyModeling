@@ -15,7 +15,8 @@ Requirements:
 
 Instructions: 
 1.  Open MATLAB and set the working directory to the folder that contains this README file.
-2.  Ensure the MATLAB interface folder for the SSC SDK is in the MATLAB path.
+2.  Ensure that the SSC SDK is installed in the MATLAB path and properly configured. (See the
+    Campus Energy Modeling wiki for installation guidance.)
 3.  Run the script 'pvwatts_cosimulation_init.m' to initialize the weather data. (This should also
     automatically open the 'pvwatts_cosimulation.mdl' Simulink model.)
 4.  If desired, select a different scenario in the initialization script; see Comments.

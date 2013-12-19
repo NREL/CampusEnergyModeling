@@ -35,16 +35,30 @@
 %    may see a warning that the model is unable to automatically create the
 %    bus definition for the weather data block. To correct, run this
 %    script, then reopen the model.
+%
+% 3. This demo requires a custom EnergyPlus build, 8.0.1, supplied by Brent
+%    Griffith in July, 2013. It does NOT work with EnergyPlus 8.1.0; MLE+
+%    experiences packet errors.
+%
+%    By default, the blocks expect this custom build in the directory
+%    'C:\EnergyPlusV8-0-1\'. If your build is in a different directory,
+%    edit the each MLE+ block under the 'Campus Thermal Model' subsystem
+%    accordingly:
+%       a. Open the block mask
+%       b. In the 'MLE+' tab, ensure 'Use default MLE+ settings' is
+%          unchecked.
+%       c. Specify the full path to the EnergyPlus 8.0.1 batch script in
+%          the 'EnergyPlus executable path' field.   
+%    See the MLE+ block help for details.
+%
+% 4. This demo requires the weather file 'USA_CO_Golden-NREL.724666_TMY3',
+%    which is included with EnergyPlus by default.
 
 %% User Settings
 % Please modify these as needed to match your local configuration...
 
 % Data source: please specify either 'SRRL' or 'DataBus'
 dSource = 'DataBus';
-
-% Path to EnergyPlus batch file
-% NOTE: This needs to be Brent's customized 8.0.1 build or greater to work!
-ePlusPath = 'C:\EnergyPlusV8-0-1\RunEPlus.bat';
 
 %% Initialize Weather Data
 % Output
@@ -102,82 +116,17 @@ for n = blkList
     % Simulink object name
     objName = [sys '/Campus Thermal Model/' n{:}];
     
-    % Set Param - EnergyPlus batch file (modify as needed)
-    param = 'progname';
-    value = ['''' ePlusPath ''''];
-    set_param(objName, param, value);
-    
     % Set Param - Time step
-    param = 'deltaT';
+    param = 'time_step';
     value = '60';
     set_param(objName, param, value);
     
     % Set Param - Baseline weather file
-    param = 'weatherfile';
-    value = '''USA_CO_Golden-NREL.724666_TMY3''';
+    param = 'weather_profile';
+    value = 'USA_CO_Golden-NREL.724666_TMY3';
     set_param(objName, param, value);
     
 end
-
-%% Set Chiller-specific parameters
-% Get block
-objName = [sys '/Campus Thermal Model/E+ Plant'];
-
-% Set Param - EnergyPlus model file
-param = 'modelfile';
-value = [ '[pwd ''' filesep ...
-    strjoin({'ElectricChiller','ElectricChiller'}, filesep) ''']' ];
-set_param(objName,param,value);
-
-% Set Param - EnergyPlus working directory
-param = 'workdir';
-value = [ '[pwd ''' filesep 'ElectricChiller'']' ];
-set_param(objName,param,value);
-
-% Set Param - Number EnergyPlus outputs
-param = 'noutputd';
-value = '13';
-set_param(objName,param,value);
-
-%% Set Building 1-specific parameters
-% Get block
-objName = [sys '/Campus Thermal Model/E+ Building 1'];
-
-% Set Param - EnergyPlus model file
-param = 'modelfile';
-value = [ '[pwd ''' filesep ...
-    strjoin({'Building1','5ZoneAirCool'}, filesep) ''']' ];
-set_param(objName,param,value);
-
-% Set Param - EnergyPlus working directory
-param = 'workdir';
-value = [ '[pwd ''' filesep 'Building1'']' ];
-set_param(objName,param,value);
-
-% Set Param - Number EnergyPlus outputs
-param = 'noutputd';
-value = '14';
-set_param(objName,param,value);
-
-%% Set Building 2-specific parameters
-% Get block
-objName = [sys '/Campus Thermal Model/E+ Building 2'];
-
-% Set Param - EnergyPlus model file
-param = 'modelfile';
-value = [ '[pwd ''' filesep ...
-    strjoin({'Building2','5ZoneAirCool'}, filesep) ''']' ];
-set_param(objName,param,value);
-
-% Set Param - EnergyPlus working directory
-param = 'workdir';
-value = [ '[pwd ''' filesep 'Building2'']' ];
-set_param(objName,param,value);
-
-% Set Param - Number EnergyPlus outputs
-param = 'noutputd';
-value = '13';
-set_param(objName,param,value);
 
 %% Save System
 % Save result

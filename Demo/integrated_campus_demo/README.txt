@@ -24,11 +24,12 @@ Requirements:
 Instructions: 
 1.  Open MATLAB and set the working directory to the folder that contains this README file.
 2.  Ensure that EnergyPlus, MLE+, SSC, and SimPowerSystems are installed and properly configured.
-3.  Edit the initialization script 'integrated_campus_demo_init.m' to specify the path to your local
-    EnergyPlus installation and select a source for the weather data.
+3.  Edit the initialization script 'integrated_campus_demo_init.m' to select a source for the
+    weather data.
 4.  Run the initialization script to initialize the model and weather data. (This should also
     automatically open the 'integrated_campus_demo.mdl' Simulink model.)
 5.  Run the Simulink model and examine the results in the scopes.
 
 Comments:
-1.  This demo is in an intermediate state. Some clean up will likely occur in the future.
+1.  This demo requires a custom build of EnergyPlus (8.0.1); it is not intended for release until it
+    can be modified and verified to work with an official EnergyPlus release (e.g. 8.1).

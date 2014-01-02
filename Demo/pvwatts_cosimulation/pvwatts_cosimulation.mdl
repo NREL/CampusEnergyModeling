@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.83"
+    ComputedModelVersion    "1.84"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -55,9 +55,9 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1327.0, 794.0]
-	ZoomFactor		[0.8]
-	Offset			[-243.5874935090543, 10425.75]
+	Extents			[1327.0, 731.0]
+	ZoomFactor		[1.0]
+	Offset			[-77.7124935090543, 10517.125]
       }
     }
   }
@@ -70,9 +70,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Oct 09 10:04:23 2013"
-  RTWModifiedTimeStamp	  303213862
-  ModelVersionFormat	  "1.%<AutoIncrement:83>"
+  LastModifiedDate	  "Thu Jan 02 13:02:27 2014"
+  RTWModifiedTimeStamp	  310568547
+  ModelVersionFormat	  "1.%<AutoIncrement:84>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -885,7 +885,7 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "80"
+    ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
     SIDHighWatermark	    "113"
     Block {
@@ -1249,7 +1249,7 @@ Model {
       Ports		      [1, 1]
       Position		      [780, 10769, 850, 10811]
       ZOrder		      64
-      LibraryVersion	      "1.91"
+      LibraryVersion	      "1.114"
       SourceBlock	      "CampusEnergyModeling/PV/Generic Inverter"
       SourceType	      "Generic Inverter"
       model_type	      "Quadratic"
@@ -1261,6 +1261,7 @@ Model {
       lookup_in		      "[0, 10, 25, 50, 75, 100]"
       lookup_out	      "[0, 9, 24, 49, 73, 97]"
       lookup_eff	      "[0.10, 0.80, 0.87, 0.93, 0.90, 0.88]"
+      standby		      "50"
       Port {
 	PortNumber		1
 	Name			"AC Power"
@@ -1340,7 +1341,7 @@ Model {
       Ports		      [1, 0, 0, 0, 0, 0, 4]
       Position		      [280, 11050, 345, 11115]
       ZOrder		      758
-      LibraryVersion	      "1.91"
+      LibraryVersion	      "1.114"
       SourceBlock	      "CampusEnergyModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "source"
@@ -1430,7 +1431,7 @@ Model {
       Ports		      [1, 1]
       Position		      [595, 10770, 665, 10810]
       ZOrder		      78
-      LibraryVersion	      "1.91"
+      LibraryVersion	      "1.114"
       SourceBlock	      "CampusEnergyModeling/PV/PV Smoothing"
       SourceType	      "Photovoltaic Array Smoothing"
       sel		      "Array Size and Power Density"
@@ -1453,7 +1454,7 @@ Model {
       Ports		      [4, 3]
       Position		      [250, 10772, 460, 10888]
       ZOrder		      65
-      LibraryVersion	      "1.91"
+      LibraryVersion	      "1.114"
       UserDataPersistent      on
       UserData		      "DataTag0"
       SourceBlock	      "CampusEnergyModeling/PV/PVWatts Cosimulation"
@@ -1507,7 +1508,7 @@ Model {
       Ports		      [2, 1]
       Position		      [165, 11049, 230, 11116]
       ZOrder		      760
-      LibraryVersion	      "1.91"
+      LibraryVersion	      "1.114"
       SourceBlock	      "CampusEnergyModeling/Electrical/Power Factor\nConversion"
       SourceType	      "Power Factor Conversion"
       pfType		      "Lagging"
@@ -1668,7 +1669,7 @@ Model {
       Ports		      [0, 1]
       Position		      [55, 10590, 130, 10680]
       ZOrder		      60
-      LibraryVersion	      "1.91"
+      LibraryVersion	      "1.114"
       SourceBlock	      "CampusEnergyModeling/Weather/Weather Data"
       SourceType	      "Weather Data From File"
       fname		      "Weather-short.mat"

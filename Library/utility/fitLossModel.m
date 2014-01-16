@@ -18,9 +18,9 @@
 %                   See COMMENTS.
 %
 % OUTPUTS:
-%   alpha =         Constant loss term for converter loss model
-%   beta =          Linear loss term for converter loss model
-%   gamma =         Quadratic loss term for converter loss model
+%   alpha =         Constant loss term for converter loss model (pu)
+%   beta =          Linear loss term for converter loss model (pu)
+%   gamma =         Quadratic loss term for converter loss model (pu)
 % 
 % COMMENTS:
 % 1. The form of the fit depends on the specified convention. For the
@@ -37,6 +37,13 @@
 %       Eff = Pout / Pin
 %
 % 3. Text in names is not case sensitive.
+%
+% 4. Coefficients are returned in per-unit on the inverter's power base,
+%    PBase (W). To convert to volt-ampere coefficients, use the following
+%    transformations:
+%       alpha (W) = alpha (pu) * PBase
+%       beta (W/W) = beta (pu)
+%       gamma (W/W²) = gamma (pu) / PBase
 %
 % REFERENCE:
 %   S. Frank, "Optimal Design of Mixed AC-DC Distribution Systems for

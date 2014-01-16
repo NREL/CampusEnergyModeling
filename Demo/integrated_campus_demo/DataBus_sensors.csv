@@ -1,7 +1,0 @@
-varname,dbname,unit,description
-GHI,wind103W_GloCM22,W/m²,Global horizontal irradiance
-DNI,wind103W_DirCH1,W/m²,Direct normal irradiance
-DHI,wind103W_Dif848,W/m²,Diffuse horizontal irradiance
-DryBulbTemp,wind303W_Temp,°C,Dry-bulb temperature
-WindSpeed,wind303W_WS_AT_6,m/s,Wind speed
-RH,wind303W_RH,pct,Relative humidity (percentage)

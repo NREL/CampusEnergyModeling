@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.322"
+    ComputedModelVersion    "1.323"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -68,9 +68,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Nov 14 21:01:52 2013"
-  RTWModifiedTimeStamp	  306363702
-  ModelVersionFormat	  "1.%<AutoIncrement:322>"
+  LastModifiedDate	  "Thu Dec 19 11:08:08 2013"
+  RTWModifiedTimeStamp	  309352080
+  ModelVersionFormat	  "1.%<AutoIncrement:323>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1731,14 +1731,14 @@ Model {
       Ports		      [1, 3]
       Position		      [520, 192, 700, 318]
       ZOrder		      -1
-      LibraryVersion	      "1.108"
+      LibraryVersion	      "1.111"
       UserDataPersistent      on
       UserData		      "DataTag0"
       SourceBlock	      "CampusEnergyModeling/Buildings/EnergyPlus"
       SourceType	      "EnergyPlus Cosimulation"
       work_dir		      "small_office"
       rel_path		      on
-      fname		      "small_office"
+      fname		      "small_office.idf"
       weather_profile	      "USA_IL_Chicago-OHare.Intl.AP.725300_TMY3"
       time_step		      "60"
       nout		      "5"
@@ -1779,7 +1779,7 @@ Model {
       Ports		      [0, 1]
       Position		      [60, 10, 135, 100]
       ZOrder		      68
-      LibraryVersion	      "1.108"
+      LibraryVersion	      "1.111"
       SourceBlock	      "CampusEnergyModeling/Weather/Weather Data"
       SourceType	      "Weather Data From File"
       fname		      "Weather.mat"
@@ -2096,7 +2096,7 @@ MatData {
     "             '1I;65O=70           !E<&QU<U]P871H        8F-V=&)?9&ER         '!O<G0               !H;W-T          "
     "      #@   $     &    \"     0         !0    @    !    #     $         $     P   !S;6%L;%]O9F9I8V4     #@   #@    "
     "&    \"     8         !0    @    !     0    $         \"0    @           #P/PX   !     !@    @    $          4    "
-    "(     0    P    !         !     ,    <VUA;&Q?;V9F:6-E      X   !8    !@    @    $          4    (     0   \"@    !"
+    "(     0   !     !         !     0    <VUA;&Q?;V9F:6-E+FED9@X   !8    !@    @    $          4    (     0   \"@    !"
     "         !     H    55-!7TE,7T-H:6-A9V\\M3TAA<F4N26YT;\"Y!4\"XW,C4S,#!?5$U9,PX    X    !@    @    &          4    "
     "(     0    $    !          D    (            3D .    .     8    (    !@         %    \"     $    !     0         )"
     "    \"            !1 #@   #@    &    \"     8         !0    @    !     0    $         \"0    @            D0 X    "

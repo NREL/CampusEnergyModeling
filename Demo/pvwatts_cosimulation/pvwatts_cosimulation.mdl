@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.84"
+    ComputedModelVersion    "1.85"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -70,9 +70,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Jan 02 13:02:27 2014"
-  RTWModifiedTimeStamp	  310568547
-  ModelVersionFormat	  "1.%<AutoIncrement:84>"
+  LastModifiedDate	  "Thu Jan 16 11:05:39 2014"
+  RTWModifiedTimeStamp	  311771085
+  ModelVersionFormat	  "1.%<AutoIncrement:85>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1249,9 +1249,11 @@ Model {
       Ports		      [1, 1]
       Position		      [780, 10769, 850, 10811]
       ZOrder		      64
-      LibraryVersion	      "1.114"
+      LibraryVersion	      "1.117"
       SourceBlock	      "CampusEnergyModeling/PV/Generic Inverter"
       SourceType	      "Generic Inverter"
+      max_power		      "110e3"
+      standby		      "100"
       model_type	      "Quadratic"
       fixed_eff		      "0.95"
       alpha		      "500"
@@ -1261,7 +1263,6 @@ Model {
       lookup_in		      "[0, 10, 25, 50, 75, 100]"
       lookup_out	      "[0, 9, 24, 49, 73, 97]"
       lookup_eff	      "[0.10, 0.80, 0.87, 0.93, 0.90, 0.88]"
-      standby		      "50"
       Port {
 	PortNumber		1
 	Name			"AC Power"
@@ -1341,7 +1342,7 @@ Model {
       Ports		      [1, 0, 0, 0, 0, 0, 4]
       Position		      [280, 11050, 345, 11115]
       ZOrder		      758
-      LibraryVersion	      "1.114"
+      LibraryVersion	      "1.117"
       SourceBlock	      "CampusEnergyModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "source"
@@ -1380,6 +1381,7 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
+      LegendLocations	      "0.64909     0.88872     0.29701     0.05513\n0.76157      0.4487     0.18453    0.031138"
       TimeRange		      "90000"
       YMin		      "0~-20000"
       YMax		      "140000~120000"
@@ -1416,6 +1418,7 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
+      LegendLocations	      "0.69935     0.91271     0.24599    0.031138\n0.63696      0.4487     0.30838    0.031138"
       TimeRange		      "90000"
       YMin		      "0~0"
       YMax		      "70~1600"
@@ -1431,7 +1434,7 @@ Model {
       Ports		      [1, 1]
       Position		      [595, 10770, 665, 10810]
       ZOrder		      78
-      LibraryVersion	      "1.114"
+      LibraryVersion	      "1.117"
       SourceBlock	      "CampusEnergyModeling/PV/PV Smoothing"
       SourceType	      "Photovoltaic Array Smoothing"
       sel		      "Array Size and Power Density"
@@ -1454,7 +1457,7 @@ Model {
       Ports		      [4, 3]
       Position		      [250, 10772, 460, 10888]
       ZOrder		      65
-      LibraryVersion	      "1.114"
+      LibraryVersion	      "1.117"
       UserDataPersistent      on
       UserData		      "DataTag0"
       SourceBlock	      "CampusEnergyModeling/PV/PVWatts Cosimulation"
@@ -1508,7 +1511,7 @@ Model {
       Ports		      [2, 1]
       Position		      [165, 11049, 230, 11116]
       ZOrder		      760
-      LibraryVersion	      "1.114"
+      LibraryVersion	      "1.117"
       SourceBlock	      "CampusEnergyModeling/Electrical/Power Factor\nConversion"
       SourceType	      "Power Factor Conversion"
       pfType		      "Lagging"
@@ -1654,6 +1657,7 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
+      LegendLocations	      "0.78149     0.86626     0.15449    0.079122\n0.78984     0.40071     0.14614    0.079122"
       TimeRange		      "90000"
       YMin		      "0.999~0"
       YMax		      "1.007~1.4"
@@ -1669,7 +1673,7 @@ Model {
       Ports		      [0, 1]
       Position		      [55, 10590, 130, 10680]
       ZOrder		      60
-      LibraryVersion	      "1.114"
+      LibraryVersion	      "1.117"
       SourceBlock	      "CampusEnergyModeling/Weather/Weather Data"
       SourceType	      "Weather Data From File"
       fname		      "Weather-short.mat"
@@ -1684,7 +1688,7 @@ Model {
       ZOrder		      839
       DropShadow	      on
       Priority		      "2"
-      LibraryVersion	      "1.2191"
+      LibraryVersion	      "*1.2191"
       UserDataPersistent      on
       UserData		      "DataTag1"
       SourceBlock	      "powerlib/powergui"
@@ -2075,7 +2079,7 @@ MatData {
     "   X    !@    @    &          4    (     0    $    !          D    (            .4 .    .     8    (    !@        "
     " %    \"     $    !     0         )    \"            .\"_#@   #@    &    \"     8         !0    @    !     0    $ "
     "        \"0    @          $\"/0 X    X    !@    @    &          4    (     0    $    !          D    (            "
-    "   .    .     8    (    !@         %    \"     $    !     0         )    \"               #@   #@    &    \"     8"
+    "   .    .     8    (    !@         %    \"     $    !     0         )    \"        ( 4KB9 #@   #@    &    \"     8"
     "         !0    @    !     0    $         \"0    @               X    X    !@    @    &          4    (     0    $ "
     "   !          D    (          !PGT .    .     8    (    !@         %    \"     $    !     0         )    \"       "
     "     !A #@   #@    &    \"     8         !0    @    !     0    $         \"0    @             0 X    X    !@    @ "

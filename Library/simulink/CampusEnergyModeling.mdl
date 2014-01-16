@@ -20,7 +20,7 @@ Library {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [39.0, 256.0, 952.0, 734.0]
+      Location		      [288.0, 116.0, 952.0, 734.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -43,7 +43,7 @@ Library {
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
 	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"123"
+	LoadSaveID		"13"
 	Extents			[902.0, 568.0]
 	ZoomFactor		[1.0]
 	Offset			[0.0, 0.0]
@@ -56,9 +56,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Jan 02 13:01:19 2014"
-  RTWModifiedTimeStamp	  310568474
-  ModelVersionFormat	  "1.%<AutoIncrement:114>"
+  LastModifiedDate	  "Thu Jan 16 11:23:35 2014"
+  RTWModifiedTimeStamp	  311772172
+  ModelVersionFormat	  "1.%<AutoIncrement:118>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1157,7 +1157,7 @@ Library {
   }
   System {
     Name		    "CampusEnergyModeling"
-    Location		    [39, 256, 991, 990]
+    Location		    [288, 116, 1240, 850]
     Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1171,7 +1171,7 @@ Library {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "236"
+    SIDHighWatermark	    "238"
     Block {
       BlockType		      SubSystem
       Name		      "Buildings"
@@ -1197,7 +1197,7 @@ Library {
       }
       System {
 	Name			"Buildings"
-	Location		[39, 256, 991, 990]
+	Location		[288, 116, 1240, 850]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -3955,8 +3955,8 @@ Library {
       }
       System {
 	Name			"PV"
-	Location		[39, 256, 991, 990]
-	Open			off
+	Location		[288, 116, 1240, 850]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -4000,32 +4000,53 @@ Library {
 	    "/i> are the constant, linear, and quadratic loss coefficients, respectively, and are mask parameters.\n\n<h3>Look"
 	    "up Table</h3>\nInverter output power is computed as a function of the input power using interpolation from a pres"
 	    "et lookup table.\n\n<h2>Input</h2>\nBlock input <b>Pin</b> is the inverter input power.\n\n<h2>Output</h2>\nBlock"
-	    " output <b>Pout</b> is the inverter output power.\n\n<h2>Parameters</h2>\n<b>Standby loss</b> (W) specifies the i"
-	    "nverter power consumption when the array is dark. The remaining parameters available in the block mask depend on "
-	    "which <b>inverter model</b> is selected in the mask dialog.\n\n<h3>Fixed Efficiency Model</h3>\nSpecify the fixed"
-	    " inverter <b>efficiency</b> <i>&eta;</i> as a fraction.\n\n<h3>Quadratic Loss Model</h3>\nSpecify <i>&alpha;</i>,"
-	    " <i>&beta;</i>, and <i>&gamma;</i> in the inverter loss equation:\n<dl>\n  <dt><b>Constant loss coefficient</b></"
-	    "dt><dd>Specify the constant inverter loss <i>&alpha;</i> (W).</dd>\n  <dt><b>Linear loss coefficient</b></dt><dd>"
-	    "Specify the linear inverter loss coefficient <i>&beta;</i> (W/W).</dd>\n  <dt><b>Quadratic loss coefficient</b></"
-	    "dt><dd>Specify the quadratic inverter loss coefficient <i>&gamma;</i> W/W²).</dd>\n</dl>\n\n<h3>Lookup Table</h3>"
-	    "\nSpecify two of the following three vectors: <b>input power</b>, <b>output power</b>, and <b>efficiency</b>. Vec"
-	    "tor dimensions must match and efficiencies must be entered as fractions. The block automatically calculates the a"
-	    "ppropriate input-output power characteristic from the inputs provided according to the relationship <i>&eta;</i> "
-	    "= <i>P<sub>out</sub></i> / <i>P<sub>in</sub></i>.\n\n<h2>Comments</h2>\n<ol>\n  <li>When the inverter input power"
-	    " drops too low to sustain a positive power output, the inverter drops into standby automatically, consuming the s"
-	    "pecified standby loss.</li>\n  <li><i>Caution:</i> If using the lookup table model, do not include zeros in the e"
-	    "fficiency vector. Otherwise, a divide by zero error may result.</li>\n</ol>\n\n<h2>References</h2>\nFor discussio"
-	    "n of the quadratic inverter loss model, see section 3.4.4 of:\n<ol>\n  <li>S. Frank, \"Optimal Design of Mixed AC"
-	    "-DC Distribution Systems for Commercial Buildings,\" Dissertation, Colorado School of Mines, Golden, CO, 2013. Av"
-	    "ailable: <a href=\"http://gradworks.umi.com/3558161.pdf\">http://gradworks.umi.com/3558161.pdf</a></li>\n</ol>"
+	    " output <b>Pout</b> is the inverter output power.\n\n<h2>Parameters</h2>\nThe block mask includes two tabs. The <"
+	    "i>Size</i> tab specifies the inverter <b>maximum continuous power</b> rating (W) and the <b>standby loss</b> (W)."
+	    " The standby loss is the inverter power consumption when the PV array is dark (no DC power output).\n\nThe <i>Eff"
+	    "iciency</i> tab specifies the inverter's efficiency characteristics. The parameters displayed depend on which inv"
+	    "erter <b>efficiency model</b> is selected in the mask dialog:\n\n<h3>Fixed Efficiency Model</h3>\nSpecify the fix"
+	    "ed inverter <b>efficiency</b> <i>&eta;</i> as a fraction.\n\n<h3>Quadratic Loss Model</h3>\nSpecify <i>&alpha;</i"
+	    ">, <i>&beta;</i>, and <i>&gamma;</i> in the inverter loss equation:\n<dl>\n  <dt><b>Constant loss coefficient</b>"
+	    "</dt><dd>Specify the constant inverter loss <i>&alpha;</i> (W).</dd>\n  <dt><b>Linear loss coefficient</b></dt><d"
+	    "d>Specify the linear inverter loss coefficient <i>&beta;</i> (W/W).</dd>\n  <dt><b>Quadratic loss coefficient</b>"
+	    "</dt><dd>Specify the quadratic inverter loss coefficient <i>&gamma;</i> W/W²).</dd>\n</dl>\n\n<h3>Lookup Table</h"
+	    "3>\nSpecify two of the following three vectors: <b>input power</b>, <b>output power</b>, and <b>efficiency</b>. V"
+	    "ector dimensions must match and efficiencies must be entered as fractions. The block automatically calculates the"
+	    " appropriate input-output power characteristic from the inputs provided according to the relationship <i>&eta;</i"
+	    "> = <i>P<sub>out</sub></i> / <i>P<sub>in</sub></i>.\n\n<h2>Comments</h2>\n<ol>\n  <li>Even if sufficient input po"
+	    "wer is available, the inverter output will not exceed its maximum continuous power rating. To disable power limit"
+	    "ing, set the maximum continuous power rating to <i>&infin;</i> (MATLAB syntax <code>Inf</code>), which is the def"
+	    "ault value.\n  <li>If the inverter input power drops too low to sustain a positive power output, the inverter dro"
+	    "ps into standby automatically, consuming the specified standby loss.</li>\n  <li><i>Caution:</i> If using the loo"
+	    "kup table model, do not include zeros in the efficiency vector. Otherwise, a divide by zero error may result.</li"
+	    ">\n</ol>\n\n<h2>References</h2>\nFor discussion of the quadratic inverter loss model, see section 3.4.4 of:\n<ol>"
+	    "\n  <li>S. Frank, \"Optimal Design of Mixed AC-DC Distribution Systems for Commercial Buildings,\" Dissertation, "
+	    "Colorado School of Mines, Golden, CO, 2013. Available: <a href=\"http://gradworks.umi.com/3558161.pdf\">http://gr"
+	    "adworks.umi.com/3558161.pdf</a></li>\n</ol>"
 	    Initialization	    "% Call initialization to calculate block variables\n[a, b, c, look_Pin, look_Pout] = ...\n   "
 	    " GenericInverter_cb(gcb, 'init', model_type, ...\n	fixed_eff, alpha, beta, gamma, ...\n    lookup_pair, lookup_in"
 	    ", lookup_out, lookup_eff);"
 	    Array {
 	      Type		      "Simulink.MaskParameter"
-	      Dimension		      10
+	      Dimension		      11
 	      Object {
 		$ObjectID		54
+		Type			"edit"
+		Name			"max_power"
+		Prompt			"Maximum Continuous Power (W)"
+		Value			"Inf"
+		TabName			"Size"
+	      }
+	      Object {
+		$ObjectID		55
+		Type			"edit"
+		Name			"standby"
+		Prompt			"Standby Loss (W)"
+		Value			"0"
+		TabName			"Size"
+	      }
+	      Object {
+		$ObjectID		56
 		Type			"popup"
 		Array {
 		  Type			  "Cell"
@@ -4036,47 +4057,52 @@ Library {
 		  PropName		  "TypeOptions"
 		}
 		Name			"model_type"
-		Prompt			"Inverter model"
+		Prompt			"Efficiency model"
 		Value			"Fixed Efficiency"
 		Tunable			"off"
 		Callback		"% Dynamic mask callback\nGenericInverter_cb(gcb, 'model_type') "
+		TabName			"Efficiency"
 	      }
 	      Object {
-		$ObjectID		55
+		$ObjectID		57
 		Type			"edit"
 		Name			"fixed_eff"
 		Prompt			"Efficiency"
 		Value			"0.95"
+		TabName			"Efficiency"
 	      }
 	      Object {
-		$ObjectID		56
+		$ObjectID		58
 		Type			"edit"
 		Name			"alpha"
 		Prompt			"Constant loss coefficient (W)"
 		Value			"1"
 		Enabled			"off"
 		Visible			"off"
+		TabName			"Efficiency"
 	      }
 	      Object {
-		$ObjectID		57
+		$ObjectID		59
 		Type			"edit"
 		Name			"beta"
 		Prompt			"Linear loss coefficient (W/W)"
 		Value			"0.01"
 		Enabled			"off"
 		Visible			"off"
+		TabName			"Efficiency"
 	      }
 	      Object {
-		$ObjectID		58
+		$ObjectID		60
 		Type			"edit"
 		Name			"gamma"
 		Prompt			"Quadratic loss coefficient (W/W²)"
 		Value			"0.001"
 		Enabled			"off"
 		Visible			"off"
+		TabName			"Efficiency"
 	      }
 	      Object {
-		$ObjectID		59
+		$ObjectID		61
 		Type			"popup"
 		Array {
 		  Type			  "Cell"
@@ -4093,48 +4119,45 @@ Library {
 		Enabled			"off"
 		Visible			"off"
 		Callback		"% Dynamic mask callback\nGenericInverter_cb(gcb, 'lookup_pair')"
+		TabName			"Efficiency"
 	      }
 	      Object {
-		$ObjectID		60
+		$ObjectID		62
 		Type			"edit"
 		Name			"lookup_in"
 		Prompt			"Input power (W)"
 		Value			"[0, 10, 25, 50, 75, 100]"
 		Enabled			"off"
 		Visible			"off"
+		TabName			"Efficiency"
 	      }
 	      Object {
-		$ObjectID		61
+		$ObjectID		63
 		Type			"edit"
 		Name			"lookup_out"
 		Prompt			"Output power (W)"
 		Value			"[0, 9, 24, 49, 73, 97]"
 		Enabled			"off"
 		Visible			"off"
+		TabName			"Efficiency"
 	      }
 	      Object {
-		$ObjectID		62
+		$ObjectID		64
 		Type			"edit"
 		Name			"lookup_eff"
 		Prompt			"Efficiency"
 		Value			"[0.10, 0.80, 0.87, 0.93, 0.90, 0.88]"
 		Enabled			"off"
 		Visible			"off"
-	      }
-	      Object {
-		$ObjectID		63
-		Type			"edit"
-		Name			"standby"
-		Prompt			"Standby Loss (W)"
-		Value			"0"
+		TabName			"Efficiency"
 	      }
 	      PropName		      "Parameters"
 	    }
 	  }
 	  System {
 	    Name		    "Generic Inverter"
-	    Location		    [39, 256, 991, 990]
-	    Open		    on
+	    Location		    [288, 116, 1240, 850]
+	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -4186,7 +4209,7 @@ Library {
 	      MaskHideContents	      off
 	      System {
 		Name			"Lookup Table"
-		Location		[713, 204, 1665, 938]
+		Location		[288, 116, 1240, 850]
 		Open			off
 		ModelBrowserVisibility	off
 		ModelBrowserWidth	200
@@ -4261,6 +4284,26 @@ Library {
 	      Value		      "model_type"
 	    }
 	    Block {
+	      BlockType		      Constant
+	      Name		      "Max. Output"
+	      SID		      "238"
+	      Position		      [470, 255, 530, 280]
+	      ZOrder		      11
+	      BlockRotation	      270
+	      Value		      "max_power"
+	    }
+	    Block {
+	      BlockType		      MinMax
+	      Name		      "MinMax"
+	      SID		      "237"
+	      Ports		      [2, 1]
+	      Position		      [530, 182, 560, 213]
+	      ZOrder		      10
+	      Inputs		      "2"
+	      InputSameDT	      off
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
 	      BlockType		      SubSystem
 	      Name		      "Quadratic Model"
 	      SID		      "132"
@@ -4278,7 +4321,7 @@ Library {
 	      MaskHideContents	      off
 	      System {
 		Name			"Quadratic Model"
-		Location		[39, 256, 991, 990]
+		Location		[288, 116, 1240, 850]
 		Open			off
 		ModelBrowserVisibility	off
 		ModelBrowserWidth	200
@@ -4471,7 +4514,7 @@ Library {
 	      BlockType		      Constant
 	      Name		      "Standby Loss"
 	      SID		      "236"
-	      Position		      [530, 255, 560, 285]
+	      Position		      [599, 255, 651, 280]
 	      ZOrder		      9
 	      BlockRotation	      270
 	      Value		      "-standby"
@@ -4480,7 +4523,7 @@ Library {
 	      BlockType		      Switch
 	      Name		      "Switch"
 	      SID		      "143"
-	      Position		      [445, 170, 495, 210]
+	      Position		      [415, 170, 465, 210]
 	      ZOrder		      4
 	      Criteria		      "u2 > Threshold"
 	      InputSameDT	      off
@@ -4491,7 +4534,7 @@ Library {
 	      BlockType		      Switch
 	      Name		      "Switch1"
 	      SID		      "235"
-	      Position		      [575, 170, 625, 210]
+	      Position		      [660, 180, 710, 220]
 	      ZOrder		      8
 	      InputSameDT	      off
 	      SaturateOnIntegerOverflow	off
@@ -4501,7 +4544,7 @@ Library {
 	      BlockType		      Outport
 	      Name		      "Pout"
 	      SID		      "144"
-	      Position		      [685, 183, 715, 197]
+	      Position		      [770, 193, 800, 207]
 	      ZOrder		      -2
 	      IconDisplay	      "Port number"
 	    }
@@ -4535,7 +4578,7 @@ Library {
 	    Line {
 	      SrcBlock		      "Quadratic Model"
 	      SrcPort		      1
-	      Points		      [55, 0; 0, 70]
+	      Points		      [33, 0; 0, 70]
 	      DstBlock		      "Switch"
 	      DstPort		      1
 	    }
@@ -4559,23 +4602,9 @@ Library {
 	    Line {
 	      SrcBlock		      "Lookup Table"
 	      SrcPort		      1
-	      Points		      [55, 0; 0, -130]
+	      Points		      [34, 0; 0, -130]
 	      DstBlock		      "Switch"
 	      DstPort		      3
-	    }
-	    Line {
-	      SrcBlock		      "Switch"
-	      SrcPort		      1
-	      Points		      [44, 0]
-	      Branch {
-		Points			[0, -15]
-		DstBlock		"Switch1"
-		DstPort			1
-	      }
-	      Branch {
-		DstBlock		"Switch1"
-		DstPort			2
-	      }
 	    }
 	    Line {
 	      SrcBlock		      "Switch1"
@@ -4586,9 +4615,36 @@ Library {
 	    Line {
 	      SrcBlock		      "Standby Loss"
 	      SrcPort		      1
-	      Points		      [0, -45]
+	      Points		      [0, -35]
 	      DstBlock		      "Switch1"
 	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Switch"
+	      SrcPort		      1
+	      DstBlock		      "MinMax"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Max. Output"
+	      SrcPort		      1
+	      Points		      [0, -45]
+	      DstBlock		      "MinMax"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "MinMax"
+	      SrcPort		      1
+	      Points		      [60, 0]
+	      Branch {
+		Points			[0, -15]
+		DstBlock		"Switch1"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Switch1"
+		DstPort			2
+	      }
 	    }
 	  }
 	}
@@ -4601,7 +4657,7 @@ Library {
 	  Denominator		  "[tau 1]"
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    64
+	    $ObjectID		    65
 	    $ClassName		    "Simulink.Mask"
 	    Type		    "Photovoltaic Array Smoothing"
 	    Description		    "Implements a low pass filter to model the smoothing effect of a utility-scale PV array."
@@ -4633,7 +4689,7 @@ Library {
 	      Type		      "Simulink.MaskParameter"
 	      Dimension		      6
 	      Object {
-		$ObjectID		65
+		$ObjectID		66
 		Type			"popup"
 		Array {
 		  Type			  "Cell"
@@ -4649,7 +4705,7 @@ Library {
 		Callback		"PVSmoothing_cb(gcb, 'dynamic_mask')"
 	      }
 	      Object {
-		$ObjectID		66
+		$ObjectID		67
 		Type			"edit"
 		Name			"tc"
 		Prompt			"Time constant (s)"
@@ -4658,7 +4714,7 @@ Library {
 		Visible			"off"
 	      }
 	      Object {
-		$ObjectID		67
+		$ObjectID		68
 		Type			"edit"
 		Name			"area"
 		Prompt			"Array area (m²)"
@@ -4667,21 +4723,21 @@ Library {
 		Visible			"off"
 	      }
 	      Object {
-		$ObjectID		68
+		$ObjectID		69
 		Type			"edit"
 		Name			"size"
 		Prompt			"Array size (W)"
 		Value			"1e6"
 	      }
 	      Object {
-		$ObjectID		69
+		$ObjectID		70
 		Type			"edit"
 		Name			"density"
 		Prompt			"Panel nominal power density (W/m²)"
 		Value			"150"
 	      }
 	      Object {
-		$ObjectID		70
+		$ObjectID		71
 		Type			"edit"
 		Name			"coverage"
 		Prompt			"Panel ground coverage ratio (fraction)"
@@ -4705,7 +4761,7 @@ Library {
 	  "t_noct, gamma, i_ref, poa_cutin, init_tcell, init_poa, output_dc, output_celltemp, output_poa"
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    71
+	    $ObjectID		    72
 	    $ClassName		    "Simulink.Mask"
 	    Type		    "PVWatts Cosimulation"
 	    Description		    "This block implements cosimulation of a photovoltaic (PV) array using the PVWatts module of the"
@@ -4762,7 +4818,7 @@ Library {
 	      Type		      "Simulink.MaskParameter"
 	      Dimension		      23
 	      Object {
-		$ObjectID		72
+		$ObjectID		73
 		Type			"edit"
 		Name			"lat"
 		Prompt			"Latitude"
@@ -4772,7 +4828,7 @@ Library {
 		TabName			"Time and Location"
 	      }
 	      Object {
-		$ObjectID		73
+		$ObjectID		74
 		Type			"edit"
 		Name			"lon"
 		Prompt			"Longitude"
@@ -4781,7 +4837,7 @@ Library {
 		TabName			"Time and Location"
 	      }
 	      Object {
-		$ObjectID		74
+		$ObjectID		75
 		Type			"edit"
 		Name			"start_time"
 		Prompt			"Initial date/time (yyyy-mm-dd HH:MM:SS)"
@@ -4791,7 +4847,7 @@ Library {
 		TabName			"Time and Location"
 	      }
 	      Object {
-		$ObjectID		75
+		$ObjectID		76
 		Type			"edit"
 		Name			"tz"
 		Prompt			"Time zone (offset from UTC)"
@@ -4800,7 +4856,7 @@ Library {
 		TabName			"Time and Location"
 	      }
 	      Object {
-		$ObjectID		76
+		$ObjectID		77
 		Type			"edit"
 		Name			"time_step"
 		Prompt			"Time step (s)"
@@ -4809,7 +4865,7 @@ Library {
 		TabName			"Time and Location"
 	      }
 	      Object {
-		$ObjectID		77
+		$ObjectID		78
 		Type			"edit"
 		Name			"system_size"
 		Prompt			"Array nameplate capacity (W)"
@@ -4818,7 +4874,7 @@ Library {
 		TabName			"Array"
 	      }
 	      Object {
-		$ObjectID		78
+		$ObjectID		79
 		Type			"edit"
 		Name			"derate"
 		Prompt			"System derate factor (0-1)"
@@ -4827,7 +4883,7 @@ Library {
 		TabName			"Array"
 	      }
 	      Object {
-		$ObjectID		79
+		$ObjectID		80
 		Type			"edit"
 		Name			"azimuth"
 		Prompt			"Azimuth angle (N = 0°, E = 90°, S = 180°, W = 270°)"
@@ -4836,7 +4892,7 @@ Library {
 		TabName			"Array"
 	      }
 	      Object {
-		$ObjectID		80
+		$ObjectID		81
 		Type			"edit"
 		Name			"tilt"
 		Prompt			"Tilt angle"
@@ -4846,7 +4902,7 @@ Library {
 		TabName			"Array"
 	      }
 	      Object {
-		$ObjectID		81
+		$ObjectID		82
 		Type			"checkbox"
 		Name			"use_lat_tilt"
 		Prompt			"Use latitude tilt"
@@ -4856,7 +4912,7 @@ Library {
 		TabName			"Array"
 	      }
 	      Object {
-		$ObjectID		82
+		$ObjectID		83
 		Type			"popup"
 		Array {
 		  Type			  "Cell"
@@ -4875,7 +4931,7 @@ Library {
 		TabName			"Array"
 	      }
 	      Object {
-		$ObjectID		83
+		$ObjectID		84
 		Type			"edit"
 		Name			"rotlim"
 		Prompt			"Tracker rotation limit (+/-)"
@@ -4885,7 +4941,7 @@ Library {
 		TabName			"Array"
 	      }
 	      Object {
-		$ObjectID		84
+		$ObjectID		85
 		Type			"checkbox"
 		Name			"use_cell_data"
 		Prompt			"Customize photovoltaic cell data"
@@ -4895,7 +4951,7 @@ Library {
 		TabName			"Cell"
 	      }
 	      Object {
-		$ObjectID		85
+		$ObjectID		86
 		Type			"edit"
 		Name			"t_ref"
 		Prompt			"Reference cell temperature (°C)"
@@ -4905,7 +4961,7 @@ Library {
 		TabName			"Cell"
 	      }
 	      Object {
-		$ObjectID		86
+		$ObjectID		87
 		Type			"edit"
 		Name			"t_noct"
 		Prompt			"Nominal operating cell temperature (°C)"
@@ -4915,7 +4971,7 @@ Library {
 		TabName			"Cell"
 	      }
 	      Object {
-		$ObjectID		87
+		$ObjectID		88
 		Type			"edit"
 		Name			"gamma"
 		Prompt			"Maximum power temperature coefficient (%/°C)"
@@ -4925,7 +4981,7 @@ Library {
 		TabName			"Cell"
 	      }
 	      Object {
-		$ObjectID		88
+		$ObjectID		89
 		Type			"edit"
 		Name			"i_ref"
 		Prompt			"Irradiance condition for cell rating (W/m²)"
@@ -4935,7 +4991,7 @@ Library {
 		TabName			"Cell"
 	      }
 	      Object {
-		$ObjectID		89
+		$ObjectID		90
 		Type			"edit"
 		Name			"poa_cutin"
 		Prompt			"Minimum irradiance for operation (W/m²)"
@@ -4945,7 +5001,7 @@ Library {
 		TabName			"Cell"
 	      }
 	      Object {
-		$ObjectID		90
+		$ObjectID		91
 		Type			"edit"
 		Name			"init_tcell"
 		Prompt			"Initial cell temperature (°C)"
@@ -4954,7 +5010,7 @@ Library {
 		TabName			"Simulation"
 	      }
 	      Object {
-		$ObjectID		91
+		$ObjectID		92
 		Type			"edit"
 		Name			"init_poa"
 		Prompt			"Initial plane of array irradiance (W/m²)"
@@ -4963,7 +5019,7 @@ Library {
 		TabName			"Simulation"
 	      }
 	      Object {
-		$ObjectID		92
+		$ObjectID		93
 		Type			"checkbox"
 		Name			"output_dc"
 		Prompt			"Output DC power (W)"
@@ -4972,7 +5028,7 @@ Library {
 		TabName			"Simulation"
 	      }
 	      Object {
-		$ObjectID		93
+		$ObjectID		94
 		Type			"checkbox"
 		Name			"output_celltemp"
 		Prompt			"Output cell temperature (°C)"
@@ -4981,7 +5037,7 @@ Library {
 		TabName			"Simulation"
 	      }
 	      Object {
-		$ObjectID		94
+		$ObjectID		95
 		Type			"checkbox"
 		Name			"output_poa"
 		Prompt			"Output plane of array irradiance (W/m²)"
@@ -5014,7 +5070,7 @@ Library {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		95
+	$ObjectID		96
 	$ClassName		"Simulink.Mask"
 	Display			"disp('Weather')"
       }
@@ -5049,7 +5105,7 @@ Library {
 	  MaskHideContents	  off
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    96
+	    $ObjectID		    97
 	    $ClassName		    "Simulink.Mask"
 	    Type		    "Weather Data From File"
 	    Description		    "Reads weather data from the specified binary file and outputs it as a Simulink bus signal.\n\nT"
@@ -5089,7 +5145,7 @@ Library {
 	      Type		      "Simulink.MaskParameter"
 	      Dimension		      2
 	      Object {
-		$ObjectID		97
+		$ObjectID		98
 		Type			"edit"
 		Name			"fname"
 		Prompt			"Weather file"
@@ -5098,7 +5154,7 @@ Library {
 		Tunable			"off"
 	      }
 	      Object {
-		$ObjectID		98
+		$ObjectID		99
 		Type			"checkbox"
 		Name			"initbus"
 		Prompt			"Create Simulink bus definition automatically"

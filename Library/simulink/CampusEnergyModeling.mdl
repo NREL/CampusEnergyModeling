@@ -20,7 +20,7 @@ Library {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [288.0, 116.0, 952.0, 734.0]
+      Location		      [58.0, 39.0, 952.0, 734.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -56,9 +56,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Jan 16 11:23:35 2014"
-  RTWModifiedTimeStamp	  311772172
-  ModelVersionFormat	  "1.%<AutoIncrement:118>"
+  LastModifiedDate	  "Wed Feb 05 11:13:21 2014"
+  RTWModifiedTimeStamp	  313499600
+  ModelVersionFormat	  "1.%<AutoIncrement:121>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -3955,7 +3955,7 @@ Library {
       }
       System {
 	Name			"PV"
-	Location		[288, 116, 1240, 850]
+	Location		[58, 39, 1010, 773]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -4758,7 +4758,7 @@ Library {
 	  UserData		  "DataTag1"
 	  FunctionName		  "pvwatts_sfun"
 	  Parameters		  "lat, lon, start_time, tz, time_step, system_size, derate, azimuth, tilt, track_mode, rotlim, t_ref, "
-	  "t_noct, gamma, i_ref, poa_cutin, init_tcell, init_poa, output_dc, output_celltemp, output_poa"
+	  "t_noct, gamma, i_ref, poa_cutin, init_tcell, init_poa, alignment, output_dc, output_celltemp, output_poa"
 	  Object {
 	    $PropName		    "MaskObject"
 	    $ObjectID		    72
@@ -4793,19 +4793,23 @@ Library {
 	    " photovoltaic cell data—<b>reference cell temperature</b>, <b>nominal operating cell temperature</b>, <b>maximum "
 	    "power temprature coefficient</b>, <b>irradiance condition</b> for cell rating, and <b>minimum irradiance</b> for "
 	    "cell operation.</li>\n  <li><i>Simulation:</i> Specify the array initial conditions (<b>cell temperature</b> and "
-	    "<b>plane of array irradiance)</b> and select the desired block outputs.</li>\n</ol>\n\nFor a detailed description"
-	    " of these parameters, see the SSC SDK documentation.\n\n<h2>Comments</h2>\n<ol>\n  <li>The block is designed to m"
-	    "odel the DC operation of a PV array only. Therefore, no inverter efficiency mask parameter or AC power output are"
-	    " provided. To model inverter losses, apply an external inverter model to the DC power output, such as the Generic"
-	    " Inverter model available in the Campus Energy Modeling Simulink library.</li>\n  <li><i>Caution:</i> Checking <b"
-	    ">Use latitude tilt</b> in the <i>Array</i> tab will discard the existing tilt angle and replace it with the absol"
-	    "ute value of the latitude.</li>\n  <li><i>Caution:</i> Unchecking <b>Customize photovoltaic cell data</b> in the "
-	    "<i>Cell</i> tab will discard any existing customizations in the PV cell data fields and replace them with default"
-	    " values.</li>\n  <li>Additional description for the SSC module input and output variables may be obtained using t"
-	    "he SSCdev application distributed with SSC SDK; see the SSC SDK documentation for usage instructions.</li>\n</ol>"
-	    "\n\n<h2>References</h2>\n<ol>\n  <li>National Renewable Energy Laboratory, \"SAM Simulation Core SDK.\" Available"
-	    ": <a href=\"https://sam.nrel.gov/content/sam-simulation-core-sdk\">https://sam.nrel.gov/content/sam-simulation-co"
-	    "re-sdk</a></li>\n</ol>"
+	    "<b>plane of array irradiance)</b>, adjust the <b>alignment</b> of the timestamp with the model time step, and sel"
+	    "ect the desired block outputs.</li>\n</ol>\n\nFor a detailed description of these parameters, see the SSC SDK doc"
+	    "umentation.\n\n<h2>Comments</h2>\n<ol>\n  <li>The block is designed to model the DC operation of a PV array only."
+	    " Therefore, no inverter efficiency mask parameter or AC power output are provided. To model inverter losses, appl"
+	    "y an external inverter model to the DC power output, such as the Generic Inverter model available in the Campus E"
+	    "nergy Modeling Simulink library.</li>\n  <li>By default, PVWatts assumes that the current time aligns with the mi"
+	    "ddle of the simulation time step. The <b>alignment</b> option in the <i>Simulation</i> tab allows the user to spe"
+	    "cify a different time alignment. In general, the time alignment for the PVWatts model should match the convention"
+	    " used for the weather data; otherwise significant errors in computed array output may result.</li>\n  <li><i>Caut"
+	    "ion:</i> Checking <b>Use latitude tilt</b> in the <i>Array</i> tab will discard the existing tilt angle and repla"
+	    "ce it with the absolute value of the latitude.</li>\n  <li><i>Caution:</i> Unchecking <b>Customize photovoltaic c"
+	    "ell data</b> in the <i>Cell</i> tab will discard any existing customizations in the PV cell data fields and repla"
+	    "ce them with default values.</li>\n  <li>Additional description for the SSC module input and output variables may"
+	    " be obtained using the SSCdev application distributed with SSC SDK; see the SSC SDK documentation for usage instr"
+	    "uctions.</li>\n</ol>\n\n<h2>References</h2>\n<ol>\n  <li>National Renewable Energy Laboratory, \"SAM Simulation C"
+	    "ore SDK.\" Available: <a href=\"https://sam.nrel.gov/content/sam-simulation-core-sdk\">https://sam.nrel.gov/conte"
+	    "nt/sam-simulation-core-sdk</a></li>\n</ol>"
 	    Initialization	    "PVWatts_cb(gcb, 'redraw_mask');"
 	    SelfModifiable	    "on"
 	    Display		    "% This mask display is automatically generated by PVWatts_cb()\nimage('pvwatts_light.png')\ndisp('P"
@@ -4816,13 +4820,13 @@ Library {
 	    "put', 3, 'POA Irradiance'); % % Point of array irradiance\n"
 	    Array {
 	      Type		      "Simulink.MaskParameter"
-	      Dimension		      23
+	      Dimension		      24
 	      Object {
 		$ObjectID		73
 		Type			"edit"
 		Name			"lat"
 		Prompt			"Latitude"
-		Value			"39.74"
+		Value			"40"
 		Tunable			"off"
 		Callback		"PVWatts_cb(gcb, 'use_lat_tilt');"
 		TabName			"Time and Location"
@@ -4832,7 +4836,7 @@ Library {
 		Type			"edit"
 		Name			"lon"
 		Prompt			"Longitude"
-		Value			"-105.18"
+		Value			"-105"
 		Tunable			"off"
 		TabName			"Time and Location"
 	      }
@@ -4851,7 +4855,7 @@ Library {
 		Type			"edit"
 		Name			"tz"
 		Prompt			"Time zone (offset from UTC)"
-		Value			"-6"
+		Value			"-7"
 		Tunable			"off"
 		TabName			"Time and Location"
 	      }
@@ -4877,7 +4881,7 @@ Library {
 		$ObjectID		79
 		Type			"edit"
 		Name			"derate"
-		Prompt			"System derate factor (0-1)"
+		Prompt			"System DC derate factor (0-1)"
 		Value			"0.95"
 		Tunable			"off"
 		TabName			"Array"
@@ -4896,7 +4900,7 @@ Library {
 		Type			"edit"
 		Name			"tilt"
 		Prompt			"Tilt angle"
-		Value			"39.74"
+		Value			"40"
 		Tunable			"off"
 		Enabled			"off"
 		TabName			"Array"
@@ -5020,6 +5024,23 @@ Library {
 	      }
 	      Object {
 		$ObjectID		93
+		Type			"popup"
+		Array {
+		  Type			  "Cell"
+		  Dimension		  3
+		  Cell			  "Beginning"
+		  Cell			  "Middle"
+		  Cell			  "End"
+		  PropName		  "TypeOptions"
+		}
+		Name			"alignment"
+		Prompt			"Alignment of date/time with time step"
+		Value			"Middle"
+		Tunable			"off"
+		TabName			"Simulation"
+	      }
+	      Object {
+		$ObjectID		94
 		Type			"checkbox"
 		Name			"output_dc"
 		Prompt			"Output DC power (W)"
@@ -5028,7 +5049,7 @@ Library {
 		TabName			"Simulation"
 	      }
 	      Object {
-		$ObjectID		94
+		$ObjectID		95
 		Type			"checkbox"
 		Name			"output_celltemp"
 		Prompt			"Output cell temperature (°C)"
@@ -5037,7 +5058,7 @@ Library {
 		TabName			"Simulation"
 	      }
 	      Object {
-		$ObjectID		95
+		$ObjectID		96
 		Type			"checkbox"
 		Name			"output_poa"
 		Prompt			"Output plane of array irradiance (W/m²)"
@@ -5070,7 +5091,7 @@ Library {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		96
+	$ObjectID		97
 	$ClassName		"Simulink.Mask"
 	Display			"disp('Weather')"
       }
@@ -5105,7 +5126,7 @@ Library {
 	  MaskHideContents	  off
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    97
+	    $ObjectID		    98
 	    $ClassName		    "Simulink.Mask"
 	    Type		    "Weather Data From File"
 	    Description		    "Reads weather data from the specified binary file and outputs it as a Simulink bus signal.\n\nT"
@@ -5145,7 +5166,7 @@ Library {
 	      Type		      "Simulink.MaskParameter"
 	      Dimension		      2
 	      Object {
-		$ObjectID		98
+		$ObjectID		99
 		Type			"edit"
 		Name			"fname"
 		Prompt			"Weather file"
@@ -5154,7 +5175,7 @@ Library {
 		Tunable			"off"
 	      }
 	      Object {
-		$ObjectID		99
+		$ObjectID		100
 		Type			"checkbox"
 		Name			"initbus"
 		Prompt			"Create Simulink bus definition automatically"
@@ -5179,7 +5200,7 @@ Library {
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
 	    ZoomFactor		    "100"
-	    SIDHighWatermark	    "46"
+	    SIDHighWatermark	    "48"
 	    Block {
 	      BlockType		      FromFile
 	      Name		      "From File"
@@ -5233,61 +5254,62 @@ MatData {
   }
   DataRecord {
     Tag			    DataTag1
-    Data		    "  %)30     .    &!(   8    (     @         %    \"     $    !     0         %  0 \"@    $    \\    9&EA"
-    ";&]G     &]U='!U=',   !S<V-V87(     <W-C9&%T80   '-I;7-T87)T  !S<V-M;V1U;&4       X   #8!@  !@    @    \"         "
-    " 4    (     0    $    !          4 !  0     0   % !  !L870                 ;&]N                 '-T87)T7W1I;64    "
+    Data		    "  %)30     .    :!(   8    (     @         %    \"     $    !     0         %  0 \"@    $    \\    9&EA"
+    ";&]G     &]U='!U=',   !S<V-V87(     <W-C9&%T80   '-I;7-T87)T  !S<V-M;V1U;&4       X    H!P  !@    @    \"         "
+    " 4    (     0    $    !          4 !  0     0   & !  !L870                 ;&]N                 '-T87)T7W1I;64    "
     "   !T>@                  =&EM95]S=&5P         '-Y<W1E;5]S:7IE      !D97)A=&4             87II;75T:            '1I;"
     "'0               !T<F%C:U]M;V1E        <F]T;&EM             '1?<F5F              !T7VYO8W0             9V%M;6$    "
-    "          &E?<F5F              !P;V%?8W5T:6X         :6YI=%]T8V5L;        &EN:71?<&]A          !O=71P=71?9&,      "
-    "   ;W5T<'5T7V-E;&QT96UP &]U='!U=%]P;V$        .    .     8    (    !@         %    \"     $    !     0         )  "
-    "  \"    !^%ZU&XWD- #@   #@    &    \"     8         !0    @    !     0    $         \"0    @   #L4;@>A4M:P X   !( "
-    "   !@    @    $          4    (     0   !,    !         !     3    ,C Q,BTP,2TP,2 P,#HP,#HP,       #@   #@    &   "
-    " \"     8         !0    @    !     0    $         \"0    @            8P X    X    !@    @    &          4    (   "
-    "  0    $    !          D    (          # @D .    .     8    (    !@         %    \"     $    !     0         )    "
-    "\"           0(] #@   #@    &    \"     8         !0    @    !     0    $         \"0    @   !F9F9F9F;N/PX    X   "
-    " !@    @    &          4    (     0    $    !          D    (          \" 9D .    .     8    (    !@         %    "
-    "\"     $    !     0         )    \"    !^%ZU&XWD- #@   #@    &    \"     8         !0    @    !     0    $        "
-    " \"0    @           #P/PX    X    !@    @    &          4    (     0    $    !          D    (          \" 1D .   "
-    " .     8    (    !@         %    \"     $    !     0         )    \"            #E #@   #@    &    \"     8       "
-    "  !0    @    !     0    $         \"0    @          (!&0 X    X    !@    @    &          4    (     0    $    !   "
-    "       D    (            X+\\.    .     8    (    !@         %    \"     $    !     0         )    \"           0("
-    "] #@   #@    &    \"     8         !0    @    !     0    $         \"0    @               X    X    !@    @    &  "
-    "        4    (     0    $    !          D    (            .4 .    .     8    (    !@         %    \"     $    !   "
-    "  0         )    \"               #@   #@    &    \"     8         !0    @    !     0    $         \"0    @       "
-    "    #P/PX    X    !@    @    &          4    (     0    $    !          D    (            \\#\\.    .     8    (  "
-    "  !@         %    \"     $    !     0         )    \"            / _#@   , !   &    \"     (         !0    @    ! "
-    "    P    $         !0 $  L    !    %@   %9A<DYA;64     3W5T<'5T4&]R=     X    P    !@    @    $          4    (   "
-    "  0    (    !         !   @!D8P  #@   #@    &    \"     8         !0    @    !     0    $         \"0    @        "
-    "   #P/PX    X    !@    @    $          4    (     0    4    !         !     %    =&-E;&P    .    .     8    (    !"
-    "@         %    \"     $    !     0         )    \"             ! #@   #     &    \"     0         !0    @    !    "
-    " P    $         $  # '!O80 .    .     8    (    !@         %    \"     $    !     0         )    \"             A "
-    "#@   $ (   &    \"     (         !0    @    !     0    $         !0 $  P    !    1 $  &QA=            &QO;@       "
-    "    '1Z             '1I;65?<W1E<    '-Y<W1E;5]S:7IE &1E<F%T90       '1R86-K7VUO9&4  &%Z:6UU=&@      '1I;'0        "
-    "  ')O=&QI;0       '1?;F]C=        '1?<F5F         &=A;6UA         &E?<F5F         '!O85]C=71I;@   '1C96QL         "
-    "'!O80           'EE87(          &UO;G1H         &1A>0           &AO=7(          &UI;G5T90       &)E86T          &1"
-    "I9F9U<V4      '1A;6(          '=S<&0          &1C                   .    .     8    (    !@         %    \"     $ "
-    "   !     0         )    \"    !^%ZU&XWD- #@   #@    &    \"     8         !0    @    !     0    $         \"0    @"
-    "   #L4;@>A4M:0 X    X    !@    @    &          4    (     0    $    !          D    (            &$ .    .     8  "
-    "  (    !@         %    \"     $    !     0         )    \"    %5555555<4_#@   #@    &    \"     8         !0    @ "
-    "   !     0    $         \"0    @    S,S,S,S/C/PX    X    !@    @    &          4    (     0    $    !          D  "
-    "  (    9F9F9F9F[C\\.    .     8    (    !@         %    \"     $    !     0         )    \"               #@   #@ "
-    "   &    \"     8         !0    @    !     0    $         \"0    @          (!F0 X    X    !@    @    &          4 "
-    "   (     0    $    !          D    (    'X7K4;C>0T .    .     8    (    !@         %    \"     $    !     0       "
-    "  )    \"           @$9 #@   #@    &    \"     8         !0    @    !     0    $         \"0    @          (!&0 X "
-    "   X    !@    @    &          4    (     0    $    !          D    (            .4 .    .     8    (    !@        "
-    " %    \"     $    !     0         )    \"            .\"_#@   #@    &    \"     8         !0    @    !     0    $ "
-    "        \"0    @          $\"/0 X    X    !@    @    &          4    (     0    $    !          D    (            "
-    "   .    .     8    (    !@         %    \"     $    !     0         )    \"               #@   #@    &    \"     8"
-    "         !0    @    !     0    $         \"0    @               X    X    !@    @    &          4    (     0    $ "
-    "   !          D    (          !PGT .    .     8    (    !@         %    \"     $    !     0         )    \"       "
-    "     !Q #@   #@    &    \"     8         !0    @    !     0    $         \"0    @            U0 X    X    !@    @ "
-    "   &          4    (     0    $    !          D    (               .    .     8    (    !@         %    \"     $  "
-    "  !     0         )    \"               #@   #@    &    \"     8         !0    @    !     0    $         \"0    @ "
-    "              X    X    !@    @    &          4    (     0    $    !          D    (               .    .     8   "
-    " (    !@         %    \"     $    !     0         )    \"    ,W,S,S,3#A #@   #@    &    \"     8         !0    @  "
-    "  !     0    $         \"0    @   \":F9F9F9D50 X    X    !@    @    &          4    (     0    $    !          D  "
-    "  (               .    ,     8    (    !@         %    \"                0         )          X    X    !@    @   "
-    " &          4    (     0    $    !          D    (         ()N)D$.    ,     8    (    !@         %    \"          "
-    "      0         )          "
+    "          &E?<F5F              !P;V%?8W5T:6X         :6YI=%]T8V5L;        &EN:71?<&]A          !A;&EG;FUE;G0      "
+    "   ;W5T<'5T7V1C         &]U='!U=%]C96QL=&5M< !O=71P=71?<&]A        #@   #@    &    \"     8         !0    @    !  "
+    "   0    $         \"0    @           !$0 X    X    !@    @    &          4    (     0    $    !          D    (   "
+    "       ! 6L .    2     8    (    !          %    \"     $    3     0         0    $P   #(P,3(M,#$M,#$@,# Z,# Z,#  "
+    "      X    X    !@    @    &          4    (     0    $    !          D    (            ', .    .     8    (    !@"
+    "         %    \"     $    !     0         )    \"           P() #@   #@    &    \"     8         !0    @    !     "
+    "0    $         \"0    @          $\"/0 X    X    !@    @    &          4    (     0    $    !          D    (    9"
+    "F9F9F9F[C\\.    .     8    (    !@         %    \"     $    !     0         )    \"           @&9 #@   #@    &    "
+    "\"     8         !0    @    !     0    $         \"0    @           !$0 X    X    !@    @    &          4    (    "
+    " 0    $    !          D    (            \\#\\.    .     8    (    !@         %    \"     $    !     0         )   "
+    " \"           @$9 #@   #@    &    \"     8         !0    @    !     0    $         \"0    @            Y0 X    X  "
+    "  !@    @    &          4    (     0    $    !          D    (          \" 1D .    .     8    (    !@         %   "
+    " \"     $    !     0         )    \"            .\"_#@   #@    &    \"     8         !0    @    !     0    $      "
+    "   \"0    @          $\"/0 X    X    !@    @    &          4    (     0    $    !          D    (               . "
+    "   .     8    (    !@         %    \"     $    !     0         )    \"            #E #@   #@    &    \"     8     "
+    "    !0    @    !     0    $         \"0    @               X    X    !@    @    &          4    (     0    $    ! "
+    "         D    (             $ .    .     8    (    !@         %    \"     $    !     0         )    \"            "
+    "/ _#@   #@    &    \"     8         !0    @    !     0    $         \"0    @           #P/PX    X    !@    @    & "
+    "         4    (     0    $    !          D    (            \\#\\.    P $   8    (     @         %    \"     $    #"
+    "     0         %  0 \"P    $    6    5F%R3F%M90    !/=71P=710;W)T    #@   #     &    \"     0         !0    @    !"
+    "     @    $         $  \" &1C   .    .     8    (    !@         %    \"     $    !     0         )    \"          "
+    "  / _#@   #@    &    \"     0         !0    @    !    !0    $         $     4   !T8V5L;     X    X    !@    @    &"
+    "          4    (     0    $    !          D    (             $ .    ,     8    (    !          %    \"     $    # "
+    "    0         0  , <&]A  X    X    !@    @    &          4    (     0    $    !          D    (            \"$ .  "
+    "  0 @   8    (     @         %    \"     $    !     0         %  0 #     $   !$ 0  ;&%T            ;&]N           "
+    " ='H             =&EM95]S=&5P    <WES=&5M7W-I>F4 9&5R871E        =')A8VM?;6]D90  87II;75T:       =&EL=           <"
+    "F]T;&EM        =%]N;V-T        =%]R968         9V%M;6$         :5]R968         <&]A7V-U=&EN    =&-E;&P         <&]"
+    "A            >65A<@          ;6]N=&@         9&%Y            :&]U<@          ;6EN=71E        8F5A;0          9&EF9"
+    "G5S90      =&%M8@          =W-P9           9&,                   X    X    !@    @    &          4    (     0    $"
+    "    !          D    (    'X7K4;C>0T .    .     8    (    !@         %    \"     $    !     0         )    \"    .Q"
+    "1N!Z%2UI #@   #@    &    \"     8         !0    @    !     0    $         \"0    @            80 X    X    !@    @"
+    "    &          4    (     0    $    !          D    (    55555555Q3\\.    .     8    (    !@         %    \"     $"
+    "    !     0         )    \"    #,S,S,S,^,_#@   #@    &    \"     8         !0    @    !     0    $         \"0    "
+    "@   !F9F9F9F;N/PX    X    !@    @    &          4    (     0    $    !          D    (               .    .     8 "
+    "   (    !@         %    \"     $    !     0         )    \"           @&9 #@   #@    &    \"     8         !0    @"
+    "    !     0    $         \"0    @    ?A>M1N-Y#0 X    X    !@    @    &          4    (     0    $    !          D "
+    "   (          \" 1D .    .     8    (    !@         %    \"     $    !     0         )    \"           @$9 #@   #@"
+    "    &    \"     8         !0    @    !     0    $         \"0    @            Y0 X    X    !@    @    &          4"
+    "    (     0    $    !          D    (            X+\\.    .     8    (    !@         %    \"     $    !     0     "
+    "    )    \"           0(] #@   #@    &    \"     8         !0    @    !     0    $         \"0    @               "
+    "X    X    !@    @    &          4    (     0    $    !          D    (               .    .     8    (    !@      "
+    "   %    \"     $    !     0         )    \"               #@   #@    &    \"     8         !0    @    !     0    $"
+    "         \"0    @          '\"?0 X    X    !@    @    &          4    (     0    $    !          D    (           "
+    " '$ .    .     8    (    !@         %    \"     $    !     0         )    \"            #5 #@   #@    &    \"     "
+    "8         !0    @    !     0    $         \"0    @               X    X    !@    @    &          4    (     0    $"
+    "    !          D    (               .    .     8    (    !@         %    \"     $    !     0         )    \"      "
+    "         #@   #@    &    \"     8         !0    @    !     0    $         \"0    @               X    X    !@    @"
+    "    &          4    (     0    $    !          D    (    S<S,S,Q,.$ .    .     8    (    !@         %    \"     $ "
+    "   !     0         )    \"    )J9F9F9F15 #@   #@    &    \"     8         !0    @    !     0    $         \"0    @"
+    "               X    P    !@    @    &          4    (               !          D         #@   #@    &    \"     8 "
+    "        !0    @    !     0    $         \"0    @         @FXF00X    P    !@    @    &          4    (             "
+    "  !          D         "
   }
 }

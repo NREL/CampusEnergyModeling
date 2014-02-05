@@ -29,7 +29,7 @@ end
 function setup(block)
     %% Parameters
     % Register the number of parameters
-    block.NumDialogPrms = 21;
+    block.NumDialogPrms = 22;
     
     % Manually trigger CheckParameters() to check the dialog parameters
     CheckParameters(block)
@@ -117,6 +117,32 @@ end
 %% Check Parameters
 % Checks the dialog parameters
 function CheckParameters(block)
+    % List of the parameters passed to the S-function:
+    %
+    % Name              Mask Position       S-Function Argument Position
+    % lat               1                   1
+    % lon               2                   2
+    % start_time        3                   3
+    % tz                4                   4
+    % time_step         5                   5
+    % system_size       6                   6
+    % derate            7                   7
+    % azimuth           8                   8
+    % tilt              9                   9
+    % track_mode        11                  10
+    % rotlim            12                  11
+    % t_ref             14                  12
+    % t_noct            15                  13
+    % gamma             16                  14
+    % i_ref             17                  15
+    % poa_cutin         18                  16
+    % init_tcell        19                  17
+    % init_poa          20                  18
+    % alignment         21                  19
+    % output_dc         22                  20
+    % output_celltemp   23                  21
+    % output_poa        24                  22
+
     % 1. 'lat' - Array latitude
     lat = block.DialogPrm(1).Data;
     assert( isnumeric(lat), ...
@@ -274,7 +300,8 @@ function ParseParameters(block)
         'lat', 'lon', 'start_time', 'tz', 'time_step', 'system_size', ...
         'derate', 'azimuth', 'tilt', 'track_mode', 'rotlim', 't_ref', ...
         't_noct', 'gamma', 'i_ref', 'poa_cutin', 'init_tcell', ...
-        'init_poa', 'output_dc', 'output_celltemp', 'output_poa' };
+        'init_poa', 'alignment', 'output_dc', 'output_celltemp', ...
+        'output_poa' };
     
     % Put dialog parameters into data structure
     d.dialog = struct();
@@ -295,6 +322,30 @@ function Start(block)
     
     % Compute simulation start time as a date number
     d.simstart = datenum(d.dialog.start_time, 'yyyy-mm-dd HH:MM:SS');
+    
+    % Compute required offset to properly position timestamp with respect
+    % to the time step: pvwattsfunc assumes the timestamp corresponds to
+    % the midpoint of the time step.
+    switch d.dialog.alignment
+        % Beginning
+        case 1
+            % Offset time from beginning to middle
+            % Example: 12:00 PM w/ 60 minute time step -> 12:30 PM
+            d.time_offset = d.dialog.time_step / 2;
+        
+        % Middle
+        case 2
+            % pvwattsfunc default; no offset required
+            d.time_offset = 0;
+        
+        % End
+        case 3
+            % Offset time from end to middle
+            % Example: 12:00 PM w/ 60 minute time step -> 11:30 AM
+            d.time_offset = -d.dialog.time_step / 2;
+    end
+    
+    % NOTE: Offset units are seconds
 
     % Convert dialog parameters to values useable by pvwattsfunc (SSC)
     d.sscvar = struct();
@@ -348,10 +399,15 @@ function Outputs(block)
     % Retrieve user data
     d = get_param(block.BlockHandle, 'UserData');
     
-    % Compute current simulation time, rounded to nearest minute
-    currentTime = d.simstart * 86400 + block.CurrentTime;   % sec
-    currentTime = round( currentTime / 60 ) * 60;           % sec
-    currentTime = currentTime / 86400;                      % days
+    % Compute current simulation time:
+    %   1. Offset to account for position of timestamp with respect to the
+    %      time step (beginning, middle, or end)
+    %   2. Rounded to nearest minute
+    %   3. Converted to MATLAB date number
+    currentTime = ...
+        d.simstart * 86400 + block.CurrentTime + d.time_offset; % sec
+    currentTime = round( currentTime / 60 ) * 60;               % sec
+    currentTime = currentTime / 86400;                          % days
     
     % Convert to required SSC format
     v = datevec(currentTime);

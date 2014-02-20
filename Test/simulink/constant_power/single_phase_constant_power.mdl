@@ -1,12 +1,12 @@
 Model {
-  Name			  "simpowersystems_constant_power"
+  Name			  "single_phase_constant_power"
   Version		  8.1
   MdlSubVersion		  0
   GraphicalInterface {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.42"
+    ComputedModelVersion    "1.47"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -62,8 +62,8 @@ Model {
       }
     }
   }
-  PhysicalModelingChecksum "3224434870"
-  PhysicalModelingParameterChecksum "1581221278"
+  PhysicalModelingChecksum "1689814172"
+  PhysicalModelingParameterChecksum "3279342299"
   PhysicalModelingProducts "Power_System_Blocks"
   Created		  "Wed Jun 05 13:15:02 2013"
   Creator		  "sfrank1"
@@ -71,9 +71,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Jul 01 17:07:06 2013"
-  RTWModifiedTimeStamp	  294599216
-  ModelVersionFormat	  "1.%<AutoIncrement:42>"
+  LastModifiedDate	  "Wed Feb 19 17:02:21 2014"
+  RTWModifiedTimeStamp	  314728473
+  ModelVersionFormat	  "1.%<AutoIncrement:47>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -110,13 +110,13 @@ Model {
     $PropName		    "DataLoggingOverride"
     $ObjectID		    6
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
-    model_		    "simpowersystems_simple_phasor"
+    model_		    "single_phase_constant_power"
     signals_		    []
     overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
       Dimension		      1
-      Cell		      "simpowersystems_simple_phasor"
+      Cell		      "single_phase_constant_power"
       PropName		      "logAsSpecifiedByModels_"
     }
     Array {
@@ -177,7 +177,7 @@ Model {
 	  $ObjectID		  8
 	  Version		  "1.13.0"
 	  StartTime		  "0.0"
-	  StopTime		  "inf"
+	  StopTime		  "60"
 	  AbsTol		  "auto"
 	  FixedStep		  "1"
 	  InitialStep		  "auto"
@@ -694,7 +694,7 @@ Model {
       }
       Name		      "Configuration"
       CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition     [ 488, 10, 1433, 920 ] 
+      ConfigPrmDlgPosition     [ 591, 76, 1552, 1024 ] 
     }
     PropName		    "ConfigurationSets"
   }
@@ -816,9 +816,19 @@ Model {
       SampleInput	      off
       SampleTime	      "-1"
     }
+    Block {
+      BlockType		      ToWorkspace
+      VariableName	      "simulink_output"
+      MaxDataPoints	      "1000"
+      Decimation	      "1"
+      SampleTime	      "0"
+      SaveFormat	      "Array"
+      FixptAsFi		      off
+      NumInputs		      "1"
+    }
   }
   System {
-    Name		    "simpowersystems_constant_power"
+    Name		    "single_phase_constant_power"
     Location		    [27, 12, 1397, 1025]
     Open		    on
     ModelBrowserVisibility  off
@@ -833,69 +843,53 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "196"
-    Block {
-      BlockType		      Reference
-      Name		      "3-Phase\nActive & Reactive Power\n(Phasor Type)"
-      SID		      "74"
-      Ports		      [2, 1]
-      Position		      [295, 314, 350, 376]
-      ZOrder		      -1
-      ShowName		      off
-      LibraryVersion	      "1.664"
-      FontName		      "Verdana"
-      FontSize		      11
-      SourceBlock	      "powerlib_extras/Phasor\nLibrary/3-Phase\nActive & Reactive Power\n(Phasor Type)"
-      SourceType	      "3-Phase Active & Reactive Power (Phasor Type)"
-      Port {
-	PortNumber		1
-	Name			"Measured PQ"
-	RTWStorageClass		"Auto"
-	DataLoggingNameMode	"SignalName"
-      }
-    }
+    SIDHighWatermark	    "208"
     Block {
       BlockType		      Constant
       Name		      "Constant"
       SID		      "6"
-      Position		      [40, 215, 70, 245]
+      Position		      [40, 300, 70, 330]
       ZOrder		      -2
       NamePlacement	      "alternate"
     }
     Block {
       BlockType		      Reference
       Name		      "Constant Power\nSource or Load"
-      SID		      "196"
-      Ports		      [1, 0, 0, 0, 0, 4]
-      Position		      [470, 442, 550, 528]
-      ZOrder		      5
-      LibraryVersion	      "1.42"
+      SID		      "202"
+      Ports		      [1, 0, 0, 0, 0, 0, 2]
+      Position		      [470, 519, 550, 586]
+      ZOrder		      340
+      BlockMirror	      on
+      LibraryVersion	      "1.124"
       SourceBlock	      "CampusEnergyModeling/Electrical/Constant Power\nSource or Load"
       SourceType	      "Constant Power Source/Load"
       Conven		      "load"
-      PNom		      "10000"
+      PNom		      "1000"
       QNom		      "0"
-      VNom		      "480"
+      VNom		      "120"
       fNom		      "60"
       VLow		      "0.7"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Current\nMeasurement"
+      SID		      "206"
+      Ports		      [0, 1, 0, 0, 0, 1, 1]
+      Position		      [215, 518, 240, 542]
+      ZOrder		      344
+      LibraryVersion	      "1.2191"
+      SourceBlock	      "powerlib/Measurements/Current Measurement"
+      SourceType	      "Current Measurement"
+      PhasorSimulation	      on
+      OutputType	      "Complex"
+      PSBequivalent	      "0"
     }
     Block {
       BlockType		      Demux
       Name		      "Demux"
       SID		      "79"
       Ports		      [1, 2]
-      Position		      [490, 211, 495, 249]
-      ZOrder		      -6
-      ShowName		      off
-      Outputs		      "2"
-      DisplayOption	      "bar"
-    }
-    Block {
-      BlockType		      Demux
-      Name		      "Demux1"
-      SID		      "80"
-      Ports		      [1, 2]
-      Position		      [490, 326, 495, 364]
+      Position		      [490, 296, 495, 334]
       ZOrder		      -6
       ShowName		      off
       Outputs		      "2"
@@ -906,8 +900,25 @@ Model {
       Name		      "Ground"
       SID		      "76"
       Ports		      [0, 0, 0, 0, 0, 1]
-      Position		      [359, 550, 381, 575]
+      Position		      [419, 635, 441, 660]
       ZOrder		      -3
+      BlockRotation	      270
+      BlockMirror	      on
+      ShowName		      off
+      LibraryVersion	      "1.2191"
+      FontName		      "Verdana"
+      FontSize		      11
+      SourceBlock	      "powerlib/Elements/Ground"
+      SourceType	      "Ground"
+      LConnTagsString	      "a"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Ground1"
+      SID		      "208"
+      Ports		      [0, 0, 0, 0, 0, 1]
+      Position		      [179, 470, 201, 495]
+      ZOrder		      346
       BlockRotation	      270
       BlockMirror	      on
       ShowName		      off
@@ -923,14 +934,14 @@ Model {
       Name		      "Ideal\nThree-Phase\nSource"
       SID		      "4"
       Ports		      [0, 0, 0, 0, 0, 0, 3]
-      Position		      [25, 433, 110, 507]
+      Position		      [25, 518, 110, 592]
       ZOrder		      -13
       LibraryVersion	      "1.2191"
       FontName		      "Verdana"
       FontSize		      11
       SourceBlock	      "powerlib/Electrical\nSources/Three-Phase Source"
       SourceType	      "Three-Phase Source"
-      Voltage		      "480"
+      Voltage		      "208"
       PhaseAngle	      "0"
       Frequency		      "60"
       InternalConnection      "Yg"
@@ -938,7 +949,7 @@ Model {
       Resistance	      "0"
       Inductance	      "0"
       ShortCircuitLevel	      "1e6"
-      BaseVoltage	      "480"
+      BaseVoltage	      "208"
       XRratio		      "1"
       BusType		      "swing"
       Pref		      "0"
@@ -951,11 +962,11 @@ Model {
       Name		      "Load Power"
       SID		      "9"
       Ports		      [2]
-      Position		      [795, 221, 825, 254]
+      Position		      [855, 366, 885, 399]
       ZOrder		      -14
       BackgroundColor	      "lightBlue"
       Floating		      off
-      Location		      [938, 328, 1367, 867]
+      Location		      [1252, 398, 1681, 937]
       Open		      off
       NumInputPorts	      "2"
       TickLabels	      "on"
@@ -976,8 +987,9 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      off
-      YMin		      "-3000~0"
-      YMax		      "3000~5.5e-13"
+      TimeRange		      "60"
+      YMin		      "400~0"
+      YMax		      "1000~250"
       DataFormat	      "StructureWithTime"
       LimitDataPoints	      off
       SampleTime	      "0"
@@ -1010,7 +1022,7 @@ Model {
       Name		      "Mux"
       SID		      "7"
       Ports		      [2, 1]
-      Position		      [320, 161, 325, 294]
+      Position		      [320, 246, 325, 379]
       ZOrder		      -15
       ShowName		      off
       Inputs		      "2"
@@ -1027,7 +1039,7 @@ Model {
       Name		      "Mux1"
       SID		      "81"
       Ports		      [2, 1]
-      Position		      [660, 211, 665, 249]
+      Position		      [660, 296, 665, 334]
       ZOrder		      -12
       ShowName		      off
       Inputs		      "2"
@@ -1044,7 +1056,7 @@ Model {
       Name		      "Mux2"
       SID		      "82"
       Ports		      [2, 1]
-      Position		      [660, 286, 665, 324]
+      Position		      [660, 371, 665, 409]
       ZOrder		      -12
       ShowName		      off
       Inputs		      "2"
@@ -1058,18 +1070,30 @@ Model {
     }
     Block {
       BlockType		      Reference
+      Name		      "Power\n(Phasor)"
+      SID		      "203"
+      Ports		      [2, 2]
+      Position		      [320, 420, 370, 460]
+      ZOrder		      341
+      LibraryVersion	      "1.31"
+      FontName		      "Arial"
+      SourceBlock	      "powerlib_meascontrol/Measurements/Power\n(Phasor)"
+      SourceType	      "Power (Phasor)"
+    }
+    Block {
+      BlockType		      Reference
       Name		      "Reactive Power"
       SID		      "73"
       Ports		      [1, 1]
-      Position		      [165, 245, 240, 275]
+      Position		      [165, 330, 240, 360]
       ZOrder		      -28
       BackgroundColor	      "yellow"
       LibraryVersion	      "1.274"
       SourceBlock	      "simulink/Math\nOperations/Slider\nGain"
       SourceType	      "Slider Gain"
-      low		      "-5000"
-      gain		      "1000"
-      high		      "5000"
+      low		      "-1000"
+      gain		      "200"
+      high		      "1000"
       Port {
 	PortNumber		1
 	Name			"Target Q"
@@ -1082,15 +1106,15 @@ Model {
       Name		      "Real Power"
       SID		      "72"
       Ports		      [1, 1]
-      Position		      [165, 180, 240, 210]
+      Position		      [165, 265, 240, 295]
       ZOrder		      -28
       BackgroundColor	      "yellow"
       LibraryVersion	      "1.274"
       SourceBlock	      "simulink/Math\nOperations/Slider\nGain"
       SourceType	      "Slider Gain"
-      low		      "-5000"
-      gain		      "5000"
-      high		      "10000"
+      low		      "-1000"
+      gain		      "500"
+      high		      "1000"
       Port {
 	PortNumber		1
 	Name			"Target P"
@@ -1123,29 +1147,88 @@ Model {
     }
     Block {
       BlockType		      Reference
-      Name		      "Three-Phase\nV-I Measurement"
-      SID		      "18"
-      Ports		      [0, 2, 0, 0, 0, 3, 3]
-      Position		      [190, 432, 240, 508]
-      ZOrder		      4
+      Name		      "Three-Phase\nNominal Load"
+      SID		      "205"
+      Ports		      [0, 0, 0, 0, 0, 3]
+      Position		      [142, 635, 198, 700]
+      ZOrder		      343
+      BlockRotation	      270
+      BlockMirror	      on
+      NamePlacement	      "alternate"
+      AttributesFormatString  "\\n"
       LibraryVersion	      "1.2191"
-      FontName		      "Verdana"
-      FontSize		      11
-      SourceBlock	      "powerlib/Measurements/Three-Phase\nV-I Measurement"
-      SourceType	      "Three-Phase VI Measurement"
-      VoltageMeasurement      "phase-to-ground"
-      SetLabelV		      off
-      LabelV		      "Vabc"
-      Vpu		      off
-      VpuLL		      off
-      CurrentMeasurement      "yes"
-      SetLabelI		      off
-      LabelI		      "Iabc"
-      Ipu		      off
-      Pbase		      "100e6"
-      Vbase		      "500e3"
-      OutputType	      "Complex"
+      SourceBlock	      "powerlib/Elements/Three-Phase\nParallel RLC Load"
+      SourceType	      "Three-Phase Parallel RLC Load"
+      LConnTagsString	      "A|B|C"
+      Configuration	      "Delta"
+      NominalVoltage	      "208"
+      NominalFrequency	      "60"
+      ActivePower	      "1"
+      InductivePower	      "0"
+      CapacitivePower	      "0"
+      Measurements	      "None"
+      LoadType		      "constant Z"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace"
+      SID		      "198"
+      Ports		      [1]
+      Position		      [835, 135, 910, 165]
+      ZOrder		      336
+      ShowName		      off
+      VariableName	      "target_P"
+      MaxDataPoints	      "1"
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace1"
+      SID		      "199"
+      Ports		      [1]
+      Position		      [835, 170, 910, 200]
+      ZOrder		      337
+      ShowName		      off
+      VariableName	      "measured_P"
+      MaxDataPoints	      "1"
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace2"
+      SID		      "200"
+      Ports		      [1]
+      Position		      [835, 210, 910, 240]
+      ZOrder		      338
+      ShowName		      off
+      VariableName	      "target_Q"
+      MaxDataPoints	      "1"
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace3"
+      SID		      "201"
+      Ports		      [1]
+      Position		      [835, 245, 910, 275]
+      ZOrder		      339
+      ShowName		      off
+      VariableName	      "measured_Q"
+      MaxDataPoints	      "1"
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Voltage\nMeasurement"
+      SID		      "207"
+      Ports		      [0, 1, 0, 0, 0, 2]
+      Position		      [215, 418, 240, 442]
+      ZOrder		      345
+      LibraryVersion	      "1.2191"
+      SourceBlock	      "powerlib/Measurements/Voltage Measurement"
+      SourceType	      "Voltage Measurement"
       PhasorSimulation	      on
+      OutputType	      "Complex"
       PSBequivalent	      "0"
     }
     Block {
@@ -1153,10 +1236,10 @@ Model {
       Name		      "powergui"
       SID		      "3"
       Ports		      []
-      Position		      [20, 20, 86, 59]
+      Position		      [40, 35, 106, 74]
       ZOrder		      -31
       Priority		      "1"
-      LibraryVersion	      "*1.2191"
+      LibraryVersion	      "1.2191"
       UserDataPersistent      on
       UserData		      "DataTag0"
       FontName		      "Verdana"
@@ -1230,16 +1313,16 @@ Model {
     }
     Line {
       Name		      "Target PQ"
+      Labels		      [1, 0]
       SrcBlock		      "Mux"
       SrcPort		      1
-      Points		      [40, 0]
+      Points		      [73, 0]
       Branch {
-	Points			[0, 225]
+	Points			[0, 169; 191, 0; 0, 71]
 	DstBlock		"Constant Power\nSource or Load"
 	DstPort			1
       }
       Branch {
-	Labels			[1, 0]
 	DstBlock		"Demux"
 	DstPort			1
       }
@@ -1253,26 +1336,11 @@ Model {
       DstPort		      2
     }
     Line {
-      LineType		      "Connection"
-      SrcBlock		      "Constant Power\nSource or Load"
-      SrcPort		      LConn4
-      Points		      [-85, 0]
-      DstBlock		      "Ground"
-      DstPort		      LConn1
-    }
-    Line {
-      Name		      "Measured PQ"
-      Labels		      [1, 1]
-      SrcBlock		      "3-Phase\nActive & Reactive Power\n(Phasor Type)"
-      SrcPort		      1
-      DstBlock		      "Demux1"
-      DstPort		      1
-    }
-    Line {
       Name		      "Compare P"
       Labels		      [0, 0]
       SrcBlock		      "Mux1"
       SrcPort		      1
+      Points		      [90, 0; 0, 60]
       DstBlock		      "Load Power"
       DstPort		      1
     }
@@ -1281,7 +1349,6 @@ Model {
       Labels		      [0, 0]
       SrcBlock		      "Mux2"
       SrcPort		      1
-      Points		      [55, 0; 0, -60]
       DstBlock		      "Load Power"
       DstPort		      2
     }
@@ -1294,19 +1361,33 @@ Model {
 	DstPort			1
       }
       Branch {
-	Points			[0, -165]
-	DstBlock		"Target P"
-	DstPort			1
+	Points			[0, -155]
+	Branch {
+	  DstBlock		  "To Workspace"
+	  DstPort		  1
+	}
+	Branch {
+	  Points		  [0, -95]
+	  DstBlock		  "Target P"
+	  DstPort		  1
+	}
       }
     }
     Line {
-      SrcBlock		      "Demux1"
+      SrcBlock		      "Power\n(Phasor)"
       SrcPort		      1
-      Points		      [65, 0; 0, -95]
+      Points		      [190, 0; 0, -105]
       Branch {
-	Points			[0, -130]
-	DstBlock		"Measured P"
-	DstPort			1
+	Points			[0, -140]
+	Branch {
+	  DstBlock		  "To Workspace1"
+	  DstPort		  1
+	}
+	Branch {
+	  Points		  [0, -75]
+	  DstBlock		  "Measured P"
+	  DstPort		  1
+	}
       }
       Branch {
 	DstBlock		"Mux1"
@@ -1322,79 +1403,112 @@ Model {
 	DstPort			1
       }
       Branch {
-	Points			[0, -240]
-	DstBlock		"Target Q"
-	DstPort			1
+	Points			[0, -155]
+	Branch {
+	  DstBlock		  "To Workspace2"
+	  DstPort		  1
+	}
+	Branch {
+	  Points		  [0, -170]
+	  DstBlock		  "Target Q"
+	  DstPort		  1
+	}
       }
     }
     Line {
-      SrcBlock		      "Demux1"
+      SrcBlock		      "Power\n(Phasor)"
       SrcPort		      2
-      Points		      [95, 0; 0, -40]
+      Points		      [220, 0; 0, -50]
       Branch {
 	DstBlock		"Mux2"
 	DstPort			2
       }
       Branch {
-	Points			[0, -205]
-	DstBlock		"Measured Q"
-	DstPort			1
+	Points			[0, -140]
+	Branch {
+	  DstBlock		  "To Workspace3"
+	  DstPort		  1
+	}
+	Branch {
+	  Points		  [0, -150]
+	  DstBlock		  "Measured Q"
+	  DstPort		  1
+	}
       }
     }
     Line {
       LineType		      "Connection"
-      SrcBlock		      "Ideal\nThree-Phase\nSource"
-      SrcPort		      RConn1
-      DstBlock		      "Three-Phase\nV-I Measurement"
-      DstPort		      LConn1
+      SrcBlock		      "Three-Phase\nNominal Load"
+      SrcPort		      LConn1
+      Points		      [0, -90]
+      Branch {
+	ConnectType		"DEST_DEST"
+	SrcBlock		"Voltage\nMeasurement"
+	SrcPort			LConn1
+	Points			[-50, 0; 0, 105]
+      }
+      Branch {
+	ConnectType		"DEST_DEST"
+	SrcBlock		"Current\nMeasurement"
+	SrcPort			LConn1
+	Points			[-50, 0]
+      }
+      Branch {
+	ConnectType		"DEST_SRC"
+	DstBlock		"Ideal\nThree-Phase\nSource"
+	DstPort			RConn1
+      }
     }
     Line {
       LineType		      "Connection"
-      SrcBlock		      "Three-Phase\nV-I Measurement"
-      SrcPort		      LConn2
-      DstBlock		      "Ideal\nThree-Phase\nSource"
+      SrcBlock		      "Ground"
+      SrcPort		      LConn1
+      Points		      [0, -50]
+      DstBlock		      "Constant Power\nSource or Load"
       DstPort		      RConn2
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Ideal\nThree-Phase\nSource"
+      SrcPort		      RConn2
+      Points		      [45, 0]
+      DstBlock		      "Three-Phase\nNominal Load"
+      DstPort		      LConn2
     }
     Line {
       LineType		      "Connection"
       SrcBlock		      "Ideal\nThree-Phase\nSource"
       SrcPort		      RConn3
-      DstBlock		      "Three-Phase\nV-I Measurement"
+      Points		      [65, 0]
+      DstBlock		      "Three-Phase\nNominal Load"
       DstPort		      LConn3
     }
     Line {
       LineType		      "Connection"
-      SrcBlock		      "Constant Power\nSource or Load"
-      SrcPort		      LConn1
-      DstBlock		      "Three-Phase\nV-I Measurement"
+      SrcBlock		      "Current\nMeasurement"
+      SrcPort		      RConn1
+      DstBlock		      "Constant Power\nSource or Load"
       DstPort		      RConn1
     }
     Line {
-      LineType		      "Connection"
-      SrcBlock		      "Constant Power\nSource or Load"
-      SrcPort		      LConn2
-      DstBlock		      "Three-Phase\nV-I Measurement"
-      DstPort		      RConn2
-    }
-    Line {
-      LineType		      "Connection"
-      SrcBlock		      "Constant Power\nSource or Load"
-      SrcPort		      LConn3
-      DstBlock		      "Three-Phase\nV-I Measurement"
-      DstPort		      RConn3
-    }
-    Line {
-      SrcBlock		      "Three-Phase\nV-I Measurement"
-      SrcPort		      2
-      Points		      [35, 0]
-      DstBlock		      "3-Phase\nActive & Reactive Power\n(Phasor Type)"
+      SrcBlock		      "Current\nMeasurement"
+      SrcPort		      1
+      Points		      [44, 0; 0, -75]
+      DstBlock		      "Power\n(Phasor)"
       DstPort		      2
     }
     Line {
-      SrcBlock		      "Three-Phase\nV-I Measurement"
+      LineType		      "Connection"
+      SrcBlock		      "Voltage\nMeasurement"
+      SrcPort		      LConn2
+      Points		      [-10, 0]
+      DstBlock		      "Ground1"
+      DstPort		      LConn1
+    }
+    Line {
+      SrcBlock		      "Voltage\nMeasurement"
       SrcPort		      1
-      Points		      [15, 0; 0, -110]
-      DstBlock		      "3-Phase\nActive & Reactive Power\n(Phasor Type)"
+      DstBlock		      "Power\n(Phasor)"
       DstPort		      1
     }
   }

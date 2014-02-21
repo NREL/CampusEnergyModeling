@@ -16,7 +16,7 @@ battCap = 1000;     % Battery capacity (Wh)
 battPower = 1000;   % Battery charge/discharge power (W)
 eff = 0.95;         % Battery charging efficiency (fraction)
 
-%% Test Electric Vehicle Battery
+%% Test Electric Vehicle Battery Model
 % Name of Simulink model
 mdl = 'ev_battery';
 
@@ -113,4 +113,13 @@ sim(mdl);
          'value of 0.'] );
      
 % Close model
+close_system(mdl, 0);
+
+%% Test Electric Vehicle Model
+% Name of Simulink model
+mdl = 'ev';
+
+% At the moment, the test is just whether the model runs successfully
+open_system(mdl);
+sim(mdl);
 close_system(mdl, 0);

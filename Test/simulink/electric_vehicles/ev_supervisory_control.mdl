@@ -1,12 +1,12 @@
 Model {
-  Name			  "ev"
+  Name			  "ev_supervisory_control"
   Version		  8.1
   MdlSubVersion		  0
   GraphicalInterface {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.15"
+    ComputedModelVersion    "1.56"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -30,7 +30,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [92.0, 70.0, 1242.0, 852.0]
+      Location		      [15.0, 163.0, 1114.0, 852.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -54,9 +54,9 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1192.0, 678.0]
+	Extents			[1064.0, 678.0]
 	ZoomFactor		[1.0]
-	Offset			[-24.0, -8.7500000000000568]
+	Offset			[-6.1500000000000341, 31.375000327825603]
       }
     }
   }
@@ -66,9 +66,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Mar 17 13:24:08 2014"
-  RTWModifiedTimeStamp	  316963416
-  ModelVersionFormat	  "1.%<AutoIncrement:15>"
+  LastModifiedDate	  "Wed Mar 26 15:26:35 2014"
+  RTWModifiedTimeStamp	  317748379
+  ModelVersionFormat	  "1.%<AutoIncrement:56>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -171,7 +171,7 @@ Model {
 	  $ObjectID		  8
 	  Version		  "1.13.0"
 	  StartTime		  "0"
-	  StopTime		  "14400"
+	  StopTime		  "10000"
 	  AbsTol		  "auto"
 	  FixedStep		  "1"
 	  InitialStep		  "auto"
@@ -675,7 +675,7 @@ Model {
       }
       Name		      "Configuration"
       CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition     [ 414, 165, 1506, 871 ] 
+      ConfigPrmDlgPosition     [ 406, 135, 1514, 879 ] 
     }
     PropName		    "ConfigurationSets"
   }
@@ -797,29 +797,6 @@ Model {
       TagVisibility	      "local"
     }
     Block {
-      BlockType		      Memory
-      X0		      "0"
-      InheritSampleTime	      off
-      LinearizeMemory	      off
-      LinearizeAsDelay	      off
-      StateMustResolveToSignalObject off
-      RTWStateStorageClass    "Auto"
-    }
-    Block {
-      BlockType		      MinMax
-      Function		      "min"
-      Inputs		      "1"
-      InputSameDT	      on
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      LockScale		      off
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	on
-      ZeroCross		      on
-      SampleTime	      "-1"
-    }
-    Block {
       BlockType		      Mux
       Inputs		      "4"
       DisplayOption	      "none"
@@ -845,26 +822,10 @@ Model {
       SampleInput	      off
       SampleTime	      "-1"
     }
-    Block {
-      BlockType		      Sum
-      IconShape		      "rectangular"
-      Inputs		      "++"
-      CollapseMode	      "All dimensions"
-      CollapseDim	      "1"
-      InputSameDT	      on
-      AccumDataTypeStr	      "Inherit: Inherit via internal rule"
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: Same as first input"
-      LockScale		      off
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	on
-      SampleTime	      "-1"
-    }
   }
   System {
-    Name		    "ev"
-    Location		    [92, 70, 1334, 922]
+    Name		    "ev_supervisory_control"
+    Location		    [15, 163, 1129, 1015]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -878,119 +839,162 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "31"
+    SIDHighWatermark	    "707"
     Block {
-      BlockType		      Scope
-      Name		      "AC Charging"
-      SID		      "27"
-      Ports		      [3]
-      Position		      [845, 132, 895, 208]
-      ZOrder		      74
-      Floating		      off
-      Location		      [1053, 139, 1377, 924]
-      Open		      on
-      NumInputPorts	      "3"
-      ZoomMode		      "xonly"
-      List {
-	ListType		AxesTitles
-	axes1			"%<SignalLabel>"
-	axes2			"%<SignalLabel>"
-	axes3			"%<SignalLabel>"
+      BlockType		      Reference
+      Name		      "AC Regulating\nController"
+      SID		      "706"
+      Ports		      [5, 2]
+      Position		      [325, 236, 405, 334]
+      ZOrder		      187
+      LibraryVersion	      "1.143"
+      SourceBlock	      "CampusEnergyModeling/Electric Vehicles/EV Charging\nSupervisory Control"
+      SourceType	      "EV Charging Supervisory Control"
+      ctype		      "AC"
+      ramp		      "2"
+      ldsettings	      on
+      sweepint		      "300"
+      sweepramp		      "0.5"
+      thr		      "1.0"
+      Port {
+	PortNumber		1
+	Name			"Limit"
+	PropagatedSignals	"Output"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
       }
-      List {
-	ListType		ScopeGraphics
-	FigureColor		"[0.501960784313725 0.501960784313725 0.501960784313725]"
-	AxesColor		"[0 0 0]"
-	AxesTickColor		"[1 1 1]"
-	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-	LineStyles		"-|-|-|-|-|-"
-	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
-	MarkerStyles		"none|none|none|none|none|none"
+      Port {
+	PortNumber		2
+	Name			"Reg. Capacity"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
       }
-      ShowLegends	      on
-      LegendLocations	      "0.49331     0.90679     0.41358     0.04586\n0.65844     0.61401     0.24691    0.025902\n"
-      "0.63374     0.30191      0.2716    0.025902"
-      TimeRange		      "15000"
-      YMin		      "0~0~-1"
-      YMax		      "2000~1~1"
-      SaveName		      "ScopeData1"
-      DataFormat	      "StructureWithTime"
-      LimitDataPoints	      off
-      SampleTime	      "0"
     }
     Block {
       BlockType		      Constant
-      Name		      "Charging\nPower"
-      SID		      "1"
-      Position		      [220, 375, 250, 405]
-      ZOrder		      1
-      Value		      "500"
+      Name		      "Available\nCharging\nPower"
+      SID		      "41"
+      Position		      [390, 120, 420, 150]
+      ZOrder		      159
+      Value		      "1000"
     }
     Block {
-      BlockType		      Constant
-      Name		      "Constant2"
-      SID		      "22"
-      Position		      [175, 195, 205, 225]
-      ZOrder		      70
-      BlockRotation	      270
+      BlockType		      Goto
+      Name		      "Charge Power"
+      SID		      "158"
+      Position		      [540, 124, 615, 146]
+      ZOrder		      172
+      BackgroundColor	      "[0.380392, 0.741176, 0.988235]"
       ShowName		      off
+      GotoTag		      "ChgPower"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Chirp"
+      SID		      "36"
+      Ports		      [0, 1]
+      Position		      [90, 45, 120, 75]
+      ZOrder		      155
+      LibraryVersion	      "1.274"
+      SourceBlock	      "simulink/Sources/Chirp Signal"
+      SourceType	      "chirp"
+      f1		      "1/2000"
+      T			      "10e3"
+      f2		      "1/200"
+      VectorParams1D	      on
     }
     Block {
       BlockType		      Scope
-      Name		      "DC Charging"
-      SID		      "6"
-      Ports		      [3]
-      Position		      [845, 367, 895, 443]
-      ZOrder		      54
+      Name		      "Compare"
+      SID		      "151"
+      Ports		      [1]
+      Position		      [870, 418, 920, 472]
+      ZOrder		      167
       Floating		      off
-      Location		      [1396, 139, 1720, 925]
+      Location		      [749, 223, 1116, 537]
       Open		      on
-      NumInputPorts	      "3"
+      NumInputPorts	      "1"
       ZoomMode		      "yonly"
       List {
 	ListType		AxesTitles
 	axes1			"%<SignalLabel>"
-	axes2			"%<SignalLabel>"
-	axes3			"%<SignalLabel>"
       }
       List {
 	ListType		ScopeGraphics
-	FigureColor		"[0.501960784313725 0.501960784313725 0.501960784313725]"
-	AxesColor		"[0 0 0]"
-	AxesTickColor		"[1 1 1]"
-	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	FigureColor		"[0.941176470588235 0.941176470588235 0.941176470588235]"
+	AxesColor		"[1 1 1]"
+	AxesTickColor		"[0 0 0]"
+	LineColors		"[1 0 0;0 0 1;0 0.498039215686275 0;1 0 0;0 1 0;0 0 1]"
 	LineStyles		"-|-|-|-|-|-"
 	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
-      LegendLocations	      "0.56121     0.90691     0.34568    0.045802\n0.65844      0.6145     0.24691    0.025869\n"
-      "0.63374     0.30153      0.2716    0.025869"
-      TimeRange		      "15000"
-      YMin		      "0~0~-1"
-      YMax		      "1000~0.9~0"
+      LegendLocations	      "0.70527     0.71709     0.21253     0.16454"
+      TimeRange		      "10000"
+      YMin		      "-100"
+      YMax		      "900"
+      SaveName		      "ScopeData2"
       DataFormat	      "StructureWithTime"
       LimitDataPoints	      off
       SampleTime	      "0"
     }
     Block {
       BlockType		      Reference
+      Name		      "DC Regulating\nController"
+      SID		      "707"
+      Ports		      [5, 2]
+      Position		      [325, 531, 405, 629]
+      ZOrder		      188
+      LibraryVersion	      "1.143"
+      SourceBlock	      "CampusEnergyModeling/Electric Vehicles/EV Charging\nSupervisory Control"
+      SourceType	      "EV Charging Supervisory Control"
+      ctype		      "DC"
+      ramp		      "2"
+      ldsettings	      off
+      sweepint		      "300"
+      sweepramp		      "2"
+      thr		      "1.0"
+      Port {
+	PortNumber		1
+	Name			"Power"
+	PropagatedSignals	"Output"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+      Port {
+	PortNumber		2
+	Name			"Reg. Capacity"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Desired\nResponse\nRange"
+      SID		      "157"
+      Position		      [390, 45, 420, 75]
+      ZOrder		      171
+      Value		      "200"
+    }
+    Block {
+      BlockType		      Reference
       Name		      "Electric Vehicle - AC Charging"
-      SID		      "12"
+      SID		      "43"
       Ports		      [2, 3]
-      Position		      [550, 129, 630, 211]
-      ZOrder		      62
-      LibraryVersion	      "1.142"
+      Position		      [575, 239, 655, 321]
+      ZOrder		      161
+      LibraryVersion	      "1.143"
       SourceBlock	      "CampusEnergyModeling/Electric Vehicles/Electric Vehicle"
       SourceType	      "Electric Vehicle"
       ctype		      "AC"
       rating		      "1000"
-      chargerEff	      "0.99"
-      profile		      on
+      chargerEff	      "0.96"
+      profile		      off
       profileSOC	      "[0.00 0.10 0.20 0.80 0.99 1.00]"
-      profileRate	      "[0.20 0.20 1.00 1.00 0.10 0.10]"
+      profileRate	      "[0.10 0.20 1.00 1.00 0.01 0.00]"
       capacity		      "1000"
-      initSOC		      "0"
+      initSOC		      "0.1"
       battEff		      "0.98"
       Port {
 	PortNumber		1
@@ -1016,9 +1020,9 @@ Model {
       Name		      "Electric Vehicle - DC Charging"
       SID		      "8"
       Ports		      [2, 3]
-      Position		      [550, 364, 630, 446]
+      Position		      [575, 534, 655, 616]
       ZOrder		      56
-      LibraryVersion	      "1.142"
+      LibraryVersion	      "1.143"
       SourceBlock	      "CampusEnergyModeling/Electric Vehicles/Electric Vehicle"
       SourceType	      "Electric Vehicle"
       ctype		      "DC"
@@ -1028,11 +1032,11 @@ Model {
       profileSOC	      "[0.00 0.10 0.20 0.80 0.99 1.00]"
       profileRate	      "[0.10 0.20 1.00 1.00 0.01 0.00]"
       capacity		      "1000"
-      initSOC		      "0"
+      initSOC		      "0.1"
       battEff		      "0.98"
       Port {
 	PortNumber		1
-	Name			"Power Limit"
+	Name			"Limit"
 	RTWStorageClass		"Auto"
 	DataLoggingNameMode	"SignalName"
       }
@@ -1052,62 +1056,143 @@ Model {
     Block {
       BlockType		      From
       Name		      "From1"
-      SID		      "29"
-      Position		      [445, 178, 505, 202]
-      ZOrder		      146
+      SID		      "283"
+      Position		      [205, 548, 290, 572]
+      ZOrder		      181
       BackgroundColor	      "lightBlue"
       ShowName		      off
-      GotoTag		      "Sched"
+      GotoTag		      "Regulation"
     }
     Block {
       BlockType		      From
       Name		      "From2"
       SID		      "31"
-      Position		      [445, 413, 505, 437]
+      Position		      [470, 583, 530, 607]
       ZOrder		      148
       BackgroundColor	      "lightBlue"
       ShowName		      off
       GotoTag		      "Sched"
     }
     Block {
-      BlockType		      Gain
-      Name		      "Gain"
-      SID		      "21"
-      Position		      [240, 132, 280, 168]
-      ZOrder		      69
-      Gain		      "1000"
-      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      SaturateOnIntegerOverflow	off
+      BlockType		      From
+      Name		      "From3"
+      SID		      "44"
+      Position		      [195, 253, 280, 277]
+      ZOrder		      166
+      BackgroundColor	      "lightBlue"
+      ShowName		      off
+      GotoTag		      "Regulation"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From4"
+      SID		      "45"
+      Position		      [470, 288, 530, 312]
+      ZOrder		      163
+      BackgroundColor	      "lightBlue"
+      ShowName		      off
+      GotoTag		      "Sched"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From5"
+      SID		      "160"
+      Position		      [90, 233, 175, 257]
+      ZOrder		      174
+      BackgroundColor	      "lightBlue"
+      ShowName		      off
+      GotoTag		      "Rng"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From6"
+      SID		      "161"
+      Position		      [90, 313, 175, 337]
+      ZOrder		      175
+      BackgroundColor	      "lightBlue"
+      ShowName		      off
+      GotoTag		      "ChgPower"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From7"
+      SID		      "162"
+      Position		      [100, 608, 185, 632]
+      ZOrder		      176
+      BackgroundColor	      "lightBlue"
+      ShowName		      off
+      GotoTag		      "ChgPower"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From8"
+      SID		      "167"
+      Position		      [610, 458, 695, 482]
+      ZOrder		      177
+      BackgroundColor	      "lightBlue"
+      ShowName		      off
+      GotoTag		      "Regulation"
       Port {
 	PortNumber		1
-	Name			"Available Power"
+	Name			"Reg"
 	RTWStorageClass		"Auto"
 	DataLoggingNameMode	"SignalName"
       }
     }
     Block {
-      BlockType		      Memory
-      Name		      "Memory"
-      SID		      "24"
-      Position		      [380, 305, 410, 335]
-      ZOrder		      72
-      BlockMirror	      on
+      BlockType		      From
+      Name		      "From9"
+      SID		      "284"
+      Position		      [100, 528, 185, 552]
+      ZOrder		      182
+      BackgroundColor	      "lightBlue"
       ShowName		      off
+      GotoTag		      "Rng"
     }
     Block {
-      BlockType		      MinMax
-      Name		      "Min"
-      SID		      "23"
-      Ports		      [2, 1]
-      Position		      [380, 367, 410, 398]
-      ZOrder		      71
-      Inputs		      "2"
-      InputSameDT	      off
+      BlockType		      Gain
+      Name		      "Gain"
+      SID		      "35"
+      Position		      [155, 45, 190, 75]
+      ZOrder		      154
+      ShowName		      off
+      Gain		      "100"
+      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Gain1"
+      SID		      "153"
+      Position		      [740, 407, 760, 433]
+      ZOrder		      169
+      NamePlacement	      "alternate"
+      ShowName		      off
+      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
       SaturateOnIntegerOverflow	off
       Port {
 	PortNumber		1
-	Name			"Power"
+	Name			"AC"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Gain2"
+      SID		      "154"
+      Position		      [740, 432, 760, 458]
+      ZOrder		      170
+      NamePlacement	      "alternate"
+      ShowName		      off
+      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+      Port {
+	PortNumber		1
+	Name			"DC"
 	RTWStorageClass		"Auto"
 	DataLoggingNameMode	"SignalName"
       }
@@ -1117,7 +1202,7 @@ Model {
       Name		      "Mux"
       SID		      "25"
       Ports		      [2, 1]
-      Position		      [795, 326, 800, 379]
+      Position		      [795, 496, 800, 549]
       ZOrder		      73
       ShowName		      off
       Inputs		      "2"
@@ -1126,12 +1211,23 @@ Model {
     Block {
       BlockType		      Mux
       Name		      "Mux1"
-      SID		      "26"
+      SID		      "48"
       Ports		      [2, 1]
-      Position		      [795, 91, 800, 144]
-      ZOrder		      75
+      Position		      [795, 166, 800, 219]
+      ZOrder		      162
       ShowName		      off
       Inputs		      "2"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux2"
+      SID		      "152"
+      Ports		      [3, 1]
+      Position		      [795, 410, 800, 480]
+      ZOrder		      168
+      ShowName		      off
+      Inputs		      "3"
       DisplayOption	      "bar"
     }
     Block {
@@ -1139,191 +1235,161 @@ Model {
       Name		      "Pulse\nGenerator"
       SID		      "28"
       Ports		      [0, 1]
-      Position		      [90, 269, 120, 301]
+      Position		      [90, 104, 120, 136]
       ZOrder		      76
       PulseType		      "Time based"
-      Period		      "9000"
-      PulseWidth	      "90"
-      PhaseDelay	      "1800"
+      Period		      "10000"
+      PulseWidth	      "80"
+      PhaseDelay	      "1000"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Range"
+      SID		      "159"
+      Position		      [540, 49, 615, 71]
+      ZOrder		      173
+      BackgroundColor	      "[0.380392, 0.741176, 0.988235]"
+      ShowName		      off
+      GotoTag		      "Rng"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Scope AC"
+      SID		      "49"
+      Ports		      [4]
+      Position		      [870, 219, 920, 316]
+      ZOrder		      160
+      Floating		      off
+      Location		      [1140, 218, 1507, 1004]
+      Open		      on
+      NumInputPorts	      "4"
+      ZoomMode		      "xonly"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+	axes2			"%<SignalLabel>"
+	axes3			"%<SignalLabel>"
+	axes4			"%<SignalLabel>"
+      }
+      List {
+	ListType		ScopeGraphics
+	FigureColor		"[0.501960784313725 0.501960784313725 0.501960784313725]"
+	AxesColor		"[0 0 0]"
+	AxesTickColor		"[1 1 1]"
+	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	LineStyles		"-|-|-|-|-|-"
+	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
+	MarkerStyles		"none|none|none|none|none|none"
+      }
+      ShowLegends	      on
+      LegendLocations	      "0.67802     0.90691     0.23978    0.045802\n0.57584     0.69211      0.3406    0.025869\n"
+      "0.69846     0.45802     0.21798    0.025869\n0.67666     0.22265     0.23978    0.025869"
+      TimeRange		      "10000"
+      YMin		      "0~0~0~-1"
+      YMax		      "1000~200~1~0"
+      SaveName		      "ScopeData1"
+      DataFormat	      "StructureWithTime"
+      LimitDataPoints	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Scope DC"
+      SID		      "6"
+      Ports		      [4]
+      Position		      [870, 514, 920, 611]
+      ZOrder		      54
+      Floating		      off
+      Location		      [1525, 219, 1892, 1005]
+      Open		      on
+      NumInputPorts	      "4"
+      ZoomMode		      "xonly"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+	axes2			"%<SignalLabel>"
+	axes3			"%<SignalLabel>"
+	axes4			"%<SignalLabel>"
+      }
+      List {
+	ListType		ScopeGraphics
+	FigureColor		"[0.501960784313725 0.501960784313725 0.501960784313725]"
+	AxesColor		"[0 0 0]"
+	AxesTickColor		"[1 1 1]"
+	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	LineStyles		"-|-|-|-|-|-"
+	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
+	MarkerStyles		"none|none|none|none|none|none"
+      }
+      ShowLegends	      on
+      LegendLocations	      "0.67802     0.90691     0.23978    0.045802\n0.57584     0.69211      0.3406    0.025869\n"
+      "0.69846     0.45802     0.21798    0.025869\n0.67666     0.22265     0.23978    0.025869"
+      TimeRange		      "10000"
+      YMin		      "0~0~0~-1"
+      YMax		      "1000~200~1~0"
+      DataFormat	      "StructureWithTime"
+      LimitDataPoints	      off
+      SampleTime	      "0"
     }
     Block {
       BlockType		      Goto
       Name		      "State of Charge"
       SID		      "30"
-      Position		      [175, 274, 235, 296]
+      Position		      [255, 109, 315, 131]
       ZOrder		      147
       BackgroundColor	      "[0.380392, 0.741176, 0.988235]"
       ShowName		      off
       GotoTag		      "Sched"
     }
     Block {
-      BlockType		      Sum
-      Name		      "Sum"
-      SID		      "20"
-      Ports		      [2, 1]
-      Position		      [180, 140, 200, 160]
-      ZOrder		      68
+      BlockType		      Goto
+      Name		      "State of Charge1"
+      SID		      "37"
+      Position		      [245, 49, 320, 71]
+      ZOrder		      156
+      BackgroundColor	      "[0.380392, 0.741176, 0.988235]"
       ShowName		      off
-      IconShape		      "round"
-      Inputs		      "|++"
-      InputSameDT	      off
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Triangle Wave"
-      SID		      "18"
-      Ports		      [0, 1]
-      Position		      [80, 131, 130, 169]
-      ZOrder		      66
-      LibraryVersion	      "1.31"
-      FontName		      "Arial"
-      SourceBlock	      "powerlib_meascontrol/Pulse & Signal\nGenerators/Triangle\nGenerator"
-      SourceType	      "Triangle Generator"
-      Freq		      "1/3600"
-      Phase		      "0"
-      Ts		      "0"
+      GotoTag		      "Regulation"
     }
     Line {
-      Name		      "Power Limit"
+      Name		      "Limit"
+      Labels		      [1, 1]
       SrcBlock		      "Electric Vehicle - DC Charging"
       SrcPort		      1
-      Points		      [97, 0; 0, -15]
+      Points		      [53, 0]
       Branch {
-	Labels			[2, 1]
-	Points			[0, -45]
-	DstBlock		"Memory"
-	DstPort			1
+	Points			[0, 119; -429, 0; 0, -69]
+	DstBlock		"DC Regulating\nController"
+	DstPort			4
       }
       Branch {
+	Points			[0, -15]
 	DstBlock		"Mux"
 	DstPort			2
       }
-    }
-    Line {
-      SrcBlock		      "Triangle Wave"
-      SrcPort		      1
-      DstBlock		      "Sum"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Constant2"
-      SrcPort		      1
-      DstBlock		      "Sum"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "Sum"
-      SrcPort		      1
-      DstBlock		      "Gain"
-      DstPort		      1
-    }
-    Line {
-      Name		      "Available Power"
-      SrcBlock		      "Gain"
-      SrcPort		      1
-      Points		      [119, 0]
-      Branch {
-	Points			[0, -34; 359, 0; 0, 14]
-	DstBlock		"Mux1"
-	DstPort			2
-      }
-      Branch {
-	Labels			[1, 1]
-	DstBlock		"Electric Vehicle - AC Charging"
-	DstPort			1
-      }
-    }
-    Line {
-      SrcBlock		      "Charging\nPower"
-      SrcPort		      1
-      DstBlock		      "Min"
-      DstPort		      2
     }
     Line {
       Name		      "Power"
-      SrcBlock		      "Min"
+      SrcBlock		      "DC Regulating\nController"
       SrcPort		      1
-      Points		      [77, 0]
-      Branch {
-	Labels			[2, 1]
-	Points			[0, -45]
-	DstBlock		"Mux"
-	DstPort			1
-      }
+      Points		      [87, 0]
       Branch {
 	DstBlock		"Electric Vehicle - DC Charging"
 	DstPort			1
       }
-    }
-    Line {
-      SrcBlock		      "Memory"
-      SrcPort		      1
-      Points		      [-36, 0; 0, 55]
-      DstBlock		      "Min"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Mux"
-      SrcPort		      1
-      Points		      [17, 0; 0, 25]
-      DstBlock		      "DC Charging"
-      DstPort		      1
-    }
-    Line {
-      Name		      "SOC"
-      Labels		      [1, 1]
-      SrcBlock		      "Electric Vehicle - DC Charging"
-      SrcPort		      2
-      DstBlock		      "DC Charging"
-      DstPort		      2
-    }
-    Line {
-      Name		      "Status"
-      Labels		      [1, 1]
-      SrcBlock		      "Electric Vehicle - DC Charging"
-      SrcPort		      3
-      DstBlock		      "DC Charging"
-      DstPort		      3
-    }
-    Line {
-      SrcBlock		      "Mux1"
-      SrcPort		      1
-      Points		      [17, 0; 0, 25]
-      DstBlock		      "AC Charging"
-      DstPort		      1
-    }
-    Line {
-      Name		      "SOC"
-      Labels		      [1, 1]
-      SrcBlock		      "Electric Vehicle - AC Charging"
-      SrcPort		      2
-      DstBlock		      "AC Charging"
-      DstPort		      2
-    }
-    Line {
-      Name		      "Status"
-      Labels		      [1, 1]
-      SrcBlock		      "Electric Vehicle - AC Charging"
-      SrcPort		      3
-      DstBlock		      "AC Charging"
-      DstPort		      3
-    }
-    Line {
-      Name		      "Power"
-      Labels		      [1, 1]
-      SrcBlock		      "Electric Vehicle - AC Charging"
-      SrcPort		      1
-      Points		      [77, 0; 0, -40]
-      DstBlock		      "Mux1"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "From1"
-      SrcPort		      1
-      DstBlock		      "Electric Vehicle - AC Charging"
-      DstPort		      2
+      Branch {
+	Labels			[2, 1]
+	Points			[0, -45; 217, 0]
+	Branch {
+	  Points		  [0, -65]
+	  DstBlock		  "Gain2"
+	  DstPort		  1
+	}
+	Branch {
+	  DstBlock		  "Mux"
+	  DstPort		  1
+	}
+      }
     }
     Line {
       SrcBlock		      "Pulse\nGenerator"
@@ -1336,6 +1402,228 @@ Model {
       SrcPort		      1
       DstBlock		      "Electric Vehicle - DC Charging"
       DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Chirp"
+      SrcPort		      1
+      DstBlock		      "Gain"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Gain"
+      SrcPort		      1
+      DstBlock		      "State of Charge1"
+      DstPort		      1
+    }
+    Line {
+      Name		      "SOC"
+      Labels		      [1, 1]
+      SrcBlock		      "Electric Vehicle - DC Charging"
+      SrcPort		      2
+      DstBlock		      "Scope DC"
+      DstPort		      3
+    }
+    Line {
+      Name		      "Status"
+      SrcBlock		      "Electric Vehicle - DC Charging"
+      SrcPort		      3
+      Points		      [67, 0]
+      Branch {
+	Points			[0, 83; -457, 0; 0, -103]
+	DstBlock		"DC Regulating\nController"
+	DstPort			3
+      }
+      Branch {
+	Labels			[1, 1]
+	DstBlock		"Scope DC"
+	DstPort			4
+      }
+    }
+    Line {
+      Name		      "Reg. Capacity"
+      Labels		      [3, 1]
+      SrcBlock		      "DC Regulating\nController"
+      SrcPort		      2
+      Points		      [27, 0; 0, 39; 398, 0; 0, -94]
+      DstBlock		      "Scope DC"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Mux"
+      SrcPort		      1
+      DstBlock		      "Scope DC"
+      DstPort		      1
+    }
+    Line {
+      Name		      "Limit"
+      SrcBlock		      "AC Regulating\nController"
+      SrcPort		      1
+      Points		      [82, 0]
+      Branch {
+	Labels			[2, 1]
+	Points			[0, -55]
+	DstBlock		"Mux1"
+	DstPort			2
+      }
+      Branch {
+	DstBlock		"Electric Vehicle - AC Charging"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "From4"
+      SrcPort		      1
+      DstBlock		      "Electric Vehicle - AC Charging"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "From3"
+      SrcPort		      1
+      DstBlock		      "AC Regulating\nController"
+      DstPort		      2
+    }
+    Line {
+      Name		      "SOC"
+      Labels		      [1, 1]
+      SrcBlock		      "Electric Vehicle - AC Charging"
+      SrcPort		      2
+      DstBlock		      "Scope AC"
+      DstPort		      3
+    }
+    Line {
+      Name		      "Status"
+      SrcBlock		      "Electric Vehicle - AC Charging"
+      SrcPort		      3
+      Points		      [67, 0]
+      Branch {
+	Points			[0, 103; -453, 0; 0, -123]
+	DstBlock		"AC Regulating\nController"
+	DstPort			3
+      }
+      Branch {
+	Labels			[1, 1]
+	DstBlock		"Scope AC"
+	DstPort			4
+      }
+    }
+    Line {
+      Name		      "Reg. Capacity"
+      Labels		      [3, 1]
+      SrcBlock		      "AC Regulating\nController"
+      SrcPort		      2
+      Points		      [27, 0; 0, 51; 414, 0; 0, -106]
+      DstBlock		      "Scope AC"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Mux1"
+      SrcPort		      1
+      Points		      [28, 0; 0, 35]
+      DstBlock		      "Scope AC"
+      DstPort		      1
+    }
+    Line {
+      Name		      "Power"
+      Labels		      [1, 1]
+      SrcBlock		      "Electric Vehicle - AC Charging"
+      SrcPort		      1
+      Points		      [54, 0]
+      Branch {
+	Points			[0, 138]
+	Branch {
+	  Points		  [0, 27]
+	  DstBlock		  "Gain1"
+	  DstPort		  1
+	}
+	Branch {
+	  Points		  [-425, 0; 0, -88]
+	  DstBlock		  "AC Regulating\nController"
+	  DstPort		  4
+	}
+      }
+      Branch {
+	Points			[0, -75]
+	DstBlock		"Mux1"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Mux2"
+      SrcPort		      1
+      DstBlock		      "Compare"
+      DstPort		      1
+    }
+    Line {
+      Name		      "AC"
+      Labels		      [1, 1]
+      SrcBlock		      "Gain1"
+      SrcPort		      1
+      DstBlock		      "Mux2"
+      DstPort		      1
+    }
+    Line {
+      Name		      "DC"
+      Labels		      [1, 1]
+      SrcBlock		      "Gain2"
+      SrcPort		      1
+      DstBlock		      "Mux2"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Available\nCharging\nPower"
+      SrcPort		      1
+      DstBlock		      "Charge Power"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Desired\nResponse\nRange"
+      SrcPort		      1
+      DstBlock		      "Range"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From5"
+      SrcPort		      1
+      DstBlock		      "AC Regulating\nController"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From6"
+      SrcPort		      1
+      DstBlock		      "AC Regulating\nController"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "From7"
+      SrcPort		      1
+      DstBlock		      "DC Regulating\nController"
+      DstPort		      5
+    }
+    Line {
+      Name		      "Reg"
+      Labels		      [1, 1]
+      SrcBlock		      "From8"
+      SrcPort		      1
+      DstBlock		      "Mux2"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "From9"
+      SrcPort		      1
+      DstBlock		      "DC Regulating\nController"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From1"
+      SrcPort		      1
+      DstBlock		      "DC Regulating\nController"
+      DstPort		      2
+    }
+    Annotation {
+      SID		      "40"
+      Name		      "Requested Regulation"
+      Position		      [285, 88]
+      ZOrder		      -1
     }
   }
 }

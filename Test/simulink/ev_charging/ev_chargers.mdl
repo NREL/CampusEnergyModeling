@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.15"
+    ComputedModelVersion    "1.14"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -66,9 +66,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Mar 17 13:24:08 2014"
-  RTWModifiedTimeStamp	  316963416
-  ModelVersionFormat	  "1.%<AutoIncrement:15>"
+  LastModifiedDate	  "Thu Feb 20 16:54:55 2014"
+  RTWModifiedTimeStamp	  314816044
+  ModelVersionFormat	  "1.%<AutoIncrement:14>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -880,45 +880,6 @@ Model {
     ReportName		    "simulink-default.rpt"
     SIDHighWatermark	    "31"
     Block {
-      BlockType		      Scope
-      Name		      "AC Charging"
-      SID		      "27"
-      Ports		      [3]
-      Position		      [845, 132, 895, 208]
-      ZOrder		      74
-      Floating		      off
-      Location		      [1053, 139, 1377, 924]
-      Open		      on
-      NumInputPorts	      "3"
-      ZoomMode		      "xonly"
-      List {
-	ListType		AxesTitles
-	axes1			"%<SignalLabel>"
-	axes2			"%<SignalLabel>"
-	axes3			"%<SignalLabel>"
-      }
-      List {
-	ListType		ScopeGraphics
-	FigureColor		"[0.501960784313725 0.501960784313725 0.501960784313725]"
-	AxesColor		"[0 0 0]"
-	AxesTickColor		"[1 1 1]"
-	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-	LineStyles		"-|-|-|-|-|-"
-	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
-	MarkerStyles		"none|none|none|none|none|none"
-      }
-      ShowLegends	      on
-      LegendLocations	      "0.49331     0.90679     0.41358     0.04586\n0.65844     0.61401     0.24691    0.025902\n"
-      "0.63374     0.30191      0.2716    0.025902"
-      TimeRange		      "15000"
-      YMin		      "0~0~-1"
-      YMax		      "2000~1~1"
-      SaveName		      "ScopeData1"
-      DataFormat	      "StructureWithTime"
-      LimitDataPoints	      off
-      SampleTime	      "0"
-    }
-    Block {
       BlockType		      Constant
       Name		      "Charging\nPower"
       SID		      "1"
@@ -936,53 +897,15 @@ Model {
       ShowName		      off
     }
     Block {
-      BlockType		      Scope
-      Name		      "DC Charging"
-      SID		      "6"
-      Ports		      [3]
-      Position		      [845, 367, 895, 443]
-      ZOrder		      54
-      Floating		      off
-      Location		      [1396, 139, 1720, 925]
-      Open		      on
-      NumInputPorts	      "3"
-      ZoomMode		      "yonly"
-      List {
-	ListType		AxesTitles
-	axes1			"%<SignalLabel>"
-	axes2			"%<SignalLabel>"
-	axes3			"%<SignalLabel>"
-      }
-      List {
-	ListType		ScopeGraphics
-	FigureColor		"[0.501960784313725 0.501960784313725 0.501960784313725]"
-	AxesColor		"[0 0 0]"
-	AxesTickColor		"[1 1 1]"
-	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-	LineStyles		"-|-|-|-|-|-"
-	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
-	MarkerStyles		"none|none|none|none|none|none"
-      }
-      ShowLegends	      on
-      LegendLocations	      "0.56121     0.90691     0.34568    0.045802\n0.65844      0.6145     0.24691    0.025869\n"
-      "0.63374     0.30153      0.2716    0.025869"
-      TimeRange		      "15000"
-      YMin		      "0~0~-1"
-      YMax		      "1000~0.9~0"
-      DataFormat	      "StructureWithTime"
-      LimitDataPoints	      off
-      SampleTime	      "0"
-    }
-    Block {
       BlockType		      Reference
       Name		      "Electric Vehicle - AC Charging"
       SID		      "12"
       Ports		      [2, 3]
       Position		      [550, 129, 630, 211]
       ZOrder		      62
-      LibraryVersion	      "1.142"
+      LibraryVersion	      "1.135"
       SourceBlock	      "CampusEnergyModeling/Electric Vehicles/Electric Vehicle"
-      SourceType	      "Electric Vehicle"
+      SourceType	      "Electric Vehicle Charging Station"
       ctype		      "AC"
       rating		      "1000"
       chargerEff	      "0.99"
@@ -1018,9 +941,9 @@ Model {
       Ports		      [2, 3]
       Position		      [550, 364, 630, 446]
       ZOrder		      56
-      LibraryVersion	      "1.142"
+      LibraryVersion	      "1.135"
       SourceBlock	      "CampusEnergyModeling/Electric Vehicles/Electric Vehicle"
-      SourceType	      "Electric Vehicle"
+      SourceType	      "Electric Vehicle Charging Station"
       ctype		      "DC"
       rating		      "6240"
       chargerEff	      "0.96"
@@ -1147,6 +1070,83 @@ Model {
       PhaseDelay	      "1800"
     }
     Block {
+      BlockType		      Scope
+      Name		      "Scope 1"
+      SID		      "27"
+      Ports		      [3]
+      Position		      [845, 132, 895, 208]
+      ZOrder		      74
+      Floating		      off
+      Location		      [1053, 139, 1377, 924]
+      Open		      on
+      NumInputPorts	      "3"
+      ZoomMode		      "xonly"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+	axes2			"%<SignalLabel>"
+	axes3			"%<SignalLabel>"
+      }
+      List {
+	ListType		ScopeGraphics
+	FigureColor		"[0.501960784313725 0.501960784313725 0.501960784313725]"
+	AxesColor		"[0 0 0]"
+	AxesTickColor		"[1 1 1]"
+	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	LineStyles		"-|-|-|-|-|-"
+	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
+	MarkerStyles		"none|none|none|none|none|none"
+      }
+      ShowLegends	      on
+      LegendLocations	      "0.49331     0.90679     0.41358     0.04586\n0.65844     0.61401     0.24691    0.025902\n"
+      "0.63374     0.30191      0.2716    0.025902"
+      TimeRange		      "15000"
+      YMin		      "0~0~-1"
+      YMax		      "2000~1~1"
+      SaveName		      "ScopeData1"
+      DataFormat	      "StructureWithTime"
+      LimitDataPoints	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Scope 2"
+      SID		      "6"
+      Ports		      [3]
+      Position		      [845, 367, 895, 443]
+      ZOrder		      54
+      Floating		      off
+      Location		      [1396, 139, 1720, 925]
+      Open		      on
+      NumInputPorts	      "3"
+      ZoomMode		      "yonly"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+	axes2			"%<SignalLabel>"
+	axes3			"%<SignalLabel>"
+      }
+      List {
+	ListType		ScopeGraphics
+	FigureColor		"[0.501960784313725 0.501960784313725 0.501960784313725]"
+	AxesColor		"[0 0 0]"
+	AxesTickColor		"[1 1 1]"
+	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	LineStyles		"-|-|-|-|-|-"
+	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
+	MarkerStyles		"none|none|none|none|none|none"
+      }
+      ShowLegends	      on
+      LegendLocations	      "0.56121     0.90691     0.34568    0.045802\n0.65844      0.6145     0.24691    0.025869\n"
+      "0.63374     0.30153      0.2716    0.025869"
+      TimeRange		      "15000"
+      YMin		      "0~0~-1"
+      YMax		      "1000~0.9~0"
+      DataFormat	      "StructureWithTime"
+      LimitDataPoints	      off
+      SampleTime	      "0"
+    }
+    Block {
       BlockType		      Goto
       Name		      "State of Charge"
       SID		      "30"
@@ -1268,7 +1268,7 @@ Model {
       SrcBlock		      "Mux"
       SrcPort		      1
       Points		      [17, 0; 0, 25]
-      DstBlock		      "DC Charging"
+      DstBlock		      "Scope 2"
       DstPort		      1
     }
     Line {
@@ -1276,7 +1276,7 @@ Model {
       Labels		      [1, 1]
       SrcBlock		      "Electric Vehicle - DC Charging"
       SrcPort		      2
-      DstBlock		      "DC Charging"
+      DstBlock		      "Scope 2"
       DstPort		      2
     }
     Line {
@@ -1284,14 +1284,14 @@ Model {
       Labels		      [1, 1]
       SrcBlock		      "Electric Vehicle - DC Charging"
       SrcPort		      3
-      DstBlock		      "DC Charging"
+      DstBlock		      "Scope 2"
       DstPort		      3
     }
     Line {
       SrcBlock		      "Mux1"
       SrcPort		      1
       Points		      [17, 0; 0, 25]
-      DstBlock		      "AC Charging"
+      DstBlock		      "Scope 1"
       DstPort		      1
     }
     Line {
@@ -1299,7 +1299,7 @@ Model {
       Labels		      [1, 1]
       SrcBlock		      "Electric Vehicle - AC Charging"
       SrcPort		      2
-      DstBlock		      "AC Charging"
+      DstBlock		      "Scope 1"
       DstPort		      2
     }
     Line {
@@ -1307,7 +1307,7 @@ Model {
       Labels		      [1, 1]
       SrcBlock		      "Electric Vehicle - AC Charging"
       SrcPort		      3
-      DstBlock		      "AC Charging"
+      DstBlock		      "Scope 1"
       DstPort		      3
     }
     Line {

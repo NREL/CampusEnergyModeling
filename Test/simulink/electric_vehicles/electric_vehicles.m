@@ -1,14 +1,16 @@
 %% electric_vehicles.m - Test the various Electric Vehicle blocks in the
 % Simulink library
 %
-% This script tests the electric vehicle battery, charge controller, and
-% charging station blocks in the Campus Energy Modeling Simulink library.
+% This script tests the electric vehicle battery, electric vehicle, and
+% EV control blocks in the Campus Energy Modeling Simulink library.
 % The tests verify that the blocks behave as expected.
 %
 % FUNCTIONS:
 %
 % SIMULINK BLOCKS:
+%   Electric Vehicle
 %   EV Battery
+%   EV Supervisory Charge Controller
 
 %% Setup
 % Parameters for EV battery test:

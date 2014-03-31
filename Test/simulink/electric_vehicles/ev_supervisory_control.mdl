@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.56"
+    ComputedModelVersion    "1.57"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -47,16 +47,28 @@ Model {
 	$ClassName		"Simulink.ExplorerBarInfo"
 	Visible			[1]
       }
-      Object {
-	$PropName		"EditorsInfo"
-	$ObjectID		5
-	$ClassName		"Simulink.EditorInfo"
-	IsActive		[1]
-	ViewObjType		"SimulinkTopLevel"
-	LoadSaveID		"0"
-	Extents			[1064.0, 678.0]
-	ZoomFactor		[1.0]
-	Offset			[-6.1500000000000341, 31.375000327825603]
+      Array {
+	Type			"Simulink.EditorInfo"
+	Dimension		2
+	Object {
+	  $ObjectID		  5
+	  IsActive		  [1]
+	  ViewObjType		  "SimulinkTopLevel"
+	  LoadSaveID		  "0"
+	  Extents		  [1064.0, 675.0]
+	  ZoomFactor		  [1.0]
+	  Offset		  [-6.1500000000000909, 31.0]
+	}
+	Object {
+	  $ObjectID		  6
+	  IsActive		  [0]
+	  ViewObjType		  "SimulinkSubsys"
+	  LoadSaveID		  "706:561"
+	  Extents		  [1064.0, 675.0]
+	  ZoomFactor		  [1.0]
+	  Offset		  [0.0, 0.0]
+	}
+	PropName		"EditorsInfo"
       }
     }
   }
@@ -66,9 +78,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Mar 26 15:26:35 2014"
-  RTWModifiedTimeStamp	  317748379
-  ModelVersionFormat	  "1.%<AutoIncrement:56>"
+  LastModifiedDate	  "Mon Mar 31 16:13:11 2014"
+  RTWModifiedTimeStamp	  318182770
+  ModelVersionFormat	  "1.%<AutoIncrement:57>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -103,7 +115,7 @@ Model {
   TryForcingSFcnDF	  off
   Object {
     $PropName		    "DataLoggingOverride"
-    $ObjectID		    6
+    $ObjectID		    7
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "ev_battery"
     overrideMode_	    [0.0]
@@ -162,13 +174,13 @@ Model {
     Type		    "Handle"
     Dimension		    1
     Simulink.ConfigSet {
-      $ObjectID		      7
+      $ObjectID		      8
       Version		      "1.13.0"
       Array {
 	Type			"Handle"
 	Dimension		8
 	Simulink.SolverCC {
-	  $ObjectID		  8
+	  $ObjectID		  9
 	  Version		  "1.13.0"
 	  StartTime		  "0"
 	  StopTime		  "10000"
@@ -203,7 +215,7 @@ Model {
 	  InsertRTBMode		  "Whenever possible"
 	}
 	Simulink.DataIOCC {
-	  $ObjectID		  9
+	  $ObjectID		  10
 	  Version		  "1.13.0"
 	  Decimation		  "1"
 	  ExternalInput		  "[t, u]"
@@ -235,7 +247,7 @@ Model {
 	  Refine		  "1"
 	}
 	Simulink.OptimizationCC {
-	  $ObjectID		  10
+	  $ObjectID		  11
 	  Version		  "1.13.0"
 	  Array {
 	    Type		    "Cell"
@@ -291,7 +303,7 @@ Model {
 	  ParallelExecutionInRapidAccelerator on
 	}
 	Simulink.DebuggingCC {
-	  $ObjectID		  11
+	  $ObjectID		  12
 	  Version		  "1.13.0"
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
@@ -381,7 +393,7 @@ Model {
 	  SFTransitionActionBeforeConditionDiag	"warning"
 	}
 	Simulink.HardwareCC {
-	  $ObjectID		  12
+	  $ObjectID		  13
 	  Version		  "1.13.0"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
@@ -422,7 +434,7 @@ Model {
 	  ProdEqTarget		  on
 	}
 	Simulink.ModelReferenceCC {
-	  $ObjectID		  13
+	  $ObjectID		  14
 	  Version		  "1.13.0"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
 	  CheckModelReferenceTargetMessage "error"
@@ -437,7 +449,7 @@ Model {
 	  SupportModelReferenceSimTargetCustomCode off
 	}
 	Simulink.SFSimCC {
-	  $ObjectID		  14
+	  $ObjectID		  15
 	  Version		  "1.13.0"
 	  SFSimEnableDebug	  on
 	  SFSimOverflowDetection  on
@@ -452,7 +464,7 @@ Model {
 	}
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
-	  $ObjectID		  15
+	  $ObjectID		  16
 	  Version		  "1.13.0"
 	  Array {
 	    Type		    "Cell"
@@ -522,7 +534,7 @@ Model {
 	    Type		    "Handle"
 	    Dimension		    2
 	    Simulink.CodeAppCC {
-	      $ObjectID		      16
+	      $ObjectID		      17
 	      Version		      "1.13.0"
 	      Array {
 		Type			"Cell"
@@ -590,7 +602,7 @@ Model {
 	    }
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
-	      $ObjectID		      17
+	      $ObjectID		      18
 	      Version		      "1.13.0"
 	      Array {
 		Type			"Cell"
@@ -681,11 +693,11 @@ Model {
   }
   Simulink.ConfigSet {
     $PropName		    "ActiveConfigurationSet"
-    $ObjectID		    7
+    $ObjectID		    8
   }
   Object {
     $PropName		    "DataTransfer"
-    $ObjectID		    18
+    $ObjectID		    19
     $ClassName		    "Simulink.GlobalDataTransfer"
     DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
     DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
@@ -847,11 +859,12 @@ Model {
       Ports		      [5, 2]
       Position		      [325, 236, 405, 334]
       ZOrder		      187
-      LibraryVersion	      "1.143"
+      LibraryVersion	      "1.153"
       SourceBlock	      "CampusEnergyModeling/Electric Vehicles/EV Charging\nSupervisory Control"
       SourceType	      "EV Charging Supervisory Control"
       ctype		      "AC"
       ramp		      "2"
+      regtype		      "Two-sided"
       ldsettings	      on
       sweepint		      "300"
       sweepramp		      "0.5"
@@ -930,7 +943,6 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
-      LegendLocations	      "0.70527     0.71709     0.21253     0.16454"
       TimeRange		      "10000"
       YMin		      "-100"
       YMax		      "900"
@@ -946,11 +958,12 @@ Model {
       Ports		      [5, 2]
       Position		      [325, 531, 405, 629]
       ZOrder		      188
-      LibraryVersion	      "1.143"
+      LibraryVersion	      "1.153"
       SourceBlock	      "CampusEnergyModeling/Electric Vehicles/EV Charging\nSupervisory Control"
       SourceType	      "EV Charging Supervisory Control"
       ctype		      "DC"
       ramp		      "2"
+      regtype		      "Two-sided"
       ldsettings	      off
       sweepint		      "300"
       sweepramp		      "2"
@@ -984,7 +997,7 @@ Model {
       Ports		      [2, 3]
       Position		      [575, 239, 655, 321]
       ZOrder		      161
-      LibraryVersion	      "1.143"
+      LibraryVersion	      "1.153"
       SourceBlock	      "CampusEnergyModeling/Electric Vehicles/Electric Vehicle"
       SourceType	      "Electric Vehicle"
       ctype		      "AC"
@@ -1022,7 +1035,7 @@ Model {
       Ports		      [2, 3]
       Position		      [575, 534, 655, 616]
       ZOrder		      56
-      LibraryVersion	      "1.143"
+      LibraryVersion	      "1.153"
       SourceBlock	      "CampusEnergyModeling/Electric Vehicles/Electric Vehicle"
       SourceType	      "Electric Vehicle"
       ctype		      "DC"
@@ -1282,8 +1295,6 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
-      LegendLocations	      "0.67802     0.90691     0.23978    0.045802\n0.57584     0.69211      0.3406    0.025869\n"
-      "0.69846     0.45802     0.21798    0.025869\n0.67666     0.22265     0.23978    0.025869"
       TimeRange		      "10000"
       YMin		      "0~0~0~-1"
       YMax		      "1000~200~1~0"
@@ -1322,8 +1333,6 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
-      LegendLocations	      "0.67802     0.90691     0.23978    0.045802\n0.57584     0.69211      0.3406    0.025869\n"
-      "0.69846     0.45802     0.21798    0.025869\n0.67666     0.22265     0.23978    0.025869"
       TimeRange		      "10000"
       YMin		      "0~0~0~-1"
       YMax		      "1000~200~1~0"

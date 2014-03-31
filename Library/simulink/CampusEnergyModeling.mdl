@@ -19,7 +19,7 @@ Library {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [755.0, 82.0, 1125.0, 827.0]
+      Location		      [28.0, 18.0, 1125.0, 827.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -43,9 +43,9 @@ Library {
 	IsActive		[1]
 	ViewObjType		"SimulinkSubsys"
 	LoadSaveID		"241"
-	Extents			[1075.0, 658.0]
+	Extents			[1075.0, 661.0]
 	ZoomFactor		[1.0]
-	Offset			[-4.3749981820583344, -4.6374994516373249]
+	Offset			[-16.124998182058448, -28.137499451637211]
       }
     }
   }
@@ -55,9 +55,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Mar 28 15:02:44 2014"
-  RTWModifiedTimeStamp	  317919712
-  ModelVersionFormat	  "1.%<AutoIncrement:145>"
+  LastModifiedDate	  "Mon Mar 31 15:17:35 2014"
+  RTWModifiedTimeStamp	  318179853
+  ModelVersionFormat	  "1.%<AutoIncrement:149>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1172,7 +1172,7 @@ Library {
   }
   System {
     Name		    "CampusEnergyModeling"
-    Location		    [100, 143, 1225, 970]
+    Location		    [28, 18, 1153, 845]
     Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1501,7 +1501,7 @@ Library {
       }
       System {
 	Name			"Electric Vehicles"
-	Location		[755, 82, 1880, 909]
+	Location		[28, 18, 1153, 845]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1532,6 +1532,44 @@ Library {
 	    $PropName		    "MaskObject"
 	    $ObjectID		    33
 	    $ClassName		    "Simulink.Mask"
+	    Type		    "AC Charging Station"
+	    Description		    "Models an AC electric vehicle charging station."
+	    Help		    "Models an AC charging station for an electric vehicle.\n\n<h2>Description</h2>\nThis block models a si"
+	    "ngle-phase AC charging station for an electric vehicle (EV) and is designed to interface with the <i>Electric Veh"
+	    "icle</i> and <i>EV Charging Supervisory Control</i> blocks. The block provides a charge rate limit signal to the "
+	    "EV block; the EV block returns the actual power consumption of its internal charge controller. The charging stati"
+	    "on then applies this power as an electrical load to a SimPowerSystems network via the <b>L1</b> and <b>L2</b> phy"
+	    "sical connections.\n\nAn external controller (such as the <i>EV Charging Supervisory Control</i> block) can apply"
+	    " an external power limit to the charging station via the <b>ExtLim</b> input. This facilitates EV modeling for de"
+	    "mand management strategies.\n\n<h2>Requirements</h2>\nRequires SimPowerSystems.\n\n<h2>Input</h2>\n<dl>\n  <dt><b"
+	    ">ExtLim</b></dt>\n    <dd>External power limit (W)</dd>\n  <dt><b>Status</b></dt>\n    <dd>EV status:\n      <ul>"
+	    "\n        <li>&minus;1 for not present,</li>\n        <li>0 for present and accepting charge,</li>\n        <li>1"
+	    " for present but battery full.</li>\n      </ul>\n    Compatible with <b>Status</b> output of <i>Electric Vehicle"
+	    "</i> block.</dd>\n  <dt><b>Pwr</b></dt>\n    <dd>Power consumption of connected EV (W)</dd>\n</dl>\n\n<h2>Output<"
+	    "/h2>\n<dl>\n  <dt><b>ChgLim</b></dt>\n    <dd>Maximum charging power limit (W)</dd>\n</dl>\n\n<h2>Physical Ports<"
+	    "/h2>\nThe block has a single-phase, two-wire physical representation in SimPowerSystems. The physical ports are:\n"
+	    "<dl>\n  <dt><b>L1</b></dt><dd>Line 1 electrical connection (supply)</dd>\n  <dt><b>L2</b></dt><dd>Line 2 electric"
+	    "al connection (return)</dd>\n</dl>\nIf connecting phase-to-phase, connect <b>L1</b> as the supply and <b>L2</b> a"
+	    "s the return. If connecting phase-to-ground, connect <b>L1</b> as the hot and <b>L2</b> as the neutral.\n\n<h2>Pa"
+	    "rameters</h2>\n<dl>\n  <dt><b>Rated power</b></dt>\n    <dd>Maximum power rating of the charging station at rated"
+	    " voltage (W)</dd>\n  <dt><b>Rated AC voltage</b></dt>\n    <dd>RMS line voltage corresponding to the charging sta"
+	    "tion power rating (V)</dd>\n  <dt><b>Standby power consumption</b></dt>\n    <dd>Power consumption of the chargin"
+	    "g station while in standby mode (W)</dd>\n  <dt><b>Efficiency</b></dt>\n    <dd>Fixed efficiency of charging stat"
+	    "ion (fraction)</dd>\n  <dt><b>Power factor</b></dt>\n    <dd>Rated power factor of charging station (fraction)</d"
+	    "d>\n  <dt><b>System frequency</b></dt>\n    <dd>The system AC frequency (Hz)</dd>\n</dl>\n\n<h2>Comments</h2>\n<o"
+	    "l>\n  <li>Internally, this block uses maximum current, rather than maximum power, as the limiting quantity. This "
+	    "means that the actual maximum power available to the EV charge controller varies with the line voltage. The maxim"
+	    "um current is internally computed from rated power and voltage. This behavior is consistent with commercial AC ch"
+	    "arging stations (which communicate current limits rather than power limits). For modeling convenience, however, t"
+	    "he blocks exchange power data rather than current and voltage data.</li>\n  <li>If an EV is connected and accepti"
+	    "ng charge (<b>Status</b> = 0), then the <b>Pwr</b> input (modified by the charging station efficiency) is applied"
+	    " to the grid as a load. Otherwise, <b>Pwr</b> is ignored and the charging station standby power consumption is ap"
+	    "plied as a load.</li>\n  <li>At present, the model uses a fixed efficiency ratio to model charging station losses"
+	    ". This is a known oversimplification and may change in the future.</li>\n  <li>The power factor is assumed laggin"
+	    "g, and impacts from harmonic current distortion are neglected. (Although harmonic distortion is typically the lea"
+	    "d contributor to lowered power factor in power electronics loads like EV charging stations, the Campus Energy Mod"
+	    "eling library is not presently equipped to model harmonic currents. Therefore, a lagging fundamental frequency cu"
+	    "rrent is used to approximate the impact.)</li>\n</ol>"
 	    Array {
 	      Type		      "Simulink.MaskParameter"
 	      Dimension		      6
@@ -1584,7 +1622,7 @@ Library {
 	  }
 	  System {
 	    Name		    "AC Charging Station"
-	    Location		    [755, 82, 1880, 909]
+	    Location		    [28, 18, 1153, 845]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -1646,7 +1684,7 @@ Library {
 	      Ports		      [1, 0, 0, 0, 0, 0, 2]
 	      Position		      [455, 254, 535, 336]
 	      ZOrder		      858
-	      LibraryVersion	      "1.144"
+	      LibraryVersion	      "1.147"
 	      SourceBlock	      "CampusEnergyModeling/Electrical/Constant Power\nSource or Load"
 	      SourceType	      "Constant Power Source/Load"
 	      Conven		      "load"
@@ -1690,7 +1728,7 @@ Library {
 	      SID		      "600"
 	      Position		      [505, 102, 535, 128]
 	      ZOrder		      869
-	      Value		      "(prated/pf)/vrated"
+	      Value		      "(prated/pf/eff)/vrated"
 	    }
 	    Block {
 	      BlockType		      MinMax
@@ -1719,7 +1757,7 @@ Library {
 	      Ports		      [2, 1]
 	      Position		      [330, 253, 405, 337]
 	      ZOrder		      865
-	      LibraryVersion	      "1.144"
+	      LibraryVersion	      "1.147"
 	      SourceBlock	      "CampusEnergyModeling/Electrical/Power Factor\nConversion"
 	      SourceType	      "Power Factor Conversion"
 	      pfType		      "Lagging"
@@ -1986,6 +2024,45 @@ Library {
 	    $PropName		    "MaskObject"
 	    $ObjectID		    40
 	    $ClassName		    "Simulink.Mask"
+	    Type		    "DC Charging Station"
+	    Description		    "Models a DC electric vehicle charging station."
+	    Help		    "Models a DC charging station for an electric vehicle.\n\n<h2>Description</h2>\nThis block models a sin"
+	    "gle-phase, DC output charging station for an electric vehicle (EV) and is designed to interface with the <i>Elect"
+	    "ric Vehicle</i> and <i>EV Charging Supervisory Control</i> blocks. Unlike an AC charging station, a DC charging s"
+	    "tation has a direct link to the vehicle battery and can exert direct control over battery charging power. The blo"
+	    "ck provides a charging power to the battery subject to a rate limit signal supplied by the EV, an internal charge"
+	    " controller limit, and any external limit supplied by a supervisory controller (such as the <i>EV Charging Superv"
+	    "isory Control</i> block).\n\nNote that although this is a DC charging station, it connects to an AC electrical ne"
+	    "twork. The required AC-DC conversion is assumed to occur within the charging station, but is not modeled directly"
+	    ".\n\n<h2>Requirements</h2>\nRequires SimPowerSystems.\n\n<h2>Input</h2>\n<dl>\n  <dt><b>ExtLim</b></dt>\n    <dd>"
+	    "External power limit (W)</dd>\n  <dt><b>Status</b></dt>\n    <dd>EV status:\n      <ul>\n        <li>&minus;1 for"
+	    " not present,</li>\n        <li>0 for present and accepting charge,</li>\n        <li>1 for present but battery f"
+	    "ull.</li>\n      </ul>\n    Compatible with <b>Status</b> output of <i>Electric Vehicle</i> block.</dd>\n  <dt><b"
+	    ">BattLim</b></dt>\n    <dd>EV battery charging limit (W)</dd>\n</dl>\n\n<h2>Output</h2>\n<dl>\n  <dt><b>Pwr</b></"
+	    "dt>\n    <dd>Battery charging power (W)</dd>\n  <dt><b>ChgLim</b></dt>\n    <dd>Charging station power limit (W)<"
+	    "/dd>\n</dl>\n\n<h2>Physical Ports</h2>\nThe block has a single-phase, two-wire physical representation in SimPowe"
+	    "rSystems. The physical ports are:\n<dl>\n  <dt><b>L1</b></dt><dd>Line 1 electrical connection (supply)</dd>\n  <d"
+	    "t><b>L2</b></dt><dd>Line 2 electrical connection (return)</dd>\n</dl>\nIf connecting phase-to-phase, connect <b>L"
+	    "1</b> as the supply and <b>L2</b> as the return. If connecting phase-to-ground, connect <b>L1</b> as the hot and "
+	    "<b>L2</b> as the neutral.\n\n<h2>Parameters</h2>\n<dl>\n  <dt><b>Rated power</b></dt>\n    <dd>Maximum power rati"
+	    "ng of the charging station at rated voltage (W)</dd>\n  <dt><b>Rated AC voltage</b></dt>\n    <dd>RMS line voltag"
+	    "e corresponding to the charging station power rating (V)</dd>\n  <dt><b>Standby power consumption</b></dt>\n    <"
+	    "dd>Power consumption of the charging station while in standby mode (W)</dd>\n  <dt><b>Efficiency</b></dt>\n    <d"
+	    "d>Fixed efficiency of charging station, including AC-DC conversion effects (fraction)</dd>\n  <dt><b>Power factor"
+	    "</b></dt>\n    <dd>Rated power factor of charging station (fraction)</dd>\n  <dt><b>System frequency</b></dt>\n  "
+	    "  <dd>The system AC frequency (Hz)</dd>\n</dl>\n\n<h2>Comments</h2>\n<ol>\n  <li>If an EV is connected and accept"
+	    "ing charge (<b>Status</b> = 0), then the charging station charges the battery at the minimum of the three limits:"
+	    " battery, charger, and external. The charging power is passed to the <i>Electric Vehicle</i> block via the <b>Pwr"
+	    "</b> output. This power (modified by the charging station efficiency) is also applied to the grid as a load. If t"
+	    "he EV is disconnected or the EV battery is full then, <b>Pwr</b> is zero and the charging station standby power c"
+	    "onsumption is applied as a load.</li>\n  <li>The <b>ChgLim</b> output supplies the power limit of the charging st"
+	    "ation itself as an output signal, which may be useful for decision making in supervisory controllers.</li>\n  <li"
+	    ">At present, the model uses a fixed efficiency ratio to model charging station losses. This is a known oversimpli"
+	    "fication and may change in the future.</li>\n  <li>The power factor is assumed lagging, and impacts from harmonic"
+	    " current distortion are neglected. (Although harmonic distortion is typically the lead contributor to lowered pow"
+	    "er factor in power electronics loads like EV charging stations, the Campus Energy Modeling library is not present"
+	    "ly equipped to model harmonic currents. Therefore, a lagging fundamental frequency current is used to approximate"
+	    " the impact.)</li>\n</ol>"
 	    Array {
 	      Type		      "Simulink.MaskParameter"
 	      Dimension		      6
@@ -2038,7 +2115,7 @@ Library {
 	  }
 	  System {
 	    Name		    "DC Charging Station"
-	    Location		    [755, 82, 1880, 909]
+	    Location		    [28, 18, 1153, 845]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -2099,7 +2176,7 @@ Library {
 	      Ports		      [1, 0, 0, 0, 0, 0, 2]
 	      Position		      [780, 254, 860, 336]
 	      ZOrder		      858
-	      LibraryVersion	      "1.144"
+	      LibraryVersion	      "1.147"
 	      SourceBlock	      "CampusEnergyModeling/Electrical/Constant Power\nSource or Load"
 	      SourceType	      "Constant Power Source/Load"
 	      Conven		      "load"
@@ -2151,7 +2228,7 @@ Library {
 	      Ports		      [2, 1]
 	      Position		      [655, 253, 730, 337]
 	      ZOrder		      865
-	      LibraryVersion	      "1.144"
+	      LibraryVersion	      "1.147"
 	      SourceBlock	      "CampusEnergyModeling/Electrical/Power Factor\nConversion"
 	      SourceType	      "Power Factor Conversion"
 	      pfType		      "Lagging"
@@ -2380,10 +2457,10 @@ Library {
 	    "ed initial value whenever the EV reconnects to the charging station (whenever the <b>Schedule</b> input transitio"
 	    "ns from 0 to 1).\n\n<h2>Input</h2>\n<dl>\n  <dt><b>Power</b></dt>\n    <dd>Battery charging power (W)</dd>\n  <dt"
 	    "><b>Schedule</b></dt>\n    <dd>EV schedule:\n        <ul>\n          <li>1 (or any other positive number) if the "
-	    "EV is connected to the charging station,</li>\n          <li>0 otherwise.</li>\n        </ul>\n    </dd>\n    </d"
-	    "l>\n</dl>\n\n<h2>Output</h2>\n<dl>\n  <dt><b>SOC</b></dt>\n    <dd>EV battery current state of charge (fraction)<"
-	    "/dd>\n  <dt><b>Status</b></dt><dd>EV status:\n    <ul>\n      <li>&minus;1 for not present,</li>\n      <li>0 for"
-	    " present and accepting charge,</li>\n      <li>1 for present but battery full.</li>\n    </ul>\n</dl>\n\n<h2>Para"
+	    "EV is connected to the charging station,</li>\n          <li>0 otherwise.</li>\n        </ul>\n    </dd>\n</dl>\n"
+	    "\n<h2>Output</h2>\n<dl>\n  <dt><b>SOC</b></dt>\n    <dd>EV battery current state of charge (fraction)</dd>\n  <dt"
+	    "><b>Status</b></dt><dd>EV status:\n    <ul>\n      <li>&minus;1 for not present,</li>\n      <li>0 for present an"
+	    "d accepting charge,</li>\n      <li>1 for present but battery full.</li>\n    </ul>\n    </dd>\n</dl>\n\n<h2>Para"
 	    "meters</h2>\n<dl>\n  <dt><b>Battery capacity</b></dt>\n    <dd>EV battery storage capacity (Wh)</dd>\n  <dt><b>In"
 	    "itial state of charge</b></dt>\n    <dd>Initial battery SOC when the battery first reconnects to the charging sta"
 	    "tion (fraction)</dd>\n  <dt><b>Charging efficiency</b></dt>\n    <dd>Battery charging fixed efficiency (fraction)"
@@ -2773,8 +2850,7 @@ Library {
 	    $ObjectID		    51
 	    $ClassName		    "Simulink.Mask"
 	    Type		    "EV Charging Supervisory Control"
-	    Description		    "TODO"
-	    Help		    "TODO"
+	    Description		    "Models a supervisory controller for demand management of EV charging."
 	    Initialization	    "EVChargingSupervisoryControl_cb(gcb, 'init', ctype, ramp, ldsettings, sweepint, sweepramp, th"
 	    "r);"
 	    SelfModifiable	    "on"
@@ -2844,7 +2920,7 @@ Library {
 	  }
 	  System {
 	    Name		    "EV Charging\nSupervisory Control"
-	    Location		    [15, 163, 1129, 1015]
+	    Location		    [28, 18, 1153, 845]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -2973,7 +3049,7 @@ Library {
 	      MaskHideContents	      off
 	      System {
 		Name			"Limit Detection"
-		Location		[15, 163, 1129, 1015]
+		Location		[28, 18, 1153, 845]
 		Open			off
 		ModelBrowserVisibility	off
 		ModelBrowserWidth	200
@@ -3866,7 +3942,7 @@ Library {
 	      MaskHideContents	      off
 	      System {
 		Name			"Regulator"
-		Location		[15, 163, 1129, 1015]
+		Location		[28, 18, 1153, 845]
 		Open			off
 		ModelBrowserVisibility	off
 		ModelBrowserWidth	200
@@ -4565,39 +4641,39 @@ Library {
 	    "epend on whether the block is configured for AC or DC charging; see Parameters.\n\n<h3>AC Charging</h3>\n<dl>\n  "
 	    "<dt><b>Limit</b></dt>\n    <dd>Maximum charging power limit (W)</dd>\n  <dt><b>Schedule</b></dt>\n    <dd>EV sche"
 	    "dule:\n        <ul>\n          <li>1 (or any other positive number) if the EV is connected to the charging statio"
-	    "n,</li>\n          <li>0 otherwise.</li>\n        </ul>\n    </dd>\n    </dl>\n</dl>\n\n<h3>DC Charging</h3>\n<dl"
-	    ">\n  <dt><b>Power</b></dt>\n    <dd>Battery charging power (W)</dd>\n  <dt><b>Schedule</b></dt>\n    <dd>EV sched"
-	    "ule:\n        <ul>\n          <li>1 (or any other positive number) if the EV is connected to the charging station"
-	    ",</li>\n          <li>0 otherwise.</li>\n        </ul>\n    </dd>\n    </dl>\n</dl>\n\n<h2>Output</h2>\nThe block"
-	    " outputs depend on whether the block is configured for AC or DC charging; see Parameters.\n\n<h3>AC Charging</h3>"
-	    "\n<dl>\n  <dt><b>Power</b></dt>\n    <dd>Power consumption from charging station (W)</dd>\n  <dt><b>SOC</b></dt>\n"
-	    "    <dd>EV battery current state of charge (fraction)</dd>\n  <dt><b>Status</b></dt><dd>EV status:\n    <ul>\n   "
-	    "   <li>&minus;1 for not present,</li>\n      <li>0 for present and accepting charge,</li>\n      <li>1 for presen"
-	    "t but battery full.</li>\n    </ul>\n</dl>\n\n<h3>DC Charging</h3>\n<dl>\n  <dt><b>Limit</b></dt>\n    <dd>Maximu"
-	    "m charging power limit (W)</dd>\n  <dt><b>SOC</b></dt>\n    <dd>EV battery current state of charge (fraction)</dd"
-	    ">\n  <dt><b>Status</b></dt><dd>EV status:\n    <ul>\n      <li>&minus;1 for not present,</li>\n      <li>0 for pr"
-	    "esent and accepting charge,</li>\n      <li>1 for present but battery full.</li>\n    </ul>\n</dl>\n\n<h2>Paramet"
-	    "ers</h2>\nThe <i>Charge Controller</i> tab specifies the charging configuration (AC or DC) and charge control par"
-	    "ameters. The <i>Battery</i> tab specifies the battery characteristics (identical to those of the <i>EV Battery</i"
-	    "> block).\n\n<h3>Charge Controller</h3>\n<dl>\n  <dt><b>Type of charging station</b></dt>\n    <dd>Select either "
-	    "AC or DC charging</dd>\n  <dt><b>Internal charge controller power rating</b></dt>\n    <dd>The maximum power rati"
-	    "ng (W) of the EV's internal charge controller (AC charging only)</dd>\n  <dt><b>Internal charge controller effici"
-	    "ency</b></dt>\n    <dd>The energy conversion efficiency (fraction) of the EV's internal charge controller (AC cha"
-	    "rging only).</dd>\n  <dt><b>Customize charging profile</b></dt>\n    <dd>Enable this checkbox to customize the ch"
-	    "arging profile (SOC vs. maximum charge rate)</dd>\n  <dt><b>Profile Breakpoints: State of charge</b></dt>\n    <d"
-	    "d>A vector of SOC breakpoints for the charging profile lookup table</dd>\n  <dt><b>Profile Breakpoints: Maximum c"
-	    "harge rate</b></dt>\n    <dd>A vector of maximum charge rate breakpoints (specified as a C-rate, that is, as a fr"
-	    "action of the battery capacity per hour) for the charging profile lookup table. Vector length must match that of "
-	    "the SOC breakpoint vector.</dd>\n</dl>\n\n<h3>Battery</h3>\n<dl>\n  <dt><b>Battery capacity</b></dt>\n    <dd>EV "
-	    "battery storage capacity (Wh)</dd>\n  <dt><b>Initial state of charge</b></dt>\n    <dd>Initial battery SOC when t"
-	    "he battery first reconnects to the charging station (fraction)</dd>\n  <dt><b>Charging efficiency</b></dt>\n    <"
-	    "dd>Battery charging fixed efficiency (fraction)</dd>\n</dl>\n\n<h2>Comments</h2>\n<ol>\n  <li>For AC charging, th"
-	    "e block calculates energy losses based on the specified internal charge controller efficiency (using a fixed effi"
-	    "ciency model). This loss is in addition to the loss associated with the charging efficiency of the battery itself"
-	    ". For DC charging, no efficiency penalty is assessed as DC conversion losses occur external to the EV.</li>\n  <l"
-	    "i>To customize the charging profile, specify two vectors: a vector of SOC breakpoints and a vector of maximum cha"
-	    "rge rate breakpoints. Together, these vectors define a lookup table for the maximum battery charge rate as a func"
-	    "tion of SOC. The block interpolates the allowed charge rate in between the breakpoints.</li>\n</ol>"
+	    "n,</li>\n          <li>0 otherwise.</li>\n        </ul>\n    </dd>\n</dl>\n\n<h3>DC Charging</h3>\n<dl>\n  <dt><b"
+	    ">Power</b></dt>\n    <dd>Battery charging power (W)</dd>\n  <dt><b>Schedule</b></dt>\n    <dd>EV schedule:\n     "
+	    "   <ul>\n          <li>1 (or any other positive number) if the EV is connected to the charging station,</li>\n   "
+	    "       <li>0 otherwise.</li>\n        </ul>\n    </dd>\n</dl>\n\n<h2>Output</h2>\nThe block outputs depend on whe"
+	    "ther the block is configured for AC or DC charging; see Parameters.\n\n<h3>AC Charging</h3>\n<dl>\n  <dt><b>Power"
+	    "</b></dt>\n    <dd>Power consumption from charging station (W)</dd>\n  <dt><b>SOC</b></dt>\n    <dd>EV battery cu"
+	    "rrent state of charge (fraction)</dd>\n  <dt><b>Status</b></dt><dd>EV status:\n    <ul>\n      <li>&minus;1 for n"
+	    "ot present,</li>\n      <li>0 for present and accepting charge,</li>\n      <li>1 for present but battery full.</"
+	    "li>\n    </ul>\n    </dd>\n</dl>\n\n<h3>DC Charging</h3>\n<dl>\n  <dt><b>Limit</b></dt>\n    <dd>Maximum charging"
+	    " power limit (W)</dd>\n  <dt><b>SOC</b></dt>\n    <dd>EV battery current state of charge (fraction)</dd>\n  <dt><"
+	    "b>Status</b></dt><dd>EV status:\n    <ul>\n      <li>&minus;1 for not present,</li>\n      <li>0 for present and "
+	    "accepting charge,</li>\n      <li>1 for present but battery full.</li>\n    </ul>\n    </dd>\n</dl>\n\n<h2>Parame"
+	    "ters</h2>\nThe <i>Charge Controller</i> tab specifies the charging configuration (AC or DC) and charge control pa"
+	    "rameters. The <i>Battery</i> tab specifies the battery characteristics (identical to those of the <i>EV Battery</"
+	    "i> block).\n\n<h3>Charge Controller</h3>\n<dl>\n  <dt><b>Type of charging station</b></dt>\n    <dd>Select either"
+	    " AC or DC charging</dd>\n  <dt><b>Internal charge controller power rating</b></dt>\n    <dd>The maximum power rat"
+	    "ing (W) of the EV's internal charge controller (AC charging only)</dd>\n  <dt><b>Internal charge controller effic"
+	    "iency</b></dt>\n    <dd>The energy conversion efficiency (fraction) of the EV's internal charge controller (AC ch"
+	    "arging only).</dd>\n  <dt><b>Customize charging profile</b></dt>\n    <dd>Enable this checkbox to customize the c"
+	    "harging profile (SOC vs. maximum charge rate)</dd>\n  <dt><b>Profile breakpoints: State of charge</b></dt>\n    <"
+	    "dd>A vector of SOC breakpoints for the charging profile lookup table</dd>\n  <dt><b>Profile breakpoints: Maximum "
+	    "charge rate</b></dt>\n    <dd>A vector of maximum charge rate breakpoints (specified as a C-rate, that is, as a f"
+	    "raction of the battery capacity per hour) for the charging profile lookup table. Vector length must match that of"
+	    " the SOC breakpoint vector.</dd>\n</dl>\n\n<h3>Battery</h3>\n<dl>\n  <dt><b>Battery capacity</b></dt>\n    <dd>EV"
+	    " battery storage capacity (Wh)</dd>\n  <dt><b>Initial state of charge</b></dt>\n    <dd>Initial battery SOC when "
+	    "the battery first reconnects to the charging station (fraction)</dd>\n  <dt><b>Charging efficiency</b></dt>\n    "
+	    "<dd>Battery charging fixed efficiency (fraction)</dd>\n</dl>\n\n<h2>Comments</h2>\n<ol>\n  <li>For AC charging, t"
+	    "he block calculates energy losses based on the specified internal charge controller efficiency (using a fixed eff"
+	    "iciency model). This loss is in addition to the loss associated with the charging efficiency of the battery itsel"
+	    "f. For DC charging, no efficiency penalty is assessed as DC conversion losses occur external to the EV.</li>\n  <"
+	    "li>To customize the charging profile, specify two vectors: a vector of SOC breakpoints and a vector of maximum ch"
+	    "arge rate breakpoints. Together, these vectors define a lookup table for the maximum battery charge rate as a fun"
+	    "ction of SOC. The block interpolates the allowed charge rate in between the breakpoints.</li>\n</ol>"
 	    Initialization	    "ElectricVehicle_cb(gcb, 'init', ctype);"
 	    SelfModifiable	    "on"
 	    Array {
@@ -5072,7 +5148,7 @@ Library {
 	      Ports		      [2, 2]
 	      Position		      [785, 358, 865, 442]
 	      ZOrder		      139
-	      LibraryVersion	      "1.144"
+	      LibraryVersion	      "1.147"
 	      SourceBlock	      "CampusEnergyModeling/Electric Vehicles/EV Battery"
 	      SourceType	      "Electric Vehicle Battery"
 	      capacity		      "capacity"
@@ -5513,7 +5589,7 @@ Library {
       }
       System {
 	Name			"Electrical"
-	Location		[445, 84, 1537, 878]
+	Location		[28, 18, 1153, 845]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -5556,23 +5632,23 @@ Library {
 	    "<i>jQ</i> if the source convention is specified and consumes <i>P</i> + <i>jQ</i> if the load convention is speci"
 	    "fied.\n\n<h2>Requirements</h2>\nRequires SimPowerSystems.\n\n<h2>Input</h2>\nInput <b>PQ</b> is a two dimensional"
 	    " vector [<i>P</i>, <i>Q</i>] specifying the real and reactive power consumption (for a load) or generation (for a"
-	    " source).\n\n<h2>Physical Ports</h2>\n<p>The block has a single-phase, two-wire physical representation in SimPow"
-	    "erSystems. The physical ports are:\n<dl>\n  <dt><b>A</b></dt><dd>Phase (hot) electrical connection</dd>\n  <dt><b"
-	    ">N</b></dt><dd>Neutral electrical connection</dd>\n</dl>\n</p>\n\n<h2>Parameters</h2>\n<dl>\n  <dt><b>Electrical "
-	    "convention</b></dt>\n    <dd>Specifies whether the block is a source or a load</dd>\n  <dt><b>Nominal real power<"
-	    "/b></dt>\n    <dd>The nominal real power production (consumption) for the source (load), in W</dd>\n  <dt><b>Nomi"
-	    "nal reactive power</b></dt>\n    <dd>The nominal reactive power production (consumption) for the source (load), i"
-	    "n W</dd>\n  <dt><b>Nominal voltage</b></dt>\n    <dd>The nominal line-to-neutral voltage, in V</dd>\n  <dt><b>Nom"
-	    "inal frequency</b></dt>\n    <dd>The nominal frequency of the device, in Hz</dd>\n  <dt><b>Lower voltage limit</b"
-	    "></dt>\n    <dd>The voltage below which the block converts to a constant current device; see Comments</dd>\n</dl>"
-	    "\n\n<h2>Comments</h2>\n<ol>\n  <li>This block is compatible with SimPowerSystems' <b>phasor simulation mode only."
-	    "</b></li>\n  <li>The nominal input fields in the mask are used to initialize the block parameters. If the nominal"
-	    " values are close to the actual values during simulation, then the block will converge more rapidly.</li>\n  <li>"
-	    "If the line-to-neutral voltage falls below the per-unit lower voltage limit (on the base specified by the nominal"
-	    " voltage), then the block will behave as a constant current source rather than a constant power source, with the "
-	    "current magnitude capped at the level required to supply full power at the lower voltage limit. This feature avoi"
-	    "ds current runaway that would otherwise occur during voltage collapes. By default, the lower voltage limit is <i>"
-	    "V</i> = 0.7 pu.\n</ol>"
+	    " source).\n\n<h2>Physical Ports</h2>\nThe block has a single-phase, two-wire physical representation in SimPowerS"
+	    "ystems. The physical ports are:\n<dl>\n  <dt><b>A</b></dt><dd>Phase (hot) electrical connection</dd>\n  <dt><b>N<"
+	    "/b></dt><dd>Neutral electrical connection</dd>\n</dl>\n</p>\n\n<h2>Parameters</h2>\n<dl>\n  <dt><b>Electrical con"
+	    "vention</b></dt>\n    <dd>Specifies whether the block is a source or a load</dd>\n  <dt><b>Nominal real power</b>"
+	    "</dt>\n    <dd>The nominal real power production (consumption) for the source (load) (W)</dd>\n  <dt><b>Nominal r"
+	    "eactive power</b></dt>\n    <dd>The nominal reactive power production (consumption) for the source (load) (W)</dd"
+	    ">\n  <dt><b>Nominal voltage</b></dt>\n    <dd>The nominal RMS line-to-neutral voltage (V)</dd>\n  <dt><b>Nominal "
+	    "frequency</b></dt>\n    <dd>The nominal frequency of the device (Hz)</dd>\n  <dt><b>Lower voltage limit</b></dt>\n"
+	    "    <dd>The voltage below which the block converts to a constant current device; see Comments</dd>\n</dl>\n\n<h2>"
+	    "Comments</h2>\n<ol>\n  <li>This block is compatible with SimPowerSystems' <b>phasor simulation mode only.</b></li"
+	    ">\n  <li>The nominal input fields in the mask are used to initialize the block parameters. If the nominal values "
+	    "are close to the actual values during simulation, then the block will converge more rapidly.</li>\n  <li>If the l"
+	    "ine-to-neutral voltage falls below the per-unit lower voltage limit (on the base specified by the nominal voltage"
+	    "), then the block will behave as a constant current source rather than a constant power source, with the current "
+	    "magnitude capped at the level required to supply full power at the lower voltage limit. This feature avoids curre"
+	    "nt runaway that would otherwise occur during voltage collapes. By default, the lower voltage limit is <i>V</i> = "
+	    "0.7 pu.\n</ol>"
 	    Initialization	    "% Call initialization to calculate block variables\nInputGain = ...\n    ConstantPowerSourceL"
 	    "oad_cb(gcb, 'init', ...\n    Conven, PNom, QNom, VNom, fNom, VLow);"
 	    Array {
@@ -6598,25 +6674,25 @@ Library {
 	    "power (from PQ input)\n</blockquote>\n\nThe block supplies <i>P</i> + <i>jQ</i> if the source convention is speci"
 	    "fied and consumes <i>P</i> + <i>jQ</i> if the load convention is specified.\n\n<h2>Requirements</h2>\nRequires Si"
 	    "mPowerSystems.\n\n<h2>Input</h2>\nInput <b>PQ</b> is a two dimensional vector [<i>P</i>, <i>Q</i>] specifying the"
-	    " real and reactive power consumption (for a load) or generation (for a source).\n\n<h2>Physical Ports</h2>\n<p>Th"
-	    "e block has a three-phase, four-wire physical representation in SimPowerSystems. The physical ports are:\n<dl>\n "
-	    " <dt><b>A</b></dt><dd>Phase A electrical connection</dd>\n  <dt><b>B</b></dt><dd>Phase B electrical connection</d"
-	    "d>\n  <dt><b>C</b></dt><dd>Phase C electrical connection</dd>\n  <dt><b>N</b></dt><dd>Neutral electrical connecti"
-	    "on</dd>\n</dl>\n</p>\n\n<h2>Parameters</h2>\n<dl>\n  <dt><b>Electrical convention</b></dt>\n    <dd>Specifies whe"
-	    "ther the block is a source or a load</dd>\n  <dt><b>Nominal three-phase real power</b></dt>\n    <dd>The nominal "
-	    "real power production (consumption) for the source (load), in W</dd>\n  <dt><b>Nominal three-phase reactive power"
-	    "</b></dt>\n    <dd>The nominal reactive power production (consumption) for the source (load), in W</dd>\n  <dt><b"
-	    ">Nominal line-to-line voltage</b></dt>\n    <dd>The nominal line-to-line voltage, in V</dd>\n  <dt><b>Nominal fre"
-	    "quency</b></dt>\n    <dd>The nominal frequency of the device, in Hz</dd>\n  <dt><b>Lower voltage limit</b></dt>\n"
-	    "    <dd>The voltage below which the block converts to a constant current device; see Comments</dd>\n</dl>\n\n<h2>"
-	    "Comments</h2>\n<ol>\n  <li>This block is compatible with SimPowerSystems' <b>phasor simulation mode only.</b></li"
-	    ">\n  <li>The nominal input fields in the mask are used to initialize the block parameters. If the nominal values "
-	    "are close to the actual values during simulation, then the block will converge more rapidly.</li>\n  <li>If the p"
-	    "ositive sequence voltage falls below the per-unit lower voltage limit (on the base specified by the nominal line-"
-	    "to-line voltage), then the block will behave as a constant current source rather than a constant power source, wi"
-	    "th the current magnitude capped at the level required to supply full power at the lower voltage limit. This featu"
-	    "re avoids current runaway that would otherwise occur during voltage collapes. By default, the lower voltage limit"
-	    " is <i>V</i> = 0.7 pu.\n</ol>"
+	    " real and reactive power consumption (for a load) or generation (for a source).\n\n<h2>Physical Ports</h2>\nThe b"
+	    "lock has a three-phase, four-wire physical representation in SimPowerSystems. The physical ports are:\n<dl>\n  <d"
+	    "t><b>A</b></dt><dd>Phase A electrical connection</dd>\n  <dt><b>B</b></dt><dd>Phase B electrical connection</dd>\n"
+	    "  <dt><b>C</b></dt><dd>Phase C electrical connection</dd>\n  <dt><b>N</b></dt><dd>Neutral electrical connection</"
+	    "dd>\n</dl>\n</p>\n\n<h2>Parameters</h2>\n<dl>\n  <dt><b>Electrical convention</b></dt>\n    <dd>Specifies whether"
+	    " the block is a source or a load</dd>\n  <dt><b>Nominal three-phase real power</b></dt>\n    <dd>The nominal real"
+	    " power production (consumption) for the source (load) (W)</dd>\n  <dt><b>Nominal three-phase reactive power</b></"
+	    "dt>\n    <dd>The nominal reactive power production (consumption) for the source (load) (W)</dd>\n  <dt><b>Nominal"
+	    " line-to-line voltage</b></dt>\n    <dd>The nominal line-to-line voltage (V)</dd>\n  <dt><b>Nominal frequency</b>"
+	    "</dt>\n    <dd>The nominal frequency of the device (Hz)</dd>\n  <dt><b>Lower voltage limit</b></dt>\n    <dd>The "
+	    "voltage below which the block converts to a constant current device; see Comments</dd>\n</dl>\n\n<h2>Comments</h2"
+	    ">\n<ol>\n  <li>This block is compatible with SimPowerSystems' <b>phasor simulation mode only.</b></li>\n  <li>The"
+	    " nominal input fields in the mask are used to initialize the block parameters. If the nominal values are close to"
+	    " the actual values during simulation, then the block will converge more rapidly.</li>\n  <li>If the positive sequ"
+	    "ence voltage falls below the per-unit lower voltage limit (on the base specified by the nominal line-to-line volt"
+	    "age), then the block will behave as a constant current source rather than a constant power source, with the curre"
+	    "nt magnitude capped at the level required to supply full power at the lower voltage limit. This feature avoids cu"
+	    "rrent runaway that would otherwise occur during voltage collapes. By default, the lower voltage limit is <i>V</i>"
+	    " = 0.7 pu.\n</ol>"
 	    Initialization	    "% Call initialization to calculate block variables\nInputGain = ...\n    ThreePhaseConstantPo"
 	    "werSourceLoad_cb(gcb, 'init', ...\n    Conven, PNom, QNom, VNom, fNom, VLow);"
 	    Array {
@@ -7773,7 +7849,7 @@ Library {
       }
       System {
 	Name			"PV"
-	Location		[100, 143, 1225, 970]
+	Location		[28, 18, 1153, 845]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200

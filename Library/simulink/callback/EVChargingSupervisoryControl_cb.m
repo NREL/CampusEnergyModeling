@@ -133,10 +133,10 @@ function EVChargingSupervisoryControl_cb_charger_type(block)
     vis = get_param(block, 'MaskVisibilities');
     
     % Define the indices for parameters in the mask
-    xLIMITDETECTSETTINGS  = 3;
-    xLIMITDETECTSWEEP     = 4;
-    xLIMITDETECTRAMP      = 5;
-    xLIMITDETECTTHRESHOLD = 6;
+    xLIMITDETECTSETTINGS  = 4;
+    xLIMITDETECTSWEEP     = 5;
+    xLIMITDETECTRAMP      = 6;
+    xLIMITDETECTTHRESHOLD = 7;
     
     % Set dialog visibility based on the charger type
     if strcmp( get_param(block, 'ctype'), 'DC' )
@@ -166,9 +166,9 @@ function EVChargingSupervisoryControl_cb_limit_detect(block)
     vis = get_param(block, 'MaskVisibilities');
     
     % Define the indices for parameters in the mask
-    xLIMITDETECTSWEEP     = 4;
-    xLIMITDETECTRAMP      = 5;
-    xLIMITDETECTTHRESHOLD = 6;
+    xLIMITDETECTSWEEP     = 5;
+    xLIMITDETECTRAMP      = 6;
+    xLIMITDETECTTHRESHOLD = 7;
     
     % Set parameters, mask enables, and visibilities based on checkbox
     if strcmp( get_param(block, 'ldsettings'), 'off' )

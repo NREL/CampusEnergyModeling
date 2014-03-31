@@ -173,7 +173,7 @@ function EVChargingSupervisoryControl_cb_limit_detect(block)
     % Set parameters, mask enables, and visibilities based on checkbox
     if strcmp( get_param(block, 'ldsettings'), 'off' )
         % Restore default values
-        set_param(block, 'sweepint', '300');
+        set_param(block, 'sweepint', '600');
         set_param(block, 'sweepramp', get_param(block, 'ramp'));
         set_param(block, 'thr', '1.0');
         

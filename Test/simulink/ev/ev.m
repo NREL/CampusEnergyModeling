@@ -1,16 +1,22 @@
-%% electric_vehicles.m - Test the various Electric Vehicle blocks in the
-% Simulink library
+%% ev.m - Test the various EV blocks in the Simulink library
 %
-% This script tests the electric vehicle battery, electric vehicle, and
-% EV control blocks in the Campus Energy Modeling Simulink library.
-% The tests verify that the blocks behave as expected.
+% This script tests the various electric vehicle blocks in the Campus
+% Energy Modeling Simulink library. The test for the EV battery block is
+% comprehensive; the other tests verify only that the associated test
+% systems run without error. Proper operation may be verified by simulating
+% the models manually and examining the output on the scopes.
 %
 % FUNCTIONS:
 %
 % SIMULINK BLOCKS:
 %   Electric Vehicle
 %   EV Battery
-%   EV Supervisory Charge Controller
+%   EV Charging Supervisory Control
+%
+% NOTES:
+%   1. This script tests only EV blocks that do not have SimPowerSystems as
+%      a dependency. To test the EV charging station blocks (which require
+%      SimPowerSystems), see the `ev_charging` folder.
 
 %% Setup
 % Parameters for EV battery test:
@@ -121,7 +127,16 @@ close_system(mdl, 0);
 % Name of Simulink model
 mdl = 'ev';
 
-% At the moment, the test is just whether the model runs successfully
+% Verify that the model simulates without error
+open_system(mdl);
+sim(mdl);
+close_system(mdl, 0);
+
+%% Test Electric Vehicle Supervisory Control
+% Name of Simulink model
+mdl = 'ev_supervisory_control';
+
+% Verify that the model simulates without error
 open_system(mdl);
 sim(mdl);
 close_system(mdl, 0);

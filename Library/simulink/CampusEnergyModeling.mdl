@@ -42,10 +42,10 @@ Library {
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
 	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"241"
+	LoadSaveID		"593"
 	Extents			[1075.0, 661.0]
 	ZoomFactor		[1.0]
-	Offset			[-16.124998182058448, -28.137499451637211]
+	Offset			[-5.25, 0.0]
       }
     }
   }
@@ -55,9 +55,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Mar 31 17:09:25 2014"
-  RTWModifiedTimeStamp	  318186563
-  ModelVersionFormat	  "1.%<AutoIncrement:155>"
+  LastModifiedDate	  "Thu Apr 03 17:09:46 2014"
+  RTWModifiedTimeStamp	  318445782
+  ModelVersionFormat	  "1.%<AutoIncrement:162>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1186,7 +1186,7 @@ Library {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "630"
+    SIDHighWatermark	    "631"
     Block {
       BlockType		      SubSystem
       Name		      "Buildings"
@@ -1502,7 +1502,7 @@ Library {
       System {
 	Name			"Electric Vehicles"
 	Location		[28, 18, 1153, 845]
-	Open			on
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1518,7 +1518,7 @@ Library {
 	  BlockType		  SubSystem
 	  Name			  "AC Charging Station"
 	  SID			  "593"
-	  Ports			  [3, 1, 0, 0, 0, 2]
+	  Ports			  [3, 2, 0, 0, 0, 2]
 	  Position		  [295, 32, 375, 118]
 	  ZOrder		  859
 	  MinAlgLoopOccurrences	  off
@@ -1623,7 +1623,7 @@ Library {
 	  System {
 	    Name		    "AC Charging Station"
 	    Location		    [28, 18, 1153, 845]
-	    Open		    off
+	    Open		    on
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -1639,7 +1639,7 @@ Library {
 	      BlockType		      Inport
 	      Name		      "ExtLim"
 	      SID		      "594"
-	      Position		      [505, 43, 535, 57]
+	      Position		      [505, 33, 535, 47]
 	      ZOrder		      861
 	      IconDisplay	      "Port number"
 	    }
@@ -1684,7 +1684,7 @@ Library {
 	      Ports		      [1, 0, 0, 0, 0, 0, 2]
 	      Position		      [455, 254, 535, 336]
 	      ZOrder		      858
-	      LibraryVersion	      "1.147"
+	      LibraryVersion	      "1.161"
 	      SourceBlock	      "CampusEnergyModeling/Electrical/Constant Power\nSource or Load"
 	      SourceType	      "Constant Power Source/Load"
 	      Conven		      "load"
@@ -1735,7 +1735,7 @@ Library {
 	      Name		      "MinMax"
 	      SID		      "601"
 	      Ports		      [2, 1]
-	      Position		      [760, 72, 790, 103]
+	      Position		      [760, 67, 790, 98]
 	      ZOrder		      868
 	      ShowName		      off
 	      Inputs		      "2"
@@ -1757,7 +1757,7 @@ Library {
 	      Ports		      [2, 1]
 	      Position		      [330, 253, 405, 337]
 	      ZOrder		      865
-	      LibraryVersion	      "1.147"
+	      LibraryVersion	      "1.161"
 	      SourceBlock	      "CampusEnergyModeling/Electrical/Power Factor\nConversion"
 	      SourceType	      "Power Factor Conversion"
 	      pfType		      "Lagging"
@@ -1851,10 +1851,19 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "ChgLim"
+	      Name		      "Lim"
 	      SID		      "611"
-	      Position		      [830, 83, 860, 97]
+	      Position		      [830, 78, 860, 92]
 	      ZOrder		      -2
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "ChgLim"
+	      SID		      "631"
+	      Position		      [830, 118, 860, 132]
+	      ZOrder		      882
+	      Port		      "2"
 	      IconDisplay	      "Port number"
 	    }
 	    Line {
@@ -1914,21 +1923,29 @@ Library {
 	    Line {
 	      SrcBlock		      "ExtLim"
 	      SrcPort		      1
-	      Points		      [173, 0; 0, 30]
+	      Points		      [173, 0; 0, 35]
 	      DstBlock		      "MinMax"
 	      DstPort		      1
 	    }
 	    Line {
 	      SrcBlock		      "Product"
 	      SrcPort		      1
-	      Points		      [22, 0; 0, -30]
-	      DstBlock		      "MinMax"
-	      DstPort		      2
+	      Points		      [22, 0]
+	      Branch {
+		DstBlock		"ChgLim"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, -35]
+		DstBlock		"MinMax"
+		DstPort			2
+	      }
 	    }
 	    Line {
 	      SrcBlock		      "MinMax"
 	      SrcPort		      1
-	      DstBlock		      "ChgLim"
+	      Points		      [20, 0]
+	      DstBlock		      "Lim"
 	      DstPort		      1
 	    }
 	    Line {
@@ -2176,7 +2193,7 @@ Library {
 	      Ports		      [1, 0, 0, 0, 0, 0, 2]
 	      Position		      [780, 254, 860, 336]
 	      ZOrder		      858
-	      LibraryVersion	      "1.147"
+	      LibraryVersion	      "1.161"
 	      SourceBlock	      "CampusEnergyModeling/Electrical/Constant Power\nSource or Load"
 	      SourceType	      "Constant Power Source/Load"
 	      Conven		      "load"
@@ -2228,7 +2245,7 @@ Library {
 	      Ports		      [2, 1]
 	      Position		      [655, 253, 730, 337]
 	      ZOrder		      865
-	      LibraryVersion	      "1.147"
+	      LibraryVersion	      "1.160"
 	      SourceBlock	      "CampusEnergyModeling/Electrical/Power Factor\nConversion"
 	      SourceType	      "Power Factor Conversion"
 	      pfType		      "Lagging"
@@ -2959,7 +2976,7 @@ Library {
 		Type			"edit"
 		Name			"sweepint"
 		Prompt			"Limit detection sweep interval (s)"
-		Value			"300"
+		Value			"600"
 		Enabled			"off"
 		Visible			"off"
 	      }
@@ -2999,12 +3016,12 @@ Library {
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
 	    ZoomFactor		    "100"
-	    SIDHighWatermark	    "650"
+	    SIDHighWatermark	    "872"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "Rng"
 	      SID		      "492:493"
-	      Position		      [620, 393, 650, 407]
+	      Position		      [420, 298, 450, 312]
 	      ZOrder		      185
 	      IconDisplay	      "Port number"
 	    }
@@ -3012,7 +3029,7 @@ Library {
 	      BlockType		      Inport
 	      Name		      "Reg"
 	      SID		      "492:494"
-	      Position		      [620, 428, 650, 442]
+	      Position		      [420, 368, 450, 382]
 	      ZOrder		      180
 	      Port		      "2"
 	      IconDisplay	      "Port number"
@@ -3021,7 +3038,7 @@ Library {
 	      BlockType		      Inport
 	      Name		      "Status"
 	      SID		      "492:495"
-	      Position		      [145, 113, 175, 127]
+	      Position		      [70, 113, 100, 127]
 	      ZOrder		      186
 	      Port		      "3"
 	      IconDisplay	      "Port number"
@@ -3030,7 +3047,7 @@ Library {
 	      BlockType		      Inport
 	      Name		      "PMeas"
 	      SID		      "492:496"
-	      Position		      [145, 468, 175, 482]
+	      Position		      [70, 468, 100, 482]
 	      ZOrder		      155
 	      Port		      "4"
 	      IconDisplay	      "Port number"
@@ -3039,7 +3056,7 @@ Library {
 	      BlockType		      Inport
 	      Name		      "ChgLim"
 	      SID		      "492:497"
-	      Position		      [145, 243, 175, 257]
+	      Position		      [70, 243, 100, 257]
 	      ZOrder		      260
 	      Port		      "5"
 	      IconDisplay	      "Port number"
@@ -3049,7 +3066,7 @@ Library {
 	      Name		      "Compare\nTo Zero"
 	      SID		      "492:498"
 	      Ports		      [1, 1]
-	      Position		      [215, 105, 245, 135]
+	      Position		      [140, 105, 170, 135]
 	      ZOrder		      200
 	      ShowName		      off
 	      LibraryVersion	      "1.274"
@@ -3073,9 +3090,9 @@ Library {
 	      BlockType		      From
 	      Name		      "From"
 	      SID		      "492:500"
-	      Position		      [335, 463, 415, 487]
+	      Position		      [260, 463, 340, 487]
 	      ZOrder		      188
-	      BackgroundColor	      "lightBlue"
+	      BackgroundColor	      "[0.380392, 0.741176, 0.988235]"
 	      ShowName		      off
 	      GotoTag		      "Limit"
 	    }
@@ -3083,19 +3100,31 @@ Library {
 	      BlockType		      From
 	      Name		      "From1"
 	      SID		      "492:501"
-	      Position		      [145, 178, 205, 202]
+	      Position		      [70, 178, 130, 202]
 	      ZOrder		      191
 	      BackgroundColor	      "lightBlue"
 	      ShowName		      off
 	      GotoTag		      "Ctl"
 	    }
 	    Block {
+	      BlockType		      Gain
+	      Name		      "Gain"
+	      SID		      "492:762"
+	      Position		      [495, 385, 525, 415]
+	      ZOrder		      268
+	      ShowName		      off
+	      Gain		      "-1"
+	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
 	      BlockType		      Goto
 	      Name		      "InputVal"
 	      SID		      "492:502"
-	      Position		      [230, 462, 285, 488]
+	      Position		      [155, 462, 210, 488]
 	      ZOrder		      189
-	      BackgroundColor	      "lightBlue"
+	      BackgroundColor	      "[0.380392, 0.741176, 0.988235]"
 	      ShowName		      off
 	      GotoTag		      "Power"
 	    }
@@ -3104,7 +3133,7 @@ Library {
 	      Name		      "Limit Detection"
 	      SID		      "492:503"
 	      Ports		      [3, 1, 1]
-	      Position		      [335, 174, 415, 266]
+	      Position		      [260, 174, 340, 266]
 	      ZOrder		      181
 	      MinAlgLoopOccurrences   off
 	      PropExecContextOutsideSubsystem off
@@ -3168,7 +3197,7 @@ Library {
 		  Name			  "Finite State Machine"
 		  SID			  "492:508"
 		  Ports			  [1, 1]
-		  Position		  [480, 188, 600, 232]
+		  Position		  [405, 188, 525, 232]
 		  ZOrder		  236
 		  TreatAsAtomicUnit	  on
 		  MinAlgLoopOccurrences	  off
@@ -3450,7 +3479,7 @@ Library {
 		  BlockType		  Gain
 		  Name			  "Gain"
 		  SID			  "492:525"
-		  Position		  [665, 357, 700, 393]
+		  Position		  [600, 357, 635, 393]
 		  ZOrder		  245
 		  ShowName		  off
 		  Gain			  "1.0"
@@ -3463,7 +3492,7 @@ Library {
 		  Name			  "Limit Event Detection"
 		  SID			  "492:526"
 		  Ports			  [2, 1]
-		  Position		  [295, 188, 370, 232]
+		  Position		  [250, 188, 325, 232]
 		  ZOrder		  228
 		  TreatAsAtomicUnit	  on
 		  MinAlgLoopOccurrences	  off
@@ -3569,7 +3598,7 @@ Library {
 		  Name			  "MinMax"
 		  SID			  "492:532"
 		  Ports			  [2, 1]
-		  Position		  [905, 302, 935, 333]
+		  Position		  [835, 302, 865, 333]
 		  ZOrder		  264
 		  ShowName		  off
 		  Inputs		  "2"
@@ -3577,11 +3606,21 @@ Library {
 		  SaturateOnIntegerOverflow off
 		}
 		Block {
+		  BlockType		  RateLimiter
+		  Name			  "Ramp Rate Limit"
+		  SID			  "492:760"
+		  Position		  [905, 305, 935, 335]
+		  ZOrder		  268
+		  RisingSlewLimit	  "sweepramp"
+		  FallingSlewLimit	  "-sweepramp"
+		  SampleTimeMode	  "inherited"
+		}
+		Block {
 		  BlockType		  SubSystem
 		  Name			  "Resettable Ramp"
 		  SID			  "492:533"
 		  Ports			  [1, 1, 1]
-		  Position		  [640, 274, 720, 316]
+		  Position		  [575, 274, 655, 316]
 		  ZOrder		  235
 		  TreatAsAtomicUnit	  on
 		  MinAlgLoopOccurrences	  off
@@ -3593,7 +3632,7 @@ Library {
 		  MaskHideContents	  off
 		  System {
 		    Name		    "Resettable Ramp"
-		    Location		    [15, 163, 1129, 1015]
+		    Location		    [28, 18, 1153, 845]
 		    Open		    off
 		    ModelBrowserVisibility  off
 		    ModelBrowserWidth	    200
@@ -3694,7 +3733,7 @@ Library {
 		  Name			  "Sample and Hold"
 		  SID			  "492:540"
 		  Ports			  [1, 1, 1]
-		  Position		  [355, 274, 455, 316]
+		  Position		  [310, 274, 410, 316]
 		  ZOrder		  234
 		  TreatAsAtomicUnit	  on
 		  MinAlgLoopOccurrences	  off
@@ -3761,7 +3800,7 @@ Library {
 		  BlockType		  Switch
 		  Name			  "Switch"
 		  SID			  "492:545"
-		  Position		  [800, 290, 850, 330]
+		  Position		  [720, 290, 770, 330]
 		  ZOrder		  238
 		  Criteria		  "u2 ~= 0"
 		  InputSameDT		  off
@@ -3791,9 +3830,9 @@ Library {
 		Line {
 		  SrcBlock		  "Finite State Machine"
 		  SrcPort		  1
-		  Points		  [75, 0]
+		  Points		  [85, 0]
 		  Branch {
-		    Points		    [82, 0; 0, 100]
+		    Points		    [65, 0; 0, 100]
 		    DstBlock		    "Switch"
 		    DstPort		    2
 		  }
@@ -3811,7 +3850,7 @@ Library {
 		Line {
 		  SrcBlock		  "Sample and Hold"
 		  SrcPort		  1
-		  Points		  [42, 0]
+		  Points		  [31, 0]
 		  Branch {
 		    DstBlock		    "Resettable Ramp"
 		    DstPort		    1
@@ -3825,14 +3864,14 @@ Library {
 		Line {
 		  SrcBlock		  "Gain"
 		  SrcPort		  1
-		  Points		  [58, 0; 0, -50]
+		  Points		  [40, 0; 0, -50]
 		  DstBlock		  "Switch"
 		  DstPort		  3
 		}
 		Line {
 		  SrcBlock		  "Power"
 		  SrcPort		  1
-		  Points		  [91, 0]
+		  Points		  [57, 0]
 		  Branch {
 		    DstBlock		    "Sample and Hold"
 		    DstPort		    1
@@ -3850,23 +3889,29 @@ Library {
 		  DstPort		  1
 		}
 		Line {
+		  SrcBlock		  "MinMax"
+		  SrcPort		  1
+		  DstBlock		  "Ramp Rate Limit"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "ChgLim"
+		  SrcPort		  1
+		  Points		  [658, 0; 0, -125]
+		  DstBlock		  "MinMax"
+		  DstPort		  2
+		}
+		Line {
 		  SrcBlock		  "Switch"
 		  SrcPort		  1
 		  DstBlock		  "MinMax"
 		  DstPort		  1
 		}
 		Line {
-		  SrcBlock		  "MinMax"
+		  SrcBlock		  "Ramp Rate Limit"
 		  SrcPort		  1
 		  DstBlock		  "Lim"
 		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "ChgLim"
-		  SrcPort		  1
-		  Points		  [734, 0; 0, -125]
-		  DstBlock		  "MinMax"
-		  DstPort		  2
 		}
 		Annotation {
 		  SID			  "492:552"
@@ -3882,21 +3927,21 @@ Library {
 		}
 		Annotation {
 		  SID			  "492:550"
-		  Name			  "Working Internal Limit"
-		  Position		  [994, 296]
+		  Name			  "Working\nInternal\nLimit"
+		  Position		  [994, 286]
 		  ZOrder		  -3
 		}
 		Annotation {
 		  SID			  "492:549"
 		  Name			  "1 = Internal Limit Active\n0 = External Limit Active"
-		  Position		  [279, 165]
+		  Position		  [234, 165]
 		  HorizontalAlignment	  "left"
 		  ZOrder		  -4
 		}
 		Annotation {
 		  SID			  "492:548"
 		  Name			  "Detected Internal Limit"
-		  Position		  [560, 310]
+		  Position		  [510, 310]
 		  ZOrder		  -5
 		}
 		Annotation {
@@ -3911,7 +3956,7 @@ Library {
 	      BlockType		      Goto
 	      Name		      "LimitDetect"
 	      SID		      "492:553"
-	      Position		      [555, 202, 630, 228]
+	      Position		      [480, 202, 555, 228]
 	      ZOrder		      192
 	      BackgroundColor	      "lightBlue"
 	      ShowName		      off
@@ -3921,7 +3966,7 @@ Library {
 	      BlockType		      Constant
 	      Name		      "LimitDetectEnable"
 	      SID		      "492:554"
-	      Position		      [255, 50, 285, 80]
+	      Position		      [180, 50, 210, 80]
 	      ZOrder		      254
 	      BlockRotation	      270
 	      BlockMirror	      on
@@ -3931,7 +3976,7 @@ Library {
 	      Name		      "Logical\nOperator"
 	      SID		      "492:555"
 	      Ports		      [2, 1]
-	      Position		      [310, 99, 340, 131]
+	      Position		      [235, 99, 265, 131]
 	      ZOrder		      253
 	      ShowName		      off
 	      IconShape		      "distinctive"
@@ -3942,7 +3987,7 @@ Library {
 	      BlockType		      Memory
 	      Name		      "Memory"
 	      SID		      "492:556"
-	      Position		      [555, 455, 585, 485]
+	      Position		      [480, 455, 510, 485]
 	      ZOrder		      252
 	    }
 	    Block {
@@ -3950,7 +3995,7 @@ Library {
 	      Name		      "Min"
 	      SID		      "492:557"
 	      Ports		      [2, 1]
-	      Position		      [495, 452, 525, 483]
+	      Position		      [420, 452, 450, 483]
 	      ZOrder		      256
 	      Inputs		      "2"
 	      InputSameDT	      off
@@ -3970,7 +4015,7 @@ Library {
 	      BlockType		      From
 	      Name		      "PowerVal"
 	      SID		      "492:559"
-	      Position		      [145, 208, 205, 232]
+	      Position		      [70, 208, 130, 232]
 	      ZOrder		      195
 	      BackgroundColor	      "lightBlue"
 	      ShowName		      off
@@ -3981,13 +4026,33 @@ Library {
 	      Name		      "Product"
 	      SID		      "492:560"
 	      Ports		      [2, 1]
-	      Position		      [465, 197, 495, 228]
+	      Position		      [390, 197, 420, 228]
 	      ZOrder		      266
 	      ShowName		      off
 	      InputSameDT	      off
 	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
 	      RndMeth		      "Floor"
 	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Regulation Limit"
+	      SID		      "492:761"
+	      Ports		      [3, 1]
+	      Position		      [545, 336, 610, 414]
+	      ZOrder		      267
+	      LibraryVersion	      "1.274"
+	      SourceBlock	      "simulink/Discontinuities/Saturation\nDynamic"
+	      SourceType	      "Saturation Dynamic"
+	      OutMin		      "[]"
+	      OutMax		      "[]"
+	      OutDataTypeStr	      "Inherit: Same as second input"
+	      OutputDataTypeScalingMode	"Same as second input"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^-10"
+	      LockScale		      off
+	      RndMeth		      "Floor"
+	      DoSatur		      off
 	    }
 	    Block {
 	      BlockType		      SubSystem
@@ -4263,28 +4328,11 @@ Library {
 		    ZOrder		    -2
 		    }
 		    Block {
-		    BlockType		    MinMax
-		    Name		    "Min"
-		    SID			    "492:634"
-		    Ports		    [2, 1]
-		    Position		    [420, 352, 450, 383]
-		    ZOrder		    216
-		    Inputs		    "2"
-		    InputSameDT		    off
-		    SaturateOnIntegerOverflow off
-		    Port {
-		    PortNumber		    1
-		    Name		    "Capacity"
-		    RTWStorageClass	    "Auto"
-		    DataLoggingNameMode	    "SignalName"
-		    }
-		    }
-		    Block {
 		    BlockType		    Mux
 		    Name		    "Mux"
 		    SID			    "492:636"
 		    Ports		    [2, 1]
-		    Position		    [605, 326, 610, 384]
+		    Position		    [395, 323, 400, 392]
 		    ZOrder		    219
 		    ShowName		    off
 		    Inputs		    "2"
@@ -4303,21 +4351,28 @@ Library {
 		    InputSameDT		    off
 		    OutDataTypeStr	    "Inherit: Inherit via internal rule"
 		    SaturateOnIntegerOverflow off
+		    Port {
+		    PortNumber		    1
+		    Name		    "Capacity"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Terminator
+		    Name		    "Terminator"
+		    SID			    "492:759"
+		    Position		    [215, 270, 235, 290]
+		    ZOrder		    223
+		    ShowName		    off
 		    }
 		    Block {
 		    BlockType		    Outport
 		    Name		    "Out"
 		    SID			    "492:642"
-		    Position		    [665, 348, 695, 362]
+		    Position		    [455, 353, 485, 367]
 		    ZOrder		    220
 		    IconDisplay		    "Port number"
-		    }
-		    Line {
-		    SrcBlock		    "Rng"
-		    SrcPort		    1
-		    Points		    [184, 0; 0, 80]
-		    DstBlock		    "Min"
-		    DstPort		    1
 		    }
 		    Line {
 		    Name		    "Setpoint"
@@ -4326,12 +4381,12 @@ Library {
 		    SrcPort		    1
 		    Points		    [80, 0]
 		    Branch {
-		    Labels		    [-1, 0]
-		    DstBlock		    "Mux"
+		    DstBlock		    "Sum2"
 		    DstPort		    1
 		    }
 		    Branch {
-		    DstBlock		    "Sum2"
+		    Labels		    [-1, 0]
+		    DstBlock		    "Mux"
 		    DstPort		    1
 		    }
 		    }
@@ -4343,12 +4398,6 @@ Library {
 		    DstPort		    2
 		    }
 		    Line {
-		    SrcBlock		    "Sum2"
-		    SrcPort		    1
-		    DstBlock		    "Min"
-		    DstPort		    2
-		    }
-		    Line {
 		    SrcBlock		    "Mux"
 		    SrcPort		    1
 		    DstBlock		    "Out"
@@ -4356,11 +4405,17 @@ Library {
 		    }
 		    Line {
 		    Name		    "Capacity"
-		    Labels		    [1, 1]
-		    SrcBlock		    "Min"
+		    Labels		    [1, 0]
+		    SrcBlock		    "Sum2"
 		    SrcPort		    1
 		    DstBlock		    "Mux"
 		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Rng"
+		    SrcPort		    1
+		    DstBlock		    "Terminator"
+		    DstPort		    1
 		    }
 		  }
 		}
@@ -4509,17 +4564,6 @@ Library {
 		    ParamDataTypeStr	    "Inherit: Inherit via internal rule"
 		    OutDataTypeStr	    "Inherit: Inherit via internal rule"
 		    SaturateOnIntegerOverflow off
-		    }
-		    Block {
-		    BlockType		    MinMax
-		    Name		    "Min"
-		    SID			    "492:607"
-		    Ports		    [2, 1]
-		    Position		    [545, 407, 575, 438]
-		    ZOrder		    216
-		    Inputs		    "2"
-		    InputSameDT		    off
-		    SaturateOnIntegerOverflow off
 		    Port {
 		    PortNumber		    1
 		    Name		    "Capacity"
@@ -4629,15 +4673,8 @@ Library {
 		    }
 		    Branch {
 		    Points		    [0, 85]
-		    Branch {
 		    DstBlock		    "Relational\nOperator"
 		    DstPort		    1
-		    }
-		    Branch {
-		    Points		    [0, 75]
-		    DstBlock		    "Min"
-		    DstPort		    1
-		    }
 		    }
 		    }
 		    Line {
@@ -4705,6 +4742,14 @@ Library {
 		    DstPort		    2
 		    }
 		    Line {
+		    SrcBlock		    "Mux"
+		    SrcPort		    1
+		    DstBlock		    "Out"
+		    DstPort		    1
+		    }
+		    Line {
+		    Name		    "Capacity"
+		    Labels		    [0, 0]
 		    SrcBlock		    "Gain2"
 		    SrcPort		    1
 		    Points		    [15, 0]
@@ -4713,31 +4758,18 @@ Library {
 		    DstPort		    2
 		    }
 		    Branch {
-		    Points		    [0, 75]
-		    Branch {
-		    DstBlock		    "Min"
-		    DstPort		    2
-		    }
+		    Points		    [0, 61]
 		    Branch {
 		    DstBlock		    "Sum4"
 		    DstPort		    1
 		    }
-		    }
-		    }
-		    Line {
-		    SrcBlock		    "Mux"
-		    SrcPort		    1
-		    DstBlock		    "Out"
-		    DstPort		    1
-		    }
-		    Line {
-		    Name		    "Capacity"
+		    Branch {
 		    Labels		    [1, 1]
-		    SrcBlock		    "Min"
-		    SrcPort		    1
-		    Points		    [74, 0; 0, -55]
+		    Points		    [265, 0; 0, -46]
 		    DstBlock		    "Mux"
 		    DstPort		    2
+		    }
+		    }
 		    }
 		  }
 		}
@@ -4916,6 +4948,7 @@ Library {
 		  SID			  "492:626"
 		  Name			  "1 = 1-sided\n2 = 2-sided"
 		  Position		  [166, 404]
+		  ZOrder		  -1
 		}
 		Annotation {
 		  SID			  "492:587"
@@ -4976,12 +5009,6 @@ Library {
 	      IconDisplay	      "Port number"
 	    }
 	    Line {
-	      SrcBlock		      "Reg"
-	      SrcPort		      1
-	      DstBlock		      "Regulator"
-	      DstPort		      2
-	    }
-	    Line {
 	      SrcBlock		      "Regulator"
 	      SrcPort		      2
 	      DstBlock		      "Capacity"
@@ -5004,8 +5031,25 @@ Library {
 	    Line {
 	      SrcBlock		      "Rng"
 	      SrcPort		      1
-	      DstBlock		      "Regulator"
-	      DstPort		      1
+	      Points		      [14, 0]
+	      Branch {
+		Points			[0, 95]
+		DstBlock		"Gain"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[34, 0]
+		Branch {
+		  Points		  [0, 45]
+		  DstBlock		  "Regulation Limit"
+		  DstPort		  1
+		}
+		Branch {
+		  Points		  [155, 0; 0, 95]
+		  DstBlock		  "Regulator"
+		  DstPort		  1
+		}
+	      }
 	    }
 	    Line {
 	      SrcBlock		      "Status"
@@ -5113,6 +5157,25 @@ Library {
 	      SrcPort		      1
 	      DstBlock		      "LimitDetect"
 	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Regulation Limit"
+	      SrcPort		      1
+	      Points		      [26, 0; 0, 60]
+	      DstBlock		      "Regulator"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Reg"
+	      SrcPort		      1
+	      DstBlock		      "Regulation Limit"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Gain"
+	      SrcPort		      1
+	      DstBlock		      "Regulation Limit"
+	      DstPort		      3
 	    }
 	  }
 	}
@@ -5311,7 +5374,7 @@ Library {
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
 	    ZoomFactor		    "100"
-	    SIDHighWatermark	    "586"
+	    SIDHighWatermark	    "680"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "Limit"
@@ -5656,7 +5719,7 @@ Library {
 	      Ports		      [2, 2]
 	      Position		      [785, 358, 865, 442]
 	      ZOrder		      139
-	      LibraryVersion	      "1.153"
+	      LibraryVersion	      "1.161"
 	      SourceBlock	      "CampusEnergyModeling/Electric Vehicles/EV Battery"
 	      SourceType	      "Electric Vehicle Battery"
 	      capacity		      "capacity"
@@ -9602,7 +9665,7 @@ Library {
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
 	    ZoomFactor		    "100"
-	    SIDHighWatermark	    "48"
+	    SIDHighWatermark	    "50"
 	    Block {
 	      BlockType		      FromFile
 	      Name		      "From File"

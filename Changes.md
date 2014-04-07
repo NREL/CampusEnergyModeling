@@ -3,6 +3,8 @@
 ## Development
 * Added single-phase constant power electrical source/load block
 * Added time alignment options to PVWatts cosimulation block
+* Updated electric vehicle and EV charging station models
+* Added two demos for EV charging applications
 
 ## v0.1.1
 * Added standby loss and maximum output power to generic inverter model

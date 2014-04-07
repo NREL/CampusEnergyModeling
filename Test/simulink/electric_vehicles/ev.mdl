@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.15"
+    ComputedModelVersion    "1.16"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -66,9 +66,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Mar 17 13:24:08 2014"
-  RTWModifiedTimeStamp	  316963416
-  ModelVersionFormat	  "1.%<AutoIncrement:15>"
+  LastModifiedDate	  "Mon Apr 07 11:36:28 2014"
+  RTWModifiedTimeStamp	  318771380
+  ModelVersionFormat	  "1.%<AutoIncrement:16>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -886,6 +886,7 @@ Model {
       Ports		      [3]
       Position		      [845, 132, 895, 208]
       ZOrder		      74
+      BackgroundColor	      "gray"
       Floating		      off
       Location		      [1053, 139, 1377, 924]
       Open		      on
@@ -942,6 +943,7 @@ Model {
       Ports		      [3]
       Position		      [845, 367, 895, 443]
       ZOrder		      54
+      BackgroundColor	      "gray"
       Floating		      off
       Location		      [1396, 139, 1720, 925]
       Open		      on
@@ -980,7 +982,7 @@ Model {
       Ports		      [2, 3]
       Position		      [550, 129, 630, 211]
       ZOrder		      62
-      LibraryVersion	      "1.142"
+      LibraryVersion	      "1.162"
       SourceBlock	      "CampusEnergyModeling/Electric Vehicles/Electric Vehicle"
       SourceType	      "Electric Vehicle"
       ctype		      "AC"
@@ -1018,7 +1020,7 @@ Model {
       Ports		      [2, 3]
       Position		      [550, 364, 630, 446]
       ZOrder		      56
-      LibraryVersion	      "1.142"
+      LibraryVersion	      "1.162"
       SourceBlock	      "CampusEnergyModeling/Electric Vehicles/Electric Vehicle"
       SourceType	      "Electric Vehicle"
       ctype		      "DC"

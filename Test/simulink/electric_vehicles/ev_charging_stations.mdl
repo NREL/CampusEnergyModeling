@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.33"
+    ComputedModelVersion    "1.35"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -55,7 +55,7 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1192.0, 675.0]
+	Extents			[1192.0, 678.0]
 	ZoomFactor		[1.0]
 	Offset			[-94.666666666666742, 62.0]
       }
@@ -70,9 +70,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Mar 28 15:02:49 2014"
-  RTWModifiedTimeStamp	  317919752
-  ModelVersionFormat	  "1.%<AutoIncrement:33>"
+  LastModifiedDate	  "Thu Apr 03 17:17:01 2014"
+  RTWModifiedTimeStamp	  318446206
+  ModelVersionFormat	  "1.%<AutoIncrement:35>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -777,6 +777,11 @@ Model {
       NonVirtualBus	      off
     }
     Block {
+      BlockType		      ComplexToMagnitudeAngle
+      Output		      "Magnitude and angle"
+      SampleTime	      "-1"
+    }
+    Block {
       BlockType		      Constant
       Value		      "1"
       VectorParams1D	      on
@@ -882,7 +887,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "119"
+    SIDHighWatermark	    "125"
     Block {
       BlockType		      Scope
       Name		      "AC Charging"
@@ -913,6 +918,8 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
+      LegendLocations	      "0.56121     0.90679     0.34568     0.04586\n0.65844     0.61401     0.24691    0.025902\n"
+      "0.63374     0.30191      0.2716    0.025902"
       TimeRange		      "15000"
       YMin		      "0~0~-1"
       YMax		      "6000~1~0"
@@ -925,12 +932,12 @@ Model {
       BlockType		      Reference
       Name		      "AC Charging Station"
       SID		      "118"
-      Ports		      [3, 1, 0, 0, 0, 2]
-      Position		      [335, 107, 415, 193]
+      Ports		      [3, 2, 0, 0, 0, 2]
+      Position		      [335, 127, 415, 213]
       ZOrder		      879
-      LibraryVersion	      "1.145"
+      LibraryVersion	      "1.162"
       SourceBlock	      "CampusEnergyModeling/Electric Vehicles/AC Charging Station"
-      SourceType	      ""
+      SourceType	      "AC Charging Station"
       prated		      "6000"
       vrated		      "240"
       pstandby		      "10"
@@ -954,6 +961,24 @@ Model {
       ShowName		      off
       Inputs		      "2"
       DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      ComplexToMagnitudeAngle
+      Name		      "Complex to\nMagnitude-Angle"
+      SID		      "120"
+      Ports		      [1, 2]
+      Position		      [815, 503, 845, 532]
+      ZOrder		      881
+      ShowName		      off
+    }
+    Block {
+      BlockType		      ComplexToMagnitudeAngle
+      Name		      "Complex to\nMagnitude-Angle1"
+      SID		      "122"
+      Ports		      [1, 2]
+      Position		      [815, 553, 845, 582]
+      ZOrder		      884
+      ShowName		      off
     }
     Block {
       BlockType		      Scope
@@ -985,6 +1010,8 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
+      LegendLocations	      "0.55195     0.90691     0.35494    0.045802\n0.65844      0.6145     0.24691    0.025869\n"
+      "0.63374     0.30153      0.2716    0.025869"
       TimeRange		      "15000"
       YMin		      "0~0~-1"
       YMax		      "1000~1~0"
@@ -999,9 +1026,9 @@ Model {
       Ports		      [3, 2, 0, 0, 0, 2]
       Position		      [335, 361, 415, 449]
       ZOrder		      880
-      LibraryVersion	      "1.145"
+      LibraryVersion	      "1.162"
       SourceBlock	      "CampusEnergyModeling/Electric Vehicles/DC Charging Station"
-      SourceType	      ""
+      SourceType	      "DC Charging Station"
       prated		      "24000"
       vrated		      "240"
       pstandby		      "100"
@@ -1056,7 +1083,7 @@ Model {
       Ports		      [2, 3]
       Position		      [565, 129, 645, 211]
       ZOrder		      62
-      LibraryVersion	      "1.145"
+      LibraryVersion	      "1.162"
       SourceBlock	      "CampusEnergyModeling/Electric Vehicles/Electric Vehicle"
       SourceType	      "Electric Vehicle"
       ctype		      "AC"
@@ -1094,7 +1121,7 @@ Model {
       Ports		      [2, 3]
       Position		      [565, 364, 645, 446]
       ZOrder		      56
-      LibraryVersion	      "1.145"
+      LibraryVersion	      "1.162"
       SourceBlock	      "CampusEnergyModeling/Electric Vehicles/Electric Vehicle"
       SourceType	      "Electric Vehicle"
       ctype		      "DC"
@@ -1178,7 +1205,7 @@ Model {
       BlockType		      From
       Name		      "From4"
       SID		      "99"
-      Position		      [165, 108, 225, 132]
+      Position		      [165, 128, 225, 152]
       ZOrder		      866
       BackgroundColor	      "lightBlue"
       ShowName		      off
@@ -1209,8 +1236,8 @@ Model {
       BlockType		      Gain
       Name		      "Gain1"
       SID		      "116"
-      Position		      [835, 600, 860, 630]
-      ZOrder		      877
+      Position		      [895, 495, 920, 525]
+      ZOrder		      882
       ShowName		      off
       Gain		      "1/sqrt(2)"
       ParamDataTypeStr	      "Inherit: Inherit via internal rule"
@@ -1226,9 +1253,9 @@ Model {
     Block {
       BlockType		      Gain
       Name		      "Gain2"
-      SID		      "117"
-      Position		      [835, 635, 860, 665]
-      ZOrder		      878
+      SID		      "123"
+      Position		      [895, 545, 920, 575]
+      ZOrder		      885
       ShowName		      off
       Gain		      "1/sqrt(2)"
       ParamDataTypeStr	      "Inherit: Inherit via internal rule"
@@ -1265,7 +1292,7 @@ Model {
       Ipu		      off
       Pbase		      "10e3"
       Vbase		      "208"
-      OutputType	      "Magnitude"
+      OutputType	      "Complex"
       PhasorSimulation	      on
       PSBequivalent	      "0"
     }
@@ -1356,16 +1383,40 @@ Model {
       ShowName		      off
     }
     Block {
+      BlockType		      Terminator
+      Name		      "Terminator1"
+      SID		      "121"
+      Position		      [860, 515, 880, 535]
+      ZOrder		      883
+      ShowName		      off
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator2"
+      SID		      "124"
+      Position		      [860, 565, 880, 585]
+      ZOrder		      886
+      ShowName		      off
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator3"
+      SID		      "125"
+      Position		      [435, 185, 455, 205]
+      ZOrder		      887
+      ShowName		      off
+    }
+    Block {
       BlockType		      Scope
       Name		      "Utility"
       SID		      "50"
       Ports		      [3]
-      Position		      [980, 632, 1010, 668]
+      Position		      [980, 597, 1010, 633]
       ZOrder		      851
       BackgroundColor	      "gray"
       Floating		      off
       Location		      [711, 140, 1034, 921]
-      Open		      on
+      Open		      off
       NumInputPorts	      "3"
       ZoomMode		      "yonly"
       List {
@@ -1385,6 +1436,8 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
+      LegendLocations	      "0.67595      0.8869      0.2291    0.066155\n0.68834      0.5732     0.21672    0.066155\n"
+      "0.70227      0.2802     0.20433    0.046095"
       TimeRange		      "15000"
       YMin		      "112~0~0"
       YMax		      "121~20.51886792452825~4988.262910798119"
@@ -1432,7 +1485,7 @@ Model {
       ZOrder		      855
       DropShadow	      on
       Priority		      "2"
-      LibraryVersion	      "1.2191"
+      LibraryVersion	      "*1.2191"
       UserDataPersistent      on
       UserData		      "DataTag0"
       SourceBlock	      "powerlib/powergui"
@@ -1566,7 +1619,7 @@ Model {
       SrcPort		      3
       Points		      [92, 0]
       Branch {
-	Points			[0, 64; -443, 0; 0, -124]
+	Points			[0, 64; -443, 0; 0, -104]
 	DstBlock		"AC Charging Station"
 	DstPort			2
       }
@@ -1583,7 +1636,7 @@ Model {
       SrcPort		      1
       Points		      [77, 0]
       Branch {
-	Points			[0, 93; -415, 0; 0, -88]
+	Points			[0, 93; -415, 0; 0, -68]
 	DstBlock		"AC Charging Station"
 	DstPort			3
       }
@@ -1637,12 +1690,13 @@ Model {
       SrcPort		      1
       Points		      [18, 0]
       Branch {
-	Points			[0, 75]
-	DstBlock		"Power\n(3ph, Phasor)"
+	Points			[0, -95]
+	DstBlock		"Complex to\nMagnitude-Angle"
 	DstPort			1
       }
       Branch {
-	DstBlock		"Gain1"
+	Points			[0, 75]
+	DstBlock		"Power\n(3ph, Phasor)"
 	DstPort			1
       }
     }
@@ -1651,20 +1705,21 @@ Model {
       SrcPort		      1
       Points		      [33, 0]
       Branch {
+	Points			[0, -80]
+	DstBlock		"Complex to\nMagnitude-Angle1"
+	DstPort			1
+      }
+      Branch {
 	Points			[0, 60]
 	DstBlock		"Power\n(3ph, Phasor)"
 	DstPort			2
-      }
-      Branch {
-	DstBlock		"Gain2"
-	DstPort			1
       }
     }
     Line {
       Name		      "Power Limit"
       SrcBlock		      "AC Charging Station"
       SrcPort		      1
-      Points		      [106, 0]
+      Points		      [0, 0; 106, 0]
       Branch {
 	Labels			[2, 1]
 	Points			[0, -35]
@@ -1691,7 +1746,7 @@ Model {
 	ConnectType		"DEST_DEST"
 	SrcBlock		"AC Charging Station"
 	SrcPort			LConn2
-	Points			[-69, 0; 0, 240]
+	Points			[-69, 0; 0, 220]
       }
     }
     Line {
@@ -1750,7 +1805,7 @@ Model {
       LineType		      "Connection"
       SrcBlock		      "AC Charging Station"
       SrcPort		      LConn1
-      Points		      [-82, 0; 0, 460]
+      Points		      [-82, 0; 0, 440]
       DstBlock		      "Measurement"
       DstPort		      RConn1
     }
@@ -1781,26 +1836,57 @@ Model {
     Line {
       SrcBlock		      "Bus\nCreator3"
       SrcPort		      1
-      Points		      [27, 0; 0, -40]
+      Points		      [27, 0; 0, -75]
       DstBlock		      "Utility"
       DstPort		      3
     }
     Line {
       Name		      "V"
-      Labels		      [1, 1]
+      Labels		      [2, 1]
       SrcBlock		      "Gain1"
       SrcPort		      1
-      Points		      [87, 0; 0, 25]
+      Points		      [22, 0; 0, 95]
       DstBlock		      "Utility"
       DstPort		      1
     }
     Line {
       Name		      "I"
-      Labels		      [1, 1]
+      Labels		      [2, 1]
       SrcBlock		      "Gain2"
       SrcPort		      1
+      Points		      [8, 0; 0, 55]
       DstBlock		      "Utility"
       DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Complex to\nMagnitude-Angle"
+      SrcPort		      2
+      DstBlock		      "Terminator1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Complex to\nMagnitude-Angle"
+      SrcPort		      1
+      DstBlock		      "Gain1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Complex to\nMagnitude-Angle1"
+      SrcPort		      2
+      DstBlock		      "Terminator2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Complex to\nMagnitude-Angle1"
+      SrcPort		      1
+      DstBlock		      "Gain2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "AC Charging Station"
+      SrcPort		      2
+      DstBlock		      "Terminator3"
+      DstPort		      1
     }
   }
 }

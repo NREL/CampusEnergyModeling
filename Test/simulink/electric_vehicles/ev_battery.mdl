@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.7"
+    ComputedModelVersion    "1.8"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -66,9 +66,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Feb 20 11:18:09 2014"
-  RTWModifiedTimeStamp	  314795883
-  ModelVersionFormat	  "1.%<AutoIncrement:7>"
+  LastModifiedDate	  "Wed Apr 02 16:09:21 2014"
+  RTWModifiedTimeStamp	  318355759
+  ModelVersionFormat	  "1.%<AutoIncrement:8>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -828,7 +828,7 @@ Model {
       Ports		      [2, 2]
       Position		      [305, 103, 385, 187]
       ZOrder		      52
-      LibraryVersion	      "1.125"
+      LibraryVersion	      "1.156"
       SourceBlock	      "CampusEnergyModeling/Electric Vehicles/EV Battery"
       SourceType	      "Electric Vehicle Battery"
       capacity		      "1000"
@@ -869,6 +869,7 @@ Model {
       Ports		      [3]
       Position		      [540, 241, 570, 289]
       ZOrder		      54
+      BackgroundColor	      "gray"
       Floating		      off
       Location		      [743, 286, 1067, 839]
       Open		      off

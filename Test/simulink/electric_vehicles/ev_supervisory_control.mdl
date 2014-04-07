@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.57"
+    ComputedModelVersion    "1.59"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -78,9 +78,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Mar 31 16:13:11 2014"
-  RTWModifiedTimeStamp	  318182770
-  ModelVersionFormat	  "1.%<AutoIncrement:57>"
+  LastModifiedDate	  "Wed Apr 02 16:24:04 2014"
+  RTWModifiedTimeStamp	  318356642
+  ModelVersionFormat	  "1.%<AutoIncrement:59>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -859,7 +859,7 @@ Model {
       Ports		      [5, 2]
       Position		      [325, 236, 405, 334]
       ZOrder		      187
-      LibraryVersion	      "1.153"
+      LibraryVersion	      "1.160"
       SourceBlock	      "CampusEnergyModeling/Electric Vehicles/EV Charging\nSupervisory Control"
       SourceType	      "EV Charging Supervisory Control"
       ctype		      "AC"
@@ -867,7 +867,7 @@ Model {
       regtype		      "Two-sided"
       ldsettings	      on
       sweepint		      "300"
-      sweepramp		      "0.5"
+      sweepramp		      "1"
       thr		      "1.0"
       Port {
 	PortNumber		1
@@ -923,6 +923,7 @@ Model {
       Ports		      [1]
       Position		      [870, 418, 920, 472]
       ZOrder		      167
+      BackgroundColor	      "gray"
       Floating		      off
       Location		      [749, 223, 1116, 537]
       Open		      on
@@ -943,6 +944,7 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
+      LegendLocations	      "0.70527     0.71709     0.21253     0.16454"
       TimeRange		      "10000"
       YMin		      "-100"
       YMax		      "900"
@@ -958,14 +960,14 @@ Model {
       Ports		      [5, 2]
       Position		      [325, 531, 405, 629]
       ZOrder		      188
-      LibraryVersion	      "1.153"
+      LibraryVersion	      "1.160"
       SourceBlock	      "CampusEnergyModeling/Electric Vehicles/EV Charging\nSupervisory Control"
       SourceType	      "EV Charging Supervisory Control"
       ctype		      "DC"
       ramp		      "2"
       regtype		      "Two-sided"
       ldsettings	      off
-      sweepint		      "300"
+      sweepint		      "600"
       sweepramp		      "2"
       thr		      "1.0"
       Port {
@@ -997,7 +999,7 @@ Model {
       Ports		      [2, 3]
       Position		      [575, 239, 655, 321]
       ZOrder		      161
-      LibraryVersion	      "1.153"
+      LibraryVersion	      "1.160"
       SourceBlock	      "CampusEnergyModeling/Electric Vehicles/Electric Vehicle"
       SourceType	      "Electric Vehicle"
       ctype		      "AC"
@@ -1035,7 +1037,7 @@ Model {
       Ports		      [2, 3]
       Position		      [575, 534, 655, 616]
       ZOrder		      56
-      LibraryVersion	      "1.153"
+      LibraryVersion	      "1.160"
       SourceBlock	      "CampusEnergyModeling/Electric Vehicles/Electric Vehicle"
       SourceType	      "Electric Vehicle"
       ctype		      "DC"
@@ -1272,6 +1274,7 @@ Model {
       Ports		      [4]
       Position		      [870, 219, 920, 316]
       ZOrder		      160
+      BackgroundColor	      "gray"
       Floating		      off
       Location		      [1140, 218, 1507, 1004]
       Open		      on
@@ -1295,9 +1298,11 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
+      LegendLocations	      "0.67802     0.90691     0.23978    0.045802\n0.57584     0.69211      0.3406    0.025869\n"
+      "0.69846     0.45802     0.21798    0.025869\n0.67666     0.22265     0.23978    0.025869"
       TimeRange		      "10000"
       YMin		      "0~0~0~-1"
-      YMax		      "1000~200~1~0"
+      YMax		      "1000~500~1~0"
       SaveName		      "ScopeData1"
       DataFormat	      "StructureWithTime"
       LimitDataPoints	      off
@@ -1310,6 +1315,7 @@ Model {
       Ports		      [4]
       Position		      [870, 514, 920, 611]
       ZOrder		      54
+      BackgroundColor	      "gray"
       Floating		      off
       Location		      [1525, 219, 1892, 1005]
       Open		      on
@@ -1333,9 +1339,11 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
+      LegendLocations	      "0.67802     0.90691     0.23978    0.045802\n0.57584     0.69211      0.3406    0.025869\n"
+      "0.69846     0.45802     0.21798    0.025869\n0.67666     0.22265     0.23978    0.025869"
       TimeRange		      "10000"
       YMin		      "0~0~0~-1"
-      YMax		      "1000~200~1~0"
+      YMax		      "1000~500~1~0"
       DataFormat	      "StructureWithTime"
       LimitDataPoints	      off
       SampleTime	      "0"
@@ -1520,7 +1528,7 @@ Model {
       Labels		      [3, 1]
       SrcBlock		      "AC Regulating\nController"
       SrcPort		      2
-      Points		      [27, 0; 0, 51; 414, 0; 0, -106]
+      Points		      [27, 0; 0, 51; 397, 0; 0, -106]
       DstBlock		      "Scope AC"
       DstPort		      2
     }

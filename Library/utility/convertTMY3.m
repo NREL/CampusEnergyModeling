@@ -26,8 +26,13 @@
 %   The following optional inputs may be passed as name-value pairs
 %   following 'filename':
 %
-%   'offset', [val]             Specify the time offset for the generated
-%                               vector of hourly data. (Default = -0.5)
+%   'offset', [val]             Specify the time offset (in hours) for the 
+%                               generated time series; see comments for
+%                               usage details. (Default = -0.5)
+%   'startTime', [val]          If the '--UseOriginalTimestamps' flag is
+%                               set, specify the time value (in seconds) 
+%                               which corresponds to the first data point
+%                               in the TMY3 file. (Default = 0)
 %   'columnSpec', [val]         Provide a customizes specification for
 %                               which data columns should be pulled from
 %                               the TMY3 data file. (This should only be
@@ -67,24 +72,35 @@
 %    '--UseOriginalTimestamps' (see above).
 %
 % 2. The optional input 'offset' adjusts the time vector by the offset
-%    amount in hours (backward for negative offsets). The default value of
-%    -0.5 positions the time stamp for each hour in the center of the hour
-%    as opposed to at the end as is default for TMY3 data.
+%    amount in hours (backward for negative offsets). For automatically
+%    generated time vectors, the default value of -0.5 positions the time
+%    stamp for each hour in the center of the hour as opposed to at the end
+%    as is default for TMY3 data. If instead the '--UseOriginalTimestamps'
+%    flag is set, then the offset is applied directly to the original
+%    timestamps. For example, with the default offset of -0.5 h, the entry
+%    2012-01-01 01:00 becomes 2012-01-01 00:30. See also the optional
+%    input 'startTime'.
 %
-% 3. The structure organization matches Simulink's requirements for using a
+% 3. The optional input 'startTime' sets the MATLAB time, in seconds, which
+%    corresponds to the first entry in the TMY3 data. The default value is
+%    zero, such that t = 0 in the generated MATLAB time series corresponds
+%    to the first entry in the TMY3 data file. This option has no effect
+%    unless the '--UseOriginalTimestamps flag is set.
+%
+% 4. The structure organization matches Simulink's requirements for using a
 %    'From File' block to import time series data. It would also be
 %    possible to create a single time series with multiple data columns or
 %    a 'tscollection' object containing the individual time series.
 %    However, these approaches are less extensible in Simulink.
 %
-% 4. This function uses textscan() for the actual file I/O. It will
+% 5. This function uses textscan() for the actual file I/O. It will
 %    construct the string of values to import using the column
 %    specification. Be aware that if the column specification does not
 %    match the TMY3 file (non-standard file or custom column
 %    specification), then the function may error or the data returned may
 %    be incorrect. There's no error checking.
 %
-% 5. If you would like to use the time and date information in the TMY3
+% 6. If you would like to use the time and date information in the TMY3
 %    file AND you are using a custom column specification, then you must
 %    include columns for 'date' and 'time' in the specification. These
 %    columns should have the following properties:
@@ -98,8 +114,11 @@
 
 function x = convertTMY3(filename,varargin)
     %% Defaults
-    % Default time offset to apply (in hours)
+    % Default time offset (h) to apply
     offset = -0.5;
+    
+    % Default time (s) for first data entry
+    startTime = 0;
     
     % Empty column specification (loaded later)
     columnSpec = [];
@@ -128,10 +147,10 @@ function x = convertTMY3(filename,varargin)
         
         % Assign optional values accordingly
         switch argName
-			case {'unit'}
-                timeUnit = argVal;      % Time unit for time series
 			case {'offset'}
-                offset = argVal;        % Time offset for time series
+                offset = argVal;        % Time offset for time series (h)
+			case {'startTime'}
+                startTime = argVal;     % Time for first data point
 			case {'columnSpec'}
                 columnSpec = argVal;    % Column specification
             otherwise
@@ -208,8 +227,8 @@ function x = convertTMY3(filename,varargin)
         startDate = datestr(min(t), 'yyyy-mm-dd HH:MM:SS');
         t = t - min(t);
         
-        % Now, change time unit to seconds
-        t = t * 86400;      % 60 sec * 60 min * 24 hr
+        % Now, change time unit to seconds and adjust start time
+        t = t * 86400 + startTime;      % 60 sec * 60 min * 24 hr
         
     % Use synthesized time
     else

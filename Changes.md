@@ -1,9 +1,13 @@
 # Change Log
 
-## v0.1.1-rc2
-* Added standby loss to generic inverter model
+## v0.2-rc1
+* Added single-phase constant power electrical source/load block
+* Added time alignment options to PVWatts cosimulation block
+* Updated electric vehicle and EV charging station models
+* Added two demos for EV charging applications
 
-## v0.1.1-rc1
+## v0.1.1
+* Added standby loss and maximum output power to generic inverter model
 * Removed integrated campus demo (not functional in release)
 * Bug Fix: Included previously missing BCVTB file
 * Bug Fix: Corrected path parsing in Campus Energy Modeling and MLE+ installation scripts

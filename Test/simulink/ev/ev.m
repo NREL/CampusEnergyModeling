@@ -125,7 +125,7 @@ close_system(mdl, 0);
 
 %% Test Electric Vehicle Model
 % Name of Simulink model
-mdl = 'ev';
+mdl = 'ev_main';
 
 % Verify that the model simulates without error
 open_system(mdl);

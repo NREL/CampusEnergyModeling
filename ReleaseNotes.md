@@ -1,20 +1,11 @@
-# Release Notes: v0.1
+# Release Notes: v0.2
 
-This is the initial release of the Campus Energy Modeling project!
+Release v0.2 includes a major rework of the electric vehicle (EV) models. The Simulink library now includes an [Electric Vehicles] section with five block models related to EVs. In addition, there are two new [demos] related to EVs:
+* **EV Demand Management** - Demonstrates demand management using supervisory control of EV charging
+* **EV PV Smoothing** - Demonstrates smoothing of photovoltaic array output using supervisory control of EV charging
 
-## Support for EnergyPlus 8.0 and PVWatts
-Perform building cosimulation with [EnergyPlus] (via [MLE+]) and PV cosimulation with [PVWatts] (via
-[SSC]).
+For complete documentation, please see the [Campus Energy Modeling wiki].
 
-## DataBus Integration
-Download data from NREL's [DataBus] database using included scripts.
-
-## Online Documentation
-User and developer documentation is available in the [Campus Energy Modeling wiki].
-
-[EnergyPlus]: http://apps1.eere.energy.gov/buildings/energyplus/ "EnergyPlus"
-[MLE+]: http://mlab.seas.upenn.edu/mlep/ "MLE+ Toolbox"
-[PVWatts]: http://www.nrel.gov/rredc/pvwatts/ "PVWatts"
-[SSC]: https://sam.nrel.gov/content/sam-simulation-core-sdk "SAM Simulation Core SDK"
-[DataBus]: https://databus.nrel.gov/ "DataBus"
+[Electric Vehicles]: https://github.com/NREL/CampusEnergyModeling/wiki/Library#electric-vehicles "Library - Campus Energy Modeling"
+[demos]: https://github.com/NREL/CampusEnergyModeling/wiki/Demos "Demonstrations - Campus Energy Modeling"
 [Campus Energy Modeling wiki]: https://github.com/NREL/CampusEnergyModeling/wiki "Campus Energy Modeling"

@@ -110,35 +110,35 @@ function GenericInverter_cb_dynamicmask(block)
     % See mask parameter dialog for number-to-name matching
     switch model_type
         case 'Fixed Efficiency'
-            vis(2) = {'on'};
-            vis(3:5) = {'off'};
-            vis(6:9) = {'off'};
+            vis(4) = {'on'};
+            vis(5:7) = {'off'};
+            vis(8:11) = {'off'};
 
         case 'Quadratic'
-            vis(2) = {'off'};
-            vis(3:5) = {'on'};
-            vis(6:9) = {'off'};
+            vis(4) = {'off'};
+            vis(5:7) = {'on'};
+            vis(8:11) = {'off'};
 
         case 'Lookup Table'
-            vis(2) = {'off'};
-            vis(3:5) = {'off'};
-            vis(6) = {'on'};
+            vis(4) = {'off'};
+            vis(5:7) = {'off'};
+            vis(8) = {'on'};
             lookup_pair = get_param(gcb, 'lookup_pair');
             switch lookup_pair
                 case 'Input Power + Output Power'
-                    vis{7} = 'on';
-                    vis{8} = 'on';
-                    vis{9} = 'off';
+                    vis{9}  = 'on';
+                    vis{10} = 'on';
+                    vis{11} = 'off';
 
                 case 'Input Power + Efficiency'
-                    vis{7} = 'on';
-                    vis{8} = 'off';
-                    vis{9} = 'on';
+                    vis{9}  = 'on';
+                    vis{10} = 'off';
+                    vis{11} = 'on';
 
                 case 'Output Power + Efficiency'
-                    vis{7} = 'off';
-                    vis{8} = 'on';
-                    vis{9} = 'on';
+                    vis{9}  = 'off';
+                    vis{10} = 'on';
+                    vis{11} = 'on';
             end
     end
 

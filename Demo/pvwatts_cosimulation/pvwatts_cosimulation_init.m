@@ -16,8 +16,8 @@
 %    data).
 %
 % Modify the user settings below to select a scenario, then run this script
-% prior to running the Simulink simulation. (You only need to run it once; 
-% the necessary files and settings will persist afterwards.)
+% prior to running the Simulink simulation. (You only need to run it once
+% per scenario; the necessary files and settings will persist afterwards.)
 %
 % COMMENTS:
 % 1. The DC and AC powers are output as vectors to the MATLAB workspace.
@@ -45,9 +45,9 @@
 %    bus definition for the weather data block. To correct, run this
 %    script, then reopen the model.
 %
-% 4.  After changing scenarios, you may need to use the Autoscale feature
-%     in the Simulink oscilloscopes to resize the scope view to fit the
-%     data.
+% 4. After changing scenarios, you may need to use the Autoscale feature
+%    in the Simulink oscilloscopes to resize the scope view to fit the
+%    data.
 
 %% User Settings
 % Scenario selection: please specify either 'short' or 'long'

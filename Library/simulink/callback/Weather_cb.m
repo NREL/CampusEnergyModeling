@@ -49,8 +49,8 @@ function Weather_cb_init(block, fname, initbus)
     if initbus
         % Open the weather data file
         try
-            load(fname);
-            tmy3 = ans;
+            w = load(fname);
+            tmy3 = w.ans;
         catch err
             warning('CampusEnergyModeling:Weather:invalidFile', ...
                 ['Cannot open specified weather data file. ' ...

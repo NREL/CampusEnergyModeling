@@ -1,0 +1,5 @@
+varname,dbname,unit,description
+DNI,wind103W_DirCH1,W/m²,Direct normal irradiance
+DHI,wind103W_Dif848,W/m²,Diffuse horizontal irradiance
+DryBulbTemp,wind303W_Temp,°C,Dry-bulb temperature
+WindSpeed,wind303W_WS_AT_6,m/s,Wind speed

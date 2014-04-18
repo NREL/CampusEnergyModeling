@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.84"
+    ComputedModelVersion    "1.86"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -57,11 +57,11 @@ Model {
 	LoadSaveID		"0"
 	Extents			[1327.0, 731.0]
 	ZoomFactor		[1.0]
-	Offset			[-77.7124935090543, 10517.125]
+	Offset			[-93.4624935090543, 10576.156255766749]
       }
     }
   }
-  PhysicalModelingChecksum "4094026836"
+  PhysicalModelingChecksum "1814553747"
   PhysicalModelingParameterChecksum "2551881806"
   PhysicalModelingProducts "Power_System_Blocks"
   Created		  "Fri Jun 28 13:18:54 2013"
@@ -70,9 +70,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Jan 02 13:02:27 2014"
-  RTWModifiedTimeStamp	  310568547
-  ModelVersionFormat	  "1.%<AutoIncrement:84>"
+  LastModifiedDate	  "Mon Feb 24 10:49:03 2014"
+  RTWModifiedTimeStamp	  315139623
+  ModelVersionFormat	  "1.%<AutoIncrement:86>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -887,7 +887,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "113"
+    SIDHighWatermark	    "114"
     Block {
       BlockType		      BusCreator
       Name		      "Bus\nCreator"
@@ -945,7 +945,7 @@ Model {
       Name		      "Cable"
       SID		      "93"
       Ports		      [0, 0, 0, 0, 0, 3, 3]
-      Position		      [435, 11050, 495, 11100]
+      Position		      [430, 11050, 490, 11100]
       ZOrder		      757
       BlockMirror	      on
       NamePlacement	      "alternate"
@@ -1249,9 +1249,11 @@ Model {
       Ports		      [1, 1]
       Position		      [780, 10769, 850, 10811]
       ZOrder		      64
-      LibraryVersion	      "1.114"
+      LibraryVersion	      "1.136"
       SourceBlock	      "CampusEnergyModeling/PV/Generic Inverter"
       SourceType	      "Generic Inverter"
+      max_power		      "110e3"
+      standby		      "100"
       model_type	      "Quadratic"
       fixed_eff		      "0.95"
       alpha		      "500"
@@ -1261,7 +1263,6 @@ Model {
       lookup_in		      "[0, 10, 25, 50, 75, 100]"
       lookup_out	      "[0, 9, 24, 49, 73, 97]"
       lookup_eff	      "[0.10, 0.80, 0.87, 0.93, 0.90, 0.88]"
-      standby		      "50"
       Port {
 	PortNumber		1
 	Name			"AC Power"
@@ -1337,14 +1338,14 @@ Model {
     Block {
       BlockType		      Reference
       Name		      "PV\nInterconnection"
-      SID		      "90"
+      SID		      "114"
       Ports		      [1, 0, 0, 0, 0, 0, 4]
-      Position		      [280, 11050, 345, 11115]
-      ZOrder		      758
-      LibraryVersion	      "1.114"
-      SourceBlock	      "CampusEnergyModeling/Electrical/Constant Power\nSource or Load"
-      SourceType	      "Constant Power Source/Load"
-      Conven		      "source"
+      Position		      [290, 11047, 355, 11118]
+      ZOrder		      843
+      LibraryVersion	      "1.136"
+      SourceBlock	      "CampusEnergyModeling/Electrical/Three-Phase\nConstant Power\nSource or Load"
+      SourceType	      "Three-Phase Constant Power Source/Load"
+      Conven		      "load"
       PNom		      "100e3"
       QNom		      "0"
       VNom		      "480"
@@ -1380,6 +1381,7 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
+      LegendLocations	      "0.64909     0.88872     0.29701     0.05513\n0.76157      0.4487     0.18453    0.031138"
       TimeRange		      "90000"
       YMin		      "0~-20000"
       YMax		      "140000~120000"
@@ -1416,6 +1418,7 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
+      LegendLocations	      "0.69935     0.91271     0.24599    0.031138\n0.63696      0.4487     0.30838    0.031138"
       TimeRange		      "90000"
       YMin		      "0~0"
       YMax		      "70~1600"
@@ -1431,7 +1434,7 @@ Model {
       Ports		      [1, 1]
       Position		      [595, 10770, 665, 10810]
       ZOrder		      78
-      LibraryVersion	      "1.114"
+      LibraryVersion	      "1.136"
       SourceBlock	      "CampusEnergyModeling/PV/PV Smoothing"
       SourceType	      "Photovoltaic Array Smoothing"
       sel		      "Array Size and Power Density"
@@ -1454,7 +1457,7 @@ Model {
       Ports		      [4, 3]
       Position		      [250, 10772, 460, 10888]
       ZOrder		      65
-      LibraryVersion	      "1.114"
+      LibraryVersion	      "1.136"
       UserDataPersistent      on
       UserData		      "DataTag0"
       SourceBlock	      "CampusEnergyModeling/PV/PVWatts Cosimulation"
@@ -1479,6 +1482,7 @@ Model {
       poa_cutin		      "0"
       init_tcell	      "13.2"
       init_poa		      "0"
+      alignment		      "Middle"
       output_dc		      on
       output_celltemp	      on
       output_poa	      on
@@ -1508,7 +1512,7 @@ Model {
       Ports		      [2, 1]
       Position		      [165, 11049, 230, 11116]
       ZOrder		      760
-      LibraryVersion	      "1.114"
+      LibraryVersion	      "1.136"
       SourceBlock	      "CampusEnergyModeling/Electrical/Power Factor\nConversion"
       SourceType	      "Power Factor Conversion"
       pfType		      "Lagging"
@@ -1654,9 +1658,10 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
+      LegendLocations	      "0.78149     0.86626     0.15449    0.079122\n0.78984     0.40071     0.14614    0.079122"
       TimeRange		      "90000"
-      YMin		      "0.999~0"
-      YMax		      "1.007~1.4"
+      YMin		      "0.975~0"
+      YMax		      "1.015~1.4"
       SaveName		      "ScopeData2"
       DataFormat	      "StructureWithTime"
       LimitDataPoints	      off
@@ -1669,7 +1674,7 @@ Model {
       Ports		      [0, 1]
       Position		      [55, 10590, 130, 10680]
       ZOrder		      60
-      LibraryVersion	      "1.114"
+      LibraryVersion	      "1.136"
       SourceBlock	      "CampusEnergyModeling/Weather/Weather Data"
       SourceType	      "Weather Data From File"
       fname		      "Weather-short.mat"
@@ -1684,7 +1689,7 @@ Model {
       ZOrder		      839
       DropShadow	      on
       Priority		      "2"
-      LibraryVersion	      "1.2191"
+      LibraryVersion	      "*1.2191"
       UserDataPersistent      on
       UserData		      "DataTag1"
       SourceBlock	      "powerlib/powergui"
@@ -1879,35 +1884,6 @@ Model {
     }
     Line {
       LineType		      "Connection"
-      SrcBlock		      "PV\nInterconnection"
-      SrcPort		      RConn4
-      Points		      [20, 0]
-      DstBlock		      "Ground4"
-      DstPort		      LConn1
-    }
-    Line {
-      LineType		      "Connection"
-      SrcBlock		      "Cable"
-      SrcPort		      RConn1
-      DstBlock		      "PV\nInterconnection"
-      DstPort		      RConn1
-    }
-    Line {
-      LineType		      "Connection"
-      SrcBlock		      "Cable"
-      SrcPort		      RConn2
-      DstBlock		      "PV\nInterconnection"
-      DstPort		      RConn2
-    }
-    Line {
-      LineType		      "Connection"
-      SrcBlock		      "Cable"
-      SrcPort		      RConn3
-      DstBlock		      "PV\nInterconnection"
-      DstPort		      RConn3
-    }
-    Line {
-      LineType		      "Connection"
       SrcBlock		      "Cable"
       SrcPort		      LConn1
       DstBlock		      "Distribution\nTransformer"
@@ -2018,6 +1994,35 @@ Model {
       DstBlock		      "Power Factor\nConversion"
       DstPort		      1
     }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "PV\nInterconnection"
+      SrcPort		      RConn1
+      DstBlock		      "Cable"
+      DstPort		      RConn1
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Cable"
+      SrcPort		      RConn2
+      DstBlock		      "PV\nInterconnection"
+      DstPort		      RConn2
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "PV\nInterconnection"
+      SrcPort		      RConn3
+      DstBlock		      "Cable"
+      DstPort		      RConn3
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "PV\nInterconnection"
+      SrcPort		      RConn4
+      Points		      [10, 0]
+      DstBlock		      "Ground4"
+      DstPort		      LConn1
+    }
     Annotation {
       SID		      "113"
       Name		      "Voltage and current are displayed in per-unit:\nSBase = 100 kVA\nVBase = 13.2 kV"
@@ -2031,62 +2036,64 @@ MatData {
   NumRecords		  2
   DataRecord {
     Tag			    DataTag0
-    Data		    "  %)30     .    &!(   8    (     @         %    \"     $    !     0         %  0 \"@    $    \\    9&EA"
-    ";&]G     &]U='!U=',   !S<V-V87(     <W-C9&%T80   '-I;7-T87)T  !S<V-M;V1U;&4       X   #8!@  !@    @    \"         "
-    " 4    (     0    $    !          4 !  0     0   % !  !L870                 ;&]N                 '-T87)T7W1I;64    "
-    "   !T>@                  =&EM95]S=&5P         '-Y<W1E;5]S:7IE      !D97)A=&4             87II;75T:            '1I;"
-    "'0               !T<F%C:U]M;V1E        <F]T;&EM             '1?<F5F              !T7VYO8W0             9V%M;6$    "
-    "          &E?<F5F              !P;V%?8W5T:6X         :6YI=%]T8V5L;        &EN:71?<&]A          !O=71P=71?9&,      "
-    "   ;W5T<'5T7V-E;&QT96UP &]U='!U=%]P;V$        .    .     8    (    !@         %    \"     $    !     0         )  "
-    "  \"    !^%ZU&XWD- #@   #@    &    \"     8         !0    @    !     0    $         \"0    @   #L4;@>A4M:P X   !( "
-    "   !@    @    $          4    (     0   !,    !         !     3    ,C Q,BTP-BTP,2 P,#HP,#HP,       #@   #@    &   "
-    " \"     8         !0    @    !     0    $         \"0    @            8P X    X    !@    @    &          4    (   "
-    "  0    $    !          D    (            )$ .    .     8    (    !@         %    \"     $    !     0         )    "
-    "\"           :OA #@   #@    &    \"     8         !0    @    !     0    $         \"0    @   !F9F9F9F;N/PX    X   "
-    " !@    @    &          4    (     0    $    !          D    (          \" 9D .    .     8    (    !@         %    "
-    "\"     $    !     0         )    \"    !^%ZU&XWD- #@   #@    &    \"     8         !0    @    !     0    $        "
-    " \"0    @           #P/PX    X    !@    @    &          4    (     0    $    !          D    (          \" 1D .   "
-    " .     8    (    !@         %    \"     $    !     0         )    \"            #E #@   #@    &    \"     8       "
-    "  !0    @    !     0    $         \"0    @          (!&0 X    X    !@    @    &          4    (     0    $    !   "
-    "       D    (            X+\\.    .     8    (    !@         %    \"     $    !     0         )    \"           0("
-    "] #@   #@    &    \"     8         !0    @    !     0    $         \"0    @               X    X    !@    @    &  "
-    "        4    (     0    $    !          D    (    9F9F9F9F*D .    .     8    (    !@         %    \"     $    !   "
-    "  0         )    \"               #@   #@    &    \"     8         !0    @    !     0    $         \"0    @       "
-    "    #P/PX    X    !@    @    &          4    (     0    $    !          D    (            \\#\\.    .     8    (  "
-    "  !@         %    \"     $    !     0         )    \"            / _#@   , !   &    \"     (         !0    @    ! "
-    "    P    $         !0 $  L    !    %@   %9A<DYA;64     3W5T<'5T4&]R=     X    P    !@    @    $          4    (   "
-    "  0    (    !         !   @!D8P  #@   #@    &    \"     8         !0    @    !     0    $         \"0    @        "
-    "   #P/PX    X    !@    @    $          4    (     0    4    !         !     %    =&-E;&P    .    .     8    (    !"
-    "@         %    \"     $    !     0         )    \"             ! #@   #     &    \"     0         !0    @    !    "
-    " P    $         $  # '!O80 .    .     8    (    !@         %    \"     $    !     0         )    \"             A "
-    "#@   $ (   &    \"     (         !0    @    !     0    $         !0 $  P    !    1 $  &QA=            &QO;@       "
-    "    '1Z             '1I;65?<W1E<    '-Y<W1E;5]S:7IE &1E<F%T90       '1R86-K7VUO9&4  &%Z:6UU=&@      '1I;'0        "
-    "  ')O=&QI;0       '1?;F]C=        '1?<F5F         &=A;6UA         &E?<F5F         '!O85]C=71I;@   '1C96QL         "
-    "'!O80           'EE87(          &UO;G1H         &1A>0           &AO=7(          &UI;G5T90       &)E86T          &1"
-    "I9F9U<V4      '1A;6(          '=S<&0          &1C                   .    .     8    (    !@         %    \"     $ "
-    "   !     0         )    \"    !^%ZU&XWD- #@   #@    &    \"     8         !0    @    !     0    $         \"0    @"
-    "   #L4;@>A4M:P X    X    !@    @    &          4    (     0    $    !          D    (            &, .    .     8  "
-    "  (    !@         %    \"     $    !     0         )    \"    !=LP19LP68_#@   #@    &    \"     8         !0    @ "
-    "   !     0    $         \"0    @           !90 X    X    !@    @    &          4    (     0    $    !          D  "
-    "  (    9F9F9F9F[C\\.    .     8    (    !@         %    \"     $    !     0         )    \"               #@   #@ "
-    "   &    \"     8         !0    @    !     0    $         \"0    @          (!F0 X    X    !@    @    &          4 "
-    "   (     0    $    !          D    (    'X7K4;C>0T .    .     8    (    !@         %    \"     $    !     0       "
-    "  )    \"           @$9 #@   #@    &    \"     8         !0    @    !     0    $         \"0    @          (!&0 X "
-    "   X    !@    @    &          4    (     0    $    !          D    (            .4 .    .     8    (    !@        "
-    " %    \"     $    !     0         )    \"            .\"_#@   #@    &    \"     8         !0    @    !     0    $ "
-    "        \"0    @          $\"/0 X    X    !@    @    &          4    (     0    $    !          D    (            "
-    "   .    .     8    (    !@         %    \"     $    !     0         )    \"               #@   #@    &    \"     8"
-    "         !0    @    !     0    $         \"0    @               X    X    !@    @    &          4    (     0    $ "
-    "   !          D    (          !PGT .    .     8    (    !@         %    \"     $    !     0         )    \"       "
-    "     !A #@   #@    &    \"     8         !0    @    !     0    $         \"0    @             0 X    X    !@    @ "
-    "   &          4    (     0    $    !          D    (               .    .     8    (    !@         %    \"     $  "
-    "  !     0         )    \"               #@   #@    &    \"     8         !0    @    !     0    $         \"0    @ "
-    "              X    X    !@    @    &          4    (     0    $    !          D    (               .    .     8   "
-    " (    !@         %    \"     $    !     0         )    \"    *Y'X7H4KB9 #@   #@    &    \"     8         !0    @  "
-    "  !     0    $         \"0    @   \":F9F9F9D%0 X    X    !@    @    &          4    (     0    $    !          D  "
-    "  (               .    ,     8    (    !@         %    \"                0         )          X    X    !@    @   "
-    " &          4    (     0    $    !          D    (         %IN)D$.    ,     8    (    !@         %    \"          "
-    "      0         )          "
+    Data		    "  %)30     .    P!(   8    (     @         %    \"     $    !     0         %  0 #     $   !4    9&EA;&"
+    "]G        ;W5T<'5T<P      <W-C=F%R        <W-C9&%T80      <VEM<W1A<G0     <W-C;6]D=6QE    =&EM95]O9F9S970       X "
+    "   H!P  !@    @    \"          4    (     0    $    !          4 !  0     0   & !  !L870                 ;&]N     "
+    "            '-T87)T7W1I;64       !T>@                  =&EM95]S=&5P         '-Y<W1E;5]S:7IE      !D97)A=&4        "
+    "     87II;75T:            '1I;'0               !T<F%C:U]M;V1E        <F]T;&EM             '1?<F5F              !T7"
+    "VYO8W0             9V%M;6$              &E?<F5F              !P;V%?8W5T:6X         :6YI=%]T8V5L;        &EN:71?<&]"
+    "A          !A;&EG;FUE;G0         ;W5T<'5T7V1C         &]U='!U=%]C96QL=&5M< !O=71P=71?<&]A        #@   #@    &    \""
+    "     8         !0    @    !     0    $         \"0    @    ?A>M1N-Y#0 X    X    !@    @    &          4    (     0"
+    "    $    !          D    (    [%&X'H5+6L .    2     8    (    !          %    \"     $    3     0         0    $P "
+    "  #(P,3(M,#8M,#$@,# Z,# Z,#        X    X    !@    @    &          4    (     0    $    !          D    (         "
+    "   &, .    .     8    (    !@         %    \"     $    !     0         )    \"            \"1 #@   #@    &    \"  "
+    "   8         !0    @    !     0    $         \"0    @          &KX0 X    X    !@    @    &          4    (     0  "
+    "  $    !          D    (    9F9F9F9F[C\\.    .     8    (    !@         %    \"     $    !     0         )    \"  "
+    "         @&9 #@   #@    &    \"     8         !0    @    !     0    $         \"0    @    ?A>M1N-Y#0 X    X    !@ "
+    "   @    &          4    (     0    $    !          D    (            \\#\\.    .     8    (    !@         %    \" "
+    "    $    !     0         )    \"           @$9 #@   #@    &    \"     8         !0    @    !     0    $         \""
+    "0    @            Y0 X    X    !@    @    &          4    (     0    $    !          D    (          \" 1D .    . "
+    "    8    (    !@         %    \"     $    !     0         )    \"            .\"_#@   #@    &    \"     8         "
+    "!0    @    !     0    $         \"0    @          $\"/0 X    X    !@    @    &          4    (     0    $    !    "
+    "      D    (               .    .     8    (    !@         %    \"     $    !     0         )    \"    &9F9F9F9BI "
+    "#@   #@    &    \"     8         !0    @    !     0    $         \"0    @               X    X    !@    @    &    "
+    "      4    (     0    $    !          D    (             $ .    .     8    (    !@         %    \"     $    !     "
+    "0         )    \"            / _#@   #@    &    \"     8         !0    @    !     0    $         \"0    @         "
+    "  #P/PX    X    !@    @    &          4    (     0    $    !          D    (            \\#\\.    P $   8    (    "
+    " @         %    \"     $    #     0         %  0 \"P    $    6    5F%R3F%M90    !/=71P=710;W)T    #@   #     &    "
+    "\"     0         !0    @    !     @    $         $  \" &1C   .    .     8    (    !@         %    \"     $    !   "
+    "  0         )    \"            / _#@   #@    &    \"     0         !0    @    !    !0    $         $     4   !T8V5"
+    "L;     X    X    !@    @    &          4    (     0    $    !          D    (             $ .    ,     8    (    !"
+    "          %    \"     $    #     0         0  , <&]A  X    X    !@    @    &          4    (     0    $    !      "
+    "    D    (            \"$ .    0 @   8    (     @         %    \"     $    !     0         %  0 #     $   !$ 0  ;&"
+    "%T            ;&]N            ='H             =&EM95]S=&5P    <WES=&5M7W-I>F4 9&5R871E        =')A8VM?;6]D90  87II"
+    ";75T:       =&EL=           <F]T;&EM        =%]N;V-T        =%]R968         9V%M;6$         :5]R968         <&]A7V"
+    "-U=&EN    =&-E;&P         <&]A            >65A<@          ;6]N=&@         9&%Y            :&]U<@          ;6EN=71E"
+    "        8F5A;0          9&EF9G5S90      =&%M8@          =W-P9           9&,                   X    X    !@    @   "
+    " &          4    (     0    $    !          D    (    'X7K4;C>0T .    .     8    (    !@         %    \"     $    "
+    "!     0         )    \"    .Q1N!Z%2UK #@   #@    &    \"     8         !0    @    !     0    $         \"0    @   "
+    "         8P X    X    !@    @    &          4    (     0    $    !          D    (    %VS!%FS!9C\\.    .     8    "
+    "(    !@         %    \"     $    !     0         )    \"            %E #@   #@    &    \"     8         !0    @   "
+    " !     0    $         \"0    @   !F9F9F9F;N/PX    X    !@    @    &          4    (     0    $    !          D    "
+    "(               .    .     8    (    !@         %    \"     $    !     0         )    \"           @&9 #@   #@    "
+    "&    \"     8         !0    @    !     0    $         \"0    @    ?A>M1N-Y#0 X    X    !@    @    &          4    "
+    "(     0    $    !          D    (          \" 1D .    .     8    (    !@         %    \"     $    !     0         "
+    ")    \"           @$9 #@   #@    &    \"     8         !0    @    !     0    $         \"0    @            Y0 X   "
+    " X    !@    @    &          4    (     0    $    !          D    (            X+\\.    .     8    (    !@         "
+    "%    \"     $    !     0         )    \"           0(] #@   #@    &    \"     8         !0    @    !     0    $   "
+    "      \"0    @               X    X    !@    @    &          4    (     0    $    !          D    (        @!2N)D "
+    ".    .     8    (    !@         %    \"     $    !     0         )    \"               #@   #@    &    \"     8   "
+    "      !0    @    !     0    $         \"0    @          '\"?0 X    X    !@    @    &          4    (     0    $   "
+    " !          D    (            &$ .    .     8    (    !@         %    \"     $    !     0         )    \"         "
+    "    ! #@   #@    &    \"     8         !0    @    !     0    $         \"0    @               X    X    !@    @   "
+    " &          4    (     0    $    !          D    (               .    .     8    (    !@         %    \"     $    "
+    "!     0         )    \"               #@   #@    &    \"     8         !0    @    !     0    $         \"0    @   "
+    "            X    X    !@    @    &          4    (     0    $    !          D    (    KD?A>A2N)D .    .     8    ("
+    "    !@         %    \"     $    !     0         )    \"    )J9F9F9F05 #@   #@    &    \"     8         !0    @    "
+    "!     0    $         \"0    @               X    P    !@    @    &          4    (               !          D     "
+    "    #@   #@    &    \"     8         !0    @    !     0    $         \"0    @         6FXF00X    P    !@    @    &"
+    "          4    (               !          D         #@   #@    &    \"     8         !0    @    !     0    $      "
+    "   \"0    @               "
   }
   DataRecord {
     Tag			    DataTag1

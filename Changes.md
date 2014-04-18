@@ -1,6 +1,9 @@
 # Change Log
 
 ## Development
+* Added a pseudo real-time clock block for real-time simulation
+
+## v0.2-rc1
 * Added single-phase constant power electrical source/load block
 * Added time alignment options to PVWatts cosimulation block
 * Updated electric vehicle and EV charging station models

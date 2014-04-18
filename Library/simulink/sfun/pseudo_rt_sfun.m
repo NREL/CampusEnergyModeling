@@ -132,8 +132,8 @@ function Start(block)
     % Retrieve user data
     d = get_param(block.BlockHandle, 'UserData');
     
-    % Get simulation start time as a serial date number
-    d.tstart = now();
+    % Clear start time
+    d.tstart = [];
     
     % Store in block user data
     set_param(block.BlockHandle, 'UserData', d);
@@ -152,8 +152,17 @@ function Outputs(block)
     % Get the current simulation time
     t = block.CurrentTime;
     
-    % Skip delay if t = 0
-    if t == 0, return; end
+    % If this is the first time step, initialize real-time reference
+    if isempty(d.tstart)
+        % Real-time reference for simulation time t = 0
+        d.tstart = now() - (t / d.dialog.speedup) / 86400;
+        
+        % Store in block user data
+        set_param(block.BlockHandle, 'UserData', d);
+        
+        % Return: no need to delay on first time step
+        return
+    end
     
     % Calculate serial date number for next simulation step to achieve
     % pseudo real-time execution

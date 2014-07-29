@@ -229,9 +229,18 @@ function [x, varargout] = importDataBus(sensor, start, stop, varargin)
     %% Convert Data
     % Parse data, if required
     if any( strcmpi(output, {'vector','matrix','ts'}) )
-        d = textscan(raw, '%f%f', 'HeaderLines', 1, 'delimiter', ',');
+        % Parse raw numbers
+        d = textscan(raw, '%f%f', 'HeaderLines', 1, 'delimiter', ',', ...
+            'treatAsEmpty', {'NA', 'null'} );
+        
+        % Convert to output
         t = epochToDateNum(d{1}, tz, 'ms');
         x = d{2};
+        
+        % Strip empties
+        empt = (isnan(x) | isnan(t));
+        x = x( ~empt );
+        t = t( ~empt );
     end
     
     % Convert to requested output format

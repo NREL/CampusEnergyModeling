@@ -34,6 +34,12 @@
 %    may see a warning that the model is unable to automatically create the
 %    bus definition for the weather data block. To correct, run this
 %    script, then reopen the model.
+%
+% 3. If experimenting with using the grid power signal as the control
+%    source, you will need to adjust the PI controller parameters as noted
+%    in the model. Be aware that the PI controller has been tuned to the
+%    SRRL data and simulation timestep. It does not work nearly as well for
+%    the DataBus data and simulation timestep.
 
 %% User Settings
 % Scenario selection: please specify either 'srrl' or 'databus'
@@ -71,7 +77,7 @@ switch scen
 
             % Batch import from databus -> result in 'ans'
             sensorFile = 'DataBus_sensors.csv';
-            batchDataBus(sensorFile, start, stop, 'timezone', -6);
+            batchDataBus(sensorFile, start, stop, 'timezone', -7);
             save(fname, 'ans', '-v7.3');
         end        
 end
@@ -88,12 +94,12 @@ weatherFile = fname;
 
 % Set timestep and simulation duration
 switch scen
-    % SRRL - 60 second timestep
+    % SRRL - 15 second timestep
     case 'srrl'
         timestep = 15;
         dur = 86400;
     
-    % DataBus - ~3 second timestep
+    % DataBus - 1 second timestep
     case 'databus'
         timestep = 1;
         dur = 86400;

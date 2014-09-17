@@ -1,12 +1,12 @@
 Model {
-  Name			  "supply_demand_campus"
+  Name			  "campus_with_central_plant"
   Version		  8.1
   MdlSubVersion		  0
   GraphicalInterface {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.528"
+    ComputedModelVersion    "1.539"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -30,7 +30,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [1592.0, -8.0, 1616.0, 1216.0]
+      Location		      [12.0, 9.0, 1616.0, 1019.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -54,9 +54,9 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1566.0, 1042.0]
+	Extents			[1566.0, 845.0]
 	ZoomFactor		[1.0]
-	Offset			[6.0, -3.3652368707221285]
+	Offset			[-78.112955147241109, -3.4741637612998488]
       }
     }
   }
@@ -64,11 +64,11 @@ Model {
   Creator		  "wbernal"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "wbernal"
+  LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Jul 23 16:10:17 2013"
-  RTWModifiedTimeStamp	  296496591
-  ModelVersionFormat	  "1.%<AutoIncrement:528>"
+  LastModifiedDate	  "Wed Sep 17 16:39:34 2014"
+  RTWModifiedTimeStamp	  332868030
+  ModelVersionFormat	  "1.%<AutoIncrement:539>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -174,7 +174,7 @@ Model {
 	  StartTime		  "0.0"
 	  StopTime		  "Inf"
 	  AbsTol		  "auto"
-	  FixedStep		  "60"
+	  FixedStep		  "300"
 	  InitialStep		  "auto"
 	  MaxNumMinSteps	  "-1"
 	  MaxOrder		  5
@@ -668,8 +668,8 @@ Model {
 	PropName		"Components"
       }
       Name		      "Configuration"
-      CurrentDlgPage	      "Diagnostics"
-      ConfigPrmDlgPosition     [ 360, 166, 1241, 972 ] 
+      CurrentDlgPage	      "Solver"
+      ConfigPrmDlgPosition     [ 336, 76, 1265, 996 ] 
     }
     PropName		    "ConfigurationSets"
   }
@@ -740,6 +740,23 @@ Model {
   }
   BlockParameterDefaults {
     Block {
+      BlockType		      BusCreator
+      Inputs		      "4"
+      DisplayOption	      "none"
+      OutDataTypeStr	      "Inherit: auto"
+      NonVirtualBus	      off
+    }
+    Block {
+      BlockType		      BusSelector
+      OutputSignals	      "signal1,signal2,signal3"
+      OutputAsBus	      off
+    }
+    Block {
+      BlockType		      Clock
+      DisplayTime	      off
+      Decimation	      "10"
+    }
+    Block {
       BlockType		      Constant
       Value		      "1"
       VectorParams1D	      on
@@ -763,6 +780,21 @@ Model {
       GotoTag		      "A"
       IconDisplay	      "Tag"
       TagVisibility	      "local"
+    }
+    Block {
+      BlockType		      Gain
+      Gain		      "1"
+      Multiplication	      "Element-wise(K.*u)"
+      ParamMin		      "[]"
+      ParamMax		      "[]"
+      ParamDataTypeStr	      "Inherit: Same as input"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
     }
     Block {
       BlockType		      Goto
@@ -798,6 +830,15 @@ Model {
       SampleTime	      "-1"
     }
     Block {
+      BlockType		      Memory
+      X0		      "0"
+      InheritSampleTime	      off
+      LinearizeMemory	      off
+      LinearizeAsDelay	      off
+      StateMustResolveToSignalObject off
+      RTWStateStorageClass    "Auto"
+    }
+    Block {
       BlockType		      Mux
       Inputs		      "4"
       DisplayOption	      "none"
@@ -823,13 +864,6 @@ Model {
       InitialOutput	      "[]"
     }
     Block {
-      BlockType		      S-Function
-      FunctionName	      "system"
-      SFunctionModules	      "''"
-      PortCounts	      "[]"
-      SFunctionDeploymentMode off
-    }
-    Block {
       BlockType		      Scope
       ModelBased	      off
       TickLabels	      "OneTimeTick"
@@ -845,13 +879,6 @@ Model {
       MaxDataPoints	      "5000"
       Decimation	      "1"
       SampleInput	      off
-      SampleTime	      "-1"
-    }
-    Block {
-      BlockType		      Selector
-      NumberOfDimensions      "1"
-      IndexMode		      "One-based"
-      InputPortWidth	      "-1"
       SampleTime	      "-1"
     }
     Block {
@@ -894,19 +921,10 @@ Model {
       FixptAsFi		      off
       NumInputs		      "1"
     }
-    Block {
-      BlockType		      UnitDelay
-      InitialCondition	      "0"
-      InputProcessing	      "Inherited"
-      SampleTime	      "1"
-      StateMustResolveToSignalObject off
-      CodeGenStateStorageClass "Auto"
-      HasFrameUpgradeWarning  on
-    }
   }
   System {
-    Name		    "supply_demand_campus"
-    Location		    [1592, -8, 3208, 1208]
+    Name		    "campus_with_central_plant"
+    Location		    [12, 9, 1628, 1028]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -920,183 +938,305 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "234"
+    SIDHighWatermark	    "326"
     Block {
-      BlockType		      Constant
-      Name		      "Cool"
-      SID		      "3"
-      Position		      [125, 50, 155, 80]
-      ZOrder		      -4
-      Value		      "7.22"
+      BlockType		      Logic
+      Name		      "And"
+      SID		      "234"
+      Ports		      [3, 1]
+      Position		      [553, 824, 588, 936]
+      ZOrder		      7
+      ShowName		      off
+      Inputs		      "3"
+      IconShape		      "distinctive"
+      AllPortsSameDT	      off
+      OutDataTypeStr	      "boolean"
+    }
+    Block {
+      BlockType		      BusCreator
+      Name		      "Bus\nCreator"
+      SID		      "304"
+      Ports		      [2, 1]
+      Position		      [1450, 104, 1455, 146]
+      ZOrder		      895
+      ShowName		      off
+      Inputs		      "2"
+      DisplayOption	      "bar"
       Port {
 	PortNumber		1
-	Name			"CW Setpoint"
+	Name			"Plant"
 	RTWStorageClass		"Auto"
 	DataLoggingNameMode	"SignalName"
       }
     }
     Block {
-      BlockType		      Constant
-      Name		      "Cool1"
-      SID		      "15"
-      Position		      [160, 320, 190, 350]
-      ZOrder		      -4
-      Value		      "22"
+      BlockType		      BusCreator
+      Name		      "Bus\nCreator1"
+      SID		      "305"
+      Ports		      [2, 1]
+      Position		      [1450, 164, 1455, 206]
+      ZOrder		      896
+      ShowName		      off
+      Inputs		      "2"
+      DisplayOption	      "bar"
       Port {
 	PortNumber		1
-	Name			"Cooling Setpoint"
+	Name			"Building 1"
 	RTWStorageClass		"Auto"
 	DataLoggingNameMode	"SignalName"
       }
     }
     Block {
-      BlockType		      Constant
-      Name		      "Cool2"
-      SID		      "116"
-      Position		      [150, 565, 180, 595]
-      ZOrder		      -4
-      Value		      "20"
+      BlockType		      BusCreator
+      Name		      "Bus\nCreator2"
+      SID		      "306"
+      Ports		      [2, 1]
+      Position		      [1450, 229, 1455, 271]
+      ZOrder		      897
+      ShowName		      off
+      Inputs		      "2"
+      DisplayOption	      "bar"
       Port {
 	PortNumber		1
-	Name			"Cooling Setpoint"
+	Name			"Building 2"
 	RTWStorageClass		"Auto"
 	DataLoggingNameMode	"SignalName"
       }
     }
     Block {
-      BlockType		      Scope
-      Name		      "Delay"
-      SID		      "181"
-      Ports		      [2]
-      Position		      [1430, 624, 1450, 686]
-      ZOrder		      -16
-      Floating		      off
-      Location		      [5, 43, 1605, 1194]
-      Open		      off
-      NumInputPorts	      "2"
-      TickLabels	      "on"
-      List {
-	ListType		AxesTitles
-	axes1			"%<SignalLabel>"
-	axes2			"%<SignalLabel>"
-      }
-      List {
-	ListType		ScopeGraphics
-	FigureColor		"[0.501960784313725 0.501960784313725 0.501960784313725]"
-	AxesColor		"[0 0 0]"
-	AxesTickColor		"[1 1 1]"
-	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-	LineStyles		"-|-|-|-|-|-"
-	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
-	MarkerStyles		"none|none|none|none|none|none"
-      }
-      ShowLegends	      off
-      TimeRange		      "450000"
-      YMin		      "0~-23000"
-      YMax		      "2~0"
-      SaveName		      "ScopeData8"
-      DataFormat	      "StructureWithTime"
-      LimitDataPoints	      off
-      SampleTime	      "0"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "E+ Building"
-      SID		      "229"
-      Ports		      [1, 3]
-      Position		      [375, 314, 620, 496]
-      ZOrder		      3
-      LibraryVersion	      "1.58"
-      SourceBlock	      "CampusEnergyModeling/Buildings/EnergyPlus"
-      SourceType	      "EnergyPlus Cosimulation"
-      progname		      "'C:\\EnergyPlusV8-0-0\\RunEPlus.bat'"
-      modelfile		      "[pwd '\\Building1\\5ZoneAirCool']"
-      weatherfile	      "'USA_CO_Golden-NREL.724666_TMY3'"
-      workdir		      "[pwd '\\Building1']"
-      timeout		      "6000"
-      port		      "0"
-      host		      "''"
-      bcvtbdir		      "''"
-      deltaT		      "60"
-      noutputd		      "13"
+      BlockType		      BusCreator
+      Name		      "Bus\nCreator3"
+      SID		      "313"
+      Ports		      [2, 1]
+      Position		      [1450, 369, 1455, 411]
+      ZOrder		      904
+      ShowName		      off
+      Inputs		      "2"
+      DisplayOption	      "bar"
       Port {
 	PortNumber		1
-	Name			"flag"
+	Name			"Flow"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      BusCreator
+      Name		      "Bus\nCreator4"
+      SID		      "314"
+      Ports		      [2, 1]
+      Position		      [1450, 429, 1455, 471]
+      ZOrder		      905
+      ShowName		      off
+      Inputs		      "2"
+      DisplayOption	      "bar"
+      Port {
+	PortNumber		1
+	Name			"Power"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      BusSelector
+      Name		      "Bus\nSelector"
+      SID		      "262"
+      Ports		      [1, 2]
+      Position		      [63, 360, 152, 365]
+      ZOrder		      22
+      BlockRotation	      270
+      BlockMirror	      on
+      NamePlacement	      "alternate"
+      ShowName		      off
+      OutputSignals	      "MaxChilledWaterFlow,ChilledWaterOutputTemp"
+      Port {
+	PortNumber		1
+	Name			"<MaxChilledWaterFlow>"
 	RTWStorageClass		"Auto"
 	DataLoggingNameMode	"SignalName"
       }
       Port {
 	PortNumber		2
-	Name			"time"
-	RTWStorageClass		"Auto"
-	DataLoggingNameMode	"SignalName"
-      }
-      Port {
-	PortNumber		3
-	Name			"Outputs"
+	Name			"<ChilledWaterOutputTemp>"
 	RTWStorageClass		"Auto"
 	DataLoggingNameMode	"SignalName"
       }
     }
     Block {
-      BlockType		      Reference
-      Name		      "E+ Building 1"
-      SID		      "230"
-      Ports		      [1, 3]
-      Position		      [380, 559, 625, 741]
-      ZOrder		      4
-      LibraryVersion	      "1.58"
-      SourceBlock	      "CampusEnergyModeling/Buildings/EnergyPlus"
-      SourceType	      "EnergyPlus Cosimulation"
-      progname		      "'C:\\EnergyPlusV8-0-0\\RunEPlus.bat'"
-      modelfile		      "[pwd '\\Building2\\5ZoneAirCool']"
-      weatherfile	      "'USA_CO_Golden-NREL.724666_TMY3'"
-      workdir		      "[pwd '\\Building2']"
-      timeout		      "6000"
-      port		      "0"
-      host		      "''"
-      bcvtbdir		      "''"
-      deltaT		      "60"
-      noutputd		      "13"
+      BlockType		      BusSelector
+      Name		      "Bus\nSelector1"
+      SID		      "263"
+      Ports		      [1, 2]
+      Position		      [860, 461, 865, 519]
+      ZOrder		      23
+      ShowName		      off
+      OutputSignals	      "ChilledWaterMassFlowRate,ChilledWaterHeatTransferRate"
       Port {
 	PortNumber		1
-	Name			"flag"
+	Name			"<ChilledWaterMassFlowRate>"
 	RTWStorageClass		"Auto"
 	DataLoggingNameMode	"SignalName"
       }
       Port {
 	PortNumber		2
-	Name			"time"
+	Name			"<ChilledWaterHeatTransferRate>"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      BusSelector
+      Name		      "Bus\nSelector2"
+      SID		      "288"
+      Ports		      [1, 2]
+      Position		      [860, 706, 865, 764]
+      ZOrder		      34
+      ShowName		      off
+      OutputSignals	      "ChilledWaterMassFlowRate,ChilledWaterHeatTransferRate"
+      Port {
+	PortNumber		1
+	Name			"<ChilledWaterMassFlowRate>"
 	RTWStorageClass		"Auto"
 	DataLoggingNameMode	"SignalName"
       }
       Port {
-	PortNumber		3
-	Name			"Outputs"
+	PortNumber		2
+	Name			"<ChilledWaterHeatTransferRate>"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      BusSelector
+      Name		      "Bus\nSelector3"
+      SID		      "292"
+      Ports		      [1, 2]
+      Position		      [1350, 103, 1355, 147]
+      ZOrder		      883
+      ShowName		      off
+      OutputSignals	      "ElecPowerChiller,ElecPowerPump"
+      Port {
+	PortNumber		1
+	Name			"<ElecPowerChiller>"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+      Port {
+	PortNumber		2
+	Name			"<ElecPowerPump>"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      BusSelector
+      Name		      "Bus\nSelector4"
+      SID		      "294"
+      Ports		      [1, 2]
+      Position		      [1350, 163, 1355, 207]
+      ZOrder		      885
+      ShowName		      off
+      OutputSignals	      "ElecPowerHVAC,ElecPowerTotal"
+      Port {
+	PortNumber		1
+	Name			"<ElecPowerHVAC>"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+      Port {
+	PortNumber		2
+	Name			"<ElecPowerTotal>"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      BusSelector
+      Name		      "Bus\nSelector5"
+      SID		      "296"
+      Ports		      [1, 2]
+      Position		      [1350, 228, 1355, 272]
+      ZOrder		      887
+      ShowName		      off
+      OutputSignals	      "ElecPowerHVAC,ElecPowerTotal"
+      Port {
+	PortNumber		1
+	Name			"<ElecPowerHVAC>"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+      Port {
+	PortNumber		2
+	Name			"<ElecPowerTotal>"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      BusSelector
+      Name		      "Bus\nSelector6"
+      SID		      "307"
+      Ports		      [1, 2]
+      Position		      [1350, 368, 1355, 412]
+      ZOrder		      898
+      ShowName		      off
+      OutputSignals	      "LoadOneMassFlowRate,LoadOneHeatTransferRate"
+      Port {
+	PortNumber		1
+	Name			"<LoadOneMassFlowRate>"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+      Port {
+	PortNumber		2
+	Name			"<LoadOneHeatTransferRate>"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      BusSelector
+      Name		      "Bus\nSelector7"
+      SID		      "308"
+      Ports		      [1, 2]
+      Position		      [1350, 428, 1355, 472]
+      ZOrder		      899
+      ShowName		      off
+      OutputSignals	      "ChilledWaterMassFlowRate,ChilledWaterHeatTransferRate"
+      Port {
+	PortNumber		1
+	Name			"<ChilledWaterMassFlowRate>"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+      Port {
+	PortNumber		2
+	Name			"<ChilledWaterHeatTransferRate>"
 	RTWStorageClass		"Auto"
 	DataLoggingNameMode	"SignalName"
       }
     }
     Block {
       BlockType		      Reference
-      Name		      "E+ Building"
+      Name		      "Central Plant"
       SID		      "233"
       Ports		      [1, 3]
-      Position		      [355, 14, 630, 196]
+      Position		      [410, 14, 660, 196]
       ZOrder		      6
-      LibraryVersion	      "1.58"
+      LibraryVersion	      "1.168"
+      UserDataPersistent      on
+      UserData		      "DataTag0"
       SourceBlock	      "CampusEnergyModeling/Buildings/EnergyPlus"
       SourceType	      "EnergyPlus Cosimulation"
-      progname		      "'C:\\EnergyPlusV8-0-0\\RunEPlus.bat'"
-      modelfile		      "[pwd '\\ElectricChiller\\ElectricChiller']"
-      weatherfile	      "'USA_CO_Golden-NREL.724666_TMY3'"
-      workdir		      "[pwd '\\ElectricChiller']"
-      timeout		      "6000"
+      work_dir		      "ElectricChiller"
+      rel_path		      on
+      fname		      "ElectricChiller"
+      weather_profile	      "USA_CO_Golden-NREL.724666_TMY3"
+      time_step		      "300"
+      nout		      "13"
+      timeout		      "15"
+      mlep_defaults	      on
       port		      "0"
-      host		      "''"
-      bcvtbdir		      "''"
-      deltaT		      "60"
-      noutputd		      "13"
       Port {
 	PortNumber		1
 	Name			"flag"
@@ -1117,375 +1257,507 @@ Model {
       }
     }
     Block {
+      BlockType		      SubSystem
+      Name		      "Central Plant Signals"
+      SID		      "245"
+      Ports		      [1, 1]
+      Position		      [700, 144, 805, 186]
+      ZOrder		      18
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      System {
+	Name			"Central Plant Signals"
+	Location		[12, 9, 1628, 1028]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "E+"
+	  SID			  "246"
+	  Position		  [115, 228, 145, 242]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  BusCreator
+	  Name			  "Bus\nCreator"
+	  SID			  "244"
+	  Ports			  [13, 1]
+	  Position		  [395, 110, 400, 360]
+	  ZOrder		  19
+	  ShowName		  off
+	  Inputs		  "13"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux"
+	  SID			  "243"
+	  Ports			  [1, 13]
+	  Position		  [225, 107, 230, 363]
+	  ZOrder		  18
+	  ShowName		  off
+	  Outputs		  "13"
+	  DisplayOption		  "bar"
+	  Port {
+	    PortNumber		    1
+	    Name		    "OutsideAirTemp"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    2
+	    Name		    "ElecPowerChiller"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    3
+	    Name		    "ChilledWaterOutputTemp"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    4
+	    Name		    "MaxChilledWaterFlow"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    5
+	    Name		    "LoadOneMassFlowRate"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    6
+	    Name		    "LoadOneHeatTransferRate"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    7
+	    Name		    "LoadTwoMassFlowRate"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    8
+	    Name		    "LoadTwoHeatTransferRate"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    9
+	    Name		    "LoadOneInletWaterTemp"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    10
+	    Name		    "LoadOneOutletWaterTemp"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    11
+	    Name		    "LoadTwoInletWaterTemp"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    12
+	    Name		    "LoadTwoOutletWaterTemp"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    13
+	    Name		    "ElecPowerPump"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out"
+	  SID			  "247"
+	  Position		  [480, 228, 510, 242]
+	  ZOrder		  -2
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  SrcBlock		  "E+"
+	  SrcPort		  1
+	  DstBlock		  "Demux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Bus\nCreator"
+	  SrcPort		  1
+	  DstBlock		  "Out"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "OutsideAirTemp"
+	  Labels		  [1, 1]
+	  SrcBlock		  "Demux"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "ElecPowerChiller"
+	  Labels		  [1, 1]
+	  SrcBlock		  "Demux"
+	  SrcPort		  2
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  2
+	}
+	Line {
+	  Name			  "ChilledWaterOutputTemp"
+	  Labels		  [1, 1]
+	  SrcBlock		  "Demux"
+	  SrcPort		  3
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  3
+	}
+	Line {
+	  Name			  "MaxChilledWaterFlow"
+	  Labels		  [1, 1]
+	  SrcBlock		  "Demux"
+	  SrcPort		  4
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  4
+	}
+	Line {
+	  Name			  "LoadOneMassFlowRate"
+	  Labels		  [1, 1]
+	  SrcBlock		  "Demux"
+	  SrcPort		  5
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  5
+	}
+	Line {
+	  Name			  "LoadOneHeatTransferRate"
+	  Labels		  [1, 1]
+	  SrcBlock		  "Demux"
+	  SrcPort		  6
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  6
+	}
+	Line {
+	  Name			  "LoadTwoMassFlowRate"
+	  Labels		  [1, 1]
+	  SrcBlock		  "Demux"
+	  SrcPort		  7
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  7
+	}
+	Line {
+	  Name			  "LoadTwoHeatTransferRate"
+	  Labels		  [1, 1]
+	  SrcBlock		  "Demux"
+	  SrcPort		  8
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  8
+	}
+	Line {
+	  Name			  "LoadOneInletWaterTemp"
+	  Labels		  [1, 1]
+	  SrcBlock		  "Demux"
+	  SrcPort		  9
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  9
+	}
+	Line {
+	  Name			  "LoadOneOutletWaterTemp"
+	  Labels		  [1, 1]
+	  SrcBlock		  "Demux"
+	  SrcPort		  10
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  10
+	}
+	Line {
+	  Name			  "LoadTwoInletWaterTemp"
+	  Labels		  [1, 1]
+	  SrcBlock		  "Demux"
+	  SrcPort		  11
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  11
+	}
+	Line {
+	  Name			  "LoadTwoOutletWaterTemp"
+	  Labels		  [1, 1]
+	  SrcBlock		  "Demux"
+	  SrcPort		  12
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  12
+	}
+	Line {
+	  Name			  "ElecPowerPump"
+	  Labels		  [1, 1]
+	  SrcBlock		  "Demux"
+	  SrcPort		  13
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  13
+	}
+	Annotation {
+	  SID			  "248"
+	  Name			  "Manually converts E+ output vector into a bus signal.\nThe bus signal names must match the specification "
+	  "in variables.cfg.\nIdeally, this will be automated in the future."
+	  Position		  [313, 405]
+	  ZOrder		  -1
+	}
+      }
+    }
+    Block {
+      BlockType		      Clock
+      Name		      "Clock"
+      SID		      "325"
+      Position		      [1240, 752, 1265, 778]
+      ZOrder		      916
+      Decimation	      "1"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Cool"
+      SID		      "3"
+      Position		      [20, 50, 50, 80]
+      ZOrder		      -4
+      Value		      "7.22"
+      Port {
+	PortNumber		1
+	Name			"CW Setpoint"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Cool1"
+      SID		      "15"
+      Position		      [230, 345, 260, 375]
+      ZOrder		      -4
+      Value		      "22"
+      Port {
+	PortNumber		1
+	Name			"Cooling Setpoint"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Cool2"
+      SID		      "116"
+      Position		      [230, 590, 260, 620]
+      ZOrder		      -4
+      Value		      "20"
+      Port {
+	PortNumber		1
+	Name			"Cooling Setpoint"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
       BlockType		      From
       Name		      "From"
       SID		      "25"
-      Position		      [510, 800, 575, 820]
+      Position		      [440, 835, 525, 855]
       ZOrder		      -9
       BackgroundColor	      "lightBlue"
       ShowName		      off
-      GotoTag		      "flag0"
+      GotoTag		      "term_flag_0"
     }
     Block {
       BlockType		      From
       Name		      "From1"
       SID		      "26"
-      Position		      [510, 835, 575, 855]
+      Position		      [440, 870, 525, 890]
       ZOrder		      -9
       BackgroundColor	      "lightBlue"
       ShowName		      off
-      GotoTag		      "flag1"
+      GotoTag		      "term_flag_1"
     }
     Block {
       BlockType		      From
       Name		      "From10"
-      SID		      "83"
-      Position		      [1140, 20, 1220, 40]
-      ZOrder		      -9
+      SID		      "316"
+      Position		      [1220, 623, 1305, 647]
+      ZOrder		      907
       BackgroundColor	      "lightBlue"
       ShowName		      off
-      GotoTag		      "InOutTemp1"
-      Port {
-	PortNumber		1
-	Name			"InOutTemp LoadProfile [C]"
-	PropagatedSignals	"InOutTemp"
-	RTWStorageClass		"Auto"
-	DataLoggingNameMode	"SignalName"
-      }
+      GotoTag		      "Building1"
     }
     Block {
       BlockType		      From
       Name		      "From11"
-      SID		      "84"
-      Position		      [1140, 45, 1220, 65]
-      ZOrder		      -9
+      SID		      "312"
+      Position		      [1220, 378, 1305, 402]
+      ZOrder		      903
       BackgroundColor	      "lightBlue"
       ShowName		      off
-      GotoTag		      "InOutTemp2"
-      Port {
-	PortNumber		1
-	Name			"InOutTemp FluidSource [C]"
-	PropagatedSignals	"InOutTemp"
-	RTWStorageClass		"Auto"
-	DataLoggingNameMode	"SignalName"
-      }
+      GotoTag		      "CentralPlant"
     }
     Block {
       BlockType		      From
       Name		      "From12"
-      SID		      "216"
-      Position		      [105, 706, 195, 724]
-      ZOrder		      -9
+      SID		      "317"
+      Position		      [1220, 688, 1305, 712]
+      ZOrder		      908
       BackgroundColor	      "lightBlue"
       ShowName		      off
-      GotoTag		      "MaxMassFlow2"
-      Port {
-	PortNumber		1
-	Name			"Max Mass Flow Rate"
-	PropagatedSignals	"MaxMassFlow2"
-	RTWStorageClass		"Auto"
-	DataLoggingNameMode	"SignalName"
-      }
+      GotoTag		      "Building2"
     }
     Block {
       BlockType		      From
       Name		      "From13"
-      SID		      "98"
-      Position		      [1140, 70, 1205, 90]
-      ZOrder		      -9
+      SID		      "318"
+      Position		      [1220, 563, 1305, 587]
+      ZOrder		      909
       BackgroundColor	      "lightBlue"
       ShowName		      off
-      GotoTag		      "ChilPow"
-      Port {
-	PortNumber		1
-	Name			"ChillerPower [W]"
-	PropagatedSignals	"ChilPow"
-	RTWStorageClass		"Auto"
-	DataLoggingNameMode	"SignalName"
-      }
+      GotoTag		      "CentralPlant"
     }
     Block {
       BlockType		      From
       Name		      "From15"
       SID		      "134"
-      Position		      [510, 870, 575, 890]
+      Position		      [440, 905, 525, 925]
       ZOrder		      -9
       BackgroundColor	      "lightBlue"
       ShowName		      off
-      GotoTag		      "flag2"
-    }
-    Block {
-      BlockType		      From
-      Name		      "From16"
-      SID		      "105"
-      Position		      [1140, 95, 1220, 115]
-      ZOrder		      -9
-      BackgroundColor	      "lightBlue"
-      ShowName		      off
-      GotoTag		      "ChilTemp"
-      Port {
-	PortNumber		1
-	Name			"ChillerTemp [C]"
-	PropagatedSignals	"ChilTemp"
-	RTWStorageClass		"Auto"
-	DataLoggingNameMode	"SignalName"
-      }
-    }
-    Block {
-      BlockType		      From
-      Name		      "From17"
-      SID		      "135"
-      Position		      [1125, 325, 1190, 345]
-      ZOrder		      -9
-      BackgroundColor	      "lightBlue"
-      ShowName		      off
-      GotoTag		      "Input2"
-    }
-    Block {
-      BlockType		      From
-      Name		      "From18"
-      SID		      "144"
-      Position		      [1140, 465, 1205, 485]
-      ZOrder		      -9
-      BackgroundColor	      "lightBlue"
-      ShowName		      off
-      GotoTag		      "Pow2"
-      Port {
-	PortNumber		1
-	Name			"Building 2"
-	PropagatedSignals	"Pow"
-	RTWStorageClass		"Auto"
-	DataLoggingNameMode	"SignalName"
-      }
-    }
-    Block {
-      BlockType		      From
-      Name		      "From19"
-      SID		      "147"
-      Position		      [1140, 490, 1205, 510]
-      ZOrder		      -9
-      BackgroundColor	      "lightBlue"
-      ShowName		      off
-      GotoTag		      "ChilPow"
-      Port {
-	PortNumber		1
-	Name			"Chiller"
-	PropagatedSignals	"ChilPow"
-	RTWStorageClass		"Auto"
-	DataLoggingNameMode	"SignalName"
-      }
+      GotoTag		      "term_flag_2"
     }
     Block {
       BlockType		      From
       Name		      "From2"
-      SID		      "63"
-      Position		      [1170, 170, 1235, 190]
-      ZOrder		      -9
+      SID		      "281"
+      Position		      [75, 75, 145, 95]
+      ZOrder		      27
       BackgroundColor	      "lightBlue"
       ShowName		      off
-      GotoTag		      "Temp1"
-      Port {
-	PortNumber		1
-	Name			"Building 1"
-	PropagatedSignals	"Temp"
-	RTWStorageClass		"Auto"
-	DataLoggingNameMode	"SignalName"
-      }
-    }
-    Block {
-      BlockType		      From
-      Name		      "From20"
-      SID		      "149"
-      Position		      [1140, 515, 1205, 535]
-      ZOrder		      -9
-      BackgroundColor	      "lightBlue"
-      ShowName		      off
-      GotoTag		      "PumpPow0"
-      Port {
-	PortNumber		1
-	Name			"Pump"
-	PropagatedSignals	"PumpPow"
-	RTWStorageClass		"Auto"
-	DataLoggingNameMode	"SignalName"
-      }
-    }
-    Block {
-      BlockType		      From
-      Name		      "From24"
-      SID		      "175"
-      Position		      [1145, 655, 1210, 675]
-      ZOrder		      -9
-      BackgroundColor	      "lightBlue"
-      ShowName		      off
-      GotoTag		      "Input01"
-    }
-    Block {
-      BlockType		      From
-      Name		      "From25"
-      SID		      "177"
-      Position		      [1145, 630, 1210, 650]
-      ZOrder		      -9
-      BackgroundColor	      "lightBlue"
-      ShowName		      off
-      GotoTag		      "Input2"
-    }
-    Block {
-      BlockType		      From
-      Name		      "From26"
-      SID		      "178"
-      Position		      [1145, 605, 1210, 625]
-      ZOrder		      -9
-      BackgroundColor	      "lightBlue"
-      ShowName		      off
-      GotoTag		      "Input1"
-    }
-    Block {
-      BlockType		      From
-      Name		      "From27"
-      SID		      "198"
-      Position		      [1145, 840, 1235, 860]
-      ZOrder		      -9
-      BackgroundColor	      "lightBlue"
-      ShowName		      off
-      GotoTag		      "MaxMassFlow1"
-    }
-    Block {
-      BlockType		      From
-      Name		      "From28"
-      SID		      "191"
-      Position		      [1145, 765, 1210, 785]
-      ZOrder		      -9
-      BackgroundColor	      "lightBlue"
-      ShowName		      off
-      GotoTag		      "Input2"
-    }
-    Block {
-      BlockType		      From
-      Name		      "From29"
-      SID		      "192"
-      Position		      [1145, 740, 1210, 760]
-      ZOrder		      -9
-      BackgroundColor	      "lightBlue"
-      ShowName		      off
-      GotoTag		      "Input1"
+      GotoTag		      "Flow1"
     }
     Block {
       BlockType		      From
       Name		      "From3"
-      SID		      "64"
-      Position		      [1170, 205, 1235, 225]
-      ZOrder		      -9
+      SID		      "282"
+      Position		      [75, 96, 145, 114]
+      ZOrder		      28
       BackgroundColor	      "lightBlue"
       ShowName		      off
-      GotoTag		      "Temp2"
-      Port {
-	PortNumber		1
-	Name			"Building 2"
-	PropagatedSignals	"Temp"
-	RTWStorageClass		"Auto"
-	DataLoggingNameMode	"SignalName"
-      }
-    }
-    Block {
-      BlockType		      From
-      Name		      "From30"
-      SID		      "200"
-      Position		      [1145, 790, 1210, 810]
-      ZOrder		      -9
-      BackgroundColor	      "lightBlue"
-      ShowName		      off
-      GotoTag		      "Input01"
-    }
-    Block {
-      BlockType		      From
-      Name		      "From31"
-      SID		      "199"
-      Position		      [1145, 865, 1235, 885]
-      ZOrder		      -9
-      BackgroundColor	      "lightBlue"
-      ShowName		      off
-      GotoTag		      "MaxMassFlow2"
-    }
-    Block {
-      BlockType		      From
-      Name		      "From32"
-      SID		      "201"
-      Position		      [1145, 815, 1210, 835]
-      ZOrder		      -9
-      BackgroundColor	      "lightBlue"
-      ShowName		      off
-      GotoTag		      "Input02"
+      GotoTag		      "Demand1"
     }
     Block {
       BlockType		      From
       Name		      "From4"
-      SID		      "174"
-      Position		      [1145, 680, 1210, 700]
-      ZOrder		      -9
+      SID		      "283"
+      Position		      [75, 116, 145, 134]
+      ZOrder		      29
       BackgroundColor	      "lightBlue"
       ShowName		      off
-      GotoTag		      "Input02"
+      GotoTag		      "Flow2"
     }
     Block {
       BlockType		      From
       Name		      "From5"
-      SID		      "213"
-      Position		      [45, 85, 110, 105]
-      ZOrder		      -9
+      SID		      "284"
+      Position		      [75, 136, 145, 154]
+      ZOrder		      30
       BackgroundColor	      "lightBlue"
       ShowName		      off
-      GotoTag		      "Input1"
+      GotoTag		      "Demand2"
     }
     Block {
       BlockType		      From
       Name		      "From6"
-      SID		      "143"
-      Position		      [1140, 440, 1205, 460]
-      ZOrder		      -9
+      SID		      "298"
+      Position		      [1220, 173, 1305, 197]
+      ZOrder		      889
       BackgroundColor	      "lightBlue"
       ShowName		      off
-      GotoTag		      "Pow1"
+      GotoTag		      "Building1"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From7"
+      SID		      "299"
+      Position		      [1220, 238, 1305, 262]
+      ZOrder		      890
+      BackgroundColor	      "lightBlue"
+      ShowName		      off
+      GotoTag		      "Building2"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From8"
+      SID		      "300"
+      Position		      [1220, 113, 1305, 137]
+      ZOrder		      891
+      BackgroundColor	      "lightBlue"
+      ShowName		      off
+      GotoTag		      "CentralPlant"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From9"
+      SID		      "310"
+      Position		      [1220, 438, 1305, 462]
+      ZOrder		      901
+      BackgroundColor	      "lightBlue"
+      ShowName		      off
+      GotoTag		      "Building1"
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Gain"
+      SID		      "286"
+      Position		      [230, 474, 265, 516]
+      ZOrder		      32
+      ShowName		      off
+      Gain		      "1/2"
+      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
       Port {
 	PortNumber		1
-	Name			"Building 1"
-	PropagatedSignals	"Pow"
+	Name			"Max Mass Flow Rate"
 	RTWStorageClass		"Auto"
 	DataLoggingNameMode	"SignalName"
       }
     }
     Block {
-      BlockType		      From
-      Name		      "From7"
-      SID		      "77"
-      Position		      [1125, 290, 1190, 310]
-      ZOrder		      -9
-      BackgroundColor	      "lightBlue"
+      BlockType		      Gain
+      Name		      "Gain1"
+      SID		      "287"
+      Position		      [230, 719, 265, 761]
+      ZOrder		      33
       ShowName		      off
-      GotoTag		      "Input1"
-    }
-    Block {
-      BlockType		      From
-      Name		      "From8"
-      SID		      "214"
-      Position		      [45, 125, 110, 145]
-      ZOrder		      -9
-      BackgroundColor	      "lightBlue"
-      ShowName		      off
-      GotoTag		      "Input2"
-    }
-    Block {
-      BlockType		      From
-      Name		      "From9"
-      SID		      "215"
-      Position		      [105, 461, 195, 479]
-      ZOrder		      -9
-      BackgroundColor	      "lightBlue"
-      ShowName		      off
-      GotoTag		      "MaxMassFlow1"
+      Gain		      "1/2"
+      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
       Port {
 	PortNumber		1
 	Name			"Max Mass Flow Rate"
-	PropagatedSignals	"MaxMassFlow1"
 	RTWStorageClass		"Auto"
 	DataLoggingNameMode	"SignalName"
       }
@@ -1494,204 +1766,145 @@ Model {
       BlockType		      Goto
       Name		      "Goto"
       SID		      "31"
-      Position		      [710, 34, 775, 56]
+      Position		      [700, 34, 785, 56]
       ZOrder		      -10
       BackgroundColor	      "lightBlue"
-      GotoTag		      "flag0"
+      ShowName		      off
+      GotoTag		      "term_flag_0"
     }
     Block {
       BlockType		      Goto
       Name		      "Goto1"
-      SID		      "32"
-      Position		      [675, 334, 740, 356]
-      ZOrder		      -10
-      BackgroundColor	      "lightBlue"
-      GotoTag		      "flag1"
-    }
-    Block {
-      BlockType		      Goto
-      Name		      "Goto10"
-      SID		      "97"
-      Position		      [920, 104, 985, 126]
-      ZOrder		      -10
+      SID		      "236"
+      Position		      [695, 359, 780, 381]
+      ZOrder		      9
       BackgroundColor	      "lightBlue"
       ShowName		      off
-      GotoTag		      "ChilPow"
+      GotoTag		      "term_flag_1"
     }
     Block {
       BlockType		      Goto
       Name		      "Goto11"
-      SID		      "121"
-      Position		      [675, 579, 740, 601]
-      ZOrder		      -10
-      BackgroundColor	      "lightBlue"
-      GotoTag		      "flag2"
-    }
-    Block {
-      BlockType		      Goto
-      Name		      "Goto12"
-      SID		      "122"
-      Position		      [910, 659, 975, 681]
-      ZOrder		      -10
+      SID		      "264"
+      Position		      [1060, 464, 1125, 486]
+      ZOrder		      25
       BackgroundColor	      "lightBlue"
       ShowName		      off
-      GotoTag		      "Temp2"
-    }
-    Block {
-      BlockType		      Goto
-      Name		      "Goto13"
-      SID		      "104"
-      Position		      [920, 124, 985, 146]
-      ZOrder		      -10
-      BackgroundColor	      "lightBlue"
-      ShowName		      off
-      GotoTag		      "ChilTemp"
-    }
-    Block {
-      BlockType		      Goto
-      Name		      "Goto14"
-      SID		      "123"
-      Position		      [910, 684, 975, 706]
-      ZOrder		      -10
-      BackgroundColor	      "lightBlue"
-      ShowName		      off
-      GotoTag		      "Input2"
-    }
-    Block {
-      BlockType		      Goto
-      Name		      "Goto15"
-      SID		      "124"
-      Position		      [890, 710, 975, 730]
-      ZOrder		      -10
-      BackgroundColor	      "lightBlue"
-      ShowName		      off
-      GotoTag		      "InOutTemp2"
-    }
-    Block {
-      BlockType		      Goto
-      Name		      "Goto16"
-      SID		      "136"
-      Position		      [920, 164, 985, 186]
-      ZOrder		      -10
-      BackgroundColor	      "lightBlue"
-      ShowName		      off
-      GotoTag		      "Input01"
-    }
-    Block {
-      BlockType		      Goto
-      Name		      "Goto17"
-      SID		      "141"
-      Position		      [885, 490, 970, 510]
-      ZOrder		      -10
-      BackgroundColor	      "lightBlue"
-      ShowName		      off
-      GotoTag		      "Pow1"
-    }
-    Block {
-      BlockType		      Goto
-      Name		      "Goto18"
-      SID		      "142"
-      Position		      [890, 735, 975, 755]
-      ZOrder		      -10
-      BackgroundColor	      "[0.380392, 0.741176, 0.988235]"
-      ShowName		      off
-      GotoTag		      "Pow2"
-    }
-    Block {
-      BlockType		      Goto
-      Name		      "Goto19"
-      SID		      "148"
-      Position		      [900, 225, 985, 245]
-      ZOrder		      -10
-      BackgroundColor	      "lightBlue"
-      ShowName		      off
-      GotoTag		      "PumpPow0"
+      GotoTag		      "Flow1"
     }
     Block {
       BlockType		      Goto
       Name		      "Goto2"
-      SID		      "53"
-      Position		      [920, 84, 985, 106]
-      ZOrder		      -10
+      SID		      "289"
+      Position		      [1060, 709, 1125, 731]
+      ZOrder		      36
       BackgroundColor	      "lightBlue"
       ShowName		      off
-      GotoTag		      "Temp0"
-    }
-    Block {
-      BlockType		      Goto
-      Name		      "Goto20"
-      SID		      "173"
-      Position		      [175, 841, 270, 859]
-      ZOrder		      -10
-      BackgroundColor	      "lightBlue"
-      ShowName		      off
-      GotoTag		      "MaxMassFlow2"
+      GotoTag		      "Flow2"
     }
     Block {
       BlockType		      Goto
       Name		      "Goto3"
-      SID		      "54"
-      Position		      [920, 184, 985, 206]
-      ZOrder		      -10
+      SID		      "290"
+      Position		      [1060, 739, 1125, 761]
+      ZOrder		      35
       BackgroundColor	      "lightBlue"
       ShowName		      off
-      GotoTag		      "Input02"
+      GotoTag		      "Demand2"
     }
     Block {
       BlockType		      Goto
       Name		      "Goto4"
-      SID		      "217"
-      Position		      [900, 145, 985, 165]
-      ZOrder		      -10
+      SID		      "301"
+      Position		      [935, 419, 1000, 441]
+      ZOrder		      892
       BackgroundColor	      "lightBlue"
       ShowName		      off
-      GotoTag		      "MaxChilFlow"
+      GotoTag		      "Building1"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto5"
+      SID		      "237"
+      Position		      [695, 604, 780, 626]
+      ZOrder		      10
+      BackgroundColor	      "lightBlue"
+      ShowName		      off
+      GotoTag		      "term_flag_2"
     }
     Block {
       BlockType		      Goto
       Name		      "Goto6"
-      SID		      "57"
-      Position		      [905, 414, 970, 436]
-      ZOrder		      -10
+      SID		      "302"
+      Position		      [935, 664, 1000, 686]
+      ZOrder		      893
       BackgroundColor	      "lightBlue"
       ShowName		      off
-      GotoTag		      "Temp1"
+      GotoTag		      "Building2"
     }
     Block {
       BlockType		      Goto
       Name		      "Goto7"
       SID		      "58"
-      Position		      [905, 439, 970, 461]
-      ZOrder		      -10
+      Position		      [1060, 494, 1125, 516]
+      ZOrder		      24
       BackgroundColor	      "lightBlue"
       ShowName		      off
-      GotoTag		      "Input1"
+      GotoTag		      "Demand1"
     }
     Block {
       BlockType		      Goto
       Name		      "Goto8"
-      SID		      "59"
-      Position		      [885, 465, 970, 485]
-      ZOrder		      -10
+      SID		      "303"
+      Position		      [935, 154, 1000, 176]
+      ZOrder		      894
       BackgroundColor	      "lightBlue"
       ShowName		      off
-      GotoTag		      "InOutTemp1"
+      GotoTag		      "CentralPlant"
     }
     Block {
-      BlockType		      Goto
-      Name		      "Goto9"
-      SID		      "113"
-      Position		      [175, 800, 270, 820]
-      ZOrder		      -10
-      BackgroundColor	      "lightBlue"
-      ShowName		      off
-      GotoTag		      "MaxMassFlow1"
+      BlockType		      Scope
+      Name		      "Heat Exchange\nBuilding 1"
+      SID		      "315"
+      Ports		      [2]
+      Position		      [1560, 378, 1600, 422]
+      ZOrder		      906
+      BackgroundColor	      "gray"
+      Floating		      off
+      Location		      [1045, 56, 1466, 716]
+      Open		      on
+      NumInputPorts	      "2"
+      ZoomMode		      "xonly"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+	axes2			"%<SignalLabel>"
+      }
+      List {
+	ListType		ScopeGraphics
+	FigureColor		"[0.5 0.5 0.5]"
+	AxesColor		"[0 0 0]"
+	AxesTickColor		"[1 1 1]"
+	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	LineStyles		"-|-|-|-|-|-"
+	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
+	MarkerStyles		"none|none|none|none|none|none"
+      }
+      ShowLegends	      on
+      LegendLocations	      "0.39272      0.8899     0.53444    0.054545\n0.33808     0.42626     0.58907    0.054545"
+      TimeRange		      "450000"
+      YMin		      "0~-25000"
+      YMax		      "5~0"
+      SaveName		      "ScopeData1"
+      DataFormat	      "StructureWithTime"
+      LimitDataPoints	      off
+      SampleTime	      "0"
     }
     Block {
       BlockType		      Constant
       Name		      "Heat1"
       SID		      "16"
-      Position		      [160, 365, 190, 395]
+      Position		      [230, 390, 260, 420]
       ZOrder		      -4
       Value		      "20"
       Port {
@@ -1705,7 +1918,7 @@ Model {
       BlockType		      Constant
       Name		      "Heat2"
       SID		      "125"
-      Position		      [150, 610, 180, 640]
+      Position		      [230, 635, 260, 665]
       ZOrder		      -4
       Value		      "18"
       Port {
@@ -1716,96 +1929,21 @@ Model {
       }
     }
     Block {
-      BlockType		      Scope
-      Name		      "InOutTemp"
-      SID		      "85"
-      Ports		      [4]
-      Position		      [1350, 17, 1435, 118]
-      ZOrder		      -16
-      Floating		      off
-      Location		      [5, 43, 1605, 1194]
-      Open		      off
-      NumInputPorts	      "4"
-      List {
-	ListType		AxesTitles
-	axes1			"%<SignalLabel>"
-	axes2			"%<SignalLabel>"
-	axes3			"%<SignalLabel>"
-	axes4			"%<SignalLabel>"
-      }
-      List {
-	ListType		ScopeGraphics
-	FigureColor		"[0.5 0.5 0.5]"
-	AxesColor		"[0 0 0]"
-	AxesTickColor		"[1 1 1]"
-	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-	LineStyles		"-|-|-|-|-|-"
-	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
-	MarkerStyles		"none|none|none|none|none|none"
-      }
-      ShowLegends	      off
-      TimeRange		      "450000"
-      YMin		      "0~0~0~7"
-      YMax		      "15~14~12000~11.5"
-      SaveName		      "ScopeData3"
-      DataFormat	      "StructureWithTime"
-      LimitDataPoints	      off
-      SampleTime	      "0"
-    }
-    Block {
-      BlockType		      Logic
-      Name		      "Logical\nOperator"
-      SID		      "234"
-      Ports		      [3, 1]
-      Position		      [603, 789, 638, 901]
-      ZOrder		      7
-      Inputs		      "3"
-      IconShape		      "distinctive"
-      AllPortsSameDT	      off
-      OutDataTypeStr	      "boolean"
-    }
-    Block {
-      BlockType		      Scope
-      Name		      "Mass & Flow Partition"
-      SID		      "75"
-      Ports		      [2]
-      Position		      [1475, 289, 1495, 351]
-      ZOrder		      -16
-      Floating		      off
-      Location		      [1516, 366, 3100, 982]
-      Open		      off
-      NumInputPorts	      "2"
-      TickLabels	      "on"
-      List {
-	ListType		AxesTitles
-	axes1			"%<SignalLabel>"
-	axes2			"%<SignalLabel>"
-      }
-      List {
-	ListType		ScopeGraphics
-	FigureColor		"[0.501960784313725 0.501960784313725 0.501960784313725]"
-	AxesColor		"[0 0 0]"
-	AxesTickColor		"[1 1 1]"
-	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-	LineStyles		"-|-|-|-|-|-"
-	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
-	MarkerStyles		"none|none|none|none|none|none"
-      }
-      ShowLegends	      off
-      TimeRange		      "450000"
-      YMin		      "0~-0"
-      YMax		      "2.2~47500"
-      SaveName		      "ScopeData2"
-      DataFormat	      "StructureWithTime"
-      LimitDataPoints	      off
-      SampleTime	      "0"
+      BlockType		      Memory
+      Name		      "Memory"
+      SID		      "241"
+      Position		      [520, 265, 550, 295]
+      ZOrder		      14
+      BlockMirror	      on
+      NamePlacement	      "alternate"
+      ShowName		      off
     }
     Block {
       BlockType		      Mux
       Name		      "Mux"
       SID		      "6"
       Ports		      [5, 1]
-      Position		      [300, 51, 305, 159]
+      Position		      [345, 51, 350, 159]
       ZOrder		      -12
       ShowName		      off
       Inputs		      "5"
@@ -1816,7 +1954,7 @@ Model {
       Name		      "Mux1"
       SID		      "17"
       Ports		      [4, 1]
-      Position		      [335, 307, 340, 498]
+      Position		      [375, 332, 380, 523]
       ZOrder		      -12
       ShowName		      off
       DisplayOption	      "bar"
@@ -1826,113 +1964,58 @@ Model {
       Name		      "Mux2"
       SID		      "126"
       Ports		      [4, 1]
-      Position		      [335, 552, 340, 743]
+      Position		      [375, 577, 380, 768]
       ZOrder		      -12
       ShowName		      off
       DisplayOption	      "bar"
     }
     Block {
-      BlockType		      Mux
-      Name		      "Mux3"
-      SID		      "151"
-      Ports		      [4, 1]
-      Position		      [1290, 534, 1295, 601]
-      ZOrder		      -12
-      ShowName		      off
-      DisplayOption	      "bar"
-    }
-    Block {
-      BlockType		      Mux
-      Name		      "Mux4"
-      SID		      "82"
-      Ports		      [2, 1]
-      Position		      [1220, 284, 1225, 351]
-      ZOrder		      -12
-      ShowName		      off
-      Inputs		      "2"
-      DisplayOption	      "bar"
-    }
-    Block {
-      BlockType		      Mux
-      Name		      "Mux6"
-      SID		      "188"
-      Ports		      [2, 1]
-      Position		      [1410, 696, 1415, 734]
-      ZOrder		      -12
-      ShowName		      off
-      Inputs		      "2"
-      DisplayOption	      "bar"
-    }
-    Block {
-      BlockType		      Mux
-      Name		      "Mux7"
-      SID		      "179"
-      Ports		      [4, 1]
-      Position		      [1250, 599, 1255, 706]
-      ZOrder		      -12
-      ShowName		      off
-      DisplayOption	      "bar"
-    }
-    Block {
-      BlockType		      Mux
-      Name		      "Mux9"
-      SID		      "195"
-      Ports		      [6, 1]
-      Position		      [1265, 743, 1270, 882]
-      ZOrder		      -12
-      ShowName		      off
-      Inputs		      "6"
-      DisplayOption	      "bar"
-    }
-    Block {
-      BlockType		      Scope
-      Name		      "Power"
-      SID		      "145"
-      Ports		      [4]
-      Position		      [1340, 434, 1375, 541]
-      ZOrder		      -16
-      Floating		      off
-      Location		      [5, 48, 1605, 1159]
-      Open		      off
-      NumInputPorts	      "4"
-      List {
-	ListType		AxesTitles
-	axes1			"%<SignalLabel>"
-	axes2			"%<SignalLabel>"
-	axes3			"%<SignalLabel>"
-	axes4			"%<SignalLabel>"
+      BlockType		      Reference
+      Name		      "Office Building 1"
+      SID		      "229"
+      Ports		      [1, 3]
+      Position		      [415, 339, 660, 521]
+      ZOrder		      3
+      LibraryVersion	      "1.168"
+      UserDataPersistent      on
+      UserData		      "DataTag1"
+      SourceBlock	      "CampusEnergyModeling/Buildings/EnergyPlus"
+      SourceType	      "EnergyPlus Cosimulation"
+      work_dir		      "Building1"
+      rel_path		      on
+      fname		      "5ZoneAirCool"
+      weather_profile	      "USA_CO_Golden-NREL.724666_TMY3"
+      time_step		      "300"
+      nout		      "13"
+      timeout		      "15"
+      mlep_defaults	      on
+      port		      "0"
+      Port {
+	PortNumber		1
+	Name			"flag"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
       }
-      List {
-	ListType		ScopeGraphics
-	FigureColor		"[0.501960784313725 0.501960784313725 0.501960784313725]"
-	AxesColor		"[0 0 0]"
-	AxesTickColor		"[1 1 1]"
-	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-	LineStyles		"-|-|-|-|-|-"
-	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
-	MarkerStyles		"none|none|none|none|none|none"
+      Port {
+	PortNumber		2
+	Name			"time"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
       }
-      ShowLegends	      off
-      TimeRange		      "450000"
-      YMin		      "12~12~-5~-5"
-      YMax		      "32~32~5~5"
-      SaveName		      "ScopeData1"
-      DataFormat	      "StructureWithTime"
-      LimitDataPoints	      off
-      SampleTime	      "0"
+      Port {
+	PortNumber		3
+	Name			"Outputs"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
     }
     Block {
       BlockType		      SubSystem
-      Name		      "PrepOutputs"
-      SID		      "50"
-      Ports		      [1, 8]
-      Position		      [735, 78, 855, 252]
-      ZOrder		      -4
-      NamePlacement	      "alternate"
-      LibraryVersion	      "1.32"
-      ErrorFcn		      "Stateflow.Translate.translate"
-      PermitHierarchicalResolution "ExplicitOnly"
-      TreatAsAtomicUnit	      on
+      Name		      "Office Building 1 Signals"
+      SID		      "249"
+      Ports		      [1, 1]
+      Position		      [695, 469, 800, 511]
+      ZOrder		      19
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -1940,10 +2023,9 @@ Model {
       Opaque		      off
       RequestExecContextInheritance off
       MaskHideContents	      off
-      SFBlockType	      "MATLAB Function"
       System {
-	Name			"PrepOutputs"
-	Location		[227, 345, 838, 789]
+	Name			"Office Building 1 Signals"
+	Location		[12, 9, 1628, 1028]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1956,1426 +2038,557 @@ Model {
 	TiledPageScale		1
 	ShowPageBoundaries	off
 	ZoomFactor		"100"
-	SIDHighWatermark	"31"
 	Block {
 	  BlockType		  Inport
-	  Name			  "u"
-	  SID			  "50::1"
-	  Position		  [20, 101, 40, 119]
+	  Name			  "E+"
+	  SID			  "250"
+	  Position		  [115, 228, 145, 242]
 	  ZOrder		  -1
 	  IconDisplay		  "Port number"
 	}
 	Block {
-	  BlockType		  Demux
-	  Name			  " Demux "
-	  SID			  "50::30"
-	  Ports			  [1, 1]
-	  Position		  [270, 425, 320, 465]
-	  ZOrder		  2
-	  Outputs		  "1"
+	  BlockType		  BusCreator
+	  Name			  "Bus\nCreator"
+	  SID			  "251"
+	  Ports			  [13, 1]
+	  Position		  [395, 110, 400, 360]
+	  ZOrder		  19
+	  ShowName		  off
+	  Inputs		  "13"
+	  DisplayOption		  "bar"
 	}
 	Block {
-	  BlockType		  S-Function
-	  Name			  " SFunction "
-	  SID			  "50::29"
-	  Tag			  "Stateflow S-Function supply_demand_campus 2"
-	  Ports			  [1, 9]
-	  Position		  [180, 100, 230, 300]
-	  ZOrder		  1
-	  FunctionName		  "sf_sfun"
-	  PortCounts		  "[1 9]"
-	  EnableBusSupport	  on
+	  BlockType		  Demux
+	  Name			  "Demux"
+	  SID			  "252"
+	  Ports			  [1, 13]
+	  Position		  [225, 107, 230, 363]
+	  ZOrder		  18
+	  ShowName		  off
+	  Outputs		  "13"
+	  DisplayOption		  "bar"
+	  Port {
+	    PortNumber		    1
+	    Name		    "OutsideAirTemp"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
 	  Port {
 	    PortNumber		    2
-	    Name		    "Temp"
+	    Name		    "ZoneAirTemp1"
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
 	  Port {
 	    PortNumber		    3
-	    Name		    "ChilPow"
+	    Name		    "ZoneAirTemp2"
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
 	  Port {
 	    PortNumber		    4
-	    Name		    "ChilTemp"
+	    Name		    "ZoneAirTemp3"
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
 	  Port {
 	    PortNumber		    5
-	    Name		    "MaxChilFlow"
+	    Name		    "ZoneAirTemp4"
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
 	  Port {
 	    PortNumber		    6
-	    Name		    "Input01"
+	    Name		    "ZoneAirTemp5"
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
 	  Port {
 	    PortNumber		    7
-	    Name		    "Input02"
+	    Name		    "PlenumAirTemp"
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
 	  Port {
 	    PortNumber		    8
-	    Name		    "InOutTemp"
+	    Name		    "ChilledWaterMassFlowRate"
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
 	  Port {
 	    PortNumber		    9
-	    Name		    "PumpPow"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  " Terminator "
-	  SID			  "50::31"
-	  Position		  [460, 436, 480, 454]
-	  ZOrder		  3
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "Temp"
-	  SID			  "50::5"
-	  Position		  [460, 101, 480, 119]
-	  ZOrder		  -5
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "ChilPow"
-	  SID			  "50::22"
-	  Position		  [460, 136, 480, 154]
-	  ZOrder		  -6
-	  Port			  "2"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "ChilTemp"
-	  SID			  "50::25"
-	  Position		  [460, 171, 480, 189]
-	  ZOrder		  -7
-	  Port			  "3"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "MaxChilFlow"
-	  SID			  "50::26"
-	  Position		  [460, 206, 480, 224]
-	  ZOrder		  -8
-	  Port			  "4"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "Input01"
-	  SID			  "50::18"
-	  Position		  [460, 246, 480, 264]
-	  ZOrder		  -9
-	  Port			  "5"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "Input02"
-	  SID			  "50::27"
-	  Position		  [460, 281, 480, 299]
-	  ZOrder		  -10
-	  Port			  "6"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "InOutTemp"
-	  SID			  "50::19"
-	  Position		  [460, 316, 480, 334]
-	  ZOrder		  -11
-	  Port			  "7"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "PumpPow"
-	  SID			  "50::28"
-	  Position		  [460, 351, 480, 369]
-	  ZOrder		  -12
-	  Port			  "8"
-	  IconDisplay		  "Port number"
-	}
-	Line {
-	  SrcBlock		  "u"
-	  SrcPort		  1
-	  DstBlock		  " SFunction "
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "Temp"
-	  Labels		  [0, 0]
-	  SrcBlock		  " SFunction "
-	  SrcPort		  2
-	  DstBlock		  "Temp"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "ChilPow"
-	  Labels		  [0, 0]
-	  SrcBlock		  " SFunction "
-	  SrcPort		  3
-	  DstBlock		  "ChilPow"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "ChilTemp"
-	  Labels		  [0, 0]
-	  SrcBlock		  " SFunction "
-	  SrcPort		  4
-	  DstBlock		  "ChilTemp"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "MaxChilFlow"
-	  Labels		  [0, 0]
-	  SrcBlock		  " SFunction "
-	  SrcPort		  5
-	  DstBlock		  "MaxChilFlow"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "Input01"
-	  Labels		  [0, 0]
-	  SrcBlock		  " SFunction "
-	  SrcPort		  6
-	  DstBlock		  "Input01"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "Input02"
-	  Labels		  [0, 0]
-	  SrcBlock		  " SFunction "
-	  SrcPort		  7
-	  DstBlock		  "Input02"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "InOutTemp"
-	  Labels		  [0, 0]
-	  SrcBlock		  " SFunction "
-	  SrcPort		  8
-	  DstBlock		  "InOutTemp"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "PumpPow"
-	  Labels		  [0, 0]
-	  SrcBlock		  " SFunction "
-	  SrcPort		  9
-	  DstBlock		  "PumpPow"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  " Demux "
-	  SrcPort		  1
-	  DstBlock		  " Terminator "
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  " SFunction "
-	  SrcPort		  1
-	  Points		  [20, 0]
-	  DstBlock		  " Demux "
-	  DstPort		  1
-	}
-      }
-    }
-    Block {
-      BlockType		      SubSystem
-      Name		      "PrepOutputs1"
-      SID		      "61"
-      Ports		      [1, 4]
-      Position		      [730, 414, 855, 511]
-      ZOrder		      -4
-      LibraryVersion	      "1.32"
-      ErrorFcn		      "Stateflow.Translate.translate"
-      PermitHierarchicalResolution "ExplicitOnly"
-      TreatAsAtomicUnit	      on
-      MinAlgLoopOccurrences   off
-      PropExecContextOutsideSubsystem off
-      RTWSystemCode	      "Auto"
-      FunctionWithSeparateData off
-      Opaque		      off
-      RequestExecContextInheritance off
-      MaskHideContents	      off
-      SFBlockType	      "MATLAB Function"
-      Port {
-	PortNumber		2
-	Name			"Demand"
-	PropagatedSignals	"Input"
-	RTWStorageClass		"Auto"
-	DataLoggingNameMode	"SignalName"
-      }
-      System {
-	Name			"PrepOutputs1"
-	Location		[227, 345, 838, 789]
-	Open			off
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"usletter"
-	PaperUnits		"inches"
-	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"100"
-	SIDHighWatermark	"24"
-	Block {
-	  BlockType		  Inport
-	  Name			  "u"
-	  SID			  "61::1"
-	  Position		  [20, 101, 40, 119]
-	  ZOrder		  -1
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Demux
-	  Name			  " Demux "
-	  SID			  "61::23"
-	  Ports			  [1, 1]
-	  Position		  [270, 280, 320, 320]
-	  ZOrder		  2
-	  Outputs		  "1"
-	}
-	Block {
-	  BlockType		  S-Function
-	  Name			  " SFunction "
-	  SID			  "61::22"
-	  Tag			  "Stateflow S-Function supply_demand_campus 1"
-	  Ports			  [1, 5]
-	  Position		  [180, 100, 230, 220]
-	  ZOrder		  1
-	  FunctionName		  "sf_sfun"
-	  PortCounts		  "[1 5]"
-	  EnableBusSupport	  on
-	  Port {
-	    PortNumber		    2
-	    Name		    "Temp"
+	    Name		    "ChilledWaterHeatTransferRate"
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
 	  Port {
-	    PortNumber		    3
-	    Name		    "Input"
+	    PortNumber		    10
+	    Name		    "ChilledWaterInletTemp"
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
 	  Port {
-	    PortNumber		    4
-	    Name		    "InOutTemp"
+	    PortNumber		    11
+	    Name		    "ChilledWaterOutletTemp"
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
 	  Port {
-	    PortNumber		    5
-	    Name		    "Pow"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  " Terminator "
-	  SID			  "61::24"
-	  Position		  [460, 291, 480, 309]
-	  ZOrder		  3
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "Temp"
-	  SID			  "61::5"
-	  Position		  [460, 101, 480, 119]
-	  ZOrder		  -5
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "Input"
-	  SID			  "61::18"
-	  Position		  [460, 136, 480, 154]
-	  ZOrder		  -6
-	  Port			  "2"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "InOutTemp"
-	  SID			  "61::19"
-	  Position		  [460, 171, 480, 189]
-	  ZOrder		  -7
-	  Port			  "3"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "Pow"
-	  SID			  "61::21"
-	  Position		  [460, 206, 480, 224]
-	  ZOrder		  -8
-	  Port			  "4"
-	  IconDisplay		  "Port number"
-	}
-	Line {
-	  SrcBlock		  "u"
-	  SrcPort		  1
-	  DstBlock		  " SFunction "
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "Temp"
-	  Labels		  [0, 0]
-	  SrcBlock		  " SFunction "
-	  SrcPort		  2
-	  Points		  [0, -25]
-	  DstBlock		  "Temp"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "Input"
-	  Labels		  [0, 0]
-	  SrcBlock		  " SFunction "
-	  SrcPort		  3
-	  DstBlock		  "Input"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "InOutTemp"
-	  Labels		  [0, 0]
-	  SrcBlock		  " SFunction "
-	  SrcPort		  4
-	  DstBlock		  "InOutTemp"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "Pow"
-	  Labels		  [0, 0]
-	  SrcBlock		  " SFunction "
-	  SrcPort		  5
-	  DstBlock		  "Pow"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  " Demux "
-	  SrcPort		  1
-	  DstBlock		  " Terminator "
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  " SFunction "
-	  SrcPort		  1
-	  DstBlock		  " Demux "
-	  DstPort		  1
-	}
-      }
-    }
-    Block {
-      BlockType		      SubSystem
-      Name		      "PrepOutputs2"
-      SID		      "80"
-      Ports		      [1, 2]
-      Position		      [1260, 291, 1345, 349]
-      ZOrder		      -4
-      LibraryVersion	      "1.32"
-      ErrorFcn		      "Stateflow.Translate.translate"
-      PermitHierarchicalResolution "ExplicitOnly"
-      TreatAsAtomicUnit	      on
-      MinAlgLoopOccurrences   off
-      PropExecContextOutsideSubsystem off
-      RTWSystemCode	      "Auto"
-      FunctionWithSeparateData off
-      Opaque		      off
-      RequestExecContextInheritance off
-      MaskHideContents	      off
-      SFBlockType	      "MATLAB Function"
-      Port {
-	PortNumber		1
-	Name			"Mass Flow Rate [Kg/s]"
-	PropagatedSignals	"Flow"
-	RTWStorageClass		"Auto"
-	DataLoggingNameMode	"SignalName"
-      }
-      Port {
-	PortNumber		2
-	Name			"Load Demand [W]"
-	PropagatedSignals	"Load"
-	RTWStorageClass		"Auto"
-	DataLoggingNameMode	"SignalName"
-      }
-      System {
-	Name			"PrepOutputs2"
-	Location		[227, 345, 838, 789]
-	Open			off
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"usletter"
-	PaperUnits		"inches"
-	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"100"
-	SIDHighWatermark	"24"
-	Block {
-	  BlockType		  Inport
-	  Name			  "u"
-	  SID			  "80::1"
-	  Position		  [20, 101, 40, 119]
-	  ZOrder		  -1
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Demux
-	  Name			  " Demux "
-	  SID			  "80::23"
-	  Ports			  [1, 1]
-	  Position		  [270, 230, 320, 270]
-	  ZOrder		  2
-	  Outputs		  "1"
-	}
-	Block {
-	  BlockType		  S-Function
-	  Name			  " SFunction "
-	  SID			  "80::22"
-	  Tag			  "Stateflow S-Function supply_demand_campus 4"
-	  Ports			  [1, 3]
-	  Position		  [180, 100, 230, 180]
-	  ZOrder		  1
-	  FunctionName		  "sf_sfun"
-	  PortCounts		  "[1 3]"
-	  EnableBusSupport	  on
-	  Port {
-	    PortNumber		    2
-	    Name		    "Flow"
+	    PortNumber		    12
+	    Name		    "ElecPowerTotal"
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
 	  Port {
-	    PortNumber		    3
-	    Name		    "Load"
+	    PortNumber		    13
+	    Name		    "ElecPowerHVAC"
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
 	}
 	Block {
-	  BlockType		  Terminator
-	  Name			  " Terminator "
-	  SID			  "80::24"
-	  Position		  [460, 241, 480, 259]
-	  ZOrder		  3
-	}
-	Block {
 	  BlockType		  Outport
-	  Name			  "Flow"
-	  SID			  "80::21"
-	  Position		  [460, 101, 480, 119]
-	  ZOrder		  -5
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "Load"
-	  SID			  "80::20"
-	  Position		  [460, 136, 480, 154]
-	  ZOrder		  -6
-	  Port			  "2"
-	  IconDisplay		  "Port number"
-	}
-	Line {
-	  SrcBlock		  "u"
-	  SrcPort		  1
-	  DstBlock		  " SFunction "
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "Flow"
-	  Labels		  [0, 0]
-	  SrcBlock		  " SFunction "
-	  SrcPort		  2
-	  DstBlock		  "Flow"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "Load"
-	  Labels		  [0, 0]
-	  SrcBlock		  " SFunction "
-	  SrcPort		  3
-	  DstBlock		  "Load"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  " Demux "
-	  SrcPort		  1
-	  DstBlock		  " Terminator "
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  " SFunction "
-	  SrcPort		  1
-	  DstBlock		  " Demux "
-	  DstPort		  1
-	}
-      }
-    }
-    Block {
-      BlockType		      SubSystem
-      Name		      "PrepOutputs3"
-      SID		      "112"
-      Ports		      [1, 2]
-      Position		      [40, 791, 150, 869]
-      ZOrder		      -4
-      LibraryVersion	      "1.32"
-      ErrorFcn		      "Stateflow.Translate.translate"
-      PermitHierarchicalResolution "ExplicitOnly"
-      TreatAsAtomicUnit	      on
-      MinAlgLoopOccurrences   off
-      PropExecContextOutsideSubsystem off
-      RTWSystemCode	      "Auto"
-      FunctionWithSeparateData off
-      Opaque		      off
-      RequestExecContextInheritance off
-      MaskHideContents	      off
-      SFBlockType	      "MATLAB Function"
-      System {
-	Name			"PrepOutputs3"
-	Location		[227, 345, 838, 789]
-	Open			off
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"usletter"
-	PaperUnits		"inches"
-	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"100"
-	SIDHighWatermark	"26"
-	Block {
-	  BlockType		  Inport
-	  Name			  "MaxFlow"
-	  SID			  "112::1"
-	  Position		  [20, 101, 40, 119]
-	  ZOrder		  -1
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Demux
-	  Name			  " Demux "
-	  SID			  "112::25"
-	  Ports			  [1, 1]
-	  Position		  [270, 230, 320, 270]
-	  ZOrder		  2
-	  Outputs		  "1"
-	}
-	Block {
-	  BlockType		  S-Function
-	  Name			  " SFunction "
-	  SID			  "112::24"
-	  Tag			  "Stateflow S-Function supply_demand_campus 5"
-	  Ports			  [1, 3]
-	  Position		  [180, 100, 230, 180]
-	  ZOrder		  1
-	  FunctionName		  "sf_sfun"
-	  PortCounts		  "[1 3]"
-	  EnableBusSupport	  on
-	  Port {
-	    PortNumber		    2
-	    Name		    "MaxMassFlow1"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    3
-	    Name		    "MaxMassFlow2"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  " Terminator "
-	  SID			  "112::26"
-	  Position		  [460, 241, 480, 259]
-	  ZOrder		  3
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "MaxMassFlow1"
-	  SID			  "112::21"
-	  Position		  [460, 101, 480, 119]
-	  ZOrder		  -5
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "MaxMassFlow2"
-	  SID			  "112::22"
-	  Position		  [460, 136, 480, 154]
-	  ZOrder		  -6
-	  Port			  "2"
-	  IconDisplay		  "Port number"
-	}
-	Line {
-	  SrcBlock		  "MaxFlow"
-	  SrcPort		  1
-	  DstBlock		  " SFunction "
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "MaxMassFlow1"
-	  Labels		  [0, 0]
-	  SrcBlock		  " SFunction "
-	  SrcPort		  2
-	  DstBlock		  "MaxMassFlow1"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "MaxMassFlow2"
-	  Labels		  [0, 0]
-	  SrcBlock		  " SFunction "
-	  SrcPort		  3
-	  DstBlock		  "MaxMassFlow2"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  " Demux "
-	  SrcPort		  1
-	  DstBlock		  " Terminator "
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  " SFunction "
-	  SrcPort		  1
-	  DstBlock		  " Demux "
-	  DstPort		  1
-	}
-      }
-    }
-    Block {
-      BlockType		      SubSystem
-      Name		      "PrepOutputs4"
-      SID		      "127"
-      Ports		      [1, 4]
-      Position		      [725, 653, 860, 762]
-      ZOrder		      -4
-      Priority		      "2"
-      LibraryVersion	      "1.32"
-      ErrorFcn		      "Stateflow.Translate.translate"
-      PermitHierarchicalResolution "ExplicitOnly"
-      TreatAsAtomicUnit	      on
-      MinAlgLoopOccurrences   off
-      PropExecContextOutsideSubsystem off
-      RTWSystemCode	      "Auto"
-      FunctionWithSeparateData off
-      Opaque		      off
-      RequestExecContextInheritance off
-      MaskHideContents	      off
-      SFBlockType	      "MATLAB Function"
-      Port {
-	PortNumber		2
-	Name			"Demand"
-	PropagatedSignals	"Input"
-	RTWStorageClass		"Auto"
-	DataLoggingNameMode	"SignalName"
-      }
-      System {
-	Name			"PrepOutputs4"
-	Location		[227, 345, 838, 789]
-	Open			off
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"usletter"
-	PaperUnits		"inches"
-	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"100"
-	SIDHighWatermark	"24"
-	Block {
-	  BlockType		  Inport
-	  Name			  "u"
-	  SID			  "127::1"
-	  Position		  [20, 101, 40, 119]
-	  ZOrder		  -1
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Demux
-	  Name			  " Demux "
-	  SID			  "127::23"
-	  Ports			  [1, 1]
-	  Position		  [270, 280, 320, 320]
-	  ZOrder		  2
-	  Outputs		  "1"
-	}
-	Block {
-	  BlockType		  S-Function
-	  Name			  " SFunction "
-	  SID			  "127::22"
-	  Tag			  "Stateflow S-Function supply_demand_campus 6"
-	  Ports			  [1, 5]
-	  Position		  [180, 100, 230, 220]
-	  ZOrder		  1
-	  FunctionName		  "sf_sfun"
-	  PortCounts		  "[1 5]"
-	  EnableBusSupport	  on
-	  Port {
-	    PortNumber		    2
-	    Name		    "Temp"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    3
-	    Name		    "Input"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    4
-	    Name		    "InOutTemp"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    5
-	    Name		    "Pow"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  " Terminator "
-	  SID			  "127::24"
-	  Position		  [460, 291, 480, 309]
-	  ZOrder		  3
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "Temp"
-	  SID			  "127::5"
-	  Position		  [460, 101, 480, 119]
-	  ZOrder		  -5
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "Input"
-	  SID			  "127::18"
-	  Position		  [460, 136, 480, 154]
-	  ZOrder		  -6
-	  Port			  "2"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "InOutTemp"
-	  SID			  "127::19"
-	  Position		  [460, 171, 480, 189]
-	  ZOrder		  -7
-	  Port			  "3"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "Pow"
-	  SID			  "127::21"
-	  Position		  [460, 206, 480, 224]
-	  ZOrder		  -8
-	  Port			  "4"
-	  IconDisplay		  "Port number"
-	}
-	Line {
-	  SrcBlock		  "u"
-	  SrcPort		  1
-	  DstBlock		  " SFunction "
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "Temp"
-	  Labels		  [0, 0]
-	  SrcBlock		  " SFunction "
-	  SrcPort		  2
-	  Points		  [0, -25]
-	  DstBlock		  "Temp"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "Input"
-	  Labels		  [0, 0]
-	  SrcBlock		  " SFunction "
-	  SrcPort		  3
-	  DstBlock		  "Input"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "InOutTemp"
-	  Labels		  [0, 0]
-	  SrcBlock		  " SFunction "
-	  SrcPort		  4
-	  DstBlock		  "InOutTemp"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "Pow"
-	  Labels		  [0, 0]
-	  SrcBlock		  " SFunction "
-	  SrcPort		  5
-	  DstBlock		  "Pow"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  " Demux "
-	  SrcPort		  1
-	  DstBlock		  " Terminator "
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  " SFunction "
-	  SrcPort		  1
-	  DstBlock		  " Demux "
-	  DstPort		  1
-	}
-      }
-    }
-    Block {
-      BlockType		      SubSystem
-      Name		      "PrepOutputs6"
-      SID		      "219"
-      Ports		      [2, 4]
-      Position		      [175, 76, 260, 154]
-      ZOrder		      -4
-      LibraryVersion	      "1.32"
-      ErrorFcn		      "Stateflow.Translate.translate"
-      PermitHierarchicalResolution "ExplicitOnly"
-      TreatAsAtomicUnit	      on
-      MinAlgLoopOccurrences   off
-      PropExecContextOutsideSubsystem off
-      RTWSystemCode	      "Auto"
-      FunctionWithSeparateData off
-      Opaque		      off
-      RequestExecContextInheritance off
-      MaskHideContents	      off
-      SFBlockType	      "MATLAB Function"
-      System {
-	Name			"PrepOutputs6"
-	Location		[227, 345, 838, 789]
-	Open			off
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"usletter"
-	PaperUnits		"inches"
-	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"100"
-	SIDHighWatermark	"28"
-	Block {
-	  BlockType		  Inport
-	  Name			  "Input1"
-	  SID			  "219::1"
-	  Position		  [20, 101, 40, 119]
-	  ZOrder		  -1
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "Input2"
-	  SID			  "219::23"
-	  Position		  [20, 136, 40, 154]
+	  Name			  "Out"
+	  SID			  "253"
+	  Position		  [480, 228, 510, 242]
 	  ZOrder		  -2
-	  Port			  "2"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Demux
-	  Name			  " Demux "
-	  SID			  "219::27"
-	  Ports			  [1, 1]
-	  Position		  [270, 280, 320, 320]
-	  ZOrder		  2
-	  Outputs		  "1"
-	}
-	Block {
-	  BlockType		  S-Function
-	  Name			  " SFunction "
-	  SID			  "219::26"
-	  Tag			  "Stateflow S-Function supply_demand_campus 8"
-	  Ports			  [2, 5]
-	  Position		  [180, 100, 230, 220]
-	  ZOrder		  1
-	  FunctionName		  "sf_sfun"
-	  PortCounts		  "[2 5]"
-	  EnableBusSupport	  on
-	  Port {
-	    PortNumber		    2
-	    Name		    "mflow1"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    3
-	    Name		    "pow1"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    4
-	    Name		    "mflow2"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    5
-	    Name		    "pow2"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  " Terminator "
-	  SID			  "219::28"
-	  Position		  [460, 291, 480, 309]
-	  ZOrder		  3
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "mflow1"
-	  SID			  "219::21"
-	  Position		  [460, 101, 480, 119]
-	  ZOrder		  -6
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "pow1"
-	  SID			  "219::24"
-	  Position		  [460, 136, 480, 154]
-	  ZOrder		  -7
-	  Port			  "2"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "mflow2"
-	  SID			  "219::22"
-	  Position		  [460, 171, 480, 189]
-	  ZOrder		  -8
-	  Port			  "3"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "pow2"
-	  SID			  "219::25"
-	  Position		  [460, 206, 480, 224]
-	  ZOrder		  -9
-	  Port			  "4"
 	  IconDisplay		  "Port number"
 	}
 	Line {
-	  SrcBlock		  "Input1"
+	  SrcBlock		  "E+"
 	  SrcPort		  1
-	  Points		  [120, 0]
-	  DstBlock		  " SFunction "
+	  DstBlock		  "Demux"
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "Input2"
+	  SrcBlock		  "Bus\nCreator"
 	  SrcPort		  1
-	  DstBlock		  " SFunction "
+	  DstBlock		  "Out"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "OutsideAirTemp"
+	  Labels		  [1, 1]
+	  SrcBlock		  "Demux"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "ZoneAirTemp1"
+	  Labels		  [1, 1]
+	  SrcBlock		  "Demux"
+	  SrcPort		  2
+	  DstBlock		  "Bus\nCreator"
 	  DstPort		  2
 	}
 	Line {
-	  Name			  "mflow1"
-	  Labels		  [0, 0]
-	  SrcBlock		  " SFunction "
-	  SrcPort		  2
-	  Points		  [0, -25]
-	  DstBlock		  "mflow1"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "pow1"
-	  Labels		  [0, 0]
-	  SrcBlock		  " SFunction "
+	  Name			  "ZoneAirTemp2"
+	  Labels		  [1, 1]
+	  SrcBlock		  "Demux"
 	  SrcPort		  3
-	  DstBlock		  "pow1"
-	  DstPort		  1
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  3
 	}
 	Line {
-	  Name			  "mflow2"
-	  Labels		  [0, 0]
-	  SrcBlock		  " SFunction "
+	  Name			  "ZoneAirTemp3"
+	  Labels		  [1, 1]
+	  SrcBlock		  "Demux"
 	  SrcPort		  4
-	  DstBlock		  "mflow2"
-	  DstPort		  1
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  4
 	}
 	Line {
-	  Name			  "pow2"
-	  Labels		  [0, 0]
-	  SrcBlock		  " SFunction "
+	  Name			  "ZoneAirTemp4"
+	  Labels		  [1, 1]
+	  SrcBlock		  "Demux"
 	  SrcPort		  5
-	  DstBlock		  "pow2"
-	  DstPort		  1
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  5
 	}
 	Line {
-	  SrcBlock		  " Demux "
-	  SrcPort		  1
-	  DstBlock		  " Terminator "
-	  DstPort		  1
+	  Name			  "ZoneAirTemp5"
+	  Labels		  [1, 1]
+	  SrcBlock		  "Demux"
+	  SrcPort		  6
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  6
 	}
 	Line {
-	  SrcBlock		  " SFunction "
-	  SrcPort		  1
-	  DstBlock		  " Demux "
-	  DstPort		  1
+	  Name			  "PlenumAirTemp"
+	  Labels		  [1, 1]
+	  SrcBlock		  "Demux"
+	  SrcPort		  7
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  7
+	}
+	Line {
+	  Name			  "ChilledWaterMassFlowRate"
+	  Labels		  [1, 1]
+	  SrcBlock		  "Demux"
+	  SrcPort		  8
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  8
+	}
+	Line {
+	  Name			  "ChilledWaterHeatTransferRate"
+	  Labels		  [1, 1]
+	  SrcBlock		  "Demux"
+	  SrcPort		  9
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  9
+	}
+	Line {
+	  Name			  "ChilledWaterInletTemp"
+	  Labels		  [1, 1]
+	  SrcBlock		  "Demux"
+	  SrcPort		  10
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  10
+	}
+	Line {
+	  Name			  "ChilledWaterOutletTemp"
+	  Labels		  [1, 1]
+	  SrcBlock		  "Demux"
+	  SrcPort		  11
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  11
+	}
+	Line {
+	  Name			  "ElecPowerTotal"
+	  Labels		  [1, 1]
+	  SrcBlock		  "Demux"
+	  SrcPort		  12
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  12
+	}
+	Line {
+	  Name			  "ElecPowerHVAC"
+	  Labels		  [1, 1]
+	  SrcBlock		  "Demux"
+	  SrcPort		  13
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  13
+	}
+	Annotation {
+	  SID			  "254"
+	  Name			  "Manually converts E+ output vector into a bus signal.\nThe bus signal names must match the specification "
+	  "in variables.cfg.\nIdeally, this will be automated in the future."
+	  Position		  [313, 405]
+	  ZOrder		  -1
 	}
       }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Office Building 2"
+      SID		      "240"
+      Ports		      [1, 3]
+      Position		      [415, 584, 660, 766]
+      ZOrder		      13
+      LibraryVersion	      "1.168"
+      UserDataPersistent      on
+      UserData		      "DataTag2"
+      SourceBlock	      "CampusEnergyModeling/Buildings/EnergyPlus"
+      SourceType	      "EnergyPlus Cosimulation"
+      work_dir		      "Building2"
+      rel_path		      on
+      fname		      "5ZoneAirCool"
+      weather_profile	      "USA_CO_Golden-NREL.724666_TMY3"
+      time_step		      "300"
+      nout		      "13"
+      timeout		      "15"
+      mlep_defaults	      on
+      port		      "0"
     }
     Block {
       BlockType		      SubSystem
-      Name		      "PrepOutputs7"
-      SID		      "180"
-      Ports		      [1, 2]
-      Position		      [1275, 626, 1360, 684]
-      ZOrder		      -4
-      LibraryVersion	      "1.32"
-      ErrorFcn		      "Stateflow.Translate.translate"
-      PermitHierarchicalResolution "ExplicitOnly"
-      TreatAsAtomicUnit	      on
-      MinAlgLoopOccurrences   off
-      PropExecContextOutsideSubsystem off
-      RTWSystemCode	      "Auto"
-      FunctionWithSeparateData off
-      Opaque		      off
-      RequestExecContextInheritance off
-      MaskHideContents	      off
-      SFBlockType	      "MATLAB Function"
-      System {
-	Name			"PrepOutputs7"
-	Location		[227, 345, 838, 789]
-	Open			off
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"usletter"
-	PaperUnits		"inches"
-	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"100"
-	SIDHighWatermark	"24"
-	Block {
-	  BlockType		  Inport
-	  Name			  "u"
-	  SID			  "180::1"
-	  Position		  [20, 101, 40, 119]
-	  ZOrder		  -1
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Demux
-	  Name			  " Demux "
-	  SID			  "180::23"
-	  Ports			  [1, 1]
-	  Position		  [270, 230, 320, 270]
-	  ZOrder		  2
-	  Outputs		  "1"
-	}
-	Block {
-	  BlockType		  S-Function
-	  Name			  " SFunction "
-	  SID			  "180::22"
-	  Tag			  "Stateflow S-Function supply_demand_campus 9"
-	  Ports			  [1, 3]
-	  Position		  [180, 100, 230, 180]
-	  ZOrder		  1
-	  FunctionName		  "sf_sfun"
-	  PortCounts		  "[1 3]"
-	  EnableBusSupport	  on
-	  Port {
-	    PortNumber		    2
-	    Name		    "Flow"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    3
-	    Name		    "Load"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  " Terminator "
-	  SID			  "180::24"
-	  Position		  [460, 241, 480, 259]
-	  ZOrder		  3
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "Flow"
-	  SID			  "180::21"
-	  Position		  [460, 101, 480, 119]
-	  ZOrder		  -5
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "Load"
-	  SID			  "180::20"
-	  Position		  [460, 136, 480, 154]
-	  ZOrder		  -6
-	  Port			  "2"
-	  IconDisplay		  "Port number"
-	}
-	Line {
-	  SrcBlock		  "u"
-	  SrcPort		  1
-	  DstBlock		  " SFunction "
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "Flow"
-	  Labels		  [0, 0]
-	  SrcBlock		  " SFunction "
-	  SrcPort		  2
-	  DstBlock		  "Flow"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "Load"
-	  Labels		  [0, 0]
-	  SrcBlock		  " SFunction "
-	  SrcPort		  3
-	  DstBlock		  "Load"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  " Demux "
-	  SrcPort		  1
-	  DstBlock		  " Terminator "
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  " SFunction "
-	  SrcPort		  1
-	  DstBlock		  " Demux "
-	  DstPort		  1
-	}
-      }
-    }
-    Block {
-      BlockType		      SubSystem
-      Name		      "PrepOutputs8"
-      SID		      "196"
-      Ports		      [1, 2]
-      Position		      [1315, 786, 1400, 844]
-      ZOrder		      -4
-      LibraryVersion	      "1.32"
-      ErrorFcn		      "Stateflow.Translate.translate"
-      PermitHierarchicalResolution "ExplicitOnly"
-      TreatAsAtomicUnit	      on
-      MinAlgLoopOccurrences   off
-      PropExecContextOutsideSubsystem off
-      RTWSystemCode	      "Auto"
-      FunctionWithSeparateData off
-      Opaque		      off
-      RequestExecContextInheritance off
-      MaskHideContents	      off
-      SFBlockType	      "MATLAB Function"
-      System {
-	Name			"PrepOutputs8"
-	Location		[227, 345, 838, 789]
-	Open			off
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"usletter"
-	PaperUnits		"inches"
-	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"100"
-	SIDHighWatermark	"25"
-	Block {
-	  BlockType		  Inport
-	  Name			  "u"
-	  SID			  "196::1"
-	  Position		  [20, 101, 40, 119]
-	  ZOrder		  -1
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Demux
-	  Name			  " Demux "
-	  SID			  "196::24"
-	  Ports			  [1, 1]
-	  Position		  [270, 230, 320, 270]
-	  ZOrder		  2
-	  Outputs		  "1"
-	}
-	Block {
-	  BlockType		  S-Function
-	  Name			  " SFunction "
-	  SID			  "196::23"
-	  Tag			  "Stateflow S-Function supply_demand_campus 10"
-	  Ports			  [1, 3]
-	  Position		  [180, 100, 230, 180]
-	  ZOrder		  1
-	  FunctionName		  "sf_sfun"
-	  PortCounts		  "[1 3]"
-	  EnableBusSupport	  on
-	  Port {
-	    PortNumber		    2
-	    Name		    "Flow"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    3
-	    Name		    "y"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  " Terminator "
-	  SID			  "196::25"
-	  Position		  [460, 241, 480, 259]
-	  ZOrder		  3
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "Flow"
-	  SID			  "196::21"
-	  Position		  [460, 101, 480, 119]
-	  ZOrder		  -5
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "y"
-	  SID			  "196::22"
-	  Position		  [460, 136, 480, 154]
-	  ZOrder		  -6
-	  Port			  "2"
-	  IconDisplay		  "Port number"
-	}
-	Line {
-	  SrcBlock		  "u"
-	  SrcPort		  1
-	  DstBlock		  " SFunction "
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "Flow"
-	  Labels		  [0, 0]
-	  SrcBlock		  " SFunction "
-	  SrcPort		  2
-	  DstBlock		  "Flow"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "y"
-	  Labels		  [0, 0]
-	  SrcBlock		  " SFunction "
-	  SrcPort		  3
-	  DstBlock		  "y"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  " Demux "
-	  SrcPort		  1
-	  DstBlock		  " Terminator "
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  " SFunction "
-	  SrcPort		  1
-	  DstBlock		  " Demux "
-	  DstPort		  1
-	}
-      }
-    }
-    Block {
-      BlockType		      Selector
-      Name		      "Selector"
-      SID		      "171"
+      Name		      "Office Building 2 Signals"
+      SID		      "255"
       Ports		      [1, 1]
-      Position		      [190, 406, 230, 444]
-      ZOrder		      -17
-      InputPortWidth	      "4"
-      IndexOptions	      "Index vector (dialog)"
-      Indices		      "[1]"
-      OutputSizes	      "1"
-      Port {
-	PortNumber		1
-	Name			"CW Supply Temp"
-	RTWStorageClass		"Auto"
-	DataLoggingNameMode	"SignalName"
+      Position		      [695, 714, 800, 756]
+      ZOrder		      20
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      System {
+	Name			"Office Building 2 Signals"
+	Location		[12, 9, 1628, 1028]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "E+"
+	  SID			  "256"
+	  Position		  [115, 228, 145, 242]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  BusCreator
+	  Name			  "Bus\nCreator"
+	  SID			  "257"
+	  Ports			  [13, 1]
+	  Position		  [395, 110, 400, 360]
+	  ZOrder		  19
+	  ShowName		  off
+	  Inputs		  "13"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux"
+	  SID			  "258"
+	  Ports			  [1, 13]
+	  Position		  [225, 107, 230, 363]
+	  ZOrder		  18
+	  ShowName		  off
+	  Outputs		  "13"
+	  DisplayOption		  "bar"
+	  Port {
+	    PortNumber		    1
+	    Name		    "OutsideAirTemp"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    2
+	    Name		    "ZoneAirTemp1"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    3
+	    Name		    "ZoneAirTemp2"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    4
+	    Name		    "ZoneAirTemp3"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    5
+	    Name		    "ZoneAirTemp4"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    6
+	    Name		    "ZoneAirTemp5"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    7
+	    Name		    "PlenumAirTemp"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    8
+	    Name		    "ChilledWaterMassFlowRate"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    9
+	    Name		    "ChilledWaterHeatTransferRate"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    10
+	    Name		    "ChilledWaterInletTemp"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    11
+	    Name		    "ChilledWaterOutletTemp"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    12
+	    Name		    "ElecPowerTotal"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    13
+	    Name		    "ElecPowerHVAC"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out"
+	  SID			  "259"
+	  Position		  [480, 228, 510, 242]
+	  ZOrder		  -2
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  SrcBlock		  "E+"
+	  SrcPort		  1
+	  DstBlock		  "Demux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Bus\nCreator"
+	  SrcPort		  1
+	  DstBlock		  "Out"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "OutsideAirTemp"
+	  Labels		  [1, 1]
+	  SrcBlock		  "Demux"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "ZoneAirTemp1"
+	  Labels		  [1, 1]
+	  SrcBlock		  "Demux"
+	  SrcPort		  2
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  2
+	}
+	Line {
+	  Name			  "ZoneAirTemp2"
+	  Labels		  [1, 1]
+	  SrcBlock		  "Demux"
+	  SrcPort		  3
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  3
+	}
+	Line {
+	  Name			  "ZoneAirTemp3"
+	  Labels		  [1, 1]
+	  SrcBlock		  "Demux"
+	  SrcPort		  4
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  4
+	}
+	Line {
+	  Name			  "ZoneAirTemp4"
+	  Labels		  [1, 1]
+	  SrcBlock		  "Demux"
+	  SrcPort		  5
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  5
+	}
+	Line {
+	  Name			  "ZoneAirTemp5"
+	  Labels		  [1, 1]
+	  SrcBlock		  "Demux"
+	  SrcPort		  6
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  6
+	}
+	Line {
+	  Name			  "PlenumAirTemp"
+	  Labels		  [1, 1]
+	  SrcBlock		  "Demux"
+	  SrcPort		  7
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  7
+	}
+	Line {
+	  Name			  "ChilledWaterMassFlowRate"
+	  Labels		  [1, 1]
+	  SrcBlock		  "Demux"
+	  SrcPort		  8
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  8
+	}
+	Line {
+	  Name			  "ChilledWaterHeatTransferRate"
+	  Labels		  [1, 1]
+	  SrcBlock		  "Demux"
+	  SrcPort		  9
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  9
+	}
+	Line {
+	  Name			  "ChilledWaterInletTemp"
+	  Labels		  [1, 1]
+	  SrcBlock		  "Demux"
+	  SrcPort		  10
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  10
+	}
+	Line {
+	  Name			  "ChilledWaterOutletTemp"
+	  Labels		  [1, 1]
+	  SrcBlock		  "Demux"
+	  SrcPort		  11
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  11
+	}
+	Line {
+	  Name			  "ElecPowerTotal"
+	  Labels		  [1, 1]
+	  SrcBlock		  "Demux"
+	  SrcPort		  12
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  12
+	}
+	Line {
+	  Name			  "ElecPowerHVAC"
+	  Labels		  [1, 1]
+	  SrcBlock		  "Demux"
+	  SrcPort		  13
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  13
+	}
+	Annotation {
+	  SID			  "260"
+	  Name			  "Manually converts E+ output vector into a bus signal.\nThe bus signal names must match the specification "
+	  "in variables.cfg.\nIdeally, this will be automated in the future."
+	  Position		  [313, 405]
+	  ZOrder		  -1
+	}
       }
-    }
-    Block {
-      BlockType		      Stop
-      Name		      "Stop Simulation2"
-      SID		      "30"
-      Position		      [670, 827, 705, 863]
-      ZOrder		      -4
-      BackgroundColor	      "red"
     }
     Block {
       BlockType		      Scope
-      Name		      "Temperature"
-      SID		      "62"
-      Ports		      [2]
-      Position		      [1320, 162, 1355, 233]
-      ZOrder		      -16
+      Name		      "Power Scope"
+      SID		      "291"
+      Ports		      [3]
+      Position		      [1560, 163, 1600, 207]
+      ZOrder		      882
+      BackgroundColor	      "gray"
       Floating		      off
-      Location		      [5, 43, 1605, 1194]
-      Open		      off
-      NumInputPorts	      "2"
+      Location		      [1487, 57, 1908, 1027]
+      Open		      on
+      NumInputPorts	      "3"
+      ZoomMode		      "xonly"
       List {
 	ListType		AxesTitles
 	axes1			"%<SignalLabel>"
 	axes2			"%<SignalLabel>"
+	axes3			"%<SignalLabel>"
       }
       List {
 	ListType		ScopeGraphics
@@ -3387,220 +2600,309 @@ Model {
 	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
 	MarkerStyles		"none|none|none|none|none|none"
       }
-      ShowLegends	      off
+      ShowLegends	      on
+      LegendLocations	      "0.50911     0.92509     0.41805    0.037113\n0.45447     0.60756     0.47268    0.037113\n"
+      "0.45447     0.29107     0.47268    0.037113"
       TimeRange		      "450000"
-      YMin		      "12~12"
-      YMax		      "32~32"
+      YMin		      "0~0~0"
+      YMax		      "10000~12000~12000"
       DataFormat	      "StructureWithTime"
       LimitDataPoints	      off
       SampleTime	      "0"
     }
     Block {
-      BlockType		      Scope
-      Name		      "Temperature1"
-      SID		      "161"
-      Ports		      [1]
-      Position		      [935, 269, 990, 321]
-      ZOrder		      -16
-      Floating		      off
-      Location		      [9, 56, 1593, 1151]
-      Open		      off
-      NumInputPorts	      "1"
-      List {
-	ListType		AxesTitles
-	axes1			"%<SignalLabel>"
+      BlockType		      SubSystem
+      Name		      "Prep Inputs"
+      SID		      "265"
+      Ports		      [4, 4]
+      Position		      [170, 79, 315, 151]
+      ZOrder		      26
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      System {
+	Name			"Prep Inputs"
+	Location		[12, 9, 1628, 1028]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "Flow 1"
+	  SID			  "266"
+	  Position		  [115, 83, 145, 97]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Demand 1"
+	  SID			  "271"
+	  Position		  [115, 128, 145, 142]
+	  ZOrder		  20
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Flow 2"
+	  SID			  "272"
+	  Position		  [115, 213, 145, 227]
+	  ZOrder		  21
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Demand 2"
+	  SID			  "273"
+	  Position		  [115, 258, 145, 272]
+	  ZOrder		  22
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain1"
+	  SID			  "274"
+	  Position		  [220, 67, 280, 113]
+	  ZOrder		  23
+	  ShowName		  off
+	  Gain			  "1/0.005"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain2"
+	  SID			  "275"
+	  Position		  [320, 67, 380, 113]
+	  ZOrder		  24
+	  ShowName		  off
+	  Gain			  "1/1000"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain3"
+	  SID			  "279"
+	  Position		  [220, 197, 280, 243]
+	  ZOrder		  28
+	  ShowName		  off
+	  Gain			  "1/0.005"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain4"
+	  SID			  "280"
+	  Position		  [320, 197, 380, 243]
+	  ZOrder		  29
+	  ShowName		  off
+	  Gain			  "1/1000"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Flow 1 Out"
+	  SID			  "269"
+	  Position		  [440, 83, 470, 97]
+	  ZOrder		  -2
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Demand 1 Out"
+	  SID			  "276"
+	  Position		  [440, 128, 470, 142]
+	  ZOrder		  25
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Flow 2 Out"
+	  SID			  "277"
+	  Position		  [440, 213, 470, 227]
+	  ZOrder		  26
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Demand 2 Out"
+	  SID			  "278"
+	  Position		  [440, 258, 470, 272]
+	  ZOrder		  27
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  SrcBlock		  "Flow 1"
+	  SrcPort		  1
+	  DstBlock		  "Gain1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Gain1"
+	  SrcPort		  1
+	  DstBlock		  "Gain2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Gain2"
+	  SrcPort		  1
+	  DstBlock		  "Flow 1 Out"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Gain3"
+	  SrcPort		  1
+	  DstBlock		  "Gain4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demand 1"
+	  SrcPort		  1
+	  DstBlock		  "Demand 1 Out"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Flow 2"
+	  SrcPort		  1
+	  DstBlock		  "Gain3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Gain4"
+	  SrcPort		  1
+	  DstBlock		  "Flow 2 Out"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demand 2"
+	  SrcPort		  1
+	  DstBlock		  "Demand 2 Out"
+	  DstPort		  1
+	}
+	Annotation {
+	  SID			  "270"
+	  Name			  "Gains come from Willy Bernal's original demo; origin of the constants was unfortunately not documented."
+	  Position		  [318, 325]
+	  ZOrder		  -1
+	}
       }
-      List {
-	ListType		ScopeGraphics
-	FigureColor		"[0.5 0.5 0.5]"
-	AxesColor		"[0 0 0]"
-	AxesTickColor		"[1 1 1]"
-	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-	LineStyles		"-|-|-|-|-|-"
-	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
-	MarkerStyles		"none|none|none|none|none|none"
-      }
-      ShowLegends	      off
-      TimeRange		      "450000"
-      YMin		      "12"
-      YMax		      "32"
-      SaveName		      "ScopeData6"
-      DataFormat	      "StructureWithTime"
-      LimitDataPoints	      off
-      SampleTime	      "0"
     }
     Block {
-      BlockType		      Terminator
-      Name		      "Terminator"
-      SID		      "35"
-      Position		      [690, 95, 710, 115]
-      ZOrder		      -5
+      BlockType		      Stop
+      Name		      "Stop\nSimulation"
+      SID		      "30"
+      Position		      [620, 862, 655, 898]
+      ZOrder		      -4
+      BackgroundColor	      "red"
     }
     Block {
       BlockType		      Terminator
       Name		      "Terminator1"
       SID		      "36"
-      Position		      [680, 395, 700, 415]
+      Position		      [700, 95, 720, 115]
       ZOrder		      -5
+      ShowName		      off
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator2"
+      SID		      "238"
+      Position		      [695, 420, 715, 440]
+      ZOrder		      11
+      ShowName		      off
     }
     Block {
       BlockType		      Terminator
       Name		      "Terminator3"
-      SID		      "128"
-      Position		      [680, 640, 700, 660]
-      ZOrder		      -5
+      SID		      "239"
+      Position		      [695, 665, 715, 685]
+      ZOrder		      12
+      ShowName		      off
     }
     Block {
       BlockType		      ToWorkspace
       Name		      "To Workspace"
-      SID		      "137"
+      SID		      "322"
       Ports		      [1]
-      Position		      [1270, 380, 1330, 410]
-      ZOrder		      -7
-      VariableName	      "Input"
+      Position		      [1405, 560, 1505, 590]
+      ZOrder		      913
+      ShowName		      off
+      VariableName	      "central_plant"
       MaxDataPoints	      "inf"
       SampleTime	      "-1"
-      SaveFormat	      "Structure With Time"
     }
     Block {
       BlockType		      ToWorkspace
       Name		      "To Workspace1"
-      SID		      "138"
+      SID		      "323"
       Ports		      [1]
-      Position		      [890, 521, 965, 549]
-      ZOrder		      -7
-      VariableName	      "InOutTemp1"
+      Position		      [1405, 620, 1505, 650]
+      ZOrder		      914
+      ShowName		      off
+      VariableName	      "building_1"
       MaxDataPoints	      "inf"
       SampleTime	      "-1"
-      SaveFormat	      "Structure With Time"
     }
     Block {
       BlockType		      ToWorkspace
       Name		      "To Workspace2"
-      SID		      "139"
+      SID		      "324"
       Ports		      [1]
-      Position		      [900, 771, 975, 799]
-      ZOrder		      -7
-      VariableName	      "InOutTemp2"
+      Position		      [1405, 685, 1505, 715]
+      ZOrder		      915
+      ShowName		      off
+      VariableName	      "building_2"
       MaxDataPoints	      "inf"
       SampleTime	      "-1"
-      SaveFormat	      "Structure With Time"
     }
     Block {
       BlockType		      ToWorkspace
       Name		      "To Workspace3"
-      SID		      "140"
+      SID		      "326"
       Ports		      [1]
-      Position		      [570, 221, 645, 249]
-      ZOrder		      -7
-      BlockMirror	      on
-      NamePlacement	      "alternate"
-      VariableName	      "ChillerOut"
+      Position		      [1405, 750, 1505, 780]
+      ZOrder		      917
+      ShowName		      off
+      VariableName	      "t"
       MaxDataPoints	      "inf"
       SampleTime	      "-1"
-      SaveFormat	      "Structure With Time"
     }
     Block {
-      BlockType		      ToWorkspace
-      Name		      "To Workspace4"
-      SID		      "150"
-      Ports		      [1]
-      Position		      [1365, 556, 1440, 584]
-      ZOrder		      -7
-      VariableName	      "Power"
-      MaxDataPoints	      "inf"
-      SampleTime	      "-1"
-      SaveFormat	      "Structure With Time"
-    }
-    Block {
-      BlockType		      ToWorkspace
-      Name		      "To Workspace5"
-      SID		      "187"
-      Ports		      [1]
-      Position		      [1460, 701, 1535, 729]
-      ZOrder		      -7
-      VariableName	      "Delay"
-      MaxDataPoints	      "inf"
-      SampleTime	      "-1"
-      SaveFormat	      "Structure With Time"
-    }
-    Block {
-      BlockType		      ToWorkspace
-      Name		      "To Workspace6"
-      SID		      "197"
-      Ports		      [1]
-      Position		      [1460, 751, 1535, 779]
-      ZOrder		      -7
-      VariableName	      "Feedback"
-      MaxDataPoints	      "inf"
-      SampleTime	      "-1"
-      SaveFormat	      "Structure With Time"
-    }
-    Block {
-      BlockType		      Scope
-      Name		      "UnderSized"
-      SID		      "189"
-      Ports		      [2]
-      Position		      [1450, 784, 1470, 846]
-      ZOrder		      -16
-      Floating		      off
-      Location		      [9, 56, 1593, 1151]
-      Open		      off
-      NumInputPorts	      "2"
-      TickLabels	      "on"
-      List {
-	ListType		AxesTitles
-	axes1			"%<SignalLabel>"
-	axes2			"%<SignalLabel>"
-      }
-      List {
-	ListType		ScopeGraphics
-	FigureColor		"[0.501960784313725 0.501960784313725 0.501960784313725]"
-	AxesColor		"[0 0 0]"
-	AxesTickColor		"[1 1 1]"
-	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-	LineStyles		"-|-|-|-|-|-"
-	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
-	MarkerStyles		"none|none|none|none|none|none"
-      }
-      ShowLegends	      off
-      TimeRange		      "450000"
-      YMin		      "0~0"
-      YMax		      "2~2"
-      SaveName		      "ScopeData9"
-      DataFormat	      "StructureWithTime"
-      LimitDataPoints	      off
-      SampleTime	      "0"
-    }
-    Block {
-      BlockType		      UnitDelay
-      Name		      "Unit Delay2"
-      SID		      "224"
-      Position		      [50, 238, 90, 282]
-      ZOrder		      -18
-      BlockMirror	      on
-      NamePlacement	      "alternate"
-      InputProcessing	      "Elements as channels (sample based)"
-      SampleTime	      "-1"
-    }
-    Block {
-      BlockType		      UnitDelay
-      Name		      "Unit Delay3"
-      SID		      "225"
-      Position		      [120, 275, 160, 315]
-      ZOrder		      -18
-      BlockMirror	      on
-      NamePlacement	      "alternate"
-      InputProcessing	      "Elements as channels (sample based)"
-      SampleTime	      "-1"
-    }
-    Line {
-      Name		      "flag"
-      Labels		      [0, 0]
-      SrcBlock		      "E+ Building"
-      SrcPort		      1
-      DstBlock		      "Goto"
-      DstPort		      1
+      BlockType		      Gain
+      Name		      "To kg/s"
+      SID		      "285"
+      Position		      [115, 472, 155, 518]
+      ZOrder		      31
+      Gain		      "1000"
+      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
     }
     Line {
       Name		      "CW Setpoint"
@@ -3608,12 +2910,6 @@ Model {
       SrcBlock		      "Cool"
       SrcPort		      1
       DstBlock		      "Mux"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Mux"
-      SrcPort		      1
-      DstBlock		      "E+ Building"
       DstPort		      1
     }
     Line {
@@ -3633,197 +2929,23 @@ Model {
       DstPort		      2
     }
     Line {
-      SrcBlock		      "Mux1"
-      SrcPort		      1
-      DstBlock		      "E+ Building"
-      DstPort		      1
-    }
-    Line {
-      Name		      "flag"
-      Labels		      [0, 0]
-      SrcBlock		      "E+ Building"
-      SrcPort		      1
-      DstBlock		      "Goto1"
-      DstPort		      1
-    }
-    Line {
       Labels		      [-1, 1]
-      SrcBlock		      "Logical\nOperator"
+      SrcBlock		      "And"
       SrcPort		      1
-      DstBlock		      "Stop Simulation2"
+      DstBlock		      "Stop\nSimulation"
       DstPort		      1
     }
     Line {
       SrcBlock		      "From"
       SrcPort		      1
-      DstBlock		      "Logical\nOperator"
+      DstBlock		      "And"
       DstPort		      1
     }
     Line {
       SrcBlock		      "From1"
       SrcPort		      1
-      DstBlock		      "Logical\nOperator"
+      DstBlock		      "And"
       DstPort		      2
-    }
-    Line {
-      Name		      "Time"
-      Labels		      [0, 0]
-      SrcBlock		      "E+ Building"
-      SrcPort		      2
-      DstBlock		      "Terminator"
-      DstPort		      1
-    }
-    Line {
-      Name		      "time"
-      Labels		      [0, 0]
-      SrcBlock		      "E+ Building"
-      SrcPort		      2
-      DstBlock		      "Terminator1"
-      DstPort		      1
-    }
-    Line {
-      Name		      "Outputs"
-      Labels		      [0, 0]
-      SrcBlock		      "E+ Building"
-      SrcPort		      3
-      Points		      [55, 0]
-      Branch {
-	Points			[0, 70]
-	DstBlock		"To Workspace3"
-	DstPort			1
-      }
-      Branch {
-	DstBlock		"PrepOutputs"
-	DstPort			1
-      }
-    }
-    Line {
-      Name		      "Outputs"
-      Labels		      [0, 0]
-      SrcBlock		      "E+ Building"
-      SrcPort		      3
-      DstBlock		      "PrepOutputs1"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "PrepOutputs1"
-      SrcPort		      1
-      DstBlock		      "Goto6"
-      DstPort		      1
-    }
-    Line {
-      Name		      "Demand"
-      Labels		      [0, 0]
-      SrcBlock		      "PrepOutputs1"
-      SrcPort		      2
-      DstBlock		      "Goto7"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "PrepOutputs1"
-      SrcPort		      3
-      Points		      [5, 0]
-      Branch {
-	DstBlock		"Goto8"
-	DstPort			1
-      }
-      Branch {
-	Points			[0, 60]
-	DstBlock		"To Workspace1"
-	DstPort			1
-      }
-    }
-    Line {
-      Name		      "Building 1"
-      Labels		      [0, 0]
-      SrcBlock		      "From2"
-      SrcPort		      1
-      DstBlock		      "Temperature"
-      DstPort		      1
-    }
-    Line {
-      Name		      "Building 2"
-      Labels		      [0, 0]
-      SrcBlock		      "From3"
-      SrcPort		      1
-      DstBlock		      "Temperature"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "Mux4"
-      SrcPort		      1
-      Points		      [10, 0]
-      Branch {
-	DstBlock		"PrepOutputs2"
-	DstPort			1
-      }
-      Branch {
-	Points			[0, 75]
-	DstBlock		"To Workspace"
-	DstPort			1
-      }
-    }
-    Line {
-      Name		      "Mass Flow Rate [Kg/s]"
-      Labels		      [0, 0]
-      SrcBlock		      "PrepOutputs2"
-      SrcPort		      1
-      DstBlock		      "Mass & Flow Partition"
-      DstPort		      1
-    }
-    Line {
-      Name		      "Load Demand [W]"
-      Labels		      [0, 0]
-      SrcBlock		      "PrepOutputs2"
-      SrcPort		      2
-      DstBlock		      "Mass & Flow Partition"
-      DstPort		      2
-    }
-    Line {
-      Name		      "InOutTemp LoadProfile [C]"
-      Labels		      [1, 0]
-      SrcBlock		      "From10"
-      SrcPort		      1
-      DstBlock		      "InOutTemp"
-      DstPort		      1
-    }
-    Line {
-      Name		      "InOutTemp FluidSource [C]"
-      Labels		      [0, 1]
-      SrcBlock		      "From11"
-      SrcPort		      1
-      DstBlock		      "InOutTemp"
-      DstPort		      2
-    }
-    Line {
-      Name		      "Max Mass Flow Rate"
-      Labels		      [1, 0]
-      SrcBlock		      "From9"
-      SrcPort		      1
-      DstBlock		      "Mux1"
-      DstPort		      4
-    }
-    Line {
-      Name		      "ChillerPower [W]"
-      Labels		      [1, 0]
-      SrcBlock		      "From13"
-      SrcPort		      1
-      DstBlock		      "InOutTemp"
-      DstPort		      3
-    }
-    Line {
-      Name		      "ChillerTemp [C]"
-      Labels		      [1, 0]
-      SrcBlock		      "From16"
-      SrcPort		      1
-      DstBlock		      "InOutTemp"
-      DstPort		      4
-    }
-    Line {
-      SrcBlock		      "PrepOutputs3"
-      SrcPort		      1
-      DstBlock		      "Goto9"
-      DstPort		      1
     }
     Line {
       Name		      "Cooling Setpoint"
@@ -3842,447 +2964,638 @@ Model {
       DstPort		      2
     }
     Line {
-      SrcBlock		      "Mux2"
+      SrcBlock		      "From15"
       SrcPort		      1
-      DstBlock		      "E+ Building 1"
+      DstBlock		      "And"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Prep Inputs"
+      SrcPort		      1
+      DstBlock		      "Mux"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Prep Inputs"
+      SrcPort		      2
+      DstBlock		      "Mux"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Prep Inputs"
+      SrcPort		      3
+      DstBlock		      "Mux"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "Prep Inputs"
+      SrcPort		      4
+      DstBlock		      "Mux"
+      DstPort		      5
+    }
+    Line {
+      Name		      "flag"
+      SrcBlock		      "Central Plant"
+      SrcPort		      1
+      DstBlock		      "Goto"
       DstPort		      1
     }
     Line {
       Name		      "flag"
-      Labels		      [0, 0]
-      SrcBlock		      "E+ Building 1"
+      SrcBlock		      "Office Building 1"
       SrcPort		      1
-      DstBlock		      "Goto11"
+      DstBlock		      "Goto1"
+      DstPort		      1
+    }
+    Line {
+      Name		      "Time"
+      SrcBlock		      "Central Plant"
+      SrcPort		      2
+      DstBlock		      "Terminator1"
       DstPort		      1
     }
     Line {
       Name		      "time"
-      Labels		      [0, 0]
-      SrcBlock		      "E+ Building 1"
+      SrcBlock		      "Office Building 1"
+      SrcPort		      2
+      DstBlock		      "Terminator2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Office Building 2"
       SrcPort		      2
       DstBlock		      "Terminator3"
       DstPort		      1
     }
     Line {
+      SrcBlock		      "Office Building 2"
+      SrcPort		      1
+      DstBlock		      "Goto5"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Mux"
+      SrcPort		      1
+      DstBlock		      "Central Plant"
+      DstPort		      1
+    }
+    Line {
       Name		      "Outputs"
-      Labels		      [0, 0]
-      SrcBlock		      "E+ Building 1"
+      SrcBlock		      "Central Plant"
       SrcPort		      3
-      DstBlock		      "PrepOutputs4"
+      DstBlock		      "Central Plant Signals"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "PrepOutputs4"
+      Name		      "Outputs"
+      SrcBlock		      "Office Building 1"
+      SrcPort		      3
+      DstBlock		      "Office Building 1 Signals"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Office Building 2"
+      SrcPort		      3
+      DstBlock		      "Office Building 2 Signals"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Central Plant Signals"
       SrcPort		      1
-      DstBlock		      "Goto12"
-      DstPort		      1
-    }
-    Line {
-      Name		      "Demand"
-      Labels		      [0, 0]
-      SrcBlock		      "PrepOutputs4"
-      SrcPort		      2
-      DstBlock		      "Goto14"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "PrepOutputs4"
-      SrcPort		      3
-      Points		      [5, 0]
+      Points		      [43, 0]
       Branch {
-	DstBlock		"Goto15"
+	DstBlock		"Goto8"
 	DstPort			1
       }
       Branch {
-	Points			[0, 65]
-	DstBlock		"To Workspace2"
+	Points			[0, 115]
+	DstBlock		"Memory"
 	DstPort			1
       }
     }
     Line {
-      Name		      "Max Mass Flow Rate"
-      Labels		      [1, 0]
-      SrcBlock		      "From12"
+      SrcBlock		      "Memory"
       SrcPort		      1
-      DstBlock		      "Mux2"
-      DstPort		      4
-    }
-    Line {
-      SrcBlock		      "From15"
-      SrcPort		      1
-      DstBlock		      "Logical\nOperator"
-      DstPort		      3
-    }
-    Line {
-      SrcBlock		      "PrepOutputs"
-      SrcPort		      1
-      DstBlock		      "Goto2"
+      Points		      [-405, 0]
+      DstBlock		      "Bus\nSelector"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "PrepOutputs"
+      SrcBlock		      "Office Building 1 Signals"
+      SrcPort		      1
+      Points		      [21, 0]
+      Branch {
+	Points			[0, -60]
+	DstBlock		"Goto4"
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"Bus\nSelector1"
+	DstPort			1
+      }
+    }
+    Line {
+      Name		      "<ChilledWaterHeatTransferRate>"
+      Labels		      [0, 0]
+      SrcBlock		      "Bus\nSelector1"
       SrcPort		      2
-      DstBlock		      "Goto10"
+      DstBlock		      "Goto7"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "PrepOutputs"
-      SrcPort		      3
-      DstBlock		      "Goto13"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "PrepOutputs"
-      SrcPort		      5
-      DstBlock		      "Goto16"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "PrepOutputs"
-      SrcPort		      6
-      DstBlock		      "Goto3"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "From7"
+      Name		      "<ChilledWaterMassFlowRate>"
+      Labels		      [0, 0]
+      SrcBlock		      "Bus\nSelector1"
       SrcPort		      1
-      DstBlock		      "Mux4"
+      DstBlock		      "Goto11"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "From17"
+      SrcBlock		      "From2"
       SrcPort		      1
-      DstBlock		      "Mux4"
+      DstBlock		      "Prep Inputs"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From3"
+      SrcPort		      1
+      DstBlock		      "Prep Inputs"
       DstPort		      2
     }
     Line {
-      SrcBlock		      "PrepOutputs1"
-      SrcPort		      4
-      DstBlock		      "Goto17"
+      SrcBlock		      "From4"
+      SrcPort		      1
+      DstBlock		      "Prep Inputs"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "From5"
+      SrcPort		      1
+      DstBlock		      "Prep Inputs"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "Mux1"
+      SrcPort		      1
+      DstBlock		      "Office Building 1"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "PrepOutputs4"
-      SrcPort		      4
-      DstBlock		      "Goto18"
+      SrcBlock		      "Mux2"
+      SrcPort		      1
+      DstBlock		      "Office Building 2"
       DstPort		      1
     }
     Line {
-      Name		      "Building 2"
+      Name		      "<ChilledWaterOutputTemp>"
       Labels		      [0, 0]
-      SrcBlock		      "From18"
-      SrcPort		      1
-      Points		      [60, 0]
-      Branch {
-	DstBlock		"Power"
-	DstPort			2
-      }
-      Branch {
-	Points			[0, 85]
-	DstBlock		"Mux3"
-	DstPort			2
-      }
-    }
-    Line {
-      Name		      "Chiller"
-      Labels		      [0, 0]
-      SrcBlock		      "From19"
-      SrcPort		      1
-      Points		      [55, 0]
-      Branch {
-	DstBlock		"Power"
-	DstPort			3
-      }
-      Branch {
-	Points			[0, 75]
-	DstBlock		"Mux3"
-	DstPort			3
-      }
-    }
-    Line {
-      Name		      "Building 1"
-      Labels		      [0, 0]
-      SrcBlock		      "From6"
-      SrcPort		      1
-      Points		      [65, 0]
-      Branch {
-	DstBlock		"Power"
-	DstPort			1
-      }
-      Branch {
-	DstBlock		"Mux3"
-	DstPort			1
-      }
-    }
-    Line {
-      SrcBlock		      "PrepOutputs"
-      SrcPort		      8
-      DstBlock		      "Goto19"
-      DstPort		      1
-    }
-    Line {
-      Name		      "Pump"
-      Labels		      [0, 0]
-      SrcBlock		      "From20"
-      SrcPort		      1
-      Points		      [50, 0]
-      Branch {
-	DstBlock		"Power"
-	DstPort			4
-      }
-      Branch {
-	Points			[0, 65]
-	DstBlock		"Mux3"
-	DstPort			4
-      }
-    }
-    Line {
-      SrcBlock		      "Mux3"
-      SrcPort		      1
-      DstBlock		      "To Workspace4"
-      DstPort		      1
-    }
-    Line {
-      Name		      "CW Supply Temp"
-      Labels		      [0, 1]
-      SrcBlock		      "Selector"
-      SrcPort		      1
-      Points		      [70, 0]
-      Branch {
-	DstBlock		"Mux1"
-	DstPort			3
-      }
+      SrcBlock		      "Bus\nSelector"
+      SrcPort		      2
+      Points		      [0, 80; 63, 0]
       Branch {
 	Points			[0, 245]
 	DstBlock		"Mux2"
 	DstPort			3
       }
+      Branch {
+	DstBlock		"Mux1"
+	DstPort			3
+      }
     }
     Line {
-      SrcBlock		      "PrepOutputs3"
-      SrcPort		      2
-      DstBlock		      "Goto20"
+      Name		      "<MaxChilledWaterFlow>"
+      Labels		      [0, 0]
+      SrcBlock		      "Bus\nSelector"
+      SrcPort		      1
+      Points		      [0, 125]
+      DstBlock		      "To kg/s"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "From4"
+      SrcBlock		      "To kg/s"
       SrcPort		      1
-      DstBlock		      "Mux7"
+      Points		      [13, 0]
+      Branch {
+	Points			[0, 245]
+	DstBlock		"Gain1"
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"Gain"
+	DstPort			1
+      }
+    }
+    Line {
+      Name		      "Max Mass Flow Rate"
+      Labels		      [1, 1]
+      SrcBlock		      "Gain"
+      SrcPort		      1
+      DstBlock		      "Mux1"
       DstPort		      4
     }
     Line {
-      SrcBlock		      "From26"
+      Name		      "Max Mass Flow Rate"
+      Labels		      [1, 1]
+      SrcBlock		      "Gain1"
       SrcPort		      1
-      DstBlock		      "Mux7"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "From25"
-      SrcPort		      1
-      DstBlock		      "Mux7"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "From24"
-      SrcPort		      1
-      DstBlock		      "Mux7"
-      DstPort		      3
-    }
-    Line {
-      SrcBlock		      "Mux7"
-      SrcPort		      1
-      DstBlock		      "PrepOutputs7"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "PrepOutputs7"
-      SrcPort		      1
-      Points		      [25, 0]
-      Branch {
-	DstBlock		"Delay"
-	DstPort			1
-      }
-      Branch {
-	Points			[0, 65]
-	DstBlock		"Mux6"
-	DstPort			1
-      }
-    }
-    Line {
-      SrcBlock		      "PrepOutputs7"
-      SrcPort		      2
-      Points		      [10, 0]
-      Branch {
-	DstBlock		"Delay"
-	DstPort			2
-      }
-      Branch {
-	Points			[0, 55]
-	DstBlock		"Mux6"
-	DstPort			2
-      }
-    }
-    Line {
-      SrcBlock		      "Mux6"
-      SrcPort		      1
-      DstBlock		      "To Workspace5"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "From29"
-      SrcPort		      1
-      DstBlock		      "Mux9"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "From28"
-      SrcPort		      1
-      DstBlock		      "Mux9"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "Mux9"
-      SrcPort		      1
-      DstBlock		      "PrepOutputs8"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "PrepOutputs8"
-      SrcPort		      1
-      Points		      [15, 0]
-      Branch {
-	DstBlock		"UnderSized"
-	DstPort			1
-      }
-      Branch {
-	Points			[0, -35]
-	DstBlock		"To Workspace6"
-	DstPort			1
-      }
-    }
-    Line {
-      SrcBlock		      "From30"
-      SrcPort		      1
-      DstBlock		      "Mux9"
-      DstPort		      3
-    }
-    Line {
-      SrcBlock		      "From32"
-      SrcPort		      1
-      DstBlock		      "Mux9"
+      DstBlock		      "Mux2"
       DstPort		      4
     }
     Line {
-      SrcBlock		      "From27"
-      SrcPort		      1
-      DstBlock		      "Mux9"
-      DstPort		      5
-    }
-    Line {
-      SrcBlock		      "From31"
-      SrcPort		      1
-      DstBlock		      "Mux9"
-      DstPort		      6
-    }
-    Line {
-      SrcBlock		      "PrepOutputs8"
+      Name		      "<ChilledWaterHeatTransferRate>"
+      Labels		      [0, 0]
+      SrcBlock		      "Bus\nSelector2"
       SrcPort		      2
-      DstBlock		      "UnderSized"
+      DstBlock		      "Goto3"
+      DstPort		      1
+    }
+    Line {
+      Name		      "<ChilledWaterMassFlowRate>"
+      Labels		      [0, 0]
+      SrcBlock		      "Bus\nSelector2"
+      SrcPort		      1
+      DstBlock		      "Goto2"
+      DstPort		      1
+    }
+    Line {
+      Name		      "<ElecPowerChiller>"
+      Labels		      [0, 0]
+      SrcBlock		      "Bus\nSelector3"
+      SrcPort		      1
+      DstBlock		      "Bus\nCreator"
+      DstPort		      1
+    }
+    Line {
+      Name		      "<ElecPowerPump>"
+      Labels		      [0, 0]
+      SrcBlock		      "Bus\nSelector3"
+      SrcPort		      2
+      DstBlock		      "Bus\nCreator"
       DstPort		      2
     }
     Line {
-      SrcBlock		      "PrepOutputs"
-      SrcPort		      7
-      Points		      [25, 0; 0, 80]
-      Branch {
-	DstBlock		"Unit Delay3"
-	DstPort			1
-      }
-      Branch {
-	DstBlock		"Temperature1"
-	DstPort			1
-      }
-    }
-    Line {
-      SrcBlock		      "PrepOutputs"
-      SrcPort		      4
-      Points		      [10, 0]
-      Branch {
-	DstBlock		"Goto4"
-	DstPort			1
-      }
-      Branch {
-	Points			[0, 105]
-	DstBlock		"Unit Delay2"
-	DstPort			1
-      }
-    }
-    Line {
-      SrcBlock		      "PrepOutputs6"
+      Name		      "Plant"
+      Labels		      [2, 1]
+      SrcBlock		      "Bus\nCreator"
       SrcPort		      1
-      DstBlock		      "Mux"
+      Points		      [54, 0; 0, 45]
+      DstBlock		      "Power Scope"
+      DstPort		      1
+    }
+    Line {
+      Name		      "<ElecPowerHVAC>"
+      Labels		      [0, 0]
+      SrcBlock		      "Bus\nSelector4"
+      SrcPort		      1
+      DstBlock		      "Bus\nCreator1"
+      DstPort		      1
+    }
+    Line {
+      Name		      "<ElecPowerTotal>"
+      Labels		      [0, 0]
+      SrcBlock		      "Bus\nSelector4"
+      SrcPort		      2
+      DstBlock		      "Bus\nCreator1"
       DstPort		      2
     }
     Line {
-      SrcBlock		      "PrepOutputs6"
+      Name		      "<ElecPowerHVAC>"
+      Labels		      [0, 1]
+      SrcBlock		      "Bus\nSelector5"
+      SrcPort		      1
+      DstBlock		      "Bus\nCreator2"
+      DstPort		      1
+    }
+    Line {
+      Name		      "<ElecPowerTotal>"
+      Labels		      [0, 0]
+      SrcBlock		      "Bus\nSelector5"
       SrcPort		      2
-      DstBlock		      "Mux"
+      DstBlock		      "Bus\nCreator2"
+      DstPort		      2
+    }
+    Line {
+      Name		      "Building 1"
+      Labels		      [0, 0]
+      SrcBlock		      "Bus\nCreator1"
+      SrcPort		      1
+      DstBlock		      "Power Scope"
+      DstPort		      2
+    }
+    Line {
+      Name		      "Building 2"
+      Labels		      [2, 0]
+      SrcBlock		      "Bus\nCreator2"
+      SrcPort		      1
+      Points		      [52, 0; 0, -50]
+      DstBlock		      "Power Scope"
       DstPort		      3
     }
     Line {
-      SrcBlock		      "PrepOutputs6"
-      SrcPort		      3
-      DstBlock		      "Mux"
-      DstPort		      4
-    }
-    Line {
-      SrcBlock		      "PrepOutputs6"
-      SrcPort		      4
-      DstBlock		      "Mux"
-      DstPort		      5
-    }
-    Line {
-      SrcBlock		      "From5"
+      SrcBlock		      "Office Building 2 Signals"
       SrcPort		      1
-      DstBlock		      "PrepOutputs6"
-      DstPort		      1
+      Points		      [19, 0]
+      Branch {
+	Points			[0, -60]
+	DstBlock		"Goto6"
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"Bus\nSelector2"
+	DstPort			1
+      }
     }
     Line {
       SrcBlock		      "From8"
       SrcPort		      1
-      DstBlock		      "PrepOutputs6"
+      DstBlock		      "Bus\nSelector3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From6"
+      SrcPort		      1
+      DstBlock		      "Bus\nSelector4"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From7"
+      SrcPort		      1
+      DstBlock		      "Bus\nSelector5"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From11"
+      SrcPort		      1
+      DstBlock		      "Bus\nSelector6"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From9"
+      SrcPort		      1
+      DstBlock		      "Bus\nSelector7"
+      DstPort		      1
+    }
+    Line {
+      Name		      "<LoadOneMassFlowRate>"
+      Labels		      [0, 0]
+      SrcBlock		      "Bus\nSelector6"
+      SrcPort		      1
+      DstBlock		      "Bus\nCreator3"
+      DstPort		      1
+    }
+    Line {
+      Name		      "<ChilledWaterMassFlowRate>"
+      Labels		      [0, 0]
+      SrcBlock		      "Bus\nSelector7"
+      SrcPort		      1
+      Points		      [42, 0; 0, -40]
+      DstBlock		      "Bus\nCreator3"
       DstPort		      2
     }
     Line {
-      SrcBlock		      "Unit Delay2"
-      SrcPort		      1
-      Points		      [-25, 0; 0, 570]
-      DstBlock		      "PrepOutputs3"
+      Name		      "<LoadOneHeatTransferRate>"
+      Labels		      [0, 0]
+      SrcBlock		      "Bus\nSelector6"
+      SrcPort		      2
+      Points		      [28, 0; 0, 31; 18, 0; 0, 9]
+      DstBlock		      "Bus\nCreator4"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "Unit Delay3"
+      Name		      "<ChilledWaterHeatTransferRate>"
+      Labels		      [0, 0]
+      SrcBlock		      "Bus\nSelector7"
+      SrcPort		      2
+      DstBlock		      "Bus\nCreator4"
+      DstPort		      2
+    }
+    Line {
+      Name		      "Flow"
+      Labels		      [1, 1]
+      SrcBlock		      "Bus\nCreator3"
       SrcPort		      1
-      Points		      [-25, 0; 0, 130]
-      DstBlock		      "Selector"
+      DstBlock		      "Heat Exchange\nBuilding 1"
       DstPort		      1
     }
-    Annotation {
-      SID		      "226"
-      Position		      [850, 222]
-      ZOrder		      -1
+    Line {
+      Name		      "Power"
+      Labels		      [2, 1]
+      SrcBlock		      "Bus\nCreator4"
+      SrcPort		      1
+      Points		      [42, 0; 0, -40]
+      DstBlock		      "Heat Exchange\nBuilding 1"
+      DstPort		      2
     }
-    Annotation {
-      SID		      "227"
-      Name		      "Yellow: LoadProfile\nMagenta: FluidSource"
-      Position		      [1458, 396]
-      ZOrder		      -2
+    Line {
+      SrcBlock		      "From13"
+      SrcPort		      1
+      DstBlock		      "To Workspace"
+      DstPort		      1
     }
-    Annotation {
-      SID		      "228"
-      Position		      [1502, 572]
-      ZOrder		      -3
+    Line {
+      SrcBlock		      "From10"
+      SrcPort		      1
+      DstBlock		      "To Workspace1"
+      DstPort		      1
     }
+    Line {
+      SrcBlock		      "From12"
+      SrcPort		      1
+      DstBlock		      "To Workspace2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Clock"
+      SrcPort		      1
+      DstBlock		      "To Workspace3"
+      DstPort		      1
+    }
+  }
+}
+MatData {
+  NumRecords		  3
+  DataRecord {
+    Tag			    DataTag0
+    Data		    "  %)30     .    H 0   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    9&EA;"
+    "&]G      !P<F]C97-S;V)J    #@   +@#   &    \"     (         !0    @    !     0    $         !0 $ !     !    L    '"
+    "=O<FM?9&ER          !R96Q?<&%T:           9FYA;64              '=E871H97)?<')O9FEL90!T:6UE7W-T97          ;F]U=   "
+    "             '1I;65O=70           !E<&QU<U]P871H        8F-V=&)?9&ER         '!O<G0               !H;W-T          "
+    "      #@   $     &    \"     0         !0    @    !    #P    $         $     \\   !%;&5C=')I8T-H:6QL97( #@   #@   "
+    " &    \"     8         !0    @    !     0    $         \"0    @           #P/PX   !     !@    @    $          4   "
+    " (     0    \\    !         !     /    16QE8W1R:6-#:&EL;&5R  X   !0    !@    @    $          4    (     0   !X    "
+    "!         !     >    55-!7T-/7T=O;&1E;BU.4D5,+C<R-#8V-E]435DS   .    .     8    (    !@         %    \"     $    !"
+    "     0         )    \"           P') #@   #@    &    \"     8         !0    @    !     0    $         \"0    @    "
+    "        J0 X    X    !@    @    &          4    (     0    $    !          D    (            +D .    ,     8    ( "
+    "   !          %    \"                0         0          X    P    !@    @    $          4    (               !  "
+    "       !          #@   #@    &    \"     8         !0    @    !     0    $         \"0    @               X    P  "
+    "  !@    @    $          4    (               !         !          #@   (@    &    \"    !$          0         !  0"
+    " 34-/4P$    +    ;6QE<%!R;V-E<W,       X   !(    !@    @    -          4    (    !@    $    !          8    8     "
+    "   W0(    !     0    $    !    #@   $ .   &    \"     D         !0    @    !    $ X   $          @   ! .     4E-  "
+    "    X   !P#0  !@    @    \"          4    (     0    $    !          4 !  %     0    4   !-0T]3      X    H#0  !@ "
+    "   @    1          $          0 $ $U#3U,!    #0   $9I;&57<F%P<&5R7U\\    .    Z P   8    (     0         %    \"  "
+    "   \\    !     0         .    ( (   8    (    \"0         %    \"    / !   !     0         \"    \\ $   (    6    "
+    "\\    ! !   0 0  0 $  . !  #P 0            !V97)S:6]N '!R;V=R86T 96YV &%R9W5M96YT<P!W;W)K1&ER &)C=G1B1&ER &%C8V5P="
+    "%1I;65O=70 97AE8V-M9 !S97)V97)3;V-K970 =W)I=&5R ')E861E<@!P:60 ;6QE<%!R;V-E<W, <&]R= !H;W-T &-O;F9I9T9I;&4 8V]N9FE"
+    "G1FEL95=R:71E3VYC90!S=&%T=7, ;7-G ')W5&EM96]U= !I<U)U;FYI;F< 8V]M;5-O8VME=                                   #0   "
+    "                                            0                    $    !               ,     0    $          @    $"
+    "    !     P    $    \"    !     $    #    !0    $    $    !@    $    %    !P    $    &    \"     $    '    \"0    "
+    "$    (    \"@    $    )    \"P    $    *    #     $    +                               .          X    X    !@    "
+    "@    &          4    (     0    $    !          D    (             $ .    4     8    (    !          %    \"     $"
+    "    <     0         0    '    $,Z7$5N97)G>5!L=7-6.\"TQ+3!<4G5N17!L=7,     #@   +@!   &    \"     $         !0    @"
+    "    !     @    $         #@   ,     &    \"     $         !0    @    !     @    $         #@   $     &    \"     0"
+    "         !0    @    !    #@    $         $     X   !%3D521UE03%537T1)4@  #@   $@    &    \"     0         !0    @ "
+    "   !    $P    $         $    !,   !#.EQ%;F5R9WE0;'5S5C@M,2TP       .    P     8    (     0         %    \"     $  "
+    "  \"     0         .    ,     8    (    !          %    \"     $    $     0         0  0 4$%42 X   !8    !@    @  "
+    "  $          4    (     0   \"@    !         !     H    0SI<2F%V85QJ<F4V+74T-5QB:6X[0SI<16YE<F=Y4&QU<U8X+3$M, X   "
+    "#     !@    @    $          4    (     0   (L    !         !    \"+    0SI<57-E<G-<<V9R86YK,5Q':71<0V%M<'5S16YE<F="
+    "Y36]D96QI;F=<1&5M;UQD979<8V%M<'5S7W=I=&A?8V5N=')A;%]P;&%N=%Q%;&5C=')I8T-H:6QL97)<16QE8W1R:6-#:&EL;&5R(%5305]#3U]';"
+    "VQD96XM3E)%3\"XW,C0V-C9?5$U9,P      #@   )     &    \"     0         !0    @    !    7     $         $    %P   !#."
+    "EQ5<V5R<UQS9G)A;FLQ7$=I=%Q#86UP=7-%;F5R9WE-;V1E;&EN9UQ$96UO7&1E=EQC86UP=7-?=VET:%]C96YT<F%L7W!L86YT7$5L96-T<FEC0VA"
+    "I;&QE<@     .    :     8    (    !          %    \"     $    T     0         0    -    $,Z7%5S97)S7'-F<F%N:S%<1VET"
+    "7$-A;7!U<T5N97)G>4UO9&5L:6YG7$U,15!<8F-V=&(     #@   #@    &    \"     8         !0    @    !     0    $         \""
+    "0    @          $S-0 X    X    !@    @    $          4    (     0    8    !         !     &    <WES=&5M   .    ,  "
+    "   8    (    !@         %    \"                0         )          X    P    !@    @    &          4    (        "
+    "       !          D         #@   #     &    \"     8         !0    @               $         \"0         .    .   "
+    "  8    (    !@         %    \"     $    !     0         )    \"               #@   /@$   &    \"     $         !0 "
+    "   @    \"     0    $         #@   #@    &    \"     (         !0    @    !          $         !0 $  $    !       "
+    "   X   \"(!   !@    @    \"          4    (     0    $    !          4 !  4     0   !@!  !A<F=U;65N=',            "
+    "  '=O<FM$:7(                 <&]R=                     !H;W-T                     &-O;F9I9T9I;&4             8V]N9"
+    "FEG1FEL95=R:71E3VYC90!A8V-E<'14:6UE;W5T         '-T871U<P                  ;7-G                      !R=U1I;65O=70"
+    "              &ES4G5N;FEN9P              <V5R=F5R4V]C:V5T          !C;VUM4V]C:V5T             '!I9                "
+    "       #@   \"@    &    \"     $         !0    @               $         #@   #     &    \"     0         !0    @ "
+    "              $         $          .    .     8    (    !@         %    \"     $    !     0         )    \"       "
+    "        #@   #     &    \"     0         !0    @               $         $          .    0     8    (    !        "
+    "  %    \"     $    *     0         0    \"@   '-O8VME=\"YC9F<        .    ,     8    (    \"0(        %    \"     "
+    "$    !     0         \"  $       X    X    !@    @    &          4    (     0    $    !          D    (          \""
+    "(TT .    .     8    (    !@         %    \"     $    !     0         )    \"               #@   #     &    \"     "
+    "0         !0    @               $         $          .    .     8    (    !@         %    \"     $    !     0     "
+    "    )    \"               #@   #     &    \"     D\"        !0    @    !     0    $          @ !       .    ,     "
+    "8    (    !@         %    \"                0         )          X    P    !@    @    &          4    (           "
+    "    !          D         #@   #     &    \"     8         !0    @               $         \"0         .    B     8"
+    "    (    \"0         %    \"     $   !8     0         \"    6      !24T     #@   $@    &    \"     (         !0   "
+    " @    !     0    $         !0 $  4    !    !0   $U#3U,     #@         "
+  }
+  DataRecord {
+    Tag			    DataTag1
+    Data		    "  %)30     .    H 0   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    9&EA;"
+    "&]G      !P<F]C97-S;V)J    #@   +@#   &    \"     (         !0    @    !     0    $         !0 $ !     !    L    '"
+    "=O<FM?9&ER          !R96Q?<&%T:           9FYA;64              '=E871H97)?<')O9FEL90!T:6UE7W-T97          ;F]U=   "
+    "             '1I;65O=70           !E<&QU<U]P871H        8F-V=&)?9&ER         '!O<G0               !H;W-T          "
+    "      #@   $     &    \"     0         !0    @    !    \"0    $         $     D   !\"=6EL9&EN9S$         #@   #@  "
+    "  &    \"     8         !0    @    !     0    $         \"0    @           #P/PX   !     !@    @    $          4  "
+    "  (     0    P    !         !     ,    -5IO;F5!:7)#;V]L      X   !0    !@    @    $          4    (     0   !X    "
+    "!         !     >    55-!7T-/7T=O;&1E;BU.4D5,+C<R-#8V-E]435DS   .    .     8    (    !@         %    \"     $    !"
+    "     0         )    \"           P') #@   #@    &    \"     8         !0    @    !     0    $         \"0    @    "
+    "        J0 X    X    !@    @    &          4    (     0    $    !          D    (            +D .    ,     8    ( "
+    "   !          %    \"                0         0          X    P    !@    @    $          4    (               !  "
+    "       !          #@   #@    &    \"     8         !0    @    !     0    $         \"0    @               X    P  "
+    "  !@    @    $          4    (               !         !          #@   (@    &    \"    !$          0         !  0"
+    " 34-/4P$    +    ;6QE<%!R;V-E<W,       X   !(    !@    @    -          4    (    !@    $    !          8    8     "
+    "   W0(    !     0    $    !    #@   # .   &    \"     D         !0    @    !      X   $          @     .     4E-  "
+    "    X   !@#0  !@    @    \"          4    (     0    $    !          4 !  %     0    4   !-0T]3      X    8#0  !@ "
+    "   @    1          $          0 $ $U#3U,!    #0   $9I;&57<F%P<&5R7U\\    .    V P   8    (     0         %    \"  "
+    "   \\    !     0         .    ( (   8    (    \"0         %    \"    / !   !     0         \"    \\ $   (    6    "
+    "\\    ! !   0 0  0 $  . !  #P 0            !V97)S:6]N '!R;V=R86T 96YV &%R9W5M96YT<P!W;W)K1&ER &)C=G1B1&ER &%C8V5P="
+    "%1I;65O=70 97AE8V-M9 !S97)V97)3;V-K970 =W)I=&5R ')E861E<@!P:60 ;6QE<%!R;V-E<W, <&]R= !H;W-T &-O;F9I9T9I;&4 8V]N9FE"
+    "G1FEL95=R:71E3VYC90!S=&%T=7, ;7-G ')W5&EM96]U= !I<U)U;FYI;F< 8V]M;5-O8VME=                                   #0   "
+    "                                            0                    $    !               ,     0    $          @    $"
+    "    !     P    $    \"    !     $    #    !0    $    $    !@    $    %    !P    $    &    \"     $    '    \"0    "
+    "$    (    \"@    $    )    \"P    $    *    #     $    +                               .          X    X    !@    "
+    "@    &          4    (     0    $    !          D    (             $ .    4     8    (    !          %    \"     $"
+    "    <     0         0    '    $,Z7$5N97)G>5!L=7-6.\"TQ+3!<4G5N17!L=7,     #@   +@!   &    \"     $         !0    @"
+    "    !     @    $         #@   ,     &    \"     $         !0    @    !     @    $         #@   $     &    \"     0"
+    "         !0    @    !    #@    $         $     X   !%3D521UE03%537T1)4@  #@   $@    &    \"     0         !0    @ "
+    "   !    $P    $         $    !,   !#.EQ%;F5R9WE0;'5S5C@M,2TP       .    P     8    (     0         %    \"     $  "
+    "  \"     0         .    ,     8    (    !          %    \"     $    $     0         0  0 4$%42 X   !8    !@    @  "
+    "  $          4    (     0   \"@    !         !     H    0SI<2F%V85QJ<F4V+74T-5QB:6X[0SI<16YE<F=Y4&QU<U8X+3$M, X   "
+    "\"X    !@    @    $          4    (     0   ((    !         !    \"\"    0SI<57-E<G-<<V9R86YK,5Q':71<0V%M<'5S16YE<"
+    "F=Y36]D96QI;F=<1&5M;UQD979<8V%M<'5S7W=I=&A?8V5N=')A;%]P;&%N=%Q\"=6EL9&EN9S%<-5IO;F5!:7)#;V]L(%5305]#3U]';VQD96XM3E"
+    ")%3\"XW,C0V-C9?5$U9,P        X   \"(    !@    @    $          4    (     0   %8    !         !    !6    0SI<57-E<G"
+    "-<<V9R86YK,5Q':71<0V%M<'5S16YE<F=Y36]D96QI;F=<1&5M;UQD979<8V%M<'5S7W=I=&A?8V5N=')A;%]P;&%N=%Q\"=6EL9&EN9S$   X   !"
+    "H    !@    @    $          4    (     0   #0    !         !     T    0SI<57-E<G-<<V9R86YK,5Q':71<0V%M<'5S16YE<F=Y3"
+    "6]D96QI;F=<34Q%4%QB8W9T8@     .    .     8    (    !@         %    \"     $    !     0         )    \"           3"
+    ",U #@   #@    &    \"     0         !0    @    !    !@    $         $     8   !S>7-T96T   X    P    !@    @    &  "
+    "        4    (               !          D         #@   #     &    \"     8         !0    @               $        "
+    " \"0         .    ,     8    (    !@         %    \"                0         )          X    X    !@    @    &   "
+    "       4    (     0    $    !          D    (               .    ^ 0   8    (     0         %    \"     (    !    "
+    " 0         .    .     8    (     @         %    \"     $          0         %  0  0    $         #@   (@$   &    \""
+    "     (         !0    @    !     0    $         !0 $ !0    !    & $  &%R9W5M96YT<P              =V]R:T1I<@         "
+    "       !P;W)T                     &AO<W0                     8V]N9FEG1FEL90            !C;VYF:6=&:6QE5W)I=&5/;F-E "
+    "&%C8V5P=%1I;65O=70         <W1A='5S                  !M<V<                      ')W5&EM96]U=               :7-2=6Y"
+    "N:6YG              !S97)V97)3;V-K970          &-O;6U3;V-K970             <&ED                       .    *     8  "
+    "  (     0         %    \"                0         .    ,     8    (    !          %    \"                0       "
+    "  0          X    X    !@    @    &          4    (     0    $    !          D    (               .    ,     8    "
+    "(    !          %    \"                0         0          X   !     !@    @    $          4    (     0    H    !"
+    "         !     *    <V]C:V5T+F-F9P        X    P    !@    @    ) @        4    (     0    $    !          (  0    "
+    "  #@   #@    &    \"     8         !0    @    !     0    $         \"0    @          (C30 X    X    !@    @    &  "
+    "        4    (     0    $    !          D    (               .    ,     8    (    !          %    \"              "
+    "  0         0          X    X    !@    @    &          4    (     0    $    !          D    (               .    ,"
+    "     8    (    \"0(        %    \"     $    !     0         \"  $       X    P    !@    @    &          4    (    "
+    "           !          D         #@   #     &    \"     8         !0    @               $         \"0         .    "
+    ",     8    (    !@         %    \"                0         )          X   \"(    !@    @    )          4    (    "
+    " 0   %@    !          (   !8      %)30     .    2     8    (     @         %    \"     $    !     0         %  0 !"
+    "0    $    %    34-/4P     .          "
+  }
+  DataRecord {
+    Tag			    DataTag2
+    Data		    "  %)30     .    H 0   8    (     @         %    \"     $    !     0         %  0 \"P    $    6    9&EA;"
+    "&]G      !P<F]C97-S;V)J    #@   +@#   &    \"     (         !0    @    !     0    $         !0 $ !     !    L    '"
+    "=O<FM?9&ER          !R96Q?<&%T:           9FYA;64              '=E871H97)?<')O9FEL90!T:6UE7W-T97          ;F]U=   "
+    "             '1I;65O=70           !E<&QU<U]P871H        8F-V=&)?9&ER         '!O<G0               !H;W-T          "
+    "      #@   $     &    \"     0         !0    @    !    \"0    $         $     D   !\"=6EL9&EN9S(         #@   #@  "
+    "  &    \"     8         !0    @    !     0    $         \"0    @           #P/PX   !     !@    @    $          4  "
+    "  (     0    P    !         !     ,    -5IO;F5!:7)#;V]L      X   !0    !@    @    $          4    (     0   !X    "
+    "!         !     >    55-!7T-/7T=O;&1E;BU.4D5,+C<R-#8V-E]435DS   .    .     8    (    !@         %    \"     $    !"
+    "     0         )    \"           P') #@   #@    &    \"     8         !0    @    !     0    $         \"0    @    "
+    "        J0 X    X    !@    @    &          4    (     0    $    !          D    (            +D .    ,     8    ( "
+    "   !          %    \"                0         0          X    P    !@    @    $          4    (               !  "
+    "       !          #@   #@    &    \"     8         !0    @    !     0    $         \"0    @               X    P  "
+    "  !@    @    $          4    (               !         !          #@   (@    &    \"    !$          0         !  0"
+    " 34-/4P$    +    ;6QE<%!R;V-E<W,       X   !(    !@    @    -          4    (    !@    $    !          8    8     "
+    "   W0(    !     0    $    !    #@   # .   &    \"     D         !0    @    !      X   $          @     .     4E-  "
+    "    X   !@#0  !@    @    \"          4    (     0    $    !          4 !  %     0    4   !-0T]3      X    8#0  !@ "
+    "   @    1          $          0 $ $U#3U,!    #0   $9I;&57<F%P<&5R7U\\    .    V P   8    (     0         %    \"  "
+    "   \\    !     0         .    ( (   8    (    \"0         %    \"    / !   !     0         \"    \\ $   (    6    "
+    "\\    ! !   0 0  0 $  . !  #P 0            !V97)S:6]N '!R;V=R86T 96YV &%R9W5M96YT<P!W;W)K1&ER &)C=G1B1&ER &%C8V5P="
+    "%1I;65O=70 97AE8V-M9 !S97)V97)3;V-K970 =W)I=&5R ')E861E<@!P:60 ;6QE<%!R;V-E<W, <&]R= !H;W-T &-O;F9I9T9I;&4 8V]N9FE"
+    "G1FEL95=R:71E3VYC90!S=&%T=7, ;7-G ')W5&EM96]U= !I<U)U;FYI;F< 8V]M;5-O8VME=                                   #0   "
+    "                                            0                    $    !               ,     0    $          @    $"
+    "    !     P    $    \"    !     $    #    !0    $    $    !@    $    %    !P    $    &    \"     $    '    \"0    "
+    "$    (    \"@    $    )    \"P    $    *    #     $    +                               .          X    X    !@    "
+    "@    &          4    (     0    $    !          D    (             $ .    4     8    (    !          %    \"     $"
+    "    <     0         0    '    $,Z7$5N97)G>5!L=7-6.\"TQ+3!<4G5N17!L=7,     #@   +@!   &    \"     $         !0    @"
+    "    !     @    $         #@   ,     &    \"     $         !0    @    !     @    $         #@   $     &    \"     0"
+    "         !0    @    !    #@    $         $     X   !%3D521UE03%537T1)4@  #@   $@    &    \"     0         !0    @ "
+    "   !    $P    $         $    !,   !#.EQ%;F5R9WE0;'5S5C@M,2TP       .    P     8    (     0         %    \"     $  "
+    "  \"     0         .    ,     8    (    !          %    \"     $    $     0         0  0 4$%42 X   !8    !@    @  "
+    "  $          4    (     0   \"@    !         !     H    0SI<2F%V85QJ<F4V+74T-5QB:6X[0SI<16YE<F=Y4&QU<U8X+3$M, X   "
+    "\"X    !@    @    $          4    (     0   ((    !         !    \"\"    0SI<57-E<G-<<V9R86YK,5Q':71<0V%M<'5S16YE<"
+    "F=Y36]D96QI;F=<1&5M;UQD979<8V%M<'5S7W=I=&A?8V5N=')A;%]P;&%N=%Q\"=6EL9&EN9S)<-5IO;F5!:7)#;V]L(%5305]#3U]';VQD96XM3E"
+    ")%3\"XW,C0V-C9?5$U9,P        X   \"(    !@    @    $          4    (     0   %8    !         !    !6    0SI<57-E<G"
+    "-<<V9R86YK,5Q':71<0V%M<'5S16YE<F=Y36]D96QI;F=<1&5M;UQD979<8V%M<'5S7W=I=&A?8V5N=')A;%]P;&%N=%Q\"=6EL9&EN9S(   X   !"
+    "H    !@    @    $          4    (     0   #0    !         !     T    0SI<57-E<G-<<V9R86YK,5Q':71<0V%M<'5S16YE<F=Y3"
+    "6]D96QI;F=<34Q%4%QB8W9T8@     .    .     8    (    !@         %    \"     $    !     0         )    \"           3"
+    ",U #@   #@    &    \"     0         !0    @    !    !@    $         $     8   !S>7-T96T   X    P    !@    @    &  "
+    "        4    (               !          D         #@   #     &    \"     8         !0    @               $        "
+    " \"0         .    ,     8    (    !@         %    \"                0         )          X    X    !@    @    &   "
+    "       4    (     0    $    !          D    (               .    ^ 0   8    (     0         %    \"     (    !    "
+    " 0         .    .     8    (     @         %    \"     $          0         %  0  0    $         #@   (@$   &    \""
+    "     (         !0    @    !     0    $         !0 $ !0    !    & $  &%R9W5M96YT<P              =V]R:T1I<@         "
+    "       !P;W)T                     &AO<W0                     8V]N9FEG1FEL90            !C;VYF:6=&:6QE5W)I=&5/;F-E "
+    "&%C8V5P=%1I;65O=70         <W1A='5S                  !M<V<                      ')W5&EM96]U=               :7-2=6Y"
+    "N:6YG              !S97)V97)3;V-K970          &-O;6U3;V-K970             <&ED                       .    *     8  "
+    "  (     0         %    \"                0         .    ,     8    (    !          %    \"                0       "
+    "  0          X    X    !@    @    &          4    (     0    $    !          D    (               .    ,     8    "
+    "(    !          %    \"                0         0          X   !     !@    @    $          4    (     0    H    !"
+    "         !     *    <V]C:V5T+F-F9P        X    P    !@    @    ) @        4    (     0    $    !          (  0    "
+    "  #@   #@    &    \"     8         !0    @    !     0    $         \"0    @          (C30 X    X    !@    @    &  "
+    "        4    (     0    $    !          D    (               .    ,     8    (    !          %    \"              "
+    "  0         0          X    X    !@    @    &          4    (     0    $    !          D    (               .    ,"
+    "     8    (    \"0(        %    \"     $    !     0         \"  $       X    P    !@    @    &          4    (    "
+    "           !          D         #@   #     &    \"     8         !0    @               $         \"0         .    "
+    ",     8    (    !@         %    \"                0         )          X   \"(    !@    @    )          4    (    "
+    " 0   %@    !          (   !8      %)30     .    2     8    (     @         %    \"     $    !     0         %  0 !"
+    "0    $    %    34-/4P     .          "
   }
 }
 # Finite State Machines
@@ -4294,1439 +3607,14 @@ Model {
 Stateflow {
   machine {
     id			    1
-    name		    "supply_demand_campus"
+    name		    "campus_with_central_plant"
     created		    "26-Jun-2013 11:23:09"
     isLibrary		    0
-    firstTarget		    79
+    firstTarget		    2
     sfVersion		    76014001.0015
   }
-  chart {
-    id			    2
-    name		    "PrepOutputs1"
-    windowPosition	    [510 458.75 213 385]
-    viewLimits		    [0 156.75 0 153.75]
-    screen		    [1 1 1600 1200 1.333333333333333]
-    treeNode		    [0 3 0 0]
-    firstTransition	    10
-    firstJunction	    9
-    viewObj		    2
-    machine		    1
-    ssIdHighWaterMark	    9
-    decomposition	    CLUSTER_CHART
-    type		    EML_CHART
-    firstData		    4
-    chartFileNumber	    1
-    disableImplicitCasting  1
-    eml {
-      name		      "fcn"
-    }
-  }
-  state {
-    id			    3
-    labelString		    "eML_blk_kernel()"
-    position		    [18 64.5 118 66]
-    fontSize		    12
-    chart		    2
-    treeNode		    [2 0 0 0]
-    superState		    SUBCHART
-    subviewer		    2
-    ssIdNumber		    1
-    type		    FUNC_STATE
-    decomposition	    CLUSTER_STATE
-    eml {
-      isEML		      1
-      script		      "function [Temp,Input,InOutTemp, Pow] = fcn(u)\n\nTemp = u(1:7);          % Out, Room Temp\nInput "
-      "= u(8:9);         % Flow Rate, Load \nInOutTemp = u(10:11);   % Inlet/Outlet Water Temperature\nPow = u(12:13); "
-      "        % Power\n\n"
-      editorLayout	      "100 M4x1[10 5 700 500]"
-    }
-  }
-  data {
-    id			    4
-    ssIdNumber		    4
-    name		    "u"
-    linkNode		    [2 0 5]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-      }
-      complexity	      SF_COMPLEX_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    5
-    ssIdNumber		    5
-    name		    "Temp"
-    linkNode		    [2 4 6]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    6
-    ssIdNumber		    6
-    name		    "Input"
-    linkNode		    [2 5 7]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    7
-    ssIdNumber		    7
-    name		    "InOutTemp"
-    linkNode		    [2 6 8]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    8
-    ssIdNumber		    9
-    name		    "Pow"
-    linkNode		    [2 7 0]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  junction {
-    id			    9
-    position		    [23.5747 49.5747 7]
-    chart		    2
-    linkNode		    [2 0 0]
-    subviewer		    2
-    ssIdNumber		    3
-    type		    CONNECTIVE_JUNCTION
-  }
-  transition {
-    id			    10
-    labelString		    "{eML_blk_kernel();}"
-    labelPosition	    [32.125 19.875 102.544 14.964]
-    fontSize		    12
-    src {
-      intersection	      [0 0 1 0 23.5747 14.625 0 0]
-    }
-    dst {
-      id		      9
-      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
-    }
-    midPoint		    [23.5747 24.9468]
-    chart		    2
-    linkNode		    [2 0 0]
-    dataLimits		    [21.175 25.975 14.625 42.575]
-    subviewer		    2
-    drawStyle		    SMART
-    slide {
-      sticky		      BOTH_STICK
-    }
-    executionOrder	    1
-    ssIdNumber		    2
-  }
-  instance {
-    id			    11
-    name		    "PrepOutputs1"
-    machine		    1
-    chart		    2
-  }
-  chart {
-    id			    12
-    name		    "PrepOutputs"
-    windowPosition	    [490 458.75 213 385]
-    viewLimits		    [0 156.75 0 153.75]
-    screen		    [1 1 1600 1200 1.333333333333333]
-    treeNode		    [0 13 0 0]
-    firstTransition	    24
-    firstJunction	    23
-    viewObj		    12
-    machine		    1
-    ssIdHighWaterMark	    16
-    decomposition	    CLUSTER_CHART
-    type		    EML_CHART
-    firstData		    14
-    chartFileNumber	    2
-    disableImplicitCasting  1
-    eml {
-      name		      "fcn"
-    }
-  }
-  state {
-    id			    13
-    labelString		    "eML_blk_kernel()"
-    position		    [18 64.5 118 66]
-    fontSize		    12
-    chart		    12
-    treeNode		    [12 0 0 0]
-    superState		    SUBCHART
-    subviewer		    12
-    ssIdNumber		    1
-    type		    FUNC_STATE
-    decomposition	    CLUSTER_STATE
-    eml {
-      isEML		      1
-      script		      "function [Temp,ChilPow,ChilTemp, MaxChilFlow, Input01, Input02, InOutTemp, PumpPow] = fcn(u)\n\nT"
-      "emp = u(1);        % Temperature(Outdoor, Zones)\nChilPow = u(2);     % Chiller Power\nChilTemp = u(3);    % Chi"
-      "ller Water Temperature\nMaxChilFlow = u(4); % Maximum Chiller Flow \nInput01 = u(5:6);   % Mass Flow Rate and Po"
-      "wer Load \nInput02 = u(7:8);   % Mass Flow Rate and Power Load\nInOutTemp = u(9:12);% Inlet/Outlet Water Tempera"
-      "ture   \nPumpPow = u(13);    % Pump Power"
-      editorLayout	      "100 M4x1[10 5 700 500]"
-    }
-  }
-  data {
-    id			    14
-    ssIdNumber		    4
-    name		    "u"
-    linkNode		    [12 0 15]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-      }
-      complexity	      SF_COMPLEX_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    15
-    ssIdNumber		    5
-    name		    "Temp"
-    linkNode		    [12 14 16]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    16
-    ssIdNumber		    10
-    name		    "ChilPow"
-    linkNode		    [12 15 17]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    17
-    ssIdNumber		    13
-    name		    "ChilTemp"
-    linkNode		    [12 16 18]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    18
-    ssIdNumber		    14
-    name		    "MaxChilFlow"
-    linkNode		    [12 17 19]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    19
-    ssIdNumber		    6
-    name		    "Input01"
-    linkNode		    [12 18 20]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    20
-    ssIdNumber		    15
-    name		    "Input02"
-    linkNode		    [12 19 21]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    21
-    ssIdNumber		    7
-    name		    "InOutTemp"
-    linkNode		    [12 20 22]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    22
-    ssIdNumber		    16
-    name		    "PumpPow"
-    linkNode		    [12 21 0]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  junction {
-    id			    23
-    position		    [23.5747 49.5747 7]
-    chart		    12
-    linkNode		    [12 0 0]
-    subviewer		    12
-    ssIdNumber		    3
-    type		    CONNECTIVE_JUNCTION
-  }
-  transition {
-    id			    24
-    labelString		    "{eML_blk_kernel();}"
-    labelPosition	    [32.125 19.875 102.544 14.964]
-    fontSize		    12
-    src {
-      intersection	      [0 0 1 0 23.5747 14.625 0 0]
-    }
-    dst {
-      id		      23
-      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
-    }
-    midPoint		    [23.5747 24.9468]
-    chart		    12
-    linkNode		    [12 0 0]
-    dataLimits		    [21.175 25.975 14.625 42.575]
-    subviewer		    12
-    drawStyle		    SMART
-    slide {
-      sticky		      BOTH_STICK
-    }
-    executionOrder	    1
-    ssIdNumber		    2
-  }
-  instance {
-    id			    25
-    name		    "PrepOutputs"
-    machine		    1
-    chart		    12
-  }
-  chart {
-    id			    26
-    name		    "PrepOutputs2"
-    windowPosition	    [510 458.75 213 385]
-    viewLimits		    [0 156.75 0 153.75]
-    screen		    [1 1 1600 1200 1.333333333333333]
-    treeNode		    [0 27 0 0]
-    firstTransition	    32
-    firstJunction	    31
-    viewObj		    26
-    machine		    1
-    toolbarMode		    LIBRARY_TOOLBAR
-    ssIdHighWaterMark	    9
-    decomposition	    CLUSTER_CHART
-    type		    EML_CHART
-    firstData		    28
-    chartFileNumber	    4
-    disableImplicitCasting  1
-    eml {
-      name		      "fcn"
-    }
-  }
-  state {
-    id			    27
-    labelString		    "eML_blk_kernel()"
-    position		    [18 64.5 118 66]
-    fontSize		    12
-    chart		    26
-    treeNode		    [26 0 0 0]
-    superState		    SUBCHART
-    subviewer		    26
-    ssIdNumber		    1
-    type		    FUNC_STATE
-    decomposition	    CLUSTER_STATE
-    eml {
-      isEML		      1
-      script		      "function [Flow, Load] = fcn(u)\n% u contains \n% Input1 - Chilller\n%   MassFlowRate\n%   Load De"
-      "mand\n% Input2 - Building\n%   MassFlowRate\n%   Load Demand\nFlow = [u(1) u(3) u(1)+u(3)];\nLoad = [-u(2) -u(4)"
-      " -u(2)-u(4)];\n"
-      editorLayout	      "100 M4x1[1706 439 1080 733]"
-    }
-  }
-  data {
-    id			    28
-    ssIdNumber		    9
-    name		    "Flow"
-    linkNode		    [26 0 29]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    29
-    ssIdNumber		    4
-    name		    "u"
-    linkNode		    [26 28 30]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-      }
-      complexity	      SF_COMPLEX_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    30
-    ssIdNumber		    8
-    name		    "Load"
-    linkNode		    [26 29 0]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  junction {
-    id			    31
-    position		    [23.5747 49.5747 7]
-    chart		    26
-    linkNode		    [26 0 0]
-    subviewer		    26
-    ssIdNumber		    3
-    type		    CONNECTIVE_JUNCTION
-  }
-  transition {
-    id			    32
-    labelString		    "{eML_blk_kernel();}"
-    labelPosition	    [32.125 19.875 102.544 14.964]
-    fontSize		    12
-    src {
-      intersection	      [0 0 1 0 23.5747 14.625 0 0]
-    }
-    dst {
-      id		      31
-      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
-    }
-    midPoint		    [23.5747 24.9468]
-    chart		    26
-    linkNode		    [26 0 0]
-    dataLimits		    [23.575 23.575 14.625 34.575]
-    subviewer		    26
-    drawStyle		    SMART
-    slide {
-      sticky		      BOTH_STICK
-    }
-    executionOrder	    1
-    ssIdNumber		    2
-  }
-  instance {
-    id			    33
-    name		    "PrepOutputs2"
-    machine		    1
-    chart		    26
-  }
-  chart {
-    id			    34
-    name		    "PrepOutputs3"
-    windowPosition	    [530 458.75 213 385]
-    viewLimits		    [0 156.75 0 153.75]
-    screen		    [1 1 1600 1200 1.333333333333333]
-    treeNode		    [0 35 0 0]
-    firstTransition	    40
-    firstJunction	    39
-    viewObj		    34
-    machine		    1
-    ssIdHighWaterMark	    11
-    decomposition	    CLUSTER_CHART
-    type		    EML_CHART
-    firstData		    36
-    chartFileNumber	    5
-    disableImplicitCasting  1
-    eml {
-      name		      "fcn"
-    }
-  }
-  state {
-    id			    35
-    labelString		    "eML_blk_kernel()"
-    position		    [18 64.5 118 66]
-    fontSize		    12
-    chart		    34
-    treeNode		    [34 0 0 0]
-    superState		    SUBCHART
-    subviewer		    34
-    ssIdNumber		    1
-    type		    FUNC_STATE
-    decomposition	    CLUSTER_STATE
-    eml {
-      isEML		      1
-      script		      "function [MaxMassFlow1, MaxMassFlow2] = fcn(MaxFlow)\n% Transform into [Kg/s] Split Evenly\nMaxFl"
-      "ow = MaxFlow*1000;\n%if Input1+Input2 > MaxFlow\nMaxMassFlow1 = MaxFlow/2;\nMaxMassFlow2 = MaxFlow/2;\n%else\n% "
-      "   MaxMassFlow1 =  \n%    MaxMassFlow2 = MaxFlow - Input;\n%end"
-      editorLayout	      "100 M4x1[10 5 700 500]"
-    }
-  }
-  data {
-    id			    36
-    ssIdNumber		    9
-    name		    "MaxMassFlow1"
-    linkNode		    [34 0 37]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    37
-    ssIdNumber		    4
-    name		    "MaxFlow"
-    linkNode		    [34 36 38]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-      }
-      complexity	      SF_COMPLEX_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    38
-    ssIdNumber		    10
-    name		    "MaxMassFlow2"
-    linkNode		    [34 37 0]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  junction {
-    id			    39
-    position		    [23.5747 49.5747 7]
-    chart		    34
-    linkNode		    [34 0 0]
-    subviewer		    34
-    ssIdNumber		    3
-    type		    CONNECTIVE_JUNCTION
-  }
-  transition {
-    id			    40
-    labelString		    "{eML_blk_kernel();}"
-    labelPosition	    [32.125 19.875 102.544 14.964]
-    fontSize		    12
-    src {
-      intersection	      [0 0 1 0 23.5747 14.625 0 0]
-    }
-    dst {
-      id		      39
-      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
-    }
-    midPoint		    [23.5747 24.9468]
-    chart		    34
-    linkNode		    [34 0 0]
-    dataLimits		    [21.175 25.975 14.625 42.575]
-    subviewer		    34
-    drawStyle		    SMART
-    slide {
-      sticky		      BOTH_STICK
-    }
-    executionOrder	    1
-    ssIdNumber		    2
-  }
-  instance {
-    id			    41
-    name		    "PrepOutputs3"
-    machine		    1
-    chart		    34
-  }
-  chart {
-    id			    42
-    name		    "PrepOutputs4"
-    windowPosition	    [530 458.75 213 385]
-    viewLimits		    [0 156.75 0 153.75]
-    screen		    [1 1 1600 1200 1.333333333333333]
-    treeNode		    [0 43 0 0]
-    firstTransition	    50
-    firstJunction	    49
-    viewObj		    42
-    machine		    1
-    ssIdHighWaterMark	    9
-    decomposition	    CLUSTER_CHART
-    type		    EML_CHART
-    firstData		    44
-    chartFileNumber	    6
-    disableImplicitCasting  1
-    eml {
-      name		      "fcn"
-    }
-  }
-  state {
-    id			    43
-    labelString		    "eML_blk_kernel()"
-    position		    [18 64.5 118 66]
-    fontSize		    12
-    chart		    42
-    treeNode		    [42 0 0 0]
-    superState		    SUBCHART
-    subviewer		    42
-    ssIdNumber		    1
-    type		    FUNC_STATE
-    decomposition	    CLUSTER_STATE
-    eml {
-      isEML		      1
-      script		      "function [Temp,Input,InOutTemp,Pow] = fcn(u)\n\nTemp = u(1:7);          % Out, Room Temp\nInput ="
-      " u(8:9);         % Flow Rate, Load \nInOutTemp = u(10:11);   % Inlet/Outlet Water Temperature\nPow = u(12:13);  "
-      "       % Total Power"
-      editorLayout	      "100 M4x1[10 5 700 500]"
-    }
-  }
-  data {
-    id			    44
-    ssIdNumber		    4
-    name		    "u"
-    linkNode		    [42 0 45]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-      }
-      complexity	      SF_COMPLEX_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    45
-    ssIdNumber		    5
-    name		    "Temp"
-    linkNode		    [42 44 46]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    46
-    ssIdNumber		    6
-    name		    "Input"
-    linkNode		    [42 45 47]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    47
-    ssIdNumber		    7
-    name		    "InOutTemp"
-    linkNode		    [42 46 48]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    48
-    ssIdNumber		    9
-    name		    "Pow"
-    linkNode		    [42 47 0]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  junction {
-    id			    49
-    position		    [23.5747 49.5747 7]
-    chart		    42
-    linkNode		    [42 0 0]
-    subviewer		    42
-    ssIdNumber		    3
-    type		    CONNECTIVE_JUNCTION
-  }
-  transition {
-    id			    50
-    labelString		    "{eML_blk_kernel();}"
-    labelPosition	    [32.125 19.875 102.544 14.964]
-    fontSize		    12
-    src {
-      intersection	      [0 0 1 0 23.5747 14.625 0 0]
-    }
-    dst {
-      id		      49
-      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
-    }
-    midPoint		    [23.5747 24.9468]
-    chart		    42
-    linkNode		    [42 0 0]
-    dataLimits		    [21.175 25.975 14.625 42.575]
-    subviewer		    42
-    drawStyle		    SMART
-    slide {
-      sticky		      BOTH_STICK
-    }
-    executionOrder	    1
-    ssIdNumber		    2
-  }
-  instance {
-    id			    51
-    name		    "PrepOutputs4"
-    machine		    1
-    chart		    42
-  }
-  chart {
-    id			    52
-    name		    "PrepOutputs6"
-    windowPosition	    [550 458.75 213 385]
-    viewLimits		    [0 156.75 0 153.75]
-    screen		    [1 1 1600 1200 1.333333333333333]
-    treeNode		    [0 53 0 0]
-    firstTransition	    61
-    firstJunction	    60
-    viewObj		    52
-    machine		    1
-    ssIdHighWaterMark	    13
-    decomposition	    CLUSTER_CHART
-    type		    EML_CHART
-    firstData		    54
-    chartFileNumber	    8
-    disableImplicitCasting  1
-    eml {
-      name		      "fcn"
-    }
-  }
-  state {
-    id			    53
-    labelString		    "eML_blk_kernel()"
-    position		    [18 64.5 118 66]
-    fontSize		    12
-    chart		    52
-    treeNode		    [52 0 0 0]
-    superState		    SUBCHART
-    subviewer		    52
-    ssIdNumber		    1
-    type		    FUNC_STATE
-    decomposition	    CLUSTER_STATE
-    eml {
-      isEML		      1
-      script		      "function [mflow1, pow1, mflow2, pow2] = fcn(Input1, Input2)\nratio = 0.005;\nmflow1 = Input1(1)/r"
-      "atio/1000;\npow1 = Input1(2);\nmflow2 = Input2(1)/ratio/1000; \npow2 = Input2(2);\n\n\n\n"
-      editorLayout	      "100 M4x1[1706 439 1080 733]"
-    }
-  }
-  data {
-    id			    54
-    ssIdNumber		    4
-    name		    "Input1"
-    linkNode		    [52 0 55]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-      }
-      complexity	      SF_COMPLEX_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    55
-    ssIdNumber		    11
-    name		    "Input2"
-    linkNode		    [52 54 56]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    56
-    ssIdNumber		    9
-    name		    "mflow1"
-    linkNode		    [52 55 57]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    57
-    ssIdNumber		    12
-    name		    "pow1"
-    linkNode		    [52 56 58]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    58
-    ssIdNumber		    10
-    name		    "mflow2"
-    linkNode		    [52 57 59]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    59
-    ssIdNumber		    13
-    name		    "pow2"
-    linkNode		    [52 58 0]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  junction {
-    id			    60
-    position		    [23.5747 49.5747 7]
-    chart		    52
-    linkNode		    [52 0 0]
-    subviewer		    52
-    ssIdNumber		    3
-    type		    CONNECTIVE_JUNCTION
-  }
-  transition {
-    id			    61
-    labelString		    "{eML_blk_kernel();}"
-    labelPosition	    [32.125 19.875 102.544 14.964]
-    fontSize		    12
-    src {
-      intersection	      [0 0 1 0 23.5747 14.625 0 0]
-    }
-    dst {
-      id		      60
-      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
-    }
-    midPoint		    [23.5747 24.9468]
-    chart		    52
-    linkNode		    [52 0 0]
-    dataLimits		    [23.575 23.575 14.625 34.575]
-    subviewer		    52
-    drawStyle		    SMART
-    slide {
-      sticky		      BOTH_STICK
-    }
-    executionOrder	    1
-    ssIdNumber		    2
-  }
-  instance {
-    id			    62
-    name		    "PrepOutputs6"
-    machine		    1
-    chart		    52
-  }
-  chart {
-    id			    63
-    name		    "PrepOutputs7"
-    windowPosition	    [550 458.75 213 385]
-    viewLimits		    [0 156.75 0 153.75]
-    screen		    [1 1 1600 1200 1.333333333333333]
-    treeNode		    [0 64 0 0]
-    firstTransition	    69
-    firstJunction	    68
-    viewObj		    63
-    machine		    1
-    toolbarMode		    LIBRARY_TOOLBAR
-    ssIdHighWaterMark	    9
-    decomposition	    CLUSTER_CHART
-    type		    EML_CHART
-    firstData		    65
-    chartFileNumber	    9
-    disableImplicitCasting  1
-    eml {
-      name		      "fcn"
-    }
-  }
-  state {
-    id			    64
-    labelString		    "eML_blk_kernel()"
-    position		    [18 64.5 118 66]
-    fontSize		    12
-    chart		    63
-    treeNode		    [63 0 0 0]
-    superState		    SUBCHART
-    subviewer		    63
-    ssIdNumber		    1
-    type		    FUNC_STATE
-    decomposition	    CLUSTER_STATE
-    eml {
-      isEML		      1
-      script		      "function [Flow, Load] = fcn(u)\n% u contains \n% Input1 - Chilller\n%   MassFlowRate\n%   Load De"
-      "mand\n% Input2 - Building\n%   MassFlowRate\n%   Load Demand\nFlow = [u(1) u(5)];\nLoad = [u(2) u(6)];\n"
-      editorLayout	      "100 M4x1[373 543 1080 733]"
-    }
-  }
-  data {
-    id			    65
-    ssIdNumber		    9
-    name		    "Flow"
-    linkNode		    [63 0 66]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    66
-    ssIdNumber		    4
-    name		    "u"
-    linkNode		    [63 65 67]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-      }
-      complexity	      SF_COMPLEX_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    67
-    ssIdNumber		    8
-    name		    "Load"
-    linkNode		    [63 66 0]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  junction {
-    id			    68
-    position		    [23.5747 49.5747 7]
-    chart		    63
-    linkNode		    [63 0 0]
-    subviewer		    63
-    ssIdNumber		    3
-    type		    CONNECTIVE_JUNCTION
-  }
-  transition {
-    id			    69
-    labelString		    "{eML_blk_kernel();}"
-    labelPosition	    [32.125 19.875 102.544 14.964]
-    fontSize		    12
-    src {
-      intersection	      [0 0 1 0 23.5747 14.625 0 0]
-    }
-    dst {
-      id		      68
-      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
-    }
-    midPoint		    [23.5747 24.9468]
-    chart		    63
-    linkNode		    [63 0 0]
-    dataLimits		    [23.575 23.575 14.625 34.575]
-    subviewer		    63
-    drawStyle		    SMART
-    slide {
-      sticky		      BOTH_STICK
-    }
-    executionOrder	    1
-    ssIdNumber		    2
-  }
-  instance {
-    id			    70
-    name		    "PrepOutputs7"
-    machine		    1
-    chart		    63
-  }
-  chart {
-    id			    71
-    name		    "PrepOutputs8"
-    windowPosition	    [570 458.75 213 385]
-    viewLimits		    [0 156.75 0 153.75]
-    screen		    [1 1 1600 1200 1.333333333333333]
-    treeNode		    [0 72 0 0]
-    firstTransition	    77
-    firstJunction	    76
-    viewObj		    71
-    machine		    1
-    ssIdHighWaterMark	    10
-    decomposition	    CLUSTER_CHART
-    type		    EML_CHART
-    firstData		    73
-    chartFileNumber	    10
-    disableImplicitCasting  1
-    eml {
-      name		      "fcn"
-    }
-  }
-  state {
-    id			    72
-    labelString		    "eML_blk_kernel()"
-    position		    [18 64.5 118 66]
-    fontSize		    12
-    chart		    71
-    treeNode		    [71 0 0 0]
-    superState		    SUBCHART
-    subviewer		    71
-    ssIdNumber		    1
-    type		    FUNC_STATE
-    decomposition	    CLUSTER_STATE
-    eml {
-      isEML		      1
-      script		      "function [Flow, y]  = fcn(u)\n% u contains \n% Input1 - Chilller\n%   MassFlowRate\n%   Load Dema"
-      "nd\n% Input2 - Building\n%   MassFlowRate\n%   Load Demand\nFlow = [u(1) u(5) u(9)];\ny  = [u(3) u(7) u(10)];\n"
-      editorLayout	      "100 M4x1[373 543 1080 733]"
-    }
-  }
-  data {
-    id			    73
-    ssIdNumber		    9
-    name		    "Flow"
-    linkNode		    [71 0 74]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    74
-    ssIdNumber		    4
-    name		    "u"
-    linkNode		    [71 73 75]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-      }
-      complexity	      SF_COMPLEX_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    75
-    ssIdNumber		    10
-    name		    "y"
-    linkNode		    [71 74 0]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  junction {
-    id			    76
-    position		    [23.5747 49.5747 7]
-    chart		    71
-    linkNode		    [71 0 0]
-    subviewer		    71
-    ssIdNumber		    3
-    type		    CONNECTIVE_JUNCTION
-  }
-  transition {
-    id			    77
-    labelString		    "{eML_blk_kernel();}"
-    labelPosition	    [32.125 19.875 102.544 14.964]
-    fontSize		    12
-    src {
-      intersection	      [0 0 1 0 23.5747 14.625 0 0]
-    }
-    dst {
-      id		      76
-      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
-    }
-    midPoint		    [23.5747 24.9468]
-    chart		    71
-    linkNode		    [71 0 0]
-    dataLimits		    [23.575 23.575 14.625 34.575]
-    subviewer		    71
-    drawStyle		    SMART
-    slide {
-      sticky		      BOTH_STICK
-    }
-    executionOrder	    1
-    ssIdNumber		    2
-  }
-  instance {
-    id			    78
-    name		    "PrepOutputs8"
-    machine		    1
-    chart		    71
-  }
   target {
-    id			    79
+    id			    2
     name		    "sfun"
     description		    "Default Simulink S-Function Target."
     machine		    1

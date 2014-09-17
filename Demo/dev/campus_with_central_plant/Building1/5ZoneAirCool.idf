@@ -121,7 +121,7 @@
     25,                      !- Maximum Number of Warmup Days
     6;                       !- Minimum Number of Warmup Days
 
-  Timestep,60;
+  Timestep,12;
 
   ExternalInterface,
     PtolemyServer;           !- Name of External Interface

@@ -2,8 +2,10 @@
 
 ## Development
 * Added a pseudo real-time clock block for real-time simulation
+* Added another demo: small campus with central chiller plant
+* Added demonstration plotting scripts to several demos
 
-## v0.2-rc1
+## v0.2
 * Added single-phase constant power electrical source/load block
 * Added time alignment options to PVWatts cosimulation block
 * Updated electric vehicle and EV charging station models

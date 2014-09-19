@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.84"
+    ComputedModelVersion    "1.86"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -70,9 +70,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Sep 15 21:58:09 2014"
-  RTWModifiedTimeStamp	  327250903
-  ModelVersionFormat	  "1.%<AutoIncrement:84>"
+  LastModifiedDate	  "Fri Sep 19 11:18:02 2014"
+  RTWModifiedTimeStamp	  333026282
+  ModelVersionFormat	  "1.%<AutoIncrement:86>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1233,7 +1233,6 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
-      LegendLocations	      "0.60476     0.67814     0.31688      0.1872"
       TimeRange		      "86400"
       YMin		      "-35000"
       YMax		      "50000"
@@ -1781,7 +1780,6 @@ Model {
 	    MarkerStyles	    "none|none|none|none|none|none"
 	  }
 	  ShowLegends		  on
-	  LegendLocations	  "0.75795     0.76298     0.19243     0.16371"
 	  TimeRange		  "90000"
 	  YMin			  "0"
 	  YMax			  "6000"
@@ -3675,7 +3673,7 @@ Model {
 	      ZOrder		      1005
 	      BackgroundColor	      "gray"
 	      Floating		      off
-	      Location		      [1087, 389, 1470, 894]
+	      Location		      [1087, 402, 1470, 907]
 	      Open		      on
 	      NumInputPorts	      "2"
 	      ZoomMode		      "xonly"
@@ -3695,7 +3693,6 @@ Model {
 		MarkerStyles		"none|none|none|none|none|none"
 	      }
 	      ShowLegends	      on
-	      LegendLocations	      "0.71758     0.88614     0.20366    0.040264\n0.69278     0.30957     0.22715     0.16436"
 	      TimeRange		      "100000"
 	      YMin		      "-20000~-2500"
 	      YMax		      "-0~-0"
@@ -4563,7 +4560,7 @@ Model {
       ZOrder		      881
       BackgroundColor	      "gray"
       Floating		      off
-      Location		      [1174, 157, 1595, 1004]
+      Location		      [1487, 60, 1908, 907]
       Open		      on
       NumInputPorts	      "4"
       ZoomMode		      "xonly"
@@ -4585,8 +4582,6 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
-      LegendLocations	      "0.73001     0.91421     0.19715    0.042503\n0.73001     0.67808     0.19715    0.042503\n"
-      "0.67538     0.44195     0.25178    0.042503\n0.71813     0.20701     0.20903    0.042503"
       TimeRange		      "86400"
       YMin		      "-2500~-2500~1000~-7500"
       YMax		      "20000~27500~12000~35000"
@@ -5073,7 +5068,7 @@ Model {
       ZOrder		      888
       DropShadow	      on
       Priority		      "2"
-      LibraryVersion	      "*1.2191"
+      LibraryVersion	      "1.2191"
       UserDataPersistent      on
       UserData		      "DataTag1"
       SourceBlock	      "powerlib/powergui"

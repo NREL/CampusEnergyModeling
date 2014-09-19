@@ -4,6 +4,7 @@
 * Added a pseudo real-time clock block for real-time simulation
 * Added another demo: small campus with central chiller plant
 * Added demonstration plotting scripts to several demos
+* Added basic test script for EnergyPlus / MLE+
 
 ## v0.2
 * Added single-phase constant power electrical source/load block

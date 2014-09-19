@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.72"
+    ComputedModelVersion    "1.89"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -70,9 +70,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Apr 04 16:53:41 2014"
-  RTWModifiedTimeStamp	  318511770
-  ModelVersionFormat	  "1.%<AutoIncrement:72>"
+  LastModifiedDate	  "Mon Sep 15 21:51:20 2014"
+  RTWModifiedTimeStamp	  332718680
+  ModelVersionFormat	  "1.%<AutoIncrement:89>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -699,7 +699,7 @@ Model {
       }
       Name		      "Configuration"
       CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition     [ 453, 40, 1468, 912 ] 
+      ConfigPrmDlgPosition     [ 445, 10, 1476, 920 ] 
     }
     PropName		    "ConfigurationSets"
   }
@@ -782,6 +782,11 @@ Model {
       OutputAsBus	      off
     }
     Block {
+      BlockType		      Clock
+      DisplayTime	      off
+      Decimation	      "10"
+    }
+    Block {
       BlockType		      Constant
       Value		      "1"
       VectorParams1D	      on
@@ -810,6 +815,19 @@ Model {
       PhaseDelay	      "0"
       SampleTime	      "1"
       VectorParams1D	      on
+    }
+    Block {
+      BlockType		      EnablePort
+      StatesWhenEnabling      "held"
+      PropagateVarSize	      "Only when enabling"
+      ShowOutputPort	      off
+      ZeroCross		      on
+      PortDimensions	      "1"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "double"
+      Interpolate	      on
     }
     Block {
       BlockType		      From
@@ -1000,6 +1018,16 @@ Model {
       BlockType		      Terminator
     }
     Block {
+      BlockType		      ToWorkspace
+      VariableName	      "simulink_output"
+      MaxDataPoints	      "1000"
+      Decimation	      "1"
+      SampleTime	      "0"
+      SaveFormat	      "Array"
+      FixptAsFi		      off
+      NumInputs		      "1"
+    }
+    Block {
       BlockType		      TransferFcn
       Numerator		      "[1]"
       Denominator	      "[1 2 1]"
@@ -1024,7 +1052,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "980"
+    SIDHighWatermark	    "996"
     Block {
       BlockType		      Reference
       Name		      "Building\nMeasurement"
@@ -1073,7 +1101,7 @@ Model {
       Ports		      [1, 0, 0, 0, 0, 0, 4]
       Position		      [315, 597, 380, 668]
       ZOrder		      1007
-      LibraryVersion	      "1.162"
+      LibraryVersion	      "1.168"
       SourceBlock	      "CampusEnergyModeling/Electrical/Three-Phase\nConstant Power\nSource or Load"
       SourceType	      "Three-Phase Constant Power Source/Load"
       Conven		      "load"
@@ -1090,7 +1118,7 @@ Model {
       Ports		      [2, 1]
       Position		      [215, 599, 280, 666]
       ZOrder		      1008
-      LibraryVersion	      "1.162"
+      LibraryVersion	      "1.168"
       SourceBlock	      "CampusEnergyModeling/Electrical/Power Factor\nConversion"
       SourceType	      "Power Factor Conversion"
       pfType		      "Lagging"
@@ -1340,6 +1368,7 @@ Model {
 	    MarkerStyles	    "none|none|none|none|none|none"
 	  }
 	  ShowLegends		  on
+	  LegendLocations	  "0.75795     0.76298     0.19243     0.16371"
 	  TimeRange		  "86400"
 	  YMin			  "0"
 	  YMax			  "3000"
@@ -1508,7 +1537,7 @@ Model {
 	      Ports		      [3, 2, 0, 0, 0, 2]
 	      Position		      [580, 222, 660, 378]
 	      ZOrder		      871
-	      LibraryVersion	      "1.162"
+	      LibraryVersion	      "1.168"
 	      SourceBlock	      "CampusEnergyModeling/Electric Vehicles/AC Charging Station"
 	      SourceType	      "AC Charging Station"
 	      prated		      "6600"
@@ -1525,7 +1554,7 @@ Model {
 	      Ports		      [5, 2]
 	      Position		      [330, 202, 410, 358]
 	      ZOrder		      873
-	      LibraryVersion	      "1.162"
+	      LibraryVersion	      "1.168"
 	      SourceBlock	      "CampusEnergyModeling/Electric Vehicles/EV Charging\nSupervisory Control"
 	      SourceType	      "EV Charging Supervisory Control"
 	      ctype		      "AC"
@@ -1543,7 +1572,7 @@ Model {
 	      Ports		      [2, 3]
 	      Position		      [860, 236, 940, 334]
 	      ZOrder		      872
-	      LibraryVersion	      "1.162"
+	      LibraryVersion	      "1.168"
 	      SourceBlock	      "CampusEnergyModeling/Electric Vehicles/Electric Vehicle"
 	      SourceType	      "Electric Vehicle"
 	      ctype		      "AC"
@@ -1842,7 +1871,7 @@ Model {
 	      Ports		      [3, 2, 0, 0, 0, 2]
 	      Position		      [580, 222, 660, 378]
 	      ZOrder		      871
-	      LibraryVersion	      "1.162"
+	      LibraryVersion	      "1.168"
 	      SourceBlock	      "CampusEnergyModeling/Electric Vehicles/AC Charging Station"
 	      SourceType	      "AC Charging Station"
 	      prated		      "6600"
@@ -1859,7 +1888,7 @@ Model {
 	      Ports		      [5, 2]
 	      Position		      [330, 202, 410, 358]
 	      ZOrder		      873
-	      LibraryVersion	      "1.162"
+	      LibraryVersion	      "1.168"
 	      SourceBlock	      "CampusEnergyModeling/Electric Vehicles/EV Charging\nSupervisory Control"
 	      SourceType	      "EV Charging Supervisory Control"
 	      ctype		      "AC"
@@ -1877,7 +1906,7 @@ Model {
 	      Ports		      [2, 3]
 	      Position		      [860, 236, 940, 334]
 	      ZOrder		      872
-	      LibraryVersion	      "1.162"
+	      LibraryVersion	      "1.168"
 	      SourceBlock	      "CampusEnergyModeling/Electric Vehicles/Electric Vehicle"
 	      SourceType	      "Electric Vehicle"
 	      ctype		      "AC"
@@ -2176,7 +2205,7 @@ Model {
 	      Ports		      [3, 2, 0, 0, 0, 2]
 	      Position		      [580, 222, 660, 378]
 	      ZOrder		      871
-	      LibraryVersion	      "1.162"
+	      LibraryVersion	      "1.168"
 	      SourceBlock	      "CampusEnergyModeling/Electric Vehicles/AC Charging Station"
 	      SourceType	      "AC Charging Station"
 	      prated		      "6600"
@@ -2193,7 +2222,7 @@ Model {
 	      Ports		      [5, 2]
 	      Position		      [330, 202, 410, 358]
 	      ZOrder		      873
-	      LibraryVersion	      "1.162"
+	      LibraryVersion	      "1.168"
 	      SourceBlock	      "CampusEnergyModeling/Electric Vehicles/EV Charging\nSupervisory Control"
 	      SourceType	      "EV Charging Supervisory Control"
 	      ctype		      "AC"
@@ -2211,7 +2240,7 @@ Model {
 	      Ports		      [2, 3]
 	      Position		      [860, 236, 940, 334]
 	      ZOrder		      872
-	      LibraryVersion	      "1.162"
+	      LibraryVersion	      "1.168"
 	      SourceBlock	      "CampusEnergyModeling/Electric Vehicles/Electric Vehicle"
 	      SourceType	      "Electric Vehicle"
 	      ctype		      "AC"
@@ -2510,7 +2539,7 @@ Model {
 	      Ports		      [3, 2, 0, 0, 0, 2]
 	      Position		      [580, 222, 660, 378]
 	      ZOrder		      871
-	      LibraryVersion	      "1.162"
+	      LibraryVersion	      "1.168"
 	      SourceBlock	      "CampusEnergyModeling/Electric Vehicles/AC Charging Station"
 	      SourceType	      "AC Charging Station"
 	      prated		      "6600"
@@ -2527,7 +2556,7 @@ Model {
 	      Ports		      [5, 2]
 	      Position		      [330, 202, 410, 358]
 	      ZOrder		      873
-	      LibraryVersion	      "1.162"
+	      LibraryVersion	      "1.168"
 	      SourceBlock	      "CampusEnergyModeling/Electric Vehicles/EV Charging\nSupervisory Control"
 	      SourceType	      "EV Charging Supervisory Control"
 	      ctype		      "AC"
@@ -2545,7 +2574,7 @@ Model {
 	      Ports		      [2, 3]
 	      Position		      [860, 236, 940, 334]
 	      ZOrder		      872
-	      LibraryVersion	      "1.162"
+	      LibraryVersion	      "1.168"
 	      SourceBlock	      "CampusEnergyModeling/Electric Vehicles/Electric Vehicle"
 	      SourceType	      "Electric Vehicle"
 	      ctype		      "AC"
@@ -2844,7 +2873,7 @@ Model {
 	      Ports		      [3, 2, 0, 0, 0, 2]
 	      Position		      [580, 222, 660, 378]
 	      ZOrder		      871
-	      LibraryVersion	      "1.162"
+	      LibraryVersion	      "1.168"
 	      SourceBlock	      "CampusEnergyModeling/Electric Vehicles/AC Charging Station"
 	      SourceType	      "AC Charging Station"
 	      prated		      "6600"
@@ -2861,7 +2890,7 @@ Model {
 	      Ports		      [5, 2]
 	      Position		      [330, 202, 410, 358]
 	      ZOrder		      873
-	      LibraryVersion	      "1.162"
+	      LibraryVersion	      "1.168"
 	      SourceBlock	      "CampusEnergyModeling/Electric Vehicles/EV Charging\nSupervisory Control"
 	      SourceType	      "EV Charging Supervisory Control"
 	      ctype		      "AC"
@@ -2879,7 +2908,7 @@ Model {
 	      Ports		      [2, 3]
 	      Position		      [860, 236, 940, 334]
 	      ZOrder		      872
-	      LibraryVersion	      "1.162"
+	      LibraryVersion	      "1.168"
 	      SourceBlock	      "CampusEnergyModeling/Electric Vehicles/Electric Vehicle"
 	      SourceType	      "Electric Vehicle"
 	      ctype		      "AC"
@@ -3279,6 +3308,7 @@ Model {
 		MarkerStyles		"none|none|none|none|none|none"
 	      }
 	      ShowLegends	      on
+	      LegendLocations	      "0.71758     0.88614     0.20366    0.040264\n0.69278     0.30957     0.22715     0.16436"
 	      TimeRange		      "86400"
 	      YMin		      "-15000~-10000"
 	      YMax		      "15000~15000"
@@ -3973,6 +4003,15 @@ Model {
       }
     }
     Block {
+      BlockType		      Constant
+      Name		      "Enable\nLogging"
+      SID		      "985"
+      Position		      [1012, 600, 1038, 625]
+      ZOrder		      1038
+      BlockRotation	      270
+      Value		      "0"
+    }
+    Block {
       BlockType		      ManualSwitch
       Name		      "Enable\nRegulation"
       SID		      "166"
@@ -4212,7 +4251,7 @@ Model {
       Name		      "Grid Scope"
       SID		      "226"
       Ports		      [4]
-      Position		      [975, 541, 1005, 594]
+      Position		      [1010, 691, 1040, 744]
       ZOrder		      881
       BackgroundColor	      "gray"
       Floating		      off
@@ -4238,6 +4277,8 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
+      LegendLocations	      "0.73001     0.92509     0.19715    0.037113\n0.73001     0.68694     0.19715    0.037113\n"
+      "0.67538     0.44983     0.25178    0.037113\n0.71813     0.21168     0.20903    0.037113"
       TimeRange		      "86400"
       YMin		      "-5000~-5000~-5000~-5000"
       YMax		      "25000~25000~25000~25000"
@@ -4275,6 +4316,197 @@ Model {
       SourceBlock	      "powerlib/Elements/Ground"
       SourceType	      "Ground"
       LConnTagsString	      "a"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Log to Workspace"
+      SID		      "981"
+      Ports		      [4, 0, 1]
+      Position		      [980, 456, 1075, 544]
+      ZOrder		      1037
+      NamePlacement	      "alternate"
+      TreatAsAtomicUnit	      on
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      System {
+	Name			"Log to Workspace"
+	Location		[46, 43, 1258, 974]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "PV"
+	  SID			  "982"
+	  Position		  [220, 173, 250, 187]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "EV"
+	  SID			  "986"
+	  Position		  [220, 228, 250, 242]
+	  ZOrder		  1
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Building"
+	  SID			  "987"
+	  Position		  [220, 283, 250, 297]
+	  ZOrder		  2
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Grid"
+	  SID			  "988"
+	  Position		  [220, 338, 250, 352]
+	  ZOrder		  3
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  EnablePort
+	  Name			  "Enable"
+	  SID			  "983"
+	  Ports			  []
+	  Position		  [310, 390, 330, 410]
+	  ZOrder		  -2
+	}
+	Block {
+	  BlockType		  Clock
+	  Name			  "Clock"
+	  SID			  "995"
+	  Position		  [225, 100, 245, 120]
+	  ZOrder		  10
+	  Decimation		  "1"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Seconds to Hours"
+	  SID			  "996"
+	  Position		  [300, 87, 360, 133]
+	  ZOrder		  11
+	  Gain			  "1/3600"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace 1"
+	  SID			  "989"
+	  Ports			  [1]
+	  Position		  [400, 165, 460, 195]
+	  ZOrder		  4
+	  ShowName		  off
+	  VariableName		  "pv_gen"
+	  MaxDataPoints		  "inf"
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace 2"
+	  SID			  "990"
+	  Ports			  [1]
+	  Position		  [400, 220, 460, 250]
+	  ZOrder		  5
+	  ShowName		  off
+	  VariableName		  "ev_load"
+	  MaxDataPoints		  "inf"
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace 3"
+	  SID			  "991"
+	  Ports			  [1]
+	  Position		  [400, 275, 460, 305]
+	  ZOrder		  6
+	  ShowName		  off
+	  VariableName		  "bld_load"
+	  MaxDataPoints		  "inf"
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace 4"
+	  SID			  "992"
+	  Ports			  [1]
+	  Position		  [400, 330, 460, 360]
+	  ZOrder		  7
+	  ShowName		  off
+	  VariableName		  "grid_net"
+	  MaxDataPoints		  "inf"
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace 5"
+	  SID			  "993"
+	  Ports			  [1]
+	  Position		  [400, 95, 460, 125]
+	  ZOrder		  8
+	  ShowName		  off
+	  VariableName		  "t"
+	  MaxDataPoints		  "inf"
+	  SampleTime		  "-1"
+	}
+	Line {
+	  SrcBlock		  "PV"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace 1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "EV"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace 2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Building"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace 3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Grid"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace 4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Clock"
+	  SrcPort		  1
+	  DstBlock		  "Seconds to Hours"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Seconds to Hours"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace 5"
+	  DstPort		  1
+	}
+      }
     }
     Block {
       BlockType		      Logic
@@ -4317,8 +4549,8 @@ Model {
       IntegratorMethod	      "Forward Euler"
       FilterMethod	      "Forward Euler"
       Form		      "Parallel"
-      P			      "1.4"
-      I			      "0.07"
+      P			      "1"
+      I			      "0"
       D			      "0"
       N			      "100"
       InitialConditionSource  "internal"
@@ -4334,7 +4566,7 @@ Model {
       AntiWindupMode	      "clamping"
       Kb		      "1"
       TrackingMode	      on
-      Kt		      "0.004"
+      Kt		      "0"
       RndMeth		      "Floor"
       SaturateOnIntegerOverflow	off
       LockScale		      off
@@ -4417,7 +4649,7 @@ Model {
       Ports		      [1, 0, 0, 0, 0, 0, 4]
       Position		      [315, 437, 380, 508]
       ZOrder		      895
-      LibraryVersion	      "1.162"
+      LibraryVersion	      "1.168"
       SourceBlock	      "CampusEnergyModeling/Electrical/Three-Phase\nConstant Power\nSource or Load"
       SourceType	      "Three-Phase Constant Power Source/Load"
       Conven		      "source"
@@ -4517,7 +4749,7 @@ Model {
 	  Ports			  [1, 1]
 	  Position		  [595, 84, 660, 156]
 	  ZOrder		  97
-	  LibraryVersion	  "1.162"
+	  LibraryVersion	  "1.168"
 	  SourceBlock		  "CampusEnergyModeling/PV/Generic Inverter"
 	  SourceType		  "Generic Inverter"
 	  max_power		  "20.0e3"
@@ -4545,7 +4777,7 @@ Model {
 	  Ports			  [4, 1]
 	  Position		  [310, 62, 520, 178]
 	  ZOrder		  96
-	  LibraryVersion	  "1.162"
+	  LibraryVersion	  "1.168"
 	  UserDataPersistent	  on
 	  UserData		  "DataTag0"
 	  SourceBlock		  "CampusEnergyModeling/PV/PVWatts Cosimulation"
@@ -4570,7 +4802,7 @@ Model {
 	  poa_cutin		  "0"
 	  init_tcell		  "16.8"
 	  init_poa		  "0"
-	  alignment		  "Middle"
+	  alignment		  "End"
 	  output_dc		  on
 	  output_celltemp	  off
 	  output_poa		  off
@@ -4784,7 +5016,7 @@ Model {
       Ports		      [2, 1]
       Position		      [215, 439, 280, 506]
       ZOrder		      891
-      LibraryVersion	      "1.162"
+      LibraryVersion	      "1.168"
       SourceBlock	      "CampusEnergyModeling/Electrical/Power Factor\nConversion"
       SourceType	      "Power Factor Conversion"
       pfType		      "Lagging"
@@ -4795,7 +5027,6 @@ Model {
       SID		      "801"
       Position		      [575, 42, 605, 78]
       ZOrder		      1023
-      CurrentSetting	      "0"
     }
     Block {
       BlockType		      SubSystem
@@ -5109,6 +5340,7 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
+      LegendLocations	      "0.69048     0.67814     0.23117      0.1872"
       TimeRange		      "86400"
       YMin		      "-20000"
       YMax		      "20000"
@@ -5151,7 +5383,7 @@ Model {
       Ports		      [0, 1]
       Position		      [100, 15, 175, 105]
       ZOrder		      935
-      LibraryVersion	      "1.162"
+      LibraryVersion	      "1.168"
       SourceBlock	      "CampusEnergyModeling/Weather/Weather Data"
       SourceType	      "Weather Data From File"
       fname		      "Weather-SRRL.mat"
@@ -5166,7 +5398,7 @@ Model {
       ZOrder		      888
       DropShadow	      on
       Priority		      "2"
-      LibraryVersion	      "1.2191"
+      LibraryVersion	      "*1.2191"
       UserDataPersistent      on
       UserData		      "DataTag1"
       SourceBlock	      "powerlib/powergui"
@@ -5432,9 +5664,16 @@ Model {
       Labels		      [0, 0]
       SrcBlock		      "Bus\nCreator1"
       SrcPort		      1
-      Points		      [82, 0; 0, 75]
-      DstBlock		      "Grid Scope"
-      DstPort		      1
+      Points		      [103, 0]
+      Branch {
+	DstBlock		"Log to Workspace"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 225]
+	DstBlock		"Grid Scope"
+	DstPort			1
+      }
     }
     Line {
       LineType		      "Connection"
@@ -5526,17 +5765,33 @@ Model {
       Labels		      [0, 0]
       SrcBlock		      "Bus\nCreator3"
       SrcPort		      1
-      Points		      [62, 0; 0, -150]
-      DstBlock		      "Grid Scope"
-      DstPort		      4
+      Points		      [59, 0]
+      Branch {
+	Points			[0, -210]
+	DstBlock		"Log to Workspace"
+	DstPort			4
+      }
+      Branch {
+	DstBlock		"Grid Scope"
+	DstPort			4
+      }
     }
     Line {
       Name		      "EV"
-      Labels		      [1, 1]
       SrcBlock		      "Bus\nCreator2"
       SrcPort		      1
-      DstBlock		      "Grid Scope"
-      DstPort		      2
+      Points		      [89, 0]
+      Branch {
+	Labels			[1, 1]
+	Points			[0, 150]
+	DstBlock		"Grid Scope"
+	DstPort			2
+      }
+      Branch {
+	Points			[0, -70]
+	DstBlock		"Log to Workspace"
+	DstPort			2
+      }
     }
     Line {
       SrcBlock		      "Constant1"
@@ -5634,9 +5889,17 @@ Model {
       Labels		      [1, 1]
       SrcBlock		      "Bus\nCreator4"
       SrcPort		      1
-      Points		      [29, 0; 0, -75]
-      DstBlock		      "Grid Scope"
-      DstPort		      3
+      Points		      [74, 0]
+      Branch {
+	Points			[0, -140]
+	DstBlock		"Log to Workspace"
+	DstPort			3
+      }
+      Branch {
+	Points			[0, 75]
+	DstBlock		"Grid Scope"
+	DstPort			3
+      }
     }
     Line {
       SrcBlock		      "Gain"
@@ -5751,6 +6014,12 @@ Model {
       DstBlock		      "PI Controller"
       DstPort		      3
     }
+    Line {
+      SrcBlock		      "Enable\nLogging"
+      SrcPort		      1
+      DstBlock		      "Log to Workspace"
+      DstPort		      enable
+    }
     Annotation {
       SID		      "819"
       Name		      "PV: P = 1.0, I = 0.0, Kt = 0\nGrid: P = 1.4, I = 0.07, Kt = 0.004\nUse clamping anti-windup"
@@ -5797,10 +6066,10 @@ MatData {
     "!0    @    !     0    $         \"0    @          $\"/0 X    X    !@    @    &          4    (     0    $    !    "
     "      D    (               .    .     8    (    !@         %    \"     $    !     0         )    \"    ,W,S,S,S#! "
     "#@   #@    &    \"     8         !0    @    !     0    $         \"0    @               X    X    !@    @    &    "
-    "      4    (     0    $    !          D    (             $ .    .     8    (    !@         %    \"     $    !     "
-    "0         )    \"            / _#@   #@    &    \"     8         !0    @    !     0    $         \"0    @         "
-    "      X    X    !@    @    &          4    (     0    $    !          D    (               .    R     8    (     @"
-    "         %    \"     $    !     0         %  0 \"P    $    6    5F%R3F%M90    !/=71P=710;W)T    #@   #     &    \""
+    "      4    (     0    $    !          D    (            \"$ .    .     8    (    !@         %    \"     $    !    "
+    " 0         )    \"            / _#@   #@    &    \"     8         !0    @    !     0    $         \"0    @        "
+    "       X    X    !@    @    &          4    (     0    $    !          D    (               .    R     8    (     "
+    "@         %    \"     $    !     0         %  0 \"P    $    6    5F%R3F%M90    !/=71P=710;W)T    #@   #     &    \""
     "     0         !0    @    !     @    $         $  \" &1C   .    .     8    (    !@         %    \"     $    !     "
     "0         )    \"            / _#@   $ (   &    \"     (         !0    @    !     0    $         !0 $  P    !    1"
     " $  &QA=            &QO;@           '1Z             '1I;65?<W1E<    '-Y<W1E;5]S:7IE &1E<F%T90       '1R86-K7VUO9&4"
@@ -5830,7 +6099,7 @@ MatData {
     " (     0    $    !          D    (               .    ,     8    (    !@         %    \"                0         "
     ")          X    X    !@    @    &          4    (     0    $    !          D    (         #QN)D$.    ,     8    ( "
     "   !@         %    \"                0         )          X    X    !@    @    &          4    (     0    $    !  "
-    "        D    (               "
+    "        D    (            'L "
   }
   DataRecord {
     Tag			    DataTag1

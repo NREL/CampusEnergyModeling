@@ -1,5 +1,4 @@
-%% constant_power.m - Test the Constant Power blocks in the Simulink
-% library
+%% constant_power.m - Test the Constant Power blocks
 %
 % This script tests the 'Constant Power Source or Load' and 'Three-Phase
 % Constant Power Source or Load' blocks in the Campus Energy Modeling

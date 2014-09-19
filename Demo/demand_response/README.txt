@@ -7,6 +7,7 @@ Features:
 •   Executes EnergyPlus cosimulation within Simulink using MLE+
 •   Demonstrates open-loop (manual) DR with user-selectable temperature setback
 •   Demonstrates closed-loop (automatic) DR with user-selectable demand target
+•   Includes a run script for generating example plots: 'demand_response_plots.m'
 
 Requirements:
 •   MATLAB/Simulink (R2013a)

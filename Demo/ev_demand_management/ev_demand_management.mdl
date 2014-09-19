@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.79"
+    ComputedModelVersion    "1.84"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -31,7 +31,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [46.0, 43.0, 1212.0, 931.0]
+      Location		      [46.0, 43.0, 1212.0, 912.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -55,7 +55,7 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1162.0, 757.0]
+	Extents			[1162.0, 738.0]
 	ZoomFactor		[1.0]
 	Offset			[-22.749999999999886, 18.912500977516174]
       }
@@ -70,9 +70,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Apr 04 15:40:23 2014"
-  RTWModifiedTimeStamp	  318526516
-  ModelVersionFormat	  "1.%<AutoIncrement:79>"
+  LastModifiedDate	  "Mon Sep 15 21:58:09 2014"
+  RTWModifiedTimeStamp	  327250903
+  ModelVersionFormat	  "1.%<AutoIncrement:84>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1016,7 +1016,7 @@ Model {
   }
   System {
     Name		    "ev_demand_management"
-    Location		    [46, 43, 1258, 974]
+    Location		    [46, 43, 1258, 955]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1079,7 +1079,7 @@ Model {
       Ports		      [1, 0, 0, 0, 0, 0, 4]
       Position		      [315, 597, 380, 668]
       ZOrder		      1007
-      LibraryVersion	      "1.162"
+      LibraryVersion	      "1.168"
       SourceBlock	      "CampusEnergyModeling/Electrical/Three-Phase\nConstant Power\nSource or Load"
       SourceType	      "Three-Phase Constant Power Source/Load"
       Conven		      "load"
@@ -1096,7 +1096,7 @@ Model {
       Ports		      [2, 1]
       Position		      [215, 599, 280, 666]
       ZOrder		      1008
-      LibraryVersion	      "1.162"
+      LibraryVersion	      "1.168"
       SourceBlock	      "CampusEnergyModeling/Electrical/Power Factor\nConversion"
       SourceType	      "Power Factor Conversion"
       pfType		      "Lagging"
@@ -1233,7 +1233,7 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
-      LegendLocations	      "0.59697     0.66365     0.31688      0.1872"
+      LegendLocations	      "0.60476     0.67814     0.31688      0.1872"
       TimeRange		      "86400"
       YMin		      "-35000"
       YMax		      "50000"
@@ -1636,6 +1636,7 @@ Model {
 	  "maximum\navailable DR range."
 	  Position		  [82, 505]
 	  HorizontalAlignment	  "left"
+	  ZOrder		  -1
 	}
       }
     }
@@ -1761,7 +1762,7 @@ Model {
 	  ZOrder		  1006
 	  BackgroundColor	  "gray"
 	  Floating		  off
-	  Location		  [461, 519, 1069, 1026]
+	  Location		  [461, 387, 1069, 894]
 	  Open			  on
 	  NumInputPorts		  "1"
 	  ZoomMode		  "xonly"
@@ -1933,7 +1934,7 @@ Model {
 	      Ports		      [3, 2, 0, 0, 0, 2]
 	      Position		      [580, 222, 660, 378]
 	      ZOrder		      871
-	      LibraryVersion	      "1.162"
+	      LibraryVersion	      "1.168"
 	      SourceBlock	      "CampusEnergyModeling/Electric Vehicles/AC Charging Station"
 	      SourceType	      "AC Charging Station"
 	      prated		      "6600"
@@ -1950,7 +1951,7 @@ Model {
 	      Ports		      [5, 2]
 	      Position		      [330, 202, 410, 358]
 	      ZOrder		      873
-	      LibraryVersion	      "1.162"
+	      LibraryVersion	      "1.168"
 	      SourceBlock	      "CampusEnergyModeling/Electric Vehicles/EV Charging\nSupervisory Control"
 	      SourceType	      "EV Charging Supervisory Control"
 	      ctype		      "AC"
@@ -1968,7 +1969,7 @@ Model {
 	      Ports		      [2, 3]
 	      Position		      [860, 236, 940, 334]
 	      ZOrder		      872
-	      LibraryVersion	      "1.162"
+	      LibraryVersion	      "1.168"
 	      SourceBlock	      "CampusEnergyModeling/Electric Vehicles/Electric Vehicle"
 	      SourceType	      "Electric Vehicle"
 	      ctype		      "AC"
@@ -2267,7 +2268,7 @@ Model {
 	      Ports		      [3, 2, 0, 0, 0, 2]
 	      Position		      [580, 222, 660, 378]
 	      ZOrder		      871
-	      LibraryVersion	      "1.162"
+	      LibraryVersion	      "1.168"
 	      SourceBlock	      "CampusEnergyModeling/Electric Vehicles/AC Charging Station"
 	      SourceType	      "AC Charging Station"
 	      prated		      "6600"
@@ -2284,7 +2285,7 @@ Model {
 	      Ports		      [5, 2]
 	      Position		      [330, 202, 410, 358]
 	      ZOrder		      873
-	      LibraryVersion	      "1.162"
+	      LibraryVersion	      "1.168"
 	      SourceBlock	      "CampusEnergyModeling/Electric Vehicles/EV Charging\nSupervisory Control"
 	      SourceType	      "EV Charging Supervisory Control"
 	      ctype		      "AC"
@@ -2302,7 +2303,7 @@ Model {
 	      Ports		      [2, 3]
 	      Position		      [860, 236, 940, 334]
 	      ZOrder		      872
-	      LibraryVersion	      "1.162"
+	      LibraryVersion	      "1.168"
 	      SourceBlock	      "CampusEnergyModeling/Electric Vehicles/Electric Vehicle"
 	      SourceType	      "Electric Vehicle"
 	      ctype		      "AC"
@@ -2601,7 +2602,7 @@ Model {
 	      Ports		      [3, 2, 0, 0, 0, 2]
 	      Position		      [580, 222, 660, 378]
 	      ZOrder		      871
-	      LibraryVersion	      "1.162"
+	      LibraryVersion	      "1.168"
 	      SourceBlock	      "CampusEnergyModeling/Electric Vehicles/AC Charging Station"
 	      SourceType	      "AC Charging Station"
 	      prated		      "6600"
@@ -2618,7 +2619,7 @@ Model {
 	      Ports		      [5, 2]
 	      Position		      [330, 202, 410, 358]
 	      ZOrder		      873
-	      LibraryVersion	      "1.162"
+	      LibraryVersion	      "1.168"
 	      SourceBlock	      "CampusEnergyModeling/Electric Vehicles/EV Charging\nSupervisory Control"
 	      SourceType	      "EV Charging Supervisory Control"
 	      ctype		      "AC"
@@ -2636,7 +2637,7 @@ Model {
 	      Ports		      [2, 3]
 	      Position		      [860, 236, 940, 334]
 	      ZOrder		      872
-	      LibraryVersion	      "1.162"
+	      LibraryVersion	      "1.168"
 	      SourceBlock	      "CampusEnergyModeling/Electric Vehicles/Electric Vehicle"
 	      SourceType	      "Electric Vehicle"
 	      ctype		      "AC"
@@ -2935,7 +2936,7 @@ Model {
 	      Ports		      [3, 2, 0, 0, 0, 2]
 	      Position		      [580, 222, 660, 378]
 	      ZOrder		      871
-	      LibraryVersion	      "1.162"
+	      LibraryVersion	      "1.168"
 	      SourceBlock	      "CampusEnergyModeling/Electric Vehicles/AC Charging Station"
 	      SourceType	      "AC Charging Station"
 	      prated		      "6600"
@@ -2952,7 +2953,7 @@ Model {
 	      Ports		      [5, 2]
 	      Position		      [330, 202, 410, 358]
 	      ZOrder		      873
-	      LibraryVersion	      "1.162"
+	      LibraryVersion	      "1.168"
 	      SourceBlock	      "CampusEnergyModeling/Electric Vehicles/EV Charging\nSupervisory Control"
 	      SourceType	      "EV Charging Supervisory Control"
 	      ctype		      "AC"
@@ -2970,7 +2971,7 @@ Model {
 	      Ports		      [2, 3]
 	      Position		      [860, 236, 940, 334]
 	      ZOrder		      872
-	      LibraryVersion	      "1.162"
+	      LibraryVersion	      "1.168"
 	      SourceBlock	      "CampusEnergyModeling/Electric Vehicles/Electric Vehicle"
 	      SourceType	      "Electric Vehicle"
 	      ctype		      "AC"
@@ -3269,7 +3270,7 @@ Model {
 	      Ports		      [3, 2, 0, 0, 0, 2]
 	      Position		      [580, 222, 660, 378]
 	      ZOrder		      871
-	      LibraryVersion	      "1.162"
+	      LibraryVersion	      "1.168"
 	      SourceBlock	      "CampusEnergyModeling/Electric Vehicles/AC Charging Station"
 	      SourceType	      "AC Charging Station"
 	      prated		      "6600"
@@ -3286,7 +3287,7 @@ Model {
 	      Ports		      [5, 2]
 	      Position		      [330, 202, 410, 358]
 	      ZOrder		      873
-	      LibraryVersion	      "1.162"
+	      LibraryVersion	      "1.168"
 	      SourceBlock	      "CampusEnergyModeling/Electric Vehicles/EV Charging\nSupervisory Control"
 	      SourceType	      "EV Charging Supervisory Control"
 	      ctype		      "AC"
@@ -3304,7 +3305,7 @@ Model {
 	      Ports		      [2, 3]
 	      Position		      [860, 236, 940, 334]
 	      ZOrder		      872
-	      LibraryVersion	      "1.162"
+	      LibraryVersion	      "1.168"
 	      SourceBlock	      "CampusEnergyModeling/Electric Vehicles/Electric Vehicle"
 	      SourceType	      "Electric Vehicle"
 	      ctype		      "AC"
@@ -3674,7 +3675,7 @@ Model {
 	      ZOrder		      1005
 	      BackgroundColor	      "gray"
 	      Floating		      off
-	      Location		      [1087, 522, 1470, 1027]
+	      Location		      [1087, 389, 1470, 894]
 	      Open		      on
 	      NumInputPorts	      "2"
 	      ZoomMode		      "xonly"
@@ -4562,7 +4563,7 @@ Model {
       ZOrder		      881
       BackgroundColor	      "gray"
       Floating		      off
-      Location		      [1487, 57, 1908, 1027]
+      Location		      [1174, 157, 1595, 1004]
       Open		      on
       NumInputPorts	      "4"
       ZoomMode		      "xonly"
@@ -4584,8 +4585,8 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
-      LegendLocations	      "0.73001     0.92509     0.19715    0.037113\n0.73001     0.68694     0.19715    0.037113\n"
-      "0.67538     0.44983     0.25178    0.037113\n0.71813     0.21168     0.20903    0.037113"
+      LegendLocations	      "0.73001     0.91421     0.19715    0.042503\n0.73001     0.67808     0.19715    0.042503\n"
+      "0.67538     0.44195     0.25178    0.042503\n0.71813     0.20701     0.20903    0.042503"
       TimeRange		      "86400"
       YMin		      "-2500~-2500~1000~-7500"
       YMax		      "20000~27500~12000~35000"
@@ -4642,7 +4643,7 @@ Model {
       Ports		      [1, 0, 0, 0, 0, 0, 4]
       Position		      [315, 437, 380, 508]
       ZOrder		      895
-      LibraryVersion	      "1.162"
+      LibraryVersion	      "1.168"
       SourceBlock	      "CampusEnergyModeling/Electrical/Three-Phase\nConstant Power\nSource or Load"
       SourceType	      "Three-Phase Constant Power Source/Load"
       Conven		      "source"
@@ -4742,7 +4743,7 @@ Model {
 	  Ports			  [1, 1]
 	  Position		  [595, 84, 660, 156]
 	  ZOrder		  97
-	  LibraryVersion	  "1.162"
+	  LibraryVersion	  "1.168"
 	  SourceBlock		  "CampusEnergyModeling/PV/Generic Inverter"
 	  SourceType		  "Generic Inverter"
 	  max_power		  "20.0e3"
@@ -4770,7 +4771,7 @@ Model {
 	  Ports			  [4, 1]
 	  Position		  [310, 62, 520, 178]
 	  ZOrder		  96
-	  LibraryVersion	  "1.162"
+	  LibraryVersion	  "1.168"
 	  UserDataPersistent	  on
 	  UserData		  "DataTag0"
 	  SourceBlock		  "CampusEnergyModeling/PV/PVWatts Cosimulation"
@@ -5009,7 +5010,7 @@ Model {
       Ports		      [2, 1]
       Position		      [215, 439, 280, 506]
       ZOrder		      891
-      LibraryVersion	      "1.162"
+      LibraryVersion	      "1.168"
       SourceBlock	      "CampusEnergyModeling/Electrical/Power Factor\nConversion"
       SourceType	      "Power Factor Conversion"
       pfType		      "Lagging"
@@ -5057,7 +5058,7 @@ Model {
       Ports		      [0, 1]
       Position		      [100, 50, 175, 140]
       ZOrder		      935
-      LibraryVersion	      "1.162"
+      LibraryVersion	      "1.168"
       SourceBlock	      "CampusEnergyModeling/Weather/Weather Data"
       SourceType	      "Weather Data From File"
       fname		      "Weather-SRRL.mat"
@@ -5308,7 +5309,6 @@ Model {
       LineType		      "Connection"
       SrcBlock		      "EV Measurement"
       SrcPort		      RConn1
-      Points		      [85, 0]
       DstBlock		      "Electric Vehicles"
       DstPort		      LConn1
     }
@@ -5316,7 +5316,6 @@ Model {
       LineType		      "Connection"
       SrcBlock		      "EV Measurement"
       SrcPort		      RConn2
-      Points		      [85, 0]
       DstBlock		      "Electric Vehicles"
       DstPort		      LConn2
     }
@@ -5324,7 +5323,6 @@ Model {
       LineType		      "Connection"
       SrcBlock		      "EV Measurement"
       SrcPort		      RConn3
-      Points		      [85, 0]
       DstBlock		      "Electric Vehicles"
       DstPort		      LConn3
     }

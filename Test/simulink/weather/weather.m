@@ -23,9 +23,6 @@
 % Name of Simulink model
 mdl = 'read_weather_data';
 
-% Open simulation model
-open_system(mdl);
-
 %% TMY3 Weather Data
 % Weather file
 weatherFile = ['..' filesep '..' filesep 'data' filesep '724666TY.csv'];
@@ -38,10 +35,7 @@ weatherData = convertTMY3(weatherFile, 'offset', -1);
 ans = weatherData;
 save('weatherData.mat', 'ans', '-v7.3');
 
-% Force reinitialization by closing/opening
-% (Required b/c the bus definition may have changed and Simulink needs to
-%  pick up on that.)
-close_system(mdl, 0);
+% Initialize model
 open_system(mdl);
 
 % Adjust model settings

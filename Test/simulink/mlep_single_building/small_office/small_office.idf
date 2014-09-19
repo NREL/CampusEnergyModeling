@@ -85,7 +85,7 @@
     25,                      !- Maximum Number of Warmup Days
     6;                       !- Minimum Number of Warmup Days
 
-  Timestep,4;
+  Timestep,60;				 !- Number of timesteps in 1 hour
 
   SurfaceConvectionAlgorithm:Inside,Simple;
 
@@ -2496,6 +2496,8 @@
   ! Cooling schedule. This schedule is set directly by the external interface.
   ! During warm-up and system-sizing, it is fixed at 24 degC.
 
+  ! EXTERNAL INTERFACE (MLE+)
+  
   ExternalInterface:Schedule,
     TSetCoo,                 !- Name
     Temperature,             !- Schedule Type Limits Name
@@ -2508,9 +2510,13 @@
     TSetHea,                 !- Name
     Temperature,             !- Schedule Type Limits Name
     20;                      !- Initial Value
-
-
-  ! POWER CONSUMPTION
+  
+  ! BUILDING TOTAL POWER CONSUMPTION
+  Output:Variable,*,Facility Total Building Electric Demand Power,timestep;	! Non-HVAC
+  Output:Variable,*,Facility Total HVAC Electric Demand Power,timestep;		! HVAC
+  Output:Variable,*,Facility Total Electric Demand Power,timestep;			! Total
+	
+  ! HVAC POWER CONSUMPTION
   Output:Variable,ACDXCOIL 1,Cooling Coil Electric Power,timestep;
   Output:Variable,ACDXCOIL 2,Cooling Coil Electric Power,timestep;
   Output:Variable,ACDXCOIL 3,Cooling Coil Electric Power,timestep;
@@ -2524,81 +2530,56 @@
   Output:Variable,Supply Fan 3,Fan Electric Power,timestep;
   Output:Variable,Supply Fan 4,Fan Electric Power,timestep;
   
-
+  ! SETPOINTS
   Output:Variable,TSetHea,Schedule Value,TimeStep;
   Output:Variable,TSetCoo,Schedule Value,TimeStep;
   Output:Variable,ENVIRONMENT,Site Outdoor Air Drybulb Temperature,timestep;
   Output:Variable,*,Zone Air System Sensible Cooling Rate,timestep;
   Output:Variable,*,Zone Air System Sensible Heating Rate,timestep;
 
-  ! ZONE TEMPERATURE 
-  Output:Variable,ZSF1,Zone Air Temperature,timestep;
-  Output:Variable,ZSF2,Zone Air Temperature,timestep;
-  Output:Variable,ZNF1,Zone Air Temperature,timestep;
-  Output:Variable,ZNF2,Zone Air Temperature,timestep;
-  
+  ! ZONE DATA 
+  Output:Variable,*,Zone Air Temperature,timestep;
   Output:Variable,*,Zone Air Humidity Ratio,timestep;
-
+  
+  ! HVAC DATA
   Output:Variable,*,Coil System Part Load Ratio,timestep;
-
   Output:Variable,*,Cooling Coil Total Cooling Rate,timestep;
-
   Output:Variable,*,Cooling Coil Sensible Cooling Rate,timestep;
-
   Output:Variable,*,Heating Coil Air Heating Rate,timestep;
 
+  ! METERS
   Output:Meter,Cooling:Electricity,monthly;
-
   Output:Meter,Heating:Gas,monthly;
-
   Output:Meter,Fans:Electricity,monthly;
-
   Output:Meter,HeatingCoils:EnergyTransfer,monthly;
-
   Output:Meter,CoolingCoils:EnergyTransfer,monthly;
-
   Output:Meter,InteriorLights:Electricity,monthly;
-
   Output:Meter,InteriorEquipment:Electricity,monthly;
 
   Output:Meter,Cooling:Electricity,runperiod;
-
   Output:Meter,Heating:Gas,runperiod;
-
   Output:Meter,Fans:Electricity,runperiod;
-
   Output:Meter,HeatingCoils:EnergyTransfer,runperiod;
-
   Output:Meter,CoolingCoils:EnergyTransfer,runperiod;
-
   Output:Meter,InteriorLights:Electricity,runperiod;
-
   Output:Meter,InteriorEquipment:Electricity,runperiod;
 
-  Output:VariableDictionary,Regular;
-
-  Output:Surfaces:Drawing,dxf;
-
   Output:Meter:MeterFileOnly,Electricity:Facility,monthly;
-
   Output:Meter:MeterFileOnly,Electricity:Building,monthly;
-
   Output:Meter:MeterFileOnly,Electricity:HVAC,monthly;
-
   Output:Meter:MeterFileOnly,Gas:Facility,monthly;
-
   Output:Meter:MeterFileOnly,Gas:HVAC,monthly;
-
+  
   Output:Meter:MeterFileOnly,Electricity:Facility,runperiod;
-
   Output:Meter:MeterFileOnly,Electricity:Building,runperiod;
-
   Output:Meter:MeterFileOnly,Electricity:HVAC,runperiod;
-
   Output:Meter:MeterFileOnly,Gas:Facility,runperiod;
-
   Output:Meter:MeterFileOnly,Gas:HVAC,runperiod;
 
+  ! OTHER
+  Output:VariableDictionary,IDF;
+  Output:Surfaces:Drawing,dxf;
+  
   OutputControl:Table:Style,
     Comma;                   !- Column Separator
 

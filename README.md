@@ -33,7 +33,8 @@ License
 -------
 
 Campus Energy Modeling  
-Copyright (c) 2013, Alliance for Sustainable Energy  
+Copyright (c) 2015, Alliance for Sustainable Energy  
 All Rights Reserved.
 
-Campus Energy Modeling is currently available for use for internal NREL projects only. We anticipate a broader release under an open source license in the future.
+The Campus Energy Modeling platform is available for use under the Lesser Gnu Public License (LGPL).
+See included license files `LICENSE.txt`, `gpl.txt`, and `lgpl.txt` for details.

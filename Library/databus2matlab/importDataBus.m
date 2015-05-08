@@ -1,5 +1,8 @@
 %% IMPORTDATABUS - Import time series data from DataBus database
 %
+% NOTE: DataBus has been deprecated for NREL use and is no longer actively
+% maintained. This function is provided for legacy purposes.
+%
 % Imports a raw data stream from NREL's DataBus time series database using
 % an HTTP request. Options are available to return the data as a pair of
 % vectors (the default), as a matrix, as a MATLAB time series object, or as
@@ -60,9 +63,11 @@
 %   username =	robot-CampusModeling
 %   password =  3IALU6ANWW.B2.1DUMFNE91U5YG
 %
-% For tables that this robot is not allowed to access and/or DataBus
-% instances outside of NREL, the user may override these credentials via
-% the optional arguments listed above.
+% This robot provides read-only access to NREL campus data via DataBus.
+% Access is only available within the NREL intranet. For tables that this
+% robot is not allowed to access and/or DataBus instances outside of NREL,
+% the user may override these credentials via the optional arguments listed
+% above.
 %
 % DataBus returns raw data in either JSON or CSV text format. By default,
 % this function converts the raw data to seperate value and time vectors,

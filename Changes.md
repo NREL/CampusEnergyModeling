@@ -1,10 +1,6 @@
 # Change Log
 
-## v0.2.1-rc2
-* Updated documentation to indicate deprecation of DataBus functions
-* Changed license to LGPL
-
-## v0.2.1-rc1
+## v0.2.1
 * Added a pseudo real-time clock block for real-time simulation
 * Added another demo: small campus with central chiller plant
 * Added demonstration plotting scripts to several demos

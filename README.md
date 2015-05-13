@@ -36,5 +36,4 @@ Campus Energy Modeling
 Copyright (c) 2015, Alliance for Sustainable Energy  
 All Rights Reserved.
 
-The Campus Energy Modeling platform is available for use under the Lesser Gnu Public License (LGPL).
-See included license files `LICENSE.txt`, `gpl.txt`, and `lgpl.txt` for details.
+The Campus Energy Modeling platform is available for use under the Lesser Gnu Public License (LGPL). See included license files `LICENSE.txt`, `gpl.txt`, and `lgpl.txt` for details.

@@ -1,6 +1,8 @@
 # Change Log
 
 ## Development
+
+## v0.2.1
 * Added a pseudo real-time clock block for real-time simulation
 * Added another demo: small campus with central chiller plant
 * Added demonstration plotting scripts to several demos

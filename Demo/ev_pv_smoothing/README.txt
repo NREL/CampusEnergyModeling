@@ -8,6 +8,7 @@ Features:
 •   Demonstrates cosimulation of PVWatts with Simulink-based EV models
 •   Demonstrates Simulink blocks for EVs, EV charging stations, and EV charging supervisory control
 •   Demonstrates some basic control algorithms for PV smoothing
+•   Includes a run script for generating example plots: 'ev_pv_smoothing_plots.m'
 
 Requirements:
 •   MATLAB/Simulink (R2013a)

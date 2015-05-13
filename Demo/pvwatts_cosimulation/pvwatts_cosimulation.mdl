@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.86"
+    ComputedModelVersion    "1.90"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -57,7 +57,7 @@ Model {
 	LoadSaveID		"0"
 	Extents			[1327.0, 731.0]
 	ZoomFactor		[1.0]
-	Offset			[-93.4624935090543, 10576.156255766749]
+	Offset			[-93.4624935090543, 10576.0]
       }
     }
   }
@@ -70,9 +70,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Feb 24 10:49:03 2014"
-  RTWModifiedTimeStamp	  315139623
-  ModelVersionFormat	  "1.%<AutoIncrement:86>"
+  LastModifiedDate	  "Fri May 08 10:57:17 2015"
+  RTWModifiedTimeStamp	  352983388
+  ModelVersionFormat	  "1.%<AutoIncrement:90>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1249,7 +1249,7 @@ Model {
       Ports		      [1, 1]
       Position		      [780, 10769, 850, 10811]
       ZOrder		      64
-      LibraryVersion	      "1.136"
+      LibraryVersion	      "1.168"
       SourceBlock	      "CampusEnergyModeling/PV/Generic Inverter"
       SourceType	      "Generic Inverter"
       max_power		      "110e3"
@@ -1342,7 +1342,7 @@ Model {
       Ports		      [1, 0, 0, 0, 0, 0, 4]
       Position		      [290, 11047, 355, 11118]
       ZOrder		      843
-      LibraryVersion	      "1.136"
+      LibraryVersion	      "1.168"
       SourceBlock	      "CampusEnergyModeling/Electrical/Three-Phase\nConstant Power\nSource or Load"
       SourceType	      "Three-Phase Constant Power Source/Load"
       Conven		      "load"
@@ -1418,7 +1418,7 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
-      LegendLocations	      "0.69935     0.91271     0.24599    0.031138\n0.63696      0.4487     0.30838    0.031138"
+      LegendLocations	      "0.70024     0.91194     0.24599    0.031138\n0.63785     0.44793     0.30838    0.031138"
       TimeRange		      "90000"
       YMin		      "0~0"
       YMax		      "70~1600"
@@ -1434,7 +1434,7 @@ Model {
       Ports		      [1, 1]
       Position		      [595, 10770, 665, 10810]
       ZOrder		      78
-      LibraryVersion	      "1.136"
+      LibraryVersion	      "1.168"
       SourceBlock	      "CampusEnergyModeling/PV/PV Smoothing"
       SourceType	      "Photovoltaic Array Smoothing"
       sel		      "Array Size and Power Density"
@@ -1457,7 +1457,7 @@ Model {
       Ports		      [4, 3]
       Position		      [250, 10772, 460, 10888]
       ZOrder		      65
-      LibraryVersion	      "1.136"
+      LibraryVersion	      "1.168"
       UserDataPersistent      on
       UserData		      "DataTag0"
       SourceBlock	      "CampusEnergyModeling/PV/PVWatts Cosimulation"
@@ -1512,7 +1512,7 @@ Model {
       Ports		      [2, 1]
       Position		      [165, 11049, 230, 11116]
       ZOrder		      760
-      LibraryVersion	      "1.136"
+      LibraryVersion	      "1.168"
       SourceBlock	      "CampusEnergyModeling/Electrical/Power Factor\nConversion"
       SourceType	      "Power Factor Conversion"
       pfType		      "Lagging"
@@ -1674,7 +1674,7 @@ Model {
       Ports		      [0, 1]
       Position		      [55, 10590, 130, 10680]
       ZOrder		      60
-      LibraryVersion	      "1.136"
+      LibraryVersion	      "1.168"
       SourceBlock	      "CampusEnergyModeling/Weather/Weather Data"
       SourceType	      "Weather Data From File"
       fname		      "Weather-short.mat"
@@ -2081,15 +2081,15 @@ MatData {
     ")    \"           @$9 #@   #@    &    \"     8         !0    @    !     0    $         \"0    @            Y0 X   "
     " X    !@    @    &          4    (     0    $    !          D    (            X+\\.    .     8    (    !@         "
     "%    \"     $    !     0         )    \"           0(] #@   #@    &    \"     8         !0    @    !     0    $   "
-    "      \"0    @               X    X    !@    @    &          4    (     0    $    !          D    (        @!2N)D "
+    "      \"0    @               X    X    !@    @    &          4    (     0    $    !          D    (        0#-S,4 "
     ".    .     8    (    !@         %    \"     $    !     0         )    \"               #@   #@    &    \"     8   "
     "      !0    @    !     0    $         \"0    @          '\"?0 X    X    !@    @    &          4    (     0    $   "
     " !          D    (            &$ .    .     8    (    !@         %    \"     $    !     0         )    \"         "
     "    ! #@   #@    &    \"     8         !0    @    !     0    $         \"0    @               X    X    !@    @   "
     " &          4    (     0    $    !          D    (               .    .     8    (    !@         %    \"     $    "
     "!     0         )    \"               #@   #@    &    \"     8         !0    @    !     0    $         \"0    @   "
-    "            X    X    !@    @    &          4    (     0    $    !          D    (    KD?A>A2N)D .    .     8    ("
-    "    !@         %    \"     $    !     0         )    \"    )J9F9F9F05 #@   #@    &    \"     8         !0    @    "
+    "            X    X    !@    @    &          4    (     0    $    !          D    (    ,S,S,S-S,4 .    .     8    ("
+    "    !@         %    \"     $    !     0         )    \"    %*X'H7K40Y #@   #@    &    \"     8         !0    @    "
     "!     0    $         \"0    @               X    P    !@    @    &          4    (               !          D     "
     "    #@   #@    &    \"     8         !0    @    !     0    $         \"0    @         6FXF00X    P    !@    @    &"
     "          4    (               !          D         #@   #@    &    \"     8         !0    @    !     0    $      "

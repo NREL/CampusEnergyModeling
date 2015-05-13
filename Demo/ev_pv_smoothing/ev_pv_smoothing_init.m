@@ -3,27 +3,19 @@
 % This script initializes the PV smoothing with electric vehicles demo. Two
 % weather scenaiors are available:
 %
-% 1. SRRL: This scenario uses 1 minute data recorded at NREL's Solar
-%    Radiation Research Laboratory (SRRL) on May 17, 2012. For this
-%    scenario, the simulation time step is set to 15 seconds.
+% The weather data is 1 minute data recorded at NREL's Solar Radiation
+% Research Laboratory (SRRL) on May 17, 2012. The simulation time step is
+% set to 15 seconds.
 %
-% 2. DataBus: This scenario uses high frequency solar radiation data for
-%    June 1, 2013, downloaded from NREL's DataBus database using the
-%    batchDataBus() utility function. For this scenario, the simulation
-%    time step is set to 1 second. Caution! This scenario takes
-%    approximately 15 times longer to run.
-%
-% Modify the user settings below to select a scenario, then run this script
-% prior to running the Simulink simulation. (You only need to run it once
-% per scenario; the necessary files and settings will persist afterwards.)
+% Run this script prior to executing the Simulink simulation. (You only
+% need to run it once; the necessary files and settings will persist
+% afterwards.)
 %
 % COMMENTS:
-% 1. This initialization script stores weather data for the SRRL and
-%    DataBus scenarios in the files 'Weather-SRRL.mat' and
-%    'Weather-DataBus.mat', respectively. If these files already exist, the
-%    script will not recreate them. Therefore, you can easily override the
-%    weather data for each scenario by creating your own custom version of
-%    either file.
+% 1. This initialization script stores weather data in the file
+%    'Weather.mat'. If this file already exists, the script will not
+%    recreate it. Therefore, you can easily override the weather data by
+%    creating your own custom version of the file.
 %
 %    If you choose to do this, consult the block help for the 'Weather'
 %    block (in the Campus Energy Modeling library) and the 'From File'
@@ -34,46 +26,23 @@
 %    may see a warning that the model is unable to automatically create the
 %    bus definition for the weather data block. To correct, run this
 %    script, then reopen the model.
+%
+% 3. If experimenting with using the grid power signal as the control
+%    source, you will need to adjust the PI controller parameters as noted
+%    in the model. Be aware that the PI controller has been tuned to the
+%    SRRL data and simulation timestep. It does not work nearly as well for
+%    the DataBus data and simulation timestep.
 
-%% User Settings
-% Scenario selection: please specify either 'srrl' or 'databus'
-scen = 'srrl';
+% Output file
+fname = 'Weather.mat';
 
-%% Check Inputs
-% Check for proper scenario
-scen = lower(scen);
-assert( any( strcmpi(scen, {'srrl','databus'}) ), ...
-    'CampusModeling:demo:invalidScenario', ...
-    ['No scenario named ''' scen ''' exists; ' ...
-    'cannot initialize the demo.']);
-
-%% Initialize Weather Data
-% Data source depends on scenario
-switch scen  
-    % SRRL
-    case 'srrl'
-        fname = 'Weather-SRRL.mat';
-        if ~exist(fname, 'file')
-            % Use convertTMY3() conversion utility -> result in 'ans'
-            dataFile = strjoin( ...
-                {'..','..','Test','data','20120517_1min.csv'}, filesep );
-            convertTMY3(dataFile,'--UseOriginalTimestamps');
-            save(fname, 'ans', '-v7.3'); 
-        end
-        
-    % DataBus
-    case 'databus'
-        fname = 'Weather-DataBus.mat';
-        if ~exist(fname, 'file')
-            % Time stamps for data to retrieve (yyyy-mm-dd HH:MM:SS)
-            start = '2013-06-01 00:00:00';
-            stop  = '2013-06-02 00:00:00';
-
-            % Batch import from databus -> result in 'ans'
-            sensorFile = 'DataBus_sensors.csv';
-            batchDataBus(sensorFile, start, stop, 'timezone', -6);
-            save(fname, 'ans', '-v7.3');
-        end        
+% Read TMY3-formatted data
+if ~exist(fname, 'file')
+    % Use convertTMY3() conversion utility -> result in 'ans'
+    dataFile = strjoin( ...
+        {'..','..','Test','data','20120517_1min.csv'}, filesep );
+    convertTMY3(dataFile,'--UseOriginalTimestamps');
+    save(fname, 'ans', '-v7.3'); 
 end
 
 %% Initialize Simulink Model
@@ -87,17 +56,8 @@ open_system(sys);
 weatherFile = fname;
 
 % Set timestep and simulation duration
-switch scen
-    % SRRL - 60 second timestep
-    case 'srrl'
-        timestep = 15;
-        dur = 86400;
-    
-    % DataBus - ~3 second timestep
-    case 'databus'
-        timestep = 1;
-        dur = 86400;
-end
+timestep = 15;
+dur = 86400;
 
 % Set settings and block parameters
 set_param(sys, ...
@@ -106,15 +66,12 @@ set_param(sys, ...
     'FixedStep', num2str(timestep) );
 set_param([sys '/PV Array/PVWatts'], ...
     'time_step', num2str(timestep) );
-if strcmpi(scen, 'srrl')
-    % Start time: Midnight MST, May 17
-    set_param([sys '/PV Array/PVWatts'], ...
-        'start_time', '2012-05-17 00:00:00');
-else
-    % Start time: Midnight MDT, June 1 (Equal to 11 PM MST prior day)
-    set_param([sys '/PV Array/PVWatts'], ...
-        'start_time', '2013-05-31 23:00:00');
-end
+
+% Start time: Midnight MST, May 17
+set_param([sys '/PV Array/PVWatts'], ...
+    'start_time', '2012-05-17 00:00:00');
+
+% Weather File
 set_param([sys '/Weather'], ...
     'fname', weatherFile );
 

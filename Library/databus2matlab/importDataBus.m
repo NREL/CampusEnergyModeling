@@ -1,5 +1,8 @@
 %% IMPORTDATABUS - Import time series data from DataBus database
 %
+% NOTE: DataBus has been deprecated for NREL use and is no longer actively
+% maintained. This function is provided for legacy purposes.
+%
 % Imports a raw data stream from NREL's DataBus time series database using
 % an HTTP request. Options are available to return the data as a pair of
 % vectors (the default), as a matrix, as a MATLAB time series object, or as
@@ -60,9 +63,11 @@
 %   username =	robot-CampusModeling
 %   password =  3IALU6ANWW.B2.1DUMFNE91U5YG
 %
-% For tables that this robot is not allowed to access and/or DataBus
-% instances outside of NREL, the user may override these credentials via
-% the optional arguments listed above.
+% This robot provides read-only access to NREL campus data via DataBus.
+% Access is only available within the NREL intranet. For tables that this
+% robot is not allowed to access and/or DataBus instances outside of NREL,
+% the user may override these credentials via the optional arguments listed
+% above.
 %
 % DataBus returns raw data in either JSON or CSV text format. By default,
 % this function converts the raw data to seperate value and time vectors,
@@ -229,9 +234,18 @@ function [x, varargout] = importDataBus(sensor, start, stop, varargin)
     %% Convert Data
     % Parse data, if required
     if any( strcmpi(output, {'vector','matrix','ts'}) )
-        d = textscan(raw, '%f%f', 'HeaderLines', 1, 'delimiter', ',');
+        % Parse raw numbers
+        d = textscan(raw, '%f%f', 'HeaderLines', 1, 'delimiter', ',', ...
+            'treatAsEmpty', {'NA', 'null'} );
+        
+        % Convert to output
         t = epochToDateNum(d{1}, tz, 'ms');
         x = d{2};
+        
+        % Strip empties
+        empt = (isnan(x) | isnan(t));
+        x = x( ~empt );
+        t = t( ~empt );
     end
     
     % Convert to requested output format

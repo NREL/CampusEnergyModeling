@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.86"
+    ComputedModelVersion    "1.89"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -70,9 +70,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sfrank1"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Sep 19 11:18:02 2014"
-  RTWModifiedTimeStamp	  333026282
-  ModelVersionFormat	  "1.%<AutoIncrement:86>"
+  LastModifiedDate	  "Fri May 08 10:44:04 2015"
+  RTWModifiedTimeStamp	  352982598
+  ModelVersionFormat	  "1.%<AutoIncrement:89>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -5056,7 +5056,7 @@ Model {
       LibraryVersion	      "1.168"
       SourceBlock	      "CampusEnergyModeling/Weather/Weather Data"
       SourceType	      "Weather Data From File"
-      fname		      "Weather-SRRL.mat"
+      fname		      "Weather.mat"
       initbus		      on
     }
     Block {

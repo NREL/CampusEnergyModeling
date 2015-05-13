@@ -6,8 +6,8 @@
 %
 % 1. Short-term: This scenario models 24 hours of PV operation at a 10
 %    second time step. By default, the weather data for this scenario is
-%    downloaded from NREL's DataBus database using the batchDataBus()
-%    utility function.
+%    is 1 minute data recorded at NREL's Solar Radiation Research
+%    Laboratory (SRRL) on May 17, 2012.
 %
 % 2. Long-term: This scenario models 1 month of PV operation at a 10 minute
 %    time step. By default, the weather data is drawn from a TMY3-formatted
@@ -24,10 +24,10 @@
 %    After running the simulation, you can plot the inverter efficiency
 %    characteristic using:
 %      eff = ac_power ./ dc_power;
-%      eff( ac_power <= 0) = 0;
+%      eff(ac_power <= 0) = 0;
 %      plot(dc_power, eff);
-%   This plot can also be created directly in Simulink, but it severly
-%   slows down the simulation time.
+%    This plot can also be created directly in Simulink, but it severly
+%    slows down the simulation time.
 % 
 % 2. This initialization script stores weather data for the short and long
 %    scenarios in the files 'Weather-short.mat' and 'Weather-long.mat',
@@ -68,14 +68,11 @@ switch scen
     case 'short'
         fname = 'Weather-short.mat';
         if ~exist(fname, 'file')
-            % Time stamps for data to retrieve (yyyy-mm-dd HH:MM:SS)
-            start = '2013-06-01 00:00:00';
-            stop  = '2013-06-02 00:00:00';
-
-            % Batch import from databus -> result in 'ans'
-            sensorFile = 'DataBus_sensors.csv';
-            batchDataBus(sensorFile, start, stop, 'timezone', -6);
-            save(fname, 'ans', '-v7.3');
+            % Use convertTMY3() conversion utility -> result in 'ans'
+            dataFile = strjoin( ...
+                {'..','..','Test','data','20120517_1min.csv'}, filesep );
+            convertTMY3(dataFile,'--UseOriginalTimestamps');
+            save(fname, 'ans', '-v7.3'); 
         end
     
     % Long-term

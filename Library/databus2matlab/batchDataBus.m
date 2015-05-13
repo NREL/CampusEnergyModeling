@@ -1,5 +1,8 @@
 %% BATCHDATABUS - Batch import time series data from DataBus database
 %
+% NOTE: DataBus has been deprecated for NREL use and is no longer actively
+% maintained. This function is provided for legacy purposes.
+% 
 % This is a user-friendly function to batch import sensor data from NREL's
 % DataBus database. After import, the data are converted to a structure
 % of MATLAB time series objects compatible with the Simulink 'From File'

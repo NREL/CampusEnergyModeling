@@ -93,9 +93,9 @@
 ! Coils:                          Coil:Cooling:Water:DetailedGeometry
 ! Pumps:                          Pump:VariableSpeed
 ! Boilers:                        None
-! Chillers:                       Chiller:Electric, water cooled condenser (PlantEquipmentOperation:CoolingLoad set up for     
-!                                 electric chiller only). Chiller:ConstantCOP or DistrictCooling may be used if      
-!                                 desired in various combinations by changing priority control equipment list name in COOLING 
+! Chillers:                       Chiller:Electric, water cooled condenser (PlantEquipmentOperation:CoolingLoad set up for
+!                                 electric chiller only). Chiller:ConstantCOP or DistrictCooling may be used if
+!                                 desired in various combinations by changing priority control equipment list name in COOLING
 !                                 LOAD RANGE BASED OPERATION object.
 ! Towers:                         CoolingTower:SingleSpeed (leaving water set point = Wet bulb, each
 !                                 towers UA = 175, water flow rate = 0.0011 m3/s, air flow rate = 8 m3/s, capacity is
@@ -109,7 +109,7 @@
 ! Environmental Emissions:        None
 ! Utility Tariffs:                None
 
-  Version,8.0;
+  Version,8.3;
 
   Building,
     Building,                !- Name
@@ -242,6 +242,7 @@
     1.00;                    !- Sky Clearness
 
   Site:GroundTemperature:BuildingSurface,18.89,18.92,19.02,19.12,19.21,19.23,19.07,19.32,19.09,19.21,19.13,18.96;
+
 !  Site:GroundTemperature:Deep,16.1,16.1,16.1,16.1,16.1,16.1,16.1,16.1,16.1,16.1,16.1,16.1;
 
   Material,
@@ -2090,23 +2091,40 @@
     VAV Sys 1,               !- AirLoop Name
     sensible,                !- Type of Load to Size On
     autosize,                !- Design Outdoor Air Flow Rate {m3/s}
-    0.3,                     !- Minimum System Air Flow Ratio
+    0.3,                     !- Central Heating Maximum System Air Flow Ratio
     7.0,                     !- Preheat Design Temperature {C}
     0.008,                   !- Preheat Design Humidity Ratio {kgWater/kgDryAir}
     11.0,                    !- Precool Design Temperature {C}
     0.008,                   !- Precool Design Humidity Ratio {kgWater/kgDryAir}
     12.8,                    !- Central Cooling Design Supply Air Temperature {C}
     16.7,                    !- Central Heating Design Supply Air Temperature {C}
-    noncoincident,           !- Sizing Option
+    noncoincident,           !- Type of Zone Sum to Use
     no,                      !- 100% Outdoor Air in Cooling
     no,                      !- 100% Outdoor Air in Heating
     0.008,                   !- Central Cooling Design Supply Air Humidity Ratio {kgWater/kgDryAir}
     0.008,                   !- Central Heating Design Supply Air Humidity Ratio {kgWater/kgDryAir}
-    DesignDay,               !- Cooling Design Air Flow Method
-    0,                       !- Cooling Design Air Flow Rate {m3/s}
-    DesignDay,               !- Heating Design Air Flow Method
-    0,                       !- Heating Design Air Flow Rate {m3/s}
-    ;                        !- System Outdoor Air Method
+    DesignDay,               !- Cooling Supply Air Flow Rate Method
+    0,                       !- Cooling Supply Air Flow Rate {m3/s}
+    ,                        !- Cooling Supply Air Flow Rate Per Floor Area {m3/s-m2}
+    ,                        !- Cooling Fraction of Autosized Cooling Supply Air Flow Rate
+    ,                        !- Cooling Supply Air Flow Rate Per Unit Cooling Capacity {m3/s-W}
+    DesignDay,               !- Heating Supply Air Flow Rate Method
+    0,                       !- Heating Supply Air Flow Rate {m3/s}
+    ,                        !- Heating Supply Air Flow Rate Per Floor Area {m3/s-m2}
+    ,                        !- Heating Fraction of Autosized Heating Supply Air Flow Rate
+    ,                        !- Heating Fraction of Autosized Cooling Supply Air Flow Rate
+    ,                        !- Heating Supply Air Flow Rate Per Unit Heating Capacity {m3/s-W}
+    ,                        !- System Outdoor Air Method
+    1.0,                     !- Zone Maximum Outdoor Air Fraction {dimensionless}
+    CoolingDesignCapacity,   !- Cooling Design Capacity Method
+    autosize,                !- Cooling Design Capacity {W}
+    ,                        !- Cooling Design Capacity Per Floor Area {W/m2}
+    ,                        !- Fraction of Autosized Cooling Design Capacity
+    HeatingDesignCapacity,   !- Heating Design Capacity Method
+    autosize,                !- Heating Design Capacity {W}
+    ,                        !- Heating Design Capacity Per Floor Area {W/m2}
+    ,                        !- Fraction of Autosized Heating Design Capacity
+    OnOff;                   !- Central Cooling Capacity Control Method
 
   NodeList,
     OutsideAirInletNodes,    !- Name
@@ -2534,8 +2552,8 @@
 
   ThermostatSetpoint:DualSetpoint,
     DualSetPoint,            !- Name
-    HeatTempSch,            !- Heating Setpoint Temperature Schedule Name Htg-SetP-Sch
-    CoolTempSch;            !- Cooling Setpoint Temperature Schedule Name Clg-SetP-Sch
+    HeatTempSch,             !- Heating Setpoint Temperature Schedule Name
+    CoolTempSch;             !- Cooling Setpoint Temperature Schedule Name
 
   AirLoopHVAC:SupplyPath,
     Zone Supply Air Path 1,  !- Name
@@ -2577,9 +2595,9 @@
     2.284,                   !- Design Air Flow Rate {m3/s}
     7.222,                   !- Design Inlet Water Temperature {C}
     26.667,                  !- Design Inlet Air Temperature {C}
-    12.9658,                 !- Design Outlet Air Temperature {C} 14.389
+    12.9658,                 !- Design Outlet Air Temperature {C}
     0.0167,                  !- Design Inlet Air Humidity Ratio {kgWater/kgDryAir}
-    0.01047249,              !- Design Outlet Air Humidity Ratio {kgWater/kgDryAir} 0.0099
+    0.01047249,              !- Design Outlet Air Humidity Ratio {kgWater/kgDryAir}
     Main Cooling Coil 1 Water Inlet Node,  !- Water Inlet Node Name
     Main Cooling Coil 1 Water Outlet Node,  !- Water Outlet Node Name
     Mixed Air Node 1,        !- Air Inlet Node Name
@@ -2692,7 +2710,7 @@
   Fan:VariableVolume,
     Supply Fan 1,            !- Name
     FanAvailSched,           !- Availability Schedule Name
-    0.7,                     !- Fan Efficiency
+    0.7,                     !- Fan Total Efficiency
     600.0,                   !- Pressure Rise {Pa}
     autosize,                !- Maximum Flow Rate {m3/s}
     Fraction,                !- Fan Power Minimum Flow Rate Input Method
@@ -2716,7 +2734,7 @@
     CW Supply Outlet Node,   !- Loop Temperature Setpoint Node Name
     98,                      !- Maximum Loop Temperature {C}
     1,                       !- Minimum Loop Temperature {C}
-    0.002,                   !- Maximum Loop Flow Rate {m3/s} 0.0011
+    0.002,                   !- Maximum Loop Flow Rate {m3/s}
     0,                       !- Minimum Loop Flow Rate {m3/s}
     autocalculate,           !- Plant Loop Volume {m3}
     CW Supply Inlet Node,    !- Plant Side Inlet Node Name
@@ -2739,15 +2757,16 @@
     Chilled Water Loop Setpoint Node List,  !- Name
     CW Supply Outlet Node;   !- Node 1 Name
 
-  BranchList,
-    Cooling Supply Side Branches,  !- Name
-    CW Pump Branch,            !- Branch 1 Name
     !Little Chiller Branch,     !- Branch 2 Name
     !Big Chiller Branch,        !- Branch 3 Name
     !Purchased Cooling Branch,  !- Branch 4 Name
-    FluidSource Cooling Branch,!- Branch 5 Name
-    Supply Bypass Branch,      !- Branch 6 Name
-    Cooling Supply Outlet;     !- Branch 7 Name
+
+  BranchList,
+    Cooling Supply Side Branches,  !- Name
+    CW Pump Branch,          !- Branch 1 Name
+    FluidSource Cooling Branch,  !- Branch 2 Name
+    Supply Bypass Branch,    !- Branch 3 Name
+    Cooling Supply Outlet;   !- Branch 4 Name
 
   BranchList,
     Cooling Demand Side Branches,  !- Name
@@ -2859,7 +2878,6 @@
 !    Little Chiller Inlet Node,  !- Component 1 Inlet Node Name
 !    Little Chiller Outlet Node,  !- Component 1 Outlet Node Name
 !    Active;                  !- Component 1 Branch Control Type
-
 !  Branch,
 !    Big Chiller Branch,      !- Name
 !    0,                       !- Maximum Flow Rate {m3/s}
@@ -2869,7 +2887,6 @@
 !    Big Chiller Inlet Node,  !- Component 1 Inlet Node Name
 !    Big Chiller Outlet Node, !- Component 1 Outlet Node Name
 !    Active;                  !- Component 1 Branch Control Type
-
 !  Branch,
 !    Purchased Cooling Branch,!- Name
 !    0,                       !- Maximum Flow Rate {m3/s}
@@ -2879,17 +2896,18 @@
 !    Purchased Cooling Inlet Node,  !- Component 1 Inlet Node Name
 !    Purchased Cooling Outlet Node,  !- Component 1 Outlet Node Name
 !    Active;                  !- Component 1 Branch Control Type
-
 !==========================================================================
+
   Branch,
-    FluidSource Cooling Branch,!- Name
+    FluidSource Cooling Branch,  !- Name
     0,                       !- Maximum Flow Rate {m3/s}
     ,                        !- Pressure Drop Curve Name
-    PlantComponent:TemperatureSource,         !- Component 1 Object Type
-    FluidSource Cooling,       !- Component 1 Name
+    PlantComponent:TemperatureSource,  !- Component 1 Object Type
+    FluidSource Cooling,     !- Component 1 Name
     FluidSource Cooling Inlet Node,  !- Component 1 Inlet Node Name
     FluidSource Cooling Outlet Node,  !- Component 1 Outlet Node Name
     Active;                  !- Component 1 Branch Control Type
+
 !==========================================================================
 
   Branch,
@@ -2907,23 +2925,25 @@
     CW Supply Bypass Inlet Node,  !- Inlet Node Name
     CW Supply Bypass Outlet Node;  !- Outlet Node Name
 
-  Connector:Splitter,
-    CW Loop Splitter,          !- Name
-    CW Pump Branch,            !- Inlet Branch Name
     !Little Chiller Branch,     !- Outlet Branch 1 Name
     !Big Chiller Branch,        !- Outlet Branch 2 Name
     !Purchased Cooling Branch,  !- Outlet Branch 3 Name
-    FluidSource Cooling Branch,!- Outlet Branch 3 Name
-    Supply Bypass Branch;      !- Outlet Branch 4 Name
 
-  Connector:Mixer,
-    CW Loop Mixer,             !- Name
-    Cooling Supply Outlet,     !- Outlet Branch Name
+  Connector:Splitter,
+    CW Loop Splitter,        !- Name
+    CW Pump Branch,          !- Inlet Branch Name
+    FluidSource Cooling Branch,  !- Outlet Branch 1 Name
+    Supply Bypass Branch;    !- Outlet Branch 2 Name
+
     !Little Chiller Branch,     !- Inlet Branch 1 Name
     !Big Chiller Branch,        !- Inlet Branch 2 Name
     !Purchased Cooling Branch,  !- Inlet Branch 3 Name
-    FluidSource Cooling Branch,!- Inlet Branch 3 Name
-    Supply Bypass Branch;      !- Inlet Branch 4 Name
+
+  Connector:Mixer,
+    CW Loop Mixer,           !- Name
+    Cooling Supply Outlet,   !- Outlet Branch Name
+    FluidSource Cooling Branch,  !- Inlet Branch 1 Name
+    Supply Bypass Branch;    !- Inlet Branch 2 Name
 
   Connector:Splitter,
     CW Demand Splitter,      !- Name
@@ -2943,51 +2963,47 @@
     Peak Operation,          !- Control Scheme 1 Name
     On Peak,                 !- Control Scheme 1 Schedule Name
     PlantEquipmentOperation:CoolingLoad,  !- Control Scheme 2 Object Type
-    Off Peak Operation,          !- Control Scheme 2 Name
+    Off Peak Operation,      !- Control Scheme 2 Name
     Off Peak;                !- Control Scheme 2 Schedule Name
 
   PlantEquipmentOperation:CoolingLoad,
     Peak Operation,          !- Name
     0,                       !- Load Range 1 Lower Limit {W}
     500000,                  !- Load Range 1 Upper Limit {W}
-    FluidSource Only;           !- Range 1 Equipment List Name Purchased Only
+    FluidSource Only;        !- Range 1 Equipment List Name
 
   PlantEquipmentOperation:CoolingLoad,
     Off Peak Operation,      !- Name
     0,                       !- Load Range 1 Lower Limit {W}
     900000,                  !- Load Range 1 Upper Limit {W}
-    FluidSource Only;           !- Range 1 Equipment List Name  - Purchased Only
+    FluidSource Only;        !- Range 1 Equipment List Name
 
 !  PlantEquipmentList,
 !    Chiller Plant,           !- Name
 !    Chiller:Electric,        !- Equipment 1 Object Type
 !    Big Chiller;             !- Equipment 1 Name
-
 !  PlantEquipmentList,
 !    Chiller Plant and Purchased,  !- Name
 !    Chiller:Electric,        !- Equipment 1 Object Type
 !    Big Chiller,             !- Equipment 1 Name
 !    DistrictCooling,         !- Equipment 2 Object Type
 !    Purchased Cooling;       !- Equipment 2 Name
-
 !  PlantEquipmentList,
 !    Purchased Only,          !- Name
 !    DistrictCooling,         !- Equipment 1 Object Type
 !    Purchased Cooling;       !- Equipment 1 Name
-
 !==========================================================================
+
   PlantEquipmentList,
-    FluidSource Only,          !- Name
-    PlantComponent:TemperatureSource,         !- Equipment 1 Object Type
-    FluidSource Cooling;       !- Equipment 1 Name
+    FluidSource Only,        !- Name
+    PlantComponent:TemperatureSource,  !- Equipment 1 Object Type
+    FluidSource Cooling;     !- Equipment 1 Name
 
 !==========================================================================
-
 !  PlantEquipmentList,
 !    Electric Only,           !- Name
 !    Chiller:Electric,        !- Equipment 1 Object Type
 !    Big Chiller;             !- Equipment 1 Name
-
 !  PlantEquipmentList,
 !    All Chillers,            !- Name
 !    Chiller:Electric,        !- Equipment 1 Object Type
@@ -2995,14 +3011,13 @@
 !    Chiller:ConstantCOP,     !- Equipment 2 Object Type
 !    Little Chiller;          !- Equipment 2 Name
 
-
   Pump:VariableSpeed,
     Circ Pump,               !- Name
     CW Supply Inlet Node,    !- Inlet Node Name
     CW Pump Outlet Node,     !- Outlet Node Name
-    0.002,                   !- Rated Flow Rate {m3/s} 0.002
+    0.002,                   !- Rated Flow Rate {m3/s}
     300000,                  !- Rated Pump Head {Pa}
-    0,                    !- Rated Power Consumption {W} 1000
+    0,                       !- Rated Power Consumption {W}
     0.87,                    !- Motor Efficiency
     0.0,                     !- Fraction of Motor Inefficiencies to Fluid Stream
     0,                       !- Coefficient 1 of the Part Load Performance Curve
@@ -3012,24 +3027,23 @@
     0,                       !- Minimum Flow Rate {m3/s}
     INTERMITTENT;            !- Pump Control Type
 
-
 !  DistrictCooling,
 !    Purchased Cooling,       !- Name
 !    Purchased Cooling Inlet Node,  !- Chilled Water Inlet Node Name
 !    Purchased Cooling Outlet Node,  !- Chilled Water Outlet Node Name
 !    680000;                  !- Nominal Capacity {W}
-
 !==========================================================================
+
   PlantComponent:TemperatureSource,
-    FluidSource Cooling, !- Name
-    FluidSource Cooling Inlet Node, !- Inlet Node
-    FluidSource Cooling Outlet Node, !- Outlet Node
-    0.0025, !- Design Volume Flow Rate {m3/s} Autosize 0.002
-    Scheduled, !- Temperature Specification Type
-    7, !- Source Temperature {C}
-    SourceCoolSch; !- Source Temperature Schedule Name
-!==========================================================================
+    FluidSource Cooling,     !- Name
+    FluidSource Cooling Inlet Node,  !- Inlet Node
+    FluidSource Cooling Outlet Node,  !- Outlet Node
+    0.0025,                  !- Design Volume Flow Rate {m3/s}
+    Scheduled,               !- Temperature Specification Type
+    7,                       !- Source Temperature {C}
+    SourceCoolSch;           !- Source Temperature Schedule Name
 
+!==========================================================================
 !  SetpointManager:FollowOutdoorAirTemperature,
 !    MyCondenserControl,      !- Name
 !    Temperature,             !- Control Variable
@@ -3038,7 +3052,6 @@
 !    80,                      !- Maximum Setpoint Temperature {C}
 !    10,                      !- Minimum Setpoint Temperature {C}
 !    Condenser Supply Outlet Node;  !- Setpoint Node or NodeList Name
-
 
   PlantLoop,
     Hot Water Loop,          !- Name
@@ -3333,37 +3346,38 @@
     1000000;                 !- Nominal Capacity {W}
 
 !======================START:INPUTS=============================================
+
   Output:EnergyManagementSystem,
-    Verbose, ! Actuator Availability Dictionary Reporting
-    Verbose, ! Internal Variable Availability Dictionary Reporting
-    ErrorsOnly; ! EnergyPlus Runtime Language Debug Output Level
-  
+    Verbose,                 !- Actuator Availability Dictionary Reporting
+    Verbose,                 !- Internal Variable Availability Dictionary Reporting
+    ErrorsOnly;              !- EMS Runtime Language Debug Output Level
+
   EnergyManagementSystem:Sensor,
-    SENSOR1,                !Name
-    SPACE1-1,                ! Output:Variable or Output:Meter Index Key Name
-    Zone Air Temperature;    ! Output:Variable or Output:Meter Name
-  
-  ExternalInterface:Schedule,
-    CoolTempSch,                         !- Name
-    Temperature,                    !- ScheduleType
-    23.4;                 !- Initial value, used during warm-up
+    SENSOR1,                 !- Name
+    SPACE1-1,                !- Output:Variable or Output:Meter Index Key Name
+    Zone Air Temperature;    !- Output:Variable or Output:Meter Name
 
   ExternalInterface:Schedule,
-    HeatTempSch,                         !- Name
-    Temperature,                    !- ScheduleType
-    20;                 !- Initial value, used during warm-up
+    CoolTempSch,             !- Name
+    Temperature,             !- Schedule Type Limits Name
+    23.4;                    !- Initial Value
 
   ExternalInterface:Schedule,
-    SourceCoolSch,                         !- Name
-    Temperature,                    !- ScheduleType
-    7;                 !- Initial value, used during warm-up
+    HeatTempSch,             !- Name
+    Temperature,             !- Schedule Type Limits Name
+    20;                      !- Initial Value
+
+  ExternalInterface:Schedule,
+    SourceCoolSch,           !- Name
+    Temperature,             !- Schedule Type Limits Name
+    7;                       !- Initial Value
 
   ExternalInterface:Actuator,
-    SourceMaxAct, !- Name
-    FLUIDSOURCE COOLING, !- Actuated Component Unique Name
-    PlantComponent:TemperatureSource, !- Actuated Component Type
-    Maximum Mass Flow Rate, !- Actuated Component Control Type 
-    2; ! initial value [kg/s]
+    SourceMaxAct,            !- Name
+    FLUIDSOURCE COOLING,     !- Actuated Component Unique Name
+    PlantComponent:TemperatureSource,  !- Actuated Component Type
+    Maximum Mass Flow Rate,  !- Actuated Component Control Type
+    2;                       !- Optional Initial Value
 
 !======================END:INPUTS=============================================
 !  SetpointManager:Scheduled,
@@ -3371,16 +3385,21 @@
 !    Temperature,             !- Control Variable
 !    PurchCoolSch,   !- Schedule Name
 !    Purchased Cooling Outlet Node; !- Setpoint Node or NodeList Name
-
-
 !======================START:OUTPUTS=============================================
   ! TEMPERATURE ZONES
+
   Output:Variable,Environment,Site Outdoor Air Drybulb Temperature,timestep;
+
   Output:Variable,SPACE1-1,Zone Air Temperature,timestep;
+
   Output:Variable,SPACE2-1,Zone Air Temperature,timestep;
+
   Output:Variable,SPACE3-1,Zone Air Temperature,timestep;
+
   Output:Variable,SPACE4-1,Zone Air Temperature,timestep;
+
   Output:Variable,SPACE5-1,Zone Air Temperature,timestep;
+
   Output:Variable,PLENUM-1,Zone Air Temperature,timestep;
 
 !==========================DISTRICT COOLING===============================
@@ -3390,26 +3409,41 @@
   !Output:Variable,Purchased Cooling,District Cooling Mass Flow Rate,timestep;
 
   Output:Variable,FluidSource Cooling,Plant Temperature Source Component Mass Flow Rate,timestep;
+
   Output:Variable,FluidSource Cooling,Plant Temperature Source Component Heat Transfer Rate,timestep;
+
   Output:Variable,FluidSource Cooling,Plant Temperature Source Component Inlet Temperature,timestep;
+
   Output:Variable,FluidSource Cooling,Plant Temperature Source Component Outlet Temperature,timestep;
 
-! PRESSURE  
+! PRESSURE
+
   Output:Variable,FluidSource Cooling Inlet Node,System Node Pressure,timestep;
+
   Output:Variable,FluidSource Cooling Outlet Node,System Node Pressure,timestep;
 
 !==========================POWER===============================
+
   Output:Variable,circ pump,Pump Electric Power,timestep;
+
   Output:Variable,hw circ pump,Pump Electric Power,timestep;
+
   Output:Variable,supply fan 1,Fan Electric Power,timestep;
-  Output:Variable,Whole Building,Facility Total Building Electric Demand Power, timestep;
-  Output:Variable,Whole Building,Facility Total HVAC Electric Demand Power, timestep;
+
+  Output:Variable,Whole Building,Facility Total Building Electric Demand Power,timestep;
+
+  Output:Variable,Whole Building,Facility Total HVAC Electric Demand Power,timestep;
+
   Output:Meter,Electricity:Building,timestep;
+
   Output:Meter,InteriorLights:Electricity,timestep;
+
   Output:Meter,InteriorEquipment:Electricity,timestep;
 
   Output:VariableDictionary,Regular;
+
   Output:VariableDictionary,IDF;
+
 !  Output:Variable,*,Chiller Electric Power,timestep;
 !  Output:Variable,*,Chiller Evaporator Cooling Rate,timestep;
 !  Output:Variable,*,Chiller Evaporator Inlet Temperature,timestep;
@@ -3419,15 +3453,25 @@
 !  Output:Variable,*,Chiller Condenser Inlet Temperature,timestep;
 !  Output:Variable,*,Chiller Condenser Outlet Temperature,timestep;
 !  Output:Variable,*,Chiller Condenser Mass Flow Rate,timestep;
+
   Output:Meter:MeterFileOnly,Electricity:Facility,monthly;
+
   Output:Meter:MeterFileOnly,Electricity:Building,monthly;
+
   Output:Meter:MeterFileOnly,InteriorLights:Electricity,monthly;
+
   Output:Meter:MeterFileOnly,Electricity:HVAC,monthly;
+
   Output:Meter:MeterFileOnly,Electricity:Plant,monthly;
+
   Output:Meter:MeterFileOnly,Electricity:Facility,runperiod;
+
   Output:Meter:MeterFileOnly,Electricity:Building,runperiod;
+
   Output:Meter:MeterFileOnly,InteriorLights:Electricity,runperiod;
+
   Output:Meter:MeterFileOnly,Electricity:HVAC,runperiod;
+
   Output:Meter:MeterFileOnly,Electricity:Plant,runperiod;
 
   OutputControl:Table:Style,

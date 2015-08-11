@@ -31,19 +31,6 @@
 %    code and installer, at which point this installation option will be
 %    removed.
 
-%% User Settings
-% Install MLE+ via this script?
-installMLEP = true;
-
-% If installing MLE+, set the following paths correctly:
-     % Location of EnergyPlus installation
-     EplusDir = 'C:\EnergyPlusV8-1-0';
- 
-     % Location of Java installation
-     JavaDir = 'C:\Program Files (x86)\Java\jre6\bin';
-     
-% NOTE: The MLE+ paths are ignored if installMLEP == false
-
 %% Initialization
 % NOTE: the 'filesep' command gives the correct file seperator for the
 % current MATLAB platform.
@@ -64,14 +51,6 @@ assert( ~isempty(localPath), ...
 
 % Change to local path
 oldPath = cd(localPath);
-
-%% Install MLE+
-% ...if requested
-if installMLEP
-    disp('Installing MLE+...');
-    run(['.' filesep 'MLEP' filesep 'mlepInstall']); %#ok<*UNRCH>
-    disp(' ');
-end
 
 %% Check MATLAB version
 % Get MATLAB version

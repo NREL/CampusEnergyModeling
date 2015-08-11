@@ -1,4 +1,0 @@
-## Java
-# Do not ignore built Java files within this directory
-!*.class
-!*.jar

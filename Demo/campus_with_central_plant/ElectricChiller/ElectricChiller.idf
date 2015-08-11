@@ -100,7 +100,7 @@
 ! Environmental Emissions:        None
 ! Utility Tariffs:                None
 
-  Version,8.0;
+  Version,8.3;
 
   Building,
     Building,                !- Name
@@ -206,7 +206,7 @@
     1793.00;                 !- Elevation {m}
 
   SimulationControl,
-    No,                     !- Do Zone Sizing Calculation
+    No,                      !- Do Zone Sizing Calculation
     Yes,                     !- Do System Sizing Calculation
     Yes,                     !- Do Plant Sizing Calculation
     No,                      !- Run Simulation for Sizing Periods
@@ -656,7 +656,6 @@
     For: AllDays,            !- Field 2
     Until: 24:00,0.0;        !- Field 3
 
-
   Sizing:Parameters,
     1.0,                     !- Heating Sizing Factor
     1.0,                     !- Cooling Sizing Factor
@@ -667,7 +666,6 @@
 !    heating,                 !- Loop Type
 !    82.,                     !- Design Loop Exit Temperature {C}
 !    11;                      !- Loop Design Temperature Difference {deltaC}
-
 !  Sizing:Plant,
 !    Condenser Water Loop,      !- Plant or Condenser Loop Name
 !    cooling,                 !- Loop Type
@@ -737,7 +735,7 @@
     For: WinterDesignDay,    !- Field 5
     Until: 24:00,1,          !- Field 6
     For: AllOtherDays,       !- Field 8
-    Until: 24:00,4;          !- Field 9 4
+    Until: 24:00,4;          !- Field 9
 
   Schedule:Compact,
     Min OA Sched,            !- Name
@@ -869,7 +867,7 @@
 
   ThermostatSetpoint:SingleCooling,
     CoolingSetpoint,         !- Name
-    Clg-SetP-Sch;             !- Setpoint Temperature Schedule Name
+    Clg-SetP-Sch;            !- Setpoint Temperature Schedule Name
 
   ThermostatSetpoint:SingleHeating,
     PlenumHeatingSetpoint,   !- Name
@@ -898,7 +896,7 @@
     CW Demand Outlet Node,   !- Demand Side Outlet Node Name
     Cooling Demand Side Branches,  !- Demand Side Branch List Name
     Cooling Demand Side Connectors,  !- Demand Side Connector List Name
-    SEQUENTIAL,              !- Load Distribution Scheme
+    SequentialLoad,          !- Load Distribution Scheme
     CW Avail List;           !- Availability Manager List Name
 
   AvailabilityManagerAssignmentList,
@@ -917,12 +915,12 @@
     CW Low Temp Limit,       !- Name
     Outside Air Inlet Node 1,!- Sensor Node Name
     2.0,                     !- Temperature {C}
-    CoolingPumpAvailSched;   !- Applicability Schedule Name 
+    CoolingPumpAvailSched;   !- Applicability Schedule Name
 
   SetpointManager:Scheduled,
     Chilled Water Loop Setpoint Manager,  !- Name
     Temperature,             !- Control Variable
-    CoolTempSch,   !- Schedule Name CW Loop Temp Schedule
+    CoolTempSch,             !- Schedule Name
     CW Supply Outlet Node;   !- Setpoint Node or NodeList Name
 
   BranchList,
@@ -933,12 +931,12 @@
     Cooling Supply Outlet;   !- Branch 4 Name
 
   BranchList,
-    Cooling Demand Side Branches,   !- Name
-    Cooling Demand Inlet,           !- Branch 1 Name
-    Load Profile Branch 1,          !- Branch 2 Name
-    Load Profile Branch 2,          !- Branch 3 Name
-    Cooling Demand Bypass Branch,   !- Branch 4 Name
-    Cooling Demand Outlet;          !- Branch 5 Name
+    Cooling Demand Side Branches,  !- Name
+    Cooling Demand Inlet,    !- Branch 1 Name
+    Load Profile Branch 1,   !- Branch 2 Name
+    Load Profile Branch 2,   !- Branch 3 Name
+    Cooling Demand Bypass Branch,  !- Branch 4 Name
+    Cooling Demand Outlet;   !- Branch 5 Name
 
   ConnectorList,
     Cooling Supply Side Connectors,  !- Name
@@ -988,7 +986,6 @@
     Demand Load Profile 2 Inlet Node,  !- Component 1 Inlet Node Name
     Demand Load Profile 2 Outlet Node,  !- Component 1 Outlet Node Name
     ACTIVE;                  !- Component 1 Branch Control Type
-
 
   Branch,
     Cooling Demand Bypass Branch,  !- Name
@@ -1085,27 +1082,27 @@
   Connector:Splitter,
     CW Demand Splitter,      !- Name
     Cooling Demand Inlet,    !- Inlet Branch Name
-    Load Profile Branch 1,    !- Outlet Branch 1 Name
-    Load Profile Branch 2,    !- Outlet Branch 2 Name
+    Load Profile Branch 1,   !- Outlet Branch 1 Name
+    Load Profile Branch 2,   !- Outlet Branch 2 Name
     Cooling Demand Bypass Branch;  !- Outlet Branch 3 Name
-    
+
   Connector:Mixer,
     CW Demand Mixer,         !- Name
     Cooling Demand Outlet,   !- Outlet Branch Name
-    Load Profile Branch 1,    !- Inlet Branch 1 Name 
-    Load Profile Branch 2,    !- Inlet Branch 2 Name 
+    Load Profile Branch 1,   !- Inlet Branch 1 Name
+    Load Profile Branch 2,   !- Inlet Branch 2 Name
     Cooling Demand Bypass Branch;  !- Inlet Branch 3 Name
 
   PlantEquipmentOperationSchemes,
     CW Loop Operation,       !- Name
     PlantEquipmentOperation:CoolingLoad,  !- Control Scheme 1 Object Type
     Central Chiller Only,    !- Control Scheme 1 Name
-    PlantOnSched;            !- Control Scheme 1 Schedule Name PlantOnSched
+    PlantOnSched;            !- Control Scheme 1 Schedule Name
 
   PlantEquipmentOperation:CoolingLoad,
     Central Chiller Only,    !- Name
     0,                       !- Load Range 1 Lower Limit {W}
-    900000,                  !- Load Range 1 Upper Limit {W} 900000
+    900000,                  !- Load Range 1 Upper Limit {W}
     Cooling Plant;           !- Range 1 Equipment List Name
 
   PlantEquipmentList,
@@ -1115,7 +1112,7 @@
 
   Chiller:Electric,
     Central Chiller,         !- Name
-    AirCooled,               !- Condenser Type WaterCooled Condenser
+    AirCooled,               !- Condenser Type
     autosize,                !- Nominal Capacity {W}
     3.2,                     !- Nominal COP {W/W}
     Central Chiller Inlet Node,  !- Chilled Water Inlet Node Name
@@ -1145,11 +1142,11 @@
   SetpointManager:Scheduled,
     Central Chiller Setpoint Manager,  !- Name
     Temperature,             !- Control Variable
-    CoolTempSch,   !- Schedule Name CW Loop Temp Schedule
+    CoolTempSch,             !- Schedule Name
     Central Chiller Outlet Node;  !- Setpoint Node or NodeList Name
 
   OutdoorAir:Node,
-    Central Chiller Condenser Inlet Node,  !- Name Condenser Willy 
+    Central Chiller Condenser Inlet Node,  !- Name
     -1.0;                    !- Height Above Ground {m}
 
   Pump:VariableSpeed,
@@ -1167,147 +1164,172 @@
     0,                       !- Coefficient 4 of the Part Load Performance Curve
     0,                       !- Minimum Flow Rate {m3/s}
     INTERMITTENT,            !- Pump Control Type
-    CoolingPumpAvailSched;   !- Pump Flow Rate Schedule Name CoolingPumpAvailSched
+    CoolingPumpAvailSched;   !- Pump Flow Rate Schedule Name
 
 !======================PLANT PROFILE=============================================
+
   Schedule:Compact,
     Load Profile 1 Load Schedule,  !- Name
     Any Number,              !- Schedule Type Limits Name
     THROUGH: 12/31,          !- Field 1
     FOR: AllDays,            !- Field 2
-    UNTIL: 4:00,3000,        !- Field 3 8000
-    UNTIL: 8:00,5000,        !- Field 5 6000
-    UNTIL: 9:00,6000,           !- Field 7 0
-    UNTIL: 12:00,8000,       !- Field 9 6000
-    UNTIL: 24:00,9000;      !- Field 11 10000
+    UNTIL: 4:00,3000,        !- Field 3
+    UNTIL: 8:00,5000,        !- Field 5
+    UNTIL: 9:00,6000,        !- Field 7
+    UNTIL: 12:00,8000,       !- Field 9
+    UNTIL: 24:00,9000;       !- Field 11
 
   Schedule:Compact,
     Load Profile 1 Flow Frac Schedule,  !- Name
     Any Number,              !- Schedule Type Limits Name
     THROUGH: 12/31,          !- Field 1
     FOR: AllDays,            !- Field 2
-    UNTIL: 24:00,0.35;        !- Field 3 0.35
+    UNTIL: 24:00,0.35;       !- Field 3
 
 !======================PLANT PROFILE=============================================
+
   LoadProfile:Plant,
     Load Profile 1,          !- Name
     Demand Load Profile 1 Inlet Node,  !- Inlet Node Name
     Demand Load Profile 1 Outlet Node,  !- Outlet Node Name
-    LoadProfileSch1,  !- Load Schedule Name Load Profile 1 Load Schedule
+    LoadProfileSch1,         !- Load Schedule Name
     0.005,                   !- Peak Flow Rate {m3/s}
-    FlowProfileSch1;  !- Flow Rate Fraction Schedule Name 
+    FlowProfileSch1;         !- Flow Rate Fraction Schedule Name
 
   LoadProfile:Plant,
     Load Profile 2,          !- Name
     Demand Load Profile 2 Inlet Node,  !- Inlet Node Name
     Demand Load Profile 2 Outlet Node,  !- Outlet Node Name
-    LoadProfileSch2,  !- Load Schedule Name Load Profile 1 Load Schedule
+    LoadProfileSch2,         !- Load Schedule Name
     0.005,                   !- Peak Flow Rate {m3/s}
-    FlowProfileSch2;  !- Flow Rate Fraction Schedule Name 
+    FlowProfileSch2;         !- Flow Rate Fraction Schedule Name
 
 !======================START:INPUTS=============================================
+
   Output:EnergyManagementSystem,
-    Verbose, ! Actuator Availability Dictionary Reporting
-    Verbose, ! Internal Variable Availability Dictionary Reporting
-    ErrorsOnly; ! EnergyPlus Runtime Language Debug Output Level
-  
+    Verbose,                 !- Actuator Availability Dictionary Reporting
+    Verbose,                 !- Internal Variable Availability Dictionary Reporting
+    ErrorsOnly;              !- EMS Runtime Language Debug Output Level
+
   ExternalInterface:Schedule,
-    CoolTempSch,                         !- Name
-    Temperature,                    !- ScheduleType
-    7.22;                 !- Initial value, used during warm-up
+    CoolTempSch,             !- Name
+    Temperature,             !- Schedule Type Limits Name
+    7.22;                    !- Initial Value
 
 !=========== Building 1
-  ExternalInterface:Schedule,
-    LoadProfileSch1,                         !- Name Load Profile 1 Load Schedule
-    Any Number,                    !- ScheduleType
-    0;                 !- Initial value, used during warm-up
 
   ExternalInterface:Schedule,
-    FlowProfileSch1,                         !- Name Load Profile 1 Load Schedule
-    Any Number,                    !- ScheduleType
-    1;                 !- Initial value, used during warm-up 0.35
+    LoadProfileSch1,         !- Name
+    Any Number,              !- Schedule Type Limits Name
+    0;                       !- Initial Value
+
+  ExternalInterface:Schedule,
+    FlowProfileSch1,         !- Name
+    Any Number,              !- Schedule Type Limits Name
+    1;                       !- Initial Value
 
 !=========== Building 2
-  ExternalInterface:Schedule,
-    LoadProfileSch2,                         !- Name Load Profile 1 Load Schedule
-    Any Number,                    !- ScheduleType
-    0;                 !- Initial value, used during warm-up
 
   ExternalInterface:Schedule,
-    FlowProfileSch2,                         !- Name Load Profile 1 Load Schedule
-    Any Number,                    !- ScheduleType
-    1;                 !- Initial value, used during warm-up 0.35
+    LoadProfileSch2,         !- Name
+    Any Number,              !- Schedule Type Limits Name
+    0;                       !- Initial Value
 
+  ExternalInterface:Schedule,
+    FlowProfileSch2,         !- Name
+    Any Number,              !- Schedule Type Limits Name
+    1;                       !- Initial Value
 
-! InternalVariable: Total Chilled Water  
+! InternalVariable: Total Chilled Water
+
   EnergyManagementSystem:InternalVariable,
-    ChilledWaterTotal,
-    CHILLED WATER LOOP,
-    Plant Design Volume Flow Rate;
+    ChilledWaterTotal,       !- Name
+    CHILLED WATER LOOP,      !- Internal Data Index Key Name
+    Plant Design Volume Flow Rate;  !- Internal Data Type
 
-! EMS: OuputVariable: 
+! EMS: OuputVariable:
+
   EnergyManagementSystem:OutputVariable,
-    Design Chilled Water Flow Rate, ! Name
-    MaxChilledWaterFlow, ! EMS Variable Name
-    Averaged, ! Type of Data in Variable
-    ZoneTimeStep ; ! Update Frequency
+    Design Chilled Water Flow Rate,  !- Name
+    MaxChilledWaterFlow,     !- EMS Variable Name
+    Averaged,                !- Type of Data in Variable
+    ZoneTimeStep;            !- Update Frequency
 
 ! Output Variable
-  Output:Variable,
-    EMS, !- Key Value
-    Design Chilled Water Flow Rate, !- Variable Name [m3/s]
-    timestep; !- Reporting Frequency
+
+  Output:Variable,EMS,Design Chilled Water Flow Rate,timestep;
 
 ! Global Variable
+
   EnergyManagementSystem:GlobalVariable,
-    MaxChilledWaterFlow;
+    MaxChilledWaterFlow;     !- Erl Variable 1 Name
 
 ! Program Call Manager
+
   EnergyManagementSystem:ProgramCallingManager,
-    EMSManager, !- Name
-    InsideHVACSystemIterationLoop, !- EnergyPlus Model Calling Point
-    OutputEMSvariables; !- Program Name 1
+    EMSManager,              !- Name
+    InsideHVACSystemIterationLoop,  !- EnergyPlus Model Calling Point
+    OutputEMSvariables;      !- Program Name 1
 
-! EMS Program  
+! EMS Program
+
   EnergyManagementSystem:Program,
-    OutputEMSvariables, !- Name
-    SET MaxChilledWaterFlow = ChilledWaterTotal; !- Program Line 2
-    
-!======================END:INPUTS=============================================
+    OutputEMSvariables,      !- Name
+    SET MaxChilledWaterFlow = ChilledWaterTotal;  !- Program Line 1
 
+!======================END:INPUTS=============================================
 !======================START:OUTPUTS=============================================
   ! TEMPERATURE ZONES
-  Output:Variable,Environment,Site Outdoor Air Drybulb Temperature,timestep;
-  
-  ! CHILLER
-  Output:Variable,Central Chiller Outlet Node,System Node Temperature,timestep;
-  Output:Variable,Central Chiller Outlet Node,System Node Mass Flow Rate,timestep;
-  Output:Variable,CW Circ Pump,Pump Electric Power, timestep;
-  
-  ! LOAD PROFILE
-  Output:Variable,Load Profile 1,Plant Load Profile Mass Flow Rate,timestep;
-  Output:Variable,Load Profile 1,Plant Load Profile Heat Transfer Rate,timestep;
-  Output:Variable,Load Profile 2,Plant Load Profile Mass Flow Rate,timestep;
-  Output:Variable,Load Profile 2,Plant Load Profile Heat Transfer Rate,timestep;
-  Output:Variable,Demand Load Profile 1 Inlet Node,System Node Temperature,timestep;
-  Output:Variable,Demand Load Profile 1 Outlet Node,System Node Temperature,timestep;
-  Output:Variable,Demand Load Profile 2 Inlet Node,System Node Temperature,timestep;
-  Output:Variable,Demand Load Profile 2 Outlet Node,System Node Temperature,timestep;
-  
-  ! PRESSURE  
-  Output:Variable,Demand Load Profile 1 Inlet Node,System Node Pressure,timestep;
-  Output:Variable,Demand Load Profile 1 Outlet Node,System Node Pressure,timestep;
-  Output:Variable,Demand Load Profile 2 Inlet Node,System Node Pressure,timestep;
-  Output:Variable,Demand Load Profile 2 Outlet Node,System Node Pressure,timestep;
-  Output:Variable,CW Supply Inlet Node,System Node Pressure,timestep;
-  Output:Variable,CW Supply Outlet Node,System Node Pressure,timestep;
-    
-  ! POWER CONSUMPTION
-  Output:Variable,Central Chiller,Chiller Electric Power,timestep;
-  Output:Variable,CW Circ Pump,Pump Electric Power, timestep;
- 
-!======================END:OUTPUTS=============================================
 
+  Output:Variable,Environment,Site Outdoor Air Drybulb Temperature,timestep;
+
+  ! CHILLER
+
+  Output:Variable,Central Chiller Outlet Node,System Node Temperature,timestep;
+
+  Output:Variable,Central Chiller Outlet Node,System Node Mass Flow Rate,timestep;
+
+  Output:Variable,CW Circ Pump,Pump Electric Power,timestep;
+
+  ! LOAD PROFILE
+
+  Output:Variable,Load Profile 1,Plant Load Profile Mass Flow Rate,timestep;
+
+  Output:Variable,Load Profile 1,Plant Load Profile Heat Transfer Rate,timestep;
+
+  Output:Variable,Load Profile 2,Plant Load Profile Mass Flow Rate,timestep;
+
+  Output:Variable,Load Profile 2,Plant Load Profile Heat Transfer Rate,timestep;
+
+  Output:Variable,Demand Load Profile 1 Inlet Node,System Node Temperature,timestep;
+
+  Output:Variable,Demand Load Profile 1 Outlet Node,System Node Temperature,timestep;
+
+  Output:Variable,Demand Load Profile 2 Inlet Node,System Node Temperature,timestep;
+
+  Output:Variable,Demand Load Profile 2 Outlet Node,System Node Temperature,timestep;
+
+  ! PRESSURE
+
+  Output:Variable,Demand Load Profile 1 Inlet Node,System Node Pressure,timestep;
+
+  Output:Variable,Demand Load Profile 1 Outlet Node,System Node Pressure,timestep;
+
+  Output:Variable,Demand Load Profile 2 Inlet Node,System Node Pressure,timestep;
+
+  Output:Variable,Demand Load Profile 2 Outlet Node,System Node Pressure,timestep;
+
+  Output:Variable,CW Supply Inlet Node,System Node Pressure,timestep;
+
+  Output:Variable,CW Supply Outlet Node,System Node Pressure,timestep;
+
+  ! POWER CONSUMPTION
+
+  Output:Variable,Central Chiller,Chiller Electric Power,timestep;
+
+  Output:Variable,CW Circ Pump,Pump Electric Power,timestep;
+
+!======================END:OUTPUTS=============================================
   !Output:Variable,*,Zone Mean Air Dewpoint Temperature,timestep;
   !Output:Variable,*,Zone Air System Sensible Cooling Rate,timestep;
   !Output:Variable,*,Zone Air System Sensible Heating Rate,timestep;
@@ -1346,9 +1368,11 @@
   !Output:Variable,*,Chiller Condenser Heat Transfer Rate,timestep;
   !Output:Variable,*,Pump Mass Flow Rate,timestep;
   !Output:Variable,*,Pump Outlet Temperature,timestep;
-  
+
   Output:VariableDictionary,Regular;
+
   Output:VariableDictionary,IDF;
+
 !  Output:Meter:MeterFileOnly,Electricity:Facility,monthly;
 !  Output:Meter:MeterFileOnly,Electricity:Building,monthly;
 !  Output:Meter:MeterFileOnly,InteriorLights:Electricity,monthly;
@@ -1369,7 +1393,6 @@
 !  Output:Meter:MeterFileOnly,MyBuildingElectric,runperiod;
 !  Output:Meter:MeterFileOnly,MyBuildingOther,monthly;
 !  Output:Meter:MeterFileOnly,MyBuildingOther,runperiod;
-
 ! The following custom meters are set up to illustrate the capabilities
 ! of custom meters.
 ! Custom Meter "MyGeneralLights" duplicates the InteriorLights:Electricity meter.
@@ -1379,17 +1402,14 @@
 !   resultant value for MyBuildingOther should be equal to the value for the meters
 !   Electricity:Building - InteriorLights:Electricity (aka MyGeneralLights)
 
-
-
-
   Output:Surfaces:Drawing,VRML;
 
   OutputControl:Table:Style,
     HTML;                    !- Column Separator
 
-  Output:Table:SummaryReports,
-    AllSummary,
-    ZoneComponentLoadSummary;              !- Report 1 Name
+!  Output:Table:SummaryReports,
+!    AllSummary,              !- Report 1 Name
+!    ZoneComponentLoadSummary;!- Report 2 Name
 
   Output:Surfaces:List,Details;
 

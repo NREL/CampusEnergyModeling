@@ -69,12 +69,11 @@
 ! Environmental Emissions:        None
 ! Utility Tariffs:                None
 
-  Version,8.0;
-  
+  Version,8.3;
+
   ExternalInterface,
     PtolemyServer;           !- Name of External Interface
 
-  
   Building,
     Building,                !- Name
     0,                       !- North Axis {deg}
@@ -85,7 +84,7 @@
     25,                      !- Maximum Number of Warmup Days
     6;                       !- Minimum Number of Warmup Days
 
-  Timestep,60;				 !- Number of timesteps in 1 hour
+  Timestep,60;
 
   SurfaceConvectionAlgorithm:Inside,Simple;
 
@@ -102,10 +101,10 @@
 
   RunPeriod,
     ,                        !- Name
-    6,                      !- Begin Month
+    6,                       !- Begin Month
     1,                       !- Begin Day of Month
     6,                       !- End Month
-    1,                      !- End Day of Month
+    1,                       !- End Day of Month
     Tuesday,                 !- Day of Week for Start Day
     Yes,                     !- Use Weather File Holidays and Special Days
     Yes,                     !- Use Weather File Daylight Saving Period
@@ -1365,12 +1364,12 @@
 
   OtherEquipment,
     BASE-1 OthEq 1,          !- Name
-    BASE-1,                  !- Zone Name
+    BASE-1,                  !- Zone or ZoneList Name
     AlwaysOn,                !- Schedule Name
     EquipmentLevel,          !- Design Level Calculation Method
     726,                     !- Design Level {W}
-    ,                        !- Watts per Zone Floor Area {W/m2}
-    ,                        !- Watts per Person {W/Person}
+    ,                        !- Power per Zone Floor Area {W/m2}
+    ,                        !- Power per Person {W/Person}
     0,                       !- Fraction Latent
     0.7,                     !- Fraction Radiant
     0;                       !- Fraction Lost
@@ -1994,8 +1993,8 @@
 
   ThermostatSetpoint:DualSetpoint,
     DualSetPoint,            !- Name
-    TSetHea,               !- Heating Setpoint Temperature Schedule Name
-    TSetCoo;               !- Cooling Setpoint Temperature Schedule Name
+    TSetHea,                 !- Heating Setpoint Temperature Schedule Name
+    TSetCoo;                 !- Cooling Setpoint Temperature Schedule Name
 
   ZoneHVAC:EquipmentList,
     ZSF1Equipment,           !- Name
@@ -2240,9 +2239,9 @@
   Coil:Cooling:DX:SingleSpeed,
     ACDXCoil 1,              !- Name
     FAN-SCHED,               !- Availability Schedule Name
-    13228,                   !- Rated Total Cooling Capacity {W}
-    0.8,                     !- Rated Sensible Heat Ratio
-    3.0,                     !- Rated COP {W/W}
+    13228,                   !- Gross Rated Total Cooling Capacity {W}
+    0.8,                     !- Gross Rated Sensible Heat Ratio
+    3.0,                     !- Gross Rated Cooling COP {W/W}
     0.71,                    !- Rated Air Flow Rate {m3/s}
     ,                        !- Rated Evaporator Fan Power Per Volume Flow Rate {W/(m3/s)}
     Mixed Air 1 Node,        !- Air Inlet Node Name
@@ -2256,9 +2255,9 @@
   Coil:Cooling:DX:SingleSpeed,
     ACDXCoil 2,              !- Name
     FAN-SCHED,               !- Availability Schedule Name
-    12483,                   !- Rated Total Cooling Capacity {W}
-    0.8,                     !- Rated Sensible Heat Ratio
-    3.0,                     !- Rated COP {W/W}
+    12483,                   !- Gross Rated Total Cooling Capacity {W}
+    0.8,                     !- Gross Rated Sensible Heat Ratio
+    3.0,                     !- Gross Rated Cooling COP {W/W}
     0.67,                    !- Rated Air Flow Rate {m3/s}
     ,                        !- Rated Evaporator Fan Power Per Volume Flow Rate {W/(m3/s)}
     Mixed Air 2 Node,        !- Air Inlet Node Name
@@ -2272,9 +2271,9 @@
   Coil:Cooling:DX:SingleSpeed,
     ACDXCoil 3,              !- Name
     FAN-SCHED,               !- Availability Schedule Name
-    14719,                   !- Rated Total Cooling Capacity {W}
-    0.8,                     !- Rated Sensible Heat Ratio
-    3.0,                     !- Rated COP {W/W}
+    14719,                   !- Gross Rated Total Cooling Capacity {W}
+    0.8,                     !- Gross Rated Sensible Heat Ratio
+    3.0,                     !- Gross Rated Cooling COP {W/W}
     0.79,                    !- Rated Air Flow Rate {m3/s}
     ,                        !- Rated Evaporator Fan Power Per Volume Flow Rate {W/(m3/s)}
     Mixed Air 3 Node,        !- Air Inlet Node Name
@@ -2288,9 +2287,9 @@
   Coil:Cooling:DX:SingleSpeed,
     ACDXCoil 4,              !- Name
     FAN-SCHED,               !- Availability Schedule Name
-    13973,                   !- Rated Total Cooling Capacity {W}
-    0.8,                     !- Rated Sensible Heat Ratio
-    3.0,                     !- Rated COP {W/W}
+    13973,                   !- Gross Rated Total Cooling Capacity {W}
+    0.8,                     !- Gross Rated Sensible Heat Ratio
+    3.0,                     !- Gross Rated Cooling COP {W/W}
     0.75,                    !- Rated Air Flow Rate {m3/s}
     ,                        !- Rated Evaporator Fan Power Per Volume Flow Rate {W/(m3/s)}
     Mixed Air 4 Node,        !- Air Inlet Node Name
@@ -2304,7 +2303,7 @@
   Fan:ConstantVolume,
     Supply Fan 1,            !- Name
     FAN-SCHED,               !- Availability Schedule Name
-    0.7,                     !- Fan Efficiency
+    0.7,                     !- Fan Total Efficiency
     600.0,                   !- Pressure Rise {Pa}
     0.71,                    !- Maximum Flow Rate {m3/s}
     0.9,                     !- Motor Efficiency
@@ -2315,7 +2314,7 @@
   Fan:ConstantVolume,
     Supply Fan 2,            !- Name
     FAN-SCHED,               !- Availability Schedule Name
-    0.7,                     !- Fan Efficiency
+    0.7,                     !- Fan Total Efficiency
     600.0,                   !- Pressure Rise {Pa}
     0.67,                    !- Maximum Flow Rate {m3/s}
     0.9,                     !- Motor Efficiency
@@ -2326,7 +2325,7 @@
   Fan:ConstantVolume,
     Supply Fan 3,            !- Name
     FAN-SCHED,               !- Availability Schedule Name
-    0.7,                     !- Fan Efficiency
+    0.7,                     !- Fan Total Efficiency
     600.0,                   !- Pressure Rise {Pa}
     0.79,                    !- Maximum Flow Rate {m3/s}
     0.9,                     !- Motor Efficiency
@@ -2337,7 +2336,7 @@
   Fan:ConstantVolume,
     Supply Fan 4,            !- Name
     FAN-SCHED,               !- Availability Schedule Name
-    0.7,                     !- Fan Efficiency
+    0.7,                     !- Fan Total Efficiency
     600.0,                   !- Pressure Rise {Pa}
     0.75,                    !- Maximum Flow Rate {m3/s}
     0.9,                     !- Motor Efficiency
@@ -2495,9 +2494,8 @@
 
   ! Cooling schedule. This schedule is set directly by the external interface.
   ! During warm-up and system-sizing, it is fixed at 24 degC.
-
   ! EXTERNAL INTERFACE (MLE+)
-  
+
   ExternalInterface:Schedule,
     TSetCoo,                 !- Name
     Temperature,             !- Schedule Type Limits Name
@@ -2510,106 +2508,155 @@
     TSetHea,                 !- Name
     Temperature,             !- Schedule Type Limits Name
     20;                      !- Initial Value
-  
+
   ! Weather data follows
-  
-  ExternalInterface:Actuator,
-    ActDryBulb, !- Name
-    Environment, !- Actuated Component Unique Name
-    Weather Data, !- Actuated Component Type
-    Outdoor Dry Bulb, !- Actuated Component Control Type 
-    23; ! initial value [C]
 
   ExternalInterface:Actuator,
-    ActRelHum, !- Name
-    Environment, !- Actuated Component Unique Name
-    Weather Data, !- Actuated Component Type
-    Outdoor Relative Humidity, !- Actuated Component Control Type 
-    30; ! initial value [%RH]
+    ActDryBulb,              !- Name
+    Environment,             !- Actuated Component Unique Name
+    Weather Data,            !- Actuated Component Type
+    Outdoor Dry Bulb,        !- Actuated Component Control Type
+    23;                      !- Optional Initial Value
 
   ExternalInterface:Actuator,
-    ActDirSol, !- Name
-    Environment, !- Actuated Component Unique Name
-    Weather Data, !- Actuated Component Type
-    Direct Solar, !- Actuated Component Control Type 
-    0; ! initial value [W/m2]
+    ActRelHum,               !- Name
+    Environment,             !- Actuated Component Unique Name
+    Weather Data,            !- Actuated Component Type
+    Outdoor Relative Humidity,  !- Actuated Component Control Type
+    30;                      !- Optional Initial Value
 
   ExternalInterface:Actuator,
-    ActDifSol, !- Name
-    Environment, !- Actuated Component Unique Name
-    Weather Data, !- Actuated Component Type
-    Diffuse Solar, !- Actuated Component Control Type 
-    0; ! initial value [W/m2]
+    ActDirSol,               !- Name
+    Environment,             !- Actuated Component Unique Name
+    Weather Data,            !- Actuated Component Type
+    Direct Solar,            !- Actuated Component Control Type
+    0;                       !- Optional Initial Value
+
+  ExternalInterface:Actuator,
+    ActDifSol,               !- Name
+    Environment,             !- Actuated Component Unique Name
+    Weather Data,            !- Actuated Component Type
+    Diffuse Solar,           !- Actuated Component Control Type
+    0;                       !- Optional Initial Value
 
   ! BUILDING TOTAL POWER CONSUMPTION
-  Output:Variable,*,Facility Total Building Electric Demand Power,timestep;	! Non-HVAC
-  Output:Variable,*,Facility Total HVAC Electric Demand Power,timestep;		! HVAC
-  Output:Variable,*,Facility Total Electric Demand Power,timestep;			! Total
-	
+
+  Output:Variable,*,Facility Total Building Electric Demand Power,timestep;
+
+  Output:Variable,*,Facility Total HVAC Electric Demand Power,timestep;
+
+  Output:Variable,*,Facility Total Electric Demand Power,timestep;
+
   ! HVAC POWER CONSUMPTION
+
   Output:Variable,ACDXCOIL 1,Cooling Coil Electric Power,timestep;
+
   Output:Variable,ACDXCOIL 2,Cooling Coil Electric Power,timestep;
+
   Output:Variable,ACDXCOIL 3,Cooling Coil Electric Power,timestep;
+
   Output:Variable,ACDXCOIL 4,Cooling Coil Electric Power,timestep;
+
   Output:Variable,Main Heating Coil 1,Heating Coil Electric Power,timestep;
+
   Output:Variable,Main Heating Coil 2,Heating Coil Electric Power,timestep;
+
   Output:Variable,Main Heating Coil 3,Heating Coil Electric Power,timestep;
+
   Output:Variable,Main Heating Coil 4,Heating Coil Electric Power,timestep;
+
   Output:Variable,Supply Fan 1,Fan Electric Power,timestep;
+
   Output:Variable,Supply Fan 2,Fan Electric Power,timestep;
+
   Output:Variable,Supply Fan 3,Fan Electric Power,timestep;
+
   Output:Variable,Supply Fan 4,Fan Electric Power,timestep;
-  
+
   ! SETPOINTS
+
   Output:Variable,TSetHea,Schedule Value,TimeStep;
+
   Output:Variable,TSetCoo,Schedule Value,TimeStep;
+
   Output:Variable,ENVIRONMENT,Site Outdoor Air Drybulb Temperature,timestep;
+
   Output:Variable,*,Zone Air System Sensible Cooling Rate,timestep;
+
   Output:Variable,*,Zone Air System Sensible Heating Rate,timestep;
 
-  ! ZONE DATA 
+  ! ZONE DATA
+
   Output:Variable,*,Zone Air Temperature,timestep;
+
   Output:Variable,*,Zone Air Humidity Ratio,timestep;
-  
+
   ! HVAC DATA
+
   Output:Variable,*,Coil System Part Load Ratio,timestep;
+
   Output:Variable,*,Cooling Coil Total Cooling Rate,timestep;
+
   Output:Variable,*,Cooling Coil Sensible Cooling Rate,timestep;
+
   Output:Variable,*,Heating Coil Air Heating Rate,timestep;
 
   ! METERS
+
   Output:Meter,Cooling:Electricity,monthly;
+
   Output:Meter,Heating:Gas,monthly;
+
   Output:Meter,Fans:Electricity,monthly;
+
   Output:Meter,HeatingCoils:EnergyTransfer,monthly;
+
   Output:Meter,CoolingCoils:EnergyTransfer,monthly;
+
   Output:Meter,InteriorLights:Electricity,monthly;
+
   Output:Meter,InteriorEquipment:Electricity,monthly;
 
   Output:Meter,Cooling:Electricity,runperiod;
+
   Output:Meter,Heating:Gas,runperiod;
+
   Output:Meter,Fans:Electricity,runperiod;
+
   Output:Meter,HeatingCoils:EnergyTransfer,runperiod;
+
   Output:Meter,CoolingCoils:EnergyTransfer,runperiod;
+
   Output:Meter,InteriorLights:Electricity,runperiod;
+
   Output:Meter,InteriorEquipment:Electricity,runperiod;
 
   Output:Meter:MeterFileOnly,Electricity:Facility,monthly;
+
   Output:Meter:MeterFileOnly,Electricity:Building,monthly;
+
   Output:Meter:MeterFileOnly,Electricity:HVAC,monthly;
+
   Output:Meter:MeterFileOnly,Gas:Facility,monthly;
+
   Output:Meter:MeterFileOnly,Gas:HVAC,monthly;
-  
+
   Output:Meter:MeterFileOnly,Electricity:Facility,runperiod;
+
   Output:Meter:MeterFileOnly,Electricity:Building,runperiod;
+
   Output:Meter:MeterFileOnly,Electricity:HVAC,runperiod;
+
   Output:Meter:MeterFileOnly,Gas:Facility,runperiod;
+
   Output:Meter:MeterFileOnly,Gas:HVAC,runperiod;
 
   ! OTHER
+
   Output:VariableDictionary,IDF;
+
   Output:Surfaces:Drawing,dxf;
-  
+
   OutputControl:Table:Style,
     Comma;                   !- Column Separator
 
